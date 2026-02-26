@@ -25,21 +25,16 @@ export default function AdSpace({ slot, format = 'auto', layout, className = '' 
 
     return (
         <div className={`my-4 flex justify-center text-center items-center bg-gray-50 min-h-[90px] border border-gray-100 ${className}`}>
-            {/* For development, show a placeholder if no client ID is provided */}
-            {!process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ? (
-                <span className="text-gray-400 text-sm italic">Advertisement Space [{slot}]</span>
-            ) : (
-                <ins
-                    ref={adRef}
-                    className="adsbygoogle block w-full"
-                    style={{ display: 'block' }}
-                    data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}
-                    data-ad-slot={slot}
-                    data-ad-format={format}
-                    {...(layout ? { 'data-ad-layout': layout } : {})}
-                    data-full-width-responsive="true"
-                />
-            )}
+            <ins
+                ref={adRef}
+                className="adsbygoogle block w-full"
+                style={{ display: 'block' }}
+                data-ad-client="ca-pub-1126148240601289"
+                data-ad-slot={slot}
+                data-ad-format={format}
+                {...(layout ? { 'data-ad-layout': layout } : {})}
+                data-full-width-responsive="true"
+            />
         </div>
     );
 }

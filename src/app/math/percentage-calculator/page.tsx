@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import AdSpace from '@/components/AdSpace';
 
 export default function PercentageCalculator() {
     const [whatIsVal1, setWhatIsVal1] = useState('');
@@ -50,13 +51,15 @@ export default function PercentageCalculator() {
 
     return (
         <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-            <div className="flex justify-between items-end border-b pb-4 mb-8">
+            <div className="flex justify-between items-end border-b pb-4 mb-4">
                 <div>
                     <h1 className="text-4xl font-extrabold text-blue-900">Percentage Calculator</h1>
                     <p className="mt-2 text-gray-500 text-lg">Calculate all common percentage problems instantly.</p>
                 </div>
                 <button onClick={clearAll} className="text-gray-500 hover:text-red-500 transition font-medium text-sm">Clear All</button>
             </div>
+
+            <AdSpace slot="percentage-calc-top" format="auto" className="mb-6 rounded-lg overflow-hidden" />
 
             <div className="space-y-8">
 

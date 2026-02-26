@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import AdSpace from '@/components/AdSpace';
 
 export default function ScientificCalculator() {
     const [display, setDisplay] = useState('');
@@ -50,8 +51,10 @@ export default function ScientificCalculator() {
     const backspace = () => setDisplay(prev => prev.slice(0, -1));
 
     return (
-        <div className="max-w-xl mx-auto p-6 bg-gray-900 rounded-3xl shadow-2xl border border-gray-700">
+        <div className="max-w-xl mx-auto p-4 md:p-6 bg-gray-900 rounded-3xl shadow-2xl border border-gray-700">
             <h1 className="sr-only">Scientific Calculator</h1>
+
+            <AdSpace slot="scientific-calc-top" format="auto" className="mb-4 rounded-lg overflow-hidden border-gray-800" />
 
             {/* Display Screen */}
             <div className="bg-[#a3b18a] bg-opacity-90 p-6 rounded-xl mb-6 shadow-inner text-right border-4 border-[#828f6f] relative flex flex-col justify-end min-h-[120px]">

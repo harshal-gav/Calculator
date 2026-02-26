@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import AdSpace from '@/components/AdSpace';
 
 export default function BMICalculator() {
     const [age, setAge] = useState('25');
@@ -42,6 +43,8 @@ export default function BMICalculator() {
             <p className="mb-8 text-gray-600 text-lg">
                 The Body Mass Index (BMI) Calculator can be used to calculate BMI value and corresponding weight status while taking age into consideration.
             </p>
+
+            <AdSpace slot="bmi-calc-top" format="auto" className="mb-8 rounded-lg overflow-hidden" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 {/* Input Section */}

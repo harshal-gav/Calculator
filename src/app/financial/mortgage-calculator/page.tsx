@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import AdSpace from '@/components/AdSpace';
 
 export default function MortgageCalculator() {
     const [homePrice, setHomePrice] = useState('400000');
@@ -50,9 +51,11 @@ export default function MortgageCalculator() {
     return (
         <div className="max-w-5xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
             <h1 className="text-4xl font-extrabold mb-4 text-gray-900 border-b pb-4">Mortgage Calculator</h1>
-            <p className="mb-8 text-gray-600 text-lg">
+            <p className="mb-4 text-gray-600 text-lg">
                 Estimate your monthly payments, including taxes, insurance, and HOA fees, with our advanced mortgage calculator.
             </p>
+
+            <AdSpace slot="mortgage-calc-top" format="auto" className="mb-8 rounded-lg overflow-hidden" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
