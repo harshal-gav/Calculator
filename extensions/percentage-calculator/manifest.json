@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Percentage Calculator",
+  "version": "1.0.0",
+  "description": "Free percentage calculator for % mathematics.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Percentage Calculator"
+  }
+}

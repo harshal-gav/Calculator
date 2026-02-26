@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://calculator-net-web-2026.web.app/sitemap.xml

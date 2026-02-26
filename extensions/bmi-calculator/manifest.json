@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "BMI Calculator",
+  "version": "1.0.0",
+  "description": "Fast and free body mass index calculator.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "BMI Calculator"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Scientific Calculator",
+  "version": "1.0.0",
+  "description": "Free online scientific calculator.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Scientific Calculator"
+  }
+}
