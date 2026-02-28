@@ -30,7 +30,7 @@ export default function Home() {
           Free Online Calculators
         </h1>
         <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
-          Calculator.net offers a wide selection of free, fast, and highly accurate online calculators to help you with math, finance, health, and more.
+          Calculators All offers a wide selection of free, fast, and highly accurate online calculators to help you with math, finance, health, and more.
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 export const metadata = {
     title: 'Contact Us',
-    description: 'Get in touch with Calculator.net',
+    description: 'Get in touch with Calculators All',
 };
 
 export default function ContactUs() {
@@ -29,7 +29,7 @@ export default function ContactUs() {
 
             <div className="mt-8 pt-8 border-t border-gray-200">
                 <h2 className="text-lg font-semibold text-gray-900 mb-2">Other ways to reach us</h2>
-                <p className="text-gray-600">Email: <a href="mailto:contact@calculator.net.example" className="text-blue-600 hover:underline">contact@calculator.net.example</a></p>
+                <p className="text-gray-600">Email: <a href="mailto:contact@calculatorsall.example" className="text-blue-600 hover:underline">contact@calculatorsall.example</a></p>
             </div>
         </div>
     );

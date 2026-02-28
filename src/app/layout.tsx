@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AdSpace from "@/components/AdSpace";
+import FirebaseAnalytics from "@/components/FirebaseAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,12 +18,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Calculator.net",
-    default: "Free Online Calculators - Math, Health, Financial | Calculator.net",
+    template: "%s | Calculators All",
+    default: "Free Online Calculators - Math, Health, Financial | Calculators All",
   },
   description: "A comprehensive collection of free online calculators for math, health, financial, and more. Fast, easy, and accurate.",
   keywords: ["calculator", "online calculator", "free calculator", "math", "finance", "health", "BMI", "mortgage"],
-  authors: [{ name: "Calculator.net" }],
+  authors: [{ name: "Calculators All" }],
   openGraph: {
     title: "Free Online Calculators - Math, Health, Financial",
     description: "A comprehensive collection of free online calculators for math, health, financial, and more.",
@@ -47,6 +48,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-gray-50`}
       >
+        <FirebaseAnalytics />
         <Navbar />
         <AdSpace slot="header-ad" format="auto" className="my-2 max-w-7xl mx-auto" />
         <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full bg-white shadow-sm rounded-lg my-4">

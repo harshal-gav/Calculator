@@ -7,7 +7,7 @@ export default function Navbar() {
                 <div className="flex justify-between h-16">
                     <div className="flex items-center">
                         <Link href="/" className="flex-shrink-0 flex items-center font-bold text-xl tracking-tight">
-                            Calculator.net
+                            Calculators All
                         </Link>
                     </div>
                     <div className="flex items-center space-x-4">
