@@ -117,10 +117,10 @@ export default function BMICalculator() {
                     {bmi !== null ? (
                         <div className={`p-8 rounded-2xl text-center shadow-inner border transition-all duration-500 ${getCategory(bmi).bg}`}>
                             <h2 className="text-xl font-semibold text-gray-700 mb-2">Result</h2>
-                            <div className="text-6xl font-black mb-4">
+                            <div className="text-5xl sm:text-6xl font-black mb-4">
                                 {bmi.toFixed(1)} <span className="text-lg font-normal text-gray-500 align-top">kg/m²</span>
                             </div>
-                            <div className={`text-2xl font-bold uppercase tracking-wider ${getCategory(bmi).color}`}>
+                            <div className={`text-xl sm:text-2xl font-bold uppercase tracking-wider ${getCategory(bmi).color}`}>
                                 {getCategory(bmi).label}
                             </div>
                         </div>

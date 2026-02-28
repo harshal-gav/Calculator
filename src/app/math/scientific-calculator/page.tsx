@@ -63,7 +63,7 @@ export default function ScientificCalculator() {
                 <div className="text-[#2b3024] text-5xl font-mono tracking-tight font-bold break-all leading-none">{display || '0'}</div>
             </div>
 
-            <div className="grid grid-cols-5 gap-3">
+            <div className="grid grid-cols-5 gap-2 sm:gap-3">
                 {/* Row 1 Scientific + Actions */}
                 <button onClick={() => append('sin(')} className="calc-btn-sci">sin</button>
                 <button onClick={() => append('cos(')} className="calc-btn-sci">cos</button>
@@ -103,21 +103,21 @@ export default function ScientificCalculator() {
                 <button onClick={() => append('e')} className="calc-btn-sci">e</button>
                 <button onClick={() => append('0')} className="calc-btn-num col-span-2">0</button>
                 <button onClick={() => append('.')} className="calc-btn-num">.</button>
-                <button onClick={calculate} className="col-span-1 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white text-2xl font-bold rounded-lg shadow-sm transition">=</button>
+                <button onClick={calculate} className="col-span-1 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white text-xl md:text-2xl font-bold rounded-lg shadow-sm transition">=</button>
             </div>
 
             <style jsx>{`
         .calc-btn-sci {
-          @apply bg-gray-700 hover:bg-gray-600 active:bg-gray-800 text-gray-200 text-sm font-semibold py-4 rounded-lg shadow-sm transition flex justify-center items-center;
+          @apply bg-gray-700 hover:bg-gray-600 active:bg-gray-800 text-gray-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center;
         }
         .calc-btn-num {
-          @apply bg-gray-200 hover:bg-white active:bg-gray-400 text-gray-900 text-2xl font-bold py-4 rounded-lg shadow-sm transition flex justify-center items-center;
+          @apply bg-gray-200 hover:bg-white active:bg-gray-400 text-gray-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center;
         }
         .calc-btn-op {
-          @apply bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white text-2xl font-bold py-4 rounded-lg shadow-sm transition flex justify-center items-center;
+          @apply bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center;
         }
         .calc-btn-action {
-           @apply font-bold py-4 rounded-lg shadow-sm transition flex justify-center items-center text-lg;
+           @apply font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center text-sm md:text-lg;
         }
       `}</style>
 

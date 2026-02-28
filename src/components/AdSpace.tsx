@@ -24,7 +24,7 @@ export default function AdSpace({ slot, format = 'auto', layout, className = '' 
     }, []);
 
     return (
-        <div className={`my-4 flex justify-center text-center items-center bg-gray-50 min-h-[90px] border border-gray-100 ${className}`}>
+        <div className={`my-4 w-full overflow-hidden flex justify-center text-center items-center bg-gray-50 min-h-[90px] border border-gray-100 rounded-lg ${className}`}>
             <ins
                 ref={adRef}
                 className="adsbygoogle block w-full"

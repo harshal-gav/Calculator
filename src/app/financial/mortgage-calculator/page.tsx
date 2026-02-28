@@ -147,7 +147,7 @@ export default function MortgageCalculator() {
                     {result !== null ? (
                         <div>
                             <h2 className="text-xl font-bold text-green-900 mb-2 text-center">Monthly Payment</h2>
-                            <div className="text-5xl font-black text-center text-green-700 mb-8 pb-8 border-b border-green-200">
+                            <div className="text-4xl sm:text-5xl font-black text-center text-green-700 mb-8 pb-8 border-b border-green-200">
                                 ${result.total.toFixed(2)}
                             </div>
 
