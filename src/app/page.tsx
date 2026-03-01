@@ -25,7 +25,10 @@ export default function Home() {
         { name: 'Debt Payoff Calculator', path: '/debt-payoff-calculator', desc: 'Discover how long it will take to become debt-free and exactly how much interest you will pay.' },
         { name: 'Refinance Calculator', path: '/refinance-calculator', desc: 'Determine if refinancing your mortgage or loan makes financial sense by analyzing your breakeven timeline.' },
         { name: 'FHA Loan Calculator', path: '/fha-loan-calculator', desc: 'Calculate your precise FHA mortgage payment including Upfront MIP, Annual MIP, Taxes, and Insurance.' },
-        { name: 'Home Equity Calculator', path: '/home-equity-calculator', desc: 'Discover your total home equity and calculate exactly how much cash you can borrow via a HELOC or Home Equity Loan.' }
+        { name: 'Home Equity Calculator', path: '/home-equity-calculator', desc: 'Discover your total home equity and calculate exactly how much cash you can borrow via a HELOC or Home Equity Loan.' },
+        { name: 'Tip Splitting Calculator', path: '/tip-splitting-calculator', desc: 'Quickly calculate the tip and easily divide the total bill among your group.' },
+        { name: 'Savings Goal Calculator', path: '/savings-goal-calculator', desc: 'Find out exactly how long it will take to reach your savings goal via monthly contributions.' },
+        { name: 'Retirement Calculator', path: '/retirement-calculator', desc: 'Project your retirement nest egg and see if it safely covers your estimated annual expenses.' }
       ]
     },
     {
@@ -66,7 +69,9 @@ export default function Home() {
         { name: 'Dog Age Calculator', path: '/dog-age-calculator', desc: "Calculate your dog's true age in human years using precise veterinary mathematics." },
         { name: 'Cat Age Calculator', path: '/cat-age-calculator', desc: "Calculate your feline friend's true equivalent age in human years using scientific veterinary guidelines." },
         { name: 'Zodiac Sign Calculator', path: '/zodiac-calculator', desc: "Enter your birth date to instantly discover your astrological sun sign and ruling element." },
-        { name: 'Random Password Generator', path: '/password-generator', desc: "Generate secure, highly-randomized passwords using cryptographic standards directly in your browser." }
+        { name: 'Random Password Generator', path: '/password-generator', desc: "Generate secure, highly-randomized passwords using cryptographic standards directly in your browser." },
+        { name: 'Grade Calculator', path: '/grade-calculator', desc: 'Calculate your current class grade based on weighted assignments, and see what you need to score on your finals.' },
+        { name: 'GPA Calculator', path: '/gpa-calculator', desc: 'Enter your course list, credits, and expected grades to instantly calculate your cumulative Grade Point Average (GPA).' }
       ]
     },
     {
