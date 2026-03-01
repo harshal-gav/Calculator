@@ -32,9 +32,7 @@ export default function Home() {
         { name: 'Credit Card Payoff Calculator', path: '/credit-card-payoff-calculator', desc: 'Determine the exact date you will become debt-free by calculating an optimal payoff strategy.' },
         { name: 'Currency Converter', path: '/currency-converter', desc: 'Live foreign exchange rates for popular global currencies. Convert instantly.' },
         { name: 'Stock Return Calculator', path: '/stock-return-calculator', desc: 'Calculate your exact Net Profit and Return on Investment (ROI) for individual stock trades.' },
-        { name: 'Inflation Calculator', path: '/inflation-calculator', desc: 'Calculate how inflation decreases the purchasing power of money over time.' },
         { name: 'APY Calculator', path: '/apy-calculator', desc: 'Calculate Annual Percentage Yield (APY) from quoted interest rate and compounding frequency.' },
-        { name: 'Discount Calculator', path: '/discount-calculator', desc: 'Calculate sale price, or figure out the exact discount percentage you\'re getting.' },
         { name: 'Depreciation Calculator', path: '/depreciation-calculator', desc: 'Calculate asset depreciation using Straight-Line or Double Declining Balance methods.' },
         { name: 'Simple Interest Calculator', path: '/simple-interest-calculator', desc: 'Calculate total interest accrued on a loan or investment using the standard I = Prt formula.' }
       ]
