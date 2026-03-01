@@ -25,6 +25,16 @@ export default function Home() {
       ]
     },
     {
+      name: 'Everyday Life Calculators',
+      calculators: [
+        { name: 'Date Calculator', path: '/date-calculator', desc: 'Calculate the exact duration between two dates in years, months, and days.' },
+        { name: 'Time Calculator', path: '/time-calculator', desc: 'Add or subtract blocks of time easily in hours, minutes, and seconds.' },
+        { name: 'Inflation Calculator', path: '/inflation-calculator', desc: 'Calculate how inflation impacts the future cost of goods and purchasing power.' },
+        { name: 'Sales Tax Calculator', path: '/sales-tax-calculator', desc: 'Quickly add sales tax to an item\'s price or reverse calculate to find pre-tax cost.' },
+        { name: 'Discount Calculator', path: '/discount-calculator', desc: 'Calculate your final price and exact savings after single or stacked store discounts.' }
+      ]
+    },
+    {
       name: 'Math Calculators',
       calculators: [
         { name: 'Scientific Calculator', path: '/scientific-calculator', desc: 'A comprehensive free online scientific calculator.' },

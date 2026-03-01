@@ -14,7 +14,7 @@ export default function Navbar() {
                         <Link href="/#financial" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Financial</Link>
                         <Link href="/#health" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Health</Link>
                         <Link href="/#math" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Math</Link>
-                        <Link href="/#other" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Other</Link>
+                        <Link href="/#everyday" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Everyday</Link>
                     </div>
                 </div>
             </div>
