@@ -90,6 +90,16 @@ export default function Home() {
         { name: 'GCF Calculator', path: '/gcf-calculator', desc: 'Calculates the Greatest Common Factor (also known as the Highest Common Factor) of a dataset of integers.' },
         { name: 'Factorial Calculator', path: '/factorial-calculator', desc: 'Calculate the exact factorial (n!) of any whole number down to its precise individual digits.' }
       ]
+    },
+    {
+      name: 'Technology Calculators',
+      calculators: [
+        { name: 'Bandwidth Calculator', path: '/bandwidth-calculator', desc: 'Calculate exactly how long it will take to download or upload a file based on your connection speed.' },
+        { name: 'IP Subnet Calculator', path: '/ip-subnet-calculator', desc: 'Calculate network boundaries, broadcast addresses, and usable host ranges for IPv4 subnets instantly.' },
+        { name: 'RGB to HEX Converter', path: '/rgb-hex-converter', desc: 'Convert colors instantly between Hexadecimal and RGB formats for web development and design.' },
+        { name: 'Base64 Converter', path: '/base64-converter', desc: 'Quickly encode text to Base64 format, or decode Base64 strings back into readable text.' },
+        { name: 'PX to REM Converter', path: '/px-rem-converter', desc: "Convert CSS pixels (px) to relative root ems (rem) based on your project's root font size." }
+      ]
     }
   ];
 
