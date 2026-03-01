@@ -141,7 +141,12 @@ export default function Home() {
         { name: 'Cylinder Calculator', path: '/cylinder-calculator', desc: 'Enter the radius and height of a cylinder to calculate its volume, surface area, and lateral area.' },
         { name: 'Sphere Calculator', path: '/sphere-calculator', desc: 'Enter the radius of a sphere to calculate its volume, surface area, and circumference instantly.' },
         { name: 'Rectangle Calculator', path: '/rectangle-calculator', desc: 'Enter the length and width of a rectangle to instantly find its area, perimeter, and diagonal length.' },
-        { name: 'Rhombus Calculator', path: '/rhombus-calculator', desc: 'Enter the two diagonals of a rhombus to instantly calculate its area, side length, and perimeter.' }
+        { name: 'Rhombus Calculator', path: '/rhombus-calculator', desc: 'Enter the two diagonals of a rhombus to instantly calculate its area, side length, and perimeter.' },
+        { name: 'Hexagon Calculator', path: '/hexagon-calculator', desc: 'Calculate the area, perimeter, side length, and radii of a regular hexagon.' },
+        { name: 'Octagon Calculator', path: '/octagon-calculator', desc: 'Calculate the core geometric properties of a regular octagon instantly.' },
+        { name: 'Trapezoid Calculator', path: '/trapezoid-calculator', desc: 'Calculate the area, median, and perimeter of a trapezoid instantly.' },
+        { name: 'Polygon Calculator', path: '/polygon-calculator', desc: 'Calculate precise properties for any regular polygon with 3 or more sides.' },
+        { name: 'Arc Length Calculator', path: '/arc-length-calculator', desc: 'Instantly calculate arc length, sector area, and chord length of a circle.' }
       ]
     },
     {
