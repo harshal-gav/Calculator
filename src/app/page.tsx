@@ -61,7 +61,12 @@ export default function Home() {
         { name: 'Area Converter', path: '/area-converter', desc: 'Instantly convert area and land measurements between acres, hectares, square feet, square meters, and more.' },
         { name: 'Energy Converter', path: '/energy-converter', desc: 'Convert energy, work, and heat metrics between Joules, Calories, kWh, BTUs, and Electron-volts.' },
         { name: 'Pressure Converter', path: '/pressure-converter', desc: 'Convert pressure measurements easily between Pascals, PSI, Bar, Atmospheres, and more.' },
-        { name: 'Power Converter', path: '/power-converter', desc: 'Convert electrical and mechanical power ratings between Watts, Kilowatts, Horsepower, and BTUs instantly.' }
+        { name: 'Power Converter', path: '/power-converter', desc: 'Convert electrical and mechanical power ratings between Watts, Kilowatts, Horsepower, and BTUs instantly.' },
+        { name: 'Love Calculator', path: '/love-calculator', desc: "Enter your name and your crush's name to find out your true compatibility score!" },
+        { name: 'Dog Age Calculator', path: '/dog-age-calculator', desc: "Calculate your dog's true age in human years using precise veterinary mathematics." },
+        { name: 'Cat Age Calculator', path: '/cat-age-calculator', desc: "Calculate your feline friend's true equivalent age in human years using scientific veterinary guidelines." },
+        { name: 'Zodiac Sign Calculator', path: '/zodiac-calculator', desc: "Enter your birth date to instantly discover your astrological sun sign and ruling element." },
+        { name: 'Random Password Generator', path: '/password-generator', desc: "Generate secure, highly-randomized passwords using cryptographic standards directly in your browser." }
       ]
     },
     {
