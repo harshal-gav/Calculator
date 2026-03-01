@@ -11,10 +11,10 @@ export default function Navbar() {
                         </Link>
                     </div>
                     <div className="flex flex-wrap justify-center items-center gap-2 sm:space-x-4">
-                        <Link href="/mortgage-calculator" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Mortgage</Link>
-                        <Link href="/bmi-calculator" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">BMI</Link>
-                        <Link href="/scientific-calculator" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Scientific</Link>
-                        <Link href="/percentage-calculator" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Percentage</Link>
+                        <Link href="/#financial" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Financial</Link>
+                        <Link href="/#health" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Health</Link>
+                        <Link href="/#math" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Math</Link>
+                        <Link href="/#other" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Other</Link>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,12 @@ export default function Home() {
       name: 'Math Calculators',
       calculators: [
         { name: 'Scientific Calculator', path: '/scientific-calculator', desc: 'A comprehensive free online scientific calculator.' },
-        { name: 'Percentage Calculator', path: '/percentage-calculator', desc: 'Easily calculate percentages for multiple math use-cases.' }
+        { name: 'Percentage Calculator', path: '/percentage-calculator', desc: 'Easily calculate percentages for multiple math use-cases.' },
+        { name: 'Fraction Calculator', path: '/fraction-calculator', desc: 'Add, subtract, multiply, and divide fractions with step-by-step simplification.' },
+        { name: 'Random Number Generator', path: '/random-number-generator', desc: 'Generate true random numbers instantly within a custom range.' },
+        { name: 'Volume Calculator', path: '/volume-calculator', desc: 'Calculate the internal volume of common 3D geometric shapes.' },
+        { name: 'Standard Deviation Calculator', path: '/standard-deviation-calculator', desc: 'Calculate the standard deviation, variance, mean, and sum of a data set.' },
+        { name: 'Binary Calculator', path: '/binary-calculator', desc: 'Perform addition, subtraction, division, and logical operations on binary numbers.' }
       ]
     }
   ];
@@ -41,7 +46,7 @@ export default function Home() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {categories.map((cat) => (
-          <div key={cat.name} className="bg-gray-50 rounded-lg p-6 border border-gray-100 shadow-sm hover:shadow-md transition">
+          <div key={cat.name} id={cat.name.split(' ')[0].toLowerCase()} className="bg-gray-50 rounded-lg p-6 border border-gray-100 shadow-sm hover:shadow-md transition scroll-mt-24">
             <h2 className="text-2xl font-bold text-blue-600 mb-4">{cat.name}</h2>
             <ul className="space-y-4">
               {cat.calculators.map((calc) => (
