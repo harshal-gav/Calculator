@@ -5,20 +5,25 @@ export default function Home() {
     {
       name: 'Financial Calculators',
       calculators: [
-        { name: 'Mortgage Calculator', path: '/financial/mortgage-calculator', desc: 'Estimate your monthly mortgage payments including taxes and insurance.' }
+        { name: 'Mortgage Calculator', path: '/mortgage-calculator', desc: 'Estimate your monthly mortgage payments including taxes and insurance.' },
+        { name: 'Auto Loan Calculator', path: '/auto-loan-calculator', desc: 'Find out how much your monthly car payment will be and total interest paid.' },
+        { name: 'Payment Calculator', path: '/payment-calculator', desc: 'Calculate your monthly payments for any type of fixed-term loan.' },
+        { name: 'Amortization Calculator', path: '/amortization-calculator', desc: 'View a detailed month-by-month breakdown of your loan payoff schedule.' },
+        { name: 'Salary Calculator', path: '/salary-calculator', desc: 'Convert your salary equivalent between hourly, daily, weekly, and annual amounts.' },
+        { name: 'Interest Rate Calculator', path: '/interest-rate-calculator', desc: 'Calculate the future accumulated value of an investment with compound interest.' }
       ]
     },
     {
       name: 'Health Calculators',
       calculators: [
-        { name: 'BMI Calculator', path: '/health/bmi-calculator', desc: 'Find out your Body Mass Index and see if you are at a healthy weight.' }
+        { name: 'BMI Calculator', path: '/bmi-calculator', desc: 'Find out your Body Mass Index and see if you are at a healthy weight.' }
       ]
     },
     {
       name: 'Math Calculators',
       calculators: [
-        { name: 'Scientific Calculator', path: '/math/scientific-calculator', desc: 'A comprehensive free online scientific calculator.' },
-        { name: 'Percentage Calculator', path: '/math/percentage-calculator', desc: 'Easily calculate percentages for multiple math use-cases.' }
+        { name: 'Scientific Calculator', path: '/scientific-calculator', desc: 'A comprehensive free online scientific calculator.' },
+        { name: 'Percentage Calculator', path: '/percentage-calculator', desc: 'Easily calculate percentages for multiple math use-cases.' }
       ]
     }
   ];
