@@ -76,7 +76,11 @@ export default function Home() {
         { name: 'Zodiac Sign Calculator', path: '/zodiac-calculator', desc: "Enter your birth date to instantly discover your astrological sun sign and ruling element." },
         { name: 'Random Password Generator', path: '/password-generator', desc: "Generate secure, highly-randomized passwords using cryptographic standards directly in your browser." },
         { name: 'Grade Calculator', path: '/grade-calculator', desc: 'Calculate your current class grade based on weighted assignments, and see what you need to score on your finals.' },
-        { name: 'GPA Calculator', path: '/gpa-calculator', desc: 'Enter your course list, credits, and expected grades to instantly calculate your cumulative Grade Point Average (GPA).' }
+        { name: 'GPA Calculator', path: '/gpa-calculator', desc: 'Enter your course list, credits, and expected grades to instantly calculate your cumulative Grade Point Average (GPA).' },
+        { name: 'Angle Converter', path: '/angle-converter', desc: 'Instantly convert angles between degrees, radians, gradians, and more.' },
+        { name: 'Frequency Converter', path: '/frequency-converter', desc: 'Convert frequency between Hertz, Kilohertz, Megahertz, RPM, and more.' },
+        { name: 'Volume Converter', path: '/volume-converter', desc: 'Instantly convert volume measurements across metric, US customary, and Imperial units.' },
+        { name: 'Time Zone Converter', path: '/time-zone-converter', desc: 'Instantly convert a specific date and time across global time zones.' }
       ]
     },
     {
@@ -118,7 +122,8 @@ export default function Home() {
         { name: 'Fuel Economy Converter', path: '/fuel-economy-converter', desc: 'Convert gas mileage values between US MPG, UK MPG, L/100km, and km/L.' },
         { name: 'Roman Numeral Converter', path: '/roman-numeral-converter', desc: 'Convert standard numbers to Roman numerals (I, V, X, L, C, D, M) and vice versa instantly.' },
         { name: 'Word Count Calculator', path: '/word-count-calculator', desc: 'Instantly track words, characters, sentences, and estimated reading time as you type or paste text.' },
-        { name: 'Shoe Size Converter', path: '/shoe-size-calculator', desc: 'Instantly convert adult shoe sizes between US (Men/Women), UK, EU, and measurement in Centimeters (CM).' }
+        { name: 'Shoe Size Converter', path: '/shoe-size-calculator', desc: 'Instantly convert adult shoe sizes between US (Men/Women), UK, EU, and measurement in Centimeters (CM).' },
+        { name: 'Roman Numeral Date Converter', path: '/roman-numeral-date-converter', desc: 'Convert any date from standard numbers into elegant Roman numerals.' }
       ]
     },
     {
