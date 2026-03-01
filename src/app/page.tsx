@@ -41,7 +41,12 @@ export default function Home() {
         { name: 'Time Calculator', path: '/time-calculator', desc: 'Add or subtract blocks of time easily in hours, minutes, and seconds.' },
         { name: 'Inflation Calculator', path: '/inflation-calculator', desc: 'Calculate how inflation impacts the future cost of goods and purchasing power.' },
         { name: 'Sales Tax Calculator', path: '/sales-tax-calculator', desc: 'Quickly add sales tax to an item\'s price or reverse calculate to find pre-tax cost.' },
-        { name: 'Discount Calculator', path: '/discount-calculator', desc: 'Calculate your final price and exact savings after single or stacked store discounts.' }
+        { name: 'Discount Calculator', path: '/discount-calculator', desc: 'Calculate your final price and exact savings after single or stacked store discounts.' },
+        { name: 'Length Converter', path: '/length-converter', desc: 'Instantly convert between metric, imperial, and astronomical units of length.' },
+        { name: 'Weight Converter', path: '/weight-converter', desc: 'Convert accurately between all major metric and imperial units of mass.' },
+        { name: 'Temperature Converter', path: '/temperature-converter', desc: 'Instantly convert degrees between Celsius, Fahrenheit, and Kelvin scales.' },
+        { name: 'Speed Converter', path: '/speed-converter', desc: 'Convert velocity and speed measurements across metric, imperial, and nautical scales.' },
+        { name: 'Data Converter', path: '/data-converter', desc: 'Convert digital storage units between bits, bytes, kilobytes, megabytes, gigabytes, and more.' }
       ]
     },
     {
