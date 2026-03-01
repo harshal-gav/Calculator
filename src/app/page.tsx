@@ -16,7 +16,12 @@ export default function Home() {
     {
       name: 'Health Calculators',
       calculators: [
-        { name: 'BMI Calculator', path: '/bmi-calculator', desc: 'Find out your Body Mass Index and see if you are at a healthy weight.' }
+        { name: 'BMI Calculator', path: '/bmi-calculator', desc: 'Find out your Body Mass Index and see if you are at a healthy weight.' },
+        { name: 'Calorie Calculator', path: '/calorie-calculator', desc: 'Estimate the number of calories you need to consume daily to maintain, lose, or gain weight.' },
+        { name: 'Body Fat Calculator', path: '/body-fat-calculator', desc: 'Estimate your body fat percentage using the accurate US Navy tape measurement method.' },
+        { name: 'Pregnancy Calculator', path: '/pregnancy-calculator', desc: 'Calculate your estimated due date, conception date, and see your current trimester timeline.' },
+        { name: 'Ideal Weight Calculator', path: '/ideal-weight-calculator', desc: 'Discover your medically recommended ideal body weight based on multiple scientific formulas.' },
+        { name: 'TDEE Calculator', path: '/tdee-calculator', desc: 'Calculate your Total Daily Energy Expenditure (TDEE), the exact calories your body burns per day.' }
       ]
     },
     {
