@@ -110,6 +110,16 @@ export default function Home() {
         { name: 'Word Count Calculator', path: '/word-count-calculator', desc: 'Instantly track words, characters, sentences, and estimated reading time as you type or paste text.' },
         { name: 'Shoe Size Converter', path: '/shoe-size-calculator', desc: 'Instantly convert adult shoe sizes between US (Men/Women), UK, EU, and measurement in Centimeters (CM).' }
       ]
+    },
+    {
+      name: 'Geometry & Shapes',
+      calculators: [
+        { name: 'Cone Calculator', path: '/cone-calculator', desc: 'Enter the radius and height of a right circular cone to instantly find its volume, surface area, and slant height.' },
+        { name: 'Cylinder Calculator', path: '/cylinder-calculator', desc: 'Enter the radius and height of a cylinder to calculate its volume, surface area, and lateral area.' },
+        { name: 'Sphere Calculator', path: '/sphere-calculator', desc: 'Enter the radius of a sphere to calculate its volume, surface area, and circumference instantly.' },
+        { name: 'Rectangle Calculator', path: '/rectangle-calculator', desc: 'Enter the length and width of a rectangle to instantly find its area, perimeter, and diagonal length.' },
+        { name: 'Rhombus Calculator', path: '/rhombus-calculator', desc: 'Enter the two diagonals of a rhombus to instantly calculate its area, side length, and perimeter.' }
+      ]
     }
   ];
 
