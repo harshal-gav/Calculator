@@ -48,7 +48,12 @@ export default function Home() {
         { name: 'Random Number Generator', path: '/random-number-generator', desc: 'Generate true random numbers instantly within a custom range.' },
         { name: 'Volume Calculator', path: '/volume-calculator', desc: 'Calculate the internal volume of common 3D geometric shapes.' },
         { name: 'Standard Deviation Calculator', path: '/standard-deviation-calculator', desc: 'Calculate the standard deviation, variance, mean, and sum of a data set.' },
-        { name: 'Binary Calculator', path: '/binary-calculator', desc: 'Perform addition, subtraction, division, and logical operations on binary numbers.' }
+        { name: 'Binary Calculator', path: '/binary-calculator', desc: 'Perform addition, subtraction, division, and logical operations on binary numbers.' },
+        { name: 'Area Calculator', path: '/area-calculator', desc: 'Find the surface area of rectangles, squares, triangles, and circles.' },
+        { name: 'Triangle Calculator', path: '/triangle-calculator', desc: 'Calculate the area, perimeter, and internal angles of any valid triangle.' },
+        { name: 'Circle Calculator', path: '/circle-calculator', desc: 'Input any single metric to instantly calculate the radius, diameter, circumference, and area.' },
+        { name: 'Perimeter Calculator', path: '/perimeter-calculator', desc: 'Calculate the total perimeter of 2D shapes including random polygons.' },
+        { name: 'Pythagorean Calculator', path: '/pythagorean-calculator', desc: 'Calculate the hypotenuse or missing leg of a right triangle with step-by-step arithmetic.' }
       ]
     }
   ];
