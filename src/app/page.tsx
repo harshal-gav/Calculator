@@ -63,7 +63,12 @@ export default function Home() {
         { name: 'Triangle Calculator', path: '/triangle-calculator', desc: 'Calculate the area, perimeter, and internal angles of any valid triangle.' },
         { name: 'Circle Calculator', path: '/circle-calculator', desc: 'Input any single metric to instantly calculate the radius, diameter, circumference, and area.' },
         { name: 'Perimeter Calculator', path: '/perimeter-calculator', desc: 'Calculate the total perimeter of 2D shapes including random polygons.' },
-        { name: 'Pythagorean Calculator', path: '/pythagorean-calculator', desc: 'Calculate the hypotenuse or missing leg of a right triangle with step-by-step arithmetic.' }
+        { name: 'Pythagorean Calculator', path: '/pythagorean-calculator', desc: 'Calculate the hypotenuse or missing leg of a right triangle with step-by-step arithmetic.' },
+        { name: 'Mean Median Mode Calculator', path: '/mean-median-mode-calculator', desc: 'Enter a raw data set to instantly calculate its central tendencies, range, sum, processing count, and sorted order.' },
+        { name: 'Probability Calculator', path: '/probability-calculator', desc: 'Calculate the likelihood of single events, independent multi-event scenarios, and associated odds.' },
+        { name: 'LCM Calculator', path: '/lcm-calculator', desc: 'Instantly compute the Least Common Multiple (LCM) for a dataset of two or more integers.' },
+        { name: 'GCF Calculator', path: '/gcf-calculator', desc: 'Calculates the Greatest Common Factor (also known as the Highest Common Factor) of a dataset of integers.' },
+        { name: 'Factorial Calculator', path: '/factorial-calculator', desc: 'Calculate the exact factorial (n!) of any whole number down to its precise individual digits.' }
       ]
     }
   ];
