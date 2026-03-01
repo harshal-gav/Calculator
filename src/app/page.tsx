@@ -156,7 +156,12 @@ export default function Home() {
         { name: 'Half-Life Calculator', path: '/half-life-calculator', desc: 'Calculate radioactive decay factors including remaining quantity, time elapsed, initial quantity, or half-life duration.' },
         { name: 'Density Calculator', path: '/density-calculator', desc: 'Calculate Density (ρ), Mass (m), or Volume (V) of an object using the standard density formula.' },
         { name: 'Force Calculator', path: '/force-calculator', desc: "Calculate Force (F), Mass (m), or Acceleration (a) using Newton's Second Law of Motion." },
-        { name: 'Kinetic Energy Calculator', path: '/kinetic-energy-calculator', desc: 'Determine the energy of an object in motion. Calculate Kinetic Energy (KE), Mass (m), or Velocity (v).' }
+        { name: 'Kinetic Energy Calculator', path: '/kinetic-energy-calculator', desc: 'Determine the energy of an object in motion. Calculate Kinetic Energy (KE), Mass (m), or Velocity (v).' },
+        { name: 'Velocity Calculator', path: '/velocity-calculator', desc: 'Calculate velocity, average speed, distance, or time using the kinematic formula.' },
+        { name: 'Acceleration Calculator', path: '/acceleration-calculator', desc: 'Determine acceleration, final velocity, initial velocity, or time using kinematic equations.' },
+        { name: 'Power Calculator', path: '/power-calculator', desc: 'Calculate mechanical or electrical power, work (energy), or time.' },
+        { name: 'Work Calculator', path: '/work-calculator', desc: 'Calculate mechanical Work (W), Force (F), or displacement Distance (d) in physics.' },
+        { name: "Ohm's Law Calculator", path: '/ohms-law-calculator', desc: 'Enter any two values (V, I, R, P) to instantly calculate the remaining properties in the circuit.' }
       ]
     }
   ];
