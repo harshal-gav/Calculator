@@ -105,7 +105,12 @@ export default function Home() {
         { name: 'Probability Calculator', path: '/probability-calculator', desc: 'Calculate the likelihood of single events, independent multi-event scenarios, and associated odds.' },
         { name: 'LCM Calculator', path: '/lcm-calculator', desc: 'Instantly compute the Least Common Multiple (LCM) for a dataset of two or more integers.' },
         { name: 'GCF Calculator', path: '/gcf-calculator', desc: 'Calculates the Greatest Common Factor (also known as the Highest Common Factor) of a dataset of integers.' },
-        { name: 'Factorial Calculator', path: '/factorial-calculator', desc: 'Calculate the exact factorial (n!) of any whole number down to its precise individual digits.' }
+        { name: 'Factorial Calculator', path: '/factorial-calculator', desc: 'Calculate the exact factorial (n!) of any whole number down to its precise individual digits.' },
+        { name: 'Quadratic Formula Calculator', path: '/quadratic-formula-calculator', desc: 'Solve quadratic equations in the form ax² + bx + c = 0 to find real and complex roots completely instantly.' },
+        { name: 'Matrix Calculator', path: '/matrix-calculator', desc: 'Add, subtract, multiply, and find the determinant of 2x2 matrices instantly.' },
+        { name: 'Scientific Notation Converter', path: '/scientific-notation-converter', desc: 'Convert instantly between standard decimal format and scientific exponential notation.' },
+        { name: 'Prime Factorization Calculator', path: '/prime-factorization-calculator', desc: 'Decompose any integer into a product of its prime factors instantly.' },
+        { name: 'Order of Operations Calculator', path: '/order-of-operations-calculator', desc: 'Evaluate mathematical expressions step-by-step using PEMDAS/BODMAS rules.' }
       ]
     },
     {
