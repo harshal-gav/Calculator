@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import AdSpace from '@/components/AdSpace';
 
 export default function PercentageCalculator() {
     const [whatIsVal1, setWhatIsVal1] = useState('');
@@ -58,8 +57,6 @@ export default function PercentageCalculator() {
                 </div>
                 <button onClick={clearAll} className="text-gray-500 hover:text-red-500 transition font-medium text-sm">Clear All</button>
             </div>
-
-            <AdSpace slot="percentage-calc-top" format="auto" className="mb-6 rounded-lg overflow-hidden" />
 
             <div className="space-y-8">
 

@@ -3,8 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AdSpace from "@/components/AdSpace";
 import FirebaseAnalytics from "@/components/FirebaseAnalytics";
+import StickyBottomAd from "@/components/StickyBottomAd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,11 +50,11 @@ export default function RootLayout({
       >
         <FirebaseAnalytics />
         <Navbar />
-        <AdSpace slot="header-ad" format="auto" className="my-2 max-w-7xl mx-auto" />
-        <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full bg-white shadow-sm rounded-lg my-4">
+        <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full bg-white shadow-sm rounded-lg my-4 mb-24">
           {children}
         </main>
         <Footer />
+        <StickyBottomAd />
       </body>
     </html>
   );
