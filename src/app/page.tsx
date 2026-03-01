@@ -20,7 +20,12 @@ export default function Home() {
         { name: 'Margin Calculator', path: '/margin-calculator', desc: 'Calculate gross profit margin, profit dollars, and markup percentage from your cost and revenue.' },
         { name: 'Markup Calculator', path: '/markup-calculator', desc: 'Calculate your final selling price, profit dollars, and derived margin based on your cost and desired markup percentage.' },
         { name: 'VAT Calculator', path: '/vat-calculator', desc: 'Quickly add VAT to a net price or extract VAT from a gross price to find the pre-VAT cost.' },
-        { name: 'Break Even Calculator', path: '/break-even-calculator', desc: 'Determine the exact number of units you need to sell to cover your costs and start making a profit.' }
+        { name: 'Break Even Calculator', path: '/break-even-calculator', desc: 'Determine the exact number of units you need to sell to cover your costs and start making a profit.' },
+        { name: 'Rent Calculator', path: '/rent-calculator', desc: 'Discover exactly how much rent you can afford based on the 30% rule and your debt-to-income ratio.' },
+        { name: 'Debt Payoff Calculator', path: '/debt-payoff-calculator', desc: 'Discover how long it will take to become debt-free and exactly how much interest you will pay.' },
+        { name: 'Refinance Calculator', path: '/refinance-calculator', desc: 'Determine if refinancing your mortgage or loan makes financial sense by analyzing your breakeven timeline.' },
+        { name: 'FHA Loan Calculator', path: '/fha-loan-calculator', desc: 'Calculate your precise FHA mortgage payment including Upfront MIP, Annual MIP, Taxes, and Insurance.' },
+        { name: 'Home Equity Calculator', path: '/home-equity-calculator', desc: 'Discover your total home equity and calculate exactly how much cash you can borrow via a HELOC or Home Equity Loan.' }
       ]
     },
     {
