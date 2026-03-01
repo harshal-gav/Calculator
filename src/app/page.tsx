@@ -15,7 +15,12 @@ export default function Home() {
         { name: 'Compound Interest Calculator', path: '/compound-interest-calculator', desc: 'Discover how your savings and investments will grow over time through compound interest.' },
         { name: 'Investment Calculator', path: '/investment-calculator', desc: 'Forecast the long term growth of your investment portfolio and estimate future tax liabilities.' },
         { name: 'Auto Lease Calculator', path: '/auto-lease-calculator', desc: 'Calculate your exact monthly car lease payment including depreciation, rent charges, and sales tax.' },
-        { name: 'Present Value Calculator', path: '/present-value-calculator', desc: 'Calculate the current worth of a future sum of money given a specific expected rate of return.' }
+        { name: 'Present Value Calculator', path: '/present-value-calculator', desc: 'Calculate the current worth of a future sum of money given a specific expected rate of return.' },
+        { name: 'Tip Calculator', path: '/tip-calculator', desc: 'Calculate gratuity instantly, split the bill evenly among your party, and find the exact per-person cost.' },
+        { name: 'Margin Calculator', path: '/margin-calculator', desc: 'Calculate gross profit margin, profit dollars, and markup percentage from your cost and revenue.' },
+        { name: 'Markup Calculator', path: '/markup-calculator', desc: 'Calculate your final selling price, profit dollars, and derived margin based on your cost and desired markup percentage.' },
+        { name: 'VAT Calculator', path: '/vat-calculator', desc: 'Quickly add VAT to a net price or extract VAT from a gross price to find the pre-VAT cost.' },
+        { name: 'Break Even Calculator', path: '/break-even-calculator', desc: 'Determine the exact number of units you need to sell to cover your costs and start making a profit.' }
       ]
     },
     {
