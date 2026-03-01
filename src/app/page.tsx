@@ -26,7 +26,12 @@ export default function Home() {
         { name: 'Body Fat Calculator', path: '/body-fat-calculator', desc: 'Estimate your body fat percentage using the accurate US Navy tape measurement method.' },
         { name: 'Pregnancy Calculator', path: '/pregnancy-calculator', desc: 'Calculate your estimated due date, conception date, and see your current trimester timeline.' },
         { name: 'Ideal Weight Calculator', path: '/ideal-weight-calculator', desc: 'Discover your medically recommended ideal body weight based on multiple scientific formulas.' },
-        { name: 'TDEE Calculator', path: '/tdee-calculator', desc: 'Calculate your Total Daily Energy Expenditure (TDEE), the exact calories your body burns per day.' }
+        { name: 'TDEE Calculator', path: '/tdee-calculator', desc: 'Calculate your Total Daily Energy Expenditure (TDEE), the exact calories your body burns per day.' },
+        { name: 'BMR Calculator', path: '/bmr-calculator', desc: 'Calculate your Basal Metabolic Rate — the exact number of calories your body burns while at complete rest.' },
+        { name: 'Pace Calculator', path: '/pace-calculator', desc: 'Calculate your running pace and speed per kilometer and per mile based on race distance and time.' },
+        { name: 'Blood Pressure Calculator', path: '/blood-pressure-calculator', desc: 'Input your blood pressure reading to immediately classify your cardiovascular health status.' },
+        { name: 'Macro Calculator', path: '/macro-calculator', desc: 'Discover exactly how many grams of protein, fats, and carbs you should eat per day based on your dietary goals.' },
+        { name: 'Lean Body Mass Calculator', path: '/lean-body-mass-calculator', desc: 'Calculate the exact weight of your body minus all fat content using three different scientific formulas.' }
       ]
     },
     {
