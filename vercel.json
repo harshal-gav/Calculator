@@ -1,0 +1,15 @@
+{
+    "redirects": [
+        {
+            "source": "/(.*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "(?<host>.*.vercel.app)"
+                }
+            ],
+            "destination": "https://calculator-all.com/$1",
+            "permanent": true
+        }
+    ]
+}
