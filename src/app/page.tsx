@@ -28,7 +28,10 @@ export default function Home() {
         { name: 'Home Equity Calculator', path: '/home-equity-calculator', desc: 'Discover your total home equity and calculate exactly how much cash you can borrow via a HELOC or Home Equity Loan.' },
         { name: 'Tip Splitting Calculator', path: '/tip-splitting-calculator', desc: 'Quickly calculate the tip and easily divide the total bill among your group.' },
         { name: 'Savings Goal Calculator', path: '/savings-goal-calculator', desc: 'Find out exactly how long it will take to reach your savings goal via monthly contributions.' },
-        { name: 'Retirement Calculator', path: '/retirement-calculator', desc: 'Project your retirement nest egg and see if it safely covers your estimated annual expenses.' }
+        { name: 'Retirement Calculator', path: '/retirement-calculator', desc: 'Project your retirement nest egg and see if it safely covers your estimated annual expenses.' },
+        { name: 'Credit Card Payoff Calculator', path: '/credit-card-payoff-calculator', desc: 'Determine the exact date you will become debt-free by calculating an optimal payoff strategy.' },
+        { name: 'Currency Converter', path: '/currency-converter', desc: 'Live foreign exchange rates for popular global currencies. Convert instantly.' },
+        { name: 'Stock Return Calculator', path: '/stock-return-calculator', desc: 'Calculate your exact Net Profit and Return on Investment (ROI) for individual stock trades.' }
       ]
     },
     {
