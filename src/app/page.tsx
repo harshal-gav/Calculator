@@ -44,7 +44,12 @@ export default function Home() {
         { name: 'Pace Calculator', path: '/pace-calculator', desc: 'Calculate your running pace and speed per kilometer and per mile based on race distance and time.' },
         { name: 'Blood Pressure Calculator', path: '/blood-pressure-calculator', desc: 'Input your blood pressure reading to immediately classify your cardiovascular health status.' },
         { name: 'Macro Calculator', path: '/macro-calculator', desc: 'Discover exactly how many grams of protein, fats, and carbs you should eat per day based on your dietary goals.' },
-        { name: 'Lean Body Mass Calculator', path: '/lean-body-mass-calculator', desc: 'Calculate the exact weight of your body minus all fat content using three different scientific formulas.' }
+        { name: 'Lean Body Mass Calculator', path: '/lean-body-mass-calculator', desc: 'Calculate the exact weight of your body minus all fat content using three different scientific formulas.' },
+        { name: 'Protein Calculator', path: '/protein-calculator', desc: 'Calculate your optimal daily protein intake based on your body weight, activity level, and fitness goals.' },
+        { name: 'Carbohydrate Calculator', path: '/carbohydrate-calculator', desc: 'Determine exactly how many grams of carbohydrates you should eat daily based on your metabolic rate and fitness goals.' },
+        { name: 'Fat Calculator', path: '/fat-calculator', desc: 'Calculate your optimal daily dietary fat intake based on your body metrics and diet style.' },
+        { name: 'Blood Volume Calculator', path: '/blood-volume-calculator', desc: 'Estimate your total blood volume using the scientifically established Nadler and Lemmens formulas.' },
+        { name: 'Blood Alcohol Calculator', path: '/bac-calculator', desc: 'Estimate your Blood Alcohol Content (BAC) based on the standard Widmark formula.' }
       ]
     },
     {
