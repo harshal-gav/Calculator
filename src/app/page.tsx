@@ -100,6 +100,16 @@ export default function Home() {
         { name: 'Base64 Converter', path: '/base64-converter', desc: 'Quickly encode text to Base64 format, or decode Base64 strings back into readable text.' },
         { name: 'PX to REM Converter', path: '/px-rem-converter', desc: "Convert CSS pixels (px) to relative root ems (rem) based on your project's root font size." }
       ]
+    },
+    {
+      name: 'Miscellaneous Conversions',
+      calculators: [
+        { name: 'Cooking Measurement Converter', path: '/cooking-converter', desc: 'Instantly convert recipe volumes and weights between metric and imperial systems.' },
+        { name: 'Fuel Economy Converter', path: '/fuel-economy-converter', desc: 'Convert gas mileage values between US MPG, UK MPG, L/100km, and km/L.' },
+        { name: 'Roman Numeral Converter', path: '/roman-numeral-converter', desc: 'Convert standard numbers to Roman numerals (I, V, X, L, C, D, M) and vice versa instantly.' },
+        { name: 'Word Count Calculator', path: '/word-count-calculator', desc: 'Instantly track words, characters, sentences, and estimated reading time as you type or paste text.' },
+        { name: 'Shoe Size Converter', path: '/shoe-size-calculator', desc: 'Instantly convert adult shoe sizes between US (Men/Women), UK, EU, and measurement in Centimeters (CM).' }
+      ]
     }
   ];
 
