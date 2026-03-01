@@ -10,7 +10,12 @@ export default function Home() {
         { name: 'Payment Calculator', path: '/payment-calculator', desc: 'Calculate your monthly payments for any type of fixed-term loan.' },
         { name: 'Amortization Calculator', path: '/amortization-calculator', desc: 'View a detailed month-by-month breakdown of your loan payoff schedule.' },
         { name: 'Salary Calculator', path: '/salary-calculator', desc: 'Convert your salary equivalent between hourly, daily, weekly, and annual amounts.' },
-        { name: 'Interest Rate Calculator', path: '/interest-rate-calculator', desc: 'Calculate the future accumulated value of an investment with compound interest.' }
+        { name: 'Interest Rate Calculator', path: '/interest-rate-calculator', desc: 'Calculate the future accumulated value of an investment with compound interest.' },
+        { name: 'ROI Calculator', path: '/roi-calculator', desc: 'Calculate your exact Return on Investment and Annualized ROI over any timeframe.' },
+        { name: 'Compound Interest Calculator', path: '/compound-interest-calculator', desc: 'Discover how your savings and investments will grow over time through compound interest.' },
+        { name: 'Investment Calculator', path: '/investment-calculator', desc: 'Forecast the long term growth of your investment portfolio and estimate future tax liabilities.' },
+        { name: 'Auto Lease Calculator', path: '/auto-lease-calculator', desc: 'Calculate your exact monthly car lease payment including depreciation, rent charges, and sales tax.' },
+        { name: 'Present Value Calculator', path: '/present-value-calculator', desc: 'Calculate the current worth of a future sum of money given a specific expected rate of return.' }
       ]
     },
     {
