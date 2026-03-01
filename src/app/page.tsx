@@ -135,6 +135,16 @@ export default function Home() {
         { name: 'Rectangle Calculator', path: '/rectangle-calculator', desc: 'Enter the length and width of a rectangle to instantly find its area, perimeter, and diagonal length.' },
         { name: 'Rhombus Calculator', path: '/rhombus-calculator', desc: 'Enter the two diagonals of a rhombus to instantly calculate its area, side length, and perimeter.' }
       ]
+    },
+    {
+      name: 'Chemistry & Science',
+      calculators: [
+        { name: 'Molar Mass Calculator', path: '/molar-mass-calculator', desc: 'Calculate the molar mass (molecular weight) of a chemical compound and analyze its elemental composition.' },
+        { name: 'Half-Life Calculator', path: '/half-life-calculator', desc: 'Calculate radioactive decay factors including remaining quantity, time elapsed, initial quantity, or half-life duration.' },
+        { name: 'Density Calculator', path: '/density-calculator', desc: 'Calculate Density (ρ), Mass (m), or Volume (V) of an object using the standard density formula.' },
+        { name: 'Force Calculator', path: '/force-calculator', desc: "Calculate Force (F), Mass (m), or Acceleration (a) using Newton's Second Law of Motion." },
+        { name: 'Kinetic Energy Calculator', path: '/kinetic-energy-calculator', desc: 'Determine the energy of an object in motion. Calculate Kinetic Energy (KE), Mass (m), or Velocity (v).' }
+      ]
     }
   ];
 
