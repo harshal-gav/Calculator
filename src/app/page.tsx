@@ -56,7 +56,12 @@ export default function Home() {
         { name: 'Weight Converter', path: '/weight-converter', desc: 'Convert accurately between all major metric and imperial units of mass.' },
         { name: 'Temperature Converter', path: '/temperature-converter', desc: 'Instantly convert degrees between Celsius, Fahrenheit, and Kelvin scales.' },
         { name: 'Speed Converter', path: '/speed-converter', desc: 'Convert velocity and speed measurements across metric, imperial, and nautical scales.' },
-        { name: 'Data Converter', path: '/data-converter', desc: 'Convert digital storage units between bits, bytes, kilobytes, megabytes, gigabytes, and more.' }
+        { name: 'Data Converter', path: '/data-converter', desc: 'Convert digital storage units between bits, bytes, kilobytes, megabytes, gigabytes, and more.' },
+        { name: 'Age Calculator', path: '/age-calculator', desc: 'Calculate chronological age precisely in years, months, days, weeks, and total days.' },
+        { name: 'Area Converter', path: '/area-converter', desc: 'Instantly convert area and land measurements between acres, hectares, square feet, square meters, and more.' },
+        { name: 'Energy Converter', path: '/energy-converter', desc: 'Convert energy, work, and heat metrics between Joules, Calories, kWh, BTUs, and Electron-volts.' },
+        { name: 'Pressure Converter', path: '/pressure-converter', desc: 'Convert pressure measurements easily between Pascals, PSI, Bar, Atmospheres, and more.' },
+        { name: 'Power Converter', path: '/power-converter', desc: 'Convert electrical and mechanical power ratings between Watts, Kilowatts, Horsepower, and BTUs instantly.' }
       ]
     },
     {
