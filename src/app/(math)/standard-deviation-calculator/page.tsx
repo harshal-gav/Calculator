@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function StandardDeviationCalculator() {
     const [inputData, setInputData] = useState('10, 12, 23, 23, 16, 23, 21, 16');
@@ -144,6 +145,65 @@ export default function StandardDeviationCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Standard Deviation Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Standard Deviation Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Standard Deviation Calculator</strong> is a statistical analysis tool that measures the amount of variation or dispersion in a set of numerical values. Essentially, it tells you how spread out your data is from the mathematical average (the mean).</p>
+                        <p>A low standard deviation means most of your numbers are clustered tightly around the average, indicating consistency. A high standard deviation means your numbers are spread out over a wide range, indicating high volatility or variance.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>The calculation requires first finding the Mean, then finding the squared differences (Variance), and finally taking the square root. Crucially, the formula changes slightly depending on if your data is a Sample or the entire Population:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-lg shadow-sm my-4 overflow-x-auto space-y-4 text-cyan-900 border border-cyan-100">
+                            <p><strong>Sample (N-1):</strong> <em>s</em> = √( Σ(x - x̄)² / (n - 1) )</p>
+                            <p><strong>Population (N):</strong> <em>σ</em> = √( Σ(x - μ)² / N )</p>
+                        </div>
+                        <p className="mt-4"><strong>Note:</strong> We automatically default to the <em>Sample (N-1)</em> formula as it provides an unbiased estimate of population variance, which is what 95% of real-world statistical applications require.</p>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's find the Standard Deviation of five test scores: <strong>85, 90, 88, 92, and 85</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Step 1 (Find the Mean):</strong> (85+90+88+92+85) / 5 = <strong>88</strong>.</li>
+                            <li><strong>Step 2 (Find the Deviations):</strong> Subtract the mean from each score: (-3, 2, 0, 4, -3).</li>
+                            <li><strong>Step 3 (Square them):</strong> (9, 4, 0, 16, 9).</li>
+                            <li><strong>Step 4 (Find Variance):</strong> Sum them up (38) and divide by N-1 (4). Variance = <strong>9.5</strong>.</li>
+                            <li><strong>Step 5 (Square Root):</strong> √9.5 = <strong>3.08</strong> Standard Deviation.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Finance & Investing:</strong> Measuring the historic volatility of a mutual fund or stock. High standard deviation implies a high-risk, high-reward investment.</li>
+                        <li><strong>Manufacturing & Quality Control:</strong> Ensuring factory machines are producing parts to the exact millimeter. A low deviation means high consistency on the assembly line.</li>
+                        <li><strong>Meteorology:</strong> Analyzing daily temperature fluctuations to determine if a specific month is experiencing unusually extreme weather compared to historical averages.</li>
+                        <li><strong>Education:</strong> Grading "on a curve" by determining how far above or below the class average a specific student's test score lies.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Should I use the Sample or Population formula?",
+                        answer: "Use 'Population' ONLY if your data contains every single member of the group you are studying (e.g., the heights of every player currently in the NBA). Use 'Sample' if your data is just a subset representing a larger group (e.g., the heights of 100 random people at the mall). When in doubt, use Sample."
+                    },
+                    {
+                        question: "What is Variance?",
+                        answer: "Variance is simply the Standard Deviation squared. It is the intermediate step in the formula. While mathematically useful, Variance is measured in 'squared units' (like 'squared dollars' or 'squared degrees'), which makes it hard to interpret intuitively. Taking the square root gives you the Standard Deviation, which returns the measurement to its original units."
+                    },
+                    {
+                        question: "Can standard deviation be negative?",
+                        answer: "No. Because the formula requires squaring the differences (which turns all negatives into positives) and then taking the principal square root, standard deviation can never be a negative number. The absolute minimum is zero, which only occurs if every single number in your dataset is exactly the same."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Percentage Calculator", path: "/percentage-calculator", desc: "Easily compute advanced percentage problems in one click." },
+                    { name: "Fraction Calculator", path: "/fraction-calculator", desc: "Add, subtract, multiply, and divide standard fractions." },
+                    { name: "Random Number Generator", path: "/random-number-generator", desc: "Generate true random numbers within custom ranges." }
+                ]}
+            />
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function FractionCalculator() {
     const [num1, setNum1] = useState('');
@@ -172,6 +173,63 @@ export default function FractionCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Fraction Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Fraction Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Fraction Calculator</strong> is an advanced mathematical tool that handles the complex arithmetic of adding, subtracting, multiplying, and dividing standard fractions. Instead of manually finding lowest common denominators or struggling with improper fractions, this tool solves the equation and automatically reduces the final answer to its simplest form.</p>
+                        <p>In addition to the core fraction result, it automatically generates the equivalent Mixed Number (if the fraction is improper) and the exact Decimal Form.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>Calculating fractions requires utilizing the numerator (top number) and the denominator (bottom number) according to the order of operations. Let's look at the basic rules:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-lg shadow-sm my-4 overflow-x-auto space-y-4">
+                            <p><strong>Addition:</strong> (a/b) + (c/d) = (ad + bc) / bd</p>
+                            <p><strong>Multiplication:</strong> (a/b) × (c/d) = (ac) / (bd)</p>
+                            <p><strong>Division:</strong> (a/b) ÷ (c/d) = (ad) / (bc)</p>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's perform a classic fraction division: <strong>2/3 ÷ 4/5</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Step 1 (Keep, Change, Flip):</strong> To divide fractions, you multiply the first fraction by the reciprocal of the second. This changes the equation to 2/3 × 5/4.</li>
+                            <li><strong>Step 2 (Multiply straight across):</strong> 2 × 5 = 10 (Numerator). 3 × 4 = 12 (Denominator). The raw result is 10/12.</li>
+                            <li><strong>Step 3 (Simplify):</strong> Find the greatest common divisor of 10 and 12, which is 2. Divide both by 2 to get the final simplified result of <strong>5/6</strong>.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Carpentry & Construction:</strong> Adding fractional lengths of lumber like 3/8" and 5/16" to get perfectly precise measurements.</li>
+                        <li><strong>Baking & Cooking Recipes:</strong> Scaling up a recipe that calls for 3/4 cup of sugar so it serves exactly 1.5 times as many people, requiring fraction multiplication.</li>
+                        <li><strong>School Homework:</strong> Verifying middle school math homework and learning the correct step-by-step simplification logic.</li>
+                        <li><strong>Stock Market Historical Data:</strong> Analyzing historical stock prices which used to be quoted in fractions like 1/8 instead of decimals.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "What is an improper fraction?",
+                        answer: "An improper fraction is any fraction where the top number (numerator) is equal to or greater than the bottom number (denominator). For example, 5/3 or 8/8. These can be converted into mixed numbers."
+                    },
+                    {
+                        question: "What is a mixed number?",
+                        answer: "A mixed number combines a whole number and a proper fraction. For example, the improper fraction 5/3 is exactly equal to the mixed number 1 2/3."
+                    },
+                    {
+                        question: "How do I find a common denominator?",
+                        answer: "The easiest way to find a common denominator is to simply multiply the two denominators together. However, to find the 'Lowest Common Denominator' (LCD), you look for the smallest multiple that both individual denominators share."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Percentage Calculator", path: "/percentage-calculator", desc: "Easily compute advanced percentage problems in one click." },
+                    { name: "Volume Calculator", path: "/volume-calculator", desc: "Calculate the geometric volume of 3D shapes." },
+                    { name: "Standard Deviation Calculator", path: "/standard-deviation-calculator", desc: "Compute population and sample standard deviation." }
+                ]}
+            />
         </div>
     );
 }
