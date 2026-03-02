@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function CalorieCalculator() {
     const [age, setAge] = useState('25');
@@ -161,6 +162,63 @@ export default function CalorieCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Calorie Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Calorie Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Calorie Calculator</strong> helps you estimate your Total Daily Energy Expenditure (TDEE). Your TDEE is the exact number of calories your body burns in a 24-hour period, accounting for both your resting metabolism and your daily physical activity level.</p>
+                        <p>Once you know your exact TDEE, the calculator provides customized macro pathways outlining exactly how many calories you should eat per day to maintain your current weight, enter a caloric deficit to lose fat, or enter an anabolic surplus to build muscle.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>Our tool utilizes the widely respected <strong>Mifflin-St Jeor Equation</strong> to mathematically deduce your Basal Metabolic Rate (BMR), and then multiplies that BMR by your unique Activity Multiplier to find your TDEE.</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-lg shadow-sm my-4 overflow-x-auto space-y-4 text-rose-900 border border-rose-100">
+                            <p><strong>Men:</strong> BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) + 5</p>
+                            <p><strong>Women:</strong> BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) - 161</p>
+                            <p className="border-t border-rose-100 pt-4 mt-4"><strong>TDEE</strong> = BMR × Activity Level (1.2 to 1.9)</p>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's look at a <strong>25-year-old active male</strong> who is <strong>5'10" (177.8cm)</strong> and weighs <strong>160 lbs (72.5kg)</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Step 1 (Find BMR):</strong> (10 × 72.5) + (6.25 × 177.8) - (5 × 25) + 5 = <strong>1,716 Calories</strong>. This is what his body burns if he stays in bed all day.</li>
+                            <li><strong>Step 2 (Apply Activity Multiplier):</strong> Because he exercises 3-5 times a week, we multiply by 1.55.</li>
+                            <li><strong>Step 3 (Find TDEE):</strong> 1,716 × 1.55 = <strong>2,660 Calories</strong>.</li>
+                            <li><strong>Step 4 (Goal):</strong> To lose 1 pound of fat per week (a 500-calorie daily deficit), he should eat <strong>2,160 Calories</strong> daily.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Weight Loss (Cutting):</strong> Identifying the exact 500-calorie daily deficit needed to safely and sustainably lose 1 pound of fat per week without crashing your metabolism.</li>
+                        <li><strong>Muscle Gain (Bulking):</strong> Bodybuilders calculating a clean 300 to 500 calorie surplus to provide the energy required to synthesize new muscle tissue without gaining excess fat.</li>
+                        <li><strong>Athletic Maintenance:</strong> Elite marathon runners ensuring they are eating enough thousands of calories to properly fuel their massive physical expenditure.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "What is BMR versus TDEE?",
+                        answer: "BMR (Basal Metabolic Rate) is the raw number of calories your body burns just keeping your organs functioning while completely at rest. TDEE (Total Daily Energy Expenditure) is your BMR plus all the calories you burn walking, talking, digesting food, and exercising."
+                    },
+                    {
+                        question: "Is it safe to eat below my BMR to lose weight faster?",
+                        answer: "Medical professionals generally advise against eating below your BMR. Doing so forces your body to cannibalize muscle tissue for energy and severely down-regulates your metabolism, making future weight loss much harder."
+                    },
+                    {
+                        question: "Why does gender matter in the equation?",
+                        answer: "On average, men organically carry a higher percentage of lean muscle mass than women of the exact same height and weight. Because muscle tissue burns significantly more calories at rest than fat tissue, men inherently have a slightly higher BMR."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "BMI Calculator", path: "/bmi-calculator", desc: "Check your Body Mass Index based on your height and weight." },
+                    { name: "Body Fat Calculator", path: "/body-fat-calculator", desc: "Estimate your total body fat percentage based on U.S. Navy methods." },
+                    { name: "Ideal Weight Calculator", path: "/ideal-weight-calculator", desc: "Discover exactly how much you should weigh based on clinical formulas." }
+                ]}
+            />
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function BodyFatCalculator() {
     const [gender, setGender] = useState('male');
@@ -170,6 +171,63 @@ export default function BodyFatCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Body Fat Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Body Fat Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Body Fat Calculator</strong> estimates the exact percentage of your total body weight that is composed of fat tissue versus lean mass (muscle, bone, water, and organs). Unlike the BMI scale which only looks at your total weight, this calculator gives you a true picture of your body composition.</p>
+                        <p>We utilize the highly respected <strong>U.S. Navy Method</strong>. By taking simple measurements with a cloth measuring tape, this algorithm is widely considered the most accurate way to estimate body fat without spending hundreds of dollars on clinical DEXA scans or hydrostatic weighing.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>The U.S. Navy formula uses complex logarithms to estimate body density based on the circumference of specific body parts. The formulas differ slightly based on biological gender due to natural fat distribution patterns:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 overflow-x-auto space-y-4 text-red-900 border border-red-100">
+                            <p><strong>Males:</strong> %BF = 86.010 × log10(waist - neck) - 70.041 × log10(height) + 36.76</p>
+                            <p className="border-t border-red-100 pt-4 mt-4"><strong>Females:</strong> %BF = 163.205 × log10(waist + hip - neck) - 97.684 × log10(height) - 78.387</p>
+                        </div>
+                        <p className="mt-4 text-sm text-gray-500"><em>Note: All measurements in the formulas above are strictly in inches.</em></p>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's calculate the body fat for a <strong>male</strong> who weighs <strong>180 lbs</strong>, is <strong>70 inches</strong> tall, has a <strong>34-inch waist</strong>, and a <strong>16-inch neck</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Step 1 (Find Circumference Difference):</strong> Waist (34) - Neck (16) = 18.</li>
+                            <li><strong>Step 2 (Apply Navy Logarithm):</strong> 86.010 × log10(18) - 70.041 × log10(70) + 36.76.</li>
+                            <li><strong>Step 3 (The Result):</strong> This math results in a body fat percentage of exactly <strong>16.2%</strong>.</li>
+                            <li><strong>Step 4 (Fat vs Lean Mass):</strong> 16.2% of 180 lbs means he has <strong>29 lbs of Fat Mass</strong> and <strong>151 lbs of Lean Mass</strong>.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Fitness Competitors:</strong> Bodybuilders tracking sub-10% body fat levels to prepare for the main stage.</li>
+                        <li><strong>Weight Loss Journeys:</strong> Tracking true fat loss. Often, the scale doesn't move because you are building heavy muscle while burning fat; this calculator proves your progress.</li>
+                        <li><strong>Military Enlistment:</strong> Ensuring recruits meet the strict body composition standards required for active duty service.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Why do females have to measure their hips but males don't?",
+                        answer: "Biologically, men and women store fat differently. Men naturally accumulate visceral fat primarily around their abdomen (the 'beer belly' effect). Women naturally distribute essential fat around their hips, thighs, and buttocks for evolutionary and reproductive reasons. The Navy formula accounts for these anatomical differences."
+                    },
+                    {
+                        question: "What is an 'Ideal' body fat percentage?",
+                        answer: "Ideal body fat varies heavily by gender and goals. For men, 2-5% is essential (dangerously low), 6-13% is athletic, 14-17% is fit, and 18-24% is average. For women, 10-13% is essential, 14-20% is athletic, 21-24% is fit, and 25-31% is perfectly average and healthy."
+                    },
+                    {
+                        question: "Is this tape method actually accurate?",
+                        answer: "The U.S. Navy method is generally accurate within 3-4% of a clinical DEXA scan. While it isn't absolutely perfect, it is by far the most reliable method you can do at home for free. It is significantly more accurate than cheap bio-impedance smart scales, which can easily be thrown off by your daily hydration levels."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "BMI Calculator", path: "/bmi-calculator", desc: "Check your Body Mass Index based on your height and weight." },
+                    { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Calculate your daily calorie needs for weight loss, maintenance, or gain." },
+                    { name: "Ideal Weight Calculator", path: "/ideal-weight-calculator", desc: "Discover exactly how much you should weigh based on clinical formulas." }
+                ]}
+            />
         </div>
     );
 }

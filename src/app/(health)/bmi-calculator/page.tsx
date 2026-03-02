@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function BMICalculator() {
     const [age, setAge] = useState('25');
@@ -162,6 +163,62 @@ export default function BMICalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "BMI Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="BMI Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Body Mass Index (BMI) Calculator</strong> is a universally recognized screening tool used by doctors and health professionals worldwide to evaluate a person's weight relative to their height. It provides a simple numeric score that places you into health categories ranging from "underweight" to "obese."</p>
+                        <p>While BMI does not measure body fat directly, research shows it correlates strongly with direct measures of body fat, making it an inexpensive and easy way to screen for potential weight-related health issues.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>The BMI formula is simple math. It calculates your weight scaled to your height. It can be calculated using both Metric (kilograms and meters) and Imperial (pounds and inches) systems:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-lg shadow-sm my-4 overflow-x-auto space-y-4 text-green-900 border border-green-100">
+                            <p><strong>Metric:</strong> BMI = Weight (kg) / [Height (m)]²</p>
+                            <p><strong>Imperial:</strong> BMI = 703 × [Weight (lbs) / (Height (in))²]</p>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's calculate the BMI for a person who weighs <strong>70 kilograms</strong> and is <strong>175 centimeters</strong> tall (1.75 meters).</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Step 1 (Square the Height):</strong> 1.75 × 1.75 = 3.0625</li>
+                            <li><strong>Step 2 (Divide Weight by Squared Height):</strong> 70 / 3.0625 = 22.85</li>
+                            <li><strong>Step 3 (Categorize):</strong> A BMI of <strong>22.9</strong> falls perfectly into the "Normal Weight" category (18.5 - 24.9).</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Personal Health Tracking:</strong> Setting a healthy goal weight based on your current height and evaluating your progress over time.</li>
+                        <li><strong>Medical Screening:</strong> Doctors use BMI as the first step to assess if a patient is at an elevated risk for type 2 diabetes, high blood pressure, or heart disease.</li>
+                        <li><strong>Life Insurance:</strong> Actuaries and insurance companies frequently use BMI as a primary metric when calculating health risks and determining insurance premiums.</li>
+                        <li><strong>Athletics and Fitness:</strong> Bodybuilders and fitness competitors monitoring massive weight drops during "cutting phases" to ensure they do not hit dangerous "Severe Thinness" levels.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Is BMI accurate for athletes or bodybuilders?",
+                        answer: "No. This is one of the biggest limitations of the BMI formula. Because muscle is much denser than fat, a muscular athlete might weigh 220 pounds at 5'10, giving them a BMI of 31.6 (Obese), even if they have only 8% body fat. BMI cannot distinguish between fat and muscle weight."
+                    },
+                    {
+                        question: "Is the BMI chart the same for men and women?",
+                        answer: "Yes. For adults 20 years and older, the BMI calculation and the resulting category charts are exactly the same for both men and women. However, women organically tend to have more body fat than men at the exact same BMI, and older adults tend to have more body fat than younger adults at the same BMI."
+                    },
+                    {
+                        question: "Why does the calculator ask for Age and Gender?",
+                        answer: "While adult BMI is the same for everyone, children and teens (ages 2-19) are calculated differently. Their BMI result must be compared against age- and gender-specific percentile charts from the CDC because their body fat changes dynamically as they grow."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Calculate your daily calorie needs for weight loss, maintenance, or gain." },
+                    { name: "Body Fat Calculator", path: "/body-fat-calculator", desc: "Estimate your total body fat percentage based on U.S. Navy methods." },
+                    { name: "Ideal Weight Calculator", path: "/ideal-weight-calculator", desc: "Discover exactly how much you should weigh based on clinical formulas." }
+                ]}
+            />
         </div>
     );
 }

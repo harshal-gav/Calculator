@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function PregnancyCalculator() {
     const [lmpDate, setLmpDate] = useState('');
@@ -143,6 +144,62 @@ export default function PregnancyCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pregnancy Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Pregnancy Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Pregnancy Calculator</strong> is a vital medical tracking tool designed to help expectant mothers estimate their precise delivery date, track their current gestation progress down to the exact day, and map out critical milestones across all three trimesters.</p>
+                        <p>Using standard obstetric formulas utilized by doctors worldwide, the calculator instantly turns the date of your last menstrual cycle into a comprehensive, personalized pregnancy calendar.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>The global medical standard for estimating a pregnancy due date is <strong>Naegele's Rule</strong>. Because the exact moment of conception is usually unknown, pregnancies are universally measured starting from the first day of the mother's Last Menstrual Period (LMP).</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-lg shadow-sm my-4 overflow-x-auto space-y-4 text-fuchsia-900 border border-fuchsia-100">
+                            <p><strong>Standard Formula:</strong> Due Date = LMP + 280 Days</p>
+                            <p className="border-t border-fuchsia-100 pt-4 mt-4 text-sm font-sans">For women with non-standard cycles, we adjust the formula:<br /><strong>Adjusted Formula:</strong> Due Date = LMP + 280 Days + (Your Cycle Length - 28 Days)</p>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's calculate the due date for a woman whose <strong>LMP was January 1st</strong>, and who has a perfectly typical <strong>28-day cycle</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Step 1 (Find the LMP):</strong> January 1st.</li>
+                            <li><strong>Step 2 (Apply Naegele's Rule):</strong> Add exactly 280 days (40 weeks) to January 1st.</li>
+                            <li><strong>Step 3 (The Result):</strong> Her estimated due date is <strong>October 8th</strong>.</li>
+                            <li><strong>Step 4 (Conception Estimate):</strong> Ovulation typically occurs 14 days after the LMP, making her estimated conception date <strong>January 15th</strong>.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Medical Scheduling:</strong> Knowing your exact gestational week is critical for scheduling mandatory prenatal screenings, anatomy ultrasound scans, and genetic testing at the correct developmental windows.</li>
+                        <li><strong>Maternity Leave Planning:</strong> Providing an accurate timeline to your employer to legally secure and schedule your maternity leave and FMLA benefits.</li>
+                        <li><strong>Birth Preparation:</strong> Mapping out exactly what week of the year you need to have the nursery painted, hospital bag packed, and infant car seat installed.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Why does the doctor say I'm 4 weeks pregnant when I conceived 2 weeks ago?",
+                        answer: "Because it is nearly impossible to pinpoint the exact hour of conception, the global medical community universally begins counting the 40 weeks of pregnancy starting from the first day of your last period. Therefore, on the exact day you conceive, you are already considered 'two weeks pregnant' in medical terms."
+                    },
+                    {
+                        question: "How accurate is the estimated due date?",
+                        answer: "The due date is simply an estimate. In reality, only about 4% to 5% of babies are born on their exact mathematical due date. A pregnancy is considered 'full term' anywhere between 37 and 42 weeks, giving a 5-week window where delivery is completely normal and healthy."
+                    },
+                    {
+                        question: "When are the three trimesters?",
+                        answer: "The First Trimester lasts from week 1 through the end of week 13. The Second Trimester spans from week 14 through the end of week 27. The Third Trimester begins at week 28 and continues until the baby is delivered (usually around week 40)."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Ideal Weight Calculator", path: "/ideal-weight-calculator", desc: "Discover exactly how much you should weigh based on clinical formulas." },
+                    { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Calculate your daily calorie needs to ensure you are fueling your pregnancy properly." },
+                    { name: "Date Calculator", path: "/date-calculator", desc: "Add or subtract exact days, weeks, or months from any given date." }
+                ]}
+            />
         </div>
     );
 }
