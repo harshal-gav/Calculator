@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function MortgageCalculator() {
     const [homePrice, setHomePrice] = useState('400000');
@@ -188,6 +189,75 @@ export default function MortgageCalculator() {
                 </div>
             </div>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Mortgage Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Mortgage Calculator"
+                whatIsIt={
+                    <>
+                        <p>A <strong>Mortgage Calculator</strong> is an indispensable financial tool designed to help homebuyers and existing homeowners estimate their monthly housing costs. Unlike a basic calculator, a true mortgage calculation factors in the principal loan amount, interest rate, term length, and essential extras like property taxes, homeowner's insurance, and Homeowner Association (HOA) fees.</p>
+                        <p>Understanding exactly how much your monthly payment will be before committing to a 15-year or 30-year home loan helps prevent budget strain. Your "PITI" (Principal, Interest, Taxes, and Insurance) forms the core of your monthly obligation.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>The core mathematical formula used to calculate the <strong>Principal and Interest (PI)</strong> portion of a fixed-rate mortgage is:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-xl shadow-sm my-4 overflow-x-auto">
+                            M = P [ i(1 + i)^n ] / [ (1 + i)^n - 1 ]
+                        </div>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>M:</strong> Total monthly payment (Principal + Interest)</li>
+                            <li><strong>P:</strong> Principal loan amount (Home Price minus Down Payment)</li>
+                            <li><strong>i:</strong> Monthly interest rate (Annual Rate divided by 12)</li>
+                            <li><strong>n:</strong> Number of months (Loan Term in years multiplied by 12)</li>
+                        </ul>
+                        <p className="mt-4">To get your true monthly payment, you then simply add your monthly property tax, insurance, and HOA dues to <strong>M</strong>.</p>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Imagine you are purchasing a home for <strong>$400,000</strong>. You bring an <strong>$80,000</strong> (20%) down payment, leaving you with a loan principal of <strong>$320,000</strong>.</p>
+                        <p>You secure a <strong>30-year fixed loan</strong> at a <strong>6.5% interest rate</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Principal & Interest:</strong> Using the formula, your PI is exactly $2,022.62 per month.</li>
+                            <li><strong>Property Taxes:</strong> Assuming a 1.2% annual property tax rate ($4,800/yr), that adds $400.00/month.</li>
+                            <li><strong>Home Insurance:</strong> Assuming $1,500/year, that adds $125.00/month.</li>
+                            <li><strong>Total Monthly Payment:</strong> $2,022.62 + $400 + $125 = <strong>$2,547.62</strong></li>
+                        </ul>
+                        <p className="mt-4 font-semibold text-red-700">Over the 30-year life of the loan, you will pay $408,143.08 in interest alone!</p>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>First-Time Homebuyers:</strong> Determining what housing price range fits your monthly budget before talking to a realtor.</li>
+                        <li><strong>Refinancing Analysis:</strong> Homeowners looking to see if current interest rates will significantly lower their monthly payment compared to their existing loan.</li>
+                        <li><strong>Comparing Loan Terms:</strong> Instantly seeing the massive interest savings of choosing a 15-year mortgage over a 30-year mortgage, despite the higher monthly payment.</li>
+                        <li><strong>Down Payment Planning:</strong> Adjusting your down payment to see exactly how it affects your monthly cash flow and total interest paid.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Do I have to pay Private Mortgage Insurance (PMI)?",
+                        answer: "If your down payment is less than 20% of the home's purchase price, most conventional lenders will require you to pay Private Mortgage Insurance (PMI). PMI protects the lender in case you default on the loan. It usually costs between 0.5% to 1.5% of the original loan amount per year."
+                    },
+                    {
+                        question: "Should I choose a 15-year or 30-year mortgage?",
+                        answer: "A 15-year mortgage ensures you pay substantially less interest over the life of the loan and builds equity much faster, but your monthly payments will be noticeably higher. A 30-year mortgage offers lower, more manageable monthly payments, giving you flexibility, but costs much more in interest over time."
+                    },
+                    {
+                        question: "How does my down payment affect my mortgage?",
+                        answer: "A larger down payment reduces the total amount of money you need to borrow, which lowers your monthly payments and decreases the total interest you'll pay over the life of the loan. Hitting the 20% mark also eliminates the need for expensive PMI on conventional loans."
+                    },
+                    {
+                        question: "Are property taxes and home insurance always included in my payment?",
+                        answer: "In most cases, yes. Lenders typically collect property taxes and homeowners insurance along with your principal and interest payment and hold them in an 'escrow account', paying the bills on your behalf when they are due. However, if you purchase outright or have specific loan types, you might pay them separately."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Amortization Calculator", path: "/amortization-calculator", desc: "View a month-by-month breakdown of your loan payoff schedule." },
+                    { name: "Rent Calculator", path: "/rent-calculator", desc: "Discover exactly how much rent you can afford based on the 30% rule." },
+                    { name: "Auto Loan Calculator", path: "/auto-loan-calculator", desc: "Find out how much your monthly car payment will be." }
+                ]}
+            />
         </div>
     );
 }

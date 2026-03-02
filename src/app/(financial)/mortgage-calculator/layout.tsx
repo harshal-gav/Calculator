@@ -1,10 +1,10 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Mortgage Calculator',
-    description: 'Use our free mortgage calculator to estimate your monthly mortgage payments. Includes taxes, insurance, PMI, and more.',
+  title: 'Mortgage Calculator',
+  description: 'Calculate your monthly mortgage payments precisely. Our free mortgage calculator includes principal, interest, property taxes, home insurance, and HOA fees.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return <>{children}</>;
+  return children;
 }

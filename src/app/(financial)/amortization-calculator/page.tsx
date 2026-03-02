@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function AmortizationCalculator() {
     const [loanAmount, setLoanAmount] = useState('200000');
@@ -146,6 +147,67 @@ export default function AmortizationCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Amortization Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Amortization Calculator"
+                whatIsIt={
+                    <>
+                        <p>An <strong>Amortization Calculator</strong> provides a complete, month-by-month breakdown of your loan payoff schedule. "Amortization" is the financial process of gradually writing off the initial cost of an asset over time.</p>
+                        <p>When you take out an amortized loan (like a mortgage or car loan), your monthly payment remains fixed, but the <em>ratio</em> of principal to interest changes every single month. In the beginning, you pay mostly interest. Toward the end of the loan, your payments go almost entirely toward paying off the principal.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>The mathematical generation of an amortization schedule requires iterative calculation. For a given month <em>m</em>:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-xl shadow-sm my-4 overflow-x-auto space-y-2">
+                            <p>Interest Payment = Outstanding Balance * Monthly Interest Rate</p>
+                            <p>Principal Payment = Total Monthly Payment - Interest Payment</p>
+                            <p>New Balance = Outstanding Balance - Principal Payment</p>
+                        </div>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Outstanding Balance:</strong> The remaining principal from the previous month.</li>
+                            <li><strong>Monthly Interest Rate:</strong> Your annual rate divided by 12.</li>
+                        </ul>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Suppose you have a <strong>$200,000</strong> mortgage at exactly <strong>5.0%</strong> interest for <strong>15 years</strong>.</p>
+                        <p>Your fixed monthly payment is calculated to be <strong>$1,581.59</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Month 1:</strong> Interest is $833.33 ($200,000 * 0.05 / 12). The remaining $748.26 goes to principal. Your new balance is $199,251.74.</li>
+                            <li><strong>Month 2:</strong> Interest is $830.22 ($199,251.74 * 0.05 / 12). Now, $751.37 goes to principal.</li>
+                            <li><strong>Month 180 (Final):</strong> Interest is just $6.56. The remaining $1,575.03 completely wipes out the principal balance!</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Home Equity Tracking:</strong> Seeing exactly how much equity you will have in your home 5, 10, or 20 years from now.</li>
+                        <li><strong>Extra Payments Impact:</strong> Visualizing how an extra $100 towards the principal each month dramatically shortens the amortization schedule and saves thousands in total interest.</li>
+                        <li><strong>Refinance Strategy:</strong> Comparing your current position on the amortization curve vs restarting the curve with a new 30-year refinanced loan at a slightly lower rate.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Why do I pay so much interest at the beginning?",
+                        answer: "Because interest is calculated based on the outstanding principal balance. In the first year, your balance is at its highest, so the interest charge is at its peak. As you slowly pay down the principal, the interest charge naturally drops, allowing more of your fixed payment to attack the principal."
+                    },
+                    {
+                        question: "Does paying extra principal help?",
+                        answer: "Yes, immensely. Any extra money paid toward the principal strictly bypasses the interest calculation. This permanently reduces your outstanding balance, which means all future interest charges will be permanently lower."
+                    },
+                    {
+                        question: "What is negative amortization?",
+                        answer: "Negative amortization occurs when your monthly payment isn't large enough to cover the interest due. The unpaid interest is added to your principal balance, meaning your debt actually grows each month instead of shrinking."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Mortgage Calculator", path: "/mortgage-calculator", desc: "Calculate your monthly mortgage payments including taxes and insurance." },
+                    { name: "Auto Loan Calculator", path: "/auto-loan-calculator", desc: "Calculate your exact monthly car payment including dealer fees and taxes." },
+                    { name: "Payment Calculator", path: "/payment-calculator", desc: "Determine your monthly payment for any standard amortized loan." }
+                ]}
+            />
         </div>
     );
 }

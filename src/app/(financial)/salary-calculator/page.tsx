@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function SalaryCalculator() {
     const [amount, setAmount] = useState('50000');
@@ -122,6 +123,67 @@ export default function SalaryCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Salary Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Salary Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Salary Calculator</strong> is a direct and powerful tool designed to easily convert your income between different time periods. Need to know exactly what a $65,000 annual salary translates to per hour? Or maybe you want to find out what $35 an hour equals if you worked a full year? This tool handles the conversion instantly.</p>
+                        <p>It acts as a universal income translator, producing the equivalent hourly, daily, weekly, bi-weekly, monthly, and yearly income amounts based on whatever input you provide.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>To convert any income into another timeframe, the key is strictly standardizing everything to a <strong>Yearly Baseline</strong> first, assuming 52 weeks in a year.</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-xl shadow-sm my-4 overflow-x-auto space-y-2 text-emerald-800">
+                            <p>Yearly = Hourly Rate * Hours per Week * 52</p>
+                            <p>Hourly Rate = Yearly / 52 / Hours per Week</p>
+                            <p>Monthly Rate = Yearly / 12</p>
+                        </div>
+                        <ul className="list-disc pl-6 space-y-2 mt-4 text-emerald-900">
+                            <li><strong>Standard Work Year:</strong> The default calculation uses 40 hours per week and 52 weeks a year, meaning a standard work year contains exactly 2,080 working hours.</li>
+                            <li><strong>Customizing:</strong> You can adjust the hours per week and days per week to match your actual work schedule if you work part-time or do 4-day workweeks.</li>
+                        </ul>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's say you receive a job offer for <strong>$25.00 per hour</strong> and they guarantee you <strong>40 hours per week</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Yearly Salary:</strong> $25 * 40 * 52 = <strong>$52,000.00</strong></li>
+                            <li><strong>Monthly Income:</strong> $52,000 / 12 = <strong>$4,333.33</strong></li>
+                            <li><strong>Bi-weekly Paycheck:</strong> $52,000 / 26 = <strong>$2,000.00</strong> (Before taxes)</li>
+                        </ul>
+                        <p className="mt-4">Knowing your exact gross pay breakdown is the first critical step to effective budgeting.</p>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Evaluating Job Offers:</strong> Quickly comparing two different job offers where one employer quotes an annual salary ($50,000) and the other offers an hourly wage ($24/hour).</li>
+                        <li><strong>Freelance Pricing:</strong> Determining what hourly rate you need to charge your clients to hit your target $100,000 annual income goal.</li>
+                        <li><strong>Budget Planning:</strong> Finding out exactly how much "gross" income you make every two weeks so you can plug it into a rent calculator to see what apartments you can afford.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Are taxes included in this calculation?",
+                        answer: "No. This calculator strictly shows Gross Income (your earnings before taxes or deductions are removed). To find your 'take-home' pay, you'll need to use an after-tax paycheck calculator that factors in your specific state and federal tax brackets."
+                    },
+                    {
+                        question: "How many working hours are in a year?",
+                        answer: "For a standard full-time employee working 40 hours a week for 52 weeks a year, there are exactly 2,080 total working hours in one year."
+                    },
+                    {
+                        question: "What does Bi-Weekly mean?",
+                        answer: "Bi-weekly means you are paid every two weeks. There are 52 weeks in a year, which means there are 26 bi-weekly pay periods in a year. This is different from 'semi-monthly', where you are paid exactly twice a month (24 times a year)."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Rent Calculator", path: "/rent-calculator", desc: "Discover exactly how much rent you can afford based on your calculated income." },
+                    { name: "Auto Loan Calculator", path: "/auto-loan-calculator", desc: "See what monthly car payment fits into your new salary budget." },
+                    { name: "Payment Calculator", path: "/payment-calculator", desc: "Calculate exact monthly loan payments to see how much debt you can handle." }
+                ]}
+            />
         </div>
     );
 }
