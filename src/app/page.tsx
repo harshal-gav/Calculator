@@ -34,7 +34,20 @@ export default function Home() {
         { name: 'Stock Return Calculator', path: '/stock-return-calculator', desc: 'Calculate your exact Net Profit and Return on Investment (ROI) for individual stock trades.' },
         { name: 'APY Calculator', path: '/apy-calculator', desc: 'Calculate Annual Percentage Yield (APY) from quoted interest rate and compounding frequency.' },
         { name: 'Depreciation Calculator', path: '/depreciation-calculator', desc: 'Calculate asset depreciation using Straight-Line or Double Declining Balance methods.' },
-        { name: 'Simple Interest Calculator', path: '/simple-interest-calculator', desc: 'Calculate total interest accrued on a loan or investment using the standard I = Prt formula.' }
+        { name: 'Simple Interest Calculator', path: '/simple-interest-calculator', desc: 'Calculate total interest accrued on a loan or investment using the standard I = Prt formula.' },
+        { name: 'Commission Calculator', path: '/commission-calculator', desc: 'Calculate agent commissions and net profit for real estate, sales, and affiliates.' },
+        { name: 'Net Worth Calculator', path: '/net-worth-calculator', desc: 'Determine your total true wealth by calculating assets minus liabilities.' },
+        { name: 'LTV Calculator', path: '/ltv-calculator', desc: 'Calculate your Loan-to-Value ratio to instantly determine mortgage risk.' },
+        { name: 'DTI Calculator', path: '/dti-calculator', desc: 'Calculate your Debt-to-Income ratio to evaluate financial health and qualify for loans.' },
+        { name: 'P/E Ratio Calculator', path: '/pe-ratio-calculator', desc: 'Evaluate stock valuations by calculating Price-to-Earnings Ratio or EPS.' },
+        { name: 'Dividend Yield Calculator', path: '/dividend-yield-calculator', desc: 'Calculate the expected annual return you receive from a stock based on its dividend payments.' },
+        { name: 'Marginal Tax Calculator', path: '/marginal-tax-calculator', desc: 'Understand your tax brackets and calculate true effective vs marginal tax rates.' },
+        { name: 'Leverage Ratio Calculator', path: '/leverage-ratio-calculator', desc: 'Evaluate financial risk and capital structure using core corporate leverage metrics.' },
+        { name: 'ROE Calculator', path: '/roe-calculator', desc: 'Calculate Return on Equity to evaluate how efficiently a company generates profits.' },
+        { name: 'WACC Calculator', path: '/wacc-calculator', desc: 'Calculate the Weighted Average Cost of Capital to determine average cost of financing.' },
+        { name: 'Annuity PV Calculator', path: '/annuity-pv-calculator', desc: 'Calculate the Present Value of an annuity payment stream.' },
+        { name: 'CAPM Calculator', path: '/capm-calculator', desc: 'Calculate the expected return on an asset using the Capital Asset Pricing Model.' },
+        { name: 'Expected Return Calculator', path: '/expected-return-calculator', desc: 'Calculate the expected return based on probability-weighted future scenarios.' }
       ]
     },
     {
@@ -55,7 +68,10 @@ export default function Home() {
         { name: 'Carbohydrate Calculator', path: '/carbohydrate-calculator', desc: 'Determine exactly how many grams of carbohydrates you should eat daily based on your metabolic rate and fitness goals.' },
         { name: 'Fat Calculator', path: '/fat-calculator', desc: 'Calculate your optimal daily dietary fat intake based on your body metrics and diet style.' },
         { name: 'Blood Volume Calculator', path: '/blood-volume-calculator', desc: 'Estimate your total blood volume using the scientifically established Nadler and Lemmens formulas.' },
-        { name: 'Blood Alcohol Calculator', path: '/bac-calculator', desc: 'Estimate your Blood Alcohol Content (BAC) based on the standard Widmark formula.' }
+        { name: 'Blood Alcohol Calculator', path: '/bac-calculator', desc: 'Estimate your Blood Alcohol Content (BAC) based on the standard Widmark formula.' },
+        { name: 'Calories Burned Calculator', path: '/calories-burned-calculator', desc: 'Calculate exactly how many calories you burn during various exercises and activities.' },
+        { name: 'Due Date Calculator', path: '/due-date-calculator', desc: 'Calculate your exact baby due date, current gestational age, and pregnancy timeline.' },
+        { name: 'Ovulation Calculator', path: '/ovulation-calculator', desc: 'Track your most fertile days and discover your estimated ovulation date.' }
       ]
     },
     {
@@ -86,7 +102,8 @@ export default function Home() {
         { name: 'Angle Converter', path: '/angle-converter', desc: 'Instantly convert angles between degrees, radians, gradians, and more.' },
         { name: 'Frequency Converter', path: '/frequency-converter', desc: 'Convert frequency between Hertz, Kilohertz, Megahertz, RPM, and more.' },
         { name: 'Volume Converter', path: '/volume-converter', desc: 'Instantly convert volume measurements across metric, US customary, and Imperial units.' },
-        { name: 'Time Zone Converter', path: '/time-zone-converter', desc: 'Instantly convert a specific date and time across global time zones.' }
+        { name: 'Time Zone Converter', path: '/time-zone-converter', desc: 'Instantly convert a specific date and time across global time zones.' },
+        { name: 'Bill Splitter Calculator', path: '/bill-splitter-calculator', desc: 'Quickly divide a check and calculate total tip per person effortlessly.' }
       ]
     },
     {
@@ -119,7 +136,27 @@ export default function Home() {
         { name: 'Matrix Calculator', path: '/matrix-calculator', desc: 'Add, subtract, multiply, and find the determinant of 2x2 matrices instantly.' },
         { name: 'Scientific Notation Converter', path: '/scientific-notation-converter', desc: 'Convert instantly between standard decimal format and scientific exponential notation.' },
         { name: 'Prime Factorization Calculator', path: '/prime-factorization-calculator', desc: 'Decompose any integer into a product of its prime factors instantly.' },
-        { name: 'Order of Operations Calculator', path: '/order-of-operations-calculator', desc: 'Evaluate mathematical expressions step-by-step using PEMDAS/BODMAS rules.' }
+        { name: 'Order of Operations Calculator', path: '/order-of-operations-calculator', desc: 'Evaluate mathematical expressions step-by-step using PEMDAS/BODMAS rules.' },
+        { name: 'Fraction to Decimal Calculator', path: '/fraction-to-decimal-calculator', desc: 'Instantly convert any fraction into a decimal number and a percentage.' },
+        { name: 'Mixed Number Calculator', path: '/mixed-number-calculator', desc: 'Convert mixed numbers into improper fractions and decimals instantly.' },
+        { name: 'Proportion Calculator', path: '/proportion-calculator', desc: 'Solve ratio and proportion equations instantly.' },
+        { name: 'Vector Addition Calculator', path: '/vector-addition-calculator', desc: 'Calculate the resultant magnitude and direction of two vectors.' },
+        { name: 'Cross Product Calculator', path: '/cross-product-calculator', desc: 'Calculate the cross product of two 3-dimensional vectors.' },
+        { name: 'Dot Product Calculator', path: '/dot-product-calculator', desc: 'Calculate the scalar dot product and exact angle between two vectors.' },
+        { name: 'Fraction Simplifier Calculator', path: '/fraction-simplifier-calculator', desc: 'Quickly reduce and simplify any complex fraction down to its lowest terms.' },
+        { name: 'Significant Figures Calculator', path: '/sig-fig-calculator', desc: 'Instantly identify sig figs and convert raw values to scientific notation.' },
+        { name: 'Sequence Calculator', path: '/sequence-calculator', desc: 'Calculate the Nth term and the sum of the first N terms for Arithmetic and Geometric sequences.' },
+        { name: 'Covariance Calculator', path: '/covariance-calculator', desc: 'Calculate population and sample covariance for two distinct datasets.' },
+        { name: 'Base Converter', path: '/base-converter', desc: 'Convert numbers instantly between Decimal, Binary, Octal, and Hexadecimal.' },
+        { name: 'Combinations Calculator', path: '/combinations-calculator', desc: 'Calculate nCr: The number of ways to choose items from a set.' },
+        { name: 'Permutation Calculator', path: '/permutation-calculator', desc: 'Calculate nPr: The number of ways to arrange items where order matters.' },
+        { name: 'Factorial Calculator', path: '/factorial-calculator', desc: 'Calculate n! for large numbers instantly.' },
+        { name: 'Variance Calculator', path: '/variance-calculator', desc: 'Calculate Population and Sample Variance from a dataset, along with Standard Deviation.' },
+        { name: 'Z-Score Calculator', path: '/z-score-calculator', desc: 'Calculate the standard score (z-value) to see how many standard deviations a raw score is from the mean.' },
+        { name: 'Percentile Calculator', path: '/percentile-calculator', desc: 'Find the exact value at a specific percentile within a given dataset.' },
+        { name: 'Margin of Error Calculator', path: '/margin-of-error-calculator', desc: 'Calculate the expected margin of error for survey results and polling data.' },
+        { name: 'Confidence Interval Calculator', path: '/confidence-interval-calculator', desc: 'Calculate the confidence interval for a sample mean using standard deviation and sample size.' },
+        { name: 'Empirical Rule Calculator', path: '/empirical-rule-calculator', desc: 'Calculate the 68-95-99.7 rule distribution ranges for normal datasets.' }
       ]
     },
     {
@@ -129,7 +166,17 @@ export default function Home() {
         { name: 'IP Subnet Calculator', path: '/ip-subnet-calculator', desc: 'Calculate network boundaries, broadcast addresses, and usable host ranges for IPv4 subnets instantly.' },
         { name: 'RGB to HEX Converter', path: '/rgb-hex-converter', desc: 'Convert colors instantly between Hexadecimal and RGB formats for web development and design.' },
         { name: 'Base64 Converter', path: '/base64-converter', desc: 'Quickly encode text to Base64 format, or decode Base64 strings back into readable text.' },
-        { name: 'PX to REM Converter', path: '/px-rem-converter', desc: "Convert CSS pixels (px) to relative root ems (rem) based on your project's root font size." }
+        { name: 'PX to REM Converter', path: '/px-rem-converter', desc: "Convert CSS pixels (px) to relative root ems (rem) based on your project's root font size." },
+        { name: 'Regex Tester', path: '/regex-tester', desc: 'Write, test, and debug your Regular Expressions in real-time.' },
+        { name: 'Cron Job Generator', path: '/cron-job-generator', desc: 'Quickly generate and understand cron schedule expressions for your tasks.' },
+        { name: 'JSON Validator', path: '/json-validator', desc: 'Instantly validate, format, and debug JSON data structures.' },
+        { name: 'Diff Checker', path: '/diff-checker', desc: 'Compare two text snippets side-by-side to find line differences instantly.' },
+        { name: 'UUID Generator', path: '/uuid-generator', desc: 'Generate valid Version 4 Universally Unique Identifiers (UUIDs) instantly.' },
+        { name: 'JSON to CSV Converter', path: '/json-to-csv', desc: 'Convert arrays of JSON objects into formatted Comma-Separated Values effortlessly.' },
+        { name: 'Markdown Editor', path: '/markdown-editor', desc: 'A lightweight, real-time Markdown editor and previewer.' },
+        { name: 'HTML Encoder/Decoder', path: '/html-encoder-decoder', desc: 'Safely encode HTML tags to escape characters, or decode HTML entities back to readable text.' },
+        { name: 'URL Encoder/Decoder', path: '/url-encoder-decoder', desc: 'Safely encode URLs to escape special characters, or decode them back to standard text.' },
+        { name: 'JWT Decoder', path: '/jwt-decoder', desc: 'Decode JSON Web Tokens instantly to view their header and payload information.' }
       ]
     },
     {
@@ -140,7 +187,19 @@ export default function Home() {
         { name: 'Roman Numeral Converter', path: '/roman-numeral-converter', desc: 'Convert standard numbers to Roman numerals (I, V, X, L, C, D, M) and vice versa instantly.' },
         { name: 'Word Count Calculator', path: '/word-count-calculator', desc: 'Instantly track words, characters, sentences, and estimated reading time as you type or paste text.' },
         { name: 'Shoe Size Converter', path: '/shoe-size-calculator', desc: 'Instantly convert adult shoe sizes between US (Men/Women), UK, EU, and measurement in Centimeters (CM).' },
-        { name: 'Roman Numeral Date Converter', path: '/roman-numeral-date-converter', desc: 'Convert any date from standard numbers into elegant Roman numerals.' }
+        { name: 'Roman Numeral Date Converter', path: '/roman-numeral-date-converter', desc: 'Convert any date from standard numbers into elegant Roman numerals.' },
+        { name: 'Random String Generator', path: '/random-string-generator', desc: 'Generate secure, random alphanumeric strings for passwords, tokens, API keys, or testing.' },
+        { name: 'Random Letter Generator', path: '/random-letter-generator', desc: 'Generate random letters from the English alphabet for games, testing, or education.' },
+        { name: 'Random Choice Generator', path: '/random-choice-generator', desc: 'Pick a random item, winner, or choice from any list instantly.' },
+        { name: 'Number to Words Converter', path: '/number-to-words-converter', desc: 'Type any large number and instantly convert it into written English words.' },
+        { name: 'Online Dice Roller', path: '/dice-roller', desc: 'Roll virtual 3D dice for tabletop gaming, RPGs (D&D), board games, or random statistics.' },
+        { name: 'Gas Mileage Calculator', path: '/gas-mileage-calculator', desc: 'Calculate your exact vehicle fuel efficiency (MPG, L/100km, km/L) based on distance driven and gas consumed.' },
+        { name: 'Random Group Generator', path: '/random-group-generator', desc: 'Quickly shuffle and assign people, teams, or items into completely random groups.' },
+        { name: 'Days Calculator', path: '/days-calculator', desc: 'Instantly find exactly what date it will be after adding or subtracting time.' },
+        { name: 'Business Days Calculator', path: '/business-days-calculator', desc: 'Calculate the exact number of working days between two dates, excluding weekends.' },
+        { name: 'Time Card Calculator', path: '/time-card-calculator', desc: 'Calculate your exact work hours, deduct unpaid break time, and estimate gross pay.' },
+        { name: 'Pomodoro Timer', path: '/pomodoro-timer', desc: 'A customizable 25-minute Pomodoro timer for highly focused work sessions.' },
+        { name: 'Random Item Picker', path: '/random-item-picker', desc: 'Pick a random winner or item from any list instantly.' }
       ]
     },
     {
@@ -155,7 +214,12 @@ export default function Home() {
         { name: 'Octagon Calculator', path: '/octagon-calculator', desc: 'Calculate the core geometric properties of a regular octagon instantly.' },
         { name: 'Trapezoid Calculator', path: '/trapezoid-calculator', desc: 'Calculate the area, median, and perimeter of a trapezoid instantly.' },
         { name: 'Polygon Calculator', path: '/polygon-calculator', desc: 'Calculate precise properties for any regular polygon with 3 or more sides.' },
-        { name: 'Arc Length Calculator', path: '/arc-length-calculator', desc: 'Instantly calculate arc length, sector area, and chord length of a circle.' }
+        { name: 'Arc Length Calculator', path: '/arc-length-calculator', desc: 'Instantly calculate arc length, sector area, and chord length of a circle.' },
+        { name: 'Ellipse Calculator', path: '/ellipse-calculator', desc: 'Calculate area, circumference, and eccentricity of an ellipse.' },
+        { name: 'Parallelogram Calculator', path: '/parallelogram-calculator', desc: 'Calculate the area and perimeter of any parallelogram.' },
+        { name: 'Regular Polygon Calculator', path: '/regular-polygon-calculator', desc: 'Compute precise properties of a regular polygon given side length and count.' },
+        { name: 'Pyramid Calculator', path: '/pyramid-calculator', desc: 'Find the volume and surface area of a rectangular pyramid.' },
+        { name: 'Prism Calculator', path: '/prism-calculator', desc: 'Calculate the volume and surface area of a rectangular prism.' }
       ]
     },
     {
@@ -170,7 +234,8 @@ export default function Home() {
         { name: 'Acceleration Calculator', path: '/acceleration-calculator', desc: 'Determine acceleration, final velocity, initial velocity, or time using kinematic equations.' },
         { name: 'Power Calculator', path: '/power-calculator', desc: 'Calculate mechanical or electrical power, work (energy), or time.' },
         { name: 'Work Calculator', path: '/work-calculator', desc: 'Calculate mechanical Work (W), Force (F), or displacement Distance (d) in physics.' },
-        { name: "Ohm's Law Calculator", path: '/ohms-law-calculator', desc: 'Enter any two values (V, I, R, P) to instantly calculate the remaining properties in the circuit.' }
+        { name: "Ohm's Law Calculator", path: '/ohms-law-calculator', desc: 'Enter any two values (V, I, R, P) to instantly calculate the remaining properties in the circuit.' },
+        { name: 'Projectile Motion Calculator', path: '/projectile-motion-calculator', desc: 'Calculate exactly how far, how high, and how long a projectile will travel.' }
       ]
     }
   ];

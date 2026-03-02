@@ -1,0 +1,113 @@
+'use client';
+
+import { useState } from 'react';
+
+export default function RandomItemPicker() {
+    const [itemsInput, setItemsInput] = useState("Pizza\nBurgers\nSushi\nTacos\nChinese\nIndian");
+    const [pickedItem, setPickedItem] = useState<string | null>(null);
+    const [isSpinning, setIsSpinning] = useState(false);
+    const [error, setError] = useState('');
+
+    const pickRandom = () => {
+        setError('');
+        const items = itemsInput.split(/\r?\n|,/).map(s => s.trim()).filter(s => s !== '');
+
+        if (items.length < 2) {
+            setError('Please enter at least 2 items to pick from.');
+            setPickedItem(null);
+            return;
+        }
+
+        setIsSpinning(true);
+        setPickedItem(null);
+
+        // Simulated spin animation logic
+        let spinCount = 0;
+        const maxSpins = 20; // total dummy spins
+        const spinInterval = 80;
+
+        const spinner = setInterval(() => {
+            const randomIndex = Math.floor(Math.random() * items.length);
+            setPickedItem(items[randomIndex]);
+            spinCount++;
+
+            if (spinCount >= maxSpins) {
+                clearInterval(spinner);
+                setIsSpinning(false);
+                // Set final
+                const finalIndex = Math.floor(Math.random() * items.length);
+                setPickedItem(items[finalIndex]);
+            }
+        }, spinInterval);
+    };
+
+    return (
+        <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-2xl shadow-xl border border-zinc-200">
+            <div className="text-center mb-10">
+                <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-amber-900 flex items-center justify-center font-serif">
+                    <span className="mr-3">🎯</span> Random Item Picker
+                </h1>
+                <p className="text-amber-700 text-lg max-w-2xl mx-auto">
+                    Can't decide? Let the generator pick a random winner from your list.
+                </p>
+            </div>
+
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-zinc-200 mb-8 max-w-2xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+
+                <div className="w-full md:w-1/2">
+                    <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">Your Options</label>
+                    <p className="text-[10px] text-zinc-500 mb-3 uppercase tracking-widest font-bold">1 item per line or comma-separated</p>
+                    <textarea
+                        rows={10}
+                        value={itemsInput}
+                        onChange={(e) => setItemsInput(e.target.value)}
+                        className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-amber-500 font-medium text-lg transition-all outline-none resize-none leading-relaxed"
+                        placeholder="Option 1&#10;Option 2&#10;Option 3"
+                    />
+                </div>
+
+                <div className="w-full md:w-1/2 flex flex-col items-center gap-6">
+                    <button
+                        onClick={pickRandom}
+                        disabled={isSpinning}
+                        className={`w-full font-black py-6 px-6 rounded-2xl transition-all shadow-xl uppercase tracking-widest text-2xl border-b-8 active:border-b-0 active:translate-y-2 flex flex-col items-center justify-center ${isSpinning ? 'bg-zinc-300 text-zinc-500 border-zinc-400 cursor-not-allowed shadow-none' : 'bg-amber-500 hover:bg-amber-400 text-white border-amber-600 hover:shadow-amber-500/50'}`}
+                    >
+                        <span>{isSpinning ? 'Spinning...' : 'Pick For Me!'}</span>
+                    </button>
+
+                    {error && (
+                        <div className="p-3 bg-red-50 text-red-700 border border-red-200 rounded-xl font-bold text-center text-sm w-full">
+                            {error}
+                        </div>
+                    )}
+                </div>
+
+            </div>
+
+            {pickedItem !== null && (
+                <div className={`rounded-3xl p-8 shadow-2xl relative overflow-hidden flex flex-col items-center transition-all duration-300 ${isSpinning ? 'bg-zinc-800 scale-95 opacity-80' : 'bg-slate-900 scale-100 ring-8 ring-amber-500/30'}`}>
+
+                    {!isSpinning && (
+                        <>
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none animate-pulse"></div>
+                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-fuchsia-600 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none animate-pulse"></div>
+
+                            <h2 className="text-amber-400 font-black uppercase tracking-widest text-sm mb-6 z-10 text-center flex items-center gap-2">
+                                <span className="animate-bounce inline-block">✨</span> The Winner Is <span className="animate-bounce inline-block">✨</span>
+                            </h2>
+                        </>
+                    )}
+
+                    <div className="z-10 relative w-full flex justify-center py-6">
+                        <div className={`font-black text-center break-words px-4 transition-all ${isSpinning ? 'text-4xl text-white/50 blur-[1px]' : 'text-6xl md:text-7xl text-white drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]'}`}>
+                            {pickedItem}
+                        </div>
+                    </div>
+
+                </div>
+            )}
+
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Random Item Picker", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+        </div>
+    );
+}
