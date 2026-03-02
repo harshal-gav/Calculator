@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function DateCalculator() {
     // Get today's date adjusted for local timezone before stringifying to YYYY-MM-DD
@@ -144,6 +145,64 @@ export default function DateCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Date Calculator", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Date Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Date Calculator</strong> is a specialized calendar tool that calculates the exact amount of time that has passed (or will pass) between two distinct dates. It instantly outputs the total combined days, as well as a clean breakdown in Years, Months, and Days.</p>
+                        <p>This tool is essential because standard subtraction fails when applied to dates. The Gregorian calendar is highly irregular, containing months of varying lengths (28 to 31 days) and Leap Years that insert an extra day every four years. This calculator automatically accounts for all historical and future calendar anomalies.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>To accurately calculate the duration between two dates, our algorithm checks the exact number of days that exist in the specific months and years you have selected. During subtraction or addition, it "borrows" days based on those specific historical calendar months.</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 text-sky-900 border border-sky-100">
+                            <p><strong>Years:</strong> End Year - Start Year</p>
+                            <p><strong>Months:</strong> End Month - Start Month (Borrow 12 if end month is smaller)</p>
+                            <p><strong>Days:</strong> End Day - Start Day (Borrow days equal to the length of the <em>previous</em> month if end day is smaller)</p>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's find out how much time passed between the signing of the Declaration of Independence (<strong>July 4, 1776</strong>) and the moon landing (<strong>July 20, 1969</strong>).</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Step 1 (Days):</strong> 20 - 4 = <strong>16 Days</strong>.</li>
+                            <li><strong>Step 2 (Months):</strong> 7 (July) - 7 (July) = <strong>0 Months</strong>.</li>
+                            <li><strong>Step 3 (Years):</strong> 1969 - 1776 = <strong>193 Years</strong>.</li>
+                            <li><strong>Result:</strong> 193 Years, 0 Months, and 16 Days.</li>
+                            <li><strong>Total Days:</strong> Because the algorithm accounts for the 46 Leap Years that occurred during that timespan, it calculates exactly <strong>70,508 Total Days</strong>.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Legal and Contracts:</strong> Determining the absolute expiration date of a contract, warranty, or statute of limitations (e.g., "90 days from the date of signing").</li>
+                        <li><strong>Event Planning:</strong> Calculating exactly how many days are left until a wedding, concert, or major holiday to organize vendor timelines and invitations.</li>
+                        <li><strong>Finance:</strong> Calculating the exact number of days a loan was held so that daily compound interest can be accurately charged or paid out.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "What does 'Include end date in calculation' mean?",
+                        answer: "By default, calculating from Jan 1st to Jan 2nd returns '1 Day' (measuring the midnight-to-midnight span). If you click 'Include End Date', it adds +1 day to the final result, changing it to '2 Days'. This is crucial for payroll or hotel bookings where you need to count both the starting day and ending day as full calendar items."
+                    },
+                    {
+                        question: "Does it account for Leap Years?",
+                        answer: "Yes, perfectly. If your date range crosses February 29th during a leap year (which occurs every 4 years, except for years divisible by 100 but not 400), the calculator automatically adds the requisite extra day into your total."
+                    },
+                    {
+                        question: "Why might a month show as '0' when calculating?",
+                        answer: "If you calculate from March 15 to April 10, the result will be 0 Months and 26 Days. Because a full calendar month (passing the 15th of the next month) hasn't technically elapsed yet, the calculator accurately categorizes the remaining time purely into days."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Age Calculator", path: "/age-calculator", desc: "Calculate your chronological age in exact days and weeks." },
+                    { name: "Time Calculator", path: "/time-calculator", desc: "Add or subtract exact hours and minutes to find time durations." },
+                    { name: "Time Zone Converter", path: "/time-zone-converter", desc: "Convert times across hundreds of global time zones instantly." }
+                ]}
+            />
         </div>
     );
 }

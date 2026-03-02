@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 // Common time zones mapping
 const TIME_ZONES = [
@@ -267,7 +268,63 @@ export default function TimeZoneConverter() {
 
             </div>
 
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Time Zone Converter", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Time Zone Converter", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Time Zone Converter"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Time Zone Converter</strong> is a powerful global scheduling tool that allows you to instantly translate a specific date and time from one location on Earth to another. It handles all the complex underlying mathematics of longitude offsets, the International Date Line, and Daylight Saving Time (DST) changes automatically.</p>
+                        <p>Because the Earth is divided into 24 primary longitudinal slices (and several offset slices like India Standard Time), coordinating meetings, flights, or broadcast events across borders can be a mathematical nightmare. This tool guarantees 100% accuracy for historical, current, and future event planning.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>To calculate time across borders, the algorithm must first convert your local time into <strong>Coordinated Universal Time (UTC)</strong>, which serves as the anchor point for all global clocks. Once anchored, it applies the mathematical offset of the target destination.</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 text-slate-900 border border-slate-100">
+                            <p><strong>Step 1:</strong> Local Time - Local UTC Offset = Absolute UTC</p>
+                            <p><strong>Step 2:</strong> Absolute UTC + Target UTC Offset = Target Local Time</p>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's convert a flight taking off at <strong>9:00 AM in New York (EST)</strong> to find out what time it is currently in <strong>Tokyo (JST)</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Step 1 (Find Offsets):</strong> New York is UTC-5. Tokyo is UTC+9.</li>
+                            <li><strong>Step 2 (Convert NY to UTC):</strong> 9:00 AM - (-5 hours) = <strong>2:00 PM UTC</strong>.</li>
+                            <li><strong>Step 3 (Convert UTC to Tokyo):</strong> 2:00 PM UTC + (+9 hours) = <strong>11:00 PM JST</strong>.</li>
+                            <li><strong>Result:</strong> When it is 9:00 AM in New York, it is exactly 11:00 PM in Tokyo. Notice the total time difference is exactly 14 hours (9 + 5).</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Global Business Meetings:</strong> Scheduling Zoom or Teams calls across North America, Europe, and Asia without forcing someone to log on at 3:00 AM.</li>
+                        <li><strong>Travel and Aviation:</strong> Calculating what local time you will land in a foreign country to properly schedule airport shuttles and hotel check-ins.</li>
+                        <li><strong>Live Streaming and Sports:</strong> Figuring out exactly what time an international football match or eSports tournament will air on your local television network.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Why does converting to India result in a 30-minute offset?",
+                        answer: "While most time zones are separated by exactly 60 minutes, several countries use fractional offsets to better align the sun with their geographical borders. India Standard Time (IST) is UTC+5:30. Other regions with fractional offsets include parts of Australia, Nepal, and Iran."
+                    },
+                    {
+                        question: "Does the calculator handle Daylight Saving Time (DST)?",
+                        answer: "Yes, absolutely. If you check the time in London during August, the calculator correctly applies British Summer Time (BST) which is UTC+1. If you check that same location in December, it correctly reverts to Greenwich Mean Time (GMT) which is UTC+0."
+                    },
+                    {
+                        question: "What happens when you cross the International Date Line?",
+                        answer: "If you calculate a time going westward from America to Asia (e.g., Los Angeles to Sydney), the tool will accurately display that the target time has moved 'forward' into the next calendar day. Conversely, flying eastward across the Pacific moves you 'back' into the previous day."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Time Calculator", path: "/time-calculator", desc: "Add or subtract exact hours and minutes to find time durations." },
+                    { name: "Date Calculator", path: "/date-calculator", desc: "Add or subtract exact days, weeks, or months from any given date." },
+                    { name: "Age Calculator", path: "/age-calculator", desc: "Calculate your chronological age in exact days and weeks." }
+                ]}
+            />
         </div>
     );
 }

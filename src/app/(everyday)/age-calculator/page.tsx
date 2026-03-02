@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function AgeCalculator() {
     const today = new Date().toISOString().split('T')[0];
@@ -170,6 +171,63 @@ export default function AgeCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Age Calculator", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Age Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Age Calculator</strong> is a precision time-tracking tool designed to calculate your exact chronological age down to the day. While most people only know their age in years, this calculator provides a comprehensive breakdown of your lifespan in months, weeks, and total days.</p>
+                        <p>Beyond simple birth dates, the tool allows you to set a custom "Target Date". This means you can calculate exactly how old someone was on a specific date in history, or find out exactly how old you will be when a future event occurs.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>Calculating exact age mathematically is more complex than simple subtraction due to leap years and months having variable lengths (28, 29, 30, or 31 days). Our algorithm follows standard Gregorian calendar rules:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-sm shadow-sm my-4 overflow-x-auto space-y-4 text-pink-900 border border-pink-100">
+                            <p><strong>Years:</strong> Target Year - Birth Year</p>
+                            <p><strong>Months:</strong> Target Month - Birth Month (Borrow 1 year/12 months if negative)</p>
+                            <p><strong>Days:</strong> Target Day - Birth Day (Borrow days from the previous month based on exactly how many days were in that specific historic month if negative)</p>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's calculate the exact age of someone born on <strong>July 15, 1990</strong>, if today's date is <strong>March 5, 2024</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Step 1 (Days):</strong> 5 - 15 = -10. Because it is negative, we borrow the number of days in the previous month (February 2024 had 29 days because it was a leap year). -10 + 29 = <strong>19 Days</strong>.</li>
+                            <li><strong>Step 2 (Months):</strong> Because we borrowed, March (3) becomes February (2). 2 - 7 = -5. We borrow 1 year (12 months). -5 + 12 = <strong>7 Months</strong>.</li>
+                            <li><strong>Step 3 (Years):</strong> Because we borrowed, 2024 becomes 2023. 2023 - 1990 = <strong>33 Years</strong>.</li>
+                            <li><strong>Result:</strong> Exactly 33 Years, 7 Months, and 19 Days old.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Genealogy and Ancestry:</strong> Calculating the exact age of historical figures or ancestors at the time of significant events (e.g., "How old was Abraham Lincoln when the Civil War ended?").</li>
+                        <li><strong>Medical Pedigree:</strong> Calculating precise infant ages. Pediatricians measure infant milestones in strict weeks and months, not years.</li>
+                        <li><strong>Retirement Planning:</strong> Calculating exactly how many total days remain until you reach the legal age required to draw a pension or Social Security benefits.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Why does my age in 'Total Days' vary slightly from my own math?",
+                        answer: "If you simply multiply your age in years by 365 to find your total days alive, your math will be wrong. Our calculator is perfectly accurate because it automatically detects and accounts for every single Leap Day (February 29th) that has occurred since your exact year of birth."
+                    },
+                    {
+                        question: "How does the 'Target Date' feature work?",
+                        answer: "The target date defaults to today. However, you can change it to any date in the past or future. If you change it to the year 2050, it will tell you exactly how old you will be. If you enter the birth dates of a historical figure and the date they died as the target, you can find their exact lifespan."
+                    },
+                    {
+                        question: "Are weeks calculated as exactly 7 days?",
+                        answer: "Yes. Mathematically, one week is always exactly 7 days. Your 'Total Weeks' alive is calculated by finding your absolute total days alive, dividing by 7, and rounding down to the nearest whole week."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Date Calculator", path: "/date-calculator", desc: "Add or subtract exact days, weeks, or months from any given date." },
+                    { name: "Time Calculator", path: "/time-calculator", desc: "Add or subtract exact hours and minutes to find time durations." },
+                    { name: "Time Zone Converter", path: "/time-zone-converter", desc: "Convert times across hundreds of global time zones instantly." }
+                ]}
+            />
         </div>
     );
 }
