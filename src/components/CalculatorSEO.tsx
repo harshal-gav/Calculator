@@ -44,7 +44,7 @@ export default function CalculatorSEO({ title, whatIsIt, formula, example, useCa
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
                 />
 
-                <div className="prose prose-blue max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700">
+                <div className="prose prose-blue max-w-none prose-headings:text-black prose-p:text-black prose-li:text-black">
                     <h2 className="text-3xl font-extrabold mb-8 pb-4 border-b border-gray-100">Understanding the {title}</h2>
 
                     <section className="mb-12">
@@ -72,7 +72,7 @@ export default function CalculatorSEO({ title, whatIsIt, formula, example, useCa
                         <div className="space-y-4">
                             {faqs.map((faq, index) => (
                                 <details key={index} className="group bg-white border border-gray-200 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden shadow-sm hover:shadow-md transition">
-                                    <summary className="flex cursor-pointer items-center justify-between gap-1.5 font-bold text-gray-900">
+                                    <summary className="flex cursor-pointer items-center justify-between gap-1.5 font-bold text-black">
                                         <h4 className="text-lg pr-4">{faq.question}</h4>
                                         <span className="shrink-0 rounded-full bg-blue-50 p-2 text-blue-600 sm:p-3 group-open:bg-blue-600 group-open:text-white transition-colors">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="size-5 shrink-0 transition duration-300 group-open:-rotate-45" viewBox="0 0 20 20" fill="currentColor">
@@ -80,7 +80,7 @@ export default function CalculatorSEO({ title, whatIsIt, formula, example, useCa
                                             </svg>
                                         </span>
                                     </summary>
-                                    <div className="mt-4 leading-relaxed text-gray-700 text-lg border-t pt-4">
+                                    <div className="mt-4 leading-relaxed text-black text-lg border-t pt-4">
                                         <p>{faq.answer}</p>
                                     </div>
                                 </details>
@@ -94,8 +94,8 @@ export default function CalculatorSEO({ title, whatIsIt, formula, example, useCa
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {relatedCalculators.map((calc, idx) => (
                                     <Link key={idx} href={calc.path} className="block group bg-white border border-gray-200 p-6 rounded-xl hover:border-blue-300 hover:shadow-md transition">
-                                        <h4 className="font-bold text-gray-900 group-hover:text-blue-600 transition mb-2 text-lg">{calc.name}</h4>
-                                        <p className="text-sm text-gray-500 line-clamp-2">{calc.desc}</p>
+                                        <h4 className="font-bold text-black group-hover:text-blue-600 transition mb-2 text-lg">{calc.name}</h4>
+                                        <p className="text-sm text-black line-clamp-2">{calc.desc}</p>
                                     </Link>
                                 ))}
                             </div>
