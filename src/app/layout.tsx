@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Calculators All",
     default: "Free Online Calculators for Everything",
   },
-  description: "Discover a comprehensive collection of free online calculators for math, health, finance, and technology. Our fast, easy-to-use, and highly accurate tools are designed to help you solve everyday problems instantly.",
+  description: "Free online calculators for math, health, finance, and everyday utilities. Fast, easy-to-use tools to help you solve everyday calculations instantly.",
   keywords: ["calculator", "online calculator", "free calculator", "math", "finance", "health", "BMI", "mortgage"],
   authors: [{ name: "Calculators All" }],
   openGraph: {
@@ -34,6 +34,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+  },
+  icons: {
+    apple: "/apple-touch-icon.png",
+  },
+  appleWebApp: {
+    title: "Calculators All",
+    statusBarStyle: "default",
   },
 };
 

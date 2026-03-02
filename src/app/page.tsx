@@ -257,11 +257,14 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-blue-600 mb-4">{cat.name}</h2>
             <ul className="space-y-4">
               {cat.calculators.map((calc) => (
-                <li key={calc.name} className="bg-white p-4 rounded border border-gray-200 hover:border-blue-300 transition">
-                  <Link href={calc.path} className="block group">
-                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition">{calc.name}</h3>
-                    <p className="text-sm text-gray-500 mt-1">{calc.desc}</p>
-                  </Link>
+                <li key={calc.name} className="relative bg-white p-4 rounded border border-gray-200 hover:border-blue-300 transition group">
+                  <h3 className="text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition">
+                    <Link href={calc.path} className="focus:outline-none">
+                      <span className="absolute inset-0" aria-hidden="true"></span>
+                      {calc.name}
+                    </Link>
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-1 relative z-10 pointer-events-none">{calc.desc}</p>
                 </li>
               ))}
             </ul>
