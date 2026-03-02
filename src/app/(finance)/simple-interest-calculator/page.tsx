@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function SimpleInterestCalculator() {
     // I = P * r * t
@@ -156,6 +157,64 @@ export default function SimpleInterestCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Simple Interest Calculator", "operatingSystem": "All", "applicationCategory": "FinancialApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Simple Interest Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Simple Interest Calculator</strong> is a fast, precise tool for calculating non-compounding interest on short-term loans or basic investments. Unlike compound interest (where you earn "interest on your interest"), simple interest is calculated strictly and only against the original principal amount deposited or borrowed.</p>
+                            <p>Because it doesn't compound, simple interest is generally less lucrative for investors and more favorable for borrowers. It is most commonly used for personal loans between family members, short-term auto loans, simple promissory notes, or certain types of early-withdrawal certificates of deposit (CDs).</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The calculation relies on the classic, standard algebraic formula taught in every introductory finance class.</p>
+                            <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
+                                <p><strong>I</strong> = P × r × t</p>
+                                <p className="border-t border-zinc-200 pt-3 mt-2 text-sm font-sans text-left text-zinc-700"><strong>Where:</strong><br />I = Total Interest calculated<br />P = Principal (Starting Amount)<br />r = Annual Interest Rate (as a decimal)<br />t = Time in years</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine you loan a friend <strong>$10,000</strong> to start a business. You agree on a flat, simple interest rate of <strong>5% annually</strong>, and they agree to pay you back in exactly <strong>3 years</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
+                                <li><strong>Step 1 (Variables):</strong> P = 10,000. r = 0.05. t = 3.</li>
+                                <li><strong>Step 2 (Math):</strong> 10,000 × 0.05 × 3 = 1,500.</li>
+                                <li><strong>Result (Interest):</strong> The Total Interest accrued over the 3 years is exactly <strong>$1,500</strong>.</li>
+                                <li><strong>Result (Total Amount):</strong> Adding the original principal back in, your friend owes you a final lump sum of <strong>$11,500</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>Personal Loans:</strong> Charging a fair, non-compounding interest fee when loaning money to family or friends so that your money isn't losing value to inflation while they hold it.</li>
+                            <li><strong>Auto Loans:</strong> Many car loans are strictly simple interest. If you pay extra principal early, your overall interest owed decreases linearly, making simple interest auto loans highly advantageous to pay off aggressively.</li>
+                            <li><strong>Evaluating Penalties:</strong> Calculating the exact late fee or interest penalty applied by a vendor or contractor on an unpaid 30-day invoice.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between Simple and Compound Interest?",
+                            answer: "Simple interest is only ever calculated against the original starting amount. Compound interest is recalculated constantly (e.g., daily or monthly) against the new total balance, meaning the interest itself starts growing its own interest. Over long periods, compound interest explodes exponentially, while simple interest grows in a perfectly straight, flat line."
+                        },
+                        {
+                            question: "How do I calculate simple interest for months instead of years?",
+                            answer: "You must convert months into a fraction of a year. If the loan is for 6 months, you divide 6 by 12 (0.5). You then plug 0.5 into the 't' (time) variable of the I=Prt formula."
+                        },
+                        {
+                            question: "Why do banks prefer Compound Interest?",
+                            answer: "Because it makes them significantly more money. When they issue you a credit card (compound interest), your debt grows exponentially. When you deposit cash into a high-yield savings account (compound interest), they use that money to issue more compounding loans. Simple interest is almost exclusively used for very short-term, low-risk lending."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "See how much faster your money grows when it compounds." },
+                        { name: "Investment Calculator", path: "/investment-calculator", desc: "Project the future gross and net value of your portfolio." },
+                        { name: "Auto Loan Calculator", path: "/auto-loan-calculator", desc: "Calculate your monthly payment on a simple interest car loan." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

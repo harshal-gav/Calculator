@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 type AssetLiability = {
     id: number;
@@ -153,6 +154,63 @@ export default function NetWorthCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Net Worth Calculator", "operatingSystem": "All", "applicationCategory": "FinancialApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Net Worth Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Net Worth Calculator</strong> provides an immediate, high-level snapshot of your overall financial health. Your net worth is arguably the most important metric in personal finance—far more important than your salary. It is the exact measure of all the wealth you have actually retained.</p>
+                            <p>It explicitly forces you to balance your <strong>Assets</strong> (everything you tangibly own, like cash, investments, and property equity) against your <strong>Liabilities</strong> (everything you owe, like mortgages, student loans, and credit card debt).</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The mathematical equation for calculating your Net Worth is elegantly simple and forms the foundation of modern accounting.</p>
+                            <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
+                                <p><strong>Net Worth</strong> = Total Assets - Total Liabilities</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's map out a standard financial scenario for a middle-class homeowner.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
+                                <li><strong>Step 1 (Sum Assets):</strong> You have $5,000 in Checking, $20,000 in your 401(k), and your house is currently appraised at $400,000. <em>Total Assets = $425,000.</em></li>
+                                <li><strong>Step 2 (Sum Liabilities):</strong> You still owe $320,000 on your mortgage, you have a $15,000 auto loan, and $2,000 in credit card debt. <em>Total Liabilities = $337,000.</em></li>
+                                <li><strong>Step 3 (Calculate):</strong> $425,000 - $337,000 = $88,000.</li>
+                                <li><strong>Result:</strong> Your true financial Net Worth is exactly <strong>$88,000</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>Financial Independence (FIRE):</strong> Tracking your net worth month-over-month to map your trajectory toward early retirement. When your net worth reaches 25x your annual expenses, you are mathematically financially independent.</li>
+                            <li><strong>Mortgage Applications:</strong> Banks will aggressively scrutinize your net worth to determine if you have the liquidity and financial discipline required to take on a massive new liability like a mortgage.</li>
+                            <li><strong>Debt Snowball Strategy:</strong> Watching your net worth increase purely by paying down debt. Every time you pay off $1,000 of student loans, your net worth instantly increases by $1,000, even if your bank account balance drops.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Is it normal to have a negative Net Worth?",
+                            answer: "Yes, it is incredibly common for recent college graduates. Due to massive student loans and auto loans paired with low starting salaries, many people start their careers at 'Negative Net Worth'. The goal is usually to race back to '$0' as fast as possible."
+                        },
+                        {
+                            question: "Should I include my car as an asset?",
+                            answer: "Yes, but be careful. Cars are depreciating assets. You should only list the realistic Kelley Blue Book 'trade-in' value of the car as an Asset, and then you must list the exact remaining balance of your auto loan under Liabilities."
+                        },
+                        {
+                            question: "Does my income or salary affect my Net Worth?",
+                            answer: "Directly? No. You could make $500,000 a year, but if you spend $500,000 a year, your net worth will never grow. Income is just the shovel; Net Worth is the size of the hole you actually dug."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Investment Calculator", path: "/investment-calculator", desc: "Project the future value of your stock portfolio." },
+                        { name: "Debt Payoff Calculator", path: "/debt-payoff-calculator", desc: "Calculate the fastest way to become debt-free." },
+                        { name: "Savings Goal Calculator", path: "/savings-goal-calculator", desc: "Figure out exactly how much you need to save each month." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

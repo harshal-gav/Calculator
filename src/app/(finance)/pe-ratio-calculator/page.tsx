@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function PERatioCalculator() {
     const [calcType, setCalcType] = useState('pe'); // pe, price, eps
@@ -164,6 +165,64 @@ export default function PERatioCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "P/E Ratio Calculator", "operatingSystem": "All", "applicationCategory": "FinancialApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Price-to-Earnings (P/E) Ratio Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>P/E Ratio Calculator</strong> helps investors determine if a stock is overvalued, undervalued, or priced correctly compared to its peers. The Price-to-Earnings ratio is the most famous, universally used valuation metric on Wall Street. It explicitly tells you exactly how much money investors are currently willing to pay for just $1 of a company's earnings.</p>
+                            <p>For example, if a stock has a P/E of 20, it means investors are willing to pay $20 today for every $1 of profit the company makes. Value investors use the P/E ratio to hunt for "cheap" stocks that have been unfairly beaten down by the market, while growth investors use it to justify paying a premium for a company they believe will disrupt an industry.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The P/E ratio is calculated by taking the current stock price and dividing it by the company's Earnings Per Share (EPS).</p>
+                            <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
+                                <p><strong>P/E Ratio</strong> = Stock Price / Earnings Per Share</p>
+                            </div>
+                            <p>Our tool can also seamlessly solve for the other variables algebraically: <em>Price = P/E × EPS</em> or <em>EPS = Price / P/E</em>.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's evaluate a hypothetical technology stock.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
+                                <li><strong>Variables:</strong> The company's stock is currently trading at <strong>$150.00</strong> per share. Over the last 12 months, the company has officially reported earning <strong>$10.00 per share (EPS)</strong>.</li>
+                                <li><strong>The Math:</strong> $150.00 / $10.00 = 15.</li>
+                                <li><strong>Result:</strong> The stock has perfectly average <strong>15 P/E Ratio</strong>.</li>
+                                <li><strong>Context:</strong> If the historical average for the overall stock market is around 16, this stock is technically trading at a slight discount to the broader market. The company is generating solid profits relative to its price tag.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>Relative Valuation:</strong> Directly comparing two companies in the exact same industry. If Ford and General Motors make similar cars, but Ford trades at a P/E of 8 and GM trades at a P/E of 12, a value investor might argue Ford is currently the cheaper, better buy.</li>
+                            <li><strong>Identifying Bubbles:</strong> Looking at historical averages. If a sector of the economy suddenly begins trading at astronomical P/E ratios of 100 or higher (which happened frequently during the Dot-com Bubble), it is often a severe warning sign that the stock prices have become entirely disconnected from reality.</li>
+                            <li><strong>Reverse Engineering Growth Constraints:</strong> Re-arranging the formula. If an investor firmly believes a company has a fair-value P/E of exactly 20, and the company projects an EPS of $5 next year, the investor can confidently calculate that the stock's future fair value "target price" is exactly $100 (20 × $5).</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Is a high P/E ratio good or bad?",
+                            answer: "It depends entirely on the context. A high P/E (like 50 or 100) means the stock is mathematically very 'expensive'. Value investors hate high P/E stocks. However, growth investors love them, arguing that highly disruptive companies (like Amazon in the early 2010s) deserve massive P/E ratios because their future earnings will explode, eventually justifying the current high price."
+                        },
+                        {
+                            question: "Can a company have a negative P/E?",
+                            answer: "Yes, mechanically. If a company is actively losing money (negative EPS), the math will result in a negative P/E. However, in professional finance, negative P/Es are simply reported as 'N/A' (Not Applicable) because the metric loses all practical meaning when there are literally no earnings to compare the price against."
+                        },
+                        {
+                            question: "What is Forward P/E vs Trailing P/E?",
+                            answer: "'Trailing' P/E is calculated using the hard, locked-in earnings from the past 12 months. It relies on historical facts. 'Forward' P/E is calculated using the estimated, projected earnings for the next 12 months. It relies on Wall Street analysts making accurate predictions about the future."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Dividend Yield Calculator", path: "/dividend-yield-calculator", desc: "Evaluate the cash return on a stock." },
+                        { name: "Investment Calculator", path: "/investment-calculator", desc: "Project the compounding growth of your stock portfolio." },
+                        { name: "ROI Calculator", path: "/roi-calculator", desc: "Calculate your exact percentage return on a stock trade." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
