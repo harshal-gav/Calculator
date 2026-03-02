@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function CompoundInterestCalculator() {
     const [principal, setPrincipal] = useState('10000');
@@ -292,7 +293,63 @@ export default function CompoundInterestCalculator() {
 
             </div>
 
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Compound Interest Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication" }) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Compound Interest Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Compound Interest Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Compound Interest Calculator</strong> illustrates the "eighth wonder of the world"—how your money grows exponentially when the interest you earn begins earning interest itself. Unlike simple interest, which only pays you based on your initial deposit, compound interest creates a snowball effect that accelerates your wealth creation over time.</p>
+                        <p>This calculator is specifically designed to handle complex variables that standard calculators miss: allowing you to adjust the <strong>compound frequency</strong> (daily, monthly, annually) and simulate <strong>recurring additions</strong> (depositing $500 out of your paycheck every single month).</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>The standard algebraic formula for calculating compound interest requires knowing the Principal (P), Rate (r), Times compounded per year (n), and Time in years (t).</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 text-emerald-900 border border-emerald-100">
+                            <p><strong>A</strong> = P(1 + r/n)<sup>nt</sup></p>
+                            <p className="border-t border-emerald-100 pt-4 mt-4 text-sm font-sans text-left text-gray-700"><strong>With Recurring Monthly Contributions (PMT):</strong><br />A = P(1 + r/n)<sup>nt</sup> + PMT × [(1 + r/n)<sup>nt</sup> - 1] / (r/n)</p>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's calculate the growth of a <strong>$10,000</strong> initial investment, growing at <strong>7% annually</strong>, compounded strictly once per year, and held for <strong>10 years</strong> without any extra deposits.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Step 1 (Variables):</strong> P = 10,000. r = 0.07. n = 1. t = 10.</li>
+                            <li><strong>Step 2 (The Math):</strong> A = 10,000 × (1 + 0.07/1)<sup>(1 × 10)</sup></li>
+                            <li><strong>Step 3 (Solve the Exponent):</strong> A = 10,000 × (1.07)<sup>10</sup> = 10,000 × 1.96715</li>
+                            <li><strong>Result:</strong> At the end of 10 years, your total balance is <strong>$19,671.51</strong>. You earned $9,671.51 purely in passive interest without lifting a finger.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Retirement Planning (FIRE):</strong> Calculating exactly how many years it will take for your index funds to grow large enough so that you can safely retire early.</li>
+                        <li><strong>High-Yield Savings Accounts (HYSA):</strong> Understanding precisely how much more money a 4.5% APY savings account will yield over 5 years compared to a traditional 0.01% checking account.</li>
+                        <li><strong>Evaluating Debt Cost:</strong> Looking at the problem in reverse—seeing how daily compound interest on a 25% APR credit card balance rapidly spirals into uncontrollable debt if you don't aggressively pay it down.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Why does Compounding Frequency matter?",
+                        answer: "The more frequently your money compounds, the faster it grows. If a bank pays 5% interest 'compounded daily', they are cutting that 5% into 365 tiny pieces, applying a piece every night, and instantly paying interest on the new total the very next morning. This yields more money at the end of the year than 'compounded annually'."
+                    },
+                    {
+                        question: "What is the difference between Beginning and End of Period timing?",
+                        answer: "If you deposit $500 monthly at the 'Beginning' of the period (e.g., usually when you get your paycheck on the 1st of the month), that $500 has the entire month to earn interest. If you deposit it at the 'End', it earns no interest for that specific month. Always choose Beginning if you automate your investments on payday."
+                    },
+                    {
+                        question: "What does APY mean?",
+                        answer: "APY stands for Annual Percentage Yield. While APR is the simple rate, APY is the mathematically accurate rate that explicitly includes the effect of compounding frequency over a full year."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Investment Calculator", path: "/investment-calculator", desc: "A broader tool for projecting overall stock portfolio growth." },
+                    { name: "ROI Calculator", path: "/roi-calculator", desc: "Calculate your exact annualized percentage returns on recent sales." },
+                    { name: "Savings Goal Calculator", path: "/savings-goal-calculator", desc: "Figure out exactly how much you need to save each month to hit a target." }
+                ]}
+            />
         </div>
     );
 }

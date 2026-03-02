@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function ROICalculator() {
     const [amountInvested, setAmountInvested] = useState('10000');
@@ -102,6 +103,62 @@ export default function ROICalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "ROI Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="ROI Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Return on Investment (ROI) Calculator</strong> is a core financial benchmark tool allowing investors to evaluate the absolute performance and profitability of an investment relative to its initial cost. A positive ROI indicates financial gain, while a negative ROI signifies a loss.</p>
+                        <p>Crucially, this tool goes beyond simple ROI by calculating your <strong>Annualized ROI</strong>. Earning a 50% return is incredible if it happens in 1 year, but terrible if it took 30 years to achieve. Annualized ROI mathematically smooths your return over the lifespan of the investment to give you a true apples-to-apples comparison metric.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>ROI is calculated by taking the net profit of an investment, dividing it by the initial cost, and multiplying by 100 to get a percentage.</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 text-emerald-900 border border-emerald-100">
+                            <p><strong>Total ROI</strong> = [(Final Value - Initial Cost) ÷ Initial Cost] × 100</p>
+                            <p className="border-t border-emerald-100 pt-4 mt-4 text-sm font-sans text-left text-gray-700"><strong>Annualized ROI Formula:</strong><br />Annualized ROI = [(Final Value ÷ Initial Cost) ^ (1 ÷ Years)] - 1</p>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Imagine you buy stock for <strong>$10,000</strong>. You hold that stock and reinvest dividends for exactly <strong>2 years</strong>, and then sell it all for <strong>$12,500</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Step 1 (Find Net Return):</strong> $12,500 - $10,000 = <strong>$2,500</strong>.</li>
+                            <li><strong>Step 2 (Find Total ROI):</strong> ($2,500 ÷ $10,000) × 100 = <strong>25%</strong>.</li>
+                            <li><strong>Step 3 (Find Annualized ROI):</strong> Using the formula [(12,500 ÷ 10,000)^(1/2)] - 1.</li>
+                            <li><strong>Result:</strong> Your Total ROI was 25%, but your real Annualized ROI was exactly <strong>11.80% per year</strong>.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Stock Market Analysis:</strong> Reviewing your brokerage statements to determine if your mutual funds are beating the standard S&P 500 average benchmark (typically around 9-10% annualized).</li>
+                        <li><strong>Real Estate Flipping:</strong> Calculating whether the capital gained from renovating and selling a distressed property was actually worth the capital and time invested.</li>
+                        <li><strong>Business Marketing:</strong> Determining if a $5,000 advertising campaign that generated $8,000 in new sales was a successful allocation of marketing budget.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Why is Annualized ROI lower than dividing Total ROI by the years?",
+                        answer: "If you have a 25% Total ROI over 2 years, dividing by 2 gives you 12.5%. However, the true Annualized ROI is 11.80%. This is because of the mathematical effect of Compound Growth. You have more money working for you in year 2 than you did in year 1, meaning the growth curve is exponential, not perfectly linear."
+                    },
+                    {
+                        question: "What is a 'Good' ROI?",
+                        answer: "A 'good' ROI depends entirely on your risk tolerance. Historically, the US Stock Market (S&P 500) returns about 9% to 10% annually before inflation. Therefore, passive investors usually consider an Annualized ROI of 10% to be excellent. High-risk investments, like crypto or startup angel investing, expect significantly higher potential ROIs to justify the heavy risk of losing the entire principle."
+                    },
+                    {
+                        question: "Does this calculator account for inflation?",
+                        answer: "No. This tool calculates 'Nominal ROI' (the raw numbers). To find your 'Real ROI', you would need to manually subtract the national inflation rate from your Annualized ROI result."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "Project future investment growth using recursive compound interest." },
+                    { name: "Investment Calculator", path: "/investment-calculator", desc: "Predict future portfolio values based on recurring monthly contributions." },
+                    { name: "Present Value Calculator", path: "/present-value-calculator", desc: "Calculate what a future sum of money is actually worth in today's dollars." }
+                ]}
+            />
         </div>
     );
 }

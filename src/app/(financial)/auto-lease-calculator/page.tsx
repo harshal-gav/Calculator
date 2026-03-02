@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function AutoLeaseCalculator() {
     const [msrp, setMsrp] = useState('35000');
@@ -177,6 +178,65 @@ export default function AutoLeaseCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Auto Lease Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Auto Lease Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Auto Lease Calculator</strong> is a specialized financial tool designed to deconstruct and demystify standard dealership lease contracts. When you lease a vehicle, you are not buying the car; you are solely paying for the amount of value the car loses (depreciation) during the time you drive it, plus a borrowing fee (rent charge).</p>
+                        <p>Dealerships often obscure the true cost of a lease by focusing entirely on the "Monthly Payment." This calculator breaks the math completely open, showing you exactly how much of your payment goes toward actual vehicle depreciation, how much is pure interest via the <strong>Money Factor</strong>, and how taxes are applied.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>A monthly lease payment is always composed of three distinct mathematical buckets: Depreciation, the Rent Charge (Interest), and Taxes.</p>
+                        <div className="bg-slate-50 p-4 rounded-lg font-mono text-center text-[14px] shadow-sm my-4 flex flex-col gap-2 border border-slate-200 text-slate-900">
+                            <p><strong>1. Cap Cost</strong> = Negotiated Price - Down Payment - Trade In</p>
+                            <p><strong>2. Depreciation Fee</strong> = (Cap Cost - Residual Value) ÷ Lease Term</p>
+                            <p><strong>3. Rent Charge</strong> = (Cap Cost + Residual Value) × Money Factor</p>
+                            <p className="border-t border-slate-200 pt-3 mt-2 text-sm"><strong>Total Monthly</strong> = (Depreciation + Rent Charge) × (1 + Tax Rate)</p>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>You want to lease a <strong>$35,000 MSRP</strong> car. You negotiate the price down to <strong>$33,000</strong>. You put <strong>$2,000 down</strong> for <strong>36 months</strong>. The dealer gives you a <strong>55% Residual</strong> and a <strong>4.5% APR</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4 text-slate-700">
+                            <li><strong>Cap Cost:</strong> $33,000 - $2,000 = $31,000.</li>
+                            <li><strong>Residual:</strong> $35,000 × 0.55 = $19,250.</li>
+                            <li><strong>Depreciation Fee:</strong> ($31,000 - $19,250) ÷ 36 = <strong>$326.38/mo</strong>.</li>
+                            <li><strong>Rent Charge:</strong> Convert 4.5% APR to Money Factor (4.5 ÷ 2400) = 0.001875. Then, ($31,000 + $19,250) × 0.001875 = <strong>$94.21/mo</strong>.</li>
+                            <li><strong>Result:</strong> Before tax, your exact base lease payment is $326.38 + $94.21 = <strong>$420.59 per month</strong>.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4 text-slate-700">
+                        <li><strong>Negotiating at the Dealership:</strong> By knowing exactly how the Money Factor and Residual Value dictate the final cost, you can spot when a dealer is artificially inflating the interest rate to boost their profit margin over the advertised deal.</li>
+                        <li><strong>Lease vs. Buy Analysis:</strong> Comparing the total 3-year out-of-pocket cost of this lease versus the estimated depreciation curve of buying the car outright and selling it yourself in 36 months.</li>
+                        <li><strong>Evaluating "Zero Down" Offers:</strong> Running the math to see if putting $3,000 down is actually worth it to lower the monthly payment, or if you end up paying the exact same Total Lease Cost regardless of the down payment.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "What is a 'Money Factor'?",
+                        answer: "The Money Factor (MF) is simply how lease companies express the interest rate. Because they calculate interest based on both the Cap Cost and the Residual Value, they use a fraction rather than a percentage. To convert a Money Factor to a recognizable APR interest rate, simply multiply it by 2,400 (e.g., 0.0020 MF × 2400 = 4.8% APR)."
+                    },
+                    {
+                        question: "What is 'Residual Value'?",
+                        answer: "Residual Value is the leasing bank's mathematical guess of exactly what the car will be worth at the very end of your lease term. It is always calculated as a strict percentage of the original MSRP. A higher Residual Value is better for you, as it means the car depreciates less, requiring you to pay less."
+                    },
+                    {
+                        question: "Should I put money down on a lease?",
+                        answer: "Most financial advisors strongly recommend putting $0 down on a lease (known as a 'Sign and Drive' lease). If you total the car as you drive off the lot on Day 1, your insurance will pay the leasing company for the car, but the leasing company will NOT refund your down payment. You instantly lose that cash."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Gas Mileage Calculator", path: "/gas-mileage-calculator", desc: "Calculate the exact fuel efficiency of your vehicle." },
+                    { name: "ROI Calculator", path: "/roi-calculator", desc: "Calculate your exact annualized percentage returns." },
+                    { name: "Investment Calculator", path: "/investment-calculator", desc: "A broader tool for projecting overall stock portfolio growth." }
+                ]}
+            />
         </div>
     );
 }

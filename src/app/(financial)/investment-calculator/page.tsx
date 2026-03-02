@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function InvestmentCalculator() {
     const [startingBalance, setStartingBalance] = useState('25000');
@@ -130,6 +131,63 @@ export default function InvestmentCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Investment Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Investment Calculator & Tax Forecaster"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Investment Calculator</strong> is a comprehensive wealth-projection tool that goes beyond standard compounding equations by adding the real-world friction of <strong>taxes</strong>. It allows you to model both an initial starting sum and ongoing annual contributions to see exactly how large your portfolio will grow over decades.</p>
+                        <p>Unlike basic calculators that give you an unrealistic "Gross Value," this tool requires you to input an estimated capital gains tax rate. This allows you to see the exact "Net Value" (take-home cash) you can expect to pull out of the market when you finally sell your assets.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>This calculator merges the Future Value of a Lump Sum formula with the Future Value of an Annuity formula, and then subtracts calculated taxes from the total raw capital gains.</p>
+                        <div className="bg-slate-50 p-4 rounded-lg font-mono text-center text-[14px] shadow-sm my-4 flex flex-col gap-2 border border-slate-200 text-slate-900">
+                            <p><strong>1. Gross Value</strong> = [ P(1 + r)<sup>t</sup> ] + [ C × ((1 + r)<sup>t</sup> - 1) ÷ r ]</p>
+                            <p><strong>2. Principle</strong> = P + (C × t)</p>
+                            <p><strong>3. Net Value</strong> = Gross Value - [(Gross Value - Principle) × Tax Rate]</p>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's assume you start with <strong>$25,000</strong> in an index fund. You commit to adding <strong>$6,000 every year</strong> for exactly <strong>20 years</strong>. You expect an <strong>8% annual return</strong> and a <strong>15% Capital Gains Tax</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4 text-slate-700">
+                            <li><strong>Step 1 (Raw Growth):</strong> Your $25,000 grows. Plus, your 20 payments of $6,000 ($120k total) grow. The total Gross Value becomes roughly <strong>$392,500</strong>.</li>
+                            <li><strong>Step 2 (Identify Gains):</strong> Your out-of-pocket principle was $145,000 ($25k + $120k). Therefore, your pure "Taxable Gains" are exactly <strong>$247,500</strong>.</li>
+                            <li><strong>Step 3 (Calculate Tax):</strong> 15% of $247,500 is roughly <strong>$37,125</strong> owed to the IRS.</li>
+                            <li><strong>Result:</strong> When you sell, your final net take-home cash is exactly <strong>$355,375</strong>.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4 text-slate-700">
+                        <li><strong>Standard Brokerage Planning:</strong> Calculating the after-tax yield of a standard taxable brokerage account (like Robinhood or Fidelity) where you are legally required to pay long-term capital gains tax upon sale.</li>
+                        <li><strong>Real Estate Modeling:</strong> Projecting the future sale value of a rental property (including the initial down-payment and annual principal paydown) and factoring in property sale taxes.</li>
+                        <li><strong>Comparing Tax-Advantaged Accounts:</strong> Modeling investments inside a standard account (with tax) versus a Roth IRA (0% tax rate) to visually see how many tens of thousands of dollars taxes eat over 30 years.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Why should I include 'Annual Additions'?",
+                        answer: "Very few people invest a single lump sum and never touch it again. 'Dollar-Cost Averaging' (investing a set amount of money every single year regardless of market conditions) is the mathematically proven, safest way to build long-term wealth, drastically reducing the impact of market crashes."
+                    },
+                    {
+                        question: "What is a realistic 'Expected Return' to use?",
+                        answer: "Over the last century, the US Stock Market (S&P 500) has returned an average of about 10% per year before inflation. If you want to calculate 'Real Returns' (purchasing power in today's money), subtract average inflation (3%) and use a 7% expected return in the calculator."
+                    },
+                    {
+                        question: "How do I estimate my Tax Rate?",
+                        answer: "If you hold a stock for less than a year in the US, it is taxed as standard income (anywhere from 10% to 37%). If you hold it for over a year, it qualifies for Long-Term Capital Gains tax, which generally sits at 15% for the vast majority of middle-class earners."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "ROI Calculator", path: "/roi-calculator", desc: "Calculate your exact annualized percentage returns on recent sales." },
+                    { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "Project future investment growth using recursive compound interest." },
+                    { name: "Savings Goal Calculator", path: "/savings-goal-calculator", desc: "Figure out exactly how much you need to save each month to hit a target." }
+                ]}
+            />
         </div>
     );
 }

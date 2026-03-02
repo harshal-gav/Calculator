@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function PresentValueCalculator() {
     const [futureValue, setFutureValue] = useState('10000');
@@ -94,6 +95,63 @@ export default function PresentValueCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Present Value Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <CalculatorSEO
+                title="Present Value Calculator"
+                whatIsIt={
+                    <>
+                        <p>Our <strong>Present Value (PV) Calculator</strong> is a foundational tool in finance used to determine the exact current worth of a future sum of money. Because of inflation and the potential to earn interest, a dollar today is always inherently worth more than a dollar tomorrow. This concept is called the "Time Value of Money."</p>
+                        <p>This calculator allows you to work backwards. By inputting your future financial goal, your expected time frame, and a realistic interest rate (discount rate), it calculates the exact lump sum of cash you need to deposit <em>right now</em> to mathematically guarantee you hit that goal.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>The Present Value formula simply reverses the standard compound interest equation.</p>
+                        <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
+                            <p><strong>PV</strong> = FV ÷ (1 + r)<sup>n</sup></p>
+                            <p className="border-t border-emerald-100 pt-3 mt-2 text-sm font-sans text-left text-gray-700"><strong>Where:</strong><br />FV = Future Value<br />r = Discount Rate / Interest Rate per period<br />n = Number of periods (Years)</p>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's assume you want to have exactly <strong>$100,000</strong> saved for your child's college tuition in exactly <strong>18 years</strong>. You can safely invest money into an index fund that reliably returns <strong>7% annually</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                            <li><strong>Step 1 (Variables):</strong> FV = 100,000. r = 0.07. n = 18.</li>
+                            <li><strong>Step 2 (The Math):</strong> PV = 100,000 ÷ (1 + 0.07)<sup>18</sup></li>
+                            <li><strong>Step 3 (The Exponent):</strong> 1.07<sup>18</sup> = 3.3799</li>
+                            <li><strong>Step 4 (Divide):</strong> 100,000 ÷ 3.3799 = <strong>29,586.67</strong>.</li>
+                            <li><strong>Result:</strong> Assuming a 7% return, if you invest just <strong>$29,586.67</strong> the day your child is born, it will naturally compound into $100,000 by their 18th birthday.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                        <li><strong>Retirement Benchmarking:</strong> Working backwards from a goal of $2,000,000 to figure out exactly what your current brokerage account balance needs to be right now so that you don't have to save another dime.</li>
+                        <li><strong>Evaluating Lottery Winnings:</strong> Deciding mathematically whether to take a $500,000 lump sum today, or an annuity that pays out $1,000,000 spread over 30 years. (Hint: Depending on the discount rate, the lump sum is almost always better).</li>
+                        <li><strong>Business Acquisitions:</strong> Corporations use Present Value to determine exactly how much cash to offer to buyout a competitor today, based on the competitor's projected future cash flows.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "What is a 'Discount Rate'?",
+                        answer: "In Present Value calculations, the 'Discount Rate' is functionally identical to an interest rate or return rate. It is the percentage rate used to discount the future cash flow back to its current value. Higher risk investments demand a higher discount rate."
+                    },
+                    {
+                        question: "Why is taking money today better than taking the same amount tomorrow?",
+                        answer: "This is the core of the 'Time Value of Money'. If someone hands you $100 today, you can instantly put it in a 5% Savings Account. In one year, you have $105. If you let them wait a year to hand you that $100, you have permanently lost the opportunity to earn that $5."
+                    },
+                    {
+                        question: "How does inflation affect Present Value?",
+                        answer: "Inflation actively decreases the purchasing power of money over time. If you use the expected inflation rate (e.g., 3%) as your Discount Rate, the Present Value calculator will show you exactly how much your future money is worth in today's purchasing power."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Investment Calculator", path: "/investment-calculator", desc: "A broader tool for projecting overall stock portfolio growth." },
+                    { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "Project future investment growth using recursive compound interest." },
+                    { name: "ROI Calculator", path: "/roi-calculator", desc: "Calculate your exact annualized percentage returns on recent sales." }
+                ]}
+            />
         </div>
     );
 }
