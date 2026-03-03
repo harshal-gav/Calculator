@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 // Fallback rates just in case API fails
 const FALLBACK_RATES: Record<string, number> = {
     USD: 1, EUR: 0.92, GBP: 0.79, JPY: 150.1, AUD: 1.52, CAD: 1.35,
@@ -223,6 +223,62 @@ export default function CurrencyConverter() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Currency Converter", "operatingSystem": "All", "applicationCategory": "FinanceApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Currency Converter"
+                    whatIsIt={
+                        <>
+                            <p>A <strong>Currency Converter</strong> is a fast, reliable tool utilized by travelers, investors, and international business owners to instantly translate the value of one currency into another based on current foreign exchange (forex) market rates.</p>
+                            <p>Our tool directly queries live global exchange rates to provide accurate conversions across major fiat currencies such as USD, EUR, GBP, JPY, and many more, giving you absolute clarity on international purchasing power.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Converting currencies relies on an Exchange Rate multiplier. The standard mathematical conversion is incredibly simple:</p>
+                            <div className="bg-white p-4 rounded-lg font-mono text-center text-xl shadow-sm my-4 overflow-x-auto">
+                                Target Amount = Base Amount × Exchange Rate
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4">
+                                <li><strong>Base Amount:</strong> The quantity of the currency you currently own.</li>
+                                <li><strong>Exchange Rate:</strong> The live market ratio indicating how much of the target currency 1 unit of the base currency buys.</li>
+                                <li><strong>Target Amount:</strong> The final converted value.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Suppose you are traveling to Europe from the United States with <strong>$1,000 USD</strong> in your budget.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4">
+                                <li><strong>Current Exchange Rate:</strong> Let's say 1 USD buys exactly 0.92 EUR.</li>
+                                <li><strong>Calculation:</strong> $1,000 × 0.92 = <strong>€920.00</strong>.</li>
+                            </ul>
+                            <p className="mt-4">You now know that your $1,000 USD gives you exactly €920.00 in European purchasing power.</p>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Travel Planning:</strong> Travelers use currency converters to accurately budget for hotels, meals, and excursions in foreign countries.</li>
+                            <li><strong>International E-Commerce:</strong> Small business owners and online shoppers rely on conversion rates to price goods for international audiences and calculate true import costs.</li>
+                            <li><strong>Remittances:</strong> Expats comparing rates before sending money home to ensure their family receives the highest possible yield.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why do exchange rates constantly fluctuate?",
+                            answer: "Currencies are traded 24/5 on the global Forex market. Exchange rates fluctuate based on supply and demand, which are influenced by a nation's inflation rates, interest rates, public debt, political stability, and overall economic performance."
+                        },
+                        {
+                            question: "Is this the exact rate a bank will give me?",
+                            answer: "No. Our calculator provides the 'mid-market' rate—the true, unbiased exchange rate between global banks. Retail banks, credit cards, and airport kiosks always add a 'spread' markup (usually 1% to 5%) to make a profit. Use our rate as a baseline to negotiate or choose the cheapest transfer service."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "ROI Calculator", path: "/roi-calculator", desc: "Calculate your overall return on investments, including forex trades." },
+                        { name: "Salary Calculator", path: "/salary-calculator", desc: "Convert hourly rates to an annual salary, useful for remote global teams." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

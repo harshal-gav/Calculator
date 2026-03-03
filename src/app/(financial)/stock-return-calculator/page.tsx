@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function StockReturnCalculator() {
     const [shares, setShares] = useState('100');
     const [buyPrice, setBuyPrice] = useState('50.00');
@@ -230,6 +230,68 @@ export default function StockReturnCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Stock Return Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Stock Return Calculator"
+                    whatIsIt={
+                        <>
+                            <p>A <strong>Stock Return Calculator</strong> is a specialized investment tool designed to reveal the exact, true profitability of an individual stock or equity trade.</p>
+                            <p>Most basic portfolio apps show raw percentages, but they often ignore hidden costs like buying/selling commission fees and completely exclude the positive compounding effect of collected dividend payouts. Our calculator factors in every variable to give you your true Net Profit and precise Return on Investment (ROI).</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>To accurately determine the true net profit and ROI of a stock trade, multiple financial variables must be calculated together:</p>
+                            <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] sm:text-lg shadow-inner my-4 overflow-x-auto text-zinc-800 border border-zinc-200">
+                                Net Profit = (Sell Price × Shares) + Dividends - (Buy Price × Shares) - Buy Fee - Sell Fee
+                                <br /><br />
+                                ROI = (Net Profit / Cost Basis) × 100
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-emerald-800">
+                                <li><strong>Cost Basis:</strong> The total original amount spent (Shares × Buy Price) + Buy Fee.</li>
+                                <li><strong>Gross Proceeds:</strong> Raw sale value (Shares × Sell Price).</li>
+                                <li><strong>Dividends:</strong> Total cash paid out to you by the company while you held the stock.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You purchase <strong>100 shares</strong> of a company at <strong>$50.00</strong> per share. Your broker charges a <strong>$4.95</strong> commission. Over a year, you collect <strong>$125.00</strong> in cash dividends.</p>
+                            <p>You decide to sell all 100 shares at <strong>$75.00</strong> each, paying another <strong>$4.95</strong> sell commission.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4">
+                                <li><strong>Cost Basis:</strong> (100 × $50.00) + $4.95 = <strong>$5,004.95</strong></li>
+                                <li><strong>Gross Sale:</strong> 100 × $75.00 = <strong>$7,500.00</strong></li>
+                                <li><strong>Net Proceeds (incl. dividends & fees):</strong> $7,500.00 + $125.00 - $4.95 = <strong>$7,620.05</strong></li>
+                                <li><strong>Net Profit:</strong> $7,620.05 - $5,004.95 = <strong>$2,615.10</strong></li>
+                            </ul>
+                            <p className="mt-4 font-bold text-emerald-700">Your final Return on Investment (ROI) is exactly 52.25%!</p>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Trade Post-Mortems:</strong> After exiting a position, use the calculator to evaluate your exact performance, heavily factoring in the impact of broker fees and taxes on smaller, high-frequency trades.</li>
+                            <li><strong>Dividend Tracking:</strong> Proving the immense value of "Total Return" (Capital Gains + Dividends) for conservative, income-focused dividend portfolios over time.</li>
+                            <li><strong>Breakeven Analysis:</strong> Adjusting the "Sell Price" slider to figure out exactly what price the stock needs to hit for you to just break even after dealing with broker commissions.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does this calculator account for capital gains tax?",
+                            answer: "Currently, this specific calculator determines pre-tax net profit. Capital gains taxes heavily depend on your specific income bracket and whether your trade was a Short-Term (< 1 year) or Long-Term (> 1 year) hold. Keep in mind you will owe taxes on the Net Profit."
+                        },
+                        {
+                            question: "Why does the ROI include the buy commission in the cost basis?",
+                            answer: "In real accounting and tax law, your 'Cost Basis' isn't just the price of the shares; it's the total capital you had to deploy in order to acquire the asset. The buy commission was money out of your pocket required to start the investment, so it reduces your overall ROI."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "ROI Calculator", path: "/roi-calculator", desc: "A generalized return on investment calculator for any asset class." },
+                        { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "Calculate how those stock returns compound into immense wealth over decades." },
+                        { name: "Investment Calculator", path: "/investment-calculator", desc: "Project the future value of a diversified portfolio." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

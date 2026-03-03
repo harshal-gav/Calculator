@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function CreditCardPayoffCalculator() {
     const [balance, setBalance] = useState('5000');
     const [interestRate, setInterestRate] = useState('18.99');
@@ -236,6 +236,61 @@ export default function CreditCardPayoffCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Credit Card Payoff Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication" }) }} />
+
+            <CalculatorSEO
+                title="Credit Card Payoff Calculator"
+                whatIsIt={
+                    <>
+                        <p>A <strong>Credit Card Payoff Calculator</strong> is an essential personal finance tool designed to help you build a strategy to eliminate high-interest credit card debt. It shows you the math behind your debt repayment.</p>
+                        <p>You can use it in two distinct modes: seeing how long it will take to pay off a balance using a fixed monthly payment, or discovering exactly how much you need to pay each month to be completely debt-free by a specific target date.</p>
+                    </>
+                }
+                formula={
+                    <>
+                        <p>When calculating the required fixed monthly payment (P) to pay off a balance (B) in a specific number of months (n), with an annual interest rate (R), the calculator uses the standard amortization formula:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-xl shadow-sm my-4 overflow-x-auto">
+                            P = B * [ r(1 + r)^n ] / [ (1 + r)^n - 1 ]
+                        </div>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>P:</strong> Target fixed monthly payment</li>
+                            <li><strong>B:</strong> Total current credit card balance</li>
+                            <li><strong>r:</strong> Monthly interest rate (APR / 12)</li>
+                            <li><strong>n:</strong> Number of months until desired payoff</li>
+                        </ul>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let’s say you have a <strong>$5,000</strong> balance on a card with a <strong>18.99% APR</strong>.</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-4">
+                            <li><strong>Scenario A:</strong> You pledge to pay exactly <strong>$250</strong> per month. It will take you exactly <strong>25 months</strong> to pay it off, and you will pay <strong>$1,053.40</strong> in total interest.</li>
+                            <li><strong>Scenario B:</strong> You want to be debt-free in exactly <strong>12 months</strong>. You must make a fixed monthly payment of exactly <strong>$460.84</strong>, resulting in only <strong>$530.04</strong> in paid interest.</li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Snowball/Avalanche Method Planning:</strong> Figure out the exact numbers needed to aggressively tackle your highest-interest debts first.</li>
+                        <li><strong>Avoiding Minimum Payment Traps:</strong> Credit card companies calculate minimum payments to keep you in debt for years; use this calculator to establish a real payoff timeline.</li>
+                        <li><strong>Budgeting for Financial Freedom:</strong> Adjust the "Desired Months to Payoff" slider to see how much room you need to make in your monthly budget to hit your debt-free target.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Why should I pay more than the minimum?",
+                        answer: "Minimum payments are often set to cover the month's interest plus just 1% to 2% of your principal balance. Paying only the minimum on thousands of dollars in debt can literally take decades to pay off, costing you double or triple the original amount in interest alone."
+                    },
+                    {
+                        question: "Does the calculator account for new purchases on the card?",
+                        answer: "No, this calculator assumes a fixed starting balance and assumes you will completely stop using the card for new purchases. If you continue adding new charges to the card, your timeline will significantly increase."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Debt Payoff Calculator", path: "/debt-payoff-calculator", desc: "Compare Snowball vs Avalanche payoff strategies for multiple debts." },
+                    { name: "Amortization Calculator", path: "/amortization-calculator", desc: "Generate full amortization schedules for structured loans." },
+                    { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "See how investing that monthly payment instead builds immense wealth." }
+                ]}
+            />
         </div>
     );
 }
