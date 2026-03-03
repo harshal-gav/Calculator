@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 // Common MET values
 const activities = [
@@ -146,6 +147,55 @@ export default function CaloriesBurnedCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Calories Burned Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication" }) }} />
+
+            <CalculatorSEO
+                title="Calories Burned Calculator"
+                whatIsIt={
+                    <p>
+                        The <strong>Calories Burned Calculator</strong> calculates how many calories you expend during various activities based on your weight and workout duration. It uses MET (Metabolic Equivalent of Task) values to provide accurate energy expenditure estimates.
+                    </p>
+                }
+                formula={
+                    <>
+                        <p>The calculation is based on the MET formula:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                            <strong>Calories Burned = MET × Weight (in kg) × Duration (in hours)</strong>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>If a 70 kg person runs at 6 mph (MET = 9.8) for 30 minutes (0.5 hours):</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-2">
+                            <li>Weight: 70 kg</li>
+                            <li>Duration: 0.5 hours</li>
+                            <li>Calculation: 9.8 × 70 × 0.5 = <strong>343 calories</strong></li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Weight Loss Management:</strong> Track how many calories you actively burn to adjust your daily dietary intake.</li>
+                        <li><strong>Fitness Tracking:</strong> Estimate the effectiveness of different workout routines for optimal performance.</li>
+                        <li><strong>Energy Expenditure:</strong> Understand how everyday activities like walking or resting contribute to your total daily energy expenditure (TDEE).</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "What is a MET value?",
+                        answer: "MET stands for Metabolic Equivalent of Task. It measures the energy cost of physical activities relative to a resting baseline. For example, a MET of 1 is roughly equivalent to sitting or resting, while a MET of 6 means the activity burns 6 times the energy of resting."
+                    },
+                    {
+                        question: "Are these calorie burn estimates completely accurate?",
+                        answer: "The MET formula provides a generalized estimate based on averages. Real calorie burn can vary individually depending on muscle mass, age, genetics, gender, and environmental conditions during the exercise."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Calculate your Total Daily Energy Expenditure." },
+                    { name: "BMR Calculator", path: "/bmr-calculator", desc: "Find out your Basal Metabolic Rate for resting calorie burn." },
+                    { name: "Macro Calculator", path: "/macro-calculator", desc: "Determine your ideal macronutrient split." }
+                ]}
+            />
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function FractionToDecimalCalculator() {
     const [numerator, setNumerator] = useState('3');
@@ -90,6 +91,55 @@ export default function FractionToDecimalCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Fraction to Decimal Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <CalculatorSEO
+                title="Fraction to Decimal Calculator"
+                whatIsIt={
+                    <p>
+                        The <strong>Fraction to Decimal Calculator</strong> is an instant conversion tool that translates any mathematical fraction into its exact decimal equivalent and percentage form.
+                    </p>
+                }
+                formula={
+                    <>
+                        <p>Converting a fraction to a decimal is simply the process of division:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                            <strong>Decimal = Numerator (Top) ÷ Denominator (Bottom)</strong><br />
+                            <strong>Percentage = Decimal × 100</strong>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Take the fraction <strong>3/4</strong>:</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-2">
+                            <li>Divide the top by the bottom: 3 ÷ 4 = <strong>0.75</strong></li>
+                            <li>Multiply by 100 for percentage: 0.75 × 100 = <strong>75%</strong></li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Students & Math Homework:</strong> Quickly verify manual long division calculations when learning fractions.</li>
+                        <li><strong>Baking & Cooking:</strong> Convert standard recipe fractions (like 1/3 cup) into decimals for precise digital scale measurements.</li>
+                        <li><strong>Construction & Carpentry:</strong> Translate fractional inch measurements on tape measures into decimal form for computer-aided tools.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "What is a repeating decimal?",
+                        answer: "A repeating decimal happens when a fraction cannot be perfectly divided without an infinite sequence. For example, 1/3 equals 0.333333... repeating infinitely."
+                    },
+                    {
+                        question: "How do I convert a mixed number to a decimal?",
+                        answer: "First, keep the whole number exactly as it is. Then, convert the fraction part to a decimal by dividing the numerator by the denominator. Finally, add the two together. (e.g., 2 1/4 = 2 + 0.25 = 2.25)."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Mixed Number Calculator", path: "/mixed-number-calculator", desc: "Convert mixed numbers into decimals and improper fractions." },
+                    { name: "Percentage Calculator", path: "/percentage-calculator", desc: "Easily calculate percentages, increases, and differences." },
+                    { name: "Fraction Simplifier", path: "/fraction-simplifier-calculator", desc: "Reduce fractions to their simplest form instantly." }
+                ]}
+            />
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function MixedNumberCalculator() {
     const [whole, setWhole] = useState('2');
@@ -124,6 +125,57 @@ export default function MixedNumberCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Mixed Number Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <CalculatorSEO
+                title="Mixed Number Calculator"
+                whatIsIt={
+                    <p>
+                        The <strong>Mixed Number Calculator</strong> instantly converts mixed numbers (a whole number combined with a fraction) into their equivalent improper fraction and exact decimal formats.
+                    </p>
+                }
+                formula={
+                    <>
+                        <p>To convert a mixed number into an improper fraction:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                            <strong>New Numerator = (Whole Number × Denominator) + Numerator</strong><br />
+                            <strong>Denominator stays the same.</strong>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's convert the mixed number <strong>2 3/4</strong>:</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-2">
+                            <li>Multiply the Whole (2) by the Denominator (4): 2 × 4 = 8</li>
+                            <li>Add the original Numerator (3): 8 + 3 = 11</li>
+                            <li>Place over original Denominator: <strong>11/4</strong></li>
+                            <li>To get the decimal: 11 ÷ 4 = <strong>2.75</strong></li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Advanced Math:</strong> You must convert mixed numbers to improper fractions before you can easily multiply or divide them in algebraic equations.</li>
+                        <li><strong>Carpentry & DIY:</strong> Convert standard tape measure dimensions (like 5 7/8 inches) into decimals for ordering materials online or programming CNC routers.</li>
+                        <li><strong>Baking Scaling:</strong> Turn recipes calling for 1 1/2 cups of flour into decimals to easily multiply the recipe for larger batches.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "What is an improper fraction?",
+                        answer: "An improper fraction is simply any fraction where the top number (numerator) is equal to or larger than the bottom number (denominator), meaning the overall value is 1 or greater."
+                    },
+                    {
+                        question: "How do negative mixed numbers work?",
+                        answer: "If you have a negative mixed number like -2 1/4, the entire value is negative. You convert it normally ignoring the sign (getting 9/4), and then apply the negative sign to the final result: -9/4."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Fraction to Decimal", path: "/fraction-to-decimal-calculator", desc: "Easily convert standard fractions to decimals and percentages." },
+                    { name: "Fraction Simplifier", path: "/fraction-simplifier-calculator", desc: "Reduce complex fractions down to their lowest terms instantly." },
+                    { name: "Percentage Calculator", path: "/percentage-calculator", desc: "Perform various percent-based math calculations." }
+                ]}
+            />
         </div>
     );
 }

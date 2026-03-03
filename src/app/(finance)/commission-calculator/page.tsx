@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function CommissionCalculator() {
     const [salePrice, setSalePrice] = useState('150000');
@@ -103,6 +104,55 @@ export default function CommissionCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Commission Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication" }) }} />
+
+            <CalculatorSEO
+                title="Commission Calculator"
+                whatIsIt={
+                    <p>
+                        The <strong>Commission Calculator</strong> helps sales professionals, real estate agents, and business owners quickly determine their commission earnings and the net revenue received by the seller from a given sale price.
+                    </p>
+                }
+                formula={
+                    <>
+                        <p>The commission and net revenue are calculated using these straightforward percentage formulas:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                            <strong>Commission = Sale Price × (Commission Rate / 100)</strong><br />
+                            <strong>Net to Seller = Sale Price − Commission</strong>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>If you sell a property for $150,000 with a 5.5% commission rate:</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-2">
+                            <li>Commission: 150,000 × 0.055 = <strong>$8,250</strong></li>
+                            <li>Net to Seller: 150,000 − 8,250 = <strong>$141,750</strong></li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Real Estate Agents:</strong> Quickly determine standard fee structures before finalizing listing agreements and forecasting personal income.</li>
+                        <li><strong>Sales Teams & Referrals:</strong> Calculate affiliate payouts or finder's fees easily for closed deals.</li>
+                        <li><strong>Sellers:</strong> Understand exactly how much cash you will take away from the total sale after closing costs and agent fees are accounted for.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Does this factor in taxes or broker splits?",
+                        answer: "No, this is a gross commission calculator. For individuals working with a broker, you will often need to split the total commission amount further (e.g., a 50/50 broker split) and pay necessary income taxes on the remaining distribution."
+                    },
+                    {
+                        question: "What is an average real estate commission rate?",
+                        answer: "In the United States, customary real estate commission rates typically hover between 5% and 6% of the total home sale price, often split evenly between the buyer's agent and the listing agent."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Markup Calculator", path: "/markup-calculator", desc: "Calculate your product's selling price based on cost and markup." },
+                    { name: "Margin Calculator", path: "/margin-calculator", desc: "Find your gross margin percentage and profit." },
+                    { name: "Tip Calculator", path: "/tip-calculator", desc: "Easily split the bill and calculate gratuity percentages." }
+                ]}
+            />
         </div>
     );
 }
