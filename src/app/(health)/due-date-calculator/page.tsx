@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function DueDateCalculator() {
     const [calcMethod, setCalcMethod] = useState('lmp'); // 'lmp' (Last Menstrual Period), 'conception', 'ivf', 'ultrasound'
@@ -238,6 +239,68 @@ export default function DueDateCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Due Date Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Due Date Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Due Date Calculator</strong> provides a scientifically estimated date for when your baby will arrive. While naturally occurring human pregnancies vary, this tool uses established obstetric formulas to calculate your most likely due date, current gestational age, and exact trimester milestones.</p>
+                            <p>Whether you know the exact date of conception, the first day of your last menstrual period (LMP), or your IVF transfer date, the calculator adapts to provide the standard 40-week timeline utilized by doctors and midwives globally.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The calculation depends entirely on which medical method you choose:</p>
+                            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                                <strong>LMP Rule (Naegele's Rule):</strong><br />
+                                <em>LMP Date + 280 Days (adjusted for cycle length)</em><br /><br />
+                                <strong>Conception Rule:</strong><br />
+                                <em>Conception Date + 266 Days</em><br /><br />
+                                <strong>IVF Transfer Rule:</strong><br />
+                                <em>Transfer Date + 266 Days - Age of Embryo (3 or 5 days)</em>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate using Naegele's Rule (the standard LMP method) assuming a normal 28-day menstrual cycle:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-2">
+                                <li>The first day of your last menstrual period was <strong>January 1st</strong>.</li>
+                                <li>The formula simply adds <strong>280 total days</strong> (exactly 40 weeks) to January 1st.</li>
+                                <li>Your estimated due date is mathematically <strong>October 8th</strong>.</li>
+                                <li>Your gestational age is calculated from January 1st, even though conception didn't technically happen until roughly January 15th.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Medical Planning:</strong> Ensuring you schedule your crucial anatomy scans (around 20 weeks) and glucose tolerance tests (around 24-28 weeks) during the correct medical windows.</li>
+                            <li><strong>IVF Tracking:</strong> Accurately calculating gestational age for IVF pregnancies, which is notoriously confusing because it must account for the exact age of the embryo (usually 3 or 5 days old) at the time of uterine transfer.</li>
+                            <li><strong>Maternity Leave prep:</strong> Providing HR and your employer with an accurate "Expected Date of Confinement" (EDC) to mathematically trigger FMLA or legally mandated maternity leave timelines.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "How accurate is an estimated due date?",
+                            answer: "It is exactly that—an estimate. Statistically, only about 4% to 5% of babies are born exactly on their mathematically predicted due date. The vast majority of spontaneous labors safely occur anywhere within a two-week window before or after the date."
+                        },
+                        {
+                            question: "Why do doctors measure pregnancy from my Last Period?",
+                            answer: "Because historically, the exact moment of ovulation and fertilization was completely unknowable. The only verifiable, objective date a woman could provide a doctor was the start of her last period. Thus, the 40-week timeline we use today artificially includes the two weeks before you were actually pregnant."
+                        },
+                        {
+                            question: "What if my ultrasound date is different?",
+                            answer: "An early dating ultrasound (usually done between 7 to 12 weeks) is medically considered the most accurate way to date a pregnancy. If your ultrasound due date differs from your LMP due date by more than a week, your doctor will officially change your due date to match the ultrasound measurements."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Ovulation Calculator", path: "/ovulation-calculator", desc: "Find your prime fertile window for conception." },
+                        { name: "Weight Converter", path: "/weight-converter", desc: "Convert standard baby weights between lbs/oz and kg/grams." },
+                        { name: "BMI Calculator", path: "/bmi-calculator", desc: "Track health metrics during pregnancy." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function OvulationCalculator() {
     const [lmpDate, setLmpDate] = useState('');
@@ -198,6 +199,63 @@ export default function OvulationCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Ovulation Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Ovulation Calculator & Fertility Tracker"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Ovulation Calculator</strong> helps you pinpoint your most fertile days of the month by tracking your menstrual cycle. By calculating your exact ovulation date, it identifies your "fertile window"—the brief period each month when intercourse is highly likely to result in pregnancy.</p>
+                            <p>Because the human egg survives for merely 12 to 24 hours post-ovulation, while sperm can survive inside the female reproductive tract for up to 5 days, accurately predicting ovulation is the single most important factor in natural family planning.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The standard medical formula relies on subtracting the length of the luteal phase from the total cycle length.</p>
+                            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                                <strong>Estimated Ovulation Day</strong> = Cycle Length - Luteal Phase Length<br /><br />
+                                <strong>Fertile Window</strong> = (Ovulation Day minus 5 days) + (Ovulation Day plus 1 day)
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Here is how a perfectly average menstrual cycle calculation works:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-2">
+                                <li>You have an average cycle length of exactly <strong>28 days</strong>, and the standard luteal phase length of exactly <strong>14 days</strong>.</li>
+                                <li>The math is simple: 28 - 14 = 14. Therefore, you ovulate precisely on <strong>Day 14</strong> of your cycle (counting from the first day you started bleeding).</li>
+                                <li>Your <strong>Fertile Window</strong> officially opens on Day 9 of your cycle, peaks strongly on Day 13 and Day 14, and firmly closes tight by Day 15.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Conception Planning:</strong> Maximizing the mathematical probability of getting pregnant by intentionally timing intercourse to occur deeply within the 5-day window immediately preceding ovulation.</li>
+                            <li><strong>Natural Contraception (Rhythm Method):</strong> Conversely, determining exactly when to absolutely avoid unprotected intercourse if you are rigorously attempting to prevent pregnancy without the use of hormonal birth control.</li>
+                            <li><strong>Early Pregnancy Detection:</strong> Mathematically calculating the absolute earliest date a standard home pregnancy test (HPT) could logically detect human chorionic gonadotropin (hCG) in your urine, which is usually 12 to 14 days strictly post-ovulation.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What exactly is the Luteal Phase?",
+                            answer: "The luteal phase is the strictly timed second half of your menstrual cycle. It begins immediately after ovulation and rigidly ends the single day before your next period starts. Unlike the highly variable first half of a woman's cycle, a healthy luteal phase is almost always rigidly locked at exactly 12, 13, or 14 days, regardless of the woman."
+                        },
+                        {
+                            question: "Why is the fertile window 6 days long if an egg only lives for 24 hours?",
+                            answer: "The biological window is driven entirely by the lifespan of sperm, not the egg. Healthy sperm can survive stubbornly in fertile cervical mucus for up to 5 whole days waiting for an egg to be released. If you have intercourse 4 days prior to ovulation, you can absolutely still get pregnant."
+                        },
+                        {
+                            question: "Is this calculator medically accurate for irregular cycles?",
+                            answer: "No. If your cycle randomly fluctuates between 24 and 35 days, standard mathematical calendar predictors are fundamentally useless. Women with highly irregular cycles must rely on clinical basal body temperature (BBT) tracking or pharmaceutical ovulation predictor kits (OPKs) testing luteinizing hormone (LH)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Due Date Calculator", path: "/due-date-calculator", desc: "Calculate when your baby will arrive if you conceived." },
+                        { name: "Time Calculator", path: "/time-calculator", desc: "Easily add or subtract time intervals." },
+                        { name: "BMI Calculator", path: "/bmi-calculator", desc: "Analyze your Body Mass Index (BMI)." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

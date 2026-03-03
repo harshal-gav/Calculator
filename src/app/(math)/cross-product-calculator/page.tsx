@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function CrossProductCalculator() {
     // Vector 1: u = (u1, u2, u3)
@@ -149,6 +150,61 @@ export default function CrossProductCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Cross Product Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <CalculatorSEO
+                title="Cross Product Calculator"
+                whatIsIt={
+                    <p>
+                        The <strong>Cross Product Calculator</strong> computes the exact orthogonal vector produced when two 3D vectors are multiplied together. Unlike the dot product (which returns a simple scalar number), the cross product fundamentally creates a brand new third vector that is perfectly perpendicular (at a 90-degree angle) to both original input vectors.
+                    </p>
+                }
+                formula={
+                    <>
+                        <p>The cross product of vectors <strong>u = (u₁, u₂, u₃)</strong> and <strong>v = (v₁, v₂, v₃)</strong> is calculated by finding the determinant of a specific matrix:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                            <strong>w = u × v</strong><br />
+                            <strong>w = (u₂v₃ - u₃v₂) i - (u₁v₃ - u₃v₁) j + (u₁v₂ - u₂v₁) k</strong>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's cross Vector <strong>u (1, -7, 1)</strong> with Vector <strong>v (5, 2, 4)</strong>:</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-2">
+                            <li><strong>i component (x):</strong> (-7 × 4) - (1 × 2) = -28 - 2 = <strong>-30</strong></li>
+                            <li><strong>j component (y):</strong> (1 × 4) - (1 × 5) = 4 - 5 = -1. Because of the formula's strictly alternating signs, we flip it: <strong>1</strong></li>
+                            <li><strong>k component (z):</strong> (1 × 2) - (-7 × 5) = 2 - (-35) = <strong>37</strong></li>
+                            <li><strong>Resultant Vector (w):</strong> <strong>(-30, 1, 37)</strong></li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Classical Mechanics (Torque):</strong> Calculating rotational force (torque). Torque is the cross product of the lever arm vector (distance from pivot) and the applied force vector.</li>
+                        <li><strong>Electromagnetism:</strong> Determining the magnetic force exerted on a highly charged particle rapidly moving through a magnetic field (the Lorentz force).</li>
+                        <li><strong>Computer Graphics:</strong> Finding the "normal vector" of a 3D polygon/triangle. This is absolutely critical for calculating how light realistically bounces off a 3D model during rendering.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Is u × v the exact same as v × u?",
+                        answer: "No, absolutely not. The cross product is strictly 'anti-commutative'. u × v = -(v × u). Swapping the strict order of the vectors will produce a result with the exact same magnitude, but pointing in the exact opposite mathematical direction."
+                    },
+                    {
+                        question: "What does it mean if the cross product is strictly (0,0,0)?",
+                        answer: "If the cross product is a perfect zero vector, it mathematically proves that your two original vectors are either perfectly parallel to each other, perfectly anti-parallel, or at least one of them is the zero vector."
+                    },
+                    {
+                        question: "How do I calculate the cross product of 2D vectors?",
+                        answer: "You technically cannot. The cross product is a strictly 3D mathematical operation. To 'cross' 2D vectors, you must artificially add a '0' as their third (z/k) component, which will always result in a vector pointing straight up or straight down perfectly along the z-axis."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Dot Product", path: "/dot-product-calculator", desc: "Calculate the scalar dot product of two vectors." },
+                    { name: "Vector Addition", path: "/vector-addition-calculator", desc: "Add two vectors together to find the resultant." },
+                    { name: "Projectile Motion", path: "/projectile-motion-calculator", desc: "Calculate physical trajectories using vectors." }
+                ]}
+            />
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function DTICalculator() {
     // Income
@@ -166,30 +167,30 @@ export default function DTICalculator() {
 
             {result !== null && (
                 <div className={`rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden flex flex-col items-center border ${result.status === 'excellent' ? 'bg-emerald-950 border-emerald-800' :
-                        result.status === 'good' ? 'bg-green-950 border-green-800' :
-                            result.status === 'fair' ? 'bg-amber-950 border-amber-800' :
-                                'bg-rose-950 border-rose-800'
+                    result.status === 'good' ? 'bg-green-950 border-green-800' :
+                        result.status === 'fair' ? 'bg-amber-950 border-amber-800' :
+                            'bg-rose-950 border-rose-800'
                     }`}>
 
                     <h2 className="text-white/60 font-bold uppercase tracking-widest text-xs mb-8 z-10 text-center">Your Debt-to-Income Ratio</h2>
 
                     <div className="z-10 relative mb-10 w-full max-w-sm">
                         <div className={`p-8 rounded-full aspect-square border-4 flex flex-col items-center justify-center shadow-inner ${result.status === 'excellent' ? 'bg-emerald-900/40 border-emerald-500/30 shadow-emerald-900/50' :
-                                result.status === 'good' ? 'bg-green-900/40 border-green-500/30 shadow-green-900/50' :
-                                    result.status === 'fair' ? 'bg-amber-900/40 border-amber-500/30 shadow-amber-900/50' :
-                                        'bg-rose-900/40 border-rose-500/30 shadow-rose-900/50'
+                            result.status === 'good' ? 'bg-green-900/40 border-green-500/30 shadow-green-900/50' :
+                                result.status === 'fair' ? 'bg-amber-900/40 border-amber-500/30 shadow-amber-900/50' :
+                                    'bg-rose-900/40 border-rose-500/30 shadow-rose-900/50'
                             }`}>
                             <div className={`font-mono font-black text-6xl md:text-7xl break-all drop-shadow-lg ${result.status === 'excellent' ? 'text-emerald-400' :
-                                    result.status === 'good' ? 'text-green-400' :
-                                        result.status === 'fair' ? 'text-amber-400' :
-                                            'text-rose-400'
+                                result.status === 'good' ? 'text-green-400' :
+                                    result.status === 'fair' ? 'text-amber-400' :
+                                        'text-rose-400'
                                 }`}>
                                 {result.dti.toFixed(1)}<span className="text-3xl">%</span>
                             </div>
                             <div className={`uppercase tracking-widest font-bold text-sm mt-2 rounded-full px-3 py-1 ${result.status === 'excellent' ? 'bg-emerald-500/20 text-emerald-300' :
-                                    result.status === 'good' ? 'bg-green-500/20 text-green-300' :
-                                        result.status === 'fair' ? 'bg-amber-500/20 text-amber-300' :
-                                            'bg-rose-500/20 text-rose-300'
+                                result.status === 'good' ? 'bg-green-500/20 text-green-300' :
+                                    result.status === 'fair' ? 'bg-amber-500/20 text-amber-300' :
+                                        'bg-rose-500/20 text-rose-300'
                                 }`}>
                                 {result.status.toUpperCase()}
                             </div>
@@ -232,6 +233,63 @@ export default function DTICalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "DTI Calculator", "operatingSystem": "All", "applicationCategory": "FinancialApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Debt-to-Income (DTI) Ratio Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Debt-to-Income (DTI) Calculator</strong> is the exact tool used by mortgage lenders, banks, and auto financiers to determine if you can safely afford a new loan. It rigidly compares how much money you earn each month against how much money you are legally obligated to pay toward debts.</p>
+                            <p>Your DTI ratio is arguably more important than your credit score when applying for a mortgage. Even with a perfect 800 credit score, an overly high DTI will result in your loan application being instantly denied because the math proves you do not have enough cash flow to handle another monthly payment.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The DTI calculation is a simple percentage equation utilizing your gross income (before taxes are taken out):</p>
+                            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                                <strong>DTI Ratio</strong> = (Total Monthly Debt Payments ÷ Gross Monthly Income) × 100
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's evaluate a standard American household:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-2">
+                                <li><strong>Income:</strong> You earn a heavily taxed $5,000 per month <em>gross</em> (before taxes).</li>
+                                <li><strong>Debts:</strong> You pay $1,500 in rent/mortgage, a $400 car payment, and $100 in minimum credit card payments. Total Debts = $2,000.</li>
+                                <li><strong>Calculation:</strong> ($2,000 ÷ $5,000) × 100 = <strong>40%</strong>.</li>
+                                <li><strong>Result:</strong> Your DTI is 40%. This is generally considered "Good" and will comfortably qualify you for most conventional loans.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Mortgage Pre-Approval:</strong> The absolute maximum DTI allowed for a conventional "Qualified Mortgage" (QM) is strictly capped at 43% by federal guidelines, though many conservative lenders prefer 36% or lower.</li>
+                            <li><strong>Auto Loan Approvals:</strong> Car dealerships aggressively check your DTI to ensure you aren't over-leveraged before allowing you to drive a depreciating asset off the lot.</li>
+                            <li><strong>Personal Finance Auditing:</strong> Identifying if you are living beyond your means. If your DTI climbs above 50%, you are in the "danger zone" where a single medical emergency or job loss will immediately trigger bankruptcy.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does my DTI include my groceries or utility bills?",
+                            answer: "No. Lenders ONLY care about rigidly contracted, legally binding debts that show up on your credit report. This includes mortgages, car loans, student loans, child support, and credit card minimums. Food, gas, health insurance, and electricity bills are explicitly NOT included in a DTI calculation."
+                        },
+                        {
+                            question: "Do I use my gross income or my net (take-home) pay?",
+                            answer: "You strictly use your Gross Income (your salary BEFORE taxes and 401k contributions are removed). This confuses many people, but lenders intentionally use gross income because tax brackets and deductions are highly subjective and easily manipulated."
+                        },
+                        {
+                            question: "What is the 'Front-End' vs 'Back-End' DTI?",
+                            answer: "Front-End DTI only looks at housing costs (Mortgage + Property Taxes + Home Insurance) divided by your income. Back-End DTI includes housing costs PLUS all other recurring debts (auto, student loans, credit cards). This calculator computes your Back-End DTI, which is the primary number lenders use."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "LTV Calculator", path: "/ltv-calculator", desc: "Calculate your Loan-to-Value ratio for mortgages." },
+                        { name: "Net Worth Calculator", path: "/net-worth-calculator", desc: "Determine your true financial health by balancing assets and debts." },
+                        { name: "Debt Payoff", path: "/debt-payoff-calculator", desc: "Strategize the fastest way to lower your DTI." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
