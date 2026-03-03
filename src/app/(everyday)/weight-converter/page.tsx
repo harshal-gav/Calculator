@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 const rates: Record<string, number> = {
     'kilogram': 1,
@@ -115,6 +116,64 @@ export default function WeightConverter() {
                 </div>
             </div>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Weight Converter", "operatingSystem": "All", "applicationCategory": "UtilityApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Weight & Mass Converter"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Weight Converter</strong> is a digital utility designed to provide exact mathematical translations between the world's most common mass and weight measurement systems. It seamlessly toggles between Metric units (grams, kilograms, metric tons) and traditional Imperial/US Customary units (ounces, pounds, stones, US tons).</p>
+                            <p>Because the United States is one of the only countries on Earth to still primarily rely on pounds, translating global data, recipes, medicinal dosages, or personal fitness metrics into a familiar unit of measurement is a daily necessity for millions of people.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>To mathematically convert a specific weight, you multiply your starting value by an exact, internationally standardized "Conversion Factor".</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
+                                <p><strong>Target Weight = Original Weight × Conversion Factor</strong></p>
+                            </div>
+                            <p>The most important conversion factor to memorize in daily life is the translation between Kilograms and Pounds. Exactly <strong>1 Kilogram = 2.20462 Pounds</strong>. Therefore, if someone weighs 100 kg, you multiply 100 × 2.20462 to realize they weigh roughly 220 lbs.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's look at a common scenario in international travel: reading baggage allowances.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Setup:</strong> You are flying on a European airline. Their strict baggage policy states the absolute maximum weight for a checked bag is <strong>23 kilograms</strong>. You only own a US scale that measures in pounds.</li>
+                                <li><strong>The Math:</strong> The conversion factor to go from Kilograms to Pounds is <strong>2.20462</strong>.</li>
+                                <li><strong>The Calculation:</strong> 23 kg × 2.20462 = 50.706</li>
+                                <li><strong>Result:</strong> Your checked luggage must weigh exactly <strong>50.7 pounds</strong> or less to avoid massive international heavy-bag fees.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Cooking & Baking:</strong> European recipes almost exclusively measure dry ingredients like flour and sugar by mass directly in grams (e.g., 250g of flour). American cooks often need to calculate exactly how many ounces or cups that equates to.</li>
+                            <li><strong>Medicine & Health:</strong> In modern hospitals everywhere (including the US), patient weight and medication dosages are recorded strictly in kilograms and milligrams to prevent fatal, math-based dosage errors.</li>
+                            <li><strong>Freight & Shipping:</strong> When shipping massive industrial goods on boats, you must understand the difference between a "Short Ton" (US Ton = 2,000 lbs) and a "Metric Ton" (1,000 kg = ~2,204 lbs). The identical word "Ton" actually means very different things depending on where you are.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the scientific difference between 'Mass' and 'Weight'?",
+                            answer: "In daily life on Earth, they mean the exact same thing. However, in physics, 'Mass' is how much physical matter an object has (measured in kilograms). 'Weight' is how hard gravity is currently pulling on that mass (measured in Newtons). If you go to the Moon, your Mass stays identical, but your Weight drops by 83% because the Moon's gravity is incredibly weak."
+                        },
+                        {
+                            question: "What is a 'Stone' measurement?",
+                            answer: "The 'Stone' is an older unit of mass heavily used in the United Kingdom and Ireland specifically to measure human body weight. Exactly 1 Stone equals 14 Pounds (or roughly 6.35 kg). If a British person says they weigh '11 stone', they mean they weigh 154 pounds."
+                        },
+                        {
+                            question: "Why do we abbreviate Pounds as 'lbs'?",
+                            answer: "It originates from the ancient Roman unit of mass called the 'libra pondo' (which literally translates to 'pound weight'). The word 'pound' comes from 'pondo', but the abbreviation 'lb' comes directly from 'libra'."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Length Converter", path: "/length-converter", desc: "Instantly translate miles, kilometers, feet, and meters." },
+                        { name: "Ideal Weight Calculator", path: "/ideal-weight-calculator", desc: "Calculate the healthiest weight range for your exact height." },
+                        { name: "BMI Calculator", path: "/bmi-calculator", desc: "Determine your Body Mass Index using either kg or lbs." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

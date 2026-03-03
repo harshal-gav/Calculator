@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function ProbabilityCalculator() {
     const [calcType, setCalcType] = useState('single'); // 'single', 'multiple'
@@ -177,6 +178,64 @@ export default function ProbabilityCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Probability Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Statistical Probability Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Probability Calculator</strong> is a mathematical engine designed to determine the precise likelihood of specific events occurring. It evaluates both single isolated events (like rolling a standard die) and independent multiple-event scenarios (like rolling two dice sequentially).</p>
+                            <p>By translating raw outcomes into exact percentages and real-world odds, this calculator removes the guesswork from statistics, helping students, poker players, data scientists, and risk-managers make mathematically sound predictions based on classical probability theory.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Classical probability represents the total number of ways a specific target can happen, divided by every possible thing that could happen.</p>
+                            <div className="bg-purple-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-purple-100 text-purple-900">
+                                <p><strong>Probability (P) = Target Outcomes ÷ Total Possible Outcomes</strong></p>
+                                <p className="mt-2 pt-2 border-t border-purple-200"><strong>Odds = Target Outcomes : Remaining Not-Target Outcomes</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the exact probability of drawing a specific card from a standard deck.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Scenario:</strong> You need to draw an "Ace" from a standard 52-card poker deck.</li>
+                                <li><strong>The Parameters:</strong> There are exactly <strong>4</strong> Aces in the deck (Target Outcomes) and <strong>52</strong> total cards (Total Possible Outcomes).</li>
+                                <li><strong>The Calculation:</strong> 4 ÷ 52 = <strong>0.0769</strong>.</li>
+                                <li><strong>The Result:</strong> The probability of pulling an Ace is exactly <strong>7.69%</strong>. The odds are <strong>4 : 48</strong> (which simplifies down to 1 : 12).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Tabletop Gaming & Casinos:</strong> Board games, Dungeons & Dragons, and casino math rely entirely on independent probability. Knowing the exact percentage chance of hitting a "Natural 20" or drawing a flush changes how players interact with risk.</li>
+                            <li><strong>Insurance & Risk Management:</strong> Actuaries calculate the statistical probability of independent negative events occurring (like a multi-car accident) to design pricing structures that mathematically guarantee the insurance company remains profitable.</li>
+                            <li><strong>Medical Diagnoses:</strong> When analyzing testing results, doctors look at "P(A and B)" to evaluate the probability of a patient both having a specific underlying condition AND catching a secondary infection.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What does 'Independent Events' mean?",
+                            answer: "Two events are independent if the outcome of the first has zero mathematical effect on the second. For example, flipping a coin twice. The coin landing on 'Heads' first does not change the physical fact that the second flip still has a 50/50 chance."
+                        },
+                        {
+                            question: "What is the difference between Probability and Odds?",
+                            answer: "Probability compares the specific target against the ENTIRE whole (4 parts out of 52 total). Odds compare the target against only the failures (4 parts vs 48 remaining parts). They represent the exact same mathematical reality, just formatted differently."
+                        },
+                        {
+                            question: "How do you calculate 'Both Occur' P(A∩B)?",
+                            answer: "When assuming two events are completely independent, you calculate the probability of them BOTH occurring by multiplying their decimal probabilities together. If Event A is 50% (0.5) and Event B is 50% (0.5), the chance of both hitting is 0.5 × 0.5 = 25%."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Standard Deviation Calculator", path: "/standard-deviation-calculator", desc: "Calculate the exact mathematical variance within a set of data." },
+                        { name: "Random Number Generator", path: "/random-number-generator", desc: "Simulate random probability rolls instantly." },
+                        { name: "Z-Score Calculator", path: "/z-score-calculator", desc: "Determine the probability of an event falling along a normal distribution curve." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

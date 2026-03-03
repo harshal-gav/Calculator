@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function GcfCalculator() {
     const [inputData, setInputData] = useState('24, 36, 60');
@@ -90,6 +91,65 @@ export default function GcfCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "GCF Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Greatest Common Factor (GCF) Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Greatest Common Factor (GCF) Calculator</strong>—also known universally as the Highest Common Factor (HCF)—determines the largest possible positive integer that can evenly divide into every number within your provided dataset without leaving a remainder.</p>
+                            <p>GCF is a foundational mathematical concept used globally to simplify algebraic fractions, factor polynomials, and determine perfect distribution ratios without fracturing the original items.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>To compute the GCF at scale without manually listing out hundreds of individual factors, modern algorithms rely on the ancient Euclidean Algorithm.</p>
+                            <div className="bg-cyan-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-cyan-100 text-cyan-900">
+                                <p><strong>GCD(a, b) = GCD(b, a % b)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-cyan-200">Where <strong>%</strong> is the mathematical modulo (remainder) operator.</p>
+                            </div>
+                            <p>This algorithm rapidly loops, taking the remainder of the previous division until the remainder equals zero. The very last non-zero divisor is mathematically guaranteed to be the Greatest Common Factor.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's look at how GCF applies to an event-planning scenario.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Scenario:</strong> You are packing identical gift bags for a party. You have exactly <strong>24</strong> candy bars and <strong>36</strong> pieces of fruit. You want every bag to be identical with nothing leftover. What is the maximum number of bags you can make?</li>
+                                <li><strong>The Calculation:</strong> We need to find the GCF of <strong>24</strong> and <strong>36</strong>.</li>
+                                <li><strong>The Factors:</strong> Factors of 24 are (1,2,3,4,6,8,12,24). Factors of 36 are (1,2,3,4,6,9,12,18,36).</li>
+                                <li><strong>Result:</strong> The largest number in both lists is <strong>12</strong>. You can make exactly 12 gift bags (each containing perfectly 2 candy bars and 3 pieces of fruit).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Simplifying Fractions:</strong> To reduce the fraction 42/56 to its absolute simplest form, you find the GCF of 42 and 56 (which is 14). You then divide both the top and bottom by 14, resulting in the clean, simplified fraction of 3/4.</li>
+                            <li><strong>Woodworking & Architecture:</strong> A carpenter needs to cut two different boards (one 60 inches, one 72 inches) into equal-length pieces without wasting any wood. Finding the GCF (12 inches) tells them exactly how long to make every cut.</li>
+                            <li><strong>Polynomial Factoring:</strong> In advanced algebra and calculus, extracting the GCF from complex equations (e.g., pulling '2x' out of '4x² + 6x') is the required first step before graphing a parabola or finding a derivative.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between GCF, GCD, and HCF?",
+                            answer: "Nothing. Greatest Common Factor (GCF), Greatest Common Divisor (GCD), and Highest Common Factor (HCF) are the exact same mathematical concept, just taught under different names depending on your global region."
+                        },
+                        {
+                            question: "What if the GCF is just 1?",
+                            answer: "If the absolute Highest Common Factor between your numbers is 1, those numbers are mathematically considered 'Coprime' or 'Relatively Prime'. This means they share zero other divisors."
+                        },
+                        {
+                            question: "Can GCF be a negative number?",
+                            answer: "No. By international mathematical definition, the Greatest Common Factor/Divisor is always strictly expressed as a positive integer, even if the numbers you are analyzing are negative."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "LCM Calculator", path: "/lcm-calculator", desc: "Calculate the exact opposite: the lowest common multiple." },
+                        { name: "Fraction Simplifier", path: "/fraction-simplifier-calculator", desc: "Instantly reduce complex fractions using hidden GCF logic." },
+                        { name: "Prime Factorization", path: "/prime-factorization-calculator", desc: "See the exact prime building blocks of any number." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

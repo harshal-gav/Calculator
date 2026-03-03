@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 const rates: Record<string, number> = {
     'meters_per_second': 1,
@@ -110,6 +111,64 @@ export default function SpeedConverter() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Speed Converter", "operatingSystem": "All", "applicationCategory": "UtilityApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Speed & Velocity Converter"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Speed Converter</strong> is a fast, accurate utility designed to seamlessly convert velocity measurements across various systems, including Metric (km/h, m/s), Imperial (mph, ft/s), Nautical (knots), and Aeronautical (Mach) scales.</p>
+                            <p>Speed is essentially a measure of distance traveled over a specific amount of time. Because different industries and nations measure both distance and time differently, translating "how fast something is moving" requires real-time algebraic conversion to ensure safety and precision.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>To mathematically convert speed, you simply multiply your starting value by an established internationally recognized "Conversion Factor".</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
+                                <p><strong>Target Speed = Original Speed × Conversion Factor</strong></p>
+                            </div>
+                            <p>The most common vehicular conversion factor globally is the ratio between Miles Per Hour (mph) and Kilometers Per Hour (km/h). Exactly <strong>1 mph = 1.609344 km/h</strong>. Therefore, if a car is driving 60 mph, you multiply 60 × 1.609344 to confirm they are traveling at 96.5 km/h.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's look at a common scenario in international aviation and maritime navigation.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Setup:</strong> You are tracking a massive cargo ship on a radar application, and it displays its speed as <strong>25 Knots</strong>. You want to know how fast that actually is in standard miles per hour (mph).</li>
+                                <li><strong>The Math:</strong> The exact conversion factor to go from Knots to mph is <strong>1.15078</strong>.</li>
+                                <li><strong>The Calculation:</strong> 25 knots × 1.15078 = 28.769</li>
+                                <li><strong>Result:</strong> The cargo ship is traveling at roughly <strong>28.8 mph</strong> across the ocean.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Automotive Travel:</strong> When crossing borders (like driving from the US into Canada, or the UK into France), your speedometer natively displays mph but the local legal signs demand km/h. Knowing the rough conversion prevents dangerous speeding tickets.</li>
+                            <li><strong>Athletics and Sports:</strong> Track and field sprinters often have their speed measured scientifically in "Meters per Second" (m/s). A baseball pitcher's throw is measured in mph. Converting these to a uniform metric helps visualize human athletic limits.</li>
+                            <li><strong>Meteorology & Storm Tracking:</strong> Weather channels report hurricane wind speeds differently depending on the region. A Cat 5 hurricane might be reported as 157 mph in Florida, but European disaster agencies will log it as 252 km/h.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What actually is a 'Knot'?",
+                            answer: "A Knot is a unit of speed equating exactly to one nautical mile per hour (1.852 km/h). It originated centuries ago when sailors threw a rope with evenly spaced 'knots' tied in it off the back of a ship and counted how many knots slipped through their hands in a set time to gauge their speed."
+                        },
+                        {
+                            question: "How fast is 'Mach 1'?",
+                            answer: "Mach 1 refers to exactly the speed of sound. However, the speed of sound changes heavily depending on air temperature and altitude. At standard sea-level pressure and 20°C (68°F), Mach 1 is roughly 343 meters per second, or 767 mph. An aircraft flying at 'Mach 2' is flying exactly twice the speed of sound."
+                        },
+                        {
+                            question: "What is the difference between Speed and Velocity?",
+                            answer: "In basic math they are often used interchangeably, but in physics, Speed is 'Scalar' (it only has a magnitude, e.g., '60 mph'). Velocity is a 'Vector' (it has magnitude AND direction, e.g., '60 mph due North'). Our converter strictly handles the math for Speed/Magnitude."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Length Converter", path: "/length-converter", desc: "Translate the distance variables used in speed calculations." },
+                        { name: "Time Zone Converter", path: "/time-zone-converter", desc: "Calculate the exact time difference of a fast international flight." },
+                        { name: "Volume Converter", path: "/volume-converter", desc: "Convert fuel capacity metrics for long-distance travel." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 const labels: Record<string, string> = {
     'celsius': 'Celsius (°C)',
@@ -102,11 +103,66 @@ export default function TemperatureConverter() {
                 </div>
             </div>
 
-            <div className="mt-8 text-center text-sm font-mono text-gray-500 bg-gray-50 p-4 rounded-lg">
-                <strong>°C to °F:</strong> (°C × 9/5) + 32 &emsp; | &emsp; <strong>°F to °C:</strong> (°F − 32) × 5/9
-            </div>
-
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Temperature Converter", "operatingSystem": "All", "applicationCategory": "UtilityApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Temperature Converter"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Temperature Converter</strong> is a precision algorithmic tool that seamlessly translates heat measurements between the world's three primary temperature scales: Fahrenheit (°F), Celsius (°C), and Kelvin (K).</p>
+                            <p>While almost the entire globe utilizes Celsius for daily weather and cooking, the United States still operates heavily on Fahrenheit. Concurrently, engineers, chemists, and astronomers use Kelvin because it is an "absolute" thermodynamic scale. Attempting to convert these in your head is notoriously difficult because they use totally different baseline numbers for the freezing and boiling points of water.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Unlike length or weight conversions which just use simple multiplication, temperature conversion requires multi-step algebra involving fractions and addition/subtraction.</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
+                                <p><strong>°C to °F:</strong> (°C × 9/5) + 32</p>
+                                <p className="mt-2 pt-2 border-t border-emerald-200"><strong>°F to °C:</strong> (°F - 32) × 5/9</p>
+                                <p className="mt-2 pt-2 border-t border-emerald-200"><strong>°C to Kelvin:</strong> °C + 273.15</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's convert a perfectly normal human body temperature from Fahrenheit to Celsius.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Setup:</strong> In the US, the standard baseline for a healthy human body temperature is <strong>98.6 °F</strong>. If a European doctor sees this number, they need to know what it equates to in Celsius.</li>
+                                <li><strong>The Math:</strong> Use the formula <code>(°F - 32) × 5/9</code>.</li>
+                                <li><strong>The Calculation:</strong> First subtract 32 from 98.6 to get 66.6. Then, multiply 66.6 by exactly 5/9 (which is 0.5555...).</li>
+                                <li><strong>Result:</strong> 66.6 × 0.5555 = exactly <strong>37.0 °C</strong>. Both numbers represent identical levels of heat.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>International Weather Forecasts:</strong> To a European used to Celsius, hearing a forecast of "100 degrees" sounds like the air is literally boiling. Converting it to ~37°C makes intuitive sense. Unversely, an American hearing "it's 20 degrees outside" thinks it is freezing, but 20°C is actually a beautiful 68°F.</li>
+                            <li><strong>Baking and Ovens:</strong> The vast majority of European recipes tell you to pre-heat an oven to "200°C". If an American sets their US oven to 200°F instead, the food will barely get warm. Converting 200°C to ~400°F is essentially mandatory before cooking.</li>
+                            <li><strong>PC Hardware Monitoring:</strong> When checking the temperature of your computer's CPU or Graphics Card using diagnostic software, the sensors almost universally output the heat in Celsius, which gamers frequently need to translate.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "At what temperature are Fahrenheit and Celsius exactly the same?",
+                            answer: "Negative 40 degrees (-40). Due to the intersecting mathematics of both formulas, -40°F is the identical thermodynamic temperature as -40°C. It is the only point on the thermometer where the two scales perfectly cross."
+                        },
+                        {
+                            question: "What actually is 0 on the Celsius scale?",
+                            answer: "Anders Celsius designed the scale around the physical phases of water at standard sea-level pressure. Exactly 0°C is the freezing point of water, and exactly 100°C is the boiling point of water. It makes logical sense compared to Fahrenheit, where water freezes at the seemingly random number of 32."
+                        },
+                        {
+                            question: "Why does the Kelvin scale exist?",
+                            answer: "Kelvin is used exclusively for scientific equations because it has no 'negative' numbers. Exactly 0 Kelvin ('Absolute Zero') is the theoretical state where all atomic and molecular movement physically stops. Because the scale starts at true zero, scientists can use it in thermodynamic multiplication and division equations without breaking the math."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Length Converter", path: "/length-converter", desc: "Instantly translate miles, kilometers, feet, and meters." },
+                        { name: "Cooking Measurement Converter", path: "/cooking-converter", desc: "Convert cups, fluid ounces, tablespoons, and milliliters." },
+                        { name: "Speed Converter", path: "/speed-converter", desc: "Convert mph to km/h or knots seamlessly." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function FactorialCalculator() {
     const [nValue, setNValue] = useState('5');
@@ -105,6 +106,65 @@ export default function FactorialCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Factorial Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Mathematical Factorial (n!) Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Factorial Calculator</strong> instantly computes the exact sequential product of an integer and all positive integers below it. Denoted algebraically by an exclamation mark (e.g., <strong>n!</strong>), factorials are the foundational cornerstone of the mathematics governing probability and permutations.</p>
+                            <p>Because multiplying sequences grows exponentially fast (for example, just 10! is already over 3.6 million), standard physical calculators and simple computer scripts will error out or return "Infinity." Our tool utilizes specialized BigInt architecture to return the absolute precise digit of massive factorials.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The mathematical formula for a factorial is expanding the number backwards down to 1, multiplying every digit together.</p>
+                            <div className="bg-pink-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-pink-100 text-pink-900">
+                                <p><strong>n! = n × (n - 1) × (n - 2) × ... × 1</strong></p>
+                            </div>
+                            <p>The sole exception to this rule is the number 0. By universal mathematical convention, <strong>0! = 1</strong>. This is required to prevent permutation fractions from dividing by zero.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's look at a common scenario in probability: determining possible arrangements.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Scenario:</strong> You have 5 different books and you want to know exactly how many different ways you can arrange them side-by-side on exactly one shelf.</li>
+                                <li><strong>The Formula:</strong> The number of possible arrangements for 'n' unique items is always <strong>n!</strong>.</li>
+                                <li><strong>The Calculation:</strong> We need to find the factorial of 5 (written as 5!).</li>
+                                <li><strong>The Math:</strong> 5! = 5 × 4 × 3 × 2 × 1.</li>
+                                <li><strong>Result:</strong> 5! = <strong>120</strong>. There are exactly 120 unique ways to organize those five books.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Combinatorics & Passwords:</strong> Cybersecurity experts use factorials to calculate permutations. If you have a password that must be exactly 10 unique non-repeating digits long, there are exactly 10! (3,628,800) possible combinations a hacker must guess.</li>
+                            <li><strong>Advanced Calculus & Physics:</strong> Taylor Series expansions—the formulas computers use to calculate Sine, Cosine, and Pi perfectly—rely infinitely on factorials in their denominators to slowly converge on exact irrational numbers.</li>
+                            <li><strong>Poker Odds & Card Games:</strong> To calculate the exact odds of being dealt a Royal Flush, you must calculate the total possible poker hands using the mathematical "Choose" formula, which heavily utilizes factorials. The total ways to shuffle a 52-card deck is 52! (an astronomically massive number).</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why does 0! equal 1?",
+                            answer: "It is an agreed-upon universal definition. In combinatorics, 'n!' represents how many ways there are to arrange 'n' items. If you have 0 items, there is exactly 1 way to arrange them: an empty set. Setting 0! to 1 also ensures that critical algebraic formulas (like permutations) don't crash by dividing by zero."
+                        },
+                        {
+                            question: "Can you calculate the factorial of a negative number?",
+                            answer: "No. Standard factorials are strictly defined for non-negative integers only. There is an advanced calculus function called the 'Gamma Function' that can extend factorial-like logic to real and complex numbers, but true factorials require positive whole numbers."
+                        },
+                        {
+                            question: "Can you calculate the factorial of a decimal or fraction?",
+                            answer: "Not using the standard 'n!' notation. Similar to negative numbers, you must use the advanced Gamma Function to evaluate the mathematical equivalent of something like 3.5!."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Permutation Calculator", path: "/permutation-calculator", desc: "Calculate exact ordered arrangements using factorial logic." },
+                        { name: "Combinations Calculator", path: "/combinations-calculator", desc: "Determine unordered groups utilizing divided factorials." },
+                        { name: "Probability Calculator", path: "/probability-calculator", desc: "Determine exact statistical likelihoods utilizing combinatorics." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
