@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 const FREQUENCY_UNITS = [
     { id: 'hz', name: 'Hertz (Hz)', factor: 1 },
@@ -113,6 +114,62 @@ export default function FrequencyConverter() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Frequency Converter", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Hertz & RPM Frequency Converter"
+                    whatIsIt={
+                        <p>The <strong>Frequency Converter</strong> translates the rate at which a repeating event occurs into different mathematical scales. Whether you are dealing with standard physics equations (Hertz), radio broadcasting (Megahertz), computer processing speeds (Gigahertz), or physical engine rotations (RPM), this tool seamlessly bridges the gaps between different units of temporal frequency.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Every frequency unit measures "cycles per unit of time". The globally recognized baseline is the <strong>Hertz (Hz)</strong>, which dictates exactly "one event per second". All other units are simply multiplied or divided against this standard measure.</p>
+                            <div className="bg-teal-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 text-teal-900 border border-teal-100">
+                                <p><strong>1 Hertz (Hz) = 1 Cycle per Second</strong></p>
+                                <p className="mt-2 pt-2 border-t border-teal-200"><strong>1 Kilohertz (kHz) = 1,000 Hz</strong></p>
+                                <p className="mt-2 pt-2 border-t border-teal-200"><strong>60 RPM (Revolutions per Minute) = 1 Hz</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's convert the idle speed of a standard car engine into strict physics notation.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-teal-800">
+                                <li><strong>The Input:</strong> The dashboard tachometer shows the engine idling at exactly <strong>600 RPM</strong> (Revolutions Per Minute).</li>
+                                <li><strong>The Conversion:</strong> Since there are 60 seconds in a minute, we must divide the total RPM by 60 to find the revolutions per second.</li>
+                                <li><strong>The Math:</strong> 600 ÷ 60 = 10.</li>
+                                <li><strong>The Result:</strong> The engine is cycling at exactly <strong>10 Hertz (Hz)</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-teal-800">
+                            <li><strong>PC Building & Overclocking:</strong> Gamers examining computer processors rated at "3.5 GHz" and recognizing that translates to 3,500,000,000 (three and a half billion) microscopic clock cycles every single second.</li>
+                            <li><strong>Audio Engineering:</strong> Music producers understanding that human hearing ranges roughly from 20 Hz (deep bass) up to 20 kHz (piercing treble), using these exact metrics to tune digital equalizers.</li>
+                            <li><strong>Automotive Tuning:</strong> Mechanics translating literal spinning engine metrics (RPM) into electrical ignition frequencies to safely calibrate engine control units (ECUs).</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Are Megahertz (MHz) and Megabytes (MB) related?",
+                            answer: "No. Megahertz (MHz) explicitly measures processing SPEED (how fast something happens). Megabytes (MB) explicitly measures data CAPACITY (how much space something takes up)."
+                        },
+                        {
+                            question: "Why do radio stations use Megahertz (MHz)?",
+                            answer: "FM radio broadcasts by utilizing electromagnetic waves rotating millions of times per second. When you tune your car radio to '98.5 FM', you are literally instructing your antenna to exclusively listen for waves cycling exactly 98,500,000 times per second."
+                        },
+                        {
+                            question: "How is 'Period' different from 'Frequency'?",
+                            answer: "They are mathematical opposites. 'Frequency' measures how many events happen in one second. 'Period' measures how many seconds it takes for ONE event to happen. If a wave has a frequency of 5 Hz, its period is 0.2 seconds."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Time Converter", path: "/time-converter", desc: "Convert standard temporal measurements (seconds, hours, days)." },
+                        { name: "Speed Converter", path: "/speed-converter", desc: "Translate physical linear velocity rather than cyclical frequency." },
+                        { name: "Pace Calculator", path: "/pace-calculator", desc: "Calculate athletic split times and distance frequencies." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function RomanNumeralDateConverter() {
     const [month, setMonth] = useState('1');
@@ -161,6 +162,62 @@ export default function RomanNumeralDateConverter() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Roman Numeral Date Converter", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Aesthetic Roman Numeral Dates"
+                    whatIsIt={
+                        <p>The <strong>Roman Numeral Date Converter</strong> translates standard modern calendar dates into classical Roman numeral styling. Highly popular for designing personalized tattoos, wedding invitations, and engraved jewelry, this tool guarantees your important dates are mathematically translated correctly into perfect Latin script.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Roman numerals operate by combining seven specific Latin letters (I, V, X, L, C, D, M). Rather than possessing a "Zero" or utilizing formal decimal places, the system involves adding characters left-to-right (XII = 12) or subtracting a smaller character placed before a larger one (IX = 9).</p>
+                            <div className="bg-stone-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-stone-200 text-stone-900">
+                                <p><strong>Key Characters:</strong> I (1), V (5), X (10), L (50), C (100), D (500), M (1000)</p>
+                                <p className="mt-2 pt-2 border-t border-stone-300"><strong>Addition Rule:</strong> VII = 5 + 1 + 1 = 7</p>
+                                <p className="mt-2 pt-2 border-t border-stone-300"><strong>Subtraction Rule:</strong> IV = 5 - 1 = 4</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's convert the iconic date format indicating Christmas Day in the year 2024: <strong>12 . 25 . 2024</strong></p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-stone-700">
+                                <li><strong>The Month (12):</strong> A '10' (X) plus two '1's (II) = <strong>XII</strong>.</li>
+                                <li><strong>The Day (25):</strong> Two '10's (XX) plus a '5' (V) = <strong>XXV</strong>.</li>
+                                <li><strong>The Year (2024):</strong> Two '1000's (MM), plus two '10's (XX), plus a '4' (IV) = <strong>MMXXIV</strong>.</li>
+                                <li><strong>Final Result:</strong> XII . XXV . MMXXIV</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-stone-700">
+                            <li><strong>Tattoo Artists & Clients:</strong> Eliminating the incredibly risky guesswork of trying to manually translate a child's birthdate into Roman Numerals for a permanent piece of body art.</li>
+                            <li><strong>Graphic Design:</strong> Wedding planners and invitation designers creating elegant, sophisticated typography elements for high-end formal event documentation.</li>
+                            <li><strong>Architecture & Monuments:</strong> Engravers and stonemasons accurately noting the founding date or construction year into cornerstones following ancient architectural traditions.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why does the year 1999 look so strange in Roman Numerals (MCMXCIX)?",
+                            answer: "Because you cannot simply write 'IM' for 1999 (meaning 1 less than 2000). The strict subtraction rule dictates you must calculate each tens-place separately: 1000 (M), 900 (CM), 90 (XC), and 9 (IX) to form MCMXCIX."
+                        },
+                        {
+                            question: "How do you write the concept of 'Zero' in Roman Numerals?",
+                            answer: "You cannot. The Roman Empire did not actually possess the mathematical concept of zero. Because of this, our calculator only supports non-zero, positive integers starting from the number 1."
+                        },
+                        {
+                            question: "Is there a maximum number the Roman system can display?",
+                            answer: "Traditionally, yes. Because 'M' (1,000) is the largest standard letter, the system begins to visually break down after 3,999 (MMMCMXCIX). Romans used 'vinculum' overlines to multiply numbers by 1,000 for massive quantities, but it is rarely used in modern text."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Roman Numeral Converter", path: "/roman-numeral-converter", desc: "Translate raw individual numbers back and forth without date formatting." },
+                        { name: "Date Calculator", path: "/date-calculator", desc: "Subtract exact dates from each other to find durations." },
+                        { name: "Age Calculator", path: "/age-calculator", desc: "Calculate exact chronological age in years and months." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
