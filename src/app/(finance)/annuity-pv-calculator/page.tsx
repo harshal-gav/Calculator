@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function AnnuityPVCalculator() {
     const [payment, setPayment] = useState('1000');
@@ -131,6 +132,65 @@ export default function AnnuityPVCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Annuity Present Value Calculator", "operatingSystem": "All", "applicationCategory": "FinancialApplication" }) }} />
+
+            <div className="mt-12 max-w-4xl mx-auto">
+                <CalculatorSEO
+                    title="Annuity Present Value Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Annuity Present Value (PV) Calculator</strong> determines the current worth of a predefined series of future cash flows, discounted at a specific interest rate.</p>
+                            <p>Time is money. A dollar received today is intrinsically worth more than a dollar received ten years from now because today's dollar can be invested to earn interest. "Present Value" strips away that time distortion, revealing exactly how much a stream of future payments is worth in today's money.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The calculation uses the standard Time Value of Money (TVM) formula for an <strong>Ordinary Annuity</strong> (payments at the end of the period):</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-emerald-900 border border-emerald-100">
+                                <strong>PV</strong> = PMT × [ 1 − (1 + r)<sup>−n</sup> ] / r
+                            </div>
+                            <p className="text-sm mt-2">For an <strong>Annuity Due</strong> (payments at the beginning of the period), the entire result is multiplied by <code>(1 + r)</code>.</p>
+                            <p className="text-sm mt-2"><strong>PMT</strong> = Payment per period, <strong>r</strong> = Interest rate per period, <strong>n</strong> = Total number of periods.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's say you just won the lottery and are offered two choices: <strong>$1,000 a month for 10 years</strong>, or a lump sum of cash today.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li>The total nominal payout of $1k/mo over 120 months is $120,000.</li>
+                                <li>However, assuming an expected market return (discount rate) of <strong>5% annually</strong> (or 0.416% monthly).</li>
+                                <li>Inputting PMT=$1,000, r=0.416%, n=120... the Present Value is <strong>$94,228</strong>.</li>
+                                <li><strong>The Reality Check:</strong> If the lottery offers you a lump sum greater than $94,228 today, you should mathematically take the lump sum. If they offer less, you should take the monthly payments.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Lottery & Settlement Scenarios:</strong> Analyzing court settlements or lottery payouts to mathematically determine whether taking the lump sum or the annuity stream is more profitable.</li>
+                            <li><strong>Pension Valuation:</strong> Determining the absolute cash value of a corporate pension that guarantees $2,500 a month for 20 years to see if a buyout offer is fair.</li>
+                            <li><strong>Retirement Planning:</strong> Calculating exactly how large of a lump sum you need saved on the day you retire to safely generate a required monthly income stream.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between an Ordinary Annuity and an Annuity Due?",
+                            answer: "Timing. Ordinary annuities pay at the END of the period (like most loan payments). Annuities Due pay at the BEGINNING of the period (like rent). Because you get the money sooner with an Annuity Due, its Present Value is always slightly higher."
+                        },
+                        {
+                            question: "How do I choose the 'Discount Rate'?",
+                            answer: "The discount rate is your 'opportunity cost.' For most personal finance scenarios, use a conservative expected return of the stock market (e.g., 5% to 7%) or the rate of a safe alternative like a treasury bond (e.g., 4%)."
+                        },
+                        {
+                            question: "Does this account for inflation?",
+                            answer: "Only indirectly. If you want to find the real purchasing power of the annuity, you should reduce your discount rate by the expected inflation rate (e.g., if market return is 8% and inflation is 3%, use a 5% 'real' discount rate)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Present Value Calculator", path: "/present-value-calculator", desc: "Calculate the PV of a single future lump sum, rather than a stream of payments." },
+                        { name: "Retirement Calculator", path: "/retirement-calculator", desc: "Project the broader macroeconomic feasibility of your entire nest egg." },
+                        { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "Run the math in reverse to see Future Value." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

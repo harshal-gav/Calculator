@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function MacroCalculator() {
     const [goal, setGoal] = useState('maintenance'); // 'lose', 'maintenance', 'gain'
@@ -140,6 +141,68 @@ export default function MacroCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Macro Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Macronutrient (Macros) Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Macronutrient Calculator</strong> converts your total daily caloric requirement into precise daily targets for grams of Protein, Fat, and Carbohydrates based on your specific body composition goals.</p>
+                            <p>While total calories dictate whether you gain or lose raw mass on the scale, <i>Macros</i> dictate what that mass is made of (fat vs. muscle). Tracking macros ensures you don't just lose weight, but actively improve your metabolic health and athletic performance.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The basic thermodynamic translation from energy (calories) to physical food weight (grams) is strictly fixed by biology:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Protein:</strong> Contains exactly <strong>4 kilocalories per gram</strong>.</li>
+                                <li><strong>Carbohydrates:</strong> Contains exactly <strong>4 kilocalories per gram</strong>.</li>
+                                <li><strong>Fats:</strong> Are much more energy-dense, containing <strong>9 kilocalories per gram</strong>.</li>
+                            </ul>
+                            <div className="bg-orange-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-orange-900 border border-orange-100">
+                                <strong>Macro Grams</strong> = (Total Daily Calories × Macro %) ÷ (4 or 9 kcal/g)
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Suppose you have a daily maintenance TDEE of <strong>2,500 Calories</strong>. Your goal is <strong>Weight Loss (-500 cal)</strong> using a strict <strong>High Protein Split</strong> (40% Protein / 30% Fat / 30% Carbs).</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Adjusted Target:</strong> 2,500 − 500 deficit = <strong>2,000 Calories/day</strong>.</li>
+                                <li><strong>Proteins (40%):</strong> 800 calories allocated to protein. 800 ÷ 4 = <strong>200g of Protein</strong>.</li>
+                                <li><strong>Fats (30%):</strong> 600 calories allocated to fat. 600 ÷ 9 = <strong>67g of Fat</strong>.</li>
+                                <li><strong>Carbs (30%):</strong> 600 calories allocated to carbs. 600 ÷ 4 = <strong>150g of Carbs</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Body Recomposition:</strong> Simultaneously burning body fat while building muscle by maintaining a slight caloric deficit but keeping protein mathematically fixed above 1.0g per pound of body weight.</li>
+                            <li><strong>Keto Diets:</strong> Calculating strict Low-Carb constraints showing exactly how few grams of carbs (typically {"<"}20%) you can ingest before exiting nutritional ketosis.</li>
+                            <li><strong>Endurance Loading:</strong> Shifting to a carb-heavy split (e.g., 50%+) in the days leading up to a marathon to maximize muscular glycogen stores before the race.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Which macro split should I choose?",
+                            answer: "For general fitness and muscle retention, the 'Balanced' or 'High Protein' splits are ideal. The 'Low-Carb' (Keto-style) split is best for aggressive short-term fat loss or people managing insulin resistance, though it can hinder high-intensity anaerobic athletic performance."
+                        },
+                        {
+                            question: "Does alcohol count as a macro?",
+                            answer: "Yes, ethanol represents a 'fourth' macronutrient containing 7 kilocalories per gram. Because it lacks nutritional value, most tracking apps require you to manually subtract alcohol calories from your daily Carbohydrate or Fat allowance to keep the math balanced."
+                        },
+                        {
+                            question: "Why does the weight loss goal subtract exactly 500 calories?",
+                            answer: "One pound of human adipose tissue (body fat) contains roughly 3,500 calories of stored energy. By enforcing a 500-calorie daily deficit, you force your body to burn exactly 3,500 calories of its own fat per week, resulting in a safe, sustainable baseline of 1 lb of fat loss per week."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Find your Total Daily Energy Expenditure before using this calculator." },
+                        { name: "Protein Calculator", path: "/protein-calculator", desc: "Calculate protein specifically based on lean body mass metrics." },
+                        { name: "Calories Burned Calculator", path: "/calories-burned-calculator", desc: "Track how exercise allows you to increase your daily macro allowances." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

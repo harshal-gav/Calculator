@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function HomeEquityCalculator() {
     const [homeValue, setHomeValue] = useState('400000');
@@ -150,6 +151,64 @@ export default function HomeEquityCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Home Equity Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Home Equity & HELOC Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Home Equity Calculator</strong> calculates your exact ownership stake in your property and determines your absolute maximum borrowing power for a Home Equity Line of Credit (HELOC) or Home Equity Loan.</p>
+                            <p>Equity is the difference between what your house is worth and what you currently owe the bank. However, lenders will rarely let you borrow 100% of that equity. They use strict Loan-to-Value (LTV) limits to ensure they are protected if housing prices drop.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Lenders calculate your maximum HELOC limit using this exact formula:</p>
+                            <div className="bg-teal-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-teal-900 border border-teal-100">
+                                <strong>Max Borrowing Power</strong> = (Home Value × Max LTV%) − Current Mortgage Balance
+                            </div>
+                            <p className="text-sm mt-2">The industry standard Max LTV is <strong>80%</strong>. This means the bank requires you to leave a 20% equity buffer untouched in the home.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's say your home appraises for <strong>$400,000</strong> and you owe <strong>$250,000</strong> on your primary mortgage.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Your "Paper" Equity:</strong> $400k − $250k = <strong>$150,000</strong>. This is your raw net worth tied up in the house.</li>
+                                <li><strong>The LTV Limit:</strong> A bank allowing an 80% LTV will extend maximum total debt against the house up to $320,000 (0.80 × $400k).</li>
+                                <li><strong>The HELOC Calculation:</strong> Because you already owe $250k natively, the bank subtracts that from the $320k limit.</li>
+                                <li><strong>The Reality Check:</strong> Even though you have $150k in "paper" equity, the bank will only allow you to borrow <strong>$70,000</strong> in cash.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Renovation Budgets:</strong> Accurately sizing a kitchen or bathroom remodel budget based on what the bank will actually lend you, rather than your total paper equity.</li>
+                            <li><strong>Debt Consolidation:</strong> Checking if you have enough borrowing power to pay off $30,000 in high-interest credit cards by pulling cash out of the house at a lower rate.</li>
+                            <li><strong>Private Mortgage Insurance (PMI) Removal:</strong> Most lenders allow you to drop PMI once your raw equity hits 20% (an 80% LTV). You can use this calculator to prove to your servicer that you have crossed the threshold.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Can I borrow 100% of my equity?",
+                            answer: "Almost never. Traditional lenders cap LTV at 80% to 85%. Some aggressive credit unions might offer 90% or 95% LTV HELOCs, but they usually charge significantly higher interest rates to offset the risk."
+                        },
+                        {
+                            question: "What is the difference between a HELOC and a Home Equity Loan?",
+                            answer: "A Home Equity Loan hands you a single lump-sum of cash upfront with a fixed interest rate. A HELOC (Line of Credit) works like a credit card backed by your house; you only draw what you need, when you need it, typically with a variable interest rate."
+                        },
+                        {
+                            question: "How does the bank determine my 'Home Value'?",
+                            answer: "When you apply for a HELOC, the lender will order either a full physical appraisal or an Automated Valuation Model (AVM) desktop appraisal to determine the legal current market value of your home."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Mortgage Payoff Calculator", path: "/mortgage-payoff-calculator", desc: "See how making extra principal payments accelerates your equity growth." },
+                        { name: "LTV Calculator", path: "/ltv-calculator", desc: "Specifically calculate Loan-to-Value ratios for new purchases." },
+                        { name: "Debt Payoff Calculator", path: "/debt-payoff-calculator", desc: "Compare the cost of paying off debt natively versus using a HELOC." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

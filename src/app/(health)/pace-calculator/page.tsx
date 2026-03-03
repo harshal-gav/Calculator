@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function PaceCalculator() {
     // Distance
@@ -147,6 +148,64 @@ export default function PaceCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pace Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Running Pace & Speed Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Pace Calculator</strong> breaks down exact running splits by calculating the precise minute-per-mile or minute-per-kilometer pace necessary to hit a target race time.</p>
+                            <p>Whether you are trying to break 2 hours in a half-marathon or trying to pass a military fitness test, relying on 'feel' is dangerous. This tool translates your ultimate time goal into the strict mathematical rhythm your smartwatch needs to display.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Pace is simply the mathematical inversion of speed, representing Time over Distance rather than Distance over Time:</p>
+                            <div className="bg-sky-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-sky-900 border border-sky-100">
+                                <strong>Pace = Total Time ÷ Total Distance</strong>
+                            </div>
+                            <p className="text-sm mt-2">The calculator then runs a strict conversion matrix (1 mile = 1.60934 kilometers) to ensure athletes can translate splits across metric and imperial race standards.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Suppose your goal is to break the mythical <strong>4-hour barrier</strong> for a full marathon (<strong>26.2 miles</strong>).</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Input:</strong> Distance = 26.2 Miles, Time = 3 hr 59 min 59 sec.</li>
+                                <li><strong>The Math:</strong> 239.98 total minutes ÷ 26.2.</li>
+                                <li><strong>The Required Pace:</strong> You must maintain exactly <strong>9 minutes and 9 seconds per mile (9:09/mi)</strong>.</li>
+                                <li><strong>The Metric Translation:</strong> If your watch is set to metric, you must run exactly <strong>5 minutes and 41 seconds per kilometer (5:41/km)</strong> across the entire 42.195 km course.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Race Day Pacing Plans:</strong> Programming a GPS watch with strict upper and lower pace boundaries to prevent "blowing up" (running too fast in the first 3 miles due to adrenaline).</li>
+                            <li><strong>Treadmill Translations:</strong> Most treadmills display speed in MPH (e.g., 7.0 mph). The calculator instantly translates that 7.0 mph into an 8:34/mi outdoor tracking pace.</li>
+                            <li><strong>Track Workout Splits:</strong> Calculating the exact pace required for 400m intervals based on a 5k personal best goal.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is a 'Negative Split'?",
+                            answer: "A negative split is a pacing strategy where you run the second half of a race faster than the first half. Many elite athletes aim for an average pace that accommodates starting slightly slower and finishing strongly."
+                        },
+                        {
+                            question: "Why does my GPS watch say I ran further than the official race distance?",
+                            answer: "Official race distances (like a 26.2 mile marathon) measure the absolute shortest possible path 'as the crow flies' on the corners. Because it is impossible for humans to run the perfect 'blue line', runners always weave and run slightly further (e.g., 26.4 miles). Always pace for a slightly longer distance than the official marker."
+                        },
+                        {
+                            question: "What is a good pace for a beginner?",
+                            answer: "For most adult beginners, maintaining a continuous running pace between 10:00/mile (6:12/km) and 12:00/mile (7:27/km) is an excellent aerobic baseline."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Calories Burned Calculator", path: "/calories-burned-calculator", desc: "Calculate the exact metabolic cost of hitting that specific pace." },
+                        { name: "TDEE Calculator", path: "/tdee-calculator", desc: "See how your rigorous training plan impacts your total daily caloric baseline." },
+                        { name: "Velocity Calculator", path: "/velocity-calculator", desc: "For raw physics kinematics without the running-specific split formatting." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

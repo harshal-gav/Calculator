@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function BloodPressureCalculator() {
     const [systolic, setSystolic] = useState('120');
@@ -127,6 +128,68 @@ export default function BloodPressureCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Blood Pressure Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Blood Pressure Category Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Blood Pressure Calculator</strong> instantly categorizes your latest blood pressure reading according to the official guidelines established by the American Heart Association (AHA) and the American College of Cardiology.</p>
+                            <p>Blood pressure (measured in millimeters of mercury, or mmHg) determines the force of blood pushing against the walls of your arteries. Because hypertension (high blood pressure) rarely has obvious symptoms, accurately checking and categorizing your numbers is a critical aspect of preventative health monitoring.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The calculator does not use a single mathematical formula, but rather a strict diagnostic decision tree based on two required variables:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Systolic Pressure (Top Number):</strong> Measures the pressure in your arteries when your heart beats (contracts).</li>
+                                <li><strong>Diastolic Pressure (Bottom Number):</strong> Measures the pressure in your arteries when your heart rests between beats.</li>
+                            </ul>
+                            <p className="mt-4">It also calculates two advanced cardiovascular metrics:</p>
+                            <div className="bg-red-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-red-900 border border-red-100">
+                                <strong>Pulse Pressure</strong> = Systolic − Diastolic<br />
+                                <strong>MAP (Mean Arterial Pressure)</strong> ≈ Diastolic + (Pulse Pressure / 3)
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Suppose you use a home cuff and get a reading of <strong>135/85</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Systolic (135):</strong> Falls into the Stage 1 Hypertension basket (130-139).</li>
+                                <li><strong>Diastolic (85):</strong> Falls into the Stage 1 Hypertension basket (80-89).</li>
+                                <li><strong>The Result:</strong> The calculator correctly flags this as <strong>Stage 1 Hypertension</strong>. Even if only one of the numbers is elevated, the diagnostic category upgrades to the higher of the two risk brackets.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Daily Log Tracking:</strong> Quickly categorizing morning and evening readings to share a structured trend log with a primary care physician.</li>
+                            <li><strong>Monitoring White Coat Syndrome:</strong> Comparing relaxed at-home readings against elevated in-office readings to prevent unnecessary medical prescriptions.</li>
+                            <li><strong>Understanding Vitals:</strong> Calculating the <strong>Mean Arterial Pressure (MAP)</strong>, which dictates if your organs are receiving enough blood flow (typically &gt; 60 mmHg is required for vital organ perfusion).</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Which number is more important, Systolic or Diastolic?",
+                            answer: "Both are important, but for people over the age of 50, Systolic (the top number) is generally viewed as a more significant risk factor for cardiovascular disease. However, an elevation in either number will change your official AHA diagnostic category."
+                        },
+                        {
+                            question: "What is a normal Pulse Pressure?",
+                            answer: "A normal pulse pressure is usually between 40 and 60 mmHg. A constantly wide pulse pressure (e.g., >60 mmHg) can indicate stiffness in the aorta, while a narrow pulse pressure (e.g., <25%) can indicate reduced cardiac output."
+                        },
+                        {
+                            question: "What should I do if the calculator says 'Hypertensive Crisis'?",
+                            answer: "If your Systolic is over 180 OR your Diastolic is over 120, wait 5 minutes and test again quietly. If the reading remains at that level, the AHA recommends seeking immediate medical attention."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Ideal Weight Calculator", path: "/ideal-weight-calculator", desc: "Check BMI targets, as weight loss is a primary driver in lowering blood pressure naturally." },
+                        { name: "Macronutrient Calculator", path: "/macro-calculator", desc: "Plan a DASH (Dietary Approaches to Stop Hypertension) diet macronutrient split." },
+                        { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Calculate your daily energy expenditure baseline." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
