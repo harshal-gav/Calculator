@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function ProportionCalculator() {
     const [a, setA] = useState('2');
@@ -183,6 +184,57 @@ export default function ProportionCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Proportion Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <CalculatorSEO
+                title="Proportion Calculator"
+                whatIsIt={
+                    <p>
+                        The <strong>Proportion Calculator</strong> (often called the rule of three calculator) solves for an unknown value in a mathematical proportion equation. By giving the calculator any three known values, it uses cross-multiplication to instantly find the missing fourth variable.
+                    </p>
+                }
+                formula={
+                    <>
+                        <p>A proportion is simply two ratios (fractions) set equal to each other. The core formula to solve them is cross-multiplication:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                            <strong>A / B = C / D</strong><br />
+                            <strong>A × D = B × C</strong>
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Let's solve for <strong>D</strong> if A = 2, B = 4, and C = 3:</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-2">
+                            <li>Set up the ratio: 2 / 4 = 3 / D</li>
+                            <li>Cross multiply: 2 × D = 4 × 3</li>
+                            <li>Simplify: 2D = 12</li>
+                            <li>Solve for D: D = 12 / 2 = <strong>6</strong></li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Dosing & Chemistry:</strong> Very common in nursing to calculate correct medication doses based on patient weight and known drug concentrations.</li>
+                        <li><strong>Baking & Cooking:</strong> Scaling a recipe up or down. If a recipe for 4 people requires 3 cups of flour, how much flour is needed for 10 people?</li>
+                        <li><strong>Currency & Exchange:</strong> Converting money when you know the exchange rate between two specific currencies.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "What is the 'Rule of Three'?",
+                        answer: "The 'Rule of Three' is a widely used short-hand name for solving direct proportions. If you know three numbers that are proportional to each other, you can always find the fourth using this exact mathematical rule."
+                    },
+                    {
+                        question: "Can this solve inverse proportions?",
+                        answer: "No, this specific calculator formula (A/B = C/D) only solves for direct proportions (when one side increases, the other increases). Inverse proportions require a different formula (A × B = C × D)."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Percentage Calculator", path: "/percentage-calculator", desc: "Easily compute advanced percentage changes and totals." },
+                    { name: "Fraction Simplifier", path: "/fraction-simplifier-calculator", desc: "Reduce complex fractions instantly." },
+                    { name: "Fraction to Decimal", path: "/fraction-to-decimal-calculator", desc: "Convert ratios and fractions directly into decimals." }
+                ]}
+            />
         </div>
     );
 }

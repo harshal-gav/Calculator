@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function VectorAdditionCalculator() {
     const [v1Mag, setV1Mag] = useState('10');
@@ -146,6 +147,59 @@ export default function VectorAdditionCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Vector Addition Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <CalculatorSEO
+                title="Vector Addition Calculator"
+                whatIsIt={
+                    <p>
+                        The <strong>Vector Addition Calculator</strong> computes the resultant vector (magnitude and direction) produced when two separate vectors are added together. It automatically calculates the Cartesian components (X and Y coordinates) using trigonometric functions before determining the final result.
+                    </p>
+                }
+                formula={
+                    <>
+                        <p>Adding vectors requires breaking them down into their horizontal (X) and vertical (Y) Cartesian components using sine and cosine:</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 border border-zinc-200">
+                            <strong>Rx</strong>: V1 × cos(θ1) + V2 × cos(θ2)<br />
+                            <strong>Ry</strong>: V1 × sin(θ1) + V2 × sin(θ2)<br />
+                            <strong>Resultant Magnitude (|R|)</strong> = √(Rx² + Ry²)<br />
+                            <strong>Resultant Direction (θ)</strong> = arctan(Ry / Rx)
+                        </div>
+                    </>
+                }
+                example={
+                    <>
+                        <p>Consider Vector 1 (Magnitude: 10, Angle: 45°) and Vector 2 (Magnitude: 15, Angle: 120°):</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-2">
+                            <li>Rx = 10×cos(45) + 15×cos(120) = -0.4289</li>
+                            <li>Ry = 10×sin(45) + 15×sin(120) = 20.0614</li>
+                            <li>Resultant Magnitude: √((-0.4289)² + (20.0614)²) = <strong>20.0660</strong></li>
+                            <li>Resultant Direction: arctan(20.0614 / -0.4289) = <strong>91.22°</strong></li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Physics Applications:</strong> Calculating net force when multiple different forces are acting on a single object at different angles.</li>
+                        <li><strong>Aviation & Navigation:</strong> Determining true flight path and ground speed by adding the aircraft's physical heading vector to the wind's velocity vector.</li>
+                        <li><strong>Engineering & Architecture:</strong> Analyzing structural load distributions to ensure buildings can handle combined diagonal stresses without failing.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Why can't I just add the two magnitudes together?",
+                        answer: "Because vectors have both magnitude (size) AND direction. If you walk 10 miles North and then 5 miles South, you haven't traveled 15 miles away from your starting point; you're only 5 miles away because the directions partially cancelled each other out."
+                    },
+                    {
+                        question: "Does this calculator use degrees or radians?",
+                        answer: "All inputs and outputs for direction (θ) on this specific calculator are formatted in standard Degrees (0° to 360°)."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Dot Product Calculator", path: "/dot-product-calculator", desc: "Calculate the scalar dot product of two vectors." },
+                    { name: "Cross Product Calculator", path: "/cross-product-calculator", desc: "Determine the 3D cross product vector." },
+                    { name: "Projectile Motion", path: "/projectile-motion-calculator", desc: "Calculate full kinematic trajectories of launched objects." }
+                ]}
+            />
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function ProjectileMotionCalculator() {
     const [velocity, setVelocity] = useState('20'); // m/s
@@ -191,6 +192,58 @@ export default function ProjectileMotionCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Projectile Motion Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <CalculatorSEO
+                title="Projectile Motion Calculator"
+                whatIsIt={
+                    <p>
+                        The <strong>Projectile Motion Calculator</strong> is a classical mechanics tool that computes the exact trajectory, maximum height, total horizontal range, and flight time of any object launched into the air, governed solely by initial velocity, launch angle, and gravity.
+                    </p>
+                }
+                formula={
+                    <>
+                        <p>Projectile motion uses two independent 1D kinematic equations (horizontal and vertical):</p>
+                        <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                            <strong>Max Height (h)</strong> = (v₀² × sin²θ) / (2g)<br />
+                            <strong>Time of Flight (t)</strong> = (2 × v₀ × sinθ) / g<br />
+                            <strong>Total Range (R)</strong> = (v₀² × sin(2θ)) / g
+                        </div>
+                        <p className="text-sm text-zinc-500 mt-2">*Note: These specific formulas assume the launch height (h₀) is exactly 0. Our calculator accounts for variable launch heights using the full quadratic equation.*</p>
+                    </>
+                }
+                example={
+                    <>
+                        <p>If you kick a soccer ball at <strong>20 m/s</strong> at a <strong>45° angle</strong> from the ground (h₀ = 0):</p>
+                        <ul className="list-disc pl-6 space-y-2 mt-2">
+                            <li>Max Height: (20² × sin²(45°)) / (2 × 9.81) = <strong>10.19 meters</strong></li>
+                            <li>Total Flight Time: (2 × 20 × sin(45°)) / 9.81 = <strong>2.88 seconds</strong></li>
+                            <li>Total Distance (Range): (20² × sin(2 × 45°)) / 9.81 = <strong>40.79 meters</strong></li>
+                        </ul>
+                    </>
+                }
+                useCases={
+                    <ul className="list-disc pl-6 space-y-4">
+                        <li><strong>Physics Homework:</strong> Instantly check answers for classical mechanics problems involving thrown balls, fired cannons, or leaping athletes.</li>
+                        <li><strong>Sports Analytics:</strong> Determine the optimal launch angle for maximum distance in track and field events (shot put, javelin) or golf drives.</li>
+                        <li><strong>Game Development:</strong> Program accurate and realistic physics engines for archers, grenades, or jumping mechanics in video games.</li>
+                    </ul>
+                }
+                faqs={[
+                    {
+                        question: "Does this factor in air resistance (drag)?",
+                        answer: "No, this calculator assumes a complete vacuum. In the real world, air resistance causes the projectile to fall shorter and steeper than the perfectly symmetrical parabolas calculated here."
+                    },
+                    {
+                        question: "What angle gives the maximum possible range?",
+                        answer: "Assuming you launch from and land on flat ground (h₀ = 0), a 45-degree angle will always mathematically yield the absolute maximum horizontal range."
+                    }
+                ]}
+                relatedCalculators={[
+                    { name: "Velocity Calculator", path: "/velocity-calculator", desc: "Calculate basic speed, distance, and time." },
+                    { name: "Force Calculator", path: "/force-calculator", desc: "Calculate force based on mass and acceleration (Newton's Second Law)." },
+                    { name: "Kinetic Energy", path: "/kinetic-energy-calculator", desc: "Find the energy of a moving object based on mass and velocity." }
+                ]}
+            />
         </div>
     );
 }
