@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function SignificantFiguresCalculator() {
     const [inputNum, setInputNum] = useState('0.004050');
@@ -152,6 +153,69 @@ export default function SignificantFiguresCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Significant Figures Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Significant Figures (Sig Fig) Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Significant Figures Calculator</strong> analyzes any number and instantly tells you exactly how many significant digits (sig figs) it contains based on strict scientific formatting rules. It also automatically converts your raw number into proper standard Scientific Notation.</p>
+                            <p>Significant figures are critical in chemistry, physics, and engineering because they mathematically represent the precision of a measurement. You cannot report a final answer that implies more precision than your least precise initial measurement tool allows.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Counting significant figures requires following four strict, sequential rules:</p>
+                            <div className="bg-white p-4 rounded-lg font-mono text-left text-[15px] shadow-sm my-4 border border-zinc-200">
+                                <ul className="list-decimal pl-6 space-y-2">
+                                    <li><strong>Rule 1:</strong> All non-zero numbers are ALWAYS significant.</li>
+                                    <li><strong>Rule 2:</strong> Zeros trapped <em>between</em> two non-zero numbers are ALWAYS significant.</li>
+                                    <li><strong>Rule 3:</strong> Leading zeros (zeros before the first non-zero number) are NEVER significant.</li>
+                                    <li><strong>Rule 4:</strong> Trailing zeros (zeros at the very end of a number) are ONLY significant if the number contains a written decimal point.</li>
+                                </ul>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's analyze a difficult number like <strong>0.004050</strong>:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-2">
+                                <li>The three leading zeros (<span className="text-red-600 font-bold">0.00</span>4050) are just placeholders marking the decimal. Not significant.</li>
+                                <li>The non-zero digits (4 and 5) are ALWAYS significant. (2 sig figs so far).</li>
+                                <li>The zero trapped in the middle (0.004<span className="text-green-600 font-bold">0</span>50) connects two significant numbers. It is significant. (3 sig figs so far).</li>
+                                <li>There is a trailing zero at the end (0.00405<span className="text-green-600 font-bold">0</span>). Because the number contains a decimal point, this trailing zero is significant. (4 total sig figs).</li>
+                                <li><strong>Result:</strong> 0.004050 has exactly <strong>4 Significant Figures</strong> and is written as 4.050 × 10^-3 in scientific notation.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Chemistry & Physics Labs:</strong> Calculating the final molarity of a solution without accidentally over-reporting the precision of your cheap digital scale.</li>
+                            <li><strong>Engineering Design:</strong> Reporting tolerances on CAD blueprints. A metal rod listed as "5 cm" implies it could be anywhere from 4.5 to 5.4 cm. A rod listed as "5.00 cm" explicitly implies extremely high manufacturing precision.</li>
+                            <li><strong>Standardized Tests:</strong> AP Chemistry, SAT Math, and MCAT exams frequently feature "gotcha" questions testing rule #4 regarding trailing zeros.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why do 'trapped' zeros count?",
+                            answer: "Because they are part of the actual measured value. If a digital thermometer reads 101 degrees, that middle zero isn't a placeholder; it's a specific, measured piece of data proving the temperature isn't 111 or 121."
+                        },
+                        {
+                            question: "Are trailing zeros significant if there is no decimal point?",
+                            answer: "Generally, no. In the number 5,000, those three trailing zeros are usually considered ambiguous placeholders, meaning the number only has 1 sig fig. However, if written as 5,000. (with a hard decimal at the end), it legally has 4 sig figs."
+                        },
+                        {
+                            question: "What is an 'exact number'?",
+                            answer: "An exact number is something physically counted, not measured. For example, '3 apples'. You cannot have 3.01 apples. Because they have infinite precision, exact numbers have an infinite number of significant figures and do not limit your calculations."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Scientific Notation Converter", path: "/scientific-notation-converter", desc: "Instantly convert massive numbers to and from scientific \"E\" notation." },
+                        { name: "Fraction Simplifier", path: "/fraction-simplifier-calculator", desc: "Reduce complex mathematical fractions to lowest terms." },
+                        { name: "Decimal to Fraction", path: "/decimal-to-fraction-calculator", desc: "Convert any decimal exactly into a standard fraction." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

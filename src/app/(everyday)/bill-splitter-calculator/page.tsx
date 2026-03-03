@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function BillSplitterCalculator() {
     const [totalBill, setTotalBill] = useState('120.00');
@@ -151,6 +152,66 @@ export default function BillSplitterCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Bill Splitter Calculator", "operatingSystem": "All", "applicationCategory": "FinancialApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Bill Splitter & Tip Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Bill Splitter Calculator</strong> completely eliminates the awkward math at the end of a group dinner. It instantly calculates the exact gratuity (tip) based on a percentage of the total bill, adds it to the principal amount, and mathematically divides the grand total equally among everyone at the table.</p>
+                            <p>Whether you are splitting a quick pizza with one roommate or managing a massive $500 dinner tab for a bachelorette party of 10, this tool ensures everyone pays their fair, exact share down to the penny.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The math requires three simple, sequential algebraic steps:</p>
+                            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                                <strong>1. Tip Amount</strong> = Total Bill × (Tip Percentage ÷ 100)<br /><br />
+                                <strong>2. Grand Total</strong> = Total Bill + Tip Amount<br /><br />
+                                <strong>3. Per Person Share</strong> = Grand Total ÷ Number of People
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine 4 friends go out for expensive sushi:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-2">
+                                <li>The raw restaurant bill arrives at exactly <strong>$120.00</strong>.</li>
+                                <li>The group agrees the service was great and decides to leave an <strong>18% tip</strong>.</li>
+                                <li><strong>The Tip Math:</strong> $120.00 × 0.18 = $21.60 tip.</li>
+                                <li><strong>The Grand Total:</strong> $120.00 + $21.60 = $141.60 given to the restaurant.</li>
+                                <li><strong>The Split Math:</strong> $141.60 ÷ 4 people = <strong>$35.40</strong> per person.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Group Dining:</strong> Instantly determining exactly how much each friend needs to Venmo, CashApp, or Zelle the person who physically handed their credit card to the waiter.</li>
+                            <li><strong>Traveling Abroad & Vacations:</strong> Quickly splitting shared expenses like massive AirBnB rentals, group Uber rides, or shared grocery hauls among multiple couples.</li>
+                            <li><strong>Roommate Expenses:</strong> Splitting the total monthly utility bills (electricity, water, internet) evenly among all tenants living in an apartment.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Should I calculate the tip before or after tax?",
+                            answer: "This is a hotly debated topic of tipping etiquette. Traditionally, strict etiquette says you only tip on the pre-tax subtotal. However, modern point-of-sale (POS) systems (like iPads at coffee shops) automatically calculate their suggested tips based on the post-tax grand total, which artificially inflates the tip amount."
+                        },
+                        {
+                            question: "What is a standard tip in the United States?",
+                            answer: "For full-service sit-down restaurants, 15% is traditionally the absolute minimum for acceptable service, 18% is the modern standard for good service, and 20% or more is reserved for excellent service. For food delivery apps, $5 or 20% (whichever is higher) is customary."
+                        },
+                        {
+                            question: "What if someone ordered a $50 steak and I only got a $10 salad?",
+                            answer: "This calculator assumes an 'even split', meaning everyone pays the exact same flat rate regardless of what they ate. If dining disparities are massive, an even split is unfair. In those cases, you must ask the waiter for 'separate checks' or manually itemize the receipt."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Sales Tax Calculator", path: "/sales-tax-calculator", desc: "Calculate total costs with local state taxes." },
+                        { name: "Discount Calculator", path: "/discount-calculator", desc: "Calculate final prices after coupons or sales." },
+                        { name: "ROI Calculator", path: "/roi-calculator", desc: "Analyze financial returns on investments." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

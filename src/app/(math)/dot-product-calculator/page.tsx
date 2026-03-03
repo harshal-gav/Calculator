@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function DotProductCalculator() {
     const [dim, setDim] = useState('3'); // 2 or 3 dimensions
@@ -214,6 +215,68 @@ export default function DotProductCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Dot Product Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Dot Product Calculator (Scalar Product)"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Dot Product Calculator</strong> instantly multiplies two mathematical vectors (in either 2D or 3D space) to output their scalar dot product relative to each other.</p>
+                            <p>Unlike the Cross Product (which results in a completely new vector), the Dot Product always results in a single, scalar integer. In addition to the dot product, this tool simultaneously calculates the exact magnitude (length) of both inputted vectors, the geometric angle (θ) separating them, and automatically determines if the two vectors are perfectly orthogonal (perpendicular).</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The algebraic formula for calculating the dot product of two 3D vectors <strong>u</strong> = [u₁, u₂, u₃] and <strong>v</strong> = [v₁, v₂, v₃] is strictly additive multiplication:</p>
+                            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                                <strong>u · v</strong> = (u₁ × v₁) + (u₂ × v₂) + (u₃ × v₃)
+                            </div>
+                            <p className="mt-4">Alternatively, if you already know the magnitudes and the angle (θ) between the vectors, the geometric formula is:</p>
+                            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
+                                <strong>u · v</strong> = |u| × |v| × cos(θ)
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the dot product of two 3D vectors: <strong>u</strong> = [2, -5, 4] and <strong>v</strong> = [3, 1, -2]:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-2">
+                                <li><strong>Step 1: Multiply corresponding X components:</strong> 2 × 3 = 6</li>
+                                <li><strong>Step 2: Multiply corresponding Y components:</strong> -5 × 1 = -5</li>
+                                <li><strong>Step 3: Multiply corresponding Z components:</strong> 4 × -2 = -8</li>
+                                <li><strong>Step 4: Add the three products together:</strong> 6 + (-5) + (-8) = -7</li>
+                                <li><strong>Result:</strong> The final scalar dot product is exactly <strong>-7</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Physics (Calculating Work):</strong> In classical mechanics, 'Work' is mathematically defined as the dot product of the Force vector applied to an object and the Displacement vector of how far it moved. (W = F · d).</li>
+                            <li><strong>Computer Graphics & Video Games:</strong> Game engines use dot products thousands of times per second to calculate lighting. The engine calculates the angle between a 3D surface's "normal" vector and a light source vector to determine exactly how brightly that specific polygon should be shaded on your screen.</li>
+                            <li><strong>Proving Orthogonality:</strong> Instantly proving if two lines intersect at a perfect 90-degree right angle. If their dot product is exactly zero, the vectors are guaranteed to be perfectly perpendicular.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What does a Dot Product of zero mean?",
+                            answer: "A dot product of exactly 0 means the two vectors are 'orthogonal', which is the multi-dimensional geometric term for 'perpendicular'. They intersect at exactly a 90-degree right angle."
+                        },
+                        {
+                            question: "Is the Dot Product commutative?",
+                            answer: "Yes. The order does not matter. The mathematical result of (u · v) will always be exactly identical to the result of (v · u)."
+                        },
+                        {
+                            question: "Can a Dot Product be a negative number?",
+                            answer: "Yes. A negative dot product geometrically indicates that the angle (θ) separating the two vectors is greater than 90 degrees (an obtuse angle), meaning they are generally pointing in opposite directions across the plane."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Cross Product Calculator", path: "/cross-product-calculator", desc: "Calculate the perpendicular 3D resultant vector between two input vectors." },
+                        { name: "Vector Addition Calculator", path: "/vector-addition-calculator", desc: "Add multiple vectors together to find their cumulative resultant magnitude and direction." },
+                        { name: "Proportion Calculator", path: "/proportion-calculator", desc: "Solve complex algebraic variable proportions." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
