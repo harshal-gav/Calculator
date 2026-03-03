@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function ConeCalculator() {
     const [radius, setRadius] = useState('5');
@@ -107,6 +108,63 @@ export default function ConeCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Cone Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Geometric Cone Properties Calculator"
+                    whatIsIt={
+                        <p>The <strong>Cone Calculator</strong> is a specialized geometry tool designed to compute the three-dimensional properties of a right circular cone. By simply defining the radius of its circular base and its perpendicular altitude (height), the calculator instantaneously derives the total internal volume, the curved lateral surface area, the flat base area, the total surface area, and the diagonal slant height.</p>
+                    }
+                    formula={
+                        <>
+                            <p>To accurately render the metrics of a cone, the tool utilizes Pythagorean theorems (for the slant) and Pi-based scalar multipliers. True Right Circular Cones rely heavily on the constant <strong>π (Pi ≈ 3.14159)</strong> for all rotational geometry.</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
+                                <p><strong>Slant Height (s) = √(r² + h²)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-emerald-200"><strong>Volume (V) = ⅓ × π × r² × h</strong></p>
+                                <p className="mt-2 pt-2 border-t border-emerald-200"><strong>Lateral Area (L) = π × r × s</strong></p>
+                                <p className="mt-2 pt-2 border-t border-emerald-200"><strong>Total Area (A) = π × r × (r + s)</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's map out the properties of a physical traffic cone to find out how much plastic is needed to manufacture the outer layer.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-emerald-800">
+                                <li><strong>The Input:</strong> The traffic cone has a base radius of 5 inches and a height of 10 inches.</li>
+                                <li><strong>Calculating Slant (s):</strong> √(5² + 10²) = √(25 + 100) = √125 ≈ 11.18 inches.</li>
+                                <li><strong>Lateral Area (L):</strong> We use the slant height to find the curved area (the orange plastic part): π × 5 × 11.18.</li>
+                                <li><strong>Result:</strong> It requires approximately <strong>175.6 square inches</strong> of orange plastic to mold the visible cone section.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-emerald-800">
+                            <li><strong>Industrial Manufacturing:</strong> Calculating the exact square footage of sheet metal required to fabricate conical hoppers, funnels, or exhaust caps for factory machinery.</li>
+                            <li><strong>Culinary Arts:</strong> Determining the absolute capacity (Volume) in fluid ounces for custom-made waffle ice-cream cones or fancy pastry molding cups to standardize dessert portion sizes.</li>
+                            <li><strong>Architectural Engineering:</strong> Designing church steeples or modern conical roof structures, requiring precise calculation of the Lateral Surface Area to purchase the exact amount of roofing shingles.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Is this for 'Right' cones or 'Oblique' cones?",
+                            answer: "This calculator specifically requires a 'Right Circular Cone'—where the apex (the top point) sits perfectly centered above the circular base. Oblique cones (where the top is skewed to the side) share the same Volume formula but have incredibly complex Surface Area integrations."
+                        },
+                        {
+                            question: "Why is the volume always divided by 3?",
+                            answer: "Geometrically, any cone takes up exactly one-third (1/3) of the volume of a cylinder that shares the exact same base radius and height. This was famously discovered by the ancient Greek mathematician Archimedes."
+                        },
+                        {
+                            question: "What is the difference between Lateral Area and Total Area?",
+                            answer: "Lateral area is only the curved, slanting 'side' of the cone (like an open ice cream cone or a party hat). Total Area also includes the flat circular bottom (the 'cap' sealing it shut)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Cylinder Calculator", path: "/cylinder-calculator", desc: "Calculate the geometric metrics of a perfect cylindrical tube." },
+                        { name: "Sphere Calculator", path: "/sphere-calculator", desc: "Calculate the volume and surface metrics of a round ball." },
+                        { name: "Triangle Calculator", path: "/triangle-calculator", desc: "Calculate 2D cross-sections utilizing Pythagorean theorems." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

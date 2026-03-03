@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function CylinderCalculator() {
     const [radius, setRadius] = useState('5');
@@ -108,6 +109,63 @@ export default function CylinderCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Cylinder Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Cylindrical Volume & Area Properties"
+                    whatIsIt={
+                        <p>The <strong>Cylinder Calculator</strong> is a precise 3D geometry and engineering tool. By supplying two simple dimensions—the radius of the circular cross-section and the longitudinal height (or length)—it instantly evaluates the cylinder's holding capacity (Volume), the wraparound shell area (Lateral), and the complete exterior envelope (Total Surface Area).</p>
+                    }
+                    formula={
+                        <>
+                            <p>A cylinder is essentially a flat circle that has been extruded through 3D space. Therefore, all cylindrical calculations begin by determining the 2D area (πr²) or circumference (2πr) of the circular face, and then multiplying that characteristic by the specified depth (h).</p>
+                            <div className="bg-cyan-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-cyan-100 text-cyan-900">
+                                <p><strong>Base Area (B) = π × r²</strong></p>
+                                <p className="mt-2 pt-2 border-t border-cyan-200"><strong>Volume (V) = π × r² × h</strong></p>
+                                <p className="mt-2 pt-2 border-t border-cyan-200"><strong>Lateral Area (L) = 2 × π × r × h</strong></p>
+                                <p className="mt-2 pt-2 border-t border-cyan-200"><strong>Total Area (A) = 2πr(r + h)</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the capacity of a cylindrical water storage tank for a rural farm.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-cyan-800">
+                                <li><strong>The Input:</strong> The tank has a radius of 2 meters and a height of 5 meters.</li>
+                                <li><strong>Volume Math:</strong> V = π × r² × h = π × (2)² × 5 = π × 4 × 5.</li>
+                                <li><strong>Base Calculation:</strong> This equals 20π cubic meters.</li>
+                                <li><strong>Result:</strong> The tank holds roughly <strong>62.83 Cubic Meters</strong> of water (which converts to exactly 62,830 Liters!).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-cyan-800">
+                            <li><strong>Fluid Dynamics & Piping:</strong> Plumbers and civil engineers calculate the total internal volume of cylindrical PVC pipes over long distances to determine maximum water flow rates (GPM) or heating fluid capacity in HVAC loops.</li>
+                            <li><strong>Packaging & Logistics:</strong> Soda companies evaluating the precise Lateral Surface Area of a 12oz aluminum can to determine how many square inches of printed marketing label they need to design and print.</li>
+                            <li><strong>Landscaping & Soil:</strong> Determining the correct cubic yards of potting soil required to perfectly fill large, decorative cylindrical planters on a luxury hotel patio without over-purchasing dirt.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Can I use Diameter instead of Radius?",
+                            answer: "The mathematical formulas strictly require the Radius. However, the Radius is always exactly half (1/2) of the Diameter. If a pipe has a 10-inch diameter, simply input '5' as the radius."
+                        },
+                        {
+                            question: "What is 'Lateral Area' physically?",
+                            answer: "Imagine a soup can. The 'Lateral Area' represents the paper label wrapped around the outside of the curvy tin shell. The 'Total Surface Area' represents the paper label PLUS the tin metal lid on top and the tin metal bottom."
+                        },
+                        {
+                            question: "Does this work for hollow cylinders like tubes?",
+                            answer: "These formulas calculate the absolute gross volume assuming a solid object (or internal fluid capacity bounded by an infinitely thin wall). To find the material volume of a thick hollow pipe, you calculate the volume using the outer radius, calculate again using the inner radius, and subtract the two."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Volume Converter", path: "/volume-converter", desc: "Easily convert your cubic meter results into Fluid Gallons or Liters." },
+                        { name: "Circle Calculator", path: "/circle-calculator", desc: "Analyze just the 2D flat end-caps of the cylinder." },
+                        { name: "Cone Calculator", path: "/cone-calculator", desc: "Calculate geometry for angled, tapering circular structures." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

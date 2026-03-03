@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function SphereCalculator() {
     const [radius, setRadius] = useState('5');
@@ -93,6 +94,63 @@ export default function SphereCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Sphere Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Spherical 3D Volume & Surface Calculator"
+                    whatIsIt={
+                        <p>The <strong>Sphere Calculator</strong> is an elegant 3D mathematics tool that extrapolates the entirety of a perfect sphere's physical dimensions using only one known metric: its radius. It instantly generates the maximal width (Diameter), the equatorial perimeter (Circumference), the exterior wrapping area (Surface Area), and the 3D interior capacity (Volume).</p>
+                    }
+                    formula={
+                        <>
+                            <p>A sphere represents the most efficient geometric shape in the universe—providing the absolute maximum internal volume for the minimum possible surface area. Because it consists entirely of a single continuous rotational curve, every computation relies mathematically entirely on the number Pi (π) and algebraic powers of the radius (r).</p>
+                            <div className="bg-violet-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-violet-100 text-violet-900">
+                                <p><strong>Diameter (d) = 2 × r</strong></p>
+                                <p className="mt-2 pt-2 border-t border-violet-200"><strong>Circumference (C) = 2 × π × r</strong></p>
+                                <p className="mt-2 pt-2 border-t border-violet-200"><strong>Surface Area (A) = 4 × π × r²</strong></p>
+                                <p className="mt-2 pt-2 border-t border-violet-200"><strong>Volume (V) = ⁴/₃ × π × r³</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the surface material needed to construct a professional leather basketball.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-violet-800">
+                                <li><strong>The Input:</strong> A regulation men's basketball has an approximate radius of 4.75 inches.</li>
+                                <li><strong>Surface Area Math:</strong> A = 4 × π × r² = 4 × π × (4.75)².</li>
+                                <li><strong>Calculation:</strong> 4 × 3.14159 × 22.5625.</li>
+                                <li><strong>Result:</strong> It requires exactly <strong>283.5 square inches</strong> of leather material to cover the outer surface of the ball.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-violet-800">
+                            <li><strong>Astrophysics & Astronomy:</strong> Scientists estimating the massive gas volumes and gravity-sustaining surface areas of newly discovered exoplanets or determining the density profiles of distant stars based on observed equatorial diameters.</li>
+                            <li><strong>Industrial Gas Storage:</strong> Engineers designing highly pressurized, perfectly spherical LPG (Liquid Petroleum Gas) containment tanks, taking advantage of the sphere's mathematically unparalleled structural integrity to prevent stress-fractures at corners.</li>
+                            <li><strong>Product Packaging & Design:</strong> Determining the absolute maximum milliliters of liquid cosmetic product that can be injected into a designer spherical glass perfume bottle while keeping the exterior dimensions compact.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Is the Earth a perfect geometric sphere?",
+                            answer: "No! Due to centrifugal force from spinning, the Earth is actually an 'Oblate Spheroid'. It bulges slightly outward at the equator and flattens slightly at the North and South poles. However, for most basic architectural/travel calculations, treating it as a perfect sphere is standard practice."
+                        },
+                        {
+                            question: "What is an 'Equatorial Circumference'?",
+                            answer: "It is the absolutely longest possible distance you could travel in a straight line across the surface, splitting the sphere perfectly in half. If you wrap a tape measure around the absolute widest fattest section of a ball, you are measuring its maximum circumference."
+                        },
+                        {
+                            question: "Why does the Volume formula use a fraction (4/3)?",
+                            answer: "This is derived from Calculus (solid integration). A sphere's volume is exactly 2/3 the volume of its 'circumscribed cylinder' (the smallest tight-fitting cylinder you could drop the ball into). Since cylinder volume is (2r) × πr², 2/3 of that equals 4/3πr³."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Circle Calculator", path: "/circle-calculator", desc: "Calculate the flat 2D shadow profile of a sphere." },
+                        { name: "Cylinder Calculator", path: "/cylinder-calculator", desc: "Compare spherical volume against bounding cylinders." },
+                        { name: "Distance Calculator", path: "/distance-calculator", desc: "Calculate physical point-to-point distances across Earth's spheroid." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
