@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 const zodiacData = [
     { sign: 'Capricorn', emoji: '♑', element: 'Earth', range: 'Dec 22 - Jan 19', bg: 'from-stone-600 to-stone-800' },
@@ -117,6 +118,62 @@ export default function ZodiacCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Zodiac Sign Calculator", "operatingSystem": "All", "applicationCategory": "EntertainmentApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Astrological Zodiac Sign Calculator"
+                    whatIsIt={
+                        <p>Our <strong>Zodiac Sign Calculator</strong> instantly determines your Western Astrological "Sun Sign" based purely on your birth date. It maps the celestial position of the Sun during the exact time of year you were born, categorized into twelve distinct ancient mythological constellations.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Western Astrology divides the 360-degree ecliptic (Earth's orbit around the sun) into twelve 30-degree sectors. Because the Earth's orbit is roughly 365 days, each zodiac sign roughly spans a specific 30-day "month," though these do not align perfectly with modern Gregorian calendar months.</p>
+                            <div className="bg-purple-950 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-purple-800 text-purple-200">
+                                <p><strong>Fire Signs:</strong> Aries, Leo, Sagittarius</p>
+                                <p className="mt-2 pt-2 border-t border-purple-800"><strong>Earth Signs:</strong> Taurus, Virgo, Capricorn</p>
+                                <p className="mt-2 pt-2 border-t border-purple-800"><strong>Air Signs:</strong> Gemini, Libra, Aquarius</p>
+                                <p className="mt-2 pt-2 border-t border-purple-800"><strong>Water Signs:</strong> Cancer, Scorpio, Pisces</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's find the sign for someone born on Halloween.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-300">
+                                <li><strong>The Input:</strong> You enter "October 31st".</li>
+                                <li><strong>The Calculation:</strong> The calculator checks its internal calendar array. It sees that dates between October 23rd and November 21st fall under the specific celestial sector ruled by Mars and Pluto.</li>
+                                <li><strong>Result:</strong> Your sun sign is logically determined to be <strong>Scorpio ♏</strong>, a Water element sign.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-300">
+                            <li><strong>Self Discovery:</strong> Many people use their sun sign as a tool for introspection, analyzing the traditional personality traits associated with their sign to better understand their own behavioral patterns.</li>
+                            <li><strong>Relationship Compatibility:</strong> Astrological charts are frequently used to gauge compatibility between partners, friends, or coworkers by comparing how different 'Elements' (Fire, Earth, Air, Water) historically interact.</li>
+                            <li><strong>Daily Horoscopes:</strong> Knowing your exact sun sign is the absolute prerequisite for reading and understanding any daily, weekly, or monthly published horoscope predictions.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is a 'Cusp'?",
+                            answer: "A 'cusp' occurs when you are born within a day or two of the exact transition point between two different zodiac signs. For example, if you are born on April 19th, you are technically an Aries, but you are 'on the cusp' of Taurus and may feel you exhibit traits of both."
+                        },
+                        {
+                            question: "Is my 'Sun' sign the only sign I have?",
+                            answer: "No! In advanced astrology, your Sun sign represents your core identity. But you also have a 'Moon Sign' (representing your emotional inner self) and a 'Rising/Ascendant Sign' (the mask you present to the world), which calculated based on the exact minute and location of your birth."
+                        },
+                        {
+                            question: "Why do the dates sometimes shift slightly from year to year?",
+                            answer: "Because a calendar year is exactly 365.24 days long (hence Leap Years), the exact minute the Sun culturally crosses into a new constellation can technically shift back and forth by a few hours depending on the year you were born."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Love Calculator", path: "/love-calculator", desc: "Test the romantic name compatibility between you and your crush." },
+                        { name: "Age Calculator", path: "/age-calculator", desc: "Find out exactly how many total days old you are." },
+                        { name: "Random Picker", path: "/random-choice-generator", desc: "Let the digital universe decide your fate instead of the stars." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

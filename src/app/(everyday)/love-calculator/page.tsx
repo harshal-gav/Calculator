@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function LoveCalculator() {
     const [name1, setName1] = useState('');
@@ -166,6 +167,61 @@ export default function LoveCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Love Calculator", "operatingSystem": "All", "applicationCategory": "EntertainmentApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Real Love Calculator Test"
+                    whatIsIt={
+                        <p>The <strong>Love Calculator</strong> is a playful algorithm designed to test the romantic compatibility between two names. It analyzes the specific letters in both names and runs them through a deterministic scoring system to generate a fun, shareable love percentage from 0% to 100%.</p>
+                    }
+                    formula={
+                        <>
+                            <p>While true love can't be measured by math, our calculator uses a seeded algorithmic pseudo-random number generator (PRNG) tied directly to the characters of the names entered. By extracting the ASCII character codes and searching for the presence of specific romantic letters (like T, R, U, E, L, O, V, E), it creates a unique score.</p>
+                            <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-rose-100 text-rose-900">
+                                <p><strong>Name 1 + Name 2 = ASCII Seed</strong></p>
+                                <p className="mt-2 pt-2 border-t border-rose-200"><strong>Bonus points for specific vowels and letters</strong></p>
+                                <p className="mt-2 pt-2 border-t border-rose-200"><strong>Final Score = Deterministic Percentage (always the same for those two names)</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Here is how a calculation might happen behind the scenes:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Input:</strong> You enter "Romeo" and "Juliet".</li>
+                                <li><strong>The Process:</strong> The calculator counts the letters, extracts the ASCII values, and notices several "TRUE LOVE" letters present.</li>
+                                <li><strong>Result:</strong> It generates a high compatibility score of <strong>85% - Very strong connection!</strong></li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Entertainment With Friends:</strong> A fun party trick or icebreaker game to see who the algorithm pairs together best among a friend group.</li>
+                            <li><strong>Crush Testing:</strong> Find out what the "stars" (or our algorithm) predict for your current relationship or new crush.</li>
+                            <li><strong>Fictional Pairings:</strong> Test the romantic compatibility of movie characters, celebrities, or historical figures for fun.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Is the Love Calculator accurate?",
+                            answer: "No! The Love Calculator is purely for entertainment purposes. It relies on a mathematical string-parsing algorithm, not astrology or psychology. Your relationship success depends on communication and trust, not your names!"
+                        },
+                        {
+                            question: "Will I always get the same result with the same names?",
+                            answer: "Yes. Our algorithm is deterministic. As long as you spell the names exactly the same way, the mathematical ASCII seed will always produce the exact same percentage score."
+                        },
+                        {
+                            question: "Does the order of the names matter?",
+                            answer: "No. The calculator combines both names into a single string before running the algorithm, so 'Alice and Bob' will yield the exact same score as 'Bob and Alice'."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Zodiac Calculator", path: "/zodiac-calculator", desc: "Discover your astrological sign based on your birth date." },
+                        { name: "Random Picker", path: "/random-choice-generator", desc: "Can't decide where to go for a date? Let the random picker choose." },
+                        { name: "Age Calculator", path: "/age-calculator", desc: "Calculate your exact age in days, months, and years." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
