@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function RegularPolygonCalculator() {
     const [sides, setSides] = useState('5'); // Pentagon default
     const [sideLength, setSideLength] = useState('10');
@@ -122,6 +122,68 @@ export default function RegularPolygonCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Regular Polygon Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Regular Polygon Calculator"
+                    whatIsIt={
+                        <>
+                            <p>A <strong>Regular Polygon Calculator</strong> is a powerful geometric tool designed to solve universally complex attributes of multi-sided symmetrical shapes. By simply entering the number of sides and the length of a single side, it instantaneously unpacks the shape's full geometric profile.</p>
+                            <p>A "Regular" polygon means that all sides are constructed at the exact same length, and all interior angles are identical. Familiar examples include equilateral triangles (3 sides), squares (4 sides), pentagons (5 sides), and stop signs/octagons (8 sides).</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Calculating the complex radii and areas of multi-sided polygons relies heavily on standard trigonometry (tangent and sine data). Assume <strong>n</strong> = number of sides, and <strong>s</strong> = side length:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
+                                <li><strong>Perimeter (\(P\)):</strong> <code>n × s</code></li>
+                                <li><strong>Area (\(A\)):</strong> <code>(s² × n) / [4 × tan(π/n)]</code></li>
+                                <li><strong>Internal Angle:</strong> <code>[(n - 2) × 180°] / n</code></li>
+                                <li><strong>Inradius (apothem):</strong> <code>s / [2 × tan(π/n)]</code></li>
+                                <li><strong>Circumradius:</strong> <code>s / [2 × sin(π/n)]</code></li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's analyze a standard geometry problem: a <strong>Regular Hexagon (6 edges)</strong> where each side length is precisely <strong>10 cm</strong>.</p>
+                            <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-blue-50 p-4 rounded-xl border border-blue-200">
+                                <li><strong>Step 1 (Variables):</strong> n = 6, s = 10</li>
+                                <li><strong>Step 2 (Perimeter):</strong> 6 × 10 = 60 cm</li>
+                                <li><strong>Step 3 (Area):</strong> (100 × 6) / [4 × tan(π/6)] ≈ 259.8076 cm²</li>
+                                <li><strong>Step 4 (Internal Angle):</strong> [(6 - 2) × 180] / 6 = (4 × 180)/6 = 720/6 = 120°</li>
+                                <li><strong>Step 5 (Inradius/Apothem):</strong> 10 / [2 × tan(π/6)] ≈ 8.6603 cm</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>Product Manufacturing:</strong> Machinists milling metal hex-nuts or octagonal bolts must calculate precise circumradius specifications to ensure their tools construct the part correctly while fitting existing wrenches.</li>
+                            <li><strong>Tile Design & Mosaics:</strong> Calculating the interior angles of complex geometric tilings (like tessellations of triangles, squares, and hexagons) to ensure bathroom or floor tiles fit perfectly without any gaps natively.</li>
+                            <li><strong>3D Modeling / Game Dev:</strong> When rendering procedural meshes for computer graphics, programmers rely heavily on apothem and circumradius data to quickly generate n-sided cylinder bases.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between Inradius and Circumradius?",
+                            answer: "The 'Inradius' (often called the Apothem) is the radius of the largest circle that can fit perfectly INSIDE the polygon, touching the flat edges. The 'Circumradius' is the radius of the circle that fits perfectly on the OUTSIDE, touching all the sharp corner vertices."
+                        },
+                        {
+                            question: "Why does the Area formula use 'tan(π/n)'?",
+                            answer: "Because regular polygons can be broken down naturally into 'n' identical right-angled triangles originating from the absolute center. Using basic SOH CAH TOA trigonometry, the tangent of the interior divided angles allows us to calculate the height of those internal triangles without needing to measure it physically."
+                        },
+                        {
+                            question: "Can this calculate a circle's area?",
+                            answer: "Theoretically, yes. A circle is essentially a regular polygon with an infinite number of sides. If you type '1000' sides into this tool, the difference between the Inradius, Circumradius, and Area closely matches the mathematical constants of a perfect circle."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Hexagon Calculator", path: "/hexagon-calculator", desc: "A specialized calculator strictly for 6-sided regular polygons." },
+                        { name: "Octagon Calculator", path: "/octagon-calculator", desc: "A specialized calculator strictly for 8-sided regular polygons." },
+                        { name: "Polygon Calculator", path: "/polygon-calculator", desc: "Calculate basic sums of interior angles for irregular polygons." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

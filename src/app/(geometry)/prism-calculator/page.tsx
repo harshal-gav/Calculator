@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function PrismCalculator() {
     const [baseArea, setBaseArea] = useState('50');
     const [basePerimeter, setBasePerimeter] = useState('30');
@@ -116,6 +116,64 @@ export default function PrismCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Prism Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Right Prism Calculator"
+                    whatIsIt={
+                        <>
+                            <p>A <strong>Right Prism Calculator</strong> is a simplified 3D geometric tool specialized in determining the Volume and Surface Area of any prismatic object. Because the calculation uses baseline inputs instead of single edge lengths, it is completely shape-agnostic.</p>
+                            <p>In geometry, a "right prism" is essentially a 3D extrusion of a flat 2D shape. If you take a triangle, a pentagon, or a star, and push it perfectly straight upward to give it depth, you have created a prism. Examples include shipping boxes (rectangular prisms), Toblerone chocolate boxes (triangular prisms), and standard unsharpened pencils (hexagonal prisms).</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>To accurately calculate the properties of ANY prism, regardless of what the front/back shape looks like, you only need three core variables: <strong>Base Area (\(B\))</strong>, <strong>Base Perimeter (\(p\))</strong>, and the <strong>Prism Height (\(h\))</strong> (its 3D depth).</p>
+                            <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
+                                <li><strong>Volume (\(V\)):</strong> <code>Base Area × Height</code>. (The 2D floor area extruded upwards into the 3rd dimension).</li>
+                                <li><strong>Lateral Surface Area (\(L\)):</strong> <code>Base Perimeter × Height</code>. (This calculates the total surface area of all the walls, ignoring the top lid and bottom floor).</li>
+                                <li><strong>Total Surface Area (\(S\)):</strong> <code>(2 × Base Area) + Lateral Area</code>. (Adding the two base caps back onto the lateral walls).</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the logistics of a strangely shaped <strong>Hexagonal Shipping Box</strong>. We know the box is <strong>10 inches deep</strong> (Height=10), the perimeter of the front opening is <strong>30 inches</strong> (Perimeter=30), and the area of that front opening is <strong>50 square inches</strong> (Area=50).</p>
+                            <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-cyan-50 p-4 rounded-xl border border-cyan-200">
+                                <li><strong>Step 1 (Volume):</strong> Area × Height = 50 × 10 = <strong>500 cubic inches</strong> (How much packing peanuts it holds).</li>
+                                <li><strong>Step 2 (Lateral Area):</strong> Perimeter × Height = 30 × 10 = <strong>300 sq inches</strong> (How much cardboard builds the outer walls).</li>
+                                <li><strong>Step 3 (Total Surface Area):</strong> 2(50) + 300 = 100 + 300 = <strong>400 sq inches</strong> (The total cardboard required to build the box inclusive of the 2 end-caps).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>HVAC Ducting & Plumbing:</strong> Calculating the internal air volume carrying capacity of specialized industrial ductwork runs or irregular liquid fluid pipes.</li>
+                            <li><strong>Manufacturing & Fabrication:</strong> Determining how much raw sheet metal, wood, or acrylic is required to fabricate the outer walls (lateral area) of custom rectangular or triangular kiosks.</li>
+                            <li><strong>Swimming Pools & Construction:</strong> Calculating how many gallons of water fill an irregularly shaped swimming pool (a prism), since Volume = Floor Area × Depth.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does this work for irregular shapes?",
+                            answer: "Yes, absolutely! The power of this mathematical formula is that it doesn't care if your base shape is a perfect square or a bizarre asymmetrical jagged lightning bolt. As long as you know the Area and the Perimeter of the 2D footprint, multiplying them by the depth yields mathematically flawless right prism results."
+                        },
+                        {
+                            question: "Is a cylinder technically a Right Prism?",
+                            answer: "Yes, the exact same mathematical properties govern both. The volume of a cylinder is πr² (the Area of the base) multiplied by height. It is functionally a circular right prism."
+                        },
+                        {
+                            question: "What is an oblique prism?",
+                            answer: "An oblique prism is one where the extrusion height is slanted sideways (like the Leaning Tower of Pisa) instead of perfectly straight up at a 90-degree angle. This calculator is strictly for Right Prisms (perfectly straight 90-degree extrusions)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Cylinder Calculator", path: "/cylinder-calculator", desc: "Solve properties specifically formulated for completely circular prisms." },
+                        { name: "Pyramid Calculator", path: "/pyramid-calculator", desc: "Compute internal volumes where the walls compress to a point rather than extending straight." },
+                        { name: "Area Calculator", path: "/area-calculator", desc: "Calculate the Base Area (\(B\)) of your 2D footprint before plugging it into this prism tool." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
