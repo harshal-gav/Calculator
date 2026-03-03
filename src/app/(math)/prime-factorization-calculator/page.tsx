@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function PrimeFactorizationCalculator() {
     const [number, setNumber] = useState('84');
     const [factors, setFactors] = useState<{ prime: number; power: number }[] | null>(null);
@@ -144,6 +144,64 @@ export default function PrimeFactorizationCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Prime Factorization Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Prime Factorization Calculator"
+                    whatIsIt={
+                        <>
+                            <p>A <strong>Prime Factorization Calculator</strong> is an analytical math tool designed to break down any composite integer into the fundamental prime numbers that, when multiplied together, produce the original number.</p>
+                            <p>Every integer greater than 1 is either a standalone prime or can be decomposed into a unique set of prime factors. Our tool automatically displays both the standard multiplied visual representation (e.g., 2 × 2 × 3) and the elegant algebraic exponential form.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The Fundamental Theorem of Arithmetic states that every integer greater than 1 has exactly one unique prime factorization.</p>
+                            <div className="bg-zinc-100 p-4 rounded-lg text-center text-lg md:text-xl shadow-inner my-4 text-emerald-900 border border-zinc-200">
+                                N = (p₁)<sup>a</sup> × (p₂)<sup>b</sup> × (p₃)<sup>c</sup> ...
+                            </div>
+                            <p>Where <strong>p</strong> represents strictly prime numbers (2, 3, 5, 7, 11...) and the superscript (<strong>a, b, c</strong>) represents how many times that exact prime is multiplied.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let’s determine the prime factorization of <strong>84</strong> using the factor tree method:</p>
+                            <ol className="list-decimal pl-6 space-y-2 mt-4 font-mono text-sm bg-black/5 p-4 rounded-xl border border-black/10">
+                                <li>Divide by 2 (the smallest prime): 84 ÷ 2 = <strong>42</strong></li>
+                                <li>Divide by 2 again: 42 ÷ 2 = <strong>21</strong></li>
+                                <li>21 isn't divisible by 2. Next smallest prime is 3: 21 ÷ 3 = <strong>7</strong></li>
+                                <li>7 is a prime number, so we stop.</li>
+                            </ol>
+                            <p className="mt-4 text-emerald-700 font-bold border-t border-emerald-100 pt-4 text-center">
+                                Prime Factors: 2 × 2 × 3 × 7 <br />
+                                Exponential Form: 2² × 3 × 7
+                            </p>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Finding GCF and LCM:</strong> Prime factorization is the foolproof underpinning method used to manually calculate the Greatest Common Factor and Least Common Multiple of multiple numbers.</li>
+                            <li><strong>Simplifying Fractions:</strong> Decomposing large numerators and denominators into primes makes canceling shared factors trivial, allowing you to instantly reduce fractions to their lowest terms.</li>
+                            <li><strong>Cryptography:</strong> Prime numbers and factorization form the absolute mathematical foundation for RSA encryption algorithms that secure modern internet communications.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Is 1 a prime factor?",
+                            answer: "No, the number 1 is specifically excluded from being prime because a prime number must have exactly two distinct positive divisors: 1 and itself. Furthermore, including 1 would violate the Fundamental Theorem of Arithmetic regarding unique factorization."
+                        },
+                        {
+                            question: "What happens if I put a prime number into the calculator?",
+                            answer: "The calculator will immediately identify and explicitly inform you that your inputted number is already a prime number, meaning its only prime factor is itself raised to the power of 1."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "LCM Calculator", path: "/lcm-calculator", desc: "Determine the Least Common Multiple of up to 5 integers." },
+                        { name: "GCF Calculator", path: "/gcf-calculator", desc: "Find the Greatest Common Factor using prime components." },
+                        { name: "Fraction Simplifier", path: "/fraction-simplifier-calculator", desc: "Use common factor division to reduce fractions automatically." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

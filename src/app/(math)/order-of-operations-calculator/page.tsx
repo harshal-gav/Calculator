@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function OrderOfOperationsCalculator() {
     const [expression, setExpression] = useState('(3 + 5) * 2 ^ 3 - 10 / 2');
     const [originalExp, setOriginalExp] = useState('');
@@ -252,6 +252,63 @@ export default function OrderOfOperationsCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Order of Operations Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Order of Operations Calculator"
+                    whatIsIt={
+                        <>
+                            <p>An <strong>Order of Operations Calculator</strong> is a specialized mathematical tool that doesn't just give you the final answer to an equation, but demonstrates the exact step-by-step process used to arrive at that result.</p>
+                            <p>By enforcing universal mathematical conventions like PEMDAS, BODMAS, or BEDMAS, the calculator eliminates ambiguity when reading expressions with multiple operations like addition, division, and exponents in the same string.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>This calculator aggressively follows the standard <strong>PEMDAS</strong> hierarchy of mathematical evaluation:</p>
+                            <ol className="list-decimal pl-6 space-y-2 mt-4 font-medium text-emerald-800 bg-zinc-50 p-4 rounded-lg border border-zinc-200">
+                                <li><strong>P</strong>arentheses (Brackets): Evaluate everything inside grouping symbols first.</li>
+                                <li><strong>E</strong>xponents (Order/Indices): Calculate powers and square roots.</li>
+                                <li><strong>M</strong>ultiplication & <strong>D</strong>ivision: Evaluate from left to right.</li>
+                                <li><strong>A</strong>ddition & <strong>S</strong>ubtraction: Evaluate from left to right.</li>
+                            </ol>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's evaluate the expression: <strong>(3 + 5) * 2 ^ 3 - 10 / 2</strong></p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 font-mono text-sm">
+                                <li><strong>Step 1 (Parentheses):</strong> (3 + 5) becomes 8. <span className="text-zinc-500 block ml-4">Equation is now: 8 * 2 ^ 3 - 10 / 2</span></li>
+                                <li><strong>Step 2 (Exponents):</strong> 2 ^ 3 becomes 8. <span className="text-zinc-500 block ml-4">Equation is now: 8 * 8 - 10 / 2</span></li>
+                                <li><strong>Step 3 (Multiplication/Division L to R):</strong> 8 * 8 becomes 64. 10 / 2 becomes 5. <span className="text-zinc-500 block ml-4">Equation is now: 64 - 5</span></li>
+                                <li><strong>Step 4 (Addition/Subtraction L to R):</strong> 64 - 5 = <strong>59</strong>.</li>
+                            </ul>
+                            <p className="mt-4 text-emerald-700 font-bold text-center border-t border-emerald-100 pt-4">Final Answer: 59</p>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Homework Checking:</strong> Students learning foundational algebra can verify their manual step-by-step work to ensure they haven't made systematic errors.</li>
+                            <li><strong>Programming Debugging:</strong> Developers can verify exactly how a compiler will interpret a complex string of mathematical logic before writing it into code.</li>
+                            <li><strong>Social Media Puzzles:</strong> Solve viral math puzzles (like "6 ÷ 2(1+2)") instantly by applying rigid mathematical parsing rules.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between PEMDAS and BODMAS?",
+                            answer: "They are exactly the same mathematical rules, just regional acronyms. PEMDAS (Parentheses, Exponents, Multiplication, Division, Addition, Subtraction) is common in the USA. BODMAS (Brackets, Orders, Division, Multiplication, Addition, Subtraction) is common in the UK, India, and Australia."
+                        },
+                        {
+                            question: "Why do Multiplication and Division cause so much confusion?",
+                            answer: "Because the acronyms (like PEMDAS) place 'M' before 'D', many people incorrectly assume you must do all multiplication before any division. This is false. Multiplication and Division have equal priority, and must be evaluated strictly from Left to Right."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Fraction Calculator", path: "/fraction-calculator", desc: "Add, subtract, multiply, and divide complex fractions." },
+                        { name: "Quadratic Formula Calculator", path: "/quadratic-formula-calculator", desc: "Solve algebraic quadratic equations instantly." },
+                        { name: "Scientific Calculator", path: "/scientific-calculator", desc: "A comprehensive calculator for trigonometry and advanced math." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
