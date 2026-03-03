@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function HalfLifeCalculator() {
     const [calcType, setCalcType] = useState('remainingAmount'); // remainingAmount, halfLife, initialAmount, time
@@ -163,6 +164,60 @@ export default function HalfLifeCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Half-Life Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Radioactive Half-Life Decay Calculator"
+                    whatIsIt={
+                        <p>The <strong>Half-Life Calculator</strong> models the exponential decay of radioactive isotopes or pharmacokinetic drug breakdown. By utilizing standard decay formulas, this tool solves for any missing variable: how much material remains after a given time, how long it will take to reach a specific mass, what you originally started with, or the intrinsic half-life rate of the substance itself.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Half-life decay is mathematically driven by an exponential reduction curve. The fundamental formula requires the Initial Amount (N₀), Elapsed Time (t), and the Half-Life duration (t₁/₂).</p>
+                            <div className="bg-purple-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-purple-100 text-purple-900">
+                                <p><strong>Nₜ = N₀ × (1/2)^(t / t₁/₂)</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the remaining amount of an isotope known to have a <strong>2-year Half-Life</strong>. We start with <strong>100 grams</strong>, and we want to know how much is left after <strong>4 years</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-purple-800">
+                                <li><strong>The Ratio:</strong> Time Elapsed (4) ÷ Half-Life (2) = <strong>2 full half-life cycles</strong>.</li>
+                                <li><strong>Cycle 1 (Year 2):</strong> The 100g splits in half, leaving exactly 50g.</li>
+                                <li><strong>Cycle 2 (Year 4):</strong> That 50g splits in half again, leaving exactly 25g.</li>
+                                <li><strong>The Result:</strong> After 4 years, exactly <strong>25 grams</strong> of the original isotope remain.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-purple-800">
+                            <li><strong>Medical Pharmacology:</strong> Doctors calculating exactly how long a dose of ibuprofen or complex anesthetics will remain active in a patient's bloodstream before being naturally flushed by the liver.</li>
+                            <li><strong>Archaeological Dating:</strong> Historians examining Carbon-14 isotopes within ancient wooden artifacts to accurately determine the exact century the tree was originally felled.</li>
+                            <li><strong>Nuclear Physics:</strong> Engineers tracking the exact degradation curve of Uranium-235 to predict future power output fluctuations inside a commercial nuclear reactor.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does the substance ever completely disappear to exactly zero?",
+                            answer: "Mathematically, an exponential decay curve approaches zero but infinitely halves fractions, never truly touching zero. However, practically, the substance eventually decreases until less than one individual unstable atom remains."
+                        },
+                        {
+                            question: "Why do pharmaceutical drugs have half-lives?",
+                            answer: "Your liver and kidneys act as constant biological filters. They naturally process and eliminate foreign chemicals from your blood at a relatively stable, exponential rate, making the half-life formula perfect for predicting drug effectiveness."
+                        },
+                        {
+                            question: "Do different isotopes of the same element have the same half-life?",
+                            answer: "No. Carbon-12 is entirely stable and effectively lasts forever. However, Carbon-14 is extremely unstable and decays with a strict half-life of 5,730 years. Half-life is driven by the internal neutron balance of the specific nucleus."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Molar Mass Calculator", path: "/molar-mass-calculator", desc: "Calculate the exact molecular atomic weight of the starting substance." },
+                        { name: "Density Calculator", path: "/density-calculator", desc: "Examine the physical material mass before structural radioactive decay." },
+                        { name: "Force Calculator", path: "/force-calculator", desc: "Solve for the physical force acting upon an accelerating, degrading mass." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

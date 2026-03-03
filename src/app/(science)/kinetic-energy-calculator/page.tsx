@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function KineticEnergyCalculator() {
     const [calcType, setCalcType] = useState('ke'); // ke, mass, velocity
@@ -290,6 +291,60 @@ export default function KineticEnergyCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Kinetic Energy Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Physics & Kinetic Energy Calculator"
+                    whatIsIt={
+                        <p>Our <strong>Kinetic Energy Calculator</strong> determines the devastating, physical energy possessed by any object strictly due to its motion. Moving beyond simple speed or weight, this calculator merges Mass (m) and Velocity (v) using classical Newtonian mechanics to solve for absolute energy output in Joules, Electron-volts, or standard Calories.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Kinetic Energy (KE) is driven by the square of the velocity, emphasizing that moving twice as fast actually generates four times as much physical energy. The base physics formula requires Mass in Kilograms (kg) and Velocity in Meters per Second (m/s).</p>
+                            <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-rose-100 text-rose-900">
+                                <p><strong>KE = ½ × m × v²</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the kinetic energy of a <strong>2 kg</strong> rock being hurled at a velocity of <strong>10 m/s</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-rose-800">
+                                <li><strong>The Velocity Square:</strong> 10 m/s squared (10 × 10) equals <strong>100</strong>.</li>
+                                <li><strong>The Mass Multiplication:</strong> Multiply that 100 by the 2 kg mass to get <strong>200</strong>.</li>
+                                <li><strong>The Half Ratio:</strong> Multiply 200 by ½ (or divide by 2) to get <strong>100</strong>.</li>
+                                <li><strong>The Result:</strong> The rock is carrying exactly <strong>100 Joules (J)</strong> of kinetic energy before impact.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-rose-800">
+                            <li><strong>Automotive Engineering:</strong> Calculating the lethal force behind a 2,000lb car traveling at 70mph to design crumple zones and airbags capable of safely absorbing millions of Joules during a crash.</li>
+                            <li><strong>Ballistics Testing:</strong> Firearms manufacturers determining the exact stopping power of hunting ammunition by combining grain weight and muzzle velocity into a single, standardized power metric.</li>
+                            <li><strong>Astrophysics:</strong> Scientists analyzing the world-ending kinetic threat of small, low-mass asteroids traveling at incomprehensibly high velocities before entering Earth's atmosphere.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why does driving faster become so much more dangerous?",
+                            answer: "Because velocity is squared in the formula. If you crash at 30mph, you endure 'X' amount of force. If you double your speed to 60mph, your kinetic energy doesn't double—it quadruples to '4X'. Driving twice as fast makes a crash four times as deadly."
+                        },
+                        {
+                            question: "How is Kinetic Energy different from Potential Energy?",
+                            answer: "Potential Energy is stored energy based on position (like a boulder hovering at the top of a cliff). Kinetic Energy is active energy based on motion. When that boulder falls, gravity converts its static Potential Energy directly into violent Kinetic Energy."
+                        },
+                        {
+                            question: "Can Kinetic Energy ever be a negative baseline number?",
+                            answer: "No. Mass must always be positive. Velocity can represent a negative direction, but because the formula squares the velocity (-v × -v), any negative sign is stripped mathematically. Kinetic energy is always strictly zero or positive."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Velocity Calculator", path: "/velocity-calculator", desc: "Solve for the pure speed variable required for kinematic equations." },
+                        { name: "Force Calculator", path: "/force-calculator", desc: "Calculate the Newton impact required to accelerate the given mass." },
+                        { name: "Projectile Calculator", path: "/projectile-motion-calculator", desc: "Map the physical parabolic arc of the mass acting under gravity." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

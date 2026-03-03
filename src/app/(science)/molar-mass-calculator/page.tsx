@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 // Simplified periodic table with common atomic weights
 const ATOMIC_WEIGHTS: Record<string, number> = {
@@ -166,6 +167,59 @@ export default function MolarMassCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Molar Mass Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Chemical Molar Mass Calculator"
+                    whatIsIt={
+                        <p>The <strong>Molar Mass Calculator</strong> is a specialized chemistry tool that computes the exact atomic weight of any entered chemical formula. By automatically referencing the standard periodic table of elements, it multiplies the atomic mass of each individual element by its quantity in the molecule, providing both the total molar mass in grams per mole (g/mol) and a detailed elemental percentage breakdown.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Calculating molar mass requires breaking down a chemical formula into its individual atoms, finding each atom's weight on the periodic table, and summing the results.</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
+                                <p><strong>Molar Mass = Σ (Atomic Weight of Element × Number of Atoms)</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the molar mass of simple water, mathematically represented as <strong>H2O</strong> (two Hydrogen atoms, one Oxygen atom).</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-emerald-800">
+                                <li><strong>Hydrogen (H):</strong> The atomic weight is roughly 1.008 g/mol. Since there are 2 atoms, <strong>2 × 1.008 = 2.016 g/mol</strong>.</li>
+                                <li><strong>Oxygen (O):</strong> The atomic weight is roughly 15.999 g/mol. Since there is 1 atom, <strong>1 × 15.999 = 15.999 g/mol</strong>.</li>
+                                <li><strong>The Summation:</strong> 2.016 + 15.999 = <strong>18.015 g/mol</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-emerald-800">
+                            <li><strong>Organic Chemistry:</strong> University students quickly validating the molecular density of complex carbon chains like Glucose (C6H12O6) to balance chemical reaction equations.</li>
+                            <li><strong>Laboratory Preparation:</strong> Research scientists calculating exactly how many physical grams of raw Sodium Chloride (NaCl) they need to weigh on a scale to create a 1-molar saline solution.</li>
+                            <li><strong>Material Science:</strong> Engineers analyzing the mass percentage of iron within structural steel alloys to determine oxidation resistance and tensile strength.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why is the calculator case-sensitive?",
+                            answer: "Because chemical notation demands it to avoid impossible elements. For instance, 'Co' represents the metal Cobalt. However, 'CO' represents Carbon Monoxide, a molecule made of one Carbon and one Oxygen. Capitalization changes the entire chemical reality."
+                        },
+                        {
+                            question: "What is a 'Mole' in chemistry?",
+                            answer: "A mole is simply a massive number—specifically Avogadro's number: 6.022 × 10²³. Molar Mass tells you exactly how many physical grams it takes to hold 6.022 × 10²³ individual molecules of that specific substance."
+                        },
+                        {
+                            question: "Does this calculator support parentheses like Ca(OH)2?",
+                            answer: "Currently, our streamlined parser requires expanded formulas without brackets. For Calcium Hydroxide, you would need to manually distribute the 2 and enter it as CaO2H2 to ensure accurate calculations."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Density Calculator", path: "/density-calculator", desc: "Calculate physical material mass relative to physical volume." },
+                        { name: "Half-Life Calculator", path: "/half-life-calculator", desc: "Compute atomic timeline decay for unstable radioactive isotopes." },
+                        { name: "Kinetic Energy Calculator", path: "/kinetic-energy-calculator", desc: "Determine physics-based energy levels of molecules in motion." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
