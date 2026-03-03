@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function MarginCalculator() {
     const [cost, setCost] = useState('50');
@@ -97,6 +98,64 @@ export default function MarginCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Margin Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Gross Profit Margin Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Margin Calculator</strong> measures the profitability of a specific product or service by showing you exactly what percentage of your revenue is actual profit after paying for the cost of goods sold (COGS).</p>
+                            <p>Margin is arguably the most critical health metric for any business. While revenue tells you how much money is coming in, profit margin tells you how much of that money your business actually gets to keep.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Gross margin measures profit as a percentage of the final selling price (revenue).</p>
+                            <div className="bg-blue-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-blue-100 text-blue-900">
+                                <p><strong>Gross Profit ($) = Revenue - Cost</strong></p>
+                                <p className="mt-2 pt-2 border-t border-blue-200"><strong>Margin (%) = (Gross Profit ÷ Revenue) × 100</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the margin for a retailer selling electronics.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Scenario:</strong> You buy a television wholesale for <strong>$400</strong> (Cost). You sell it to a customer for <strong>$1,000</strong> (Revenue).</li>
+                                <li><strong>The Profit Calculation:</strong> $1,000 - $400 = <strong>$600</strong> Gross Profit.</li>
+                                <li><strong>The Margin Calculation:</strong> ($600 ÷ $1,000) × 100 = <strong>60%</strong>.</li>
+                                <li><strong>Result:</strong> Your profit margin on the television is exactly 60%. (Note: Your markup on this same item is 150%).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Pricing Strategy:</strong> A bakery needs to ensure they make at least a 70% margin on pastries to cover their expensive retail rent. They use margin calculators to determine exactly what the final shelf price must be based on ingredient costs.</li>
+                            <li><strong>Investor Pitches:</strong> Venture capitalists aggressively scrutinize "software margins" vs "hardware margins." Software often features 80%+ margins, making it highly scalable, whereas physical hardware might struggle to maintain 30% margins.</li>
+                            <li><strong>Financial Auditing:</strong> Retail managers track profit margins month-over-month. If revenue is going up but the overall margin percentage is going down, it triggers an audit into rising supply chain costs or aggressive discounting.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between Margin and Markup?",
+                            answer: "Margin is profit shown as a percentage of the SELLING PRICE. Markup is profit shown as a percentage of the COST. If an item costs $50 and sells for $100, the Markup is 100% (you doubled the cost), but the Margin is only 50% (half the final price was profit)."
+                        },
+                        {
+                            question: "Can a margin ever be higher than 100%?",
+                            answer: "No. Gross profit margin can never logically exceed 100%. Even if you obtained an item for absolutely free ($0 cost) and sold it for $1,000, 100% of that $1,000 is profit. The margin is exactly 100%. (Markup, however, can be infinite)."
+                        },
+                        {
+                            question: "What is a 'good' profit margin?",
+                            answer: "It depends entirely on the industry. Grocery stores operate on razor-thin margins of 1% to 3% but rely on massive volume. Software companies demand 70% to 90% margins. A generally healthy baseline across blended retail is historically around 10% net margin."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Markup Calculator", path: "/markup-calculator", desc: "Calculate pricing strategy based on cost percentages instead of revenue percentages." },
+                        { name: "Break Even Calculator", path: "/break-even-calculator", desc: "Determine how many items you must sell at your current margin to cover fixed costs." },
+                        { name: "VAT Calculator", path: "/vat-calculator", desc: "Calculate value-added tax impacts on your final retail pricing." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

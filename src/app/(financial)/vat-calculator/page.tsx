@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function VatCalculator() {
     const [amount, setAmount] = useState('100');
@@ -139,6 +140,64 @@ export default function VatCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "VAT Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Value-Added Tax (VAT) Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Value-Added Tax (VAT) Calculator</strong> allows businesses and consumers to instantly add VAT to a net price, or reversely extract VAT from a final gross price to discover the original pre-tax cost of an item.</p>
+                            <p>Unlike standard sales tax, which is only applied once at the final point of sale, VAT is collected incrementally along every step of the supply chain. This calculator manages the complex math required to ensure your invoices and retail pricing remain strictly compliant with local tax laws.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Calculating Value-Added Tax requires completely different math depending on whether you are adding it to a wholesale price or extracting it from a retail price.</p>
+                            <div className="bg-orange-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-orange-100 text-orange-900">
+                                <p><strong>Adding VAT: Gross = Net + (Net × [VAT Rate ÷ 100])</strong></p>
+                                <p className="mt-2 pt-2 border-t border-orange-200"><strong>Removing VAT: Net = Gross ÷ (1 + [VAT Rate ÷ 100])</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's look at the complexity of extracting VAT from a price that already includes it.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Scenario:</strong> You buy a television in the UK for <strong>£600.00</strong>. The store's receipt says VAT was included at <strong>20%</strong>. For business expenses, you need to know exactly how much VAT you paid.</li>
+                                <li><strong>The Mistake:</strong> Most people mistakenly just calculate 20% of £600 (£120). This is mathematically incorrect.</li>
+                                <li><strong>The Correct Math:</strong> £600 ÷ 1.20 = <strong>£500.00</strong> (This is the true Net Cost).</li>
+                                <li><strong>Result:</strong> £600 (Gross) - £500 (Net) = <strong>£100.00</strong> in actual VAT paid.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Business Invoicing:</strong> Freelancers and B2B software companies must explicitly list the Net Price and the exact VAT amount on every invoice. If they quote a client exactly £1,000 including VAT, they must reverse-calculate how to structure the invoice.</li>
+                            <li><strong>Travel & Tourism Refunds:</strong> International tourists shopping in Europe are often eligible to receive a refund for the VAT they paid at the airport before flying home. They use this calculator to estimate their exact refund amount.</li>
+                            <li><strong>Retail Pricing Strategy:</strong> A store wants to sell a candy bar for exactly £1.00. Because candy has a 20% VAT, the store must use extraction math to figure out exactly how much of that £1.00 they actually get to keep.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why can't I just subtract the VAT percentage from the final price?",
+                            answer: "Because the total price is already artificially inflated. If a £100 item has 20% VAT added, it becomes £120. If you try to subtract 20% from £120, you get £96... an incorrect number. You must use division (Gross ÷ 1.20) to mathematically reverse the inflation."
+                        },
+                        {
+                            question: "How is VAT different from Sales Tax?",
+                            answer: "Sales tax is collected only once, exclusively by the final retail consumer. VAT is collected fractionally by the factory, the distributor, the wholesaler, and the retailer at every step of production. However, from the consumer's perspective at the cash register, they function identically."
+                        },
+                        {
+                            question: "What does 'Exclusive' vs 'Inclusive' mean?",
+                            answer: "VAT Exclusive means the price shown does NOT include tax yet (common in B2B). VAT Inclusive means the price shown is the final out-the-door price with tax already baked in (common in European retail)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Sales Tax Calculator", path: "/sales-tax-calculator", desc: "Calculate standard United States single-point sales tax." },
+                        { name: "Margin Calculator", path: "/margin-calculator", desc: "Calculate your true profit margin after stripping away the VAT you owe the government." },
+                        { name: "Tip Calculator", path: "/tip-calculator", desc: "Calculate hospitality gratuity on pre-VAT restaurant tabs." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

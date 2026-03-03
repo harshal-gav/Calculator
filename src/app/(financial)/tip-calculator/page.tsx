@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function TipCalculator() {
     const [billAmount, setBillAmount] = useState('100');
@@ -132,6 +133,65 @@ export default function TipCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Tip Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Tip & Gratuity Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Tip Calculator</strong> provides an instant, mathematically perfect way to calculate gratuity, add it to your total bill, and split the final cost evenly among a group of people.</p>
+                            <p>Whether dining out at a restaurant, paying a delivery driver, or tipping a hairstylist, understanding exactly how much to leave as a tip (and how much each person owes) ensures both fair compensation for service workers and an equitable split among friends.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Calculating a tip mathematically requires converting the desired gratuity percentage into a decimal, then multiplying it against the original bill.</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
+                                <p><strong>Tip Amount = Bill × (Tip Percentage ÷ 100)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-emerald-200"><strong>Total = Bill + Tip Amount</strong></p>
+                                <p className="mt-2 pt-2 border-t border-emerald-200"><strong>Per Person = Total ÷ Number of People</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Here is exactly how the math works when splitting a dinner bill.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Bill:</strong> A dinner for 4 people costs $120.00. You want to leave a 20% tip.</li>
+                                <li><strong>The Tip Calculation:</strong> $120.00 × 0.20 = <strong>$24.00</strong> tip.</li>
+                                <li><strong>The Grand Total:</strong> $120.00 + $24.00 = <strong>$144.00</strong> total.</li>
+                                <li><strong>The Split:</strong> $144.00 ÷ 4 people = <strong>$36.00 per person</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Group Dining:</strong> The most common use case. Four friends go out to dinner, the bill arrives as a single check, and nobody wants to do mental math to figure out exactly what their fair share of the 18% tip is.</li>
+                            <li><strong>Travel & Hospitality:</strong> Calculating tips for hotel bellhops, tour guides, and rideshare drivers. Many countries have different standard tipping percentages, requiring quick calculations on the fly.</li>
+                            <li><strong>Catering Events:</strong> Event planners often need to calculate and budget for a mandatory 15% to 22% gratuity charge on multi-thousand dollar catering contracts.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Should I calculate the tip before or after taxes?",
+                            answer: "Etiquette experts generally agree that you should calculate your tip based on the pre-tax subtotal. You are tipping on the cost of the food and service, not tipping on the government's tax. However, many people tip on the final post-tax total simply for convenience."
+                        },
+                        {
+                            question: "What is a standard tipping percentage?",
+                            answer: "In the United States, 15% to 20% is considered standard for sit-down restaurant service. 10% is often used for poor service or takeout, while 20%+ is reserved for excellent service."
+                        },
+                        {
+                            question: "How do I calculate a 20% tip in my head?",
+                            answer: "Move the decimal point one place to the left to find 10%, then simply double that number. For a $45.00 bill, 10% is $4.50. Double that ($4.50 + $4.50) to get a 20% tip of $9.00."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Discount Calculator", path: "/discount-calculator", desc: "Calculate savings before figuring out the tip." },
+                        { name: "Sales Tax Calculator", path: "/sales-tax-calculator", desc: "Determine exact tax amounts on your purchases." },
+                        { name: "Salary Calculator", path: "/salary-calculator", desc: "Convert your hourly wages (including tips) into an annual salary." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

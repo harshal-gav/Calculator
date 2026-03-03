@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function BreakEvenCalculator() {
     const [fixedCosts, setFixedCosts] = useState('10000');
@@ -151,6 +152,64 @@ export default function BreakEvenCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Break Even Calculator", "operatingSystem": "All", "applicationCategory": "BusinessApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Business Break-Even Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Break-Even Calculator</strong> is an essential corporate finance tool that determines the exact moment your business stops losing money and starts generating a profit. By assessing your fixed overhead against the cost of producing an item, it calculates exactly how many units you must sell to hit "zero."</p>
+                            <p>Performing a break-even analysis is a mandatory requirement for any modern business plan, loan application, or venture capital pitch. It proves whether a business model is mathematically viable before a single dollar is spent.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>To calculate the break-even point, you must divide your inescapable fixed costs by the "Contribution Margin" (the profit made on each individual unit).</p>
+                            <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-rose-100 text-rose-900">
+                                <p><strong>Unit Contribution Margin = Selling Price - Variable Cost</strong></p>
+                                <p className="mt-2 pt-2 border-t border-rose-200"><strong>Break-Even Units = Fixed Costs ÷ Unit Contribution Margin</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's analyze a startup selling artisanal coffee mugs online.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Scenario:</strong> You pay <strong>$2,000</strong> a month for rent and software (Fixed Costs). A mug costs you <strong>$4.00</strong> to manufacture (Variable Cost). You sell the mugs for <strong>$24.00</strong>.</li>
+                                <li><strong>The Contribution Margin:</strong> $24.00 (Price) - $4.00 (Variable) = <strong>$20.00</strong> profit per mug.</li>
+                                <li><strong>The Calculation:</strong> $2,000 (Fixed) ÷ $20.00 (Contribution) = <strong>100</strong>.</li>
+                                <li><strong>Result:</strong> You must sell exactly <strong>100 mugs</strong> every single month just to break even. Mug #101 is your very first dollar of actual monthly profit.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Startup Feasibility:</strong> An entrepreneur wants to open a gym. If rent and gear leases cost $20,000/month, and gym memberships are $50/month with $10 of variable wear-and-tear... the break-even is 500 members. If the building maxes out at 300 capacity, the calculator proves the business model is doomed to fail.</li>
+                            <li><strong>Marketing Budgets:</strong> A company wants to run a $10,000 Facebook Ad campaign. Using break-even analysis, they determine they must sell 500 units specifically from those ads just to cover the cost of running them.</li>
+                            <li><strong>Menu Engineering:</strong> Restaurants calculate break-even daily. If the lights, rent, and chef salaries cost $1,500 a day, they know exactly how many $30 steaks they must push before the dinner service becomes profitable.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between Fixed Costs and Variable Costs?",
+                            answer: "Fixed costs never change, regardless of how much you sell (e.g., Rent, Insurance, Salary). Variable costs go up every time you sell an item (e.g., raw materials, cardboard shipping boxes, credit card processing fees)."
+                        },
+                        {
+                            question: "Why does the calculator say my structure is 'Unprofitable'?",
+                            answer: "If your variable cost to produce an item is higher than the price you are selling it for, your 'Contribution Margin' is negative. You are literally paying customers to take your product. No amount of volume will ever cover your fixed costs under that model."
+                        },
+                        {
+                            question: "What is the Contribution Margin Ratio?",
+                            answer: "It is your unit contribution margin expressed as a percentage of the selling price. A higher ratio means a larger portion of every dollar earned goes directly toward paying off your fixed overhead."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Margin Calculator", path: "/margin-calculator", desc: "Calculate your overall company profitability percentages." },
+                        { name: "Markup Calculator", path: "/markup-calculator", desc: "Determine how to price your goods to ensure your contribution margin is high enough." },
+                        { name: "ROI Calculator", path: "/roi-calculator", desc: "Once past break-even, calculate the return on your initial business investment." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
