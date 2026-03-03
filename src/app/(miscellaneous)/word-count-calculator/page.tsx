@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function WordCountCalculator() {
     const [text, setText] = useState('');
@@ -173,6 +174,63 @@ export default function WordCountCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Word Count Calculator", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Real-Time Word & Character Counter"
+                    whatIsIt={
+                        <p>The <strong>Word Count Calculator</strong> is a foundational text analytics tool that processes raw text input in real-time. It programmatically scans your document to tally total words, absolute characters (with and without spaces), sentence structures, paragraphs, and estimates vocal speaking and silent reading times.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Most basic word counters simply split text on empty spaces, which is incredibly inaccurate. This tool utilizes advanced Regular Expressions (Regex) to correctly identify hyphenated words, ignore stray punctuation, and accurately define what constitutes a grammatical sentence versus an abbreviation.</p>
+                            <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-rose-100 text-rose-900">
+                                <p><strong>Word = Match(/\\b[\w-']+\\b/gi)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-rose-200"><strong>Sentence = Match(/[^.!?]+[.!?]+/gi)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-rose-200"><strong>Reading Time = Total Words ÷ 238 words per minute</strong></p>
+                                <p className="mt-2 pt-2 border-t border-rose-200"><strong>Speaking Time = Total Words ÷ 130 words per minute</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's analyze a short, dense paragraph for a university essay.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-rose-800">
+                                <li><strong>The Input:</strong> A 1,000-word essay copied from Microsoft Word.</li>
+                                <li><strong>Character Constraint:</strong> Your professor demands under 6,000 characters (no spaces). The tool instantly strips the visual whitespace to verify.</li>
+                                <li><strong>Presentation Prep:</strong> You need to read it aloud. The analyzer divides 1,000 words by the standard 130 WPM speaking cadence.</li>
+                                <li><strong>Result:</strong> You instantly know your essay will take approximately <strong>7 minutes and 41 seconds</strong> to present to the class.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-rose-800">
+                            <li><strong>SEO & Copywriting:</strong> Content marketers strictly monitor character limits to ensure Google Meta Descriptions stay under 160 characters so text isn't truncated on search engine result pages.</li>
+                            <li><strong>Social Media Management:</strong> Tracking exact character limits when drafting threaded posts for platforms like X (formerly Twitter) which have hard 280-character stopping points per tweet.</li>
+                            <li><strong>Freelance Writing:</strong> Professional writers and journalists use word counts as the primary metric for contractual billing (charging $0.15 per word) and to ensure they meet strict editorial submission guidelines.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "How is 'Reading Time' calculated?",
+                            answer: "Based on extensive linguistic research, the average adult silently reads English prose at a speed of approximately 238 words per minute. We divide your total word count by 238 to provide a highly accurate time estimate."
+                        },
+                        {
+                            question: "Why is 'Speaking Time' so much slower?",
+                            answer: "When reading silently, your brain skips words and doesn't engage the vocal cords. When speaking aloud (like a podcast transcript or best-man speech), humans naturally pause for breath, emphasis, and articulation, slowing down to an average of 130 words per minute."
+                        },
+                        {
+                            question: "Does this save my text data to a server?",
+                            answer: "No. This application runs entirely 'Client-Side'. The text you type or paste is analyzed mathematically by your local browser's memory. It is never transmitted across the internet or permanently saved."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Pomodoro Timer", path: "/pomodoro-timer", desc: "Use time-blocking techniques to focus while writing." },
+                        { name: "Readability Score", path: "/readability-checker", desc: "Analyze the complexity and grade level of your text." },
+                        { name: "Typing Speed Test", path: "/typing-speed", desc: "Measure your actual Words Per Minute (WPM) capability." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

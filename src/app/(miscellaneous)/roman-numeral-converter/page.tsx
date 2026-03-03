@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 const ROMAN_MAP: [string, number][] = [
     ["M", 1000],
@@ -179,6 +180,63 @@ export default function RomanNumeralConverter() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Roman Numeral Converter", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Classical Roman Numeral Translator"
+                    whatIsIt={
+                        <p>The <strong>Roman Numeral Converter</strong> is a historical and educational translation tool. It systematically converts absolute integer values (Arabic Digits) into the ancient, non-place-value classical Latin numerical sequence—utilizing the standard 7 character alphabet (I, V, X, L, C, D, M)—and perfectly translates those sequences backward.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Roman numerals act as an additive and subtractive tally system, not a positional decimal system like modern math. To convert an Arabic number, the algorithm cascades downward globally, subtracting the largest possible Roman letter value until the baseline reaches zero. If a smaller numeral strictly precedes a larger one, it triggers a unified subtraction rule (e.g., IX means 10 minus 1).</p>
+                            <div className="bg-amber-100/50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-amber-200 text-amber-900">
+                                <p><strong>Primary Tokens: I=1, V=5, X=10, L=50, C=100, D=500, M=1000</strong></p>
+                                <p className="mt-2 pt-2 border-t border-amber-200"><strong>Subtractive Tokens: IV=4, IX=9, XL=40, XC=90, CD=400, CM=900</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's break down the year <strong>1984</strong> mathematically using the descending allocation rule.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-amber-900">
+                                <li><strong>Extract 1000:</strong> Remaining is 984. Output so far: <code>M</code></li>
+                                <li><strong>Extract 900:</strong> By using the block token <code>CM</code> (1000 - 100), the remainder is 84. Output: <code>M CM</code></li>
+                                <li><strong>Extract 50:</strong> Remaining is 34. Output: <code>M CM L</code></li>
+                                <li><strong>Extract 30:</strong> Pulling three 10s (<code>XXX</code>). Remaining is 4. Output: <code>M CM L XXX</code></li>
+                                <li><strong>Extract 4:</strong> Using block token <code>IV</code> (5 - 1). Remaining is 0.</li>
+                                <li><strong>Result:</strong> 1984 as a connected Roman string is exactly <strong>MCMLXXXIV</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-amber-900">
+                            <li><strong>Copyright & Dedication Dates:</strong> Translating modern publication years into Roman sequences for use at the credits screen of independent films, copyright footers of traditional literature books, or cornerstones of architectural buildings.</li>
+                            <li><strong>Tattoos and Engravings:</strong> Ensuring an important personal date (like an anniversary or birthday) is mathematically accurate and properly formatted before committing it permanently to skin or jewelry.</li>
+                            <li><strong>Event Sequencing:</strong> Organizing Super Bowls, Olympic Games, or academic chapters correctly based on historical naming conventions without struggling over the subtractive notation of numbers like 39 (XXXIX).</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why is there no zero in Roman Numerals?",
+                            answer: "The Roman numerical system was originally designed strictly to track physical, tangible commerce (like bags of grain or legions of men), not for abstract theoretical math. The concept of 'Zero' (Nothingness) wasn't widely introduced to European mathematics until Arabic scholars brought it from India roughly a thousand years later."
+                        },
+                        {
+                            question: "Why does the tool stop at 3,999?",
+                            answer: "Standard Roman typography relies on 'M' as its absolute largest single character (1000). To write '4000', you cannot write 'MMMM' because Roman rules dictate a character cannot naturally repeat more than three times sequentially. Historically, the Romans used an 'overline' drawn above a character to multiply it by 1000 to solve this, but standard ASCII computer keyboards cannot easily format this symbol."
+                        },
+                        {
+                            question: "Can I do algebra or fractions with Roman Numerals?",
+                            answer: "Fractions? Slightly. The Romans used a base-12 fraction system reliant on 'Suncia' (dots). Algebra? Absolutely not. Because Roman characters lack positional value notation (where the '1' in '10' means ten, but the '1' in '100' means hundred), doing long-division or algebraic multiplication using raw Roman sequences is considered practically impossible."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Base Converter", path: "/base-converter", desc: "Translate digits into modern computational Base formats like Binary and Hexadecimal." },
+                        { name: "Roman Numeral Date Converter", path: "/roman-numeral-date-converter", desc: "Format full MM/DD/YYYY calendar dates entirely in Roman notation." },
+                        { name: "Number to Words", path: "/number-to-words-converter", desc: "Convert massive numerical digits mathematically out into spoken English." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

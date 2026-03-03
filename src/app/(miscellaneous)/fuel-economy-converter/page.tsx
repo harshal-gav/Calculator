@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 const units = [
     { id: 'mpg_us', name: 'Miles per US Gallon (mpg)', factorId: 'mpg_us' },
@@ -168,6 +169,62 @@ export default function FuelEconomyConverter() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Fuel Economy Converter", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Vehicle Gas Mileage & Efficiency Converter"
+                    whatIsIt={
+                        <p>The <strong>Fuel Economy Converter</strong> is an automotive utility that bridges the gap between competing global efficiency standards. It translates 'distance-based' metrics like Miles per Gallon (US and UK) into 'volume-based' consumption metrics like Liters per 100 Kilometers (L/100km).</p>
+                    }
+                    formula={
+                        <>
+                            <p>Because the US system measures "How far can I go on one unit of fuel?" while the European system measures "How much fuel is required to go a fixed distance?", the conversion requires an inverse mathematical translation anchored against the metric constants of the mile and the specific gallon variant.</p>
+                            <div className="bg-slate-800 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-slate-700 text-slate-300">
+                                <p><strong>MPG (US) to L/100km = 235.215 ÷ Math.Abs(MPG)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-slate-700"><strong>MPG (UK) to L/100km = 282.481 ÷ Math.Abs(MPG)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-slate-700"><strong>km/L to L/100km = 100 ÷ Math.Abs(km/L)</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's convert a standard European rating of <strong>8.0 L/100km</strong> into a recognizable American US MPG figure.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-slate-400">
+                                <li><strong>The Input:</strong> 8.0 Liters consumed over a 100km distance.</li>
+                                <li><strong>The Inversion Constant:</strong> We divide the US constant 235.215 by our input number.</li>
+                                <li><strong>The Math:</strong> 235.215 / 8.0</li>
+                                <li><strong>Result:</strong> An efficiency rating of 8.0 L/100km equals roughly <strong>29.4 MPG (US)</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-slate-400">
+                            <li><strong>Buying Imported Vehicles:</strong> Comparing the advertised fuel efficiency of a German or Japanese import (displayed strictly in L/100km or km/L) directly against domestic American car MPG ratings on a dealership lot.</li>
+                            <li><strong>International Road Trips:</strong> An American driving a rental car across Europe needs to estimate the cost of a long journey, requiring a mental conversion from the car's metric dashboard display into familiar imperial fuel constraints.</li>
+                            <li><strong>Automotive Journalism:</strong> Reviewers evaluating global cars must rapidly translate mechanical specs so their diverse audience demographic inherently understands the vehicle's economy without doing the mental math.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why is a US Gallon different from a UK Gallon?",
+                            answer: "Historical standardization! A US liquid gallon legally contains exactly 3.78541 liters. A UK 'Imperial' gallon legally contains exactly 4.54609 liters. Because the UK Gallon is ~20% physically larger, UK MPG numbers always appear artificially higher/better than US MPG for the exact same car."
+                        },
+                        {
+                            question: "Why is L/100km inverted compared to MPG?",
+                            answer: "MPG asks 'Distance per Fuel' (higher is better). L/100km asks 'Fuel per Distance' (lower is better). The European system inherently measures active consumption rate, making it far more mathematically proportional when calculating exact trip costs compared to the abstract fraction of MPG."
+                        },
+                        {
+                            question: "Do hybrid cars calculate efficiency differently?",
+                            answer: "Yes, modern EVs and Hybrids use MPGe (Miles Per Gallon Equivalent). It uses an EPA energy baseline metric stating that 33.7 kilowatt-hours (kWh) of electricity contains exactly the equivalent thermal energy pool as one physical gallon of gasoline."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Gas Mileage Calculator", path: "/gas-mileage-calculator", desc: "Calculate your vehicle's actual real-world MPG based on your odometer." },
+                        { name: "Distance Calculator", path: "/distance-calculator", desc: "Calculate exact travel distance to plan fuel requirements." },
+                        { name: "Speed Converter", path: "/speed-converter", desc: "Convert dashboard speeds between MPH and KPH seamlessly." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

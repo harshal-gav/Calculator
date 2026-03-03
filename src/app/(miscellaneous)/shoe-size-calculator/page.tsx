@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 // Simplified approximate conversion chart for adults
 const SIZES = [
@@ -136,6 +137,62 @@ export default function ShoeSizeConverter() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Shoe Size Converter", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="International Footwear Sizing Chart"
+                    whatIsIt={
+                        <p>The <strong>Shoe Size Converter</strong> is a global sizing utility designed to alleviate the frustration of international online shopping. It instantly maps and translates adult shoe sizes across the four dominant global manufacturing standards: United States (Men & Women), United Kingdom, European Union, and Japanese Centimeters.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Shoe sizing is historically chaotic. The US and UK systems are rooted in the medieval "barleycorn" measurement (1/3 of an inch). The European system uses "Paris points" (2/3 of a centimeter). To convert accurately, this tool doesn't rely on simple math; it uses an embedded matrix database mirroring the official ISO international sizing equivalence charts.</p>
+                            <div className="bg-neutral-800 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-neutral-700 text-neutral-300">
+                                <p><strong>US Women = US Men + 1.5 sizes</strong></p>
+                                <p className="mt-2 pt-2 border-t border-neutral-700"><strong>UK Size ≈ US Men - 0.5 to 1 full size</strong></p>
+                                <p className="mt-2 pt-2 border-t border-neutral-700"><strong>EU Size = (CM / 0.667) + Constant</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's convert a standard common size for an international sneaker purchase.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-neutral-400">
+                                <li><strong>The Input:</strong> You wear a standard Size 10 in US Men's.</li>
+                                <li><strong>The Matrix Search:</strong> The algorithm locates US_M = 10.0 in the equivalence database.</li>
+                                <li><strong>The Translation:</strong> It simultaneously pulls the corresponding values attached to that data row.</li>
+                                <li><strong>Result:</strong> Your equivalent size is <strong>US Women's 11.5</strong>, <strong>UK 9.5</strong>, <strong>EU 44.0</strong>, or <strong>28.0 Centimeters</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-neutral-400">
+                            <li><strong>Online Sneaker Shopping:</strong> Buying limited-edition streetwear from European boutiques (like END Clothing) where all inventory is strictly listed in UK or EU sizing instead of US.</li>
+                            <li><strong>Gender Style Crossovers:</strong> A woman wanting to buy a pair of traditionally "Men's only" released Air Jordans needs to subtract 1.5 from her normal US Women's size to order the mathematically correct Men's equivalent box.</li>
+                            <li><strong>Athletic Precision:</strong> Olympic powerlifters and runners heavily rely on the 'Centimeter (CM / JP)' measurement, as it strictly defines the literal physical length of the insole, removing the subjective vanity sizing of American/European systems.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Are these conversions 100% accurate for all brands?",
+                            answer: "No. While they follow international guidelines, every manufacturer uses proprietary 'lasts' (the mold a shoe is built on). A Nike size 10 often fits slightly tighter than an Adidas size 10. This tool provides the most accurate mathematical baseline available."
+                        },
+                        {
+                            question: "Why are US Men's and Women's sizes different numbers?",
+                            answer: "Historically, American shoemakers developed separate scales for men and women rather than one unified scale. By industry standard, a US Women's size is numerically labeled 1.5 sizes larger than the exact same physical length in a Men's shoe."
+                        },
+                        {
+                            question: "What does CM or JP mean in shoe sizing?",
+                            answer: "CM stands for Centimeters, and JP refers to the Japanese sizing system. It is considered the most logical system globally because your 'Size' is literally just the measuring-tape length of your foot in centimeters. No barleycorns, no Paris points, just pure metric distance."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Length Converter", path: "/length-converter", desc: "Convert centimeters, inches, and feet manually." },
+                        { name: "Proportion Calculator", path: "/proportion-calculator", desc: "Calculate ratios for tailoring and physical dimensions." },
+                        { name: "BMI Calculator", path: "/bmi-calculator", desc: "Check body mass index based on total height and weight." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

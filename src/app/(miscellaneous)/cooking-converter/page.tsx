@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 const volumes = [
     { id: 'tsp', name: 'Teaspoon (tsp)', ml: 4.92892 },
@@ -258,6 +259,61 @@ export default function CookingConverter() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Cooking Measurement Converter", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Kitchen Recipe Weight & Volume Converter"
+                    whatIsIt={
+                        <p>The <strong>Cooking Measurement Converter</strong> is an essential kitchen utility designed to instantly translate recipe ingredients across different global measurement systems. It seamlessly switches between US Imperial Volume (cups, fluid ounces, tablespoons), US Imperial Weight (pounds, ounces), and the standard Metric system (grams, kilograms, milliliters).</p>
+                    }
+                    formula={
+                        <>
+                            <p>To accurately cross-calculate these diverse units, this tool anchors all inputs to a universal mathematical constant. For volume, everything is first converted backward into precise <strong>Milliliters (mL)</strong>. For mass and weight, everything is translated backward into base <strong>Grams (g)</strong>. Once standardized, we multiply into the requested output unit.</p>
+                            <div className="bg-orange-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-orange-100 text-orange-900">
+                                <p><strong>1 US Cup = 240 mL</strong> (or 236.588 mL precisely)</p>
+                                <p className="mt-2 pt-2 border-t border-orange-200"><strong>1 Tablespoon (tbsp) = 3 Teaspoons (tsp)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-orange-200"><strong>1 Ounce (oz) = 28.3495 Grams (g)</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's convert a traditional American measurement of <strong>1.5 Cups of Milk</strong> into precise European Metric Milliliters.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-orange-800">
+                                <li><strong>The Conversion Ratio:</strong> In the US legal system meant for nutrition labeling, exactly 1 standard cup equals 240 milliliters.</li>
+                                <li><strong>The Math:</strong> 1.5 (cups) × 240 (mL per cup)</li>
+                                <li><strong>Result:</strong> Your recipe requires exactly <strong>360 Milliliters</strong> of milk.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-orange-800">
+                            <li><strong>International Baking Recipes:</strong> Translating a traditional French pastry recipe recorded strictly by weight in Grams into equivalent US Cups and Tablespoons because you do not own a kitchen scale.</li>
+                            <li><strong>Portion Scaling:</strong> A chef needs to quadruple a small dinner recipe for a large catering event. Calculating 4 × 3/4 Cups is tedious; converting the base into total fl oz or mL makes bulk division significantly easier.</li>
+                            <li><strong>Dietary Logging:</strong> Using the weight converter (Grams to Ounces) to accurately log the protein mass of a chicken breast into a fitness tracking application that defaults to Imperial units.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why can't I convert Cups directly into Grams on this tool?",
+                            answer: "Because a Cup measures the 'Volume' (physical space) an ingredient takes up, while Grams measure 'Weight' (density/mass). A cup of lead weighs drastically more than a cup of feathers. To convert volume to weight, you must first know the exact substance's specific gravity density!"
+                        },
+                        {
+                            question: "Is there a difference between a US Cup and a UK Cup?",
+                            answer: "Yes! A US Customary Cup holds roughly 236.6mL. A UK Imperial Cup holds roughly 284mL. To ensure standardized accuracy, this calculator defaults to the US Legal Cup (exactly 240mL) used uniformly on modern nutrition labels."
+                        },
+                        {
+                            question: "What is the difference between a Fluid Ounce and a Dry Ounce?",
+                            answer: "A Fluid Ounce (fl oz) strictly measures Volume (like milk or water). A standard Ounce (oz) strictly measures Weight (like flour or sugar). They are two entirely different mathematical frameworks!"
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Volume Converter", path: "/volume-converter", desc: "Scientific tool for converting cubic meters, liters, and gallons." },
+                        { name: "Weight Converter", path: "/weight-converter", desc: "Convert industrial weights like tons, kilograms, and pounds." },
+                        { name: "Temperature Converter", path: "/temperature-converter", desc: "Translate oven temperatures between Fahrenheit, Celsius, and Kelvin." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
