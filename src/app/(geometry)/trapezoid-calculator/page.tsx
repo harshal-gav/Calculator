@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function TrapezoidCalculator() {
     const [baseA, setBaseA] = useState('10');
     const [baseB, setBaseB] = useState('15');
@@ -160,6 +160,62 @@ export default function TrapezoidCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Trapezoid Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Trapezoid Calculator"
+                    whatIsIt={
+                        <>
+                            <p>A <strong>Trapezoid Calculator</strong> is a specialized geometry tool that computes the surface area, the median length, and the total perimeter of a trapezoid (also known as a trapezium in the UK).</p>
+                            <p>A trapezoid is uniquely defined as a four-sided shape with exactly one pair of parallel sides (the bases). By inputting the lengths of these bases alongside the perpendicular height, the tool yields the total two-dimensional space the shape occupies.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The mathematics behind a trapezoid relies on averaging the lengths of the two parallel bases.</p>
+                            <ul className="list-disc pl-6 space-y-4 mt-4 text-zinc-700">
+                                <li><strong>Area (A):</strong> Found by averaging the top and bottom base, and multiplying by the vertical height. <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold whitespace-nowrap">A = ½ × (a + b) × h</code></li>
+                                <li><strong>Median (m):</strong> The line segment that connects the midpoints of the non-parallel legs. <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold whitespace-nowrap">m = ½ × (a + b)</code></li>
+                                <li><strong>Perimeter (P):</strong> If the two non-parallel sides (c and d) are known, you simply add all four borders together. <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold whitespace-nowrap">P = a + b + c + d</code></li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the area of a raised trapezoidal garden bed that has a <strong>top base of 10 ft</strong>, a <strong>bottom base of 15 ft</strong>, and a total perpendicular <strong>height of 8 ft</strong>.</p>
+                            <div className="bg-emerald-50 border-l-4 border-emerald-500 p-4 my-4 font-mono text-sm max-w-sm mx-auto shadow-sm">
+                                <p>Area = 0.5 × (a + b) × h</p>
+                                <p>Area = 0.5 × (10 + 15) × 8</p>
+                                <p>Area = 0.5 × (25) × 8</p>
+                                <p>Area = 12.5 × 8</p>
+                                <p className="font-bold text-emerald-700 text-lg mt-2 border-t border-emerald-200 pt-2">Area = 100 sq ft</p>
+                            </div>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Roofing & Construction:</strong> Many roof facets, especially on hip roofs, are shaped as trapezoids. Calculating their area is strictly required to order the correct amount of shingles or metal panels.</li>
+                            <li><strong>Civil Engineering:</strong> Using the <em>Trapezoidal Rule</em> to estimate the area under a curve or calculating the cross-sectional volume of water flowing through an angled trench.</li>
+                            <li><strong>Interior Design:</strong> Ordering carpet or hardwood flooring for bay-window alcoves that feature angled side walls and parallel top/bottom walls.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between an Isosceles and Right Trapezoid?",
+                            answer: "In an Isosceles Trapezoid, the two non-parallel sides (legs) are exactly the same length, making the shape perfectly symmetrical. In a Right Trapezoid, one of the non-parallel sides is completely vertical (forming two 90-degree right angles with the bases)."
+                        },
+                        {
+                            question: "Why do I need the perpendicular height, not the slant length?",
+                            answer: "The formula for area requires the straight vertical distance (height) between the two parallel bases. If you use the length of a slanted leg, your area calculation will be artificially inflated and totally incorrect. If you only have the slant, you must use the Pythagorean theorem first to find the true vertical height."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Triangle Calculator", path: "/triangle-calculator", desc: "Solve all geometric properties of a 3-sided shape." },
+                        { name: "Parallelogram Calculator", path: "/parallelogram-calculator", desc: "Calculate properties of shapes with two parallel pairs." },
+                        { name: "Area Calculator", path: "/area-calculator", desc: "Find the surface area of other common 2D shapes." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

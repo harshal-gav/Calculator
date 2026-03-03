@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function OctagonCalculator() {
     const [inputType, setInputType] = useState('side');
     const [inputValue, setInputValue] = useState('5');
@@ -161,6 +161,64 @@ export default function OctagonCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Octagon Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Octagon Calculator"
+                    whatIsIt={
+                        <>
+                            <p>An <strong>Octagon Calculator</strong> is a specialized geometric tool that instantly calculates all physical dimensions of a standard regular octagon.</p>
+                            <p>Just provide any one known parameter—such as the perimeter, area, side length, or circumradius—and the calculator will instantly reverse-engineer the shape to provide all the other missing measurements. Keep in mind that this calculator is designed for <em>regular octagons</em>, meaning all eight sides and angles are identical (like a standard Stop Sign).</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Because an octagon features eight equal sides and eight 135-degree interior angles, calculating its area and radii heavily involves the mathematical constant of the square root of 2 (√2).</p>
+                            <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
+                                <li><strong>Area (A):</strong> <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold">A = 2 × (1 + √2) × a²</code> (where <em>a</em> is the side length)</li>
+                                <li><strong>Perimeter (P):</strong> <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold">P = 8 × a</code></li>
+                                <li><strong>Inradius / Apothem (r):</strong> The distance from the center to the flat edge. <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold">r = (a / 2) × (1 + √2)</code></li>
+                                <li><strong>Circumradius (R):</strong> The distance from the center to any outer corner. <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold">R = (a / 2) × √(4 + 2√2)</code></li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine you are building an octagonal poker table, and you only know you want the total <strong>Area to be 30 square units</strong>. What is the side length?</p>
+                            <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-zinc-50 p-4 rounded-xl border border-zinc-200">
+                                <li className="text-zinc-500">Input "Area" = 30 into the calculator. Behind the scenes:</li>
+                                <li className="py-1">30 = 2 × (1 + √2) × a²</li>
+                                <li className="py-1">30 ≈ 4.8284 × a²</li>
+                                <li className="py-1">a² ≈ 6.2132</li>
+                                <li className="pt-2 border-t border-zinc-200 mt-2 font-bold text-emerald-700">a (Side Length) ≈ 2.4926 units</li>
+                            </ul>
+                            <p className="mt-4 text-sm">Now that 'a' is known, the calculator will automatically output the perimeter (19.94) and the inradius (3.00) instantly.</p>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Carpentry & Woodworking:</strong> Calculating the exact cut angles (22.5°) and side lengths needed to build octagonal poker tables, gazebos, or custom window frames.</li>
+                            <li><strong>Landscaping:</strong> Determining the amount of stone or pavers needed to fill an octagonal patio based purely on its desired width (the Inradius x 2).</li>
+                            <li><strong>Drafting & Design:</strong> Quickly finding corner-to-corner circumradius measurements to ensure an octagonal object will fit cleanly inside a specific square floor plan.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why does the octagon use the square root of 2?",
+                            answer: "If you draw a square around a regular octagon, the empty spaces in the corners form perfect 45-45-90 right triangles. Since the sides of a 45-degree triangle always follow the ratio of 1:1:√2, the mathematics of an octagon are permanently tied to √2."
+                        },
+                        {
+                            question: "How do I find the width of an octagon?",
+                            answer: "There are two widths. 'Width across flats' (from flat side to opposite flat side) is exactly double the Inradius (2 × r). 'Width across corners' (from point to opposite point) is exactly double the Circumradius (2 × R)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Hexagon Calculator", path: "/hexagon-calculator", desc: "Calculate properties of 6-sided hex polygons." },
+                        { name: "Polygon Calculator", path: "/polygon-calculator", desc: "Calculate math properties for any regular polygon." },
+                        { name: "Area Calculator", path: "/area-calculator", desc: "Find the surface area of other common 2D shapes." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function HexagonCalculator() {
     const [inputType, setInputType] = useState('side'); // side, area, perimeter, inradius, circumradius
     const [inputValue, setInputValue] = useState('5');
@@ -171,6 +171,62 @@ export default function HexagonCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Hexagon Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Hexagon Calculator"
+                    whatIsIt={
+                        <>
+                            <p>A <strong>Hexagon Calculator</strong> is a specialized geometry tool used to find all the key metric properties of a regular hexagon instantly.</p>
+                            <p>By entering just a single known measurement—like the side length, area, perimeter, inradius (apothem), or circumradius—the calculator automatically computes every other geometric property of the six-sided shape. It's built specifically for <em>regular</em> hexagons, where all six sides and all six interior angles are perfectly equal to one another.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>A regular hexagon is mathematically unique because it can be divided into exactly six equilateral triangles. This gives rise to several constants involving the square root of 3 (√3).</p>
+                            <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
+                                <li><strong>Area (A):</strong> <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold">A = (3√3 / 2) × a²</code> (where <em>a</em> is the side length)</li>
+                                <li><strong>Perimeter (P):</strong> <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold">P = 6 × a</code></li>
+                                <li><strong>Inradius / Apothem (r):</strong> The distance from the center to the midpoint of any side. <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold">r = (√3 / 2) × a</code></li>
+                                <li><strong>Circumradius (R):</strong> The distance from the center to any vertex. In a regular hexagon, this is exactly equal to the side length. <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold">R = a</code></li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let’s calculate the properties of a regular hexagon with a <strong>Side Length (a) of 5 cm</strong>:</p>
+                            <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-zinc-50 p-4 rounded-xl border border-zinc-200 shadow-inner">
+                                <li className="flex justify-between border-b border-zinc-200 pb-2"><span>1. Perimeter:</span> <span>6 × 5 = <strong className="text-emerald-700">30 cm</strong></span></li>
+                                <li className="flex justify-between border-b border-zinc-200 py-2"><span>2. Area:</span> <span>(3√3 / 2) × 5² ≈ <strong className="text-emerald-700">64.9519 cm²</strong></span></li>
+                                <li className="flex justify-between border-b border-zinc-200 py-2"><span>3. Inradius (Apothem):</span> <span>(√3 / 2) × 5 ≈ <strong className="text-emerald-700">4.3301 cm</strong></span></li>
+                                <li className="flex justify-between pt-2"><span>4. Circumradius:</span> <span>Equal to a = <strong className="text-emerald-700">5 cm</strong></span></li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Architecture & Tiling:</strong> Hexagrams tessellate perfectly (they interlock without gaps), making them ideal for floor tiling, honeycomb structures, and patio layouts.</li>
+                            <li><strong>Manufacturing:</strong> Calculating the exact cross-sectional area and wrench clearances required for hexagonal nuts and bolts.</li>
+                            <li><strong>Tabletop Gaming:</strong> Designing hex-grid maps for strategy games where exact cell area and distance between hex centers (the Apothem) must be known.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between a long diagonal and short diagonal?",
+                            answer: "A regular hexagon has two types of diagonals. The Long Diagonal (D) connects opposite vertices and passes straight through the center (length = 2a). The Short Diagonal (d) connects two non-adjacent vertices, bypassing the center entirely (length = √3 × a)."
+                        },
+                        {
+                            question: "What is an Apothem?",
+                            answer: "The apothem is the geometric term for the 'Inradius'. It is the perpendicular distance starting from the exact center of the hexagon and ending at the midpoint of any of its six flat sides. It is crucial for calculating the area."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Octagon Calculator", path: "/octagon-calculator", desc: "Calculate properties of 8-sided regular polygons." },
+                        { name: "Polygon Calculator", path: "/polygon-calculator", desc: "Calculate properties for an n-sided regular polygon." },
+                        { name: "Area Calculator", path: "/area-calculator", desc: "Find the surface area of various standard 2D shapes." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

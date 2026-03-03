@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function PolygonCalculator() {
     const [sides, setSides] = useState('5'); // n (pentagon default)
     const [inputType, setInputType] = useState('side'); // side, inradius, circumradius, area, perimeter
@@ -212,6 +212,63 @@ export default function PolygonCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Polygon Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Regular Polygon Calculator"
+                    whatIsIt={
+                        <>
+                            <p>A <strong>Polygon Calculator</strong> is a universal geometric solver capable of determining the physical dimensions and angular properties of any <em>regular polygon</em> with three or more sides (n ≥ 3).</p>
+                            <p>Instead of requiring a different calculator for a Pentagon (5), Nonagon (9), or Dodecagon (12), you simply input the number of sides (n) alongside one known metric (like side length or area), and the tool reverse-calculates the exact area, perimeter, internal angles, and radii utilizing trigonometric functions.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The universal math for a regular n-gon relies on dividing the shape into <em>n</em> isosceles triangles originating from the absolute center. These formulas use trigonometry (tangent and sine) evaluated in radians (where π / n).</p>
+                            <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
+                                <li><strong>Area (A):</strong> <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">A = (n × s²) / (4 × tan(π/n))</code></li>
+                                <li><strong>Perimeter (P):</strong> <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">P = n × s</code></li>
+                                <li><strong>Interior Angle:</strong> The inside angle at any vertex. <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">Angle = [(n - 2) × 180°] / n</code></li>
+                                <li><strong>Apothem (Inradius):</strong> Distance from center to flat edge. <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">r = s / (2 × tan(π/n))</code></li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the <strong>Interior Angle</strong> of a regular Dodecagon (a 12-sided polygon):</p>
+                            <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-zinc-50 p-4 rounded-xl border border-zinc-200 shadow-inner">
+                                <li className="text-zinc-500 mb-2">Formula: Total Sum / n = [(n - 2) × 180°] / n</li>
+                                <li>Angle = [(12 - 2) × 180°] / 12</li>
+                                <li>Angle = [10 × 180°] / 12</li>
+                                <li>Angle = 1800° / 12</li>
+                                <li className="pt-2 border-t border-zinc-200 mt-2 font-bold text-emerald-700">Single Interior Angle = 150°</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>3D Modeling & CAD:</strong> Instantly calculating circumradius dimensions to ensure a many-sided custom gear or circular approximation fits exactly within a mechanical housing.</li>
+                            <li><strong>Mathematics Education:</strong> Visually proving to students how, as the number of sides (n) approaches infinity, the Area and Perimeter formulas of a polygon naturally converge into the Area (πr²) and Circumference (2πr) of a circle.</li>
+                            <li><strong>Architecture:</strong> Designing gazebo floors or pavilion roofs that feature uncommon footprints like heptagons (7-sided) or decagons (10-sided) utilizing the central angles and apothems.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does this work for 'Irregular' Polygons?",
+                            answer: "No. This calculator is strictly for Regular Polygons—shapes where every single side is the exact same length, and every internal angle is the exact same degree. Irregular polygons cannot be solved with a single side length; they require coordinate geometry (like the Shoelace formula)."
+                        },
+                        {
+                            question: "What is the difference between an Inradius and Circumradius?",
+                            answer: "The Inradius (Apothem) is the radius of the largest circle that can fit completely inside the polygon (touching the flat sides). The Circumradius is the radius of the circle that fits completely outside the polygon (touching every pointy vertex)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Hexagon Calculator", path: "/hexagon-calculator", desc: "Calculate properties of specifically 6-sided polygons." },
+                        { name: "Octagon Calculator", path: "/octagon-calculator", desc: "Calculate properties of specifically 8-sided polygons." },
+                        { name: "Arc Length Calculator", path: "/arc-length-calculator", desc: "Calculate the exact properties of perfect circles." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

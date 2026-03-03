@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function ArcLengthCalculator() {
     const [radius, setRadius] = useState('10');
     const [angle, setAngle] = useState('90');
@@ -144,6 +144,64 @@ export default function ArcLengthCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Arc Length Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Arc Length Calculator"
+                    whatIsIt={
+                        <>
+                            <p>An <strong>Arc Length Calculator</strong> is a specialized geometric tool used to find the exact distance along the curved edge of a circle (the arc).</p>
+                            <p>By providing the radius of the circle and the central angle (in either degrees or radians), the calculator instantly determines the arc length, the total area of that pie-shaped sector, and the straight "chord" distance connecting the two endpoints of the arc.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The mathematics for an arc directly scale based on what fraction of the full 360-degree circle it represents. If the central angle (θ) is in <strong>Radians</strong>:</p>
+                            <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
+                                <li><strong>Arc Length (s):</strong> <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold">s = r × θ</code></li>
+                                <li><strong>Sector Area (A):</strong> <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold">A = ½ × r² × θ</code></li>
+                                <li><strong>Chord Length (c):</strong> <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold">c = 2r × sin(θ/2)</code></li>
+                            </ul>
+                            <p className="mt-4 text-sm text-zinc-600"><em>Note: If your angle is in Degrees, multiply it by (π / 180) to convert it to Radians before using the formulas above.</em></p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the Arc Length of a semi-circle (half of a circle). <strong>Radius = 10 units</strong>, and the <strong>Angle = 180 Degrees</strong>.</p>
+                            <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-zinc-50 p-4 rounded-xl border border-zinc-200 shadow-inner">
+                                <li className="text-zinc-500 mb-2">First, convert 180° to Radians: 180 × (π / 180) = π radians.</li>
+                                <li className="py-1">Arc Length = r × θ</li>
+                                <li className="py-1">Arc Length = 10 × π</li>
+                                <li className="py-1">Arc Length = 10 × 3.14159...</li>
+                                <li className="pt-2 border-t border-zinc-200 mt-2 font-bold text-emerald-700">Arc Length ≈ 31.4159 units</li>
+                            </ul>
+                            <p className="mt-4 text-sm text-zinc-500">Notice this is exactly half of the standard circumference formula (2πr = 62.8318).</p>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Civil Engineering:</strong> Designing highway curves and calculating the precise length of banking turns required for safe vehicle traversal at high speeds.</li>
+                            <li><strong>Manufacturing & Piping:</strong> Finding the exact length of material needed to bend a steel pipe or wire into a specific curved shape.</li>
+                            <li><strong>Astronomy:</strong> Measuring the apparent distance between two stars in the night sky based on their angular separation and estimated distance from Earth.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between Arc Length and Sector Area?",
+                            answer: "The Arc Length is a 1-dimensional measurement of perimeter—it is the literal distance you would travel if you walked along the curved edge. Sector Area is a 2-dimensional measurement of space—it is the amount of surface area inside the entire 'pizza slice'."
+                        },
+                        {
+                            question: "What is a Chord?",
+                            answer: "A chord is a perfectly straight line segment that connects the two endpoints of an arc. While the arc travels along the curved boundary of the circle, the chord cuts straight through the interior space."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Circle Calculator", path: "/circle-calculator", desc: "Calculate full perimeter and area of standard circles." },
+                        { name: "Unit Circle Calculator", path: "/unit-circle-calculator", desc: "Interactive tool for mapping angles to sine and cosine." },
+                        { name: "Trigonometry Calculator", path: "/trigonometry-calculator", desc: "Quickly evaluate sin, cos, tan, and other trig functions." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
