@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function Base64Converter() {
     const [mode, setMode] = useState<'encode' | 'decode'>('encode');
@@ -161,6 +162,62 @@ export default function Base64Converter() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Base64 Converter", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Local Base64 Encoder and Decoder"
+                    whatIsIt={
+                        <p>The <strong>Base64 Converter</strong> is a localized developer tool that translates raw, unstable binary data or plain text strings into a universally safe, 64-character ASCII representation. It allows you to freely encode logic or decode server payloads securely entirely within your device's browser.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Base64 is not encryption; it is an encoding scheme. The original computer data is broken down into exactly 3-byte groups (24 total bits). Those 24 bits are mathematically sliced into four 6-bit groups. Each 6-bit group is then mapped explicitly to an index of 64 ultra-safe characters (A-Z, a-z, 0-9, +, /) that safely survive network transport protocols.</p>
+                            <div className="bg-zinc-800 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-700 text-zinc-300">
+                                <p><strong>3 Bytes of Input Data = 24 total bits</strong></p>
+                                <p className="mt-2 pt-2 border-t border-zinc-700"><strong>24 bits / 4 chunks = Four 6-bit indices</strong></p>
+                                <p className="mt-2 pt-2 border-t border-zinc-700"><strong>Output = 4 Safe Base64 ASCII Characters</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's trace how the basic word "Hi" is expanded in Base64.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-400">
+                                <li><strong>The Input:</strong> The short string `Hi`.</li>
+                                <li><strong>The Binary:</strong> Translated to binary bytes, 'H' is 01001000 and 'i' is 01101001.</li>
+                                <li><strong>The Mapping:</strong> By slicing those bits into 6-bit arrays and mathematically padding the remainder, the system queries the Base64 alphabet table.</li>
+                                <li><strong>Result:</strong> It results in the encoded string <strong>SGk=</strong>. (The equals sign is used strictly as a formatting pad character).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-400">
+                            <li><strong>Data URIs in CSS/HTML:</strong> Frontend developers use Base64 to convert tiny logo PNGs or custom SVG icons directly into long text strings, allowing images to exist inside CSS source files, bypassing separate external HTTP server requests.</li>
+                            <li><strong>API Authentication Headers:</strong> When authenticating via `Basic Auth` in REST architectures, developer frameworks require combining the username, a colon, and the password, and instantly encoding it strictly into Base64 before attaching it to the Authorization HTTP header.</li>
+                            <li><strong>Decoding JSON Web Tokens (JWTs):</strong> A modern JWT authentication token isn't encrypted, it's just digitally signed and encoded in URL-safe Base64! Developers paste network payload strings here to manually read what customer data is stored inside a stateless token.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does Base64 hide or secure my data?",
+                            answer: "Absolutely NOT. Base64 offers zero cryptographic security. Anyone on earth who copies a Base64 string can instantly decode it and read the exact contents. It exists strictly to prevent older server gateways from corrupting complex Unicode symbols or image payloads during transit."
+                        },
+                        {
+                            question: "Why do my Base64 strings always end in '==' or '='?",
+                            answer: "Padding! Base64 requires the output string length to be a perfect multiple of 4. If the original data doesn't divide perfectly into 3-byte chunks, the encoding algorithm simply slaps on '=' characters at the very end as filler blocks to keep the math aligned."
+                        },
+                        {
+                            question: "Why does the output file size get bigger?",
+                            answer: "The mathematics of Base64 dictate that replacing 8-bit bytes with restrictive 6-bit characters permanently expands the overall size of the data snippet by approximately 33%."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "JWT Decoder", path: "/jwt-decoder", desc: "Specifically parse and decode JSON Web Tokens and analyze their claims." },
+                        { name: "URL Encoder", path: "/url-encoder-decoder", desc: "Format URLs securely to prevent query parameter collisions." },
+                        { name: "Password Generator", path: "/password-generator", desc: "Generate true securely random cryptographic strings." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

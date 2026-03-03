@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 const fileUnits = [
     { id: 'b', name: 'Bits (b)', multiplier: 1 },
@@ -156,6 +157,62 @@ export default function BandwidthCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Bandwidth Calculator", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Bandwidth Download Time Calculator"
+                    whatIsIt={
+                        <p>The <strong>Bandwidth Calculator</strong> accurately estimates how long it will take to download or upload a digital file across a network. It bridges the mathematical gap between binary file sizes (Megabytes, Gigabytes) and network transmission speeds (Megabits, Gigabits) to provide precise time durations.</p>
+                    }
+                    formula={
+                        <>
+                            <p>To calculate transfer time, you must convert the file size into the absolute smallest unit (bits) and divide it by the connection speed (bits per second). A crucial distinction is that network ISPs advertise in Mega<strong>bits</strong> (Mbps), while operating systems display files in Mega<strong>bytes</strong> (MB).</p>
+                            <div className="bg-indigo-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-indigo-100 text-indigo-900">
+                                <p><strong>1 Byte (B) = 8 bits (b)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-indigo-200"><strong>File Size in Bits = Size × Unit Multiplier</strong></p>
+                                <p className="mt-2 pt-2 border-t border-indigo-200"><strong>Transfer Time (s) = Size in Bits ÷ Speed (bps)</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the download time for a massive 50 GB video game on a standard 500 Mbps fiber connection.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Input:</strong> 50 Gigabytes (file) at 500 Megabits per second (speed).</li>
+                                <li><strong>The Conversion:</strong> 50 GB equals 400 Gigabits. (Since 1 Byte = 8 bits, 50 * 8 = 400).</li>
+                                <li><strong>The Division:</strong> 400,000 Megabits / 500 Mbps = 800 seconds.</li>
+                                <li><strong>Result:</strong> 800 seconds equals exactly <strong>13 minutes and 20 seconds</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Cloud Backup Management:</strong> IT professionals use this tool to determine scheduling windows. If a daily database backup is 2 Terabytes, they need to verify it can complete uploading over a 1 Gbps connection before business hours start.</li>
+                            <li><strong>Gaming and Media:</strong> Consumers wanting to know if a heavy 100GB 4K movie or next-gen game patch will finish downloading before their friends log on.</li>
+                            <li><strong>ISP Verification:</strong> Validating whether paying double for a "Gigabit" connection practically benefits you compared to a 300 Mbps connection for the types of files you actually transfer.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why does my 100 Mbps connection only download at 12.5 MB/s?",
+                            answer: "This is the most common point of confusion. Network speed is measured in Megabits (Mb). Files are measured in Megabytes (MB). Because there are 8 bits in one byte, a 100 Megabit connection physically maxes out at 12.5 Megabytes per second."
+                        },
+                        {
+                            question: "Why is my real-world download slower than the calculated time?",
+                            answer: "Theoretical math assumes 100% network efficiency. In the real world, about 10% of internet traffic is 'overhead' (TCP/IP packet headers, encryption, and routing data). Additionally, network congestion, server limits, and background OS tasks slow things down."
+                        },
+                        {
+                            question: "What is the difference between Kbps and KBps?",
+                            answer: "Notice the casing! A lowercase 'b' (Kbps) implies Kilobits. An uppercase 'B' (KBps) implies Kilobytes. An uppercase B means the data stream is literally 8 times larger than the lowercase b."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Data Converter", path: "/data-converter", desc: "Easily convert exact file sizes between Bytes, Kilobytes, and Terabytes." },
+                        { name: "Time Calculator", path: "/time-calculator", desc: "Add or subtract exact durations of time." },
+                        { name: "Percentage Calculator", path: "/percentage-calculator", desc: "Calculate what percentage of your download is currently complete." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

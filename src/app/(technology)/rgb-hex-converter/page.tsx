@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function RgbHexConverter() {
     // Shared state
@@ -150,6 +151,62 @@ export default function RgbHexConverter() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "RGB to HEX Converter", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Design Color Profile Converter"
+                    whatIsIt={
+                        <p>The <strong>RGB to HEX Converter</strong> is a bridge tool for UI/UX designers and frontend developers. It instantly bidirectionalizes visual color representations—from the standard CSS Hexadecimal string format (e.g. #FF5733) into mathematically raw Red, Green, and Blue light additive values (255, 87, 51).</p>
+                    }
+                    formula={
+                        <>
+                            <p>Monitors mix red, green, and blue light from an intensity of 0 (off) to 255 (full brightness). To create a Hex code, we take each of these base-10 integer values, convert them individually into a base-16 numerical system (Hexadecimal format: 0-9 and A-F), and concatenate them together into a 6-character string.</p>
+                            <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-800">
+                                <p><strong>R, G, B = Integers between 0 and 255</strong></p>
+                                <p className="mt-2 pt-2 border-t border-zinc-300"><strong>Hex = RedToHex() + GreenToHex() + BlueToHex()</strong></p>
+                                <p className="mt-2 pt-2 border-t border-zinc-300"><strong>rgb(255, 255, 255) = #FFFFFF (Pure White)</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's manually convert a vibrant shade of pure blue.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
+                                <li><strong>The RGB Input:</strong> Red: 0, Green: 0, Blue: 255.</li>
+                                <li><strong>The Conversion:</strong> Base-10 zero converts to Base-16 `00`. Base-10 255 converts to Base-16 `FF`.</li>
+                                <li><strong>The Concatenation:</strong> Gluing them together gives us `00` + `00` + `FF`.</li>
+                                <li><strong>Result:</strong> The final CSS color code is exactly <strong>#0000FF</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>CSS Opacity Adjustment:</strong> While modern CSS supports 8-character hex codes, developers often paste a standard 6-character hex code into this converter, extract the RGB values, and inject them into an `rgba(R, G, B, 0.5)` function to easily generate a translucent glass background.</li>
+                            <li><strong>Design Systems:</strong> Converting absolute brand colors given by a graphics department in Photoshop (who often work globally in RGB) into perfectly matched CSS constants for a Tailwind config file.</li>
+                            <li><strong>JavaScript Animations:</strong> Canvas APIs and popular JS animation libraries often require explicitly defining start/end colors as numeric RGB arrays rather than Hex strings to perform mathematical tweening and fading.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why does my 3-character Hex code still work?",
+                            answer: "A 3-character Hex code (like #F00) is just a visual shorthand for CSS. The browser automatically doubles every single character to parse it. So #F00 is technically identical and instantly expanded to #FF0000 (Pure Red)."
+                        },
+                        {
+                            question: "What is CMYK compared to RGB?",
+                            answer: "RGB (Red, Green, Blue) is an 'additive' light model used strictly for digital screens emitting light. CMYK (Cyan, Magenta, Yellow, Key/Black) is a 'subtractive' ink model used strictly for physical paper printing. They cannot map together perfectly."
+                        },
+                        {
+                            question: "Can Hex codes handle transparency?",
+                            answer: "Yes, modern CSS allows for 8-character hex codes (e.g., #FF000080), where the final two digits represent the 'Alpha' channel or opacity level."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "PX to REM Converter", path: "/px-rem-converter", desc: "Convert standard pixel values to responsive CSS units." },
+                        { name: "Base Converter", path: "/base-converter", desc: "See the math behind converting Decimal (Base-10) to Hexadecimal (Base-16)." },
+                        { name: "Proportion Calculator", path: "/proportion-calculator", desc: "Scale UI elements mathematically." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

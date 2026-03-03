@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function IPSubnetCalculator() {
     const [ipAddress, setIpAddress] = useState('192.168.1.100');
@@ -183,6 +184,63 @@ export default function IPSubnetCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "IP Subnet Calculator", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="IPv4 Subnet Mask and CIDR Calculator"
+                    whatIsIt={
+                        <p>The <strong>IP Subnet Calculator</strong> parses a given IPv4 address and its accompanying Classless Inter-Domain Routing (CIDR) mask to instantly map out the technical architecture of a local sub-network. It mathematically generates the exact Network ID, Broadcast Address, Wildcard Mask, and total Usable Host range.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Subnetting fundamentally relies on translating human-readable IP addresses (like 192.168.1.1) into raw 32-bit binary strings (1s and 0s). The calculator uses Bitwise logic operators (AND, OR, NOT) to filter the IP address strictly against the binary subnet mask, instantly separating the "network" portion from the "host" portion.</p>
+                            <div className="bg-zinc-800 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-700 text-cyan-400">
+                                <p><strong>Network ID = IP <span className="text-zinc-400">AND</span> Subnet Mask</strong></p>
+                                <p className="mt-2 pt-2 border-t border-zinc-700"><strong>Wildcard = <span className="text-zinc-400">NOT</span> Subnet Mask</strong></p>
+                                <p className="mt-2 pt-2 border-t border-zinc-700"><strong>Broadcast = Network ID <span className="text-zinc-400">OR</span> Wildcard</strong></p>
+                                <p className="mt-2 pt-2 border-t border-zinc-700"><strong>Usable Hosts = (2 ^ Unmasked Bits) - 2</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's map out a tightly constrained office network targeting a `/28` subnet mask.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-400">
+                                <li><strong>The Input:</strong> Base IP `10.0.0.0` with a `/28` CIDR mask.</li>
+                                <li><strong>The Binary Shift:</strong> A `/28` mask means 28 bits are reserved for the network, leaving exactly 4 bits for computers.</li>
+                                <li><strong>Host Calculation:</strong> 2 to the power of 4 is 16 total IPs. Subtract 2 for the Network ID and Broadcast, leaving 14 usable hosts.</li>
+                                <li><strong>Result:</strong> Your usable IP range is extremely tight, from <strong>10.0.0.1 to 10.0.0.14</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-400">
+                            <li><strong>Cloud Architecture (AWS/Azure):</strong> Defining Virtual Private Cloud (VPC) subnets. Cloud engineers must calculate exact CIDR blocks to segment databases from public-facing web servers without overlapping IP address spaces.</li>
+                            <li><strong>Router Configuration:</strong> Setting up physical corporate firewalls and core switches safely requires understanding the exact binary boundary of a broadcast domain to prevent broadcast storming.</li>
+                            <li><strong>Cybersecurity Audits:</strong> Penetration testers use exact CIDR definitions (like `192.168.0.0/16`) to cleanly map out scan boundaries for Nmap, ensuring they don't accidentally attack server targets out of scope.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why do we subtract 2 to find 'Usable Hosts'?",
+                            answer: "In IPv4, the very first IP in a subnet block is strictly reserved to identify the network itself (Network ID). The very last IP in the block is strictly reserved as the Broadcast address (which pings every device simultaneously). Thus, they cannot be assigned to individual laptops."
+                        },
+                        {
+                            question: "What does CIDR notation like /24 mean?",
+                            answer: "CIDR (Classless Inter-Domain Routing) is shorthand. A `/24` simply means the first 24 bits (from left to right) out of the available 32 bits in an IPv4 address are locked to define the 'Network'. Only the remaining 8 bits are left open."
+                        },
+                        {
+                            question: "What is a Wildcard Mask?",
+                            answer: "A wildcard mask is the exact inverse of a subnet mask (it flips every 1 to a 0). It is primarily used by Cisco routers in Access Control Lists (ACLs) to easily define which specific IP ranges a firewall should permit or deny."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Bandwidth Calculator", path: "/bandwidth-calculator", desc: "Calculate exact network transmission times." },
+                        { name: "Base Converter", path: "/base-converter", desc: "Convert numbers natively between binary, decimal, and hexadecimal." },
+                        { name: "Base64 Encoder", path: "/base64-converter", desc: "Encode raw data securely for server transfers." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
