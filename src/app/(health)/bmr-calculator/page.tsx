@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function BmrCalculator() {
     const [gender, setGender] = useState('male');
     const [age, setAge] = useState('30');
@@ -107,6 +107,66 @@ export default function BmrCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "BMR Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Basal Metabolic Rate Calculator"
+                    whatIsIt={
+                        <>
+                            <p>A <strong>Basal Metabolic Rate (BMR) Calculator</strong> determines the absolute minimum number of calories your body requires to function while at complete physical and mental rest. Think of it as the energy cost just to keep you alive—powering your heart, lungs, brain, and cellular regeneration while you sleep.</p>
+                            <p>Your BMR makes up the vast majority (about 60% to 75%) of your total daily energy expenditure. Knowing this baseline number is the critical first step before building any accurate weight loss, muscle gain, or body recomposition diet plan.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>This calculator provides results for two of the most widely accepted and scientifically validated formulas in clinical nutrition:</p>
+                            <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
+                                <li><strong>The Mifflin-St Jeor Equation (Recommended):</strong> Developed in 1990, this is considered the gold-standard modern formula by the Academy of Nutrition and Dietetics. It is notably more accurate than older formulas, especially for modern populations.</li>
+                                <li><strong>The Revised Harris-Benedict Equation:</strong> Originally published in 1919 and revised in 1984, this is a classic equation still used widely in historical medical texts, though it tends to slightly overestimate BMR in some individuals.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Here is how the <strong>Mifflin-St Jeor Equation</strong> works for a hypothetical <strong>30-year-old male</strong> who weighs <strong>75kg</strong> and is <strong>175cm</strong> tall.</p>
+                            <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-orange-50 p-4 rounded-xl border border-orange-200">
+                                <li><strong>Formula (Male):</strong> (10 × weight in kg) + (6.25 × height in cm) - (5 × age) + 5</li>
+                                <li><strong>Step 1 (Weight):</strong> 10 × 75 = 750</li>
+                                <li><strong>Step 2 (Height):</strong> 6.25 × 175 = 1093.75</li>
+                                <li><strong>Step 3 (Age):</strong> 5 × 30 = 150</li>
+                                <li><strong>Step 4 (Calculate):</strong> 750 + 1093.75 - 150 + 5</li>
+                                <li className="pt-2 mt-2 font-bold text-orange-800 border-t border-orange-200">Result: 1,699 kcal/day</li>
+                            </ul>
+                            <p className="mt-4 text-sm text-zinc-700">This individual will naturally burn ~1,700 calories per day even if they never get out of bed.</p>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Setting a Dietary Floor:</strong> Nutritionists strongly advise against eating <em>below</em> your BMR on a regular basis, as it can cause metabolic adaptation (slowdown), nutrient deficiencies, and severe fatigue.</li>
+                            <li><strong>Calculating Total Macros:</strong> BMR is Step 1. You use your BMR outcome, multiply it by an activity modifier to get your TDEE, and then divide that final number into protein, carb, and fat goals.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "How is BMR different from TDEE?",
+                            answer: "BMR is just what you burn in a coma. TDEE (Total Daily Energy Expenditure) is your BMR multiplied by your physical activity level. Your TDEE is always higher than your BMR. If you want to lose weight, you eat below your TDEE, but generally not below your BMR."
+                        },
+                        {
+                            question: "Does muscle mass affect BMR?",
+                            answer: "Yes, significantly. Muscle tissue is far more metabolically active than fat tissue. If two people weigh exactly the same, but Person A is 10% body fat and Person B is 30% body fat, Person A will have a noticeably higher BMR. Standard BMR equations (like Mifflin-St Jeor) estimate this based on typical population averages. For highly muscular athletes, the Katch-McArdle formula (which requires knowing your exact body fat percentage) is more accurate."
+                        },
+                        {
+                            question: "Does my BMR slow down as I get older?",
+                            answer: "Yes. Starting in your mid-20s, BMR naturally drops by roughly 1% to 2% per decade. This is primarily driven by the natural, age-related loss of muscle mass (sarcopenia) and slowing cellular metabolic processes."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Take your BMR and add exercise to figure out your total daily calorie burn." },
+                        { name: "Macro Calculator", path: "/macro-calculator", desc: "Break your calories down into precise grams of protein, carbs, and fats." },
+                        { name: "BMI Calculator", path: "/bmi-calculator", desc: "Check if your weight falls within standard medical guidelines for your height." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import CalculatorSEO from '@/components/CalculatorSEO';
 export default function TDEECalculator() {
     const [gender, setGender] = useState('male');
     const [age, setAge] = useState('30');
@@ -123,6 +123,67 @@ export default function TDEECalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "TDEE Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Total Daily Energy Expenditure (TDEE) Calculator"
+                    whatIsIt={
+                        <>
+                            <p>A <strong>Total Daily Energy Expenditure (TDEE) Calculator</strong> tells you exactly how many calories your body burns in a typical 24-hour period. It is the single most important number to know for managing your weight and designing a diet.</p>
+                            <p>Your TDEE is your "Maintenance Calorie Level." If you eat exactly your TDEE every day, your weight will never change. If you eat below it, you will lose weight. If you eat above it, you will gain weight. Thermodynamics dictate that everything revolves around this specific number.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>This calculator determines your TDEE in two steps:</p>
+                            <ul className="list-decimal pl-6 space-y-3 mt-4 text-zinc-700">
+                                <li>First, it calculates your <strong>Basal Metabolic Rate (BMR)</strong> using the highly-accurate Mifflin-St Jeor equation. This is the energy you burn just existing.</li>
+                                <li>Second, it multiplies your BMR by an <strong>Activity Multiplier</strong> based on the Katch-McArdle multipliers. This accounts for your daily physical activity, from typing at a desk to running marathons.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the TDEE for a <strong>30-year-old male</strong> who is <strong>180 lbs</strong>, <strong>5'11"</strong> tall, and works a desk job but works out aggressively 4 times a week (Moderate Exercise modifier of 1.55).</p>
+                            <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-orange-50 p-4 rounded-xl border border-orange-200">
+                                <li><strong>Step 1: Calculate BMR</strong></li>
+                                <li className="pl-4 text-zinc-600">The calculator uses his age, weight, and height to determine his base BMR is roughly <strong>1,822 kcal/day</strong>.</li>
+                                <li className="mt-2"><strong>Step 2: Apply Activity Multiplier</strong></li>
+                                <li className="pl-4 text-zinc-600">Because he works out moderately, we multiply his BMR by 1.55.</li>
+                                <li className="pl-4 text-zinc-600">1,822 × 1.55 = 2,824</li>
+                                <li className="pt-2 mt-2 font-bold text-orange-800 border-t border-orange-200">Result (TDEE): 2,824 kcal/day</li>
+                            </ul>
+                            <p className="mt-4 text-sm text-zinc-700">To lose exactly 1 pound a week, he needs to eat in a 500-calorie deficit, aiming for ~2,324 calories per day.</p>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4">
+                            <li><strong>Cutting phase (Fat Loss):</strong> The gold-standard clinical advice for sustainable fat loss is to subtract exactly 500 calories from your TDEE every day to lose roughly 1lb of fat per week.</li>
+                            <li><strong>Bulking phase (Muscle Gain):</strong> Bodybuilders add 250 to 500 calories to their TDEE to ensure they are in enough of a caloric surplus to synthesize new muscle tissue without adding excessive body fat.</li>
+                            <li><strong>Recomposition:</strong> Eating precisely at your TDEE while lifting heavy weights can slowly trade fat for muscle while keeping your body weight identical on the scale.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "How accurate is the TDEE calculation?",
+                            answer: "It is an incredibly accurate statistical estimate, usually within 5-10% for the vast majority of the population. However, it is fundamentally an 'estimate.' It doesn't know your exact genetics, NEAT (non-exercise activity thermogenesis like fidgeting), or exact sleep quality. The correct way to use a TDEE calculator is to grab the number, eat exactly that many calories for 14 days, track your morning weight, and then adjust manually based on whether the scale moved."
+                        },
+                        {
+                            question: "Does my smartwatch calculate my TDEE?",
+                            answer: "Yes, Apple Watches, Garmins, and Fitbits are actively estimating your TDEE based on your heart rate. However, clinical studies continually show that commercially available smart watches overestimate calories burned through exercise by roughly 20% to 40%. The static formula used in this calculator is often safer for diet planning than a smartwatch."
+                        },
+                        {
+                            question: "Should I recalculate my TDEE as I lose weight?",
+                            answer: "Yes. As you lose weight, there is less of you to physically move around, which means your body requires less energy to survive. If you lose 20 lbs, your TDEE will drop. If you hit a 'weight-loss plateau,' it's usually because your old caloric deficit has accidentally become your new TDEE maintenance level."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "BMR Calculator", path: "/bmr-calculator", desc: "Isolate and view only your resting metabolic rate without the activity modifiers." },
+                        { name: "Macro Calculator", path: "/macro-calculator", desc: "Break your new TDEE down into precise grams of protein, carbs, and fats." },
+                        { name: "Ideal Weight Calculator", path: "/ideal-weight-calculator", desc: "Calculate the exact target weight you should be aiming for." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
