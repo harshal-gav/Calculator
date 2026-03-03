@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 const ANGLE_UNITS = [
     { id: 'degrees', name: 'Degrees (°)', toDegrees: 1 },
@@ -136,6 +137,61 @@ export default function AngleConverter() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Angle Converter", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Geometric Angle Converter"
+                    whatIsIt={
+                        <p>Our <strong>Angle Converter</strong> provides rapid translation between 2D radial rotation measurements. Beyond standard Degrees and Radians, it handles highly specialized topographical surveying measurements including Gradians, Arcminutes, Arcseconds, and absolute Circular Turns.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Converting angles boils down to understanding how a specific unit system defines one complete, unbroken circle (360 degrees). Every subset unit is just a scalar fraction of that perfect geometric rotation.</p>
+                            <div className="bg-indigo-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-indigo-100 text-indigo-900">
+                                <p><strong>1 Full Circle = 360 Degrees (°)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-indigo-200"><strong>1 Full Circle = 2π Radians (rad)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-indigo-200"><strong>1 Full Circle = 400 Gradians (grad)</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's translate a common high school geometry problem into collegiate-level physics notation.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Scenario:</strong> You need to rotate a right-angle triangle exactly <strong>90 degrees</strong>.</li>
+                                <li><strong>The Conversion:</strong> Because 90 degrees represents exactly one quarter of a 360 degree circle, it must also represent exactly one quarter of a 2π Radian circle.</li>
+                                <li><strong>Result:</strong> 90 degrees mathematically converts flawlessly into <strong>1.5708 Radians (or exactly π/2)</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Trigonometry & Navigation:</strong> While compasses use 360 Degrees, all higher-level calculus, physics engines, and GPS satellite algorithms execute their math exclusively using Pi-based Radians.</li>
+                            <li><strong>Land Surveying & Topography:</strong> Large civil engineering projects utilize "Gradians" (400 per circle) because 100 gradians form a perfect right angle, providing a vastly easier decimal-based mathematical workflow out in the muddy field.</li>
+                            <li><strong>Astronomy & Stargazing:</strong> When plotting the night sky, a single degree is far too massive. Astronomers slice degrees into 60 "Arcminutes," and slice those into 60 microscopic "Arcseconds" to aim telescopes at distant galaxies with mind-bending accuracy.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why do degrees use the number 360?",
+                            answer: "It is an ancient Babylon convention from 4,000 years ago! They used a base-60 mathematics system (which is also why we have 60 seconds in a minute). Furthermore, 360 is a highly composite 'magic' number that divides cleanly by 2, 3, 4, 5, 6, 8, 9, 10, and 12, making it incredible for crude toolless fractional geometry."
+                        },
+                        {
+                            question: "What actually is a Radian?",
+                            answer: "If you take the exact radius of a circle, pull it out, curve it, and lay it directly along the outer edge of the circle... the resulting pie-slice angle is exactly 1 Radian. It is the purest, most natural mathematical relationship between a circle's edge and its center."
+                        },
+                        {
+                            question: "How many Arcseconds are in a standard circle?",
+                            answer: "Exactly 1,296,000. It is a level of precision so impossibly tight that a single Arcsecond represents the width of a human hair seen from roughly 60 feet away."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Triangle Calculator", path: "/triangle-calculator", desc: "Solve complete inner triangles and missing 180-degree interior angles." },
+                        { name: "Circle Calculator", path: "/circle-calculator", desc: "Calculate circumference and 2D spatial surface areas mapped to pi." },
+                        { name: "Pythagorean Theorem", path: "/pythagorean-calculator", desc: "Determine rigid edge lengths of perfect 90-degree right-angle triangles." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

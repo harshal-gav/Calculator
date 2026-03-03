@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 const units = [
     { id: 'watt', name: 'Watt (W)', factor: 1 },
@@ -128,6 +129,61 @@ export default function PowerConverter() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Power Converter", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Electrical & Mechanical Power Converter"
+                    whatIsIt={
+                        <p>Our <strong>Power Converter</strong> establishes parity between modern industrial, electrical, and mechanical energy flows. It translates the raw output speeds of motors, engines, and heaters into their corresponding mathematical equivalents across Watts, Kilowatts, Horsepower, and BTUs/hour.</p>
+                    }
+                    formula={
+                        <>
+                            <p>It is vital to understand that power is a measurement of a <strong>RATE</strong>, not an amount. "Energy" is the total volume of work. "Power" is how violently fast that Energy is being burned or transferred. Our converter routes everything through the SI baseline unit: the Watt (which equals exactly 1 Joule per second).</p>
+                            <div className="bg-yellow-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-yellow-100 text-yellow-900">
+                                <p><strong>1 Kilowatt (kW) = 1,000 Watts (W)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-yellow-200"><strong>1 Mechanical Horsepower (HP) ≈ 745.7 Watts</strong></p>
+                                <p className="mt-2 pt-2 border-t border-yellow-200"><strong>1 Metric Horsepower (PS) ≈ 735.5 Watts</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's convert a high-performance Italian sports car's engine power into household electricity flow.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Scenario:</strong> A massive V8 engine produces a peak output of exactly <strong>500 Mechanical Horsepower (HP)</strong>.</li>
+                                <li><strong>The Calculation:</strong> We select "Horsepower (Mechanical)" as our From-value and "Kilowatt" as our To-value. 500 HP × 0.7457 (the conversion scalar).</li>
+                                <li><strong>Result:</strong> That screaming V8 engine is producing exactly <strong>372.8 Kilowatts (kW)</strong> of pure mechanical transfer speed—equivalent to powering roughly three hundred high-end gaming computers simultaneously.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Automotive Exports:</strong> While the US and UK rate cars strictly in Brake Horsepower (HP), mainland Europe often rates cars in Kilowatts (kW) or Metric Horsepower (PS / Pferdestärke). Dealerships rely on rapid conversions to legally standardize international import data.</li>
+                            <li><strong>HVAC Industrial Systems:</strong> Modern industrial boiler ratings are incredibly complex, often mixing BTUs/hour (heat combustion) with required heavy electrical Kilowatts (pump power). Translating these systems prevents blown fuses and catastrophic overheating.</li>
+                            <li><strong>Solar & Wind Farms:</strong> Renewable energy is often captured in millions of tiny increments. Green energy grids must calculate the total real-time "Megawatt" generation (an electrical flow rate) to ensure the local city has enough immediate grid tension to run without suffering rolling blackouts.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Is Horsepower literally the strength of one horse?",
+                            answer: "Originally, yes! In the 1700s, engineer James Watt needed a marketing gimmick to sell his new steam engines to coal miners, so he mathematically proved that his machine could reliably substitute the continuous, specific daily labor of one strong draft horse."
+                        },
+                        {
+                            question: "What is a Watt?",
+                            answer: "A Watt is the foundational metric measurement of power (the speed at which energy is used). Biologically, a human brain resting operates at about 20 Watts. A lightbulb burns 60 Watts. A Formula 1 racecar burns 750,000 Watts."
+                        },
+                        {
+                            question: "If I buy a 1000W generator, can I run a 1HP motor?",
+                            answer: "In a perfect universe, yes—1HP is only 746W. In reality, absolutely not. Physical electric motors suffer from induction friction and demand a massive 'surge' of initial starting power that far exceeds their continuous running average."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Energy Converter", path: "/energy-converter", desc: "Convert total accumulated physical energy rather than live transfer speeds." },
+                        { name: "Work Calculator", path: "/work-calculator", desc: "Calculate mechanical tasks successfully accomplished over physical distances." },
+                        { name: "Ohm's Law Calculator", path: "/ohms-law-calculator", desc: "Solve complex circuit formulas to determine live electrical Wattage." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
