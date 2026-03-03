@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 type Assignment = {
     id: number;
@@ -198,6 +199,62 @@ export default function GradeCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Grade Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Weighted Course Grade & Final Exam Calculator"
+                    whatIsIt={
+                        <p>The <strong>Class Grade Calculator</strong> is a vital academic tool that helps students track exactly how well they are performing in a specific course. By inputting the grade you received on an assignment and the "Weight" (percentage) that assignment is worth relative to the total syllabus, it calculates your current standing in the class.</p>
+                    }
+                    formula={
+                        <>
+                            <p>Most high school and college courses use a "Weighted" grading system, meaning a 10-question final exam has a significantly larger impact on your final grade than a 10-question weekly quiz.</p>
+                            <div className="bg-indigo-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-indigo-100 text-indigo-900">
+                                <p><strong>Total Weight = ∑ All Entered Weights</strong></p>
+                                <p className="mt-2 pt-2 border-t border-indigo-200"><strong>Raw Points = ∑ (Grade × Weight)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-indigo-200"><strong>Current Grade = Raw Points ÷ Total Weight</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine your syllabus states: Homework is 20%, Midterms are 30%, and the Final is 50%. You haven't taken the final yet.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-indigo-800">
+                                <li><strong>The Input:</strong> You score 100% on Homework (20% weight), and 80% on the Midterm (30% weight).</li>
+                                <li><strong>The Math:</strong> (100 × 20) + (80 × 30) = 2000 + 2400 = 4400 total raw points.</li>
+                                <li><strong>The Scaling:</strong> Because you've only completed 50% of the class's total weight (20+30), we divide the raw points by 50.</li>
+                                <li><strong>The Result:</strong> 4400 ÷ 50 = <strong>88%</strong>. You currently have a strong 'B+' heading into the final exam!</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-indigo-800">
+                            <li><strong>"What do I need on the Final?":</strong> Students use this math in reverse—entering their current grades and seeing exactly what minimum score they need on an upcoming 40% Final Exam to keep their 'A'.</li>
+                            <li><strong>Syllabus Planning:</strong> In the first week of class, dropping a "zero" into a 5% participation grade to see if skipping lectures is mathematically worth losing the letter grade.</li>
+                            <li><strong>Progress Tracking:</strong> Maintaining a running tally of lab reports, essays, and quizzes throughout the semester to avoid end-of-year surprises if a professor takes time updating the digital gradebook.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What if my professor uses a 'Total Points' system instead of Weights?",
+                            answer: "If the syllabus says the class is out of 1,000 Total Points, simply enter the 'Max Points' for the assignment into the 'Weight' column, and enter your actual percentage score into the Grade column."
+                        },
+                        {
+                            question: "Why is my current grade an 'A' if I've only done 10% of the course?",
+                            answer: "This calculator specifically shows your CURRENT standing based only on the work you have submitted so far. It scales your submitted grades up to 100% so you know your average on the material evaluated to date."
+                        },
+                        {
+                            question: "Does this handle extra credit?",
+                            answer: "Yes! If you receive 105% on an assignment, simply enter 105 in the Grade column. It will perfectly factor the mathematical overflow into your total."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "GPA Calculator", path: "/gpa-calculator", desc: "Translate your final class percentage into a 4.0 scale GPA." },
+                        { name: "Percentage Calculator", path: "/percentage-calculator", desc: "Easily figure out your grade percentage (e.g., 47/60 on a test)." },
+                        { name: "Mean/Average Calculator", path: "/mean-median-mode-calculator", desc: "Find the average if all your tests share the exact same weight." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

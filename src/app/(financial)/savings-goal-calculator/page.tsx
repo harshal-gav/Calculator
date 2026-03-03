@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function SavingsGoalCalculator() {
     const [goalAmount, setGoalAmount] = useState('10000');
@@ -144,6 +145,61 @@ export default function SavingsGoalCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Savings Goal Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Time-to-Goal Savings Calculator"
+                    whatIsIt={
+                        <p>The <strong>Savings Goal Calculator</strong> is a specialized financial planning tool designed to answer one specific question: <em>"Exactly how many months will it take to hit my target number?"</em> By analyzing your starting balance, monthly deposits, and expected interest rate, it simulates the compounding growth month-by-month until the target is achieved.</p>
+                    }
+                    formula={
+                        <>
+                            <p>To pinpoint the exact month a goal is reached without complex algorithmic logarithms, this calculator runs a live month-by-month financial simulation. Every month, it compounds the interest and adds the user's monthly contribution until the balance breaches the goal threshold.</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
+                                <p><strong>New Balance = Previous Balance + (Previous Balance × Monthly Rate) + Monthly Contribution</strong></p>
+                                <p className="mt-2 text-xs italic text-emerald-700">This loop runs iteratively. Month count increments by 1 each cycle until Balance {'>'}= Goal.</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's map out a plan to save a $60,000 down payment for a house.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-emerald-800">
+                                <li><strong>The Input:</strong> You currently have $5,000. You plan to save $1,000 a month in a High-Yield Savings Account earning 4% APY.</li>
+                                <li><strong>The Simulation:</strong> Over time, your $1000/mo deposits do the heavy lifting, but the bank also pays you free interest every month which accelerates the timeline.</li>
+                                <li><strong>The Breakdown:</strong> To hit $60,000, you will personally contribute $50,000 out of pocket. The bank gives you roughly $5,130 in free compound interest.</li>
+                                <li><strong>The Result:</strong> It will take exactly <strong>50 Months</strong> (about 4.2 years) to hit your goal.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-emerald-800">
+                            <li><strong>Wedding Planning:</strong> Engaged couples working backward from a $30,000 wedding budget to see exactly how much of their paychecks they need to divert to savings to hit the goal in exactly 18 months.</li>
+                            <li><strong>Emergency Fund Building:</strong> Financial beginners aiming to save a baseline $10,000 emergency fund, tweaking the 'Monthly Contribution' slider to see the difference between saving $200 vs $400 a month.</li>
+                            <li><strong>Car Purchases:</strong> Savers planning to buy a vehicle in cash. By factoring in a 5% interest rate from a money market account, they find they actually hit their $25k goal two months earlier than if they kept the cash under a mattress.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why not just divide the Goal by the Monthly Contribution?",
+                            answer: "Simple division ignores Compound Interest. If you need $10,000 and save $100/mo, simple math says 100 months. But if that money is in a 5% savings account, the 'free' money you earn along the way actually shortens it to 82 months!"
+                        },
+                        {
+                            question: "What interest rate should I put in?",
+                            answer: "If you are using a standard bank checking account, put 0%. If utilizing a High Yield Savings Account (HYSA), use current market rates (usually 3% to 5%). If investing in index funds for a 10-year goal, you can estimate 7% to 10%."
+                        },
+                        {
+                            question: "Does this account for inflation?",
+                            answer: "No, this calculator shows nominal dollars. If you are saving for a 20-year goal, remember that $100,000 twenty years from now will have significantly less purchasing power than $100,000 today."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Retirement Calculator", path: "/retirement-calculator", desc: "Plan ultra-long-term goals requiring massive nest eggs." },
+                        { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "See yearly breakdown charts of how your money grows." },
+                        { name: "Investment Calculator", path: "/investment-calculator", desc: "Compare multiple investment timelines side-by-side." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

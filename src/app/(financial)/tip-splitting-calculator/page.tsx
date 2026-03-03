@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function TipSplittingCalculator() {
     const [billAmount, setBillAmount] = useState('100');
@@ -126,6 +127,63 @@ export default function TipSplittingCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Tip Splitting Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Restaurant Tip & Bill Splitting Calculator"
+                    whatIsIt={
+                        <p>The <strong>Tip Splitting Calculator</strong> is a fast, highly-practical everyday utility perfect for dining out with groups. By inputting the total receipt amount, selecting a standard gratuity percentage, and specifying the party size, it instantly calculates the exact dollar amount each person needs to contribute to cover both the meal and the tip fairly.</p>
+                    }
+                    formula={
+                        <>
+                            <p>This calculator utilizes basic percentage multiplication combined with straightforward divisional fractions to ensure every penny is accounted for among the group.</p>
+                            <div className="bg-sky-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-sky-100 text-sky-900">
+                                <p><strong>Total Gratuity = Bill Amount × (Tip % ÷ 100)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-sky-200"><strong>Final Bill = Bill Amount + Total Gratuity</strong></p>
+                                <p className="mt-2 pt-2 border-t border-sky-200"><strong>Per Person Share = Final Bill ÷ Number of People</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine four friends go out for an expensive steak dinner and want to split the check evenly.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-sky-800">
+                                <li><strong>The Input:</strong> The food receipt is $185.00. The service was excellent, so they agree on a 20% tip. The party size is 4.</li>
+                                <li><strong>The Gratuity Math:</strong> 20% of $185.00 is exactly $37.00.</li>
+                                <li><strong>The Total:</strong> The Final Bill on the table is $185.00 + $37.00 = $222.00.</li>
+                                <li><strong>The Split:</strong> $222.00 ÷ 4 people.</li>
+                                <li><strong>The Result:</strong> Everyone drops exactly <strong>$55.50</strong> onto the table. Done!</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-sky-800">
+                            <li><strong>Large Group Dinners:</strong> Eliminating the awkward "mental math" phase at the end of a long birthday dinner when the server refuses to split the check onto 8 different credit cards.</li>
+                            <li><strong>Delivery Orders:</strong> Quickly determining exactly how much your roommates owe you via Venmo/Zelle after you put the entire $65 pizza and wings delivery (plus driver tip) on your own card.</li>
+                            <li><strong>Ride Shares & Taxis:</strong> Splitting the total cost of an Uber XL ride from the airport, ensuring the driver's tip is factored into the final split cost among friends.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Should I calculate the tip before or after tax?",
+                            answer: "Etiquette experts generally agree that tipping is meant to reflect the service provided on the food/drinks ordered, not a tax levied by the government. Strictly speaking, you should tip on the PRE-TAX subtotal. However, tipping on the post-tax total is incredibly common and always appreciated by servers."
+                        },
+                        {
+                            question: "What is considered a standard tip amount?",
+                            answer: "In the United States, 15% is traditionally the minimum for standard sit-down service, 18% is expected for good service, and 20%+ is awarded for exceptional service. For food delivery drivers, 10-15% or a flat $3-$5 is customary."
+                        },
+                        {
+                            question: "What if someone ordered way more food than me?",
+                            answer: "This calculator performs a rigid 'even split'. If one person ordered a $40 steak and you ordered a $10 salad, it is generally much fairer to just calculate a flat 20% on top of your individual food items and pay exactly that amount."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Tip Calculator", path: "/tip-calculator", desc: "A simpler interface when you only need gratuity without splitting." },
+                        { name: "Percentage Calculator", path: "/percentage-calculator", desc: "For manual percentage math and reverse engineering totals." },
+                        { name: "Fraction to Decimal", path: "/fraction-to-decimal-calculator", desc: "Helpful for splitting uneven bills (e.g., paying 1/3 of the tab)." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function RetirementCalculator() {
     const [currentAge, setCurrentAge] = useState('30');
@@ -191,6 +192,62 @@ export default function RetirementCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Retirement Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Retirement Nest Egg & 4% Rule Calculator"
+                    whatIsIt={
+                        <p>The <strong>Retirement Calculator</strong> is a foundational, long-term financial modeling tool. By evaluating your current age, savings balance, monthly investment inputs, and expected market returns, it mathematically projects the geometric inflation of your portfolio over decades to determine the final size of your "Nest Egg"—and then tests if that sum is large enough to sustain your expected retirement lifestyle.</p>
+                    }
+                    formula={
+                        <>
+                            <p>This calculator relies heavily on the "Future Value of an Annuity" compound interest formula, married against the famous <strong>Trinity Study 4% Rule</strong> (which suggests retirees can safely withdraw 4% of their portfolio annually, adjusted for inflation, for 30 years without running out of money).</p>
+                            <div className="bg-slate-800 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-slate-700 text-slate-300">
+                                <p><strong>FV = P(1+r)ⁿ + PMT×[((1+r)ⁿ - 1) / r]</strong></p>
+                                <p className="mt-2 text-xs italic text-slate-400">P = Current Savings, PMT = Monthly Contribution<br />r = Monthly Interest Rate, n = Total Months</p>
+                                <p className="mt-2 pt-2 border-t border-slate-600"><strong>Safe Annual Withdrawal = FV × 0.04</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's map out an aggressive 30-year-old saver utilizing low-cost S&P 500 Index Funds (historically ~7% return after inflation).</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-slate-600">
+                                <li><strong>The Input:</strong> Age 30. Retiring at 65. Current Savings: $10,000. Putting away $1,000 a month at a 7% real return.</li>
+                                <li><strong>Total Contributed:</strong> Over 35 years (420 months), they will personally deposit $420,000.</li>
+                                <li><strong>Compound Magic:</strong> Because the interest is constantly reinvesting into itself, the portfolio explodes to roughly <strong>$1.9 Million</strong>.</li>
+                                <li><strong>The 4% Test:</strong> $1,900,000 × 0.04 = $76,000. This person can safely withdraw $76,000 a year forever in retirement!</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-slate-600">
+                            <li><strong>FIRE Movement (Financial Independence, Retire Early):</strong> Extreme savers calculating exactly how high they need to push their "Monthly Contribution" variable to artificially drag their "Retirement Age" variable down from 65 to 45.</li>
+                            <li><strong>Catch-up Contributions:</strong> 50-year-olds realizing they are behind on 401(k) savings and modifying their inputs to find the mathematical 'catch-up' break-even point using IRS catch-up limit increases.</li>
+                            <li><strong>Asset Allocation Shifting:</strong> Tweaking the "Annual Return" slider downward from 10% to 5% to simulate shifting a portfolio from aggressive volatile Tech Stocks into incredibly safe Government Treasury Bonds closer to retirement.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Should I use pre-inflation or post-inflation returns?",
+                            answer: "You should ALMOST ALWAYS use post-inflation (Real) returns. If the stock market historically averages 10% a year, but inflation averages 3%, you should input '7%' into the Annual Return slider. This ensures your final 'Nest Egg' is displayed in today's purchasing power dollars."
+                        },
+                        {
+                            question: "What is the 4% Rule?",
+                            answer: "Stemming from the 1998 'Trinity Study', researchers ran historical market simulations and found that a retiree with a 50/50 stock/bond split could withdraw 4% of their initial portfolio value every year for 30 years and basically never go bankrupt, even during the Great Depression."
+                        },
+                        {
+                            question: "Why does starting 10 years earlier matter so much?",
+                            answer: "Because compound interest is an exponential curve. Time in the market is drastically more powerful than money in the market. The money you invest at age 25 will go through so many 'doubling cycles' that it often out-earns the money you invest at age 45 by a completely massive margin."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "A deeper, pure mathematical dive into the core formula used here." },
+                        { name: "Savings Goal Calculator", path: "/savings-goal-calculator", desc: "Work backward from the Nest Egg number you want to hit." },
+                        { name: "Investment Return Calculator", path: "/investment-calculator", desc: "Compare different specific investment vehicles side-by-side." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
