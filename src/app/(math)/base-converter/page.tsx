@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function BaseConverter() {
     const [inputValue, setInputValue] = useState('42');
@@ -157,6 +158,65 @@ export default function BaseConverter() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Base Converter", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Base Number System Converter"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Base Converter</strong> instantly translates numbers between the four most common mathematical base systems used in computer science and mathematics: Decimal (Base 10), Binary (Base 2), Octal (Base 8), and Hexadecimal (Base 16).</p>
+                            <p>While humans naturally count in Base 10 (using 0-9), computers process data exclusively in Base 2 (0 and 1). Base 8 and Base 16 are incredibly useful shorthand representations that allow programmers to compact long binary strings into readable formats.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Converting between bases involves continuous division by the target base and mapping the remainders.</p>
+                            <div className="bg-sky-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-sky-900 border border-sky-100">
+                                <strong>Decimal to Binary Example:</strong>
+                                <br />25 ÷ 2 = 12 R <strong>1</strong>
+                                <br />12 ÷ 2 = 6 R <strong>0</strong>
+                                <br />6 ÷ 2 = 3 R <strong>0</strong>
+                                <br />3 ÷ 2 = 1 R <strong>1</strong>
+                                <br />1 ÷ 2 = 0 R <strong>1</strong>
+                                <br />Read remainders bottom-to-top = <strong>11001₂</strong>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's convert the Decimal number <strong>255</strong> into the other base formats.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
+                                <li><strong>Binary (Base-2):</strong> 11111111</li>
+                                <li><strong>Octal (Base-8):</strong> 377</li>
+                                <li><strong>Hexadecimal (Base-16):</strong> FF</li>
+                                <li>Notice how Hexadecimal condenses an 8-digit binary string into just 2 characters. This is why Hex is ubiquitous in color codes (e.g., #FFFFFF) and memory addresses.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>Networking and Subnetting:</strong> IT professionals constantly flip between binary and decimal when calculating IPv4 network masks and broadcast addresses.</li>
+                            <li><strong>Web Development:</strong> Converting familiar RGB decimal color values (rgb(255, 0, 128)) into compact Hexadecimal strings (#FF0080) for CSS stylesheets.</li>
+                            <li><strong>Assembly / Low-Level Programming:</strong> Interfacing directly with hardware registers or reading memory dumps, which are almost entirely displayed in compact Hex or raw Binary.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why does Hexadecimal use letters?",
+                            answer: "Base-10 only has ten unique digits (0-9). Hexadecimal is Base-16, meaning it needs 16 unique single-digit symbols. We run out of numbers at 9, so we borrow the first six letters of the alphabet: A=10, B=11, C=12, D=13, E=14, F=15."
+                        },
+                        {
+                            question: "Why do computers use binary?",
+                            answer: "Hardware fundamentally consists of billions of microscopic transistors. A transistor essentially only has two states: ON (conducting current / 1) or OFF (blocking current / 0). Digital binary perfectly maps to this physical hardware reality."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Unit Converter", path: "/unit-converter", desc: "For converting between real-world measurement systems instead of number systems." },
+                        { name: "Decimal to Fraction", path: "/fraction-simplifier-calculator", desc: "Convert standard decimals into exact simplified fractions." },
+                        { name: "Hash Generator", path: "/hash-generator", desc: "Generate cryptographic hashes which are represented in hexadecimal strings." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

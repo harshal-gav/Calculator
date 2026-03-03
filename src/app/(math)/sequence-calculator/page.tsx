@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function SequenceCalculator() {
     const [seqType, setSeqType] = useState('arithmetic'); // arithmetic, geometric
@@ -172,6 +173,68 @@ export default function SequenceCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Sequence Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Sequence Calculator (Arithmetic & Geometric)"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Sequence Calculator</strong> mathematically projects and sums standard numerical progressions. It supports the two fundamental types of mathematical sequences: Arithmetic and Geometric.</p>
+                            <p>An Arithmetic Sequence changes by consistently <em>adding or subtracting</em> the same value. A Geometric Sequence changes by consistently <em>multiplying or dividing</em> by the same value.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                                <div className="bg-emerald-50 p-4 rounded-lg font-mono text-[14px] shadow-sm text-emerald-900 border border-emerald-100 flex flex-col justify-center">
+                                    <h4 className="font-bold text-center border-b border-emerald-200 pb-2 mb-2 font-sans tracking-wide">Arithmetic Formulas</h4>
+                                    <p className="mb-2"><strong>Nth Term:</strong> aₙ = a₁ + (n - 1)d</p>
+                                    <p><strong>Sum to N:</strong> Sₙ = (n/2) × (a₁ + aₙ)</p>
+                                </div>
+                                <div className="bg-emerald-50 p-4 rounded-lg font-mono text-[14px] shadow-sm text-emerald-900 border border-emerald-100 flex flex-col justify-center">
+                                    <h4 className="font-bold text-center border-b border-emerald-200 pb-2 mb-2 font-sans tracking-wide">Geometric Formulas</h4>
+                                    <p className="mb-2"><strong>Nth Term:</strong> aₙ = a₁ × r^(n-1)</p>
+                                    <p><strong>Sum to N:</strong> Sₙ = a₁ × [ (1 - r^n) / (1 - r) ]</p>
+                                </div>
+                            </div>
+                            <p className="text-sm text-zinc-600"><em>Where a₁ is the first term, d is the common difference, r is the common ratio, and n is the number of terms.</em></p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <h4 className="font-bold mb-2">Arithmetic Example</h4>
+                            <p>You have a starting value of <strong>2</strong> and a common difference of <strong>+3</strong>. You want to find the 5th term in the sequence.</p>
+                            <ul className="list-disc pl-6 space-y-1 mt-2 text-zinc-700 mb-4">
+                                <li><strong>The Sequence:</strong> 2, 5, 8, 11, 14.</li>
+                                <li>The 5th Term (a₅) is exactly <strong>14</strong>.</li>
+                                <li>The Sum of those 5 terms (S₅) is 2+5+8+11+14 = <strong>40</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>Compound Interest (Geometric):</strong> Calculating how an initial investment grows when multiplying by 1.05 (a 5% return) every year for 30 years.</li>
+                            <li><strong>Depreciation Schedules (Arithmetic):</strong> Modeling the straight-line book value of heavy machinery losing exactly $1,500 of value every single month.</li>
+                            <li><strong>Computer Algorithm Analysis:</strong> Using geometric sum formulas to calculate the O(N) memory complexity and branching limits of deeply recursive data structures like Binary Trees.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Can a Geometric Common Ratio be a fraction?",
+                            answer: "Yes. If the Common Ratio (r) is between 0 and 1 (like 0.5), it means the sequence is shrinking multiplicatively. For example, a sequence starting at 100 with r=0.5 goes: 100, 50, 25, 12.5."
+                        },
+                        {
+                            question: "What is the Fibonacci Sequence?",
+                            answer: "The famous Fibonacci Sequence (1, 1, 2, 3, 5, 8, 13) is neither perfectly arithmetic nor geometric. It is a 'recursive' sequence where each term is generated by adding the two previous terms together."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "The most famous real-world application of Geometric Sequences." },
+                        { name: "Fraction Simplifier", path: "/fraction-simplifier-calculator", desc: "Reduce complex mathematical fractions to their absolute lowest terms." },
+                        { name: "Significant Figures", path: "/sig-fig-calculator", desc: "Identify valid structural digits within scientific sequence data." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

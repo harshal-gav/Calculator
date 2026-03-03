@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function CovarianceCalculator() {
     const [xData, setXData] = useState('2, 4, 6, 8, 10');
@@ -149,6 +150,62 @@ export default function CovarianceCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Covariance Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Covariance Calculator (Sample & Population)"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Covariance Calculator</strong> is a foundational statistical tool that measures the directional relationship between two separate numeric datasets (variables). It tells you whether the two variables tend to move in the same direction or in opposite directions.</p>
+                            <p>A positive covariance indicates that as one variable increases, the other also tends to increase. A negative covariance indicates an inverse relationship: as one goes up, the other goes down.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Covariance is calculated by finding the average of the products of the deviations from the means for both variables.</p>
+                            <div className="bg-purple-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-purple-900 border border-purple-100 overflow-x-auto">
+                                <strong>Sample Covariance:</strong><br /> Cov(x,y) = Σ [ (xᵢ - x̄) × (yᵢ - ȳ) ] ÷ (n - 1)
+                                <br /><br />
+                                <strong>Population Covariance:</strong><br /> Cov(X,Y) = Σ [ (Xᵢ - μx) × (Yᵢ - μy) ] ÷ N
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's map study hours (X) to test scores (Y) for 5 students: X = <code>2, 4, 6, 8, 10</code> and Y = <code>30, 50, 60, 80, 90</code>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
+                                <li>The mean of X (x̄) = 6.</li>
+                                <li>The mean of Y (ȳ) = 62.</li>
+                                <li>Taking the summed differences multiplied together yields a significantly positive resulting number.</li>
+                                <li>Assuming this is a sample, the Resulting Sample Covariance is <strong>+75.00</strong>.</li>
+                                <li><strong>Conclusion:</strong> Because the covariance is heavily positive, we mathematically confirm that studying more is directionally linked to scoring higher.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>Modern Portfolio Theory:</strong> Finance professionals aggressively use covariance. To reduce risk, investors seek out stocks with <em>negative or zero covariance</em> relative to each other. When half the portfolio drops, the other half theoretically rises.</li>
+                            <li><strong>Data Science & Machine Learning:</strong> Covariance matrices are the building blocks of Principal Component Analysis (PCA), used to reduce dimensionality in massive datasets.</li>
+                            <li><strong>Biological Research:</strong> Determining if the concentration of a certain chemical in the blood directionally covariant with the expression rate of a specific gene.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between Population and Sample Covariance?",
+                            answer: "Use Population Covariance if your data set contains absolutely every possible data point in existence for your subject. If your data is just a subset (a sample) of a larger whole, use Sample Covariance. The Sample formula divides by (n-1) to reduce statistical bias."
+                        },
+                        {
+                            question: "How does Covariance differ from Correlation?",
+                            answer: "Covariance tells you the DIRECTION of the relationship (positive or negative), but the resulting number is unscaled and unbounded (it could be +0.5 or +5,000,000), making it hard to interpret the strength. Correlation 'normalizes' covariance down to a strict scale between -1 and +1, telling you both the direction AND the exact strength of the relationship."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Standard Deviation Calculator", path: "/standard-deviation-calculator", desc: "Measure the absolute dispersion or spread of a single dataset." },
+                        { name: "Variance Calculator", path: "/variance-calculator", desc: "Calculate the mathematical precursor to Standard Deviation." },
+                        { name: "Margin Calculator", path: "/margin-calculator", desc: "A financial tool tracking operational variables." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

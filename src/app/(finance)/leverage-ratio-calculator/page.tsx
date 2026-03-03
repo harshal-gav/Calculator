@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function LeverageRatioCalculator() {
     const [totalDebt, setTotalDebt] = useState('500000');
@@ -127,6 +128,62 @@ export default function LeverageRatioCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Leverage Ratio Calculator", "operatingSystem": "All", "applicationCategory": "FinancialApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Leverage Ratio Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Leverage Ratio Calculator</strong> evaluates a company's financial risk and capital structure by determining how heavily it relies on debt to finance its operations and assets.</p>
+                            <p>Leverage ratios are critical metrics used by investors, banks, and corporate management to assess solvency, creditworthiness, and the long-term sustainability of a business's debt load.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>This tool calculates three core leverage metrics:</p>
+                            <div className="bg-slate-100 p-4 rounded-lg font-mono text-center text-sm shadow-inner my-4 text-slate-900 border border-slate-200">
+                                <strong>Debt-to-Equity</strong> = Total Debt / Total Equity
+                                <br />
+                                <strong>Debt/EBITDA</strong> = Total Debt / EBITDA
+                                <br />
+                                <strong>Financial Leverage</strong> = (Total Debt + Total Equity) / Total Equity
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Consider a company with <strong>$500,000</strong> in Total Debt, <strong>$1,000,000</strong> in Total Equity, and <strong>$200,000</strong> in EBITDA.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-slate-700">
+                                <li><strong>Debt-to-Equity:</strong> $500,000 / $1,000,000 = <strong>0.50</strong></li>
+                                <li><strong>Debt/EBITDA:</strong> $500,000 / $200,000 = <strong>2.50x</strong> (It would take 2.5 years of current earnings to pay off the debt).</li>
+                                <li><strong>Financial Leverage:</strong> $1,500,000 / $1,000,000 = <strong>1.50</strong> multiplier.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-slate-700">
+                            <li><strong>Credit Analysis:</strong> Banks use the Debt/EBITDA ratio deeply when deciding whether to issue a commercial loan or corporate bond.</li>
+                            <li><strong>Investment Screening:</strong> Value investors analyze Debt-to-Equity to avoid companies that are heavily over-leveraged and at high risk of bankruptcy during economic downturns.</li>
+                            <li><strong>DuPont Analysis:</strong> The Financial Leverage multiplier (Equity Multiplier) is a core component when breaking down a company's Return on Equity (ROE).</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is a safe Debt-to-Equity ratio?",
+                            answer: "It varies significantly by industry. Capital-intensive industries like manufacturing or utilities might comfortably operate with a ratio of 2.0 (meaning they have twice as much debt as equity). Software companies, however, often target a ratio below 0.5."
+                        },
+                        {
+                            question: "Why is EBITDA used instead of Net Income?",
+                            answer: "EBITDA (Earnings Before Interest, Taxes, Depreciation, and Amortization) represents pure operating cash flow. Since debt payments must be made before taxes and depreciation is a non-cash expense, EBITDA provides a much clearer picture of a company's ability to service its debt."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "ROE Calculator", path: "/roe-calculator", desc: "Calculate Return on Equity to see how leverage impacts shareholder returns." },
+                        { name: "Debt-to-Income Calculator", path: "/dti-calculator", desc: "The personal finance equivalent of corporate leverage ratios." },
+                        { name: "WACC Calculator", path: "/wacc-calculator", desc: "Determine how the mix of debt and equity affects a firm's average cost of capital." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
