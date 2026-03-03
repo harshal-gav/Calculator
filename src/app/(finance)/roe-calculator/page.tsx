@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function ROECalculator() {
     const [netIncome, setNetIncome] = useState('500000');
@@ -103,6 +104,64 @@ export default function ROECalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "ROE Calculator", "operatingSystem": "All", "applicationCategory": "FinancialApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Return on Equity (ROE) Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Return on Equity (ROE) Calculator</strong> measures a corporation's ultimate profitability by revealing exactly how much net income they generated using the money invested by their shareholders.</p>
+                            <p>Think of ROE as the ultimate indicator of "Management Efficiency." If you give the CEO of a company $100 in equity, what do they do with it? If the company generates $20 in profit that year, their ROE is 20%. Highly successful, dominant companies like Apple or Microsoft often boast massive ROE percentages, meaning they are incredibly efficient at turning shareholder cash into compounding profits.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>ROE is calculated by dividing annual Net Income by the total Shareholder's Equity.</p>
+                            <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
+                                <p><strong>ROE = (Net Income / Shareholder's Equity) × 100</strong></p>
+                                <p className="border-t border-zinc-200 pt-3 mt-2 text-sm font-sans text-left text-zinc-700"><strong>Where:</strong><br />Net Income = The company's total profit after all taxes and expenses (found on the Income Statement).<br />Shareholder's Equity = Total Assets minus Total Liabilities (found on the Balance Sheet).</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's evaluate the management efficiency of a mid-sized retail corporation.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
+                                <li><strong>Variables:</strong> Looking at their annual 10-K report, the company reported exactly <strong>$500,000</strong> in Net Income. Their total Shareholder's Equity is reported as <strong>$2,500,000</strong>.</li>
+                                <li><strong>The Math:</strong> $500,000 / $2,500,000 = 0.20</li>
+                                <li><strong>Percentage Conversion:</strong> 0.20 × 100 = 20.</li>
+                                <li><strong>Result:</strong> The company boasts a <strong>20% ROE</strong>. This means that for every $1 of equity they hold, they generated exactly $0.20 of pure profit this year. This is considered an excellent rate of return in most industries.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>Warren Buffett's Moat Strategy:</strong> Legendary value investors filter for companies that have maintained a +15% ROE consistently for over 10 years. A consistently high ROE strongly suggests the company has an unbreakable "economic moat" protecting it from competitors.</li>
+                            <li><strong>DuPont Analysis:</strong> Advanced analysts break the ROE formula down into three distinct parts (Profit Margin, Asset Turnover, and Financial Leverage) to pinpoint exactly <em>why</em> the ROE is going up or down.</li>
+                            <li><strong>Identifying Dangerous Debt:</strong> Because Equity = Assets - Liabilities, a company can artificially "juice" their ROE by taking on massive amounts of debt (Liabilities) to shrink their Equity. If a company has a 40% ROE but a mountain of debt, it is a massive red flag.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is a 'Good' ROE?",
+                            answer: "It is highly dependent on the industry. A 10% ROE is incredible for a heavily regulated utility company, but terrible for a nimble software company. As a very rough baseline, the long-term historical average for the S&P 500 is roughly 14%. Consistently beating 15% to 20% is generally considered excellent."
+                        },
+                        {
+                            question: "Why do some mature companies have negative Shareholder Equity?",
+                            answer: "Companies like Home Depot, Starbucks, or McDonald's sometimes aggressively buy back their own stock while simultaneously taking on cheap debt. This can technically push their Shareholder's Equity below zero. In these rare cases, calculating ROE breaks mathematically and provides a meaningless negative percentage, even though the company is highly profitable."
+                        },
+                        {
+                            question: "How is ROE different from ROA?",
+                            answer: "Return on Assets (ROA) measures profit against the TOTAL assets the company controls (including debt). Return on Equity (ROE) measures profit against ONLY the money that belongs to the shareholders. Therefore, ROE is almost always a higher percentage than ROA because of leverage."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "P/E Ratio Calculator", path: "/pe-ratio-calculator", desc: "Evaluate if a high-ROE stock is currently trading at a fair price." },
+                        { name: "Dividend Yield Calculator", path: "/dividend-yield-calculator", desc: "See what percentage of those profits are returned directly to you." },
+                        { name: "Leverage Ratio Calculator", path: "/leverage-ratio-calculator", desc: "Ensure the high ROE is not just a dangerous illusion created by massive debt." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

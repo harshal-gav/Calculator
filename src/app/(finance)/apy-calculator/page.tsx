@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function APYCalculator() {
     const [rate, setRate] = useState('5.0');
@@ -113,15 +114,65 @@ export default function APYCalculator() {
                 </div>
             )}
 
-            <div className="mt-8 bg-zinc-100 p-6 rounded-xl border border-zinc-200 text-sm text-zinc-600 max-w-2xl mx-auto space-y-2 text-center">
-                <p className="font-bold text-zinc-800 uppercase tracking-widest mb-2">The APY Formula</p>
-                <div className="inline-block bg-white p-4 rounded-lg shadow-sm font-mono border border-zinc-200 text-lg">
-                    APY = (1 + r/n)ⁿ - 1
-                </div>
-                <p className="mt-4 text-xs font-mono">r = nominal rate, n = number of compounding periods per year.</p>
-            </div>
-
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "APY Calculator", "operatingSystem": "All", "applicationCategory": "FinancialApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Annual Percentage Yield (APY) Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Annual Percentage Yield (APY) Calculator</strong> reveals the true, mathematically accurate rate of return on your investments or savings accounts by factoring in the powerful effects of compounding interest over the course of exactly one year.</p>
+                            <p>Banks often deliberately quote the lower "Nominal Interest Rate" or "APR" when charging you money (like on a credit card), but they heavily advertise the higher "APY" when trying to get you to deposit money (like in a High-Yield Savings Account). APY represents the actual money that will hit your account by December 31st, because it accounts for the fact that you earn "interest on your interest" every month or every day.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The standard algebraic formula for converting a nominal interest rate into an Annual Percentage Yield (APY) is:</p>
+                            <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
+                                <p><strong>APY = (1 + r/n)ⁿ - 1</strong></p>
+                                <p className="border-t border-zinc-200 pt-3 mt-2 text-sm font-sans text-left text-zinc-700"><strong>Where:</strong><br />r = Nominal Interest Rate (as a decimal)<br />n = Number of compounding periods per year (e.g., 12 for monthly, 365 for daily)</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's look at a standard High-Yield Savings Account (HYSA) offered by an online bank.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
+                                <li><strong>The Setup:</strong> The bank advertises a <strong>5.00%</strong> Nominal Interest Rate, but explicitly states that interest compounds <strong>Daily</strong>.</li>
+                                <li><strong>The Math:</strong> APY = (1 + 0.05/365)³⁶⁵ - 1</li>
+                                <li><strong>The Calculation:</strong> (1 + 0.0001369)³⁶⁵ - 1 = (1.05126) - 1 = .05126</li>
+                                <li><strong>Result:</strong> Your true APY is exactly <strong>5.126%</strong>. Because your interest is compounding every single day, you actually earn 0.126% more over the year than the quoted 5.00% nominal rate.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>Comparing Savings Accounts:</strong> Not all 5% accounts are equal. Bank A might pay 5% compounded annually (APY = 5.00%). Bank B might pay 5% compounded daily (APY = 5.13%). You always go with Bank B.</li>
+                            <li><strong>Evaluating CD Rates:</strong> Certificates of Deposit (CDs) often have varying compounding schedules. Converting everything into a standardized APY allows for perfect "apples-to-apples" comparisons across completely different banking products.</li>
+                            <li><strong>Crypto Staking:</strong> In decentralized finance (DeFi), protocols often quote daily or continuous compounding returns. Calculating the true APY prevents you from being manipulated by artificially low nominal rates.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between APR and APY?",
+                            answer: "APR (Annual Percentage Rate) is the simple, flat rate that entirely ignores compounding interest. APY (Annual Percentage Yield) explicitly includes compounding interest. When you borrow money, banks quote the APR (to make the cost look lower). When you save money, banks quote the APY (to make your earnings look higher)."
+                        },
+                        {
+                            question: "Does 'Continuous Compounding' make a big difference?",
+                            answer: "Mathematically, yes; practically, no. The jump from Annual compounding to Monthly compounding is significant. The jump from Monthly to Daily is noticeable. The jump from Daily (365 times a year) to Continuous (infinite times a year) only results in fractions of a penny for most average retail investors."
+                        },
+                        {
+                            question: "Is APY guaranteed?",
+                            answer: "For fixed products like CDs or fixed-rate bonds, yes. However, for a High-Yield Savings Account (HYSA), the APY is a 'variable' rate. The bank reserves the right to drastically lower the APY at any time if the Federal Reserve cuts national interest rates."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "Project the exact dollar amounts you will earn over decades using your new APY." },
+                        { name: "Investment Calculator", path: "/investment-calculator", desc: "Calculate your future net worth by combining your APY with monthly deposits." },
+                        { name: "Simple Interest Calculator", path: "/simple-interest-calculator", desc: "See the massive mathematical difference between simple interest and APY." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

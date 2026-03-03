@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 type Scenario = {
     prob: string;
@@ -177,6 +178,65 @@ export default function ExpectedReturnCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Expected Return Calculator", "operatingSystem": "All", "applicationCategory": "FinancialApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Expected Return Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Expected Return Calculator</strong> is a statistical tool used by investors to estimate the average, long-term mathematical outcome of an investment by assigning strict probabilities to various different future scenarios.</p>
+                            <p>Because the future of the stock market or business environment is never guaranteed, sophisticated investors do not rely on a single prediction. Instead, they build a "probability matrix" consisting of a Best Case scenario, a Base Case scenario, and a Worst Case scenario. By multiplying the potential return of each scenario by the likelihood that it actually happens, you arrive at the probability-weighted "Expected Return".</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Expected Return is simply the sum of all possible returns, each multiplied by its mathematical probability of occurring.</p>
+                            <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
+                                <p><strong>Expected Return = (P<sub>1</sub> × R<sub>1</sub>) + (P<sub>2</sub> × R<sub>2</sub>) + ... + (P<sub>n</sub> × R<sub>n</sub>)</strong></p>
+                                <p className="border-t border-zinc-200 pt-3 mt-2 text-sm font-sans text-left text-zinc-700"><strong>Where:</strong><br />P = The Probability of a specific scenario occurring (as a decimal)<br />R = The specific Return of that scenario<br />n = The total number of scenarios</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's map out a multi-scenario analysis for a volatile cryptocurrency investment.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
+                                <li><strong>Bull Case (25% chance):</strong> Regulatory approval passes. The coin rockets, yielding a <strong>+50%</strong> return. (0.25 × 0.50 = 0.125)</li>
+                                <li><strong>Base Case (50% chance):</strong> Slow adoption continues. The coin yields a standard <strong>+10%</strong> return. (0.50 × 0.10 = 0.050)</li>
+                                <li><strong>Bear Case (25% chance):</strong> The crypto market crashes. The coin drops, yielding a <strong>-30%</strong> return. (0.25 × -0.30 = -0.075)</li>
+                                <li><strong>The Calculation:</strong> 12.5% + 5.0% - 7.5% = 10.0%.</li>
+                                <li><strong>Result:</strong> Statistically, given your probability matrix, the <strong>Expected Return is +10.0%</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>Venture Capital:</strong> VC firms know that 90% of the startups they fund will go completely bankrupt (return = -100%). However, they target an Expected Return of 20%+ because the 10% of startups that survive yield an astronomical 10,000% return.</li>
+                            <li><strong>Mergers and Acquisitions (M&A):</strong> A company might try to acquire a competitor. They will assign probability weightings to three outcomes: The deal is blocked by regulators, the deal passes with heavy restrictions, or the deal passes smoothly.</li>
+                            <li><strong>Real Estate Investing:</strong> Modeling out the returns of a rental property by assigning probabilities to different vacancy rates and housing market appreciation scenarios.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does Expected Return measure risk?",
+                            answer: "No. Expected Return only measures the statistical average of your outcomes. It does not measure how violently the actual returns might swing. To measure risk, you must pair Expected Return with standard deviation (variance) to see how far the actual outcomes might deviate from the expected outcome."
+                        },
+                        {
+                            question: "Will I actually earn the Expected Return?",
+                            answer: "Almost certainly not. If your Bull Case is +50% and your Bear Case is -50%, your expected return might be mathematically 0%. However, in reality, you will either make 50% or lose 50%; you will never actually hit the 0% average. Expected Return represents what you would earn if you could run the identical scenario thousands of times."
+                        },
+                        {
+                            question: "How do I choose the probabilities?",
+                            answer: "This is the hardest part of finance. Probabilities are usually derived using historical data, Monte Carlo simulations, options pricing models, or the subjective intuition of experienced analysts."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "CAPM Calculator", path: "/capm-calculator", desc: "Calculate expected return based on systemic market risk rather than probabilities." },
+                        { name: "Standard Deviation Calculator", path: "/standard-deviation-calculator", desc: "Calculate the exact mathematical volatility and risk of your past returns." },
+                        { name: "ROI Calculator", path: "/roi-calculator", desc: "Calculate your historical cash return on an investment." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

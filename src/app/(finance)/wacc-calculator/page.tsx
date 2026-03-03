@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function WACCCalculator() {
     // Equity
@@ -162,6 +163,65 @@ export default function WACCCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "WACC Calculator", "operatingSystem": "All", "applicationCategory": "FinancialApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Weighted Average Cost of Capital (WACC) Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Weighted Average Cost of Capital (WACC) Calculator</strong> determines the exact, blended cost a corporation pays to finance its operations by combining the cost of its Debt (loans/bonds) and the cost of its Equity (stock).</p>
+                            <p>Very few companies are funded entirely by just debt or just equity; they almost always use a mix of both. Because lenders (banks) and shareholders (investors) both demand a return on their money, a company must generate a return <em>higher</em> than its WACC just to break even and satisfy its investors. In corporate finance, WACC is universally used as the "Discount Rate" when valuing a company's future cash flows.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The WACC formula multiplies the cost of each capital component by its proportional weight, factoring in the tax-deductibility of corporate debt.</p>
+                            <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900 overflow-x-auto">
+                                <p className="whitespace-nowrap"><strong>WACC = (E/V × R<sub>e</sub>) + [ (D/V × R<sub>d</sub>) × (1 - T<sub>c</sub>) ]</strong></p>
+                                <p className="border-t border-zinc-200 pt-3 mt-2 text-sm font-sans text-left text-zinc-700"><strong>Where:</strong><br />E = Market Value of Equity<br />D = Market Value of Debt<br />V = Total Market Value (E + D)<br />R<sub>e</sub> = Cost of Equity<br />R<sub>d</sub> = Cost of Debt<br />T<sub>c</sub> = Corporate Tax Rate</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the WACC for a theoretical manufacturing company.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
+                                <li><strong>The Setup:</strong> The company has <strong>$10M</strong> in Equity holding a Cost of Equity of <strong>10%</strong>. They also have <strong>$5M</strong> in Debt with a Cost of Debt of <strong>6%</strong>. They face a <strong>21%</strong> Corporate Tax Rate.</li>
+                                <li><strong>The Weights:</strong> Total Value is $15M. Equity is 66.6% of the mix, Debt is 33.3% of the mix.</li>
+                                <li><strong>Equity Component:</strong> 0.666 × 10% = 6.66%</li>
+                                <li><strong>Debt Component:</strong> (0.333 × 6%) × (1 - 0.21) = 1.998% × 0.79 = 1.57%</li>
+                                <li><strong>The Result:</strong> 6.66% + 1.57% = <strong>8.23% WACC</strong>. The company must generate a minimum return of 8.23% on any new project just to satisfy the combined demands of its debt-holders and equity-holders.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>Discounted Cash Flow (DCF) Models:</strong> Investment analysts use WACC as the central discount rate to calculate the Net Present Value (NPV) of a company's future cash flows. A lower WACC leads to a vastly higher company valuation.</li>
+                            <li><strong>Mergers and Acquisitions:</strong> When acquiring a new company, the acquiring firm will use the target's WACC to determine if the expected ROI of the acquisition clears their fundamental hurdle rate.</li>
+                            <li><strong>Capital Restructuring:</strong> CFOs actively try to lower their WACC by playing with the balance sheet. Because debt is "cheaper" than equity and tax-deductible, a CFO might issue bonds to buy back stock, intentionally altering the weights to optimize the firm's capital structure.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why is Debt multiplied by (1 - Tax Rate)?",
+                            answer: "In almost all modern tax codes, the interest payments a company makes on its debt are completely tax-deductible. This 'tax shield' essentially acts as a subsidy from the government, making debt significantly cheaper than its stated interest rate. Dividend payments to equity shareholders are NOT tax-deductible."
+                        },
+                        {
+                            question: "How do I find the Cost of Equity (Re)?",
+                            answer: "Unlike debt (which has clear interest rates written on loan documents), the Cost of Equity is entirely theoretical. To find it, nearly all financial professionals use the Capital Asset Pricing Model (CAPM). You can calculate it using our CAPM Calculator."
+                        },
+                        {
+                            question: "Can a company use book value instead of market value?",
+                            answer: "Academically, no. WACC requires the current Market Value of both equity and debt, because it represents the actual cost of raising new, marginal capital today. Using outdated historical 'Book Value' from the balance sheet will drastically distort the results."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "CAPM Calculator", path: "/capm-calculator", desc: "Calculate the Cost of Equity required to complete the WACC formula." },
+                        { name: "Present Value Calculator", path: "/present-value-calculator", desc: "Discount a future cash flow back to today using WACC as the discount rate." },
+                        { name: "Dividend Yield Calculator", path: "/dividend-yield-calculator", desc: "Evaluate the direct cash returns paid to the equity portion of the capital stack." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

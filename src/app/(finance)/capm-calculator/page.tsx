@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function CAPMCalculator() {
     const [riskFree, setRiskFree] = useState('4.0');
@@ -114,6 +115,64 @@ export default function CAPMCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "CAPM Calculator", "operatingSystem": "All", "applicationCategory": "FinancialApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Capital Asset Pricing Model (CAPM) Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>CAPM Calculator</strong> uses the Nobel-prize-winning Capital Asset Pricing Model to mathematically determine exactly what return an investor <em>should</em> demand when buying a specific stock, given the amount of risk they are taking on.</p>
+                            <p>The core philosophy of CAPM is simple: Investors must be compensated for taking risks and dealing with the time value of money. If a completely safe, risk-free asset (like US Government Treasury Bonds) pays a guaranteed 4% return, an investor would only buy a risky technology stock if they mathematical expect to earn <em>more</em> than 4%. CAPM calculates exactly what that target return needs to be by evaluating the stock's volatility (Beta) against the overall stock market.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The classic CAPM equation models Expected Return as the Risk-Free Rate plus a Risk Premium.</p>
+                            <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
+                                <p><strong>E(R) = R<sub>f</sub> + β × (R<sub>m</sub> - R<sub>f</sub>)</strong></p>
+                                <p className="border-t border-zinc-200 pt-3 mt-2 text-sm font-sans text-left text-zinc-700"><strong>Where:</strong><br />E(R) = Expected Return of the investment<br />R<sub>f</sub> = Risk-Free Rate<br />β = Beta of the investment<br />R<sub>m</sub> = Expected Market Return<br />(R<sub>m</sub> - R<sub>f</sub>) = Market Risk Premium</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's evaluate a high-growth technology stock that is historically very volatile compared to the broader market.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
+                                <li><strong>Variables:</strong> The current yield on a 10-Year Treasury (Risk-Free Rate) is <strong>4%</strong>. The stock has a Beta of <strong>1.5</strong> (meaning it is 50% more volatile than the S&P 500). Historically, the S&P 500 (Market Return) returns roughly <strong>10%</strong> annually.</li>
+                                <li><strong>The Math (Risk Premium):</strong> First, calculate the Market Risk Premium: 10% - 4% = 6%.</li>
+                                <li><strong>The Math (Expected Return):</strong> 4% + [1.5 × 6%] = 4% + 9% = 13%.</li>
+                                <li><strong>Result:</strong> According to CAPM, you should demand an <strong>Expected Return of 13%</strong> before you buy this stock to properly compensate you for the extreme volatility.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-zinc-700">
+                            <li><strong>Discounted Cash Flow (DCF) Models:</strong> Investment bankers use CAPM to calculate a company's Cost of Equity. This cost of equity is then used directly in DCF models to determine the fair valuation of the entire corporation.</li>
+                            <li><strong>Portfolio Construction:</strong> Finding stocks with a very low Beta (like utilities or consumer staples) to lower the total expected risk of a portfolio during turbulent, recessionary market periods.</li>
+                            <li><strong>Setting Hurdle Rates:</strong> Private equity firms use CAPM to set minimum "hurdle rates" that a new project or acquisition must definitively cross before they agree to invest cash.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What exactly is Beta?",
+                            answer: "Beta measures how wildly a stock historically swings up and down compared to the overall market (S&P 500). The market has a Beta of exactly 1.0. If a stock has a Beta of 1.2, it is 20% more volatile than the market. If it has a Beta of 0.8, it is 20% less volatile. Some rare stocks even have negative Betas, meaning they historically go up when the market crashes."
+                        },
+                        {
+                            question: "What should I use for the Risk-Free Rate?",
+                            answer: "In the United States, financial analysts almost universally use the current yield on the 10-Year U.S. Treasury Bond as the baseline Risk-Free Rate. It represents an investment the market considers to have a 0% chance of default."
+                        },
+                        {
+                            question: "What are the flaws of CAPM?",
+                            answer: "CAPM relies entirely on historical data to predict the future. A stock's Beta over the last 5 years might not be an accurate reflection of how volatile it will be over the next 5 years. CAPM also assumes that investors are perfectly rational and risk-averse, which is rarely true in the real world."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "WACC Calculator", path: "/wacc-calculator", desc: "Calculate a firm's Weighted Average Cost of Capital using CAPM." },
+                        { name: "Expected Return Calculator", path: "/expected-return-calculator", desc: "Calculate the probability-weighted return of an asset." },
+                        { name: "Investment Calculator", path: "/investment-calculator", desc: "Project the growth of a portfolio over decades." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
