@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function BloodVolumeCalculator() {
     const [gender, setGender] = useState('male');
@@ -167,6 +168,63 @@ export default function BloodVolumeCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Blood Volume Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Total Blood Volume Estimator"
+                    whatIsIt={
+                        <p>The <strong>Blood Volume Calculator</strong> is a specialized health tool that estimates the total amount of blood currently circulating through your body. By processing your biological sex, height, and weight through established medical algorithms, it outputs an estimated volume in both Liters and Milliliters.</p>
+                    }
+                    formula={
+                        <>
+                            <p>This calculator averages the results of two widely acknowledged medical equations: the <strong>Nadler Formula</strong> (based on height cubed and weight) and the <strong>Lemmens-Bernstein-Brodsky Formula</strong> (which corrects for Body Mass Index).</p>
+                            <div className="bg-red-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-red-100 text-red-900">
+                                <p className="text-xs uppercase font-bold text-red-700">Nadler Formula (Male)</p>
+                                <p><strong>BV = (0.3669 × Height³) + (0.03219 × Weight) + 0.6041</strong></p>
+                                <p className="mt-2 pt-2 border-t border-red-200 text-xs uppercase font-bold text-red-700">Lemmens Formula (BMI Indexed)</p>
+                                <p><strong>BV = (Weight × 70) ÷ √ (BMI / 22)</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's estimate the blood volume for an average male standing 175cm (5'9") tall and weighing 75kg (165 lbs).</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-red-800">
+                                <li><strong>The Input:</strong> Male, 175 cm, 75 kg.</li>
+                                <li><strong>Nadler Calculation:</strong> (0.3669 × 1.75³) + (0.03219 × 75) + 0.6041 = 4.98 Liters.</li>
+                                <li><strong>Lemmens Calculation:</strong> (75 × 70) ÷ √ (24.49 / 22) = 4.97 Liters.</li>
+                                <li><strong>The Result:</strong> The mathematical average puts this person's total blood volume at roughly <strong>4.98 Liters</strong> (or ~4,980 mL).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-red-800">
+                            <li><strong>Medical Students:</strong> Pharmacology students learning how to dose specific medications that distribute exclusively via blood plasma, requiring a rough estimate of total circulatory volume.</li>
+                            <li><strong>Blood Donors:</strong> Frequent plasma or whole-blood donors seeking to understand what percentage of their total fluid volume is being removed when they donate a standard 500mL pint of blood.</li>
+                            <li><strong>Curiosity:</strong> Athletes interested in physiological metrics learning that endurance training actually structurally increases total blood plasma volume over time to improve oxygen delivery.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "How accurate is this calculator?",
+                            answer: "These are statistical estimations used in clinical settings, but they are not perfect. True, exact blood volume measurement requires nuclear medicine techniques (injecting a radioactive tracer). This calculator simply provides an educated baseline."
+                        },
+                        {
+                            question: "How much blood can I safely lose?",
+                            answer: "Donating 1 pint (~500mL) is roughly 10% of an adult's blood volume and is perfectly safe. Losing 20% (around 1 Liter) causes significant distress (shock). Losing 40% (2 Liters) is generally considered a severe, life-threatening hemorrhagic emergency."
+                        },
+                        {
+                            question: "Why do males and females have different formulas?",
+                            answer: "On average, males naturally possess more muscle mass and less body fat than females of the identical height and weight. Muscle tissue requires significantly more blood perfusion than fat tissue, skewing the mathematical constants."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Blood Pressure Calculator", path: "/blood-pressure-calculator", desc: "Understand your systolic and diastolic cardiovascular health numbers." },
+                        { name: "Blood Alcohol Calculator", path: "/bac-calculator", desc: "Estimate how much ethanol is currently circulating in your bloodstream." },
+                        { name: "BMI Calculator", path: "/bmi-calculator", desc: "Calculate the exact Body Mass Index utilized in the Lemmens equation." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

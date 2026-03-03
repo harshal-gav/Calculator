@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function FatCalculator() {
     const [age, setAge] = useState('30');
@@ -230,6 +231,61 @@ export default function FatCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Fat Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Daily Dietary Fat & Macro Calculator"
+                    whatIsIt={
+                        <p>The <strong>Fat Calculator</strong> pinpoints exactly how many grams of dietary fat you should consume daily. Despite its bad reputation from 1990s diet culture, dietary fat is an essential macronutrient required for absorbing vitamins, brain function, and testosterone/estrogen hormone production. This tool perfectly calibrates your fat intake based on your chosen diet style (Standard, Low-Fat, or Keto).</p>
+                    }
+                    formula={
+                        <>
+                            <p>Like the overarching Macro Calculator, this tool computes your baseline daily energy expenditure (TDEE). Once total calories are established, it assigns a specific percentage of those calories to fat, and divides by the caloric density of fat.</p>
+                            <div className="bg-yellow-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-yellow-100 text-yellow-900">
+                                <p><strong>Fat Calories = Daily Calories × Diet Ratio (e.g., 30%)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-yellow-200"><strong>Daily Fat (g) = Fat Calories ÷ 9</strong></p>
+                                <p className="mt-2 text-xs italic text-yellow-700">Note: Fat is dense! It contains 9 calories per gram (more than double the 4 calories in protein/carbs).</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's find the fat target for a man eating a standard 2,500 calorie diet.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-yellow-800">
+                                <li><strong>The Goal/Ratio:</strong> He selects a 'Standard Balanced' diet, which generally allocates exactly 30% of total dietary energy to fats.</li>
+                                <li><strong>The Math:</strong> 30% of 2,500 total calories = 750 calories dedicated exclusively to dietary fat.</li>
+                                <li><strong>The Gram Conversion:</strong> Because dietary fat contains 9 calories per gram: 750 ÷ 9 = roughly <strong>83 Grams</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-yellow-800">
+                            <li><strong>Ketogenic Dieters:</strong> Extreme low-carb dieters forcing their bodies to adapt to burn fat for fuel. They select the Keto diet style, pushing their fat allocation up to an astronomical 70% of total calories.</li>
+                            <li><strong>Hormonal Recovery:</strong> Men and women recovering from extreme weight loss or crash dieting who crashed their testosterone/estrogen levels by consuming too little fat, using this tool to ensure they hit their absolute healthy baseline minimums (usually ~50g+).</li>
+                            <li><strong>Performance Athletes:</strong> High-volume athletes utilizing a higher-fat diet (40%+) to easily consume massive amounts of dense calories (via nuts, oils, avocados) when they physically cannot stomach any more voluminous carbohydrates.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does eating dietary fat make me physically fat?",
+                            answer: "Absolutely not. Eating in a CALORIC SURPLUS (eating more overall energy than you burn) makes you gain body fat. You could eat a diet of 100% pure butter and lose weight, as long as the total butter calories were less than your daily burn (though you would be severely malnourished)."
+                        },
+                        {
+                            question: "What is the difference between saturated and unsaturated fats?",
+                            answer: "Unsaturated fats (olive oil, avocados, almonds) are generally heart-healthy and improve cholesterol profiles. Saturated fats (butter, bacon fat, cheese) are solid at room temperature and should be limited as they can negatively impact cardiovascular health in high amounts."
+                        },
+                        {
+                            question: "What are Trans Fats?",
+                            answer: "Trans fats are artificially created industrial fats (partially hydrogenated oils) found in cheap processed foods. They are universally agreed by science to be terrible for human health, actively causing heart disease. Your goal for Trans Fats should always be 0 grams."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Protein Calculator", path: "/protein-calculator", desc: "Calculate your daily muscle building macro needs." },
+                        { name: "Carbohydrate Calculator", path: "/carbohydrate-calculator", desc: "Calculate your daily energy macro needs." },
+                        { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Calculate the exact number of calories you burn natively every single day." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

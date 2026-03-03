@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function ProteinCalculator() {
     const [age, setAge] = useState('30');
@@ -205,6 +206,61 @@ export default function ProteinCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Protein Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Daily Protein Intake & Macro Calculator"
+                    whatIsIt={
+                        <p>The <strong>Protein Calculator</strong> is an advanced dietary tool that calculates your optimal daily protein target. By analyzing your body weight, daily physical activity levels, and specific body composition goals (like losing fat or building muscle), it generates a medically-sound recommendation in daily grams to ensure your body has the structural building blocks it needs.</p>
+                    }
+                    formula={
+                        <>
+                            <p>This calculator relies on established sports nutrition multipliers scaling against your total body weight. The absolute minimum Dietary Reference Intake (DRI) to prevent deficiency in sedentary adults is 0.8 grams per kilogram of body weight.</p>
+                            <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-rose-100 text-rose-900">
+                                <p><strong>Daily Protein (g) = Weight (kg) × Activity Multiplier</strong></p>
+                                <p className="mt-2 pt-2 border-t border-rose-200"><strong>Sedentary = 0.8g | Active = 1.2–1.7g | Strength Athlete = 1.6–2.2g</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the needs for a relatively active 180 lb male trying to build muscle in the gym 4 days a week.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-rose-800">
+                                <li><strong>The Conversion:</strong> 180 lbs ÷ 2.2 = 81.8 kilograms.</li>
+                                <li><strong>The Multiplier:</strong> Since he is lifting weights (moderately active) and seeking hypertrophy (muscle growth), his nutrition multiplier pushes up closer to 1.7g per kg.</li>
+                                <li><strong>The Math:</strong> 81.8 kg × 1.7 g/kg.</li>
+                                <li><strong>The Result:</strong> He needs roughly <strong>139 grams</strong> of protein every single day to maximize his muscle protein synthesis.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-rose-800">
+                            <li><strong>Bodybuilders (Bulking):</strong> Pushing protein targets extremely high to ensure every broken-down muscle fiber has amino acids readily available to repair and grow thicker during recovery windows.</li>
+                            <li><strong>Weight Loss (Cutting):</strong> Dieters using high-protein strategies to artificially preserve their existing lean muscle mass, forcing the body to burn stubborn stored fat for energy while in a caloric deficit.</li>
+                            <li><strong>Vegan/Vegetarian Switch:</strong> Individuals transitioning away from meat-based diets utilizing this tool to establish their rigid daily target, helping them consciously plan out enough lentils, tofu, and beans.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Can I just eat all my protein in one massive meal?",
+                            answer: "It is highly unadvisable. Your body does not store excess protein like it does fat or carbs. For optimal muscle synthesis, you should spread your protein intake evenly across 3-5 meals throughout the day (roughly 25-40g per sitting)."
+                        },
+                        {
+                            question: "Will eating too much protein damage my kidneys?",
+                            answer: "For healthy individuals, extensive medical literature proves that high protein diets do NOT cause kidney damage. However, if you have pre-existing renal (kidney) dysfunction, a high protein load will accelerate damage. Always consult your doctor."
+                        },
+                        {
+                            question: "Do different protein sources matter?",
+                            answer: "Yes. Animal proteins (meat, egg, dairy) are 'Complete Proteins' containing all 9 essential amino acids. Many plant proteins are 'Incomplete' and must be combined (like rice and beans) to form a complete amino acid profile."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Carbohydrate Calculator", path: "/carbohydrate-calculator", desc: "Calculate your daily energy macro needs." },
+                        { name: "Fat Calculator", path: "/fat-calculator", desc: "Calculate the dietary fats needed for hormone regulation." },
+                        { name: "Macro Calculator", path: "/macro-calculator", desc: "Calculate all your macronutrients in one unified dashboard." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

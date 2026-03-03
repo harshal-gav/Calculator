@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function BACalculator() {
     const [gender, setGender] = useState('male');
@@ -210,6 +211,61 @@ export default function BACalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Blood Alcohol Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="BAC & Time-to-Sober Calculator"
+                    whatIsIt={
+                        <p>The <strong>Blood Alcohol Calculator (BAC)</strong> estimates the percentage of alcohol currently active in your bloodstream. By cross-referencing your body weight, biological sex, the number of standard drinks you've consumed, and the time elapsed since your first sip, it provides a mathematical estimation of your current intoxication level and predicts how many hours it will take for your liver to metabolize the alcohol back to 0.00%.</p>
+                    }
+                    formula={
+                        <>
+                            <p>This tool utilizes the internationally recognized <strong>Widmark Formula</strong>, developed by Swedish physician Erik Widmark in the 1920s. It mathematically factors in the volume of alcohol, human water-distribution constants, and a standard metabolic elimination rate.</p>
+                            <div className="bg-sky-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-sky-100 text-sky-900">
+                                <p><strong>BAC = [ (Alcohol Ounces × 5.14) ÷ (Weight in lbs × r) ] - (0.015 × Hours)</strong></p>
+                                <p className="mt-2 text-xs italic text-sky-700">Where 'r' is the gender constant (0.73 for men, 0.66 for women).<br />0.015 calculates the average hourly rate the liver destroys alcohol.</p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's map out a scenario for a 160 lb man who has consumed 4 beers over the course of 2 hours watching a football game.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-sky-800">
+                                <li><strong>The Drinks:</strong> 4 standard beers (12oz each at 5% alcohol) = 2.4 ounces of pure ethanol.</li>
+                                <li><strong>The Widmark Calculation:</strong> (2.4 × 5.14) ÷ (160 × 0.73) = 0.105 (This is his theoretical peak BAC if he drank them all instantly).</li>
+                                <li><strong>The Time Decay:</strong> Over 2 hours, his liver has successfully destroyed (2 × 0.015) = 0.030 of that BAC.</li>
+                                <li><strong>The Result:</strong> 0.105 - 0.030 = <strong>0.075% BAC</strong>. He is hovering right underneath the legal limit.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-sky-800">
+                            <li><strong>Morning-After Checks:</strong> Individuals who drank heavily until 2 AM using the "Time to Sober" output to realize that even after sleeping for 6 hours, they may still mathematically have a BAC of 0.05% at 8 AM and should not drive to work yet.</li>
+                            <li><strong>Educational Awareness:</strong> Demonstrating to smaller individuals (e.g., a 110 lb woman) how aggressively their BAC spikes after just 2 glasses of wine compared to a 220 lb man, highlighting physiological differences in alcohol tolerance.</li>
+                            <li><strong>Party Pacing:</strong> Utilizing the tool to understand how long it physically takes the liver to process 1 drink (roughly 1 to 1.5 hours), teaching the user to literally "pace themselves" to avoid stacking alcohol faster than the body can eliminate it.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Can this prove I am safe to drive?",
+                            answer: "ABSOLUTELY NOT. The only way to know your true BAC is via a calibrated police breathalyzer or a blood test. This tool purely provides a statistical mathematical AVERAGE. Your actual BAC may be significantly higher based on genetics, stomach food content, medications, and metabolism. Treat this as an educational estimate, never a legal defense."
+                        },
+                        {
+                            question: "Why do women naturally have a higher BAC than men after the same drinks?",
+                            answer: "Biological women fundamentally possess less body water and more body fat per pound compared to biological men. Since alcohol is highly water-soluble, it becomes more 'concentrated' in a woman's lower volume of total body water, causing a higher BAC spike."
+                        },
+                        {
+                            question: "Can I drink coffee or take a cold shower to lower my BAC faster?",
+                            answer: "No. This is a dangerous myth. Coffee contains caffeine, which might make you feel 'wide awake', but you are now simply a 'wide awake drunk person'. Your liver enzymes process alcohol at a rigid, fixed rate (~0.015% per hour). Only TIME can lower your BAC."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Blood Volume Calculator", path: "/blood-volume-calculator", desc: "Estimate the total liters of blood the alcohol is diluting into." },
+                        { name: "Blood Pressure Calculator", path: "/blood-pressure-calculator", desc: "Track cardiovascular health metrics." },
+                        { name: "Age Calculator", path: "/age-calculator", desc: "Easily determine exactly how many days old you are." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

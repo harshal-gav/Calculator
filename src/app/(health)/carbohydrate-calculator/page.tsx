@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function CarbohydrateCalculator() {
     const [age, setAge] = useState('30');
@@ -235,6 +236,62 @@ export default function CarbohydrateCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Carbohydrate Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication" }) }} />
+
+            <div className="mt-8 text-left">
+                <CalculatorSEO
+                    title="Daily Carb Target & Energy Macro Calculator"
+                    whatIsIt={
+                        <p>The <strong>Carbohydrate Calculator</strong> determines the specific amount of carbohydrates you need to fuel your body every day. Carbs are your brain and muscles' primary and preferred energy source. By utilizing your Total Daily Energy Expenditure (TDEE) and adjusting for your fitness goals, it finds the perfect macro ratio to keep you energized without spilling over into fat storage.</p>
+                    }
+                    formula={
+                        <>
+                            <p>This calculator first establishes your baseline BMR, scales it by your physical activity to find your total daily calories, applies your goal's caloric deficit or surplus, and finally assigns a percentage of those calories to carbohydrates.</p>
+                            <div className="bg-amber-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-amber-100 text-amber-900">
+                                <p><strong>Target Calories = TDEE ± Goal Adjustment</strong></p>
+                                <p className="mt-2 pt-2 border-t border-amber-200"><strong>Carb Calories = Target Calories × Diet Ratio (Usually ~50%)</strong></p>
+                                <p className="mt-2 pt-2 border-t border-amber-200"><strong>Daily Carbs (g) = Carb Calories ÷ 4</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's map out carbs for an active woman attempting to maintain her current weight.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-amber-800">
+                                <li><strong>The Energy Need:</strong> Her age, height, weight, and activity level establish that she burns 2,000 calories a day.</li>
+                                <li><strong>The Ratio:</strong> To maintain high energy for her workouts, she allocates a healthy 50% of her diet strictly to carbs.</li>
+                                <li><strong>The Math:</strong> 50% of 2,000 calories = 1,000 calories dedicated to carbohydrates.</li>
+                                <li><strong>The Gram Conversion:</strong> Because there are exactly 4 calories in every gram of carbohydrate: 1,000 ÷ 4 = <strong>250 Grams</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-amber-800">
+                            <li><strong>Marathon Training:</strong> Endurance runners dramatically increasing their carb percentages (up to 65% of their diet) during 'carb loading' phases to ensure their muscle glycogen stores are absolutely full before race day.</li>
+                            <li><strong>Low-Carb Dieting:</strong> Individuals attempting to lose weight by restricting carbs. This tool allows them to find their mathematical baseline, ensuring they don't drop their carbs dangerously low and crash their energy levels.</li>
+                            <li><strong>Insulin Management:</strong> Diabetics calculating exact carb ratios relative to their overall diet size to safely predict and administer corresponding insulin units.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Are all carbohydrates equal?",
+                            answer: "No. 'Complex Carbs' (oats, brown rice, sweet potatoes) digest slowly, providing stable, long-lasting energy. 'Simple Carbs' (sugar, candy, white bread) digest instantly, physically spiking your blood sugar and leading to inevitable energy crashes."
+                        },
+                        {
+                            question: "Does eating carbs at night make you fat?",
+                            answer: "This is a widespread myth. Weight gain is dictated exclusively by total caloric surplus over time (eating more calories than you burn), absolutely regardless of the time of day you consume those calories."
+                        },
+                        {
+                            question: "What is Fiber and does it count as a carb?",
+                            answer: "Dietary Fiber is a carbohydrate. However, the human body cannot digest most fiber, meaning it generally provides 0 usable calories and does not spike blood sugar. Many dieters track 'Net Carbs' (Total Carbs - Fiber)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Protein Calculator", path: "/protein-calculator", desc: "Calculate your daily muscle building macro needs." },
+                        { name: "Fat Calculator", path: "/fat-calculator", desc: "Calculate the dietary fats needed for your organs and hormones." },
+                        { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Focus strictly on the total energy limit rather than the splits." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
