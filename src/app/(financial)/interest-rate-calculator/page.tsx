@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function InterestRateCalculator() {
     const [principal, setPrincipal] = useState('10000');
@@ -101,6 +102,64 @@ export default function InterestRateCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Interest Rate Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Interest Rate & Compound Growth Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Interest Rate Calculator</strong> allows you to forecast the future value of a principal investment (or debt) dynamically based on annual percentage yields (APY) and compounding frequencies.</p>
+                            <p>Einstein famously called compound interest the "Eighth Wonder of the World." Understanding exactly how your money scales when the interest itself begins earning interest is the foundational core of modern wealth building.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>This calculator utilizes the standard mathematical formula for compound interest:</p>
+                            <div className="bg-indigo-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-indigo-900 border border-indigo-100">
+                                <strong>A = P × (1 + r/n)^(n×t)</strong>
+                            </div>
+                            <p className="text-sm mt-2"><strong>A</strong> = Final Amount, <strong>P</strong> = Starting Principal, <strong>r</strong> = Annual Interest Rate (decimal), <strong>n</strong> = Compounding frequency per year, <strong>t</strong> = Time in years.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's simulate a <strong>$10,000</strong> baseline investment growing at an aggressively consistent <strong>8%</strong> annual rate, compounding <strong>monthly</strong> for <strong>30 years</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Input:</strong> P=$10k, r=0.08, n=12, t=30</li>
+                                <li><strong>Total Interest Earned:</strong> $99,357.30</li>
+                                <li><strong>Final Value:</strong> $109,357.30</li>
+                                <li><strong>Takeaway:</strong> Even without adding a single extra dollar to the original $10k, the sheer mathematical force of monthly compounding 10x'd the account balance over a 30-year timeframe.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Retirement Projections:</strong> Estimating if an existing 401k or IRA balance will reach a required target based on historical S&P 500 average returns (roughly 7-10%).</li>
+                            <li><strong>Loan Comparisons:</strong> Banks often state loan rates as APYs but compound them daily. You can use this to see the exact penalty of daily compounding on an auto loan versus monthly compounding.</li>
+                            <li><strong>CDs and High-Yield Savings (HYSA):</strong> Quickly validating whether a 5% promotional APY on a CD will yield enough raw cash to lock your money up for 12 months.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does compounding frequency really make a big difference?",
+                            answer: "It depends heavily on the timeframe and the rate. At low rates over short periods, daily vs monthly is negligible (pennies). But at higher rates over decades, daily compounding can generate thousands of dollars in extra yield compared to annual compounding."
+                        },
+                        {
+                            question: "What is the Rule of 72?",
+                            answer: "It's a mathematical shortcut to estimate compounding. Divide 72 by your expected interest rate to see how many years it will take to double your money. (e.g., 72 ÷ 8% = 9 years to double)."
+                        },
+                        {
+                            question: "Can I use this for credit card debt?",
+                            answer: "Yes, but credit cards compound DAILY. To see how much interest a carried credit card balance of $5,000 at 24% APR generates, set the frequency to 'Daily'."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "For running projections that include regular monthly deposits on top of the principal." },
+                        { name: "Debt Payoff Calculator", path: "/debt-payoff-calculator", desc: "Build a structured amortization schedule to mathematically kill high-interest debt." },
+                        { name: "Investment Calculator", path: "/investment-calculator", desc: "Analyze the total inflation-adjusted returns of a diversified ETF portfolio." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function FHALoanCalculator() {
     const [homePrice, setHomePrice] = useState('300000');
@@ -217,6 +218,71 @@ export default function FHALoanCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "FHA Loan Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="FHA Mortgage Calculator (UFMIP & MIP)"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>FHA Loan Calculator</strong> models exact monthly payments under the stricter financial mechanics of Federal Housing Administration loans. It automatically calculates the mandatory <strong>Upfront Mortgage Insurance Premium (UFMIP)</strong> and the ongoing <strong>Annual MIP</strong>.</p>
+                            <p>FHA loans are highly popular for first-time homebuyers because they only require a 3.5% down payment and permit lower credit scores. However, the Federal Government mandates strict insurance premiums to protect themselves from that higher default risk. A standard mortgage calculator will dangerously underestimate an FHA monthly payment.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>FHA loans have two unique layers of mandatory insurance that mathematically stack onto the standard Principal & Interest (P&I) calculations:</p>
+                            <div className="grid md:grid-cols-2 gap-4 my-4">
+                                <div className="bg-indigo-50 p-4 rounded-lg font-mono text-[14px] text-indigo-900 border border-indigo-100">
+                                    <strong>Upfront MIP (UFMIP):</strong><br />
+                                    1.75% × Base Loan Amount
+                                </div>
+                                <div className="bg-indigo-50 p-4 rounded-lg font-mono text-[14px] text-indigo-900 border border-indigo-100">
+                                    <strong>Annual MIP (Monthly):</strong><br />
+                                    (0.55% × Base Loan) ÷ 12
+                                </div>
+                            </div>
+                            <p className="text-sm mt-2"><strong>Note on limits:</strong> The UFMIP is rarely paid out of pocket—it is financed directly onto your principal loan balance on day one, meaning you will pay interest on that 1.75% for 30 years.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate a <strong>$300,000</strong> home purchase using the FHA minimum <strong>3.5% down payment</strong> ($10,500).</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Base Loan:</strong> $289,500</li>
+                                <li><strong>The Hidden UFMIP Penalty:</strong> The FHA immediately slaps a 1.75% premium onto that amount ($5,066) and rolls it into your debt. Your <em>actual</em> starting loan balance is now <strong>$294,566</strong>.</li>
+                                <li><strong>The Monthly MIP Penalty:</strong> You will be charged an extra 0.55% annually just for having an FHA loan with minimal down payment. That adds <strong>$132</strong> to your mortgage bill every single month.</li>
+                                <li><strong>The Reality Check:</strong> While the 3.5% down payment got you into the house, thousands of dollars in hidden FHA insurance premiums silently inflate your actual borrowing costs over the 30-year term.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>First-Time Buyers:</strong> Sizing up exactly how much house you can afford using the FHA 3.5% down program versus a Conventional 5% down program.</li>
+                            <li><strong>FHA Down Payment Optimization:</strong> Seeing if making a 5% or 10% down payment significantly alters the Annual MIP tier compared to the bare minimum 3.5%.</li>
+                            <li><strong>Refinance Checking:</strong> For current FHA homeowners wondering if they should refinance into a Conventional loan specifically to escape the permanent FHA MIP penalty.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does FHA Mortgage Insurance ever fall off?",
+                            answer: "Under current rules, if you put down LESS than 10% at closing, the FHA Annual MIP remains for the ENTIRE LIFE of the loan. The only way to remove it is to refinance into a Conventional loan once you hit 20% equity. If you put down 10% or more natively, the MIP falls off after 11 years."
+                        },
+                        {
+                            question: "Is FHA MIP the same thing as PMI?",
+                            answer: "Conceptually, yes. They both protect the lender if you default. Technically, PMI (Private Mortgage Insurance) is for Conventional loans and can be cancelled at 20% equity. MIP (Mortgage Insurance Premium) is specific to government FHA loans and is often permanent."
+                        },
+                        {
+                            question: "Can I pay the Upfront MIP in cash?",
+                            answer: "Yes, you are legally permitted to pay the 1.75% UFMIP out of your own pocket at closing, rather than rolling it into the loan. However, very few borrowers do this, as the main draw of an FHA loan is minimizing upfront cash requirements."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Mortgage Calculator", path: "/mortgage-calculator", desc: "For calculating standard Conventional loans without the mandatory FHA UFMIP layer." },
+                        { name: "Refinance Calculator", path: "/refinance-calculator", desc: "Calculate if escaping your FHA MIP via refinancing mathematically justifies the closing costs." },
+                        { name: "Rent Calculator", path: "/rent-calculator", desc: "Discover what maximum housing payment you can algorithmically afford." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

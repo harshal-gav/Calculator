@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function RentCalculator() {
     const [monthlyIncome, setMonthlyIncome] = useState('5000');
@@ -110,6 +111,70 @@ export default function RentCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rent Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Rent Affordability Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Rent Affordability Calculator</strong> removes the guessing game from apartment hunting by calculating your exact maximum budget based on the industry-standard "30% Rule" and corporate landlord Debt-to-Income (DTI) requirements.</p>
+                            <p>When applying for an apartment, property managers do not care how much money you have saved; they strictly analyze your monthly cash flow metrics to ensure the rent is mathematically sustainable for your budget.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Property managers use two distinct mathematical hurdles to approve tenant applications:</p>
+                            <div className="grid md:grid-cols-2 gap-4 my-4">
+                                <div className="bg-sky-50 p-4 rounded-lg font-mono text-[14px] text-sky-900 border border-sky-100">
+                                    <strong>The Landlord 40x Rule:</strong><br />
+                                    Annual Income ≥ (Monthly Rent × 40)
+                                </div>
+                                <div className="bg-sky-50 p-4 rounded-lg font-mono text-[14px] text-sky-900 border border-sky-100">
+                                    <strong>The 43% DTI Ceiling:</strong><br />
+                                    (Rent + Minimum Debt Payments) ÷ Gross Income ≤ 43%
+                                </div>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's assume you make <strong>$6,000</strong> a month gross (before taxes) but have a <strong>$400</strong> monthly car payment and <strong>$300</strong> in minimum student loan payments.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The 30% Recommended Target:</strong> 30% of $6,000 is <strong>$1,800</strong>. This is the financial "sweet spot" to avoid being house-poor.</li>
+                                <li><strong>The DTI Ceiling:</strong> Your maximum allowed DTI is 43% of $6,000, which is $2,580.</li>
+                                <li><strong>Debt Subtraction:</strong> Because your existing debts eat up $700 of that buffer, your absolute max rent ceiling drops from $2,580 to <strong>$1,880</strong>.</li>
+                                <li><strong>The Reality Check:</strong> Even though you make $72k a year, applying for a $2,200/mo luxury apartment will result in an automatic algorithmic denial due to your debt load.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Pre-Qualifying Yourself:</strong> Stop throwing away $50 application fees by running the landlord's math on yourself <em>before</em> applying.</li>
+                            <li><strong>Budget Consolidation:</strong> Realizing that if you pay off that $200/month credit card minimum, your maximum approvable rent limit instantly jumps by exactly $200.</li>
+                            <li><strong>Roommate Math:</strong> Determining if you absolutely need a roommate to qualify for a specific complex by running your combined incomes through the 40x multiplier.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Is the 30% rule based on gross income or net income?",
+                            answer: "Landlords and bank algorithms strictly use GROSS income (before taxes and deductions). However, for your personal financial safety, many advisors recommend calculating it based on NET (take-home) pay, especially if you live in a high-tax state."
+                        },
+                        {
+                            question: "What if I don't meet the 40x rule?",
+                            answer: "You generally have three options: bring in a guarantor (co-signer) who usually needs to meet an 80x income rule, provide massive cash deposits upfront, or find a cheaper unit."
+                        },
+                        {
+                            question: "Should I include utility costs in this calculator?",
+                            answer: "No. The 40x rule and the 43% DTI ceiling used by leasing agents strictly look at the base lease rent. Utilities, even if required, are rarely factored into the algorithmic approval matrix."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Debt-to-Income (DTI) Calculator", path: "/dti-calculator", desc: "Evaluate your overall debt profile exactly how mortgage lenders do." },
+                        { name: "Salary Calculator", path: "/salary-calculator", desc: "Break down your exact gross and net paycheck amounts." },
+                        { name: "Mortgage Calculator", path: "/mortgage-calculator", desc: "Compare what buying a house would cost monthly versus renting." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

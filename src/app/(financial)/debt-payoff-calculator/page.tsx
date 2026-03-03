@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function DebtPayoffCalculator() {
     const [balance, setBalance] = useState('10000');
@@ -172,6 +173,63 @@ export default function DebtPayoffCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Debt Payoff Calculator", "operatingSystem": "All", "applicationCategory": "FinanceApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Debt Payoff & Amortization Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Debt Payoff Calculator</strong> allows you to build a structured amortization schedule for credit cards, personal loans, or auto loans. It mathematically calculates exactly the day you will become debt-free and reveals the total interest cost of carrying the balance.</p>
+                            <p>Debt mathematically guarantees negative compounding. By visualizing the true, long-term cost of minimum payments, borrowers are empowered to build aggressive payoff strategies like the <em>Debt Snowball</em> or <em>Debt Avalanche</em>.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>This calculator steps through a standard monthly loan amortization schedule until the balance hits zero. For any given month, the interest portion is calculated by:</p>
+                            <div className="bg-red-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-red-900 border border-red-100">
+                                <strong>Monthly Interest</strong> = Current Balance × (Annual APR ÷ 12)
+                            </div>
+                            <p className="text-sm mt-2">Any dollars in your monthly payment beyond that exact minimum immediately pay down the principal balance, permanently reducing your interest charge for the following month.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Consider a <strong>$10,000</strong> credit card balance with an aggressive <strong>18.9% APR</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li>If you pay a steady <strong>$300</strong> a month: It will take you exactly <strong>47 months</strong> (just under 4 years) to escape the debt. You will pay the bank <strong>$3,927</strong> in pure interest over that time.</li>
+                                <li>If you aggressively double your payment to <strong>$600</strong> a month: You will be debt-free in just <strong>20 months</strong>, and your total interest drops to only <strong>$1,643</strong>.</li>
+                                <li><strong>The Reality Check:</strong> Paying an extra $300 a month saves you over $2,284 and buys back three whole years of your financial freedom.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Debt Avalanche Strategy:</strong> Sorting all of your active debts by the highest APR and mathematically proving how much money you save by attacking the 24% credit card before the 6% student loan.</li>
+                            <li><strong>Minimum Payment Warnings:</strong> Visualizing how paying only the variable minimum amount determined by credit card companies is mathematically designed to keep you trapped in debt for 15+ years.</li>
+                            <li><strong>Refinance Checking:</strong> Determining if the origination fee of taking out an 8% personal loan is mathematically worth it to consolidate and immediately wipe out a 21% credit card balance.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why did the calculator tell me my balance will grow forever?",
+                            answer: "If your monthly payment is physically lower than the interest charged that month, you entered 'Negative Amortization'. The interest you didn't pay gets added to the principal balance, and your total debt will grow infinitely until you declare bankruptcy. Increase your monthly payment immediately."
+                        },
+                        {
+                            question: "What is the Debt Snowball vs Debt Avalanche?",
+                            answer: "The 'Avalanche' method pays off debts in order of highest APR mathematically. The 'Snowball' method pays off debts in order of smallest total balance emotionally. Mathematically, Avalanche is superior and saves you more cash, but Snowball gives you faster psychological 'wins'."
+                        },
+                        {
+                            question: "Should I use my savings to pay off debt?",
+                            answer: "Financially, it comes down to yields. If your savings account yields 5% APY but your credit card costs 24% APR, you are losing 19% guaranteed every year you hold both. You should generally use excess cash to destroy high-interest debt."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Credit Card Payoff Calculator", path: "/credit-card-payoff-calculator", desc: "Specifically designed for variable-minimum credit cards." },
+                        { name: "Auto Loan Calculator", path: "/auto-loan-calculator", desc: "Analyze the total cost of fixed-term vehicle financing." },
+                        { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "See what happens when that monthly payment is invested instead of given to the bank." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

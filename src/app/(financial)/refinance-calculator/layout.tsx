@@ -1,0 +1,10 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Refinance Break-Even Calculator | Savings & Timeline',
+    description: 'Calculate your exact break-even timeline and lifetime interest savings to mathematically determine if refinancing your mortgage is a profitable decision.',
+};
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+    return children;
+}
