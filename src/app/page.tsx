@@ -6,6 +6,7 @@ export default function Home() {
       name: 'Financial Calculators',
       calculators: [
         { name: 'Mortgage Calculator', path: '/mortgage-calculator', desc: 'Estimate your monthly mortgage payments including taxes and insurance.' },
+        { name: 'Mortgage Payoff Calculator', path: '/mortgage-payoff-calculator', desc: 'Calculate exactly how much time and money you can save by adding extra payments to your mortgage every month.' },
         { name: 'Auto Loan Calculator', path: '/auto-loan-calculator', desc: 'Find out how much your monthly car payment will be and total interest paid.' },
         { name: 'Payment Calculator', path: '/payment-calculator', desc: 'Calculate your monthly payments for any type of fixed-term loan.' },
         { name: 'Amortization Calculator', path: '/amortization-calculator', desc: 'View a detailed month-by-month breakdown of your loan payoff schedule.' },
