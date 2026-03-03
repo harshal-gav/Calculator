@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function DensityCalculator() {
     const [calcType, setCalcType] = useState('density'); // density, mass, volume
@@ -273,6 +274,64 @@ export default function DensityCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Density Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Density & Mass Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Density Calculator</strong> determines the volumetric mass concentration of any substance. Using standard metric conversions, it allows you to dynamically solve for the Density (ρ), physical Mass (m), or total occupied Volume (V) of an object.</p>
+                            <p>Density explains why a heavy bowling ball sinks instantly, while a massive 300-ton steel cruise ship magically floats. It proves that weight alone does not dictate buoyancy; what matters is how tightly packed those molecules are over a specific physical space.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The standard formula for density is universally taught in introductory physics: Density equals mass divided by volume.</p>
+                            <div className="bg-cyan-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-cyan-100 text-cyan-900">
+                                <p><strong>Density (ρ) = m ÷ V</strong></p>
+                                <p className="mt-2 pt-2 border-t border-cyan-200"><strong>Mass (m) = ρ × V</strong></p>
+                                <p className="mt-2 pt-2 border-t border-cyan-200"><strong>Volume (V) = m ÷ ρ</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the density of a mysterious gold-colored block to determine if it is real gold or a cheap fake.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Scenario:</strong> You weigh a shiny rectangular block and find its Mass is exactly <strong>500 grams</strong>. You measure its dimensions and find its Volume is exactly <strong>61.5 cubic centimeters (cm³)</strong>.</li>
+                                <li><strong>The Calculation:</strong> 500g ÷ 61.5cm³ = <strong>8.13</strong>.</li>
+                                <li><strong>Result:</strong> The density of the block is <strong>8.13 g/cm³</strong>. (Note: Because true Solid Gold has a universally known density of 19.3 g/cm³, you can easily prove this block is a cheap brass fake).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Civil Engineering:</strong> Architects must calculate the exact physical mass of massive concrete support pillars based entirely on their blueprint volume. If they misuse density values, they might accidentally construct a bridge that is too heavy to support its own structural weight.</li>
+                            <li><strong>Aviation Fueling:</strong> Airplane fuel gauges actually measure volume (gallons), not weight. Because jet fuel expands and becomes less dense in the hot daytime sun, pilots must calculate density conversions to ensure they have the physical mass of fuel required to complete a transatlantic flight.</li>
+                            <li><strong>Plastics & Manufacturing:</strong> Material scientists utilize density metrics to engineer plastics that are light enough to be buoyant, yet physically massive enough to withstand oceanic drilling pressures.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the density of pure water?",
+                            answer: "Under standard conditions, pure water has a remarkably convenient density of exactly 1,000 kg/m³, which directly converts to exactly 1.0 g/cm³. This beautiful 1-to-1 ratio was an intentional design of the original metric system."
+                        },
+                        {
+                            question: "How does density dictate if something floats?",
+                            answer: "It is the principle of specific gravity. If an object's density is mathematically lower than 1.0 g/cm³ (water), it will float. If it is higher than 1.0, it will sink. Dry wood is around 0.6 g/cm³ (floats), while solid lead is 11.3 g/cm³ (sinks aggressively)."
+                        },
+                        {
+                            question: "Why do massive cruise ships float if steel sinks?",
+                            answer: "Because density is based on total displaced volume. A cruise ship is mostly hollow inside (air). If you average the density of the heavy exterior steel hull with the massive volume of incredibly light interior air, the ship's overall mathematical density drops below 1.0 g/cm³, allowing it to sit safely on top of the ocean."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Volume Calculator", path: "/volume-calculator", desc: "Calculate complex 3D spherical and conical volumes before determining density." },
+                        { name: "Force Calculator", path: "/force-calculator", desc: "Plug your resulting mass directly into Newton's Second Law." },
+                        { name: "Weight Converter", path: "/weight-converter", desc: "Instantly translate international mass and weight limits." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

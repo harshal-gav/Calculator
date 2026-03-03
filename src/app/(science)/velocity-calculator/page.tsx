@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function VelocityCalculator() {
     const [calcTarget, setCalcTarget] = useState('velocity'); // velocity, distance, time
@@ -282,6 +283,65 @@ export default function VelocityCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Velocity Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Velocity & Kinematics Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Velocity Calculator</strong> allows you to instantly solve for any of the three fundamental variables of basic kinematics: Velocity (v), Distance (d), or Time (t).</p>
+                            <p>Velocity is a vector quantity, meaning it represents both the speed of an object and its direction of motion. In classical mechanics, understanding the relationship between how far an object travels and how long it takes to get there forms the foundation of all physics calculations.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The core kinematic equation states that velocity equals distance divided by time. By algebraically rearranging this single, constant formula, you can solve for any missing variable.</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
+                                <p><strong>Velocity: v = d ÷ t</strong></p>
+                                <p className="mt-2 pt-2 border-t border-emerald-200"><strong>Distance: d = v × t</strong></p>
+                                <p className="mt-2 pt-2 border-t border-emerald-200"><strong>Time: t = d ÷ v</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the velocity of Olympic sprinter Usain Bolt during his world-record 100m dash.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Distance (d):</strong> The race is exactly <strong>100 meters</strong> long.</li>
+                                <li><strong>The Time (t):</strong> He completes the race in exactly <strong>9.58 seconds</strong>.</li>
+                                <li><strong>The Calculation:</strong> 100 meters ÷ 9.58 seconds = <strong>10.438</strong>.</li>
+                                <li><strong>Result:</strong> His average velocity over the course of the entire race was <strong>10.438 m/s</strong> (or roughly 23.35 mph).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Aviation & Navigation:</strong> Pilots calculate ETA (Estimated Time of Arrival) by dividing the remaining distance to their destination by their aircraft's current ground velocity.</li>
+                            <li><strong>Traffic Engineering:</strong> Civil engineers use velocity calculations to determine how long yellow lights should last at intersections based on the speed limit (velocity) and the width of the intersection (distance).</li>
+                            <li><strong>Astronomy:</strong> Astrophysicists measure the velocity of distant galaxies moving away from Earth to calculate the expansion rate of the entire universe (the Hubble Constant).</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between speed and velocity?",
+                            answer: "Speed is a 'scalar' quantity (it only has a magnitude, e.g., 60 mph). Velocity is a 'vector' quantity (it has magnitude AND direction, e.g., 60 mph North). In standard 1-dimensional kinematics problems, however, the terms are practically interchangeable."
+                        },
+                        {
+                            question: "Why do my units matter?",
+                            answer: "Kinematic equations demand consistent unit structures. If your distance is in miles, but your time is in seconds, dividing them will give you 'miles per second'—a useless metric for driving a car. You must convert your units to match your desired output (e.g., converting seconds to hours to get mph)."
+                        },
+                        {
+                            question: "Does this calculator account for acceleration?",
+                            answer: "No. This specific calculator assumes 'constant velocity' (zero acceleration). If an object is speeding up or slowing down while it travels, you must use complex kinematic equations that include standard acceleration (a) variables."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Acceleration Calculator", path: "/acceleration-calculator", desc: "Calculate changes in velocity over a specific duration of time." },
+                        { name: "Speed Converter", path: "/speed-converter", desc: "Instantly convert velocities between metric and imperial scale systems." },
+                        { name: "Projectile Motion Calculator", path: "/projectile-motion-calculator", desc: "Calculate the complex 2D velocity of objects moving through the air." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

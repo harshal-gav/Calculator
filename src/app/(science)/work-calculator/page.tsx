@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function WorkCalculator() {
     // W = F * d * cos(theta)
@@ -186,6 +187,66 @@ export default function WorkCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Work Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Physics Work Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Physics Work Calculator</strong> computes the exact amount of mechanical energy transferred when an applied Force successfully moves an object over a specific Distance.</p>
+                            <p>In physics, "work" is entirely distinct from its common everyday definition. No matter how hard you push against a solid brick wall, and no matter how tired you get, if the wall does not physically move, you have mathematically accomplished zero work. Work is strictly defined by successful displacement.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The calculation for Work requires multiplying the Force applied against the Distance traveled. It also relies heavily on trigonometry (cosine) because only the force applied in the exact direction of travel actually contributes to the Work.</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
+                                <p><strong>Work (W) = F × d × cos(θ)</strong></p>
+                                <p className="text-sm mt-2 font-sans text-emerald-800">
+                                    <em>Where <strong>F</strong> is Force in Newtons, <strong>d</strong> is Distance in meters, and <strong>θ</strong> (theta) is the angle separating your pushing direction from the object's travel direction.</em>
+                                </p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the work done by a person pulling a heavy suitcase on wheels through an airport.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Scenario:</strong> You exert <strong>50 Newtons</strong> of pulling force (F) on the suitcase handle. You pull the suitcase for <strong>100 meters</strong> (d) down the terminal. The handle is angled upward at <strong>60 degrees</strong> (θ) relative to the flat floor.</li>
+                                <li><strong>The Math:</strong> 50 N × 100 m × cos(60°)</li>
+                                <li><strong>Simplifying Cosine:</strong> The cosine of 60° is exactly 0.5. (Only half your effort is pulling the suitcase forward; the other half is uselessly lifting it upward).</li>
+                                <li><strong>Result:</strong> 5000 × 0.5 = <strong>2,500 Joules (J)</strong> of total work accomplished.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Mechanical Efficiency:</strong> Industrial engineers calculate Work to determine the efficiency of engines and hydraulic lifters. If a crane uses 10,000 Joules of fuel energy, but only accomplishes 6,000 Joules of vertical lifting work, the motor is inefficiently losing energy to heat and friction.</li>
+                            <li><strong>Exercise Science:</strong> Kinesiologists calculate the literal mechanical work accomplished during weightlifting. Pushing a 100kg barbell upward exactly 0.5 meters requires a very specific, mathematically rigorous expenditure of calorie-driven Joules.</li>
+                            <li><strong>Automotive Braking:</strong> Brakes utilize kinetic friction over a stopping distance to perform "negative work" on a car. Engineers must calculate the exact Work required to aggressively bleed velocity from a 2-ton vehicle at highway speeds without melting the brake pads.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is a Joule?",
+                            answer: "A Joule (J) is the standard metric measurement of energy and work. One Joule is defined as exactly the amount of energy required to apply one Newton of force over exactly one meter of distance (1 J = 1 N×m)."
+                        },
+                        {
+                            question: "Why does the angle (theta) matter?",
+                            answer: "Because forces are only effective if they push in the direction you want to go. If you tie a rope to a sled, but use a helicopter to pull the rope straight up into the sky (90 degrees), the sled lifts, but it moves zero meters forward. Cos(90) = 0. Therefore, zero forward Work was done."
+                        },
+                        {
+                            question: "What happens if I push an immovable object?",
+                            answer: "If you push a mountain with 1,000,000 Newtons of force, but the distance moved (d) is zero... 1,000,000 × 0 = 0. In classical physics, you have accomplished absolutely zero Work."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Force Calculator", path: "/force-calculator", desc: "Calculate your force variable before plugging it into the Work equation." },
+                        { name: "Velocity Calculator", path: "/velocity-calculator", desc: "Calculate how long it will take your displaced object to arrive at its destination." },
+                        { name: "Pythagorean Theorem", path: "/pythagorean-calculator", desc: "Calculate vector distances required for complex angular movement." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

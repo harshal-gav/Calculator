@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function ForceCalculator() {
     const [calcType, setCalcType] = useState('force'); // force, mass, acceleration
@@ -279,6 +280,64 @@ export default function ForceCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Force Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Force & Mass Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Force Calculator</strong> brings Sir Isaac Newton's Second Law of Motion to life, allowing you to fluidly calculate the exact relationship between the physical <strong>Mass (m)</strong> of an object, its <strong>Acceleration (a)</strong>, and the resulting <strong>Force (F)</strong> it exerts.</p>
+                            <p>Force is an unavoidable physical interaction that changes the motion of an object. Understanding how much force is required to move heavy objects, or how much force is generated when moving objects crash, is the backbone of modern mechanical engineering.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Newton's Second Law is one of the most famous equations in human history. It states that the heavier an object is, and the faster it speeds up, the more force it carries.</p>
+                            <div className="bg-orange-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-orange-100 text-orange-900">
+                                <p><strong>Force (F) = m × a</strong></p>
+                                <p className="mt-2 pt-2 border-t border-orange-200"><strong>Mass (m) = F ÷ a</strong></p>
+                                <p className="mt-2 pt-2 border-t border-orange-200"><strong>Acceleration (a) = F ÷ m</strong></p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the physical force required to push a stalled car across a parking lot.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Scenario:</strong> You and your friends need to push a broken-down sedan. The vehicle has a mass of exactly <strong>1,500 kg</strong>. You want to push it so its speed increases (accelerates) at a rate of <strong>0.5 m/s²</strong>.</li>
+                                <li><strong>The Math:</strong> 1,500 kg × 0.5 m/s² = <strong>750</strong>.</li>
+                                <li><strong>Result:</strong> It will require exactly <strong>750 Newtons (N)</strong> of sustained physical force to move the vehicle at that specific rate of acceleration.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Automotive Safety:</strong> Automobile engineers use force calculations to design airbag deployment systems. They must calculate the exact force with which a 180-pound body will be thrown forward during a 60 mph rapid deceleration (crash).</li>
+                            <li><strong>Rocket Trajectory:</strong> Space agencies must calculate exact payload mass. The heavier the satellite (m), the exponentially more thrust force (F) the rocket engines must generate to achieve orbital acceleration (a).</li>
+                            <li><strong>Elevator Limits:</strong> Architects calculate the maximum safe mass threshold (passenger weight limit) of an elevator cab based on the maximum upward tension force the steel cables are rated to handle.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is a Newton?",
+                            answer: "A Newton (N) is the standard metric unit of force. By explicit definition, 1 Newton is the exact amount of force required to accelerate a 1-kilogram mass at a rate of 1 meter-per-second-squared."
+                        },
+                        {
+                            question: "What is the difference between mass and weight?",
+                            answer: "Mass is how much physical 'stuff' an object is made of; it never changes. Weight is actually a measurement of FORCE. Your weight is your mass multiplied by Earth's gravity (9.8 m/s²). If you stand on the Moon, your mass remains identical, but your physical weight drops by 80% because the downward acceleration is weaker."
+                        },
+                        {
+                            question: "Does this calculator account for friction?",
+                            answer: "No. This tool calculates net theoretical force in a perfect vacuum. In the real world, if you push a heavy box across carpet, you must calculate and subtract opposing friction forces to discover your true net acceleration."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Acceleration Calculator", path: "/acceleration-calculator", desc: "Calculate your acceleration first before plugging it into the Force equation." },
+                        { name: "Work Calculator", path: "/work-calculator", desc: "Calculate how much energy is expended when a force moves an object across a distance." },
+                        { name: "Density Calculator", path: "/density-calculator", desc: "Calculate the exact physical mass of large raw materials based on their volume." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

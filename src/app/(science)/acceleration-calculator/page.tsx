@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function AccelerationCalculator() {
     // a = (v_f - v_i) / t
@@ -199,6 +200,66 @@ export default function AccelerationCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Acceleration Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Acceleration Calculator"
+                    whatIsIt={
+                        <>
+                            <p>Our <strong>Acceleration Calculator</strong> measures the rate at which an object changes its velocity over time. Using fundamental kinematic equations, it allows you to solve for uniform acceleration, initial velocity, final velocity, or elapsed duration.</p>
+                            <p>In physics, any change in speed or direction means an object is accelerating. Even if a car remains at exactly 60 mph, if it goes around a curve, it is technically accelerating because its directional vector is changing.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The standard formula for constant straight-line acceleration requires you to subtract the original speed from the final speed, and divide by the amount of time that passed.</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
+                                <p><strong>a = (v<sub>f</sub> - v<sub>i</sub>) ÷ t</strong></p>
+                                <p className="text-sm mt-2 font-sans text-emerald-800">
+                                    <em>Where <strong>a</strong> is acceleration, <strong>v<sub>f</sub></strong> is final velocity, <strong>v<sub>i</sub></strong> is initial velocity, and <strong>t</strong> is time.</em>
+                                </p>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's calculate the acceleration of a sports car merging onto a highway.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Scenario:</strong> A car enters a highway on-ramp at <strong>10 m/s</strong> (Initial Velocity). The driver steps on the gas, and <strong>5 seconds</strong> later (Time), the car is traveling at <strong>30 m/s</strong> (Final Velocity).</li>
+                                <li><strong>The Change in Velocity:</strong> 30 m/s - 10 m/s = 20 m/s increase in speed.</li>
+                                <li><strong>The Calculation:</strong> 20 m/s ÷ 5 seconds = <strong>4</strong>.</li>
+                                <li><strong>Result:</strong> The car accelerated at a constant rate of <strong>4 m/s²</strong>. For every second that passed, the car's speed increased by 4 meters per second.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Automotive Engineering:</strong> Car manufacturers use acceleration metrics to define vehicle performance. The famous "0 to 60 mph in 3 seconds" metric is a pure measurement of intense positive acceleration.</li>
+                            <li><strong>Space Exploration:</strong> NASA must perfectly calculate orbital acceleration. If a rocket accelerates too slowly, it will succumb to Earth's gravity and crash. If it accelerates too rapidly, the G-forces will crush the astronauts inside.</li>
+                            <li><strong>Accident Reconstruction:</strong> Forensic experts calculate "negative acceleration" (deceleration) by measuring tire skid marks to determine exactly how fast a vehicle was traveling before it slammed on the brakes.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Can acceleration be a negative number?",
+                            answer: "Yes. Negative acceleration (often called deceleration) simply means the object is slowing down relative to its direction of travel. If a car goes from 60 mph to 0 mph, its acceleration is a negative value."
+                        },
+                        {
+                            question: "What does 'm/s²' actually mean?",
+                            answer: "Meters per second squared (m/s²) is the standard metric unit for acceleration. It simply means 'meters per second, per second.' If gravity is 9.8 m/s², it means every single second an object falls, its speed increases by an additional 9.8 m/s."
+                        },
+                        {
+                            question: "Is 'g-force' the same thing as acceleration?",
+                            answer: "Yes. G-force is just a way of expressing extreme acceleration relative to Earth's standard gravitational pull (1G = 9.8 m/s²). A fighter jet pulling '5Gs' is accelerating 5 times faster than standard freefall."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Force Calculator", path: "/force-calculator", desc: "Calculate the exact physical force required to generate a specific acceleration." },
+                        { name: "Velocity Calculator", path: "/velocity-calculator", desc: "Calculate constant speeds without using acceleration variables." },
+                        { name: "Projectile Motion Calculator", path: "/projectile-motion-calculator", desc: "Track objects accelerating continuously downward due to standard gravity." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
