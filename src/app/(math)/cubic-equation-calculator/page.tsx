@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function CubicEquationCalculator() {
     const [aVal, setAVal] = useState('1');
@@ -154,6 +155,69 @@ export default function CubicEquationCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Cubic Equation Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Cubic Equation Solver & Root Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Cubic Equation Calculator</strong> is an advanced algebra tool designed to instantly find all three roots (x-intercepts) of any polynomial equation of the third degree.</p>
+                            <p>While quadratic equations have a universally memorized formula, cubic equations are significantly harder to solve by hand. This tool relies on Cardano's algebraic method to bypass tedious trial-and-error factoring, guaranteeing the exact identification of all real and complex (imaginary) roots.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>A standard cubic equation takes the following form, where <span className="font-mono">a, b, c,</span> and <span className="font-mono">d</span> are known coefficients, and <span className="font-mono">a ≠ 0</span>:</p>
+                            <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-rose-900 border border-rose-100">
+                                ax³ + bx² + cx + d = 0
+                            </div>
+                            <p className="mt-4">By evaluating the <strong>Discriminant (Δ)</strong> of the cubic function, we can determine the nature of the three roots before even calculating them:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Δ &gt; 0:</strong> Three distinct, real roots.</li>
+                                <li><strong>Δ = 0:</strong> All three roots are real, but at least two of them are identical (a repeating root).</li>
+                                <li><strong>Δ &lt; 0:</strong> One real root, and two complex conjugate (imaginary) roots.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's solve the cubic equation: <strong>x³ - 6x² + 11x - 6 = 0</strong></p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Identify Coefficients:</strong> a = 1, b = -6, c = 11, d = -6.</li>
+                                <li><strong>Factor Grouping:</strong> If graphed, the curve crosses the x-axis exactly three times.</li>
+                                <li><strong>The Result:</strong> The calculator correctly identifies the three real roots as <strong>x = 1</strong>, <strong>x = 2</strong>, and <strong>x = 3</strong>.</li>
+                                <li><strong>Verification:</strong> If you substitute any of these numbers back into the equation (e.g., 3³ - 6(3²) + 11(3) - 6), the result perfectly evaluates to 0.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Engineering & Architecture:</strong> Solving cubic stress equations to determine at what exact point a physical beam or architectural support structure will buckle under weight.</li>
+                            <li><strong>Fluid Dynamics:</strong> Using cubic equations of state (like the Van der Waals equation) to calculate the precise volume of non-ideal gasses under intense industrial pressures.</li>
+                            <li><strong>Higher Education:</strong> Allowing calculus and linear algebra students to instantly skip the tedious polynomial factoring step so they can focus on the broader calculus problem at hand.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why do some answers contain an 'i'?",
+                            answer: "The letter 'i' represents an imaginary number (the square root of -1). When a cubic equation creates a curve that only crosses the x-axis once, the other two 'missing' intercepts are expressed mathematically as complex conjugate numbers containing 'i'."
+                        },
+                        {
+                            question: "Can 'a' ever be zero?",
+                            answer: "No. If 'a' is zero, the x³ term is entirely eliminated. The equation mathematically ceases to be a cubic equation and downgrades into a standard quadratic equation (bx² + cx + d = 0)."
+                        },
+                        {
+                            question: "Will a cubic equation always have at least one real root?",
+                            answer: "Yes. Due to the nature of odd-degree polynomials, the curve will always stretch from negative infinity to positive infinity along the y-axis, meaning it is mathematically guaranteed to cross the x-axis (a real root) at least once."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Quadratic Formula Calculator", path: "/quadratic-formula-calculator", desc: "Solve second-degree polynomials (parabolas) using the standard quadratic formula." },
+                        { name: "Order of Operations Calculator", path: "/order-of-operations-calculator", desc: "Ensure your cubic coefficients were calculated in the correct PEMDAS order." },
+                        { name: "Scientific Calculator", path: "/scientific-calculator", desc: "For manual verification of your complex and imaginary roots." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

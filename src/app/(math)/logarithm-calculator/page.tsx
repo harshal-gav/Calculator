@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function LogarithmCalculator() {
     const [base, setBase] = useState('10');
@@ -121,6 +122,69 @@ export default function LogarithmCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Logarithm Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Logarithm & Natural Log (ln) Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Logarithm Calculator</strong> performs the inverse mathematical operation of exponentiation. It calculates exactly what exponent a specific base number must be raised to in order to produce your target number.</p>
+                            <p>This tool seamlessly handles standard Base-10 logarithms, Base-2 computer science logarithms, and the highly essential Base-e Natural Logarithm (ln) used extensively in physics and calculus.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>A logarithm asks one fundamental question: "<i>Base (b) raised to what power (y) equals number (x)?</i>". This relationship is written as:</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-emerald-900 border border-emerald-100">
+                                y = log<sub className="text-[10px]">b</sub>(x) &nbsp;&nbsp; ⟺ &nbsp;&nbsp; b<sup className="text-[10px]">y</sup> = x
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Base (b):</strong> The underlying number being multiplied by itself. It must be greater than 0, and not equal to 1.</li>
+                                <li><strong>Number (x):</strong> The target product you are trying to reach. It must be greater than 0.</li>
+                                <li><strong>Exponent (y):</strong> The result calculated by this tool. The number of times the base must multiply itself.</li>
+                            </ul>
+                            <p className="mt-4 text-sm bg-zinc-100 p-3 rounded"><strong>Note:</strong> To calculate uncommon custom bases across different programming systems, this calculator internally utilizes the <i>Change of Base Formula</i>: <code>log_b(x) = ln(x) / ln(b)</code>.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Let's map out a classic example using <strong>Base 10</strong> with a target <strong>Number of 1000</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Question:</strong> log<sub>10</sub>(1000) = ? (10 raised to <i>what power</i> equals 1000?)</li>
+                                <li><strong>The Math:</strong> 10 × 10 = 100. Then 100 × 10 = 1000. It required 3 multiplications.</li>
+                                <li><strong>The Result:</strong> The calculator correctly identifies the logarithm as <strong>3</strong>.</li>
+                                <li><strong>Verification:</strong> 10³ = 1000.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Chemistry:</strong> Using Base-10 logarithms to calculate the pH and acidity levels of liquid chemical solutions based on hydrogen ion concentration.</li>
+                            <li><strong>Acoustics & Seismology:</strong> Measuring the intensity of earthquakes on the Richter scale, or the loudness of sound in Decibels (dB), both of which are Base-10 logarithmic scales.</li>
+                            <li><strong>Computer Science:</strong> Using Base-2 logarithms to calculate data storage metrics (bits and bytes) and measure the time complexity of sorting algorithms (Big O Notation).</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the Natural Log (ln)?",
+                            answer: "The Natural Logarithm (written as 'ln') is simply a normal logarithm that explicitly uses Euler's constant 'e' (approximately 2.71828) as its base. It appears incredibly frequently in formulas relating to compound interest, biology, and thermodynamics."
+                        },
+                        {
+                            question: "Why can't the target number be zero or negative?",
+                            answer: "Because you cannot multiply a positive base by itself any number of times to reach 0 or a negative number. For example, 2 raised to a positive exponent gets bigger, and 2 raised to a negative exponent becomes a fraction. It never hits exactly 0."
+                        },
+                        {
+                            question: "Why can't the base be 1?",
+                            answer: "Because 1 multiplied by itself any number of times is always going to just equal 1 (1¹ = 1, 1² = 1, 1³ = 1). Therefore, a logarithm with a base of 1 trying to reach any target other than 1 is mathematically impossible."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Exponent Calculator", path: "/exponent-calculator", desc: "Perform the exact mathematical inverse operation of a logarithm." },
+                        { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "See where the natural logarithm 'e' applies to continuous compounding finance." },
+                        { name: "Scientific Calculator", path: "/scientific-calculator", desc: "Access comprehensive trig, root, and log functions on a digital keypad." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
