@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function CircleCalculator() {
     const [inputType, setInputType] = useState('radius');
@@ -103,6 +104,64 @@ export default function CircleCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Circle Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Circle Geometry Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Circle Calculator</strong> is a fully-linked geometric tool. Because all properties of circles are mathematically locked together by Pi (π), providing just <strong>one single metric</strong> allows this system to instantly solve the entire shape.</p>
+                            <p>Whether you know the radius, the diameter, the total area, or the outer circumference, simply enter it to calculate the remaining three variables with absolute precision.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>All circle geometry revolves around the mathematical constant Pi (π ≈ 3.14159). Once the radius 'r' is determined, all other properties are found using:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Diameter (d):</strong> <span className="font-mono bg-indigo-50 px-1 rounded">2 × r</span> (Simply double the radius).</li>
+                                <li><strong>Circumference (C):</strong> <span className="font-mono bg-indigo-50 px-1 rounded">2 × π × r</span> (Alternatively, π × d).</li>
+                                <li><strong>Area (A):</strong> <span className="font-mono bg-indigo-50 px-1 rounded">π × r²</span> (Pi times radius squared).</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine you have a circular flower bed, and you know the total distance straight across the middle (the <strong>Diameter</strong>) is <strong>10 feet</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Radius:</strong> The calculator halves the diameter, setting the radius to exactly <strong>5 feet</strong>.</li>
+                                <li><strong>Circumference:</strong> Using 2×π×5, the outer border length is calculated as roughly <strong>31.41 feet</strong>.</li>
+                                <li><strong>Area:</strong> Using π×(5²), the total dirt surface space is calculated as roughly <strong>78.54 sq feet</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Landscaping & Fencing:</strong> Entering a circular garden's known area to immediately find its circumference, dictating exactly how much border fencing to buy.</li>
+                            <li><strong>Manufacturing & Piping:</strong> Entering a pipe's cross-sectional area to easily work backward and discover its perfect millimeter diameter for fitting.</li>
+                            <li><strong>Design & Architecture:</strong> Finding the exact geometric center (radius) of a circular window when only the outer frame length (circumference) is known.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What exactly is Pi (π)?",
+                            answer: "Pi is the mathematical ratio between a circle's circumference and its diameter. If you take the distance around ANY perfect circle and divide it by the distance across it, the answer is always roughly 3.14159. The number is infinite and never repeats."
+                        },
+                        {
+                            question: "Are Circumference and Perimeter the same thing?",
+                            answer: "Conceptually, yes. They both describe the total distance around the outside edge of a shape. However, in mathematics, 'Perimeter' is strictly used for shapes with straight lines (squares, triangles), while 'Circumference' is explicitly reserved for curves and circles."
+                        },
+                        {
+                            question: "Can I enter a negative number?",
+                            answer: "No. Physical geometric forms cannot have a negative length, radius, or area. To prevent mathematical paradoxes like calculating the square root of a negative area, the calculator only accepts positive numbers."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Area Calculator", path: "/area-calculator", desc: "Easily compare the surface area of your circle to squares or rectangles." },
+                        { name: "Perimeter Calculator", path: "/perimeter-calculator", desc: "Compare circle circumference with the straight-line perimeter of polygons." },
+                        { name: "Cylinder Calculator", path: "/cylinder-calculator", desc: "Turn your 2D circle into a 3D tube by adding the element of height." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

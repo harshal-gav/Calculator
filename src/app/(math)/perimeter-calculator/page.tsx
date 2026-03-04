@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function PerimeterCalculator() {
     const [shape, setShape] = useState('rectangle');
@@ -161,6 +162,66 @@ export default function PerimeterCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Perimeter Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Perimeter & Circumference Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Perimeter Calculator</strong> traces and calculates the exact outer boundary length of standard 2D geometric shapes. It currently supports rectangles, squares, triangles, circles, and regular n-sided polygons.</p>
+                            <p>Unlike area (which measures the 2D space inside), perimeter simply measures a 1D straight line wrapped around the outside edge of an object.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The calculation essentially involves adding up all the outer sides of a shape. Here are the specific shortcut formulas applied:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Rectangle:</strong> <span className="font-mono bg-orange-50 px-1 rounded">2 × (Length + Width)</span></li>
+                                <li><strong>Square:</strong> <span className="font-mono bg-orange-50 px-1 rounded">4 × Side</span></li>
+                                <li><strong>Triangle:</strong> <span className="font-mono bg-orange-50 px-1 rounded">Side a + Side b + Side c</span></li>
+                                <li><strong>Circle:</strong> <span className="font-mono bg-orange-50 px-1 rounded">2 × π × Radius</span> (This is uniquely called Circumference).</li>
+                                <li><strong>Polygon:</strong> <span className="font-mono bg-orange-50 px-1 rounded">Number of Sides × Length of One Side</span></li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Suppose you are building a wooden fence around a rectangular backyard that measures <strong>40 feet wide by 60 feet long</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Formula:</strong> Perimeter = 2 × (Length + Width)</li>
+                                <li><strong>The Math:</strong> 40 + 60 = 100. Then multiply by 2 to account for all 4 sides.</li>
+                                <li><strong>The Result:</strong> The total perimeter is exactly <strong>200 linear feet</strong>. You must purchase 200 feet of wooden fencing to enclose the yard.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Home Improvement:</strong> Calculating exactly how many linear feet of baseboard trim, crown molding, or weather stripping are required for a room.</li>
+                            <li><strong>Landscaping & Farming:</strong> Measuring property lines to buy the correct amount of wire fencing, stone retaining walls, or garden bed edging.</li>
+                            <li><strong>Arts & Crafts:</strong> Figuring out exactly how much ribbon or string is required to wrap around the physical outer edge of a circular jar or rectangular picture frame.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why does the circle say 'Circumference' instead of perimeter?",
+                            answer: "It is the exact same concept—measuring the outer boundary. However, in mathematics, the word 'Perimeter' refers exclusively to shapes with straight lines and corners. Because a circle is entirely curved, its outer edge has a special dedicated name: Circumference."
+                        },
+                        {
+                            question: "What is a 'Regular' Polygon?",
+                            answer: "A regular polygon is a multi-sided shape where every single side is the exact same length, and every internal angle is the exact same degree. (e.g., a perfect Stop Sign is a regular octagon)."
+                        },
+                        {
+                            question: "Does calculating perimeter help me figure out the area inside?",
+                            answer: "Usually, no. Two shapes can have the exact same 100-foot perimeter, but completely different internal areas. (A 25x25 square has an area of 625 sq ft. A 40x10 rectangle also has a 100ft perimeter, but an area of only 400 sq ft)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Area Calculator", path: "/area-calculator", desc: "Calculate the internal 2-dimensional space enclosed by your perimeter fence." },
+                        { name: "Circle Calculator", path: "/circle-calculator", desc: "Instantly link your calculated circumference to the circle's radius and area." },
+                        { name: "Triangle Calculator", path: "/triangle-calculator", desc: "A deeper dive that links a triangle's three sides to its internal angles." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

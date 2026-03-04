@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function PythagoreanCalculator() {
     const [solveFor, setSolveFor] = useState('c'); // 'a', 'b', or 'c'
@@ -144,6 +145,67 @@ export default function PythagoreanCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pythagorean Theorem Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Pythagorean Theorem Solver (a² + b² = c²)"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Pythagorean Calculator</strong> visually solves for the missing side length of any Right-Angled Triangle. By providing any two known sides, it instantly calculates the third.</p>
+                            <p>Not only does this tool output the final exact mathematical decimal, but it fundamentally breaks down the logic by printing a line-by-line algebraic proof of the calculation, ensuring you can show your work.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The Pythagorean Theorem is one of geometry's most foundational rules, applying exclusively to triangles containing one exact 90-degree angle. It states:</p>
+                            <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-rose-900 border border-rose-100">
+                                a² + b² = c²
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Legs (a & b):</strong> The two shorter sides that physically intersect to create the 90-degree right angle.</li>
+                                <li><strong>Hypotenuse (c):</strong> Always the longest side of the triangle, resting perfectly opposite from the 90-degree angle.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Assume you are painting a house. Your ladder is exactly <strong>13 feet long (Hypotenuse c)</strong>. You place the base of the ladder exactly <strong>5 feet away from the wall (Leg a)</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Question:</strong> Exactly how high up the wall will the ladder reach (Leg b)?</li>
+                                <li><strong>The Algebra:</strong> (5)² + b² = (13)². Therefore, 25 + b² = 169.</li>
+                                <li><strong>The Subtraction:</strong> b² = 144.</li>
+                                <li><strong>The Result:</strong> Taking the square root of 144, the ladder reaches exactly <strong>12 feet</strong> up the wall (Leg b).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Architecture & Construction:</strong> Ensuring foundation corners and wall frames are perfectly "square" (90 degrees) by forcing diagonal measurements to adhere to the a² + b² = c² ratio.</li>
+                            <li><strong>Navigation & Flight:</strong> Calculating the exact "as the crow flies" straight diagonal distance between two points mapped on an X and Y coordinate grid.</li>
+                            <li><strong>Screen Sizing:</strong> Calculating the true physical diagonal width (like a "65-inch TV") based on a monitor's horizontal and vertical bezel measurements.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does this work for ALL triangles?",
+                            answer: "No. The Pythagorean Theorem mathematically ONLY functions on right-angled triangles—meaning the shape must contain exactly one perfect 90-degree interior corner. If the triangle is skewed or bent, you must use the Law of Cosines instead."
+                        },
+                        {
+                            question: "Why does the calculator say my input is invalid?",
+                            answer: "The Hypotenuse (c) must inherently, mathematically, always be the longest side of a right triangle. If you tell the calculator that Leg (a) is 20, but the Hypotenuse (c) is only 5, the math will crash because it's a structural impossibility."
+                        },
+                        {
+                            question: "What is a 'Pythagorean Triple'?",
+                            answer: "A Triple is a rare set of three whole, non-decimal integers that perfectly fit the formula. The most famous is 3-4-5 (3² + 4² = 5² or 9 + 16 = 25). Another classic is 5-12-13. Builders often memorize these specific integer sizes for fast, easy framing."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Distance Calculator", path: "/distance-calculator", desc: "A practical application of Pythagoras used to measure spacing on a 2D coordinate grid." },
+                        { name: "Triangle Calculator", path: "/triangle-calculator", desc: "A more advanced solver for non-right-angled triangles utilizing the Law of Cosines." },
+                        { name: "Square Root / Scientific", path: "/scientific-calculator", desc: "Execute manual root extractions on a digital keypad interface." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
