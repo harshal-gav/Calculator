@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function PermutationCalculator() {
     const [nVal, setNVal] = useState('10');
@@ -190,6 +191,68 @@ export default function PermutationCalculator() {
                 input:checked + div + div { transform: translateX(100%); border-color: white; }
             `}} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Permutation Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Permutation Calculator (nPr)"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Permutation Calculator</strong> determines the total number of unique ways exactly <em>r</em> items can be arranged from a larger pool of <em>n</em> total items, specifically under the rule that <strong>order mathematically matters</strong>.</p>
+                            <p>For example, if you are assigning the roles of President, Vice President, and Treasurer to three people (Alice, Bob, and Charlie), "President Alice, VP Bob" is a completely different outcome than "President Bob, VP Alice."</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Because every microscopic change in order creates a brand-new permutation, the formula utilizes factorials (!) but does not divide out the duplicates. It is written as:</p>
+                            <div className="bg-purple-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-purple-900 border border-purple-100">
+                                P(n, r) = n! / (n - r)!
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>n:</strong> The total number of unique items available to pick from in the set.</li>
+                                <li><strong>r:</strong> The number of items you are actually selecting and arranging.</li>
+                                <li><strong>!:</strong> The factorial symbol (e.g., 5! = 5 × 4 × 3 × 2 × 1).</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine there are <strong>8 runners (n)</strong> in the final heat of an Olympic sprint, but the judges only award medals for <strong>Gold, Silver, and Bronze (r = 3)</strong>. How many unique ways can the podium be filled?</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Setup:</strong> P(8, 3) = 8! / (8 - 3)!</li>
+                                <li><strong>Simplifying:</strong> 8! / 5! = (8 × 7 × 6 × 5 × 4 × 3 × 2 × 1) / (5 × 4 × 3 × 2 × 1)</li>
+                                <li><strong>The Math:</strong> The 5! perfectly cancels itself out. You are left with just 8 × 7 × 6.</li>
+                                <li><strong>The Result:</strong> There are exactly <strong>336 unique ways</strong> the Gold, Silver, and Bronze medals could be distributed among the 8 runners.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Cybersecurity & Passwords:</strong> Calculating the exact number of possible brute-force attempts required to crack a 6-digit PIN code or a 12-character alphanumeric password.</li>
+                            <li><strong>Scheduling & Logistics:</strong> Determining how many unique ways a delivery truck could sequence its 10 specific stops throughout a city.</li>
+                            <li><strong>Lottery & Gaming:</strong> Calculating the odds of games that require exact sequence matching (e.g., horse racing exactas or trifectas).</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is 'Repetition' / 'Replacement'?",
+                            answer: "Without repetition, once an item is used, it's gone (e.g., Alice cannot be both President AND Vice President). With repetition, you put the item back in the pool (e.g., a 4-digit PIN code can absolutely be 9-9-9-9). Repetition exponentially grows the permutations."
+                        },
+                        {
+                            question: "Why is a 'Combination Lock' named incorrectly?",
+                            answer: "Because order matters! If your lock code is 1-2-3, entering 3-2-1 will not open it. Mathematically speaking, it should be called a 'Permutation Lock.' Combinations do not care about order."
+                        },
+                        {
+                            question: "What does P(n, n) equal?",
+                            answer: "Exactly n!. If you have 5 books and you want to arrange all 5 of them on a shelf, the math is 5! = 120 ways. You don't leave any items behind."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Combinations Calculator", path: "/combinations-calculator", desc: "Calculate groupings where the internal order does not matter." },
+                        { name: "Factorial Calculator", path: "/factorial-calculator", desc: "Calculate the base n! values that power these statistical probability formulas." },
+                        { name: "Probability Calculator", path: "/probability-calculator", desc: "Turn these raw permutation counts into actual percentage odds of winning or losing." },
+                    ]}
+                />
+            </div>
         </div>
     );
 }

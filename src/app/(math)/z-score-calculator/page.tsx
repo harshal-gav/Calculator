@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function ZScoreCalculator() {
     const [rawScore, setRawScore] = useState('85');
@@ -159,6 +160,67 @@ export default function ZScoreCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Z-Score Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Z-Score to Percentile Calculator (Standard Score)"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Z-Score Calculator</strong> determines exactly how many Standard Deviations a raw data point is located away from the average (mean) of the dataset.</p>
+                            <p>A Z-Score allows you to instantly compare "apples to oranges." For example, if you took the SAT and your friend took the ACT, you can use your respective Z-Scores to see who objectively performed better compared to the rest of the testing population.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The core philosophy of the Standard Score is subtracting the mean from the raw score, then dividing by the standard deviation to "normalize" the scale. It is written as:</p>
+                            <div className="bg-blue-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-blue-900 border border-blue-100">
+                                Z = (x - μ) / σ
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>x:</strong> The Raw Score (the specific data point you are analyzing).</li>
+                                <li><strong>μ (Mu):</strong> The Population Mean (the average of the entire dataset).</li>
+                                <li><strong>σ (Sigma):</strong> The Standard Deviation (how spread out the data generally is).</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine you run a race in <strong>45 minutes (x)</strong>. The average runner finishes in <strong>50 minutes (μ)</strong>, with a standard deviation of <strong>5 minutes (σ)</strong>. Did you run unusually fast?</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Setup:</strong> Z = (45 - 50) / 5</li>
+                                <li><strong>The Math:</strong> Z = -5 / 5</li>
+                                <li><strong>The Result:</strong> Your Z-Score is <strong>-1.00</strong>. Because time is a metric where lower is better, a negative Z-Score perfectly translates into a positive outcome. You ran exactly 1 Standard Deviation faster than normal!</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Medicine & Pediatrics:</strong> Doctors chart infant weight and height using Z-Scores to determine if a baby is growing normally or if they fall into an extreme outlier percentile requiring intervention.</li>
+                            <li><strong>Standardized Testing:</strong> Scoring IQ tests, SATs, GREs, and LSATs. Z-Scores map directly into rigid percentiles, determining exactly what tier a student's intelligence or capability falls into.</li>
+                            <li><strong>Finance & Credit Risk:</strong> The Altman Z-Score formula specifically predicts the probability a company will go bankrupt within two years based on comparing their financial metrics to industry averages.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What does a Z-Score of 0 mean?",
+                            answer: "A Z-Score of exactly 0.0 means your raw score is mathematically identical to the population mean. You are perfectly average, resting strictly at the 50th percentile of the bell curve."
+                        },
+                        {
+                            question: "What makes a score an 'Outlier'?",
+                            answer: "Generally, in statistics, any Z-Score beyond +3.0 or -3.0 is considered a drastic outlier. More than 99.7% of all data points will naturally fall between -3 and +3. Anything beyond that is a highly unusual anomaly."
+                        },
+                        {
+                            question: "Why does the calculator estimate my Percentile?",
+                            answer: "By plugging your calculated Z-Score into the Standard Normal Cumulative Distribution Function (CDF), we can accurately approximate the exact percentage of the population you scored higher than (assuming a normal bell curve)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Variance & Std Deviation", path: "/variance-calculator", desc: "Calculate the base σ value required to power this Z-Score formula." },
+                        { name: "Empirical Rule Calculator", path: "/empirical-rule-calculator", desc: "Visualize how Z-Scores map onto the 68-95-99.7 bell curve." },
+                        { name: "Percentile Calculator", path: "/percentile-calculator", desc: "Calculate exact data percentiles without relying on normal distribution approximations." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

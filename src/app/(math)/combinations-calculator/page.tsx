@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function CombinationsCalculator() {
     const [nVal, setNVal] = useState('10');
@@ -173,6 +174,68 @@ export default function CombinationsCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Combinations Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Combinations Calculator (nCr)"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Combinations Calculator</strong> determines the total number of unique ways exactly <em>r</em> items can be selected from a larger pool of <em>n</em> total items, specifically under the rule that <strong>order does not matter</strong>.</p>
+                            <p>For example, if you are choosing a team of 3 people from a department of 10, choosing "Alice, Bob, and Charlie" is mathematically identical to choosing "Charlie, Alice, and Bob." That is a combination.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The standard combinations formula utilizes factorials (!) to eliminate redundant, out-of-order duplicates. It is written as:</p>
+                            <div className="bg-pink-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-pink-900 border border-pink-100">
+                                C(n, r) = n! / [r! × (n - r)!]
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>n:</strong> The total number of items available to pick from in the set.</li>
+                                <li><strong>r:</strong> The number of items you are actually selecting.</li>
+                                <li><strong>!:</strong> The factorial symbol (e.g., 5! = 5 × 4 × 3 × 2 × 1).</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine a local pizza shop offers <strong>8 different toppings (n)</strong>, and you want to order a pizza with exactly <strong>3 toppings (r)</strong>. Assuming you cannot order double pepperoni (no repetition), how many unique pizzas can you build?</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Setup:</strong> C(8, 3) = 8! / [3! × (8 - 3)!]</li>
+                                <li><strong>Simplifying:</strong> 8! / (3! × 5!) = (8 × 7 × 6) / (3 × 2 × 1)</li>
+                                <li><strong>The Math:</strong> 336 / 6</li>
+                                <li><strong>The Result:</strong> There are exactly <strong>56 unique combination</strong> pizzas you could possibly order.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Lottery Odds:</strong> Calculating the exact probability of winning the Powerball or Mega Millions based on choosing 5 numbers out of a drum of 69 options.</li>
+                            <li><strong>Tournament Bracket Creation:</strong> Calculating how many total games need to be played in a "round-robin" sports tournament where every team must play every other team exactly once.</li>
+                            <li><strong>Menu & Product Design:</strong> Determining how many unique combo meals a restaurant can market based on offering a choice of 2 sides out of 10 options.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What is the difference between Combinations and Permutations?",
+                            answer: "It all comes down to order. A Combination is like a fruit salad: apples, grapes, and bananas is the exact same salad as bananas, grapes, and apples. A Permutation is like a combination lock: 1-2-3 is completely different from 3-2-1."
+                        },
+                        {
+                            question: "Why does the number shrink so fast compared to factorials?",
+                            answer: "Because we divide out the redundant orders. If you pick 5 cards from a 52 card deck, there are millions of ways to pull those 5 cards one by one (Permutations). But since we don't care about the order you pulled them, we divide by 5! (120) to remove the duplicates, making Combinations much smaller."
+                        },
+                        {
+                            question: "What does C(n, n) equal?",
+                            answer: "Exactly 1. If you have 10 employees and you need to select a team of 10 people, there is only 1 possible combination: you just take everybody."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Permutations Calculator", path: "/permutation-calculator", desc: "Calculate scenarios where the exact sequence and order of the selection matter." },
+                        { name: "Factorial Calculator", path: "/factorial-calculator", desc: "Calculate the base n! values that power these statistical probability formulas." },
+                        { name: "Probability Calculator", path: "/probability-calculator", desc: "Turn these raw combination counts into actual percentage odds of winning or losing." },
+                    ]}
+                />
+            </div>
         </div>
     );
 }

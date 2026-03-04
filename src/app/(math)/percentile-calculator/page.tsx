@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function PercentileCalculator() {
     const [dataInput, setDataInput] = useState('12, 15, 18, 20, 22, 25, 30, 35, 40, 50');
@@ -161,6 +162,67 @@ export default function PercentileCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Percentile Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Exact Percentile Data Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Percentile Calculator</strong> analyzes a raw list of numbers to determine the exact value that sits at a specific percentage threshold (from 0 to 100).</p>
+                            <p>For example, if a student scored in the 90th percentile on a test, it means they scored <em>higher</em> than 90% of all the other students who took that exact same test.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Because finding an exact percentile often lands "between" two real data points, mathematicians use algebraic interpolation. We utilize the highly accurate NIST method (similar to Excel's PERCENTILE.INC function):</p>
+                            <div className="bg-violet-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-violet-900 border border-violet-100 flex flex-col gap-2 center">
+                                Rank (r) = (P / 100) × (N - 1) + 1
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>P:</strong> The Target Percentile you are aiming to find (e.g., 90 for the 90th percentile).</li>
+                                <li><strong>N:</strong> The total number of data points provided in your set.</li>
+                                <li><strong>Rank:</strong> The exact decimal index position you must look at after sorting the data from smallest to largest.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine an office of 6 employees making the following hourly wages: <strong>$15, $18, $20, $22, $28, $35</strong>. What exact hourly wage represents the mathematically true <strong>80th Percentile</strong>?</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>1. Find the Rank:</strong> r = (80 / 100) × (6 - 1) + 1 = 0.8 × 5 + 1 = <strong>5.0</strong>.</li>
+                                <li><strong>2. Match the Rank:</strong> Because the rank mathematically landed on a perfect whole number (the 5th index), we simply look at the 5th number in the sorted list.</li>
+                                <li><strong>The Result:</strong> The 5th number is $28. Therefore, <strong>$28/hour</strong> is the exact 80th Percentile wage. If the rank was a decimal like 5.5, we would interpolate halfway between the 5th ($28) and 6th ($35) numbers ($31.50).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>HR & Salary Negotiation:</strong> Companies use percentiles to ensure fair compensation. Refusing to pay below the "25th percentile" of the industry standard ensures competitive hiring.</li>
+                            <li><strong>Cloud Computing & Web Dev:</strong> Monitoring server latency using "P99" (The 99th Percentile). If the P99 load time is 2 seconds, it guarantees that 99% of all users load the website in 2 seconds or faster.</li>
+                            <li><strong>Sports Analytics:</strong> Comparing athletes against historical databases. Reaching the "95th percentile" in sprint speed definitively proves elite performance relative to peers.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "How does this differ from the Mean (Average)?",
+                            answer: "The Mean simply adds everything up and divides by the count. It is heavily skewed by massive numbers. For example, if Bill Gates walks into an average bar, the 'mean' wealth of that room instantly spikes to a billion dollars. But the '50th percentile' wealth remains exactly the same—a much more accurate metric of reality."
+                        },
+                        {
+                            question: "What is the 50th Percentile technically called?",
+                            answer: "The Median. By definition, the Median is the exact middle point of your sorted data, splitting the dataset 50/50. The 25th percentile is called the lower 'Quartile', and the 75th is the upper 'Quartile'."
+                        },
+                        {
+                            question: "Why do you need to interpolate?",
+                            answer: "If you have 10 data points and want the 77th percentile, there is no physical 7.7th number in the list. The calculator must mathematically construct a phantom number suspended 70% of the way between the 7th and 8th numbers."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Mean, Median, Mode", path: "/mean-median-mode-calculator", desc: "Calculate the true '50th percentile' median of your dataset." },
+                        { name: "Z-Score Calculator", path: "/z-score-calculator", desc: "Map raw scores onto a bell curve to approximate their percentile." },
+                        { name: "Variance Calculator", path: "/variance-calculator", desc: "Measure exactly how scattered your data is around the center point." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

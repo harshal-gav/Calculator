@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function VarianceCalculator() {
     const [dataInput, setDataInput] = useState('2, 4, 4, 4, 5, 5, 7, 9');
@@ -152,6 +153,70 @@ export default function VarianceCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Variance Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Variance & Standard Deviation Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Variance Calculator</strong> precisely measures mathematical spread. By analyzing a dataset, it determines exactly how far, on average, the individual numbers are spread out or dispersed away from the average (mean).</p>
+                            <p>A "low" variance means all the numbers are tightly clustered together, nearly identical. A "high" variance indicates widespread extreme volatility, with numbers scattered far from the center.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>To calculate variance mathematically, you must find the distance of each number from the mean, square that distance (so negative numbers do not cancel out positives), and average those squared results. The core difference is the denominator:</p>
+                            <div className="bg-rose-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-rose-900 border border-rose-100 flex flex-col gap-2">
+                                <div><strong>Population (σ²):</strong> Σ (xi - μ)² / N</div>
+                                <div><strong>Sample (s²):</strong> Σ (xi - x̄)² / (n - 1)</div>
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>(xi - μ)²:</strong> The squared difference between an individual data point and the mean.</li>
+                                <li><strong>N:</strong> The total number of data points.</li>
+                                <li><strong>(n - 1):</strong> "Bessel's Correction", used strictly for Samples to correct artificial downward bias.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Consider the recent test scores of a small class of 5 students: <strong>80, 85, 90, 95, 100</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>1. Find the Mean:</strong> (80+85+90+95+100) / 5 = 90.</li>
+                                <li><strong>2. Find Squared Differences:</strong> (80-90)² = 100. (85-90)² = 25. (90-90)² = 0. (95-90)² = 25. (100-90)² = 100.</li>
+                                <li><strong>3. Sum the Squares:</strong> 100 + 25 + 0 + 25 + 100 = 250.</li>
+                                <li><strong>4. Calculate Population Variance:</strong> 250 / 5 = <strong>50</strong>.</li>
+                                <li><strong>5. Standard Deviation:</strong> √50 = <strong>7.07</strong> (The average test score fluctuates by 7 points).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Finance & Investing:</strong> Measuring stock market volatility. A stock with high variance is considered high risk (wild price swings), while low variance implies a stable, predictable blue-chip asset.</li>
+                            <li><strong>Manufacturing Quality Control:</strong> Outputting identical machine parts. If a factory making screws has a high variance in screw length, many screws will be defective and rejected.</li>
+                            <li><strong>Academic Grading:</strong> Detecting extreme outliers in student performance. If a class has an average score of 75 but a massive variance, half the class likely failed while the other half got A's.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Should I use Population or Sample variance?",
+                            answer: "Use Population (σ²) if your dataset contains EVERY single possible piece of data (e.g., surveying all 50 employees in your company). Use Sample (s²) if you only pulled a fraction of the data to estimate the whole (e.g., surveying 50 random citizens to predict the national election)."
+                        },
+                        {
+                            question: "Why do we mathematically square the differences?",
+                            answer: "Because we need to cancel out negative numbers. If you score 10 points below average (-10) and 10 points above average (+10), simply adding them together equals 0—implying no variance. Squaring forces all distances to be purely positive."
+                        },
+                        {
+                            question: "How does Variance differ from Standard Deviation?",
+                            answer: "Standard Deviation is simply the square root of the Variance. Variance mathematically inflates the units (e.g., 'dollars squared'), making it hard to read. Taking the square root converts the stat back into standard human-readable units."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Mean, Median, Mode", path: "/mean-median-mode-calculator", desc: "Calculate the exact mathematical center or average of your data set." },
+                        { name: "Z-Score Calculator", path: "/z-score-calculator", desc: "Use your computed standard deviation to identify extreme outliers." },
+                        { name: "Percentile Calculator", path: "/percentile-calculator", desc: "Identify exactly where a specific data point falls within the overall curve." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
