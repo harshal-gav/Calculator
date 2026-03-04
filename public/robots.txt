@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.calculators-all.com/sitemap.xml
+Sitemap: https://www.calculator-all.com/sitemap.xml
