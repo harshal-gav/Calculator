@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FirebaseAnalytics from "@/components/FirebaseAnalytics";
-import StickyBottomAd from "@/components/StickyBottomAd";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -64,14 +63,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <StickyBottomAd />
-        {/* Global Google AdSense Script using Next.js Script for async non-blocking load */}
-        <Script
-          id="adsbygoogle-init"
-          strategy="afterInteractive"
-          crossOrigin="anonymous"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1126148240601289"
-        />
       </body>
     </html>
   );
