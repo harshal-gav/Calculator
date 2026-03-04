@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function LeanBodyMassCalculator() {
     const [gender, setGender] = useState('male');
@@ -132,6 +133,68 @@ export default function LeanBodyMassCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Lean Body Mass Calculator", "operatingSystem": "All", "applicationCategory": "HealthApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Lean Body Mass (LBM) Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Lean Body Mass (LBM) Calculator</strong> mathematically separates your total body weight into two distinct categories: your fat mass and your lean mass.</p>
+                            <p><strong>Lean Body Mass</strong> includes the weight of your bones, internal organs, muscles, blood, and skin—everything in your body minus the triglycerides stored in your fat tissues. Knowing your LBM is the most accurate way to prescribe medication doses, set protein targets, and monitor true athletic progression, rather than relying on a generic BMI scale that punishes muscular individuals.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>This calculator aggregates the three most trusted biometric impedance formulas used in medical settings to find the most statistically sound average:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Boer Formula (1984):</strong> Often considered the gold standard for clinical pharmacology (anesthesia dosing).</li>
+                                <li><strong>The James Formula (1976):</strong> Accurate for most people, but known to break down scientifically if the patient's body fat exceeds 40%.</li>
+                                <li><strong>The Hume Formula (1966):</strong> A classic model that heavily weights the interaction between height and biological sex.</li>
+                            </ul>
+                            <div className="bg-orange-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-orange-900 border border-orange-100">
+                                <strong>Implied Body Fat %</strong> = [ (Total Weight − LBM) ÷ Total Weight ] × 100
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Consider a <strong>physically active male weighing 85 kg (187 lbs)</strong> who is <strong>180 cm (5'11")</strong> tall.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li>The outdated BMI index simply flags him as nearly "Overweight" with a score of 26.2.</li>
+                                <li>Running his biometrics through the <strong>Boer formula</strong> yields a Lean Body Mass of 63.5 kg.</li>
+                                <li>This means his total fat mass is 21.5 kg (85 kg - 63.5 kg).</li>
+                                <li><strong>The Reality Check:</strong> The calculator correctly identifies his <strong>Body Fat as ~25%</strong>, allowing him to set a safer caloric deficit based on his true muscle metrics rather than assuming he just needs to "drop weight."</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Protein Prescription:</strong> Nutritionists calculate daily protein requirements specifically against <i>Lean Body Mass</i> (e.g., 2.2 grams per kg of LBM), not total body weight. This prevents obese individuals from dangerously over-consuming protein.</li>
+                            <li><strong>Clinical Dosing:</strong> Doctors use LBM to precisely calculate the dosage of water-soluble medications and anesthetics, which only distribute into lean tissue, avoiding toxic overdoses.</li>
+                            <li><strong>Body Recomposition Tracking:</strong> Verifying that the 5 pounds you lost on the scale was actually 5 pounds of body fat, rather than dangerous muscle wasting caused by starving your system.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why does biological sex dramatically change the LBM calculation?",
+                            answer: "Biological males and females have fundamentally different essential fat requirements driven by endocrinology and reproduction. For example, females generally require 10-13% essential body fat just to maintain healthy hormone production, whereas males require only 2-5%."
+                        },
+                        {
+                            question: "Is this more accurate than a DEXA scan?",
+                            answer: "No. A DEXA (Dual-Energy X-ray Absorptiometry) scan physically measures the density of your exact tissues utilizing X-rays. This calculator relies on population-based statistical equations. However, these formulas are the most accurate non-invasive estimation tool available without medical hardware."
+                        },
+                        {
+                            question: "Why are my results from the James Formula weirdly low?",
+                            answer: "The James formula contains an inherent mathematical flaw that breaks down for severe clinical obesity. If your true body fat percentage is greater than 42%, the James formula will paradoxically start calculating a negative number, pulling your overall average down. In such cases, rely entirely on the Boer formula."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Protein Calculator", path: "/protein-calculator", desc: "Feed your newly calculated Lean Body Mass into this calculator to determine your precise daily protein needs." },
+                        { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Discover how your lean mass influences your overall basal metabolic burn rate." },
+                        { name: "Macronutrient Calculator", path: "/macro-calculator", desc: "Design a diet capable of preserving your specific LBM while shedding the remaining fat weight." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

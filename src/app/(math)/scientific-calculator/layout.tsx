@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Scientific Calculator',
-    description: 'Free online scientific calculator with advanced features like trigonometric functions, logarithms, and more.',
+    title: 'Scientific Calculator | Trigonometric & Logarithmic Math',
+    description: 'Solve advanced STEM equations online. Execute trigonometry operations, calculate logarithms, and process exponents with strict order of operations.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function ScientificCalculator() {
     const [display, setDisplay] = useState('');
@@ -119,6 +120,71 @@ export default function ScientificCalculator() {
       `}</style>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Scientific Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Online Scientific Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Scientific Calculator</strong> extends traditional arithmetic operations to include advanced mathematical functions required for upper-level STEM education, physics, engineering, and calculus.</p>
+                            <p>Unlike a basic four-function calculator, this tool handles complex operations like trigonometry (sine, cosine, tangent), logarithmic scaling, exponentiation, and embedded mathematical constants (Pi, Euler's number).</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>A scientific calculator parses complex expressions respecting the strict mathematical <strong>Order of Operations (PEMDAS / BODMAS)</strong>:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Parentheses:</strong> Evaluating any expressions contained inside <code>( )</code> first.</li>
+                                <li><strong>Exponents & Logic:</strong> Handling powers, square roots, and logarithms.</li>
+                                <li><strong>Trigonometry:</strong> Calculating spatial wave functions like <code>sin(x)</code>.</li>
+                                <li><strong>Multiplication & Division:</strong> Calculated left to right.</li>
+                                <li><strong>Addition & Subtraction:</strong> Calculated last, left to right.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Evaluating an expression with embedded operations and priorities:</p>
+                            <div className="bg-gray-800 p-4 rounded-lg font-mono text-center text-[18px] shadow-sm my-4 text-green-400 border border-gray-700">
+                                ln(e) + sin(π) × 5<sup>2</sup>
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Step 1 (Constants & Logs):</strong> The natural log of Euler's number <code>ln(e)</code> equals 1.</li>
+                                <li><strong>Step 2 (Trigonometry):</strong> The sine of Pi radians <code>sin(π)</code> equals 0.</li>
+                                <li><strong>Step 3 (Exponents):</strong> 5 squared <code>5^2</code> equals 25.</li>
+                                <li><strong>Step 4 (Multiplication):</strong> 0 × 25 equals 0.</li>
+                                <li><strong>Step 5 (Addition):</strong> Total result: 1 + 0 = <strong>1</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Trigonometry & Physics:</strong> Analyzing wave patterns, alternating currents (AC circuits), or projectile trajectories using spatial functions.</li>
+                            <li><strong>Financial Math:</strong> Utilizing natural logarithms (<code>ln</code>) and Euler's number (<code>e</code>) to calculate continuous compound interest in quantitative finance models.</li>
+                            <li><strong>Data Science:</strong> Converting raw exponential growth data sets into linear visual formats by taking the base-10 logarithm (<code>log</code>) of the data points.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does this calculator use Radians or Degrees for Sin/Cos/Tan?",
+                            answer: "In standard programmatic environments (like JavaScript Math libraries), trigonometric functions always expect the input to be in Radians natively. To use degrees, you must manually convert (Degree × π / 180)."
+                        },
+                        {
+                            question: "What is Euler's Number (e)?",
+                            answer: "Euler's number is a mathematical constant approximately equal to 2.71828. It is the fundamental base of the natural logarithm and forms the foundation of all mathematical models regarding continuous growth or decay."
+                        },
+                        {
+                            question: "Why do I get 'Syntax Error'?",
+                            answer: "This is usually caused by unclosed parentheses, missing operators between brackets, or providing negative inputs to functions that cannot mathematically handle them (like taking the square root of a negative scalar)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Order of Operations Calculator", path: "/order-of-operations-calculator", desc: "A detailed breakdown of how mathematical parsing hierarchy works step-by-step." },
+                        { name: "Fraction Simplifier", path: "/fraction-simplifier-calculator", desc: "Reduce raw mathematical outputs into clean, simplified rational fractions." },
+                        { name: "Logarithm Calculator", path: "/logarithm-calculator", desc: "Calculate logs with custom, non-standard bases." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
