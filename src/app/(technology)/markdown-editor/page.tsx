@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 // Extremely basic markdown parser for a completely dependency-free previewer
 const parseMarkdown = (md: string) => {
@@ -85,6 +86,70 @@ export default function MarkdownEditor() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Markdown Editor", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Markdown Editor & Live Preview"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Markdown Editor</strong> provides a real-time, side-by-side workspace to write standard plain-text Markdown and instantly visualize exactly how it will render as formatted HTML on the web.</p>
+                            <p>Markdown is the undisputed standard for writing on the internet. Instead of clicking cumbersome buttons for bolding or headers (like in Microsoft Word), you simply add lightweight punctuation marks to your text. It is fast, platform-independent, and developer-friendly.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Markdown strictly avoids complex tags in favor of intuitive, visual syntax that can be read even in its completely raw state:</p>
+                            <div className="bg-violet-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-violet-900 border border-violet-100 flex flex-col gap-2">
+                                <div># H1 Main Header</div>
+                                <div>## H2 Sub-header</div>
+                                <div>**Bold Text** and *Italic Text*</div>
+                                <div>- Unordered List Item</div>
+                                <div>1. Ordered List Item</div>
+                                <div>[Link Text](https://example.com)</div>
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Zero Lock-in:</strong> Because Markdown is just pure text, a file created in 2004 will open perfectly in any editor built in 2040. proprietary formats like .docx do not have this guarantee.</li>
+                                <li><strong>HTML Conversion:</strong> Under the hood, parsers instantly strip the asterisks and hashes and silently convert them into standard HTML <code>&lt;strong&gt;</code> and <code>&lt;h1&gt;</code> tags.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You need to write documentation for a new open-source project on GitHub (a README.md file). You want a professional layout but don't want to code raw HTML.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Input:</strong> You type <code>`console.log("Hello")`</code> on the left side of the editor.</li>
+                                <li><strong>The Output:</strong> Almost instantly, the right side of the screen renders it as a distinct, colored block of inline code, exactly as it will appear on GitHub or Slack.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Software Documentation:</strong> Nearly every major software explicitly requires a `README.md` file. Developers use live editors to ensure their complex code blocks and tables format correctly before publishing.</li>
+                            <li><strong>Blogging (Static Sites):</strong> Modern web publishing platforms (like Hugo, Next.js, or Ghost) use pure Markdown files for all their articles instead of storing HTML in heavy databases.</li>
+                            <li><strong>Note Taking apps:</strong> Obsidian, Notion, and Roam Research all natively utilize Markdown syntax to allow users perfectly seamless, keyboard-only deep formatting.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Is there an official, universal standard for Markdown?",
+                            answer: "Yes and No. John Gruber created the original specification in 2004, but it was heavily limited. 'CommonMark' is the attempt to standardize it, while 'GitHub Flavored Markdown (GFM)' is the most widely used extension that adds support for things like tables and task lists."
+                        },
+                        {
+                            question: "Can I just put standard HTML inside a Markdown file?",
+                            answer: "Absolutely. Standard Markdown allows you to drop literal raw HTML anywhere inside the document (like an iframe or a complex div), and the parser will simply pass it straight through to the final output."
+                        },
+                        {
+                            question: "Why not just use a standard WYSIWYG editor like Word/Docs?",
+                            answer: "Speed and portability. You never have your hands leave the keyboard to use your mouse. Furthermore, Word documents inject thousands of lines of hidden XML garbage into the background; Markdown is 100% clean text."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Diff Checker", path: "/diff-checker", desc: "Compare two massive versions of your documentation file to identify changes." },
+                        { name: "JSON Validator", path: "/json-validator", desc: "Ensure your front-matter metadata configuration is structurally valid." },
+                        { name: "Word Count Calculator", path: "/word-count-calculator", desc: "Analyze the exact length, density, and reading time of your written article." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

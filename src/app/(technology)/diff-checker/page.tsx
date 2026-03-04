@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function DiffChecker() {
     // Very naive diff checker: highlights completely identical lines or completely different lines
@@ -106,6 +107,60 @@ export default function DiffChecker() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Diff Checker", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Code & Text Diff Checker"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Diff Checker</strong> performs a side-by-side comparison of two blocks of text or code, instantly highlighting exactly which lines have been added, modified, or deleted.</p>
+                            <p>When dealing with thousands of lines of code or complex legal documents, finding a single changed word manually is practically impossible. Diff (difference) checking automates this entirely, acting as the foundation for modern version control systems like Git.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>While this specific tool uses a rapid line-by-line strict matching approach, professional diff tools rely on complex computer science algorithms (like the Myers Difference Algorithm) to calculate the "Longest Common Subsequence."</p>
+                            <p>The goal is always to find the series of changes (edits, inserts, deletes) that require the <strong>absolute fewest operations</strong> to turn Text A into Text B.</p>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You have a configuration file causing a server crash. You compare the current broken version against last week's working backup.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Original (Line 42):</strong> <code>timeout_seconds = 600</code></li>
+                                <li><strong>Modified (Line 42):</strong> <code>timeout_seconds = 60</code></li>
+                                <li><strong>The Result:</strong> The Diff Checker instantly flags Line 42 in stark red/green, revealing someone accidentally deleted a single '0', causing the server to timeout 10x faster.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Software Development:</strong> Before merging new code into a master project, developers use diffs (like GitHub Pull Requests) to review the exact lines of code a teammate altered, ensuring no malicious or buggy code is introduced.</li>
+                            <li><strong>Legal & Contracts:</strong> Lawyers compare generic contract templates against modified versions returned by the opposing party to ensure no sneaky, unapproved clauses were inserted into the middle of a 50-page PDF.</li>
+                            <li><strong>Content Auditing:</strong> Editors compare article drafts to see exactly which sentences a freelance writer updated after receiving feedback.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why does the tool show an entire line changed for just one typo?",
+                            answer: "This specific tool operates on 'Line-by-Line' diffing. If a single character on a 100-character line is altered, the entire line is mathematically considered 'different' from the original."
+                        },
+                        {
+                            question: "Is my code sent to a server for comparison?",
+                            answer: "No. This Diff Checker runs 100% locally in your browser using Javascript. Your sensitive code or confidential documents never leave your computer."
+                        },
+                        {
+                            question: "What does a 'Merge Conflict' mean in diffing?",
+                            answer: "A conflict happens when two different people try to alter the exact same line of code simultaneously. The diff engine cannot automatically decide who is 'right', forcing a human to manually review the diff and choose."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "JSON Validator", path: "/json-validator", desc: "Format minified code before diffing it to actually see line-by-line changes." },
+                        { name: "Regex Tester", path: "/regex-tester", desc: "Use Regex to mass-find syntax errors revealed by your diff check." },
+                        { name: "Markdown Editor", path: "/markdown-editor", desc: "Write cleanly formatted documentation outlining the code changes you just made." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

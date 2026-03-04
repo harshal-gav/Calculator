@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function JsonToCsv() {
     const [jsonInput, setJsonInput] = useState('[{"name": "Alice", "age": 30}, {"name": "Bob", "age": 25}]');
@@ -136,6 +137,73 @@ export default function JsonToCsv() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "JSON to CSV Converter", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="JSON to CSV Converter & Exporter"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>JSON to CSV Converter</strong> automatically flattens arrays of deeply nested JSON (JavaScript Object Notation) data into clean, spreadsheet-ready CSV (Comma-Separated Values) files.</p>
+                            <p>While developers love JSON for moving data across the internet, data analysts and business teams rely entirely on Excel, Google Sheets, and SQL databases. This tool instantly bridges the gap between raw web code and usable business spreadsheets.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The conversion process requires the parser to extract the unique "Keys" from the JSON objects to act as the Column Headers, and then map every subsequent "Value" into the correct row:</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-emerald-900 border border-emerald-100 flex flex-col gap-2">
+                                {`[
+  { "id": 1, "name": "Apple", "price": 1.99 },
+  { "id": 2, "name": "Banana", "price": 0.99 }
+]`}
+                                <div className="text-center font-bold text-emerald-600">↓ Converts To ↓</div>
+                                {`id,name,price
+1,Apple,1.99
+2,Banana,0.99`}
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Headers:</strong> The parser scans the first object (or all objects) to generate a master list of all possible column names.</li>
+                                <li><strong>Delimiters:</strong> A comma (,) acts as the wall between columns. A line break (\n) signifies a brand new row.</li>
+                                <li><strong>Escaping:</strong> If a piece of data actually contains a comma (like "Smith, John"), the converter must wrap it in double-quotes to prevent Excel from accidentally splitting his name across two columns.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You download a massive database of new users from your website. The raw API output is in JSON format, but your marketing team needs to load those emails into Mailchimp.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Challenge:</strong> Mailchimp software only accepts .CSV uploads, while your server only spits out raw JSON grids.</li>
+                                <li><strong>The Solution:</strong> You paste the giant JSON array into this tool. It instantly rips out all the Javascript syntax (curley braces, colons, brackets) and reformats names and emails into a clean, flat 2D grid ready for download.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Financial Reporting:</strong> Extracting chaotic sales data payloads from Stripe or PayPal's Developer APIs and flattening them so accountants can run pivot tables in Excel.</li>
+                            <li><strong>Database Migrations:</strong> Exporting custom user data from a NoSQL database (like MongoDB, which stores JSON) into a format that can be instantly imported into a rigid SQL database (like MySQL or Postgres).</li>
+                            <li><strong>Lead Generation:</strong> Web scrapers pull thousands of messy product reviews in JSON format, using this tool to convert them into a clean CSV for sentiment analysis in Python Pandas.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What happens if my JSON objects have different keys?",
+                            answer: "A smart converter handles this gracefully. It scans every single object to build a 'Master Header' list. If Object #1 has 'name' and Object #2 has 'name' AND 'age', the converter simply leaves the 'age' column blank for Object #1."
+                        },
+                        {
+                            question: "How does the converter handle deeply nested objects inside the JSON?",
+                            answer: "Standard converters either stringify the nested object (turning it into text) or completely flatten it (e.g., turning `address: {city: 'NY'}` into a column named `address.city`). The latter makes for much cleaner spreadsheets."
+                        },
+                        {
+                            question: "Will opening the CSV in Excel ruin my formatting?",
+                            answer: "It can. Excel is notoriously aggressive at reformatting data. If you have an ID number that starts with a zero (e.g., '0045'), Excel will often aggressively delete the zeros and just display '45'. You must import the data as 'Text' in Excel to avoid this."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "JSON Validator", path: "/json-validator", desc: "Ensure your JSON syntax is 100% correct before attempting to convert it." },
+                        { name: "Regex Tester", path: "/regex-tester", desc: "Use Regex to clean up or manipulate specific strings inside your CSV cells." },
+                        { name: "Markdown Editor", path: "/markdown-editor", desc: "Format your flattened data into standard Github tables for documentation." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

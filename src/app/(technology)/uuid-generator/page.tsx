@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function UuidGenerator() {
     const [count, setCount] = useState('1');
@@ -100,6 +101,66 @@ export default function UuidGenerator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "UUID Generator", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="UUID (v4) Generator & Bulk Creator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>UUID Generator</strong> instantly creates mathematically random Universally Unique Identifiers (specifically Version 4). These are 36-character alphanumeric strings universally used in software to give data records a perfectly unique ID.</p>
+                            <p>Unlike sequential database IDs (1, 2, 3) which can be easily guessed or run into conflicts when merging databases, UUIDs are generated randomly. The mathematical chance of generating the exact same UUID twice is physically impossible.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>A standard UUID v4 contains 32 hexadecimal digits and 4 hyphens, structured exactly like this:</p>
+                            <div className="bg-fuchsia-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-fuchsia-900 border border-fuchsia-100 flex flex-col gap-2 center">
+                                8-4-4-4-12 (e.g., 123e4567-e89b-12d3-a456-426614174000)
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Hexadecimal:</strong> Made entirely of numbers (0-9) and lowercase letters (a-f).</li>
+                                <li><strong>Version 4:</strong> The 13th character is strictly a '4' to indicate it was generated via pure randomness, not time or hardware-based data.</li>
+                                <li><strong>Variant:</strong> The 17th character will always be an 8, 9, A, or B to identify the UUID variant.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine you are building a globally distributed chat app where millions of messages are sent every second.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Problem:</strong> If Server A assigns ID #1000 to a message, and Server B also assigns ID #1000 to a different message, merging those servers later will cause a massive data collision.</li>
+                                <li><strong>The Solution:</strong> The app relies on UUIDs instead. Server A creates message <code>527a...</code> and Server B creates message <code>9f3c...</code>. There is zero risk of collision, regardless of how many servers are running.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Database Primary Keys:</strong> Developers use UUIDs instead of auto-incrementing integers to obscure how many users/products are stored in their database from public view.</li>
+                            <li><strong>Session Tokens:</strong> Automatically assigning a unique cookie to every anonymous visitor on an e-commerce website to track their exact shopping cart path over time.</li>
+                            <li><strong>Distributed Systems (Microservices):</strong> Passing a single "Trace ID" (a UUID) through a massive spiderweb of 50 different microservices so developers can track the exact path of a single failing request.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Are UUIDs completely secure to use for passwords?",
+                            answer: "No. While they are statistically impossible to guess by brute force, they are solely designed to be 'Unique', not 'Secret'. If you need a secure, encrypted token for authorization, use JWTs or standard cryptographic hashes instead."
+                        },
+                        {
+                            question: "What is the difference between UUID v1 and v4?",
+                            answer: "Version 1 generates an ID based on your computer's MAC address and the exact current time. Version 4 (this generator) relies 100% on pure random number generation, making it the overwhelming modern standard."
+                        },
+                        {
+                            question: "What are the exact odds of a collision?",
+                            answer: "There are 340 undecillion (3.4 × 10^38) possible v4 UUIDs. To even reach a 50% chance of a collision, you would need to generate 1 billion UUIDs every single second... for 85 years."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Random String Generator", path: "/random-string-generator", desc: "Generate purely random strings without being restricted to the UUID hexadecimal format." },
+                        { name: "Base64 Converter", path: "/base64-converter", desc: "Convert generated IDs into transmission-safe Base64 encoding." },
+                        { name: "JWT Decoder", path: "/jwt-decoder", desc: "Inspect JSON Web Tokens to see if they utilize UUIDs in their payload." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

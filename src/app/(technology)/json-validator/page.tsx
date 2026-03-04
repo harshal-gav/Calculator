@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function JsonValidator() {
     const [jsonInput, setJsonInput] = useState('{\n  "property": "value",\n  "array": [1, 2, 3]\n}');
@@ -112,6 +113,73 @@ export default function JsonValidator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "JSON Validator", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="JSON Validator & Formatter"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>JSON Validator</strong> instantly checks your JSON (JavaScript Object Notation) strings for structural errors, missing commas, and unmatched brackets, while also allowing you to format (pretty-print) the data into a highly readable structure.</p>
+                            <p>JSON is the universal language of the web. It is how almost every modern website, mobile app, and database sends data back and forth. A single missing quote mark in a 10,000-line JSON file can completely crash an application.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Valid JSON must strictly adhere to specific syntax rules. It primarily consists of Key-Value pairs wrapped in curly braces (Objects) or square brackets (Arrays):</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-emerald-900 border border-emerald-100 flex flex-col gap-2">
+                                {`{
+  "keyName": "String Value",
+  "numberValue": 42,
+  "booleanValue": true,
+  "arrayValue": [1, 2, 3]
+}`}
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Strings:</strong> Must always be enclosed in double quotes (<code>"..."</code>), never single quotes.</li>
+                                <li><strong>Keys:</strong> All keys (property names) must also be enclosed in double quotes.</li>
+                                <li><strong>Commas:</strong> The final item in an object or array must NOT have a trailing comma.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You receive an API response that is failing to load on your website. The raw data looks like this: <strong>{`{ id: 101, name: 'John Doe', inactive: False, }`}</strong></p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Error 1 (Keys):</strong> The keys <code>id</code>, <code>name</code>, and <code>inactive</code> are missing double quotes.</li>
+                                <li><strong>Error 2 (Strings):</strong> The string <code>'John Doe'</code> uses single quotes instead of double.</li>
+                                <li><strong>Error 3 (Booleans):</strong> Depending on the parser, <code>False</code> should usually be lowercase <code>false</code>.</li>
+                                <li><strong>Error 4 (Trailing Comma):</strong> The comma after <code>False,</code> is invalid because there are no more items following it.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>API Debugging:</strong> Developers testing a new backend server connection use this tool to verify the server is outputting perfect JSON before attempting to parse it in their frontend app.</li>
+                            <li><strong>Configuration Files:</strong> Many massive software applications (like VS Code or Docker) use JSON for configuration settings. A validator ensures you haven't broken the syntax before saving the file.</li>
+                            <li><strong>Data Extraction:</strong> Analysts pasting a massive wall of squished, minified JSON text can use the "Format Output" feature to instantly expand it into thousands of readable, indented lines.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why does JSON use double quotes instead of single quotes?",
+                            answer: "It is simply the strict standard defined by Douglas Crockford when creating JSON. While Javascript allows single quotes for objects, JSON was designed to be language-independent, and adhering strictly to double quotes ensures it can be parsed universally by Python, Java, PHP, etc."
+                        },
+                        {
+                            question: "What is 'Minified' JSON?",
+                            answer: "Minified JSON has all spaces, tabs, and line breaks removed to make the file size as small as mathematically possible for faster internet transmission. Our tool can un-minify (format) it back into readable text."
+                        },
+                        {
+                            question: "Can JSON handle Date objects or functions?",
+                            answer: "No. JSON is strictly for storing raw data (Strings, Numbers, Booleans, Arrays, Objects, and Null). It cannot store executable code, functions, or native Date objects (dates must be converted to standard text strings)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "JSON to CSV Converter", path: "/json-to-csv", desc: "Convert your validated JSON arrays directly into Excel-ready CSV sheets." },
+                        { name: "Regex Tester", path: "/regex-tester", desc: "Extract specific string patterns from inside massive JSON files." },
+                        { name: "Diff Checker", path: "/diff-checker", desc: "Compare two JSON payloads to see exactly what API data changed." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
