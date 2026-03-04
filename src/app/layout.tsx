@@ -20,12 +20,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Calculators All",
+    template: "%s | Calculator All",
     default: "Free Online Calculators for Everything",
   },
   description: "Free online calculators for math, health, finance, and everyday utilities. Fast, easy-to-use tools to help you solve everyday calculations instantly.",
   keywords: ["calculator", "online calculator", "free calculator", "math", "finance", "health", "BMI", "mortgage"],
-  authors: [{ name: "Calculators All" }],
+  authors: [{ name: "Calculator All" }],
   openGraph: {
     title: "Free Online Calculators for Everything",
     description: "Discover a comprehensive collection of free online calculators for math, health, finance, and technology.",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   appleWebApp: {
-    title: "Calculators All",
+    title: "Calculator All",
     statusBarStyle: "default",
   },
 };
@@ -51,6 +51,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1126148240601289"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-gray-50`}

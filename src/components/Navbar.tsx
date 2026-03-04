@@ -7,7 +7,7 @@ export default function Navbar() {
                 <div className="flex flex-col sm:flex-row justify-between items-center py-4 sm:h-16 sm:py-0">
                     <div className="flex items-center mb-4 sm:mb-0 cursor-pointer">
                         <Link href="/" className="flex-shrink-0 flex items-center font-bold text-2xl tracking-tight">
-                            Calculators All
+                            Calculator All
                         </Link>
                     </div>
                     <div className="flex flex-wrap justify-center items-center gap-2 sm:space-x-4">
