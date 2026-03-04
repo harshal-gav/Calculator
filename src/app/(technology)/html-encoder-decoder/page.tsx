@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function HtmlEncoderDecoder() {
     const [inputStr, setInputStr] = useState('<h1>Hello World & "Welcome"!</h1>');
@@ -96,6 +97,66 @@ export default function HtmlEncoderDecoder() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "HTML Encoder/Decoder", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="HTML Entity Encoder & Decoder"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>HTML Encoder/Decoder</strong> safely converts reserved HTML characters (like angle brackets and ampersands) into their corresponding safe "Entities", or conversely, translates those entities back into readable text.</p>
+                            <p>Every web browser relies on characters like <code>&lt;</code> and <code>&gt;</code> to understand where structural tags begin and end. If a user tries to type those literal characters into a comment box or blog post, the browser will become confused and try to execute them as code, ruining the page entirely.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>HTML Encoding is essentially a rigorous Find-and-Replace operation focusing on these 5 hyper-critical characters:</p>
+                            <div className="bg-orange-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-orange-900 border border-orange-100 grid grid-cols-2 gap-2 text-center">
+                                <div><span className="font-bold text-lg">&amp;</span> → <code>&amp;amp;</code></div>
+                                <div><span className="font-bold text-lg">&lt;</span> → <code>&amp;lt;</code></div>
+                                <div><span className="font-bold text-lg">&gt;</span> → <code>&amp;gt;</code></div>
+                                <div><span className="font-bold text-lg">"</span> → <code>&amp;quot;</code></div>
+                                <div className="col-span-2"><span className="font-bold text-lg">'</span> → <code>&amp;#39;</code></div>
+                            </div>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine you are a teacher writing an article on how to code Javascript. You want to display this literal sentence on your website:</p>
+                            <div className="p-3 bg-zinc-100 rounded my-2 font-mono text-sm">Use the &lt;script&gt; tag.</div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Without Encoding (Disaster):</strong> The web browser sees <code>&lt;script&gt;</code>, assumes you are trying to execute actual code, hides the word entirely from the screen, and potentially causes a massive security vulnerability.</li>
+                                <li><strong>With Encoding (Safe):</strong> Using this tool, you encode the sentence into <code>Use the &amp;lt;script&amp;gt; tag.</code> The browser safely displays the angle brackets to the user without trying to execute them.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Preventing XSS Attacks:</strong> Cross-Site Scripting (XSS) is the most common web hack in the world. Encoding absolutely all user input forces malicious <code>&lt;script&gt;</code> tags to render as harmless text instead of executing in the database.</li>
+                            <li><strong>Writing Documentation:</strong> Developers creating tutorials on "How to build a website" must constantly encode their examples, otherwise the browser will just render their tutorial as a website rather than displaying the raw code.</li>
+                            <li><strong>Data Extraction Validation:</strong> Decoding massive XML or HTML payloads scraped from older websites that aggressively encoded every single punctuation mark, returning them to a readable state.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What exactly is an 'Entity' in HTML?",
+                            answer: "An entity is safely-formatted text beginning with an ampersand (&) and ending with a semicolon (;). When the browser sees this specific wrapper, it knows to draw a literal symbol on the screen instead of trying to process it as HTML code."
+                        },
+                        {
+                            question: "Does this tool encode every single character?",
+                            answer: "No. While it is technically possible to encode every letter (turning 'a' into '&#97;'), this calculator specifically targets only the structurally 'dangerous' characters that break HTML rendering."
+                        },
+                        {
+                            question: "Is HTML Encoding the same as URL Encoding?",
+                            answer: "No. URL Encoding (percent-encoding) is used to safely transmit data across the internet via a web address (turning a space into '%20'). HTML Encoding specifically protects the internal structure of web pages."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "URL Encoder/Decoder", path: "/url-encoder-decoder", desc: "Format unsafe characters specifically for transmission in web browser address bars." },
+                        { name: "Base64 Converter", path: "/base64-converter", desc: "Completely obfuscate entire files or strings into pure, safe ASCII characters." },
+                        { name: "Regex Tester", path: "/regex-tester", desc: "Use Regex to search massive documents specifically for un-encoded angle brackets." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

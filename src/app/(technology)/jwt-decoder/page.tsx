@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function JwtDecoder() {
     const [jwtInput, setJwtInput] = useState('');
@@ -106,6 +107,66 @@ export default function JwtDecoder() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "JWT Decoder", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="JSON Web Token (JWT) Decoder"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>JWT Decoder</strong> instantly cracks open encoded JSON Web Tokens to reveal their hidden Header and Payload data structures.</p>
+                            <p>JWTs are the modern standard for securely transmitting identity information between a user and a server. When you log into almost any modern app, you are handed a JWT. This long, gibberish string acts as your digital "Passport," proving who you are without the server needing to check the primary database on every single click.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>A standard JWT is always constructed from exactly three distinct parts, separated by literal periods (<code>.</code>):</p>
+                            <div className="bg-purple-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-purple-900 border border-purple-100 flex flex-col gap-2 center font-bold text-center">
+                                Header.Payload.Signature
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong className="text-rose-600">Header:</strong> Identifies which encryption algorithm was used (e.g., HS256, RS256).</li>
+                                <li><strong className="text-indigo-600">Payload:</strong> The actual JSON data (claims) being transmitted, such as user ID, role (admin/user), and exact expiration time.</li>
+                                <li><strong className="text-emerald-600">Signature:</strong> A cryptographic hash combining the Header, Payload, and a secret server password to guarantee the token hasn't been altered by hackers.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You are debugging a "401 Unauthorized" error on your website. Your code has generated a token that looks like this: <code>eyJhbGci...</code></p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Problem:</strong> The server keeps rejecting the user, but you have no idea why just by looking at the gibberish string.</li>
+                                <li><strong>The Solution:</strong> You paste the string into the decoder. It instantly translates the Payload, revealing an "exp" (expiration) timestamp that occurred 5 minutes ago. You immediately realize your token refresh logic is broken.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>API Authentication Debugging:</strong> Frontend developers constantly use decoders to verify if the backend server actually included their User ID or 'Admin' role flag inside the token payload before trying to render secure pages.</li>
+                            <li><strong>Security Auditing:</strong> Cybersecurity experts inspect exposed tokens to see if careless developers accidentally hardcoded sensitive data (like plain-text passwords or credit cards) directly into the decoded payload.</li>
+                            <li><strong>OAuth Integrations:</strong> Validating the structure of access tokens returned from massive third-party identity providers like Google Workspace or Auth0.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does decoding a JWT mean I have hacked or decrypted it?",
+                            answer: "No. The Header and Payload of a standard JWT are ONLY 'Base64 Encoded' (which is just a translation of text), they are not 'Encrypted'. Anyone with a decoder can read the data. This is why you must never put passwords inside a JWT."
+                        },
+                        {
+                            question: "If anyone can decode it, how is it secure?",
+                            answer: "The security comes entirely from the 3rd part of the token: the Signature. While hackers can decode and alter the Payload (e.g., changing 'role:user' to 'role:admin'), doing so mathematically invalidates the Signature. The server will reject the altered token entirely."
+                        },
+                        {
+                            question: "Is it safe to paste my production tokens here?",
+                            answer: "Yes. This decoder runs 100% locally using Javascript in your browser. The token is never transmitted back to our servers. However, as a general security rule, you should always treat production JWTs as highly sensitive passwords."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Base64 Converter", path: "/base64-converter", desc: "Manually encode or decode specific strings without requiring the strict 3-part JWT structure." },
+                        { name: "JSON Validator", path: "/json-validator", desc: "Ensure the raw Javascript objects you plan to inject into a token payload are structurally valid." },
+                        { name: "UUID Generator", path: "/uuid-generator", desc: "Generate secure, random UUIDs to act as the primary 'Subject ID' (sub) inside your token claims." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

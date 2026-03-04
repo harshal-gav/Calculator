@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function BusinessDaysCalculator() {
     const today = new Date();
@@ -163,6 +164,75 @@ export default function BusinessDaysCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Business Days Calculator", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Business & Working Days Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Business Days Calculator</strong> accurately counts the total number of working days between two dates, specifically excluding weekends (Saturdays and Sundays).</p>
+                            <p>In logistics, finance, and project management, absolute chronological time is often irrelevant. If an invoice is due in "10 Business Days" on a Friday, the actual chronological due date is 14 days away because the weekends "pause" the countdown. This tool handles that complex counting logic instantly.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The core logic requires iterating through a raw calendar span and filtering out specific days of the week.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Step 1 (Find Total Span):</strong> Subtract the Start Date from the End Date to find the absolute number of calendar days between the two.</li>
+                                <li><strong>Step 2 (The Loop):</strong> The algorithm loops through every single day individually, checking its "Day Index" (0=Sunday, 1=Monday... 6=Saturday).</li>
+                                <li><strong>Step 3 (Filtering):</strong> If the Day Index is 0 or 6 (and exclusions are checked), that day is discarded. The remaining valid days are summed up to give the final Working Days count.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You place a commercial printing order on <strong>Wednesday, May 1st</strong>. The print shop promises delivery in "5 Business Days."</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Count Begins:</strong>
+                                    <br />Thursday, May 2 = Day 1
+                                    <br />Friday, May 3 = Day 2
+                                </li>
+                                <li><strong>The Weekend Pause:</strong>
+                                    <br />Saturday, May 4 = Excluded (Does not count)
+                                    <br />Sunday, May 5 = Excluded (Does not count)
+                                </li>
+                                <li><strong>The Final Span:</strong>
+                                    <br />Monday, May 6 = Day 3
+                                    <br />Tuesday, May 7 = Day 4
+                                    <br />Wednesday, May 8 = Day 5 (Delivery Date)
+                                </li>
+                                <li><strong>The Output:</strong> Chronologically, it took 7 full calendar days, but officially, it was exactly 5 Business Days.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Logistics & Shipping:</strong> When a package tracking site says "Transit time: 3-5 Working Days", determining the absolute latest date you can expect the delivery to arrive before contacting support.</li>
+                            <li><strong>Finance & Invoicing:</strong> "Net 30" payment terms often refer to calendar days, but specific contract clauses like "Settlement in 3 business days" require filtering out bank holidays and weekends to determine the exact transfer date.</li>
+                            <li><strong>HR & Payroll Processing:</strong> Calculating the exact number of working days a new employee was active during a partial initial month to prorate their very first salary paycheck accurately.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Are public/bank holidays automatically excluded?",
+                            answer: "No, not automatically. Because public holidays vary drastically depending on your specific country, state, and even company, this core calculator only filters out standard absolute weekends (Saturdays and Sundays)."
+                        },
+                        {
+                            question: "Why does it ask if I want to exclude Saturdays AND Sundays?",
+                            answer: "Because 'Business Days' are not globally identical. In much of the Middle East (e.g., UAE, Israel), the standard workweek is Sunday through Thursday, meaning their 'Weekends' are Friday and Saturday. This tool allows international flexibility."
+                        },
+                        {
+                            question: "Does the output count the End Date itself?",
+                            answer: "Yes. This calculator uses 'Inclusive' counting. If you set the Start Date and End Date to the exact same Tuesday, the calculator outputs '1 Business Day' (Tuesday itself)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Days Calculator", path: "/days-calculator", desc: "Add or subtract exact chronological time (including weekends) to find a target date." },
+                        { name: "Time Card Calculator", path: "/time-card-calculator", desc: "Sum up daily clocked hours to determine total weekly work time and gross pay." },
+                        { name: "Salary Calculator", path: "/salary-calculator", desc: "Convert an hourly wage into an annual salary assuming standard 260 yearly business days." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

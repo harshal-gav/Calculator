@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function DaysCalculator() {
     // Local date for default
@@ -121,6 +122,63 @@ export default function DaysCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Days Calculator", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Days Content Calculator: Add or Subtract Time"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Days Calculator</strong> allows you to instantly pinpoint an exact future or past date by mathematically adding or subtracting a specific combination of years, months, weeks, and days from a starting point.</p>
+                            <p>Mental calendar math is notoriously difficult because human timekeeping is messy. Leap years change February's length, months randomly alternate between 30 and 31 days, and centuries have complex leap-rules. This tool handles all backend chronological logic automatically.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The calculator utilizes the standard Gregorian Calendar algorithm to evaluate date shifts. Under the hood, modern programming converts your "Start Date" into an exact <strong>Unix Timestamp</strong> (the total number of milliseconds that have passed since January 1, 1970).</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Adding Days/Weeks:</strong> This is perfectly linear. Adding 3 weeks simply adds exactly 21 days (1,814,400,000 milliseconds) to the starting timestamp.</li>
+                                <li><strong>Adding Months:</strong> This is complex constraint computing. If you start on <em>January 31st</em> and add 1 Month, the result is technically <em>February 31st</em> (which doesn't exist). Standard algorithms will aggressively "roll over" this invalid date, landing you firmly on <em>March 3rd</em> (or March 2nd on leap years).</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You sign a critical 18-month commercial lease starting on October 15, 2023. Your contract legally requires you to give a "60-Day Notice of Intent to Vacate" before the lease permanently renews itself.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Step 1 (Find the End):</strong> Start at Oct 15, 2023. Add exactly 1 Year and 6 Months. Output: <em>April 15, 2025</em>.</li>
+                                <li><strong>Step 2 (Find the Notice Deadline):</strong> Start at April 15, 2025. Subtract exactly 60 Days. Output: <em>February 14, 2025</em>.</li>
+                                <li><strong>The Result:</strong> If you don't send an email by Valentine's Day, you are legally trapped in the lease for another year.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Legal & Compliance Deadlines:</strong> Lawyers calculating the exact "90-day statute of limitations" or "30 clear business days" required to officially file court documents or respond to subpoenas without missing critical expiry dates.</li>
+                            <li><strong>Pregnancy tracking:</strong> Expecting mothers using the standard medical constant of exactly 280 days added to the date of their last missed cycle to identify their exact projected due date.</li>
+                            <li><strong>Project Management (Gantt Charts):</strong> Construction managers determining the exact completion date of a house if Phase 1 takes 4 weeks, Phase 2 takes 16 days, and Phase 3 takes 2 months.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does the calculator account for leap years?",
+                            answer: "Yes, absolutely. If you add 1 year to February 20th, 2023, you land on Feb 20, 2024. However, that mathematical jump accurately counted 366 passing days instead of the normal 365, directly accounting for the extra February 29th."
+                        },
+                        {
+                            question: "Are weekends (Saturday/Sunday) included in 'Days'?",
+                            answer: "Yes. This tool adds normal, absolute chronological days. If you specifically need to skip weekends and only count Monday-Friday work days, you must use our dedicated Business Days Calculator instead."
+                        },
+                        {
+                            question: "What happens if I subtract time into BC (Before Christ)?",
+                            answer: "Most modern web programming dates (Javascript) technically break if you subtract into the year 0. Depending on your browser, subtracting 3000 years from today will either throw an error or cap out at the dawn of the Unix Epoch (1970)."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Business Days Calculator", path: "/business-days-calculator", desc: "Calculate day spans while specifically skipping Saturdays, Sundays, and Holidays." },
+                        { name: "Age Calculator", path: "/age-calculator", desc: "Calculate exactly how many years, months, and days old you are right now." },
+                        { name: "Time Card Calculator", path: "/time-card-calculator", desc: "Add hours and minutes together to determine total weekly payroll." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

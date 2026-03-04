@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function RandomGroupGenerator() {
     const [namesInput, setNamesInput] = useState('Alice, Bob, Charlie, Diana, Ethan, Fiona, George, Hannah, Ian, Jane');
@@ -135,6 +136,68 @@ export default function RandomGroupGenerator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Random Group Generator", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Random Team & Group Generator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Random Group Generator</strong> instantly divides a large list of names, students, or items into completely randomized, evenly distributed teams or groups.</p>
+                            <p>Whether you're a teacher splitting a classroom for a project, a manager forming breakout session groups, or a gamer assigning squads, human bias (even unintentional) ruins fair team creation. This tool relies on strict cryptographic randomization to ensure pure, unbiased groupings.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Under the hood, this generator uses the industry-standard <strong>Fisher-Yates Shuffle Algorithm</strong> to randomize the master list before distributing members. The process works like this:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Step 1 (Extraction):</strong> The input text is scanned, ignoring empty lines and extracting every valid name separated by a comma or newline.</li>
+                                <li><strong>Step 2 (The Shuffle):</strong> The computer picks the last name on the list, generates a random number, and swaps that name with whatever name currently sits at the random number's position. It repeats this for every single name working backwards.</li>
+                                <li><strong>Step 3 (Distribution):</strong> Similar to dealing a deck of cards to players around a table, the newly shuffled list is dealt into the requested number of groups one by one until the master list is empty.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You have 10 employees (Alice, Bob, Charlie... Jane) and need to create 3 random task force teams.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Input:</strong> You enter all 10 names and set the target groups to "3".</li>
+                                <li><strong>The Shuffling:</strong> The algorithm instantly scrambles the order: <code>[Charlie, Jane, Alice, Bob, Fiona...]</code></li>
+                                <li><strong>The Dealing:</strong>
+                                    <br />Group 1 gets Charlie. Group 2 gets Jane. Group 3 gets Alice.
+                                    <br />Group 1 gets Bob. Group 2 gets Fiona...
+                                </li>
+                                <li><strong>The Output:</strong> Groups 1 and 2 end up with 4 members, while Group 3 gets the final remaining 2 members.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Education & Classrooms:</strong> Teachers use team makers to prevent students from always partnering with their best friends, forcing them to interact and collaborate with new classmates.</li>
+                            <li><strong>Corporate Workshops:</strong> Meeting facilitators use breakout-group generators for remote Zoom calls to randomly assign employees from entirely different departments to brainstorm together.</li>
+                            <li><strong>Sports & Gaming:</strong> Quickly assigning balanced, randomized rosters for a casual pickup basketball game or an impromptu online gaming tournament.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What if my total number of people doesn't divide evenly by the number of groups?",
+                            answer: "The algorithm distributes exactly one person to each group in sequential order. If there are leftovers, the first few groups will simply end up with exactly one more member than the final groups. No one is left behind."
+                        },
+                        {
+                            question: "Is this completely random, or does it try to balance things based on previous results?",
+                            answer: "It is 100% purely random every single time you hit generate. It has no memory of past results and does not attempt to mathematically 'balance' skill levels."
+                        },
+                        {
+                            question: "How do I ensure a specific person doesn't end up on a specific team?",
+                            answer: "Pure randomization cannot guarantee separation constraints. If you have specific rules (e.g., 'Alice and Bob cannot be together'), you must generate the groups first and manually swap them afterward if a collision occurs."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Random Name/Item Picker", path: "/random-item-picker", desc: "Spin a randomized wheel to select a single winner out of a large list." },
+                        { name: "List Sorter Tool", path: "/list-sorter", desc: "Alphabetize or formally structure your list of names before randomizing." },
+                        { name: "Online Dice Roller", path: "/dice-roller", desc: "Generate purely random numbers or roll custom dice for tabletop gaming." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
