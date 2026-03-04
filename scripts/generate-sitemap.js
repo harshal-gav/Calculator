@@ -5,7 +5,7 @@ const srcAppDir = path.join(__dirname, '../src/app');
 const publicDir = path.join(__dirname, '../public');
 const sitemapPath = path.join(publicDir, 'sitemap.xml');
 
-const baseUrl = 'https://www.calculators-all.com';
+const baseUrl = 'https://www.calculator-all.com';
 
 // Function to recursively find all route directories
 function getRoutes(dir, basePath = '') {
