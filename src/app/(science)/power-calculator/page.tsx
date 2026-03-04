@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function PowerCalculator() {
     // P = W / t OR P = E / t
@@ -173,6 +174,67 @@ export default function PowerCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Power Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Physics Power Calculator (Watts, Joules & Seconds)"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Power Calculator</strong> is a classical mechanics tool that computes the exact rate at which work is done or energy is transferred within a physical system.</p>
+                            <p>In physics, "Power" is not a measure of total strength, but rather a measure of how <em>fast</em> energy is being used. Doing 100 Joules of work over 10 seconds requires very little power. Doing that exact same 100 Joules of work in 0.1 seconds requires massive power. This tool calculates the exact relationship between Energy (Joules), Time (Seconds), and Power (Watts/Horsepower).</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The core relationship is defined by the standard classical mechanics formula:</p>
+                            <div className="bg-emerald-50 p-4 rounded-xl mt-4 border border-emerald-100 italic text-center text-lg text-emerald-800">
+                                <strong>P = W / t</strong>
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Power (P):</strong> Measured in Watts (W). 1 Watt equals exactly 1 Joule per second.</li>
+                                <li><strong>Work/Energy (W):</strong> Measured in Joules (J). The total absolute amount of energy transferred.</li>
+                                <li><strong>Time (t):</strong> Measured in Seconds (s). The duration over which the work is performed.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine a motor lifting a 50kg box up to a 10-meter high shelf. The total Work (Energy) required to fight gravity is roughly <strong>4,900 Joules</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Scenario A (Slow Motor):</strong> The motor takes <strong>10 seconds</strong> to lift the box.<br />Calculation: 4900 Joules / 10 seconds = <strong>490 Watts</strong> of Power.</li>
+                                <li><strong>Scenario B (Fast Motor):</strong> The motor lifts the box in just <strong>2 seconds</strong>.<br />Calculation: 4900 Joules / 2 seconds = <strong>2,450 Watts</strong> of Power.</li>
+                            </ul>
+                            <p className="mt-2 text-sm text-gray-600">Both motors did the exact same amount of "Work", but the fast motor required five times more "Power".</p>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Mechanical Engineering:</strong> Sizing the exact motor required to operate an elevator, balancing the maximum load capacity (Joules) against the desired travel speed (Seconds).</li>
+                            <li><strong>Electrical Consumption Analysis:</strong> Calculating how long (Time) a battery storing 50,000 Joules of energy can run a 500-Watt appliance before dying.</li>
+                            <li><strong>Athletic Performance:</strong> Cyclists calculating their exact physical Watt output by dividing the mechanical work done pushing the pedals by the duration of their uphill sprint.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "How does this relate to Electrical Power?",
+                            answer: "The underlying physics is identical (1 Watt = 1 Joule/second). However, electrical power is usually calculated using Ohm's Law (Volts × Amps) rather than raw mechanical work over time. If you need circuit calculations, see our Ohm's Law tool."
+                        },
+                        {
+                            question: "What exactly is a 'Horsepower'?",
+                            answer: "It is an outdated imperial unit of mechanical power originally invented by James Watt to compare steam engines to draft horses. 1 standard mechanical Horsepower is exactly equal to 745.7 Watts."
+                        },
+                        {
+                            question: "Why do my electricity bills use 'Kilowatt-Hours' instead of Joules?",
+                            answer: "A Joule is a very small amount of energy. A 100W lightbulb uses 360,000 Joules in just one hour. To make the numbers manageable, utility companies use 'kWh'. 1 kWh is equal to exactly 3.6 million Joules."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Ohm's Law Calculator", path: "/ohms-law-calculator", desc: "Calculate Electrical Power (Watts) purely from Voltage, Current (Amps), and Resistance." },
+                        { name: "Kinetic Energy Calculator", path: "/kinetic-energy-calculator", desc: "Find the total energy in Joules of a moving object using its mass and velocity." },
+                        { name: "Velocity Calculator", path: "/velocity-calculator", desc: "Determine how fast an object is moving by dividing total distance by time." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

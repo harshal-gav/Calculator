@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function RandomItemPicker() {
     const [itemsInput, setItemsInput] = useState("Pizza\nBurgers\nSushi\nTacos\nChinese\nIndian");
@@ -108,6 +109,64 @@ export default function RandomItemPicker() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Random Item Picker", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Random Item Picker & List Chooser"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Random Item Picker</strong> is a digital "hat" that instantly and impartially selects a single winning item from any list of custom text entries you provide.</p>
+                            <p>Whether you're struggling to choose where to eat for lunch, selecting a random winner for a social media giveaway, or deciding which task to tackle first, this tool removes human bias and decision fatigue by relying on a mathematically pure randomized draw.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Behind the spinning animation is a deeply unbiased cryptographic pseudorandom number generator:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Step 1 (Parsing):</strong> The tool takes your text block and splits it by line breaks or commas, ignoring any blank lines.</li>
+                                <li><strong>Step 2 (Indexing):</strong> It assigns a hidden numerical index to every valid item (e.g., Pizza = 0, Burgers = 1, Sushi = 2).</li>
+                                <li><strong>Step 3 (The Core Pick):</strong> It generates a highly precise floating-point number between 0 and 1 using <code>Math.random()</code>, multiplies it by the total number of items, and rounds down to select the winning index.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You have five final candidates for a job interview, but you only have time to interview one of them today.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Input:</strong> You paste the five names (Sarah, John, Emily, Michael, David) into the text box.</li>
+                                <li><strong>The Process:</strong> You click the "Pick For Me!" button. The algorithm quickly shuffles through the names (the "spin" effect) to build anticipation.</li>
+                                <li><strong>The Output:</strong> It lands definitively on <strong>Emily</strong>, finalizing your decision with zero conscious bias.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Social Media Giveaways:</strong> An Instagram influencer exporting all comments into a list and using this tool to fairly select the winner of a sponsored product.</li>
+                            <li><strong>Meeting Icebreakers:</strong> A corporate manager pasting their team's names and picking someone at random to share what they did over the weekend.</li>
+                            <li><strong>Dinner Arguments:</strong> A couple pasting 10 local restaurant names into the box to definitively end the classic "I don't know, where do you want to eat?" debate.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Is this genuinely random, or does it favor items at the top?",
+                            answer: "It is mathematically unbiased. It uses standard JavaScript Math.random(), which has a uniform distribution. Every single item in the list has the exact same statistical probability of being selected."
+                        },
+                        {
+                            question: "What if I accidentally put empty lines in my list?",
+                            answer: "The algorithm automatically detects and strips out empty spaces, blank lines, and trailing commas to ensure the picker never 'wins' on a blank entry."
+                        },
+                        {
+                            question: "How is this different from the Random Group Generator?",
+                            answer: "This tool is designed to pick exactly ONE winner from a list. The Random Group Generator is meant for taking a list of 20 people and splitting them evenly into 4 separate teams of 5 people."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Random Group Generator", path: "/random-group-generator", desc: "Divide a giant list of names into smaller, perfectly randomized teams or squads." },
+                        { name: "Random Number Generator", path: "/random-number-generator", desc: "Generate a purely mathematical random integer between a specific minimum and maximum range." },
+                        { name: "Pomodoro Timer", path: "/pomodoro-timer", desc: "Once the item picker decides what you are going to work on, use this timer to stay focused on it." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function TimeCardCalculator() {
     const [startTime, setStartTime] = useState('08:00');
@@ -155,6 +156,65 @@ export default function TimeCardCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Time Card Calculator", "operatingSystem": "All", "applicationCategory": "UtilitiesApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Employee Time Card & Payroll Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Time Card Calculator</strong> converts raw clock-in and clock-out hours into exact decimal time increments, instantly deducting unpaid breaks to determine your final billable hours and estimated gross paycheck.</p>
+                            <p>Time math is notoriously confusing because there are 60 minutes in an hour, not 100. If you work exactly 30 minutes, payroll software calculates that as "0.50" hours, not "0.30". This completely automates that tedious base-60 to base-10 conversion.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>To accurately calculate payroll hours, you must convert all time to a unified format (Total Minutes) before converting back into decimals.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Step 1 (Find Total Initial Minutes):</strong> Subtract the clock-in time from the clock-out time. E.g. 5:00 PM (1020 mins) - 8:30 AM (510 mins) = 510 total Gross Minutes.</li>
+                                <li><strong>Step 2 (The Deduction):</strong> Subtract any unpaid meal or rest breaks. 510 mins - 30 min lunch = 480 Net Minutes.</li>
+                                <li><strong>Step 3 (Decimal Conversion):</strong> Divide the Net Minutes by 60 to find the billing decimal. 480 / 60 = <strong>8.00 Net Hours</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>An hourly employee works a split shift as a barista. They clock in at <strong>7:45 AM</strong> and clock out at <strong>4:15 PM</strong>, taking a <strong>45-minute</strong> unpaid lunch break. They make $18.50/hr.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Total Span:</strong> 7:45 AM to 4:15 PM is exactly 8 hours and 30 minutes (510 minutes overall).</li>
+                                <li><strong>Deduct the Break:</strong> 510 mins - 45 mins = 465 Paid Minutes.</li>
+                                <li><strong>Decimal Conversion:</strong> 465 / 60 = <strong>7.75 Billable Hours</strong>.</li>
+                                <li><strong>Gross Pay:</strong> 7.75 hours × $18.50 = <strong>$143.38</strong> (Before taxes).</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Freelancer Billing:</strong> Self-employed contractors building accurate client invoices, ensuring they bill for an exact 4.65 hours rather than guessing "around 4 and a half" and losing money.</li>
+                            <li><strong>Payroll Dispute Resolution:</strong> Employees verifying that their employer's automated timecard system is accurately subtracting their lunch breaks and calculating their overtime effectively.</li>
+                            <li><strong>Manager Budgeting:</strong> Store managers projecting the absolute gross daily payroll cost for an upcoming retail shift to ensure they stay under budget.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does this handle 'graveyard' shifts that cross past Midnight?",
+                            answer: "Yes. The algorithm automatically detects if the End Time is numerically smaller than the Start Time (e.g. 10:00 PM to 6:00 AM) and accurately calculates the overnight span by adding a full 24 hours to the backend calculation."
+                        },
+                        {
+                            question: "Why does 15 minutes equal 0.25 hours?",
+                            answer: "Because time is Base-60. 15 minutes is exactly one-quarter of a 60-minute hour (15/60). As a decimal, one-quarter is always written as 0.25."
+                        },
+                        {
+                            question: "Is this amount exactly what will be deposited in my bank?",
+                            answer: "No. The output provides 'Gross Pay'. To find your 'Net Pay' (take-home cash), you will still need to manually subtract federal taxes, state taxes, insurance premiums, and retirement contributions."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Salary Calculator", path: "/salary-calculator", desc: "Convert your calculated hourly wage into weekly, monthly, and yearly salary totals." },
+                        { name: "Business Days Calculator", path: "/business-days-calculator", desc: "Count exactly how many working days fall within a specific month's payroll cycle." },
+                        { name: "Commission Calculator", path: "/commission-calculator", desc: "Add variable commission and sales bonuses on top of your standard hourly base pay." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function OhmsLawCalculator() {
     // V = I * R
@@ -191,6 +192,64 @@ export default function OhmsLawCalculator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Ohm's Law Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Ohm's Law & Pie Chart Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Ohm's Law Calculator</strong> is an interactive engineering tool that demonstrates the mathematical relationship between Voltage, Current, Resistance, and Power in any electrical circuit.</p>
+                            <p>Formulated by German physicist Georg Ohm in 1827, this law is the fundamental absolute baseline of electrical engineering. By inputting any two known values from your circuit, this calculator instantly solves the complex algebra required to find the two remaining unknown variables.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Ohm's Law relies on three primary variables, with Power (Watt's Law) acting as the fourth derivative metric:</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Voltage (V):</strong> The electrical "pressure" pushing electrons, measured in Volts. The core formula is <code>V = I × R</code>.</li>
+                                <li><strong>Current (I):</strong> The volume of electrons actually flowing, measured in Amperes (Amps). The formula is <code>I = V / R</code>.</li>
+                                <li><strong>Resistance (R):</strong> The friction resisting the flow, measured in Ohms (Ω). The formula is <code>R = V / I</code>.</li>
+                                <li><strong>Power (P):</strong> The total energetic output, measured in Watts. The formula is <code>P = V × I</code>.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You wire a small <strong>12-Volt</strong> LED lightbulb to a car battery, and you measure with a multimeter that the bulb is pulling exactly <strong>2 Amps</strong> of current.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Calculating Resistance:</strong> You divide Voltage by Current (12 / 2). The internal resistance of that specific bulb is exactly <strong>6 Ohms</strong>.</li>
+                                <li><strong>Calculating Power:</strong> You multiply Voltage by Current (12 × 2). The bulb is burning exactly <strong>24 Watts</strong> of total power.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Custom Electronics:</strong> Hobbyists building custom LED lighting arrays calculating exactly what size resistor they need to solder in line to prevent the LEDs from melting.</li>
+                            <li><strong>Vape & E-Cigarette Tuning:</strong> Advanced vape users calculating the exact wattage output of their custom-wrapped mechanical coil builds based on the battery voltage and coil resistance.</li>
+                            <li><strong>Home Audio Installations:</strong> Audiophiles matching 4-Ohm or 8-Ohm subwoofer coils with specific car amplifiers to maximize wattage output without blowing a fuse.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why am I getting an error when I enter 3 values?",
+                            answer: "Because Ohm's law is a strict mathematical relationship, entering 3 random values almost always creates an impossible mathematical paradox. You only ever need exactly TWO true values to perfectly derive the rest."
+                        },
+                        {
+                            question: "Does this work for AC (Alternating Current) circuits?",
+                            answer: "This calculator is designed for standard DC (Direct Current) circuits or purely resistive AC circuits (like heaters). Complex AC circuits involving motors or capacitors require advanced 'Impedance' (Z) calculations and phase-angle trigonometry."
+                        },
+                        {
+                            question: "What is the 'Ohm's Law Wheel'?",
+                            answer: "It is a famous reference graphic used by electricians. It plots all 12 possible algebraic variations of the V/I/R/P equations into a circular cheat sheet. We've included a digital summary of the wheel at the bottom of the tool."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Power Calculator", path: "/power-calculator", desc: "Calculate physical mechanical power Output (Joules/Seconds) rather than electrical." },
+                        { name: "Kinetic Energy Calculator", path: "/kinetic-energy-calculator", desc: "Calculate the energy of mass in motion, which electrical motors often generate." },
+                        { name: "Sequence Calculator", path: "/sequence-calculator", desc: "Identify mathematical patterns, useful for calculating series parallel resistor drops." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
