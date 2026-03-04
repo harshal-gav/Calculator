@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function CronJobGenerator() {
     const [minute, setMinute] = useState('*');
@@ -148,6 +149,72 @@ export default function CronJobGenerator() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Cron Job Generator", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Cron Job Expression Generator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Cron Job Generator</strong> creates and translates standard cron schedule expressions. It converts simple English scheduling needs into the exact 5-part asterisk format required by Linux servers and cloud automation systems.</p>
+                            <p>Cron is the invisible timekeeper of the internet. It allows servers to automatically run scripts or programs at highly specific, recurring intervals without any human intervention.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>A standard cron expression consists of exactly 5 fields separated by spaces. The system checks this expression every single minute. If the current server time perfectly matches the expression, the task executes:</p>
+                            <div className="bg-slate-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-slate-900 border border-slate-200 text-center">
+                                * * * * *
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Field 1 (Minute):</strong> 0-59. (e.g., '30' means exactly on the half-hour).</li>
+                                <li><strong>Field 2 (Hour):</strong> 0-23. Uses 24-hour military time.</li>
+                                <li><strong>Field 3 (Day of Month):</strong> 1-31.</li>
+                                <li><strong>Field 4 (Month):</strong> 1-12.</li>
+                                <li><strong>Field 5 (Day of Week):</strong> 0-6. (0 is Sunday, 6 is Saturday).</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You need your server to generate and email a weekly financial report. You want this to happen strictly at <strong>4:15 AM every Monday</strong> morning so it is ready before the office opens.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Minute:</strong> 15</li>
+                                <li><strong>Hour:</strong> 4</li>
+                                <li><strong>Day of Month:</strong> * (Any day)</li>
+                                <li><strong>Month:</strong> * (Any month)</li>
+                                <li><strong>Day of Week:</strong> 1 (Monday)</li>
+                                <li><strong>The Result:</strong> The final cron string is exactly <strong>15 4 * * 1</strong>. The server will ignore this job 24/7 until the clock strikes exactly 04:15 AM on a Monday.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Database Backups:</strong> System admins schedule heavy database dumps (e.g., "0 2 * * *") to run sequentially at 2:00 AM every night when website traffic is at absolute zero.</li>
+                            <li><strong>SaaS Billing:</strong> Subscription software relies on cron jobs to scan the database daily at midnight, identifying which users' 30-day trials have expired, and automatically charging their credit cards.</li>
+                            <li><strong>Marketing Automation:</strong> E-commerce sites use cron jobs to trigger "abandoned cart" emails exactly 2 hours after a user leaves the website without checking out.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What does the * (Asterisk) mean?",
+                            answer: "The asterisk is a wildcard meaning 'Every'. If Field 1 is an asterisk, the job runs every single minute. If Field 4 is an asterisk, the job runs in every single month of the year."
+                        },
+                        {
+                            question: "How do I make a task run 'every 15 minutes'?",
+                            answer: "You use the step operator (/). By putting '*/15' in the Minute field, you tell the server to execute the job any time the current minute is perfectly divisible by 15 (e.g., 00, 15, 30, 45)."
+                        },
+                        {
+                            question: "Why did my Cron job run at the wrong time?",
+                            answer: "Cron jobs rely entirely on the internal system clock of the server they live on. If you wrote a cron job for 5:00 PM EST, but your AWS server is set to UTC (London time), your job will execute 5 hours earlier than you intended."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Regex Tester", path: "/regex-tester", desc: "Test complex pattern matching syntax for your automation scripts." },
+                        { name: "Time Zone Converter", path: "/time-zone-converter", desc: "Convert your local time to UTC to ensure your remote cron jobs execute accurately." },
+                        { name: "Pomodoro Timer", path: "/pomodoro-timer", desc: "Manage your own human schedule with structured automation intervals." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

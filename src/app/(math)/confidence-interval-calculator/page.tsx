@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function ConfidenceIntervalCalculator() {
     const [sampleMean, setSampleMean] = useState('100');
@@ -166,6 +167,69 @@ export default function ConfidenceIntervalCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Confidence Interval Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Confidence Interval Calculator"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Confidence Interval Calculator</strong> calculates an exact upper and lower numerical boundary where a true population parameter (like an average) is mathematically guaranteed to exist, based on a specific level of certainty.</p>
+                            <p>Instead of guessing a single, highly flawed average number (a "point estimate"), a confidence interval gives you a safe "range" (an "interval estimate"). It admits that surveys aren't perfect, but strictly defines exactly how imperfect they might be.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The formula for a Confidence Interval centers around the Sample Mean (x̄) and expands evenly in both directions by adding and subtracting the Margin of Error:</p>
+                            <div className="bg-teal-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-teal-900 border border-teal-100">
+                                CI = x̄ ± z * (s / √n)
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>x̄:</strong> The Sample Mean (the average result from the data you actually collected).</li>
+                                <li><strong>z:</strong> The Z-Score mapping to your chosen confidence level (e.g., 1.96 for 95%).</li>
+                                <li><strong>s:</strong> The Standard Deviation (how spread out your data is).</li>
+                                <li><strong>n:</strong> The Sample Size (the amount of data points you collected).</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You test the battery life of <strong>50 new smartphones (n)</strong>. The average battery life is <strong>24 hours (x̄)</strong>, with a standard deviation of <strong>2 hours (s)</strong>. What is the <strong>95% Confidence Interval (z = 1.96)</strong> for all phones of this model?</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Margin:</strong> 1.96 * (2 / √50)</li>
+                                <li><strong>The Math:</strong> 1.96 * (2 / 7.07) = 1.96 * 0.282 = <strong>0.55 hours</strong>.</li>
+                                <li><strong>The Interval:</strong> 24 ± 0.55.</li>
+                                <li><strong>The Result:</strong> You are 95% confident that the true average battery life for EVERY phone manufactured on this line is exactly between <strong>23.45 hours and 24.55 hours</strong>.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Medical Research:</strong> Determining if a new blood pressure medication truly lowers BPM across millions of humans based solely on a clinical trial of 500 patients.</li>
+                            <li><strong>Manufacturing QA:</strong> Ensure a factory producing 10,000 car parts a day is outputting parts of the correct weight, by only halting the line to weigh a random sample of 30 parts.</li>
+                            <li><strong>A/B Testing (SaaS):</strong> Proving that "Design A" actually generates more revenue than "Design B" for all future website visitors, rather than just being a short-term statistical fluke.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "What does '95% Confidence' actually mean?",
+                            answer: "It does NOT mean there is a 95% chance the true average is in your specific interval. It means that if you repeated this exact same survey 100 times, 95 of the 100 generated intervals would successfully contain the true, real-world average."
+                        },
+                        {
+                            question: "Why not always use 99% Confidence?",
+                            answer: "Because higher confidence forces a wider, sometimes useless interval. It is the equivalent of predicting the weather: You can be 50% confident the high will be exactly 72 degrees. Or you can be 99% confident the high will be between -40 and 150 degrees. At 99%, you are 'correct', but the insight is useless."
+                        },
+                        {
+                            question: "What makes the interval narrower (more precise)?",
+                            answer: "The easiest way to narrow an interval is to dramatically increase your Sample Size (n). Because 'n' is in the denominator of the formula, a larger 'n' mathematically shrinks the margin of error."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Margin of Error Calculator", path: "/margin-of-error-calculator", desc: "Isolate and purely calculate the ± padding used in this interval." },
+                        { name: "Variance Calculator", path: "/variance-calculator", desc: "Quickly calculate the base Standard Deviation (s) required for this formula." },
+                        { name: "Empirical Rule Calculator", path: "/empirical-rule-calculator", desc: "Visualize how standard deviations physically map onto the bell curve." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

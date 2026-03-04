@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function MarginOfErrorCalculator() {
     const [sampleSize, setSampleSize] = useState('1000');
@@ -178,6 +179,68 @@ export default function MarginOfErrorCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Margin of Error Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Margin of Error Calculator & Polling Precision"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Margin of Error Calculator</strong> determines the statistical "wiggle room" or exact range of uncertainty surrounding a survey, poll, or sample dataset.</p>
+                            <p>Because it is almost impossible to survey every single person in a population, researchers survey a smaller "sample." The Margin of Error tells you precisely how many percentage points your sample's result might differ from the true, real-world population's result.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The standard formula for calculating the margin of error of a proportion is driven by the Z-Score of your designated confidence level, multiplied by the standard error:</p>
+                            <div className="bg-fuchsia-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-fuchsia-900 border border-fuchsia-100">
+                                MoE = z * √ [ (p * (1 - p)) / n ]
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>z:</strong> The Z-Score tied to your Confidence Level (e.g., 1.96 for 95% confidence).</li>
+                                <li><strong>p:</strong> The sample proportion (usually set at 0.50 for the most conservative, widest margin).</li>
+                                <li><strong>n:</strong> The sample size (the absolute number of people you actually surveyed).</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine you poll <strong>1,000 voters (n)</strong>, and 60% say they will vote for Candidate A. You want a <strong>95% Confidence Level (z = 1.96)</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>The Setup:</strong> MoE = 1.96 * √ [ (0.50 * 0.50) / 1000 ]</li>
+                                <li><strong>The Math:</strong> MoE = 1.96 * √ [ 0.25 / 1000 ] = 1.96 * √0.00025 = 1.96 * 0.0158</li>
+                                <li><strong>The Result:</strong> MoE = <strong>0.031 (or ±3.1%)</strong>.</li>
+                                <li><strong>Conclusion:</strong> You are 95% confident that the true number of voters who support Candidate A sits exactly between 56.9% and 63.1%.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Political Polling:</strong> News networks use MoE to declare if an election race is a "statistical tie." If Candidate A is winning by 2%, but the MoE is ±4%, the race is officially too close to call.</li>
+                            <li><strong>Market Research:</strong> Companies launching a new product survey 500 potential customers to estimate total market demand before spending millions on manufacturing.</li>
+                            <li><strong>Medical Trials:</strong> Researchers testing the efficacy of a new drug must define the margin of error to prove the drug's success rate is mathematically legitimate, not a random fluke.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "How do I make my Margin of Error smaller?",
+                            answer: "The absolute best mathematical way to shrink your Margin of Error is to increase your Sample Size (survey more people). A secondary way is to tolerate a lower Confidence Level (e.g., dropping from 99% to 90%), but this makes your study less reliable."
+                        },
+                        {
+                            question: "Why do we default the proportion to 50%?",
+                            answer: "Statistically, 50% (0.50) creates the maximum possible uncertainty equation: 0.50 × 0.50 = 0.25. If you use 0.90 × 0.10, the result is only 0.09. Using 50% guarantees the calculator generates the safest, most conservative 'worst-case scenario' margin."
+                        },
+                        {
+                            question: "Does the size of the total Population matter?",
+                            answer: "Surprisingly, almost never. Surveying 1,000 random people yields practically the exact same Margin of Error whether your total population is 100,000 citizens or 330 million citizens. The math relies almost entirely on the absolute sample size, not the fraction."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Confidence Interval Calculator", path: "/confidence-interval-calculator", desc: "Calculate the exact upper and lower bounds based on your Margin of Error." },
+                        { name: "Variance Calculator", path: "/variance-calculator", desc: "Measure the underlying spread and volatility of your raw survey data." },
+                        { name: "Z-Score Calculator", path: "/z-score-calculator", desc: "Calculate the exact Standard Score used as the base multiplier for the MoE formula." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function RegexTester() {
     const [regexStr, setRegexStr] = useState('[A-Z]\\w+');
@@ -188,6 +189,69 @@ export default function RegexTester() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Regex Tester", "operatingSystem": "All", "applicationCategory": "DeveloperApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Regular Expression (Regex) Tester & Debugger"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Regex Tester</strong> evaluates and debugs Regular Expressions (Regex) in real-time. It highlights exact matches, extracts specific capture groups, and identifies syntax errors within complex text patterns.</p>
+                            <p>Regex is essentially a "supercharged" Find-and-Replace. Instead of searching for exactly the word "cat," you can write a Regex pattern to find "any 3-letter word starting with c and ending with t" or "any valid email address hidden inside a 500-page document."</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>Regex patterns are built using literal characters alongside special "Metacharacters" that act as wildcards or quantifiers. A standard structure looks like this:</p>
+                            <div className="bg-sky-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-sky-900 border border-sky-100 flex flex-col gap-2 center">
+                                /pattern/flags
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>\d or \w:</strong> Wildcards for matching any single Digit (0-9) or any single Word Character (A-Z).</li>
+                                <li><strong>+ or *:</strong> Quantifiers meaning "match 1 or more" (+) or "match 0 or more" (*).</li>
+                                <li><strong>[...] or (...):</strong> Square brackets define a character set (match anything inside). Parentheses define a Capture Group (extract this specific part).</li>
+                                <li><strong>Flags (g, i, m):</strong> Global (find all, not just the first), Ignore Case (case-insensitive), and Multi-line.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>You need to extract all North American phone numbers from a massive block of raw text. You write the pattern: <strong>/\(\d{`{3}`}\) \d{`{3}`}-\d{`{4}`}/g</strong></p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>\( and \):</strong> Match exact literal parenthesis characters by escaping them with a backslash.</li>
+                                <li><strong>\d{`{3}`}:</strong> Match exactly 3 digits in a row (e.g., the area code).</li>
+                                <li><strong>[Space] and -:</strong> Match an exact space character and an exact hyphen character.</li>
+                                <li><strong>/g Flag:</strong> The Global flag ensures the tester sweeps the entire document, highlighting every single phone number, rather than stopping after it finds the very first one.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Form Validation:</strong> Web developers use Regex to instantly block users from submitting forms if an email address lacks an "@" symbol or if a password doesn't contain a number and a special character.</li>
+                            <li><strong>Data Scraping:</strong> Analysts use Regex to scan thousands of unformatted HTML pages, instantly extracting highly specific data like '$[Price]' tags or ZIP codes.</li>
+                            <li><strong>Log Analysis:</strong> Server admins write Regex scripts to instantly parse through gigabytes of raw server error logs, isolating and extracting only "CRITICAL" timeout errors from the noise.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Why is my regex matching the entire sentence?",
+                            answer: "You are likely suffering from 'Greedy' quantifiers. A symbol like * or + will match as MUCH text as possible by default. If you add a ? after it (e.g., *?), it becomes 'Lazy' and will stop at the very first valid match."
+                        },
+                        {
+                            question: "What is a 'Capture Group'?",
+                            answer: "When you wrap part of your pattern in parentheses (like this), the regex engine not only matches the text but actively plucks that specific sub-string out into an isolated array variable so you can easily reference or save it later."
+                        },
+                        {
+                            question: "Do Regex patterns work exactly the same in all coding languages?",
+                            answer: "Mostly, but not entirely. Javascript, Python, PCRE (PHP), and Java all have slightly different 'flavors' of Regex. This tool evaluates Regex natively via JavaScript's V8 engine."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Cron Job Generator", path: "/cron-job-generator", desc: "Write perfectly formatted server scheduling expressions." },
+                        { name: "JSON Validator", path: "/json-validator", desc: "Test, format, and debug your JSON data payloads." },
+                        { name: "Random String Generator", path: "/random-string-generator", desc: "Generate random data to test your complex regex rules against." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }

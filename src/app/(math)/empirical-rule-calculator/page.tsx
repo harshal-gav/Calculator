@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CalculatorSEO from '@/components/CalculatorSEO';
 
 export default function EmpiricalRuleCalculator() {
     const [mean, setMean] = useState('100');
@@ -132,6 +133,69 @@ export default function EmpiricalRuleCalculator() {
             )}
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Empirical Rule Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
+
+            <div className="mt-8">
+                <CalculatorSEO
+                    title="Empirical Rule Calculator (68-95-99.7)"
+                    whatIsIt={
+                        <>
+                            <p>The <strong>Empirical Rule Calculator</strong> instantly applies the statistical "68-95-99.7 Rule" to your dataset, mapping exactly where the vast majority of your data points will fall within a normal, bell-shaped distribution curve.</p>
+                            <p>This rule acts as a universal statistical shortcut. Instead of complex calculus, it mathematically guarantees how data groups around the average, proving that extreme outliers are exceptionally rare.</p>
+                        </>
+                    }
+                    formula={
+                        <>
+                            <p>The rule is rigid and relies purely on basic addition and subtraction of the Standard Deviation (σ) from the dataset's Mean (μ):</p>
+                            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-emerald-900 border border-emerald-100 flex flex-col gap-2">
+                                <div><strong>68% of Data:</strong> falls within μ ± 1σ</div>
+                                <div><strong>95% of Data:</strong> falls within μ ± 2σ</div>
+                                <div><strong>99.7% of Data:</strong> falls within μ ± 3σ</div>
+                            </div>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>Mean (μ):</strong> The exact center or peak of the bell curve.</li>
+                                <li><strong>Standard Deviation (σ):</strong> The unit that measures how "fat" or "skinny" the bell curve is.</li>
+                            </ul>
+                        </>
+                    }
+                    example={
+                        <>
+                            <p>Imagine the average height of an adult male in a specific town is <strong>70 inches (μ)</strong>, with a standard deviation of <strong>3 inches (σ)</strong>.</p>
+                            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+                                <li><strong>1 Sigma (68%):</strong> 70 ± 3. This proves that 68% of all men in this town are between <strong>67 and 73 inches</strong> tall.</li>
+                                <li><strong>2 Sigma (95%):</strong> 70 ± 6. This proves that 95% of all men in this town are between <strong>64 and 76 inches</strong> tall.</li>
+                                <li><strong>3 Sigma (99.7%):</strong> 70 ± 9. This proves that 99.7% of all men in this town are between <strong>61 and 79 inches</strong> tall.</li>
+                                <li><strong>The Outlier:</strong> Finding a man who is 80 inches tall is mathematically a "1 in 1000" rarity, safely considered a massive outlier.</li>
+                            </ul>
+                        </>
+                    }
+                    useCases={
+                        <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                            <li><strong>Test Grading (Curving):</strong> Teachers grading on a "bell curve" use the 68% tier for C/B students, reserving the extreme upper 2.5% tail (beyond +2σ) strictly for A+ grades.</li>
+                            <li><strong>Six Sigma Manufacturing:</strong> Elite factories aim to reduce their error rate to "Six Sigma". This means their machinery is so precise that a defective part only mathematically happens beyond 6 standard deviations (literally 3.4 defects per million parts).</li>
+                            <li><strong>Stock Market Risk:</strong> Investors analyze historical daily stock returns to map the 99.7% tier, determining the absolute maximum "worst-case scenario" loss they could suffer on a normal trading day.</li>
+                        </ul>
+                    }
+                    faqs={[
+                        {
+                            question: "Does the Empirical Rule work on ALL data?",
+                            answer: "No! It strictly requires a 'Normal Distribution' (a perfectly symmetrical, bell-shaped curve). If your data is heavily skewed (like wealth distribution, where a few billionaires warp the average), this rule becomes entirely inaccurate."
+                        },
+                        {
+                            question: "What happens to the remaining 0.3% of data?",
+                            answer: "The final 0.3% (0.15% on the extreme low end, and 0.15% on the extreme high end) represent your true anomalies. These are the geniuses, the lottery winners, or the catastrophic system failures."
+                        },
+                        {
+                            question: "How does this rule relate to a Z-Score?",
+                            answer: "They are the exact same concept. A Z-Score of +1 is exactly the Upper Bound of the 68% tier. A Z-Score of -2 is exactly the Lower Bound of the 95% tier."
+                        }
+                    ]}
+                    relatedCalculators={[
+                        { name: "Variance & Std Deviation", path: "/variance-calculator", desc: "Calculate the base σ value required to utilize this Empirical Rule." },
+                        { name: "Z-Score Calculator", path: "/z-score-calculator", desc: "Map exact scores to find precisely where they fall on the 68-95-99.7 bell curve." },
+                        { name: "Percentile Calculator", path: "/percentile-calculator", desc: "Calculate precise percentiles without relying on normal distribution approximations." }
+                    ]}
+                />
+            </div>
         </div>
     );
 }
