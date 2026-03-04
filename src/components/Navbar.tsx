@@ -13,8 +13,12 @@ export default function Navbar() {
                     <div className="flex flex-wrap justify-center items-center gap-2 sm:space-x-4">
                         <Link href="/#financial" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Financial</Link>
                         <Link href="/#health" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Health</Link>
-                        <Link href="/#math" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Math</Link>
                         <Link href="/#everyday" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Everyday</Link>
+                        <Link href="/#math" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Math</Link>
+                        <Link href="/#technology" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Technology</Link>
+                        <Link href="/#geometry" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Geometry</Link>
+                        <Link href="/#chemistry" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Chemistry</Link>
+                        <Link href="/#miscellaneous" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap">Miscellaneous</Link>
                     </div>
                 </div>
             </div>

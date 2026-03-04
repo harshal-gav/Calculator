@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HomeSearch from '@/components/HomeSearch';
 
 export default function Home() {
   const categories = [
@@ -252,26 +253,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {categories.map((cat) => (
-          <div key={cat.name} id={cat.name.split(' ')[0].toLowerCase()} className="bg-gray-50 rounded-lg p-6 border border-gray-100 shadow-sm hover:shadow-md transition scroll-mt-24">
-            <h2 className="text-2xl font-bold text-blue-600 mb-4">{cat.name}</h2>
-            <ul className="space-y-4">
-              {cat.calculators.map((calc) => (
-                <li key={calc.name} className="relative bg-white p-4 rounded border border-gray-200 hover:border-blue-300 transition group">
-                  <h3 className="text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition">
-                    <Link href={calc.path} className="focus:outline-none">
-                      <span className="absolute inset-0" aria-hidden="true"></span>
-                      {calc.name}
-                    </Link>
-                  </h3>
-                  <p className="text-sm text-gray-500 mt-1 relative z-10 pointer-events-none">{calc.desc}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+      <HomeSearch categories={categories} />
     </div>
   );
 }
