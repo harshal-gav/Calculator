@@ -12,34 +12,34 @@ export default function TermsOfService() {
             <div className="prose prose-blue prose-lg text-gray-700 max-w-none">
                 <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">1. Acceptance of Terms</h2>
                 <p>
-                    By accessing and using <strong>Calculator All</strong> ("the Website"), you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.
+                    By accessing and using <strong>Calculator All</strong> (&quot;the Website&quot;), you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.
                     Any participation in this service will constitute acceptance of this agreement. If you do not agree to abide by the above, please do not use this service.
                 </p>
 
                 <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">2. Description of Service</h2>
                 <p>
                     Calculator All provides users with access to a rich collection of resources, including various numerical, financial, health, fitness, and everyday utility calculators.
-                    You understand and agree that the Service is provided "AS-IS" and that Calculator All assumes no responsibility for the timeliness, deletion, mis-delivery, or failure to store any user communications or personalization settings.
+                    You understand and agree that the Service is provided &quot;AS-IS&quot; and that Calculator All assumes no responsibility for the timeliness, deletion, mis-delivery, or failure to store any user communications or personalization settings.
                 </p>
 
                 <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">3. Use License and Restrictions</h2>
                 <p>
-                    Permission is granted to temporarily use the materials and calculators on Calculator All's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+                    Permission is granted to temporarily use the materials and calculators on Calculator All&apos;s website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
                     <li>Modify or copy the materials;</li>
                     <li>Use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
-                    <li>Attempt to decompile or reverse engineer any software contained on Calculator All's website;</li>
+                    <li>Attempt to decompile or reverse engineer any software contained on Calculator All&apos;s website;</li>
                     <li>Remove any copyright or other proprietary notations from the materials; or</li>
-                    <li>Transfer the materials to another person or "mirror" the materials on any other server.</li>
+                    <li>Transfer the materials to another person or &quot;mirror&quot; the materials on any other server.</li>
                 </ul>
                 <p className="mt-4">
                     This license shall automatically terminate if you violate any of these restrictions and may be terminated by Calculator All at any time.
                 </p>
 
-                <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">4. Disclaimers of Warranties (Medical & Financial Warning)</h2>
+                <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">4. Disclaimers of Warranties (Medical &amp; Financial Warning)</h2>
                 <p>
-                    The materials and calculations on Calculator All's website are provided on an 'as is' basis. Calculator All makes no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+                    The materials and calculations on Calculator All&apos;s website are provided on an &apos;as is&apos; basis. Calculator All makes no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
                 </p>
                 <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-6">
                     <p className="font-bold text-yellow-800 m-0">Crucial Disclaimer regarding Health and Finance:</p>
@@ -53,18 +53,18 @@ export default function TermsOfService() {
 
                 <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">5. Limitations of Liability</h2>
                 <p>
-                    In no event shall Calculator All, its developers, or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, physical injury, financial ruin, or due to business interruption) arising out of the use or inability to use the materials and results on Calculator All's website, even if Calculator All or a Calculator All authorized representative has been notified orally or in writing of the possibility of such damage.
+                    In no event shall Calculator All, its developers, or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, physical injury, financial ruin, or due to business interruption) arising out of the use or inability to use the materials and results on Calculator All&apos;s website, even if Calculator All or a Calculator All authorized representative has been notified orally or in writing of the possibility of such damage.
                 </p>
 
                 <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">6. Revisions and Errata</h2>
                 <p>
-                    The materials appearing on Calculator All's website could include technical, typographical, or photographic errors. Calculator All does not warrant that any of the materials on its website are accurate, complete or current. We may make changes to the materials contained on its website at any time without notice, but make no commitment to update the materials.
+                    The materials appearing on Calculator All&apos;s website could include technical, typographical, or photographic errors. Calculator All does not warrant that any of the materials on its website are accurate, complete or current. We may make changes to the materials contained on its website at any time without notice, but make no commitment to update the materials.
                 </p>
 
                 <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">7. External Links and Advertising</h2>
                 <p>
                     Calculator All has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site.
-                    The appearance of advertisements or links on our website does not imply endorsement by Calculator All of the site or the products depicted. Use of any such linked website or interaction with advertisements is at the user's own risk.
+                    The appearance of advertisements or links on our website does not imply endorsement by Calculator All of the site or the products depicted. Use of any such linked website or interaction with advertisements is at the user&apos;s own risk.
                 </p>
                 <p>
                     Our website displays advertisements served by third-party networks such as Google AdSense. Please review our <a href="/privacy-policy" className="text-blue-600 hover:underline">Privacy Policy</a> for more information on how data is collected for targeted advertising and how you can opt out.
