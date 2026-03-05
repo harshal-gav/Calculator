@@ -9,6 +9,7 @@ export default function Footer() {
                         <p className="text-sm">&copy; {new Date().getFullYear()} Calculator All. All rights reserved.</p>
                     </div>
                     <div className="flex space-x-6 text-sm">
+                        <Link href="/about-us" className="hover:text-gray-300">About Us</Link>
                         <Link href="/terms-of-service" className="hover:text-gray-300">Terms of Service</Link>
                         <Link href="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link>
                         <Link href="/contact-us" className="hover:text-gray-300">Contact Us</Link>
