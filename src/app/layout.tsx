@@ -55,7 +55,7 @@ export default function RootLayout({
         <Script
           id="adsbygoogle-script"
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6447883200788737"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1126148240601289"
           crossOrigin="anonymous"
           strategy="lazyOnload"
         />
