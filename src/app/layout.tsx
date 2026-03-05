@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import FirebaseAnalytics from "@/components/FirebaseAnalytics";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,8 +51,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1126148240601289"
-          crossOrigin="anonymous"></script>
+        <Script
+          id="adsbygoogle-script"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1126148240601289"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-gray-50`}
