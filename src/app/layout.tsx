@@ -51,11 +51,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
+        {/* Google AdSense Script - Optimized for Next.js */}
+        <Script
+          id="adsbygoogle-script"
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1126148240601289"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6447883200788737"
           crossOrigin="anonymous"
-        ></script>
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-gray-50`}

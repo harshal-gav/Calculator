@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
 
 interface Calculator {
@@ -16,12 +16,6 @@ interface Category {
 
 export default function HomeSearch({ categories }: { categories: Category[] }) {
     const [searchTerm, setSearchTerm] = useState('');
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setIsClient(true);
-    }, []);
 
     const filteredCategories = useMemo(() => {
         if (!searchTerm) return categories;
@@ -46,10 +40,6 @@ export default function HomeSearch({ categories }: { categories: Category[] }) {
         }).filter(cat => cat.calculators.length > 0);
     }, [searchTerm, categories]);
 
-    // Don't render interactive bits until client-side hydration is complete
-    // to avoid potential mismatch issues with Next.js specific logic
-    if (!isClient) return null;
-
     return (
         <div className="w-full">
             {/* Search Bar */}
@@ -66,6 +56,8 @@ export default function HomeSearch({ categories }: { categories: Category[] }) {
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="block w-full pl-12 pr-4 py-4 rounded-full border-2 border-gray-200 focus:ring-0 focus:border-blue-500 bg-white text-lg shadow-sm focus:shadow-md transition-all outline-none text-gray-800 placeholder-gray-400"
                         placeholder="Search for any calculator (e.g., 'BMI', 'Mortgage', 'Volume')..."
+                        autoComplete="off"
+                        spellCheck="false"
                     />
                 </div>
             </div>
@@ -96,25 +88,26 @@ export default function HomeSearch({ categories }: { categories: Category[] }) {
                             {cat.name}
                         </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 list-none p-0 m-0">
                             {cat.calculators.map((calc) => (
-                                <Link
-                                    href={calc.path}
-                                    key={calc.name}
-                                    className="group bg-white p-5 rounded-xl border border-gray-200 hover:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex flex-col h-full shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1"
-                                >
-                                    <h3 className="text-lg font-bold text-slate-800 group-hover:text-blue-600 mb-2 transition-colors flex items-start justify-between">
-                                        {calc.name}
-                                        <svg className="w-5 h-5 text-gray-300 group-hover:text-blue-500 transition-colors shrink-0 mt-0.5 ml-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                        </svg>
-                                    </h3>
-                                    <p className="text-sm text-slate-500 leading-relaxed group-hover:text-slate-600 mt-auto">
-                                        {calc.desc}
-                                    </p>
-                                </Link>
+                                <li key={calc.name} className="h-full">
+                                    <Link
+                                        href={calc.path}
+                                        className="group bg-white p-5 rounded-xl border border-gray-200 hover:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex flex-col h-full shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1 block"
+                                    >
+                                        <h3 className="text-lg font-bold text-slate-800 group-hover:text-blue-600 mb-2 transition-colors flex items-start justify-between">
+                                            {calc.name}
+                                            <svg className="w-5 h-5 text-gray-300 group-hover:text-blue-500 transition-colors shrink-0 mt-0.5 ml-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                            </svg>
+                                        </h3>
+                                        <p className="text-sm text-slate-500 leading-relaxed group-hover:text-slate-600 mt-auto">
+                                            {calc.desc}
+                                        </p>
+                                    </Link>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </div>
                 ))}
             </div>
