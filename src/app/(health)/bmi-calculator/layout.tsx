@@ -1,10 +1,59 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: 'BMI Calculator',
-    description: 'Free Body Mass Index calculator gives out the BMI value and categorizes BMI based on provided information from WHO and CDC for both adults and children.',
+  title: "BMI Calculator",
+  description:
+    "Free Body Mass Index calculator gives out the BMI value and categorizes BMI based on provided information from WHO and CDC for both adults and children. Including specialized USA tools like bmi calculator, bmi, body mass index.",
+  keywords: [
+    "bmi calculator",
+    "bmi",
+    "body mass index",
+    "bmi calculator women",
+    "bmi chart",
+    "body mass index calculator",
+    "bmi calculator men",
+    "bmi chart women",
+    "bmi test",
+    "bmi index",
+    "my bmi",
+    "bmi calculator male",
+    "bmi calculator kg",
+    "bmi calculator by age",
+    "calculate my bmi",
+    "overweight bmi",
+    "bmi for women",
+    "body mass index chart",
+    "check bmi",
+    "healthy bmi",
+    "bmi index calculator",
+    "bmi formula",
+    "bmi calculator women age",
+    "bmi calculator kg with age",
+    "bmi for men",
+    "normal bmi",
+    "ideal bmi",
+    "healthy bmi for men",
+    "bmi 25",
+    "body mass index formula",
+    "bmi online",
+    "bmi calculation formula",
+    "healthy bmi range",
+    "bmi range",
+    "bmi table",
+    "bmi 24",
+    "cdc bmi calculator",
+    "good bmi",
+    "normal bmi range",
+    "bmi equation",
+    "average bmi",
+    "body index",
+    "body type calculator",
+    "body shape calculator",
+    "body calculator",
+    "army body fat calculator",
+  ],
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return <>{children}</>;
+  return <>{children}</>;
 }

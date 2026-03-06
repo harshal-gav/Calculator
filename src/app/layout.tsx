@@ -23,12 +23,23 @@ export const metadata: Metadata = {
     template: "%s | Calculator All",
     default: "Free Online Calculators for Everything",
   },
-  description: "Free online calculators for math, health, finance, and everyday utilities. Fast, easy-to-use tools to help you solve everyday calculations instantly.",
-  keywords: ["calculator", "online calculator", "free calculator", "math", "finance", "health", "BMI", "mortgage"],
+  description:
+    "Free online calculators for math, health, finance, and everyday utilities. Fast, easy-to-use tools to help you solve everyday calculations instantly.",
+  keywords: [
+    "calculator",
+    "online calculator",
+    "free calculator",
+    "math",
+    "finance",
+    "health",
+    "BMI",
+    "mortgage",
+  ],
   authors: [{ name: "Calculator All" }],
   openGraph: {
     title: "Free Online Calculators for Everything",
-    description: "Discover a comprehensive collection of free online calculators for math, health, finance, and technology.",
+    description:
+      "Discover a comprehensive collection of free online calculators for math, health, finance, and technology.",
     type: "website",
   },
   twitter: {

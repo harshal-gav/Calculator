@@ -1,274 +1,404 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import CalculatorSEO from '@/components/CalculatorSEO';
+import { useState } from "react";
+import CalculatorSEO from "@/components/CalculatorSEO";
 export default function PolygonCalculator() {
-    const [sides, setSides] = useState('5'); // n (pentagon default)
-    const [inputType, setInputType] = useState('side'); // side, inradius, circumradius, area, perimeter
-    const [inputValue, setInputValue] = useState('10');
+  const [sides, setSides] = useState("5"); // n (pentagon default)
+  const [inputType, setInputType] = useState("side"); // side, inradius, circumradius, area, perimeter
+  const [inputValue, setInputValue] = useState("10");
 
-    const [results, setResults] = useState<{
-        n: number;
-        side: number;
-        area: number;
-        perimeter: number;
-        inradius: number; // apothem
-        circumradius: number;
-        interiorAngle: number;
-        exteriorAngle: number;
-    } | null>(null);
+  const [results, setResults] = useState<{
+    n: number;
+    side: number;
+    area: number;
+    perimeter: number;
+    inradius: number; // apothem
+    circumradius: number;
+    interiorAngle: number;
+    exteriorAngle: number;
+  } | null>(null);
 
-    const [errorMsg, setErrorMsg] = useState('');
+  const [errorMsg, setErrorMsg] = useState("");
 
-    const calculate = () => {
-        setErrorMsg('');
-        const n = parseInt(sides, 10);
-        const val = parseFloat(inputValue);
+  const calculate = () => {
+    setErrorMsg("");
+    const n = parseInt(sides, 10);
+    const val = parseFloat(inputValue);
 
-        if (isNaN(n) || n < 3) {
-            setErrorMsg('Number of sides must be an integer > 2.');
-            setResults(null);
-            return;
-        }
+    if (isNaN(n) || n < 3) {
+      setErrorMsg("Number of sides must be an integer > 2.");
+      setResults(null);
+      return;
+    }
 
-        if (isNaN(val) || val <= 0) {
-            setErrorMsg('Input value must be a positive number.');
-            setResults(null);
-            return;
-        }
+    if (isNaN(val) || val <= 0) {
+      setErrorMsg("Input value must be a positive number.");
+      setResults(null);
+      return;
+    }
 
-        const pi = Math.PI;
-        let s = 0; // side length
+    const pi = Math.PI;
+    let s = 0; // side length
 
-        // For regular polygon with n sides:
-        // angle (radians) = pi / n
-        const angle = pi / n;
+    // For regular polygon with n sides:
+    // angle (radians) = pi / n
+    const angle = pi / n;
 
-        // Area = (n * s^2) / (4 * tan(pi/n))
-        // Inradius (Apothem) = s / (2 * tan(pi/n))
-        // Circumradius = s / (2 * sin(pi/n))
-        // Perimeter = n * s
+    // Area = (n * s^2) / (4 * tan(pi/n))
+    // Inradius (Apothem) = s / (2 * tan(pi/n))
+    // Circumradius = s / (2 * sin(pi/n))
+    // Perimeter = n * s
 
-        switch (inputType) {
-            case 'side':
-                s = val;
-                break;
-            case 'inradius':
-                s = val * 2 * Math.tan(angle);
-                break;
-            case 'circumradius':
-                s = val * 2 * Math.sin(angle);
-                break;
-            case 'area':
-                s = Math.sqrt((4 * val * Math.tan(angle)) / n);
-                break;
-            case 'perimeter':
-                s = val / n;
-                break;
-            default:
-                s = val;
-        }
+    switch (inputType) {
+      case "side":
+        s = val;
+        break;
+      case "inradius":
+        s = val * 2 * Math.tan(angle);
+        break;
+      case "circumradius":
+        s = val * 2 * Math.sin(angle);
+        break;
+      case "area":
+        s = Math.sqrt((4 * val * Math.tan(angle)) / n);
+        break;
+      case "perimeter":
+        s = val / n;
+        break;
+      default:
+        s = val;
+    }
 
-        const area = (n * s * s) / (4 * Math.tan(angle));
-        const perimeter = n * s;
-        const inradius = s / (2 * Math.tan(angle));
-        const circumradius = s / (2 * Math.sin(angle));
-        const interiorAngle = ((n - 2) * 180) / n;
-        const exteriorAngle = 360 / n;
+    const area = (n * s * s) / (4 * Math.tan(angle));
+    const perimeter = n * s;
+    const inradius = s / (2 * Math.tan(angle));
+    const circumradius = s / (2 * Math.sin(angle));
+    const interiorAngle = ((n - 2) * 180) / n;
+    const exteriorAngle = 360 / n;
 
-        setResults({
-            n,
-            side: s,
-            area,
-            perimeter,
-            inradius,
-            circumradius,
-            interiorAngle,
-            exteriorAngle
-        });
-    };
+    setResults({
+      n,
+      side: s,
+      area,
+      perimeter,
+      inradius,
+      circumradius,
+      interiorAngle,
+      exteriorAngle,
+    });
+  };
 
-    return (
-        <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-2xl shadow-xl border border-zinc-200">
-            <div className="text-center mb-10">
-                <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-emerald-900 flex items-center justify-center font-serif">
-                    <span className="mr-3">💠</span> Polygon Calculator
-                </h1>
-                <p className="text-emerald-700 text-lg max-w-2xl mx-auto">
-                    Calculate precise properties for any regular polygon with 3 or more sides.
-                </p>
-            </div>
+  return (
+    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-2xl shadow-xl border border-zinc-200">
+      <div className="text-center mb-10">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-emerald-900 flex items-center justify-center font-serif">
+          <span className="mr-3">💠</span> Polygon Calculator
+        </h1>
+        <p className="text-emerald-700 text-lg max-w-2xl mx-auto">
+          Calculate precise properties for any regular polygon with 3 or more
+          sides.
+        </p>
+      </div>
 
-            <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-zinc-200 mb-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
+      <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-zinc-200 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
+          <div>
+            <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
+              Number of Sides (n)
+            </label>
+            <input
+              type="number"
+              step="1"
+              min="3"
+              value={sides}
+              onChange={(e) => setSides(e.target.value)}
+              className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-zinc-50"
+            />
+          </div>
 
-                    <div>
-                        <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">Number of Sides (n)</label>
-                        <input
-                            type="number" step="1" min="3"
-                            value={sides}
-                            onChange={(e) => setSides(e.target.value)}
-                            className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-zinc-50"
-                        />
-                    </div>
+          <div>
+            <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
+              Calculate given
+            </label>
+            <select
+              value={inputType}
+              onChange={(e) => {
+                setInputType(e.target.value);
+                setResults(null);
+              }}
+              className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-zinc-50"
+            >
+              <option value="side">Side Length (s)</option>
+              <option value="inradius">Apothem / Inradius</option>
+              <option value="circumradius">Circumradius</option>
+              <option value="area">Area (A)</option>
+              <option value="perimeter">Perimeter (P)</option>
+            </select>
+          </div>
 
-                    <div>
-                        <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">Calculate given</label>
-                        <select
-                            value={inputType}
-                            onChange={(e) => { setInputType(e.target.value); setResults(null); }}
-                            className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-zinc-50"
-                        >
-                            <option value="side">Side Length (s)</option>
-                            <option value="inradius">Apothem / Inradius</option>
-                            <option value="circumradius">Circumradius</option>
-                            <option value="area">Area (A)</option>
-                            <option value="perimeter">Perimeter (P)</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">Value</label>
-                        <input
-                            type="number" step="any" min="0"
-                            value={inputValue}
-                            onChange={(e) => setInputValue(e.target.value)}
-                            className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold text-xl"
-                            onKeyDown={(e) => e.key === 'Enter' && calculate()}
-                        />
-                    </div>
-                </div>
-
-                {errorMsg && (
-                    <div className="mt-4 p-3 bg-red-50 text-red-600 border border-red-200 rounded-lg text-sm font-bold text-center">
-                        {errorMsg}
-                    </div>
-                )}
-
-                <div className="mt-8">
-                    <button
-                        onClick={calculate}
-                        className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-xl transition-colors shadow-lg shadow-emerald-600/30 uppercase tracking-widest"
-                    >
-                        Calculate Regular Polygon
-                    </button>
-                </div>
-            </div>
-
-            {results && (
-                <div className="bg-emerald-950 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden flex flex-col items-center">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-600 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none"></div>
-
-                    <h2 className="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-6 z-10">Regular {results.n}-gon Results</h2>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full z-10">
-                        <div className="bg-black/30 p-4 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center">
-                            <span className="text-zinc-400 text-xs font-bold uppercase tracking-wide mb-1">Side Length</span>
-                            <span className="font-mono text-emerald-100 font-bold text-2xl">{results.side.toFixed(4)}</span>
-                        </div>
-                        <div className="bg-emerald-900/60 p-4 rounded-xl border border-emerald-500/30 flex flex-col items-center text-center justify-center shadow-inner lg:col-span-2">
-                            <span className="text-emerald-400 text-sm font-bold uppercase tracking-wide mb-1">Area</span>
-                            <span className="font-mono text-white font-bold text-3xl">{results.area.toFixed(4)}</span>
-                        </div>
-                        <div className="bg-black/30 p-4 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center">
-                            <span className="text-zinc-400 text-xs font-bold uppercase tracking-wide mb-1">Perimeter</span>
-                            <span className="font-mono text-emerald-100 font-bold text-2xl">{results.perimeter.toFixed(4)}</span>
-                        </div>
-
-                        <div className="bg-black/30 p-4 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center">
-                            <span className="text-zinc-400 text-xs font-bold uppercase tracking-wide mb-1">Apothem (Inradius)</span>
-                            <span className="font-mono text-emerald-100 font-bold text-xl">{results.inradius.toFixed(4)}</span>
-                        </div>
-                        <div className="bg-black/30 p-4 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center">
-                            <span className="text-zinc-400 text-xs font-bold uppercase tracking-wide mb-1">Circumradius</span>
-                            <span className="font-mono text-emerald-100 font-bold text-xl">{results.circumradius.toFixed(4)}</span>
-                        </div>
-                        <div className="bg-black/30 p-4 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center">
-                            <span className="text-zinc-400 text-xs font-bold uppercase tracking-wide mb-1">Interior Angle</span>
-                            <span className="font-mono text-emerald-100 font-bold text-xl">{results.interiorAngle.toFixed(2)}°</span>
-                        </div>
-                        <div className="bg-black/30 p-4 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center">
-                            <span className="text-zinc-400 text-xs font-bold uppercase tracking-wide mb-1">Exterior Angle</span>
-                            <span className="font-mono text-emerald-100 font-bold text-xl">{results.exteriorAngle.toFixed(2)}°</span>
-                        </div>
-                    </div>
-                </div>
-            )}
-
-            <div className="mt-8 bg-zinc-100 p-6 rounded-xl border border-zinc-200 text-sm text-zinc-600 max-w-2xl mx-auto space-y-2">
-                <p className="font-bold text-zinc-800 uppercase tracking-widest mb-4">Properties</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <ul className="list-disc pl-5 space-y-1 font-mono">
-                        <li>Area = (n × s²) / (4 × tan(π/n))</li>
-                        <li>Perimeter = n × s</li>
-                        <li>Sum of Interior Angles = (n-2) × 180°</li>
-                    </ul>
-                    <ul className="list-disc pl-5 space-y-1 font-mono">
-                        <li>Interior Angle = Sum / n</li>
-                        <li>Exterior Angle = 360° / n</li>
-                        <li>Central Angle = 360° / n</li>
-                    </ul>
-                </div>
-            </div>
-
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", "name": "Polygon Calculator", "operatingSystem": "All", "applicationCategory": "EducationalApplication" }) }} />
-
-            <div className="mt-8">
-                <CalculatorSEO
-                    title="Regular Polygon Calculator"
-                    whatIsIt={
-                        <>
-                            <p>A <strong>Polygon Calculator</strong> is a universal geometric solver capable of determining the physical dimensions and angular properties of any <em>regular polygon</em> with three or more sides (n ≥ 3).</p>
-                            <p>Instead of requiring a different calculator for a Pentagon (5), Nonagon (9), or Dodecagon (12), you simply input the number of sides (n) alongside one known metric (like side length or area), and the tool reverse-calculates the exact area, perimeter, internal angles, and radii utilizing trigonometric functions.</p>
-                        </>
-                    }
-                    formula={
-                        <>
-                            <p>The universal math for a regular n-gon relies on dividing the shape into <em>n</em> isosceles triangles originating from the absolute center. These formulas use trigonometry (tangent and sine) evaluated in radians (where π / n).</p>
-                            <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                                <li><strong>Area (A):</strong> <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">A = (n × s²) / (4 × tan(π/n))</code></li>
-                                <li><strong>Perimeter (P):</strong> <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">P = n × s</code></li>
-                                <li><strong>Interior Angle:</strong> The inside angle at any vertex. <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">Angle = [(n - 2) × 180°] / n</code></li>
-                                <li><strong>Apothem (Inradius):</strong> Distance from center to flat edge. <br /> <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">r = s / (2 × tan(π/n))</code></li>
-                            </ul>
-                        </>
-                    }
-                    example={
-                        <>
-                            <p>Let's calculate the <strong>Interior Angle</strong> of a regular Dodecagon (a 12-sided polygon):</p>
-                            <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-zinc-50 p-4 rounded-xl border border-zinc-200 shadow-inner">
-                                <li className="text-zinc-500 mb-2">Formula: Total Sum / n = [(n - 2) × 180°] / n</li>
-                                <li>Angle = [(12 - 2) × 180°] / 12</li>
-                                <li>Angle = [10 × 180°] / 12</li>
-                                <li>Angle = 1800° / 12</li>
-                                <li className="pt-2 border-t border-zinc-200 mt-2 font-bold text-emerald-700">Single Interior Angle = 150°</li>
-                            </ul>
-                        </>
-                    }
-                    useCases={
-                        <ul className="list-disc pl-6 space-y-4">
-                            <li><strong>3D Modeling & CAD:</strong> Instantly calculating circumradius dimensions to ensure a many-sided custom gear or circular approximation fits exactly within a mechanical housing.</li>
-                            <li><strong>Mathematics Education:</strong> Visually proving to students how, as the number of sides (n) approaches infinity, the Area and Perimeter formulas of a polygon naturally converge into the Area (πr²) and Circumference (2πr) of a circle.</li>
-                            <li><strong>Architecture:</strong> Designing gazebo floors or pavilion roofs that feature uncommon footprints like heptagons (7-sided) or decagons (10-sided) utilizing the central angles and apothems.</li>
-                        </ul>
-                    }
-                    faqs={[
-                        {
-                            question: "Does this work for 'Irregular' Polygons?",
-                            answer: "No. This calculator is strictly for Regular Polygons—shapes where every single side is the exact same length, and every internal angle is the exact same degree. Irregular polygons cannot be solved with a single side length; they require coordinate geometry (like the Shoelace formula)."
-                        },
-                        {
-                            question: "What is the difference between an Inradius and Circumradius?",
-                            answer: "The Inradius (Apothem) is the radius of the largest circle that can fit completely inside the polygon (touching the flat sides). The Circumradius is the radius of the circle that fits completely outside the polygon (touching every pointy vertex)."
-                        }
-                    ]}
-                    relatedCalculators={[
-                        { name: "Hexagon Calculator", path: "/hexagon-calculator", desc: "Calculate properties of specifically 6-sided polygons." },
-                        { name: "Octagon Calculator", path: "/octagon-calculator", desc: "Calculate properties of specifically 8-sided polygons." },
-                        { name: "Arc Length Calculator", path: "/arc-length-calculator", desc: "Calculate the exact properties of perfect circles." }
-                    ]}
-                />
-            </div>
+          <div>
+            <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
+              Value
+            </label>
+            <input
+              type="number"
+              step="any"
+              min="0"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold text-xl"
+              onKeyDown={(e) => e.key === "Enter" && calculate()}
+            />
+          </div>
         </div>
-    );
+
+        {errorMsg && (
+          <div className="mt-4 p-3 bg-red-50 text-red-600 border border-red-200 rounded-lg text-sm font-bold text-center">
+            {errorMsg}
+          </div>
+        )}
+
+        <div className="mt-8">
+          <button
+            onClick={calculate}
+            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-xl transition-colors shadow-lg shadow-emerald-600/30 uppercase tracking-widest"
+          >
+            Calculate Regular Polygon
+          </button>
+        </div>
+      </div>
+
+      {results && (
+        <div className="bg-emerald-950 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden flex flex-col items-center">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-600 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none"></div>
+
+          <h2 className="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-6 z-10">
+            Regular {results.n}-gon Results
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full z-10">
+            <div className="bg-black/30 p-4 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center">
+              <span className="text-zinc-400 text-xs font-bold uppercase tracking-wide mb-1">
+                Side Length
+              </span>
+              <span className="font-mono text-emerald-100 font-bold text-2xl">
+                {results.side.toFixed(4)}
+              </span>
+            </div>
+            <div className="bg-emerald-900/60 p-4 rounded-xl border border-emerald-500/30 flex flex-col items-center text-center justify-center shadow-inner lg:col-span-2">
+              <span className="text-emerald-400 text-sm font-bold uppercase tracking-wide mb-1">
+                Area
+              </span>
+              <span className="font-mono text-white font-bold text-3xl">
+                {results.area.toFixed(4)}
+              </span>
+            </div>
+            <div className="bg-black/30 p-4 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center">
+              <span className="text-zinc-400 text-xs font-bold uppercase tracking-wide mb-1">
+                Perimeter
+              </span>
+              <span className="font-mono text-emerald-100 font-bold text-2xl">
+                {results.perimeter.toFixed(4)}
+              </span>
+            </div>
+
+            <div className="bg-black/30 p-4 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center">
+              <span className="text-zinc-400 text-xs font-bold uppercase tracking-wide mb-1">
+                Apothem (Inradius)
+              </span>
+              <span className="font-mono text-emerald-100 font-bold text-xl">
+                {results.inradius.toFixed(4)}
+              </span>
+            </div>
+            <div className="bg-black/30 p-4 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center">
+              <span className="text-zinc-400 text-xs font-bold uppercase tracking-wide mb-1">
+                Circumradius
+              </span>
+              <span className="font-mono text-emerald-100 font-bold text-xl">
+                {results.circumradius.toFixed(4)}
+              </span>
+            </div>
+            <div className="bg-black/30 p-4 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center">
+              <span className="text-zinc-400 text-xs font-bold uppercase tracking-wide mb-1">
+                Interior Angle
+              </span>
+              <span className="font-mono text-emerald-100 font-bold text-xl">
+                {results.interiorAngle.toFixed(2)}°
+              </span>
+            </div>
+            <div className="bg-black/30 p-4 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center">
+              <span className="text-zinc-400 text-xs font-bold uppercase tracking-wide mb-1">
+                Exterior Angle
+              </span>
+              <span className="font-mono text-emerald-100 font-bold text-xl">
+                {results.exteriorAngle.toFixed(2)}°
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="mt-8 bg-zinc-100 p-6 rounded-xl border border-zinc-200 text-sm text-zinc-600 max-w-2xl mx-auto space-y-2">
+        <p className="font-bold text-zinc-800 uppercase tracking-widest mb-4">
+          Properties
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ul className="list-disc pl-5 space-y-1 font-mono">
+            <li>Area = (n × s²) / (4 × tan(π/n))</li>
+            <li>Perimeter = n × s</li>
+            <li>Sum of Interior Angles = (n-2) × 180°</li>
+          </ul>
+          <ul className="list-disc pl-5 space-y-1 font-mono">
+            <li>Interior Angle = Sum / n</li>
+            <li>Exterior Angle = 360° / n</li>
+            <li>Central Angle = 360° / n</li>
+          </ul>
+        </div>
+      </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Polygon Calculator",
+            operatingSystem: "All",
+            applicationCategory: "EducationalApplication",
+          }),
+        }}
+      />
+
+      <div className="mt-8">
+        <CalculatorSEO
+          title="Regular Polygon Calculator"
+          whatIsIt={
+            <>
+              <p>
+                A <strong>Polygon Calculator</strong> is a universal geometric
+                solver capable of determining the physical dimensions and
+                angular properties of any <em>regular polygon</em> with three or
+                more sides (n ≥ 3).
+              </p>
+              <p>
+                Instead of requiring a different calculator for a Pentagon (5),
+                Nonagon (9), or Dodecagon (12), you simply input the number of
+                sides (n) alongside one known metric (like side length or area),
+                and the tool reverse-calculates the exact area, perimeter,
+                internal angles, and radii utilizing trigonometric functions.
+              </p>
+            </>
+          }
+          formula={
+            <>
+              <p>
+                The universal math for a regular n-gon relies on dividing the
+                shape into <em>n</em> isosceles triangles originating from the
+                absolute center. These formulas use trigonometry (tangent and
+                sine) evaluated in radians (where π / n).
+              </p>
+              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
+                <li>
+                  <strong>Area (A):</strong> <br />{" "}
+                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">
+                    A = (n × s²) / (4 × tan(π/n))
+                  </code>
+                </li>
+                <li>
+                  <strong>Perimeter (P):</strong> <br />{" "}
+                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">
+                    P = n × s
+                  </code>
+                </li>
+                <li>
+                  <strong>Interior Angle:</strong> The inside angle at any
+                  vertex. <br />{" "}
+                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">
+                    Angle = [(n - 2) × 180°] / n
+                  </code>
+                </li>
+                <li>
+                  <strong>Apothem (Inradius):</strong> Distance from center to
+                  flat edge. <br />{" "}
+                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">
+                    r = s / (2 × tan(π/n))
+                  </code>
+                </li>
+              </ul>
+            </>
+          }
+          example={
+            <>
+              <p>
+                Let's calculate the <strong>Interior Angle</strong> of a regular
+                Dodecagon (a 12-sided polygon):
+              </p>
+              <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-zinc-50 p-4 rounded-xl border border-zinc-200 shadow-inner">
+                <li className="text-zinc-500 mb-2">
+                  Formula: Total Sum / n = [(n - 2) × 180°] / n
+                </li>
+                <li>Angle = [(12 - 2) × 180°] / 12</li>
+                <li>Angle = [10 × 180°] / 12</li>
+                <li>Angle = 1800° / 12</li>
+                <li className="pt-2 border-t border-zinc-200 mt-2 font-bold text-emerald-700">
+                  Single Interior Angle = 150°
+                </li>
+              </ul>
+            </>
+          }
+          useCases={
+            <ul className="list-disc pl-6 space-y-4">
+              <li>
+                <strong>3D Modeling & CAD:</strong> Instantly calculating
+                circumradius dimensions to ensure a many-sided custom gear or
+                circular approximation fits exactly within a mechanical housing.
+              </li>
+              <li>
+                <strong>Mathematics Education:</strong> Visually proving to
+                students how, as the number of sides (n) approaches infinity,
+                the Area and Perimeter formulas of a polygon naturally converge
+                into the Area (πr²) and Circumference (2πr) of a circle.
+              </li>
+              <li>
+                <strong>Architecture:</strong> Designing gazebo floors or
+                pavilion roofs that feature uncommon footprints like heptagons
+                (7-sided) or decagons (10-sided) utilizing the central angles
+                and apothems.
+              </li>
+            </ul>
+          }
+          faqs={[
+            {
+              question: "Does this work for 'Irregular' Polygons?",
+              answer:
+                "No. This calculator is strictly for Regular Polygons—shapes where every single side is the exact same length, and every internal angle is the exact same degree. Irregular polygons cannot be solved with a single side length; they require coordinate geometry (like the Shoelace formula).",
+            },
+            {
+              question:
+                "What is the difference between an Inradius and Circumradius?",
+              answer:
+                "The Inradius (Apothem) is the radius of the largest circle that can fit completely inside the polygon (touching the flat sides). The Circumradius is the radius of the circle that fits completely outside the polygon (touching every pointy vertex).",
+            },
+          ]}
+          relatedCalculators={[
+            {
+              name: "Hexagon Calculator",
+              path: "/hexagon-calculator",
+              desc: "Calculate properties of specifically 6-sided polygons.",
+            },
+            {
+              name: "Octagon Calculator",
+              path: "/octagon-calculator",
+              desc: "Calculate properties of specifically 8-sided polygons.",
+            },
+            {
+              name: "Arc Length Calculator",
+              path: "/arc-length-calculator",
+              desc: "Calculate the exact properties of perfect circles.",
+            },
+          ]}
+        />
+      </div>
+    </div>
+  );
 }

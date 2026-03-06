@@ -1,10 +1,63 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: 'Age Calculator',
-    description: 'Free online Age Calculator. Calculate your exact chronological age in years, months, days, weeks, and find out exactly how many days until your next birthday.',
+  title: "Age Calculator",
+  description:
+    "Free online Age Calculator. Calculate your exact chronological age in years, months, days, weeks, and find out exactly how many days until your next birthday. Including specialized USA tools like mileage calculator, body fat percentage calculator, voltage drop calculator.",
+  keywords: [
+    "mileage calculator",
+    "body fat percentage calculator",
+    "voltage drop calculator",
+    "square footage calculator",
+    "percentage formula",
+    "age calculator",
+    "percentage calculator online",
+    "fat percentage calculator",
+    "weight loss percentage calculator",
+    "percentage increase calculator",
+    "find percentage",
+    "stock average calculator",
+    "wattage calculator",
+    "voltage divider calculator",
+    "percentage calculator formula",
+    "work out percentage",
+    "acreage calculator",
+    "square footage",
+    "percentage of a number",
+    "gpa to percentage",
+    "average rate of change calculator",
+    "percentage difference calculator",
+    "voltage drop formula",
+    "age calculator app",
+    "weighted average",
+    "weight according to height and age in kg",
+    "share average calculator",
+    "average calculator",
+    "percentage change calculator",
+    "percentage to gpa",
+    "percentage to gpa calculator",
+    "percentage increase formula",
+    "average percentage calculator",
+    "age calculator by year",
+    "age calculator formula",
+    "age calculator google",
+    "age calculator online",
+    "age counter",
+    "age difference calculator",
+    "age gap calculator",
+    "average down calculator",
+    "average rate of change formula",
+    "average speed calculator",
+    "calculate my age",
+    "loss percentage formula",
+    "percentage growth calculator",
+    "calculator please",
+    "the calculator",
+    "calendar calculator",
+    "calendar days calculator",
+  ],
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return <>{children}</>;
+  return <>{children}</>;
 }
