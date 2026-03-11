@@ -527,6 +527,11 @@ export default function Home() {
           desc: "Find the exact midpoint halfway between two given coordinates.",
         },
         {
+          name: "Slope Calculator",
+          path: "/slope-calculator",
+          desc: "Calculate the exact slope (m), y-intercept, and angle of a line from two coordinate points.",
+        },
+        {
           name: "Logarithm Calculator",
           path: "/logarithm-calculator",
           desc: "Calculate the logarithm of any positive real number using a custom base, base 10, or base e.",
