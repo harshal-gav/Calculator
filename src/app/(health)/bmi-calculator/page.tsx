@@ -3,386 +3,253 @@
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
-export default function BMICalculator() {
-  const [age, setAge] = useState("25");
-  const [gender, setGender] = useState("male");
-  const [height, setHeight] = useState("175");
-  const [weight, setWeight] = useState("70");
-  const [bmi, setBmi] = useState<number | null>(null);
+export default function BmiCalculator() {
+  const [unitSystem, setUnitSystem] = useState<"imperial" | "metric">("imperial");
+  const [heightFeet, setHeightFeet] = useState("5");
+  const [heightInches, setHeightInches] = useState("10");
+  const [weightLbs, setWeightLbs] = useState("160");
+  
+  const [heightCm, setHeightCm] = useState("178");
+  const [weightKg, setWeightKg] = useState("72.5");
 
-  const calculateBMI = () => {
-    const h = parseFloat(height) / 100;
-    const w = parseFloat(weight);
-    if (h > 0 && w > 0) {
-      setBmi(w / (h * h));
+  const [result, setResult] = useState<{
+    bmi: number;
+    category: string;
+    color: string;
+    minHealthyWeightDesc: string;
+    maxHealthyWeightDesc: string;
+  } | null>(null);
+
+  const calculateBmi = () => {
+    let bmiValue = 0;
+    let minHealthyWeight = 0;
+    let maxHealthyWeight = 0;
+    let isMetric = unitSystem === "metric";
+
+    if (!isMetric) {
+      const ft = parseFloat(heightFeet) || 0;
+      const inch = parseFloat(heightInches) || 0;
+      const lbs = parseFloat(weightLbs) || 0;
+      
+      const totalInches = (ft * 12) + inch;
+      
+      if (totalInches > 0 && lbs > 0) {
+        // Imperial BMI formula: 703 * (lbs / inches^2)
+        bmiValue = 703 * (lbs / (totalInches * totalInches));
+        
+        // Healthy BMI range is 18.5 to 24.9
+        // Weight = BMI * (inches^2) / 703
+        minHealthyWeight = 18.5 * (totalInches * totalInches) / 703;
+        maxHealthyWeight = 24.9 * (totalInches * totalInches) / 703;
+      }
+    } else {
+      const cm = parseFloat(heightCm) || 0;
+      const kg = parseFloat(weightKg) || 0;
+      const meters = cm / 100;
+      
+      if (meters > 0 && kg > 0) {
+        // Metric BMI formula: kg / m^2
+        bmiValue = kg / (meters * meters);
+        
+        minHealthyWeight = 18.5 * (meters * meters);
+        maxHealthyWeight = 24.9 * (meters * meters);
+      }
+    }
+
+    if (bmiValue > 0) {
+      let category = "";
+      let color = "";
+      
+      if (bmiValue < 18.5) {
+        category = "Underweight";
+        color = "text-blue-500 border-blue-200 bg-blue-50";
+      } else if (bmiValue < 25) {
+        category = "Normal Weight";
+        color = "text-green-600 border-green-200 bg-green-50";
+      } else if (bmiValue < 30) {
+        category = "Overweight";
+        color = "text-yellow-600 border-yellow-200 bg-yellow-50";
+      } else if (bmiValue < 35) {
+        category = "Obese (Class I)";
+        color = "text-orange-500 border-orange-200 bg-orange-50";
+      } else if (bmiValue < 40) {
+        category = "Obese (Class II)";
+        color = "text-red-500 border-red-200 bg-red-50";
+      } else {
+        category = "Severe Obesity (Class III)";
+        color = "text-red-700 border-red-300 bg-red-100";
+      }
+
+      setResult({
+        bmi: bmiValue,
+        category,
+        color,
+        minHealthyWeightDesc: `${minHealthyWeight.toFixed(1)} ${isMetric ? "kg" : "lbs"}`,
+        maxHealthyWeightDesc: `${maxHealthyWeight.toFixed(1)} ${isMetric ? "kg" : "lbs"}`,
+      });
     }
   };
 
-  const getCategory = (b: number) => {
-    if (b < 16)
-      return {
-        label: "Severe Thinness",
-        color: "text-red-600",
-        bg: "bg-red-100",
-      };
-    if (b < 17)
-      return {
-        label: "Moderate Thinness",
-        color: "text-orange-600",
-        bg: "bg-orange-100",
-      };
-    if (b < 18.5)
-      return {
-        label: "Mild Thinness",
-        color: "text-yellow-600",
-        bg: "bg-yellow-100",
-      };
-    if (b < 25)
-      return { label: "Normal", color: "text-green-600", bg: "bg-green-100" };
-    if (b < 30)
-      return {
-        label: "Overweight",
-        color: "text-yellow-600",
-        bg: "bg-yellow-100",
-      };
-    if (b < 35)
-      return {
-        label: "Obese Class I",
-        color: "text-orange-600",
-        bg: "bg-orange-100",
-      };
-    if (b < 40)
-      return {
-        label: "Obese Class II",
-        color: "text-red-500",
-        bg: "bg-red-100",
-      };
-    return {
-      label: "Obese Class III",
-      color: "text-red-700",
-      bg: "bg-red-200",
-    };
-  };
-
-  const clearForm = () => {
-    setAge("25");
-    setGender("male");
-    setHeight("175");
-    setWeight("70");
-    setBmi(null);
-  };
-
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
       <h1 className="text-4xl font-extrabold mb-4 text-gray-900 border-b pb-4">
         BMI Calculator
       </h1>
       <p className="mb-8 text-gray-600 text-lg">
-        The Body Mass Index (BMI) Calculator can be used to calculate BMI value
-        and corresponding weight status while taking age into consideration.
+        Calculate your Body Mass Index (BMI) to determine your weight category and healthy targeted weight range.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Input Section */}
-        <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div className="lg:col-span-5 bg-gray-50 p-6 rounded-xl border border-gray-200">
+          <h2 className="text-xl font-bold mb-6 text-gray-800">Your Measurements</h2>
+          
           <div className="space-y-6">
-            <div className="flex gap-4">
-              <div className="flex-1">
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
-                  Age (ages 2 - 120)
-                </label>
-                <input
-                  type="number"
-                  value={age}
-                  onChange={(e) => setAge(e.target.value)}
-                  className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border"
-                />
-              </div>
-              <div className="flex-1">
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
-                  Gender
-                </label>
-                <div className="flex gap-4 mt-2">
-                  <label className="flex items-center gap-2 cursor-pointer">
+            <div className="flex bg-white rounded-lg border border-gray-300 overflow-hidden shadow-sm">
+              <button
+                className={`flex-1 py-3 text-sm font-bold transition ${unitSystem === "imperial" ? "bg-indigo-600 text-white" : "text-gray-600 hover:bg-gray-100"}`}
+                onClick={() => setUnitSystem("imperial")}
+              >
+                Imperial (ft / lbs)
+              </button>
+              <button
+                className={`flex-1 py-3 text-sm font-bold transition ${unitSystem === "metric" ? "bg-indigo-600 text-white" : "text-gray-600 hover:bg-gray-100 border-l border-gray-300"}`}
+                onClick={() => setUnitSystem("metric")}
+              >
+                Metric (cm / kg)
+              </button>
+            </div>
+
+            {unitSystem === "imperial" ? (
+              <>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">Feet</label>
                     <input
-                      type="radio"
-                      value="male"
-                      checked={gender === "male"}
-                      onChange={(e) => setGender(e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      type="number"
+                      value={heightFeet}
+                      onChange={(e) => setHeightFeet(e.target.value)}
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 border text-lg"
                     />
-                    <span>Male</span>
-                  </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">Inches</label>
                     <input
-                      type="radio"
-                      value="female"
-                      checked={gender === "female"}
-                      onChange={(e) => setGender(e.target.value)}
-                      className="w-4 h-4 text-pink-600"
+                      type="number"
+                      value={heightInches}
+                      onChange={(e) => setHeightInches(e.target.value)}
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 border text-lg"
                     />
-                    <span>Female</span>
-                  </label>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Height (cm)
-              </label>
-              <input
-                type="number"
-                value={height}
-                onChange={(e) => setHeight(e.target.value)}
-                className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Weight (kg)
-              </label>
-              <input
-                type="number"
-                value={weight}
-                onChange={(e) => setWeight(e.target.value)}
-                className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border"
-              />
-            </div>
-
-            <div className="flex gap-4 pt-2">
-              <button
-                onClick={calculateBMI}
-                className="flex-1 bg-green-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-700 active:bg-green-800 transition shadow-md"
-              >
-                Calculate
-              </button>
-              <button
-                onClick={clearForm}
-                className="flex-1 bg-gray-200 text-gray-800 font-bold py-3 px-4 rounded-lg hover:bg-gray-300 active:bg-gray-400 transition"
-              >
-                Clear
-              </button>
-            </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1">Weight (lbs)</label>
+                  <input
+                    type="number"
+                    value={weightLbs}
+                    onChange={(e) => setWeightLbs(e.target.value)}
+                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 border text-lg"
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1">Height (cm)</label>
+                  <input
+                    type="number"
+                    value={heightCm}
+                    onChange={(e) => setHeightCm(e.target.value)}
+                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 border text-lg"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1">Weight (kg)</label>
+                  <input
+                    type="number"
+                    value={weightKg}
+                    onChange={(e) => setWeightKg(e.target.value)}
+                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 border text-lg"
+                  />
+                </div>
+              </>
+            )}
           </div>
+
+          <button
+            onClick={calculateBmi}
+            className="mt-8 w-full bg-indigo-600 text-white font-bold py-4 px-4 rounded-xl hover:bg-indigo-700 transition shadow-lg text-lg uppercase tracking-wide"
+          >
+            Calculate BMI
+          </button>
         </div>
 
-        {/* Results Section */}
-        <div>
-          {bmi !== null ? (
-            <div
-              className={`p-8 rounded-2xl text-center shadow-inner border transition-all duration-500 ${getCategory(bmi).bg}`}
-            >
-              <h2 className="text-xl font-semibold text-gray-700 mb-2">
-                Result
+        <div className="lg:col-span-7 bg-indigo-50 rounded-xl p-8 border border-indigo-200 shadow-inner flex flex-col justify-center">
+          {result !== null ? (
+            <div>
+              <h2 className="text-lg font-bold text-indigo-900 mb-2 text-center uppercase tracking-wider">
+                Your BMI Score
               </h2>
-              <div className="text-5xl sm:text-6xl font-black mb-4">
-                {bmi.toFixed(1)}{" "}
-                <span className="text-lg font-normal text-gray-500 align-top">
-                  kg/m²
-                </span>
+              <div className="text-6xl md:text-7xl font-black text-center text-indigo-700 mb-6 pb-6 border-b border-indigo-200">
+                {result.bmi.toFixed(1)}
               </div>
-              <div
-                className={`text-xl sm:text-2xl font-bold uppercase tracking-wider ${getCategory(bmi).color}`}
-              >
-                {getCategory(bmi).label}
+              
+              <div className={`text-center py-4 px-6 rounded-lg border border-opacity-50 font-bold text-xl md:text-2xl mb-6 ${result.color}`}>
+                {result.category}
+              </div>
+
+              <div className="bg-white p-5 rounded-xl border border-indigo-100 shadow-sm">
+                 <h3 className="font-bold text-gray-800 mb-3 text-center">Your Healthy Weight Range</h3>
+                 <p className="text-center text-gray-600 mb-2">Based on a healthy BMI of 18.5 - 24.9:</p>
+                 <div className="text-2xl font-black text-center text-indigo-600">
+                    {result.minHealthyWeightDesc} - {result.maxHealthyWeightDesc}
+                 </div>
               </div>
             </div>
           ) : (
-            <div className="h-full border-2 border-dashed border-gray-200 rounded-2xl flex items-center justify-center p-8 text-gray-400 text-center">
-              Enter your details and click Calculate to see your results.
-            </div>
+             <div className="text-center text-indigo-800 opacity-60 font-medium p-8">
+                Enter your height and weight to visualize your Body Mass Index ratio.
+             </div>
           )}
-
-          <div className="mt-8">
-            <h3 className="font-bold text-gray-800 mb-4 text-lg">
-              Adult BMI Chart
-            </h3>
-            <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
-              <table className="w-full text-sm text-left text-gray-600">
-                <thead className="bg-gray-100 text-gray-700 uppercase font-semibold">
-                  <tr>
-                    <th className="px-4 py-3 border-b">Category</th>
-                    <th className="px-4 py-3 border-b text-right">
-                      BMI Range (kg/m²)
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  <tr className="hover:bg-gray-50">
-                    <td className="px-4 py-3 font-medium">Underweight</td>
-                    <td className="px-4 py-3 text-right text-yellow-600">
-                      &lt; 18.5
-                    </td>
-                  </tr>
-                  <tr className="bg-green-50 hover:bg-green-100 font-semibold">
-                    <td className="px-4 py-3 text-green-800">Normal weight</td>
-                    <td className="px-4 py-3 text-right text-green-700">
-                      18.5 - 24.9
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="px-4 py-3 font-medium">Overweight</td>
-                    <td className="px-4 py-3 text-right text-yellow-600">
-                      25 - 29.9
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="px-4 py-3 font-medium text-red-600">
-                      Obesity
-                    </td>
-                    <td className="px-4 py-3 text-right text-red-600">≥ 30</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
       </div>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "BMI Calculator",
-            operatingSystem: "All",
-            applicationCategory: "HealthApplication",
-            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-          }),
-        }}
-      />
 
       <CalculatorSEO
         title="BMI Calculator"
         whatIsIt={
           <>
             <p>
-              Our <strong>Body Mass Index (BMI) Calculator</strong> is a
-              universally recognized screening tool used by doctors and health
-              professionals worldwide to evaluate a person's weight relative to
-              their height. It provides a simple numeric score that places you
-              into health categories ranging from "underweight" to "obese."
-            </p>
-            <p>
-              While BMI does not measure body fat directly, research shows it
-              correlates strongly with direct measures of body fat, making it an
-              inexpensive and easy way to screen for potential weight-related
-              health issues.
-            </p>
-
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related Terms:</strong> Bmi Calculator, Bmi, Body Mass
-              Index, Bmi Calculator Women, Bmi Chart, Body Mass Index
-              Calculator, Bmi Calculator Men, Bmi Chart Women, Bmi Test, Bmi
-              Index, My Bmi, Bmi Calculator Male, Bmi Calculator Kg, Bmi
-              Calculator By Age, Calculate My Bmi
+              A <strong>BMI (Body Mass Index) Calculator</strong> is a screening tool that compares your weight to your height to estimate whether you carry too much or too little body fat.
             </p>
           </>
         }
         formula={
           <>
-            <p>
-              The BMI formula is simple math. It calculates your weight scaled
-              to your height. It can be calculated using both Metric (kilograms
-              and meters) and Imperial (pounds and inches) systems:
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-lg shadow-sm my-4 overflow-x-auto space-y-4 text-green-900 border border-green-100">
-              <p>
-                <strong>Metric:</strong> BMI = Weight (kg) / [Height (m)]²
-              </p>
-              <p>
-                <strong>Imperial:</strong> BMI = 703 × [Weight (lbs) / (Height
-                (in))²]
-              </p>
-            </div>
+            <p>There are two primary formulas depending on your unit system:</p>
+            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+              <li><strong>Imperial:</strong> 703 × [Weight(lbs) / (Height(inches))²]</li>
+              <li><strong>Metric:</strong> Weight(kg) / (Height(meters))²</li>
+            </ul>
           </>
         }
         example={
           <>
-            <p>
-              Let's calculate the BMI for a person who weighs{" "}
-              <strong>70 kilograms</strong> and is{" "}
-              <strong>175 centimeters</strong> tall (1.75 meters).
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>Step 1 (Square the Height):</strong> 1.75 × 1.75 =
-                3.0625
-              </li>
-              <li>
-                <strong>Step 2 (Divide Weight by Squared Height):</strong> 70 /
-                3.0625 = 22.85
-              </li>
-              <li>
-                <strong>Step 3 (Categorize):</strong> A BMI of{" "}
-                <strong>22.9</strong> falls perfectly into the "Normal Weight"
-                category (18.5 - 24.9).
-              </li>
+            <p>For an individual who is 5'9" (69 inches) weighing 160 lbs:</p>
+            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+              <li>69 squared = 4761</li>
+              <li>160 / 4761 = 0.0336</li>
+              <li>703 × 0.0336 = <strong>23.6 BMI</strong></li>
+              <li>This result falls securely in the "Normal Weight" category.</li>
             </ul>
           </>
         }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Personal Health Tracking:</strong> Setting a healthy goal
-              weight based on your current height and evaluating your progress
-              over time.
-            </li>
-            <li>
-              <strong>Medical Screening:</strong> Doctors use BMI as the first
-              step to assess if a patient is at an elevated risk for type 2
-              diabetes, high blood pressure, or heart disease.
-            </li>
-            <li>
-              <strong>Life Insurance:</strong> Actuaries and insurance companies
-              frequently use BMI as a primary metric when calculating health
-              risks and determining insurance premiums.
-            </li>
-            <li>
-              <strong>Athletics and Fitness:</strong> Bodybuilders and fitness
-              competitors monitoring massive weight drops during "cutting
-              phases" to ensure they do not hit dangerous "Severe Thinness"
-              levels.
-            </li>
-          </ul>
-        }
+        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Risk Assessment:</strong> High BMI correctly correlates with increased risks of diabetes, hypertension, and cardiovascular disease across large population samples.</li></ul>}
         faqs={[
           {
-            question: "Is BMI accurate for athletes or bodybuilders?",
-            answer:
-              "No. This is one of the biggest limitations of the BMI formula. Because muscle is much denser than fat, a muscular athlete might weigh 220 pounds at 5'10, giving them a BMI of 31.6 (Obese), even if they have only 8% body fat. BMI cannot distinguish between fat and muscle weight.",
-          },
-          {
-            question: "Is the BMI chart the same for men and women?",
-            answer:
-              "Yes. For adults 20 years and older, the BMI calculation and the resulting category charts are exactly the same for both men and women. However, women organically tend to have more body fat than men at the exact same BMI, and older adults tend to have more body fat than younger adults at the same BMI.",
-          },
-          {
-            question: "Why does the calculator ask for Age and Gender?",
-            answer:
-              "While adult BMI is the same for everyone, children and teens (ages 2-19) are calculated differently. Their BMI result must be compared against age- and gender-specific percentile charts from the CDC because their body fat changes dynamically as they grow.",
-          },
+            question: "Is BMI accurate for bodybuilders?",
+            answer: "No. BMI does not differentiate between fat mass and muscle mass. A highly muscular athlete with 8% body fat could easily register as 'Obese' on a BMI scale simply due to their sheer density and mass."
+          }
         ]}
-        relatedCalculators={[
-          {
-            name: "Calorie Calculator",
-            path: "/calorie-calculator",
-            desc: "Calculate your daily calorie needs for weight loss, maintenance, or gain.",
-          },
-          {
-            name: "Body Fat Calculator",
-            path: "/body-fat-calculator",
-            desc: "Estimate your total body fat percentage based on U.S. Navy methods.",
-          },
-          {
-            name: "Ideal Weight Calculator",
-            path: "/ideal-weight-calculator",
-            desc: "Discover exactly how much you should weigh based on clinical formulas.",
-          },
-        ]}
+        relatedCalculators={[]}
       />
     </div>
   );

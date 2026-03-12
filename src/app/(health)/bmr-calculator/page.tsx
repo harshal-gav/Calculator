@@ -1,330 +1,230 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
-export default function BmrCalculator() {
-  const [gender, setGender] = useState("male");
-  const [age, setAge] = useState("30");
-  const [weight, setWeight] = useState("75"); // kg
-  const [height, setHeight] = useState("175"); // cm
 
-  const [result, setResult] = useState<{
-    mifflin: number;
-    harrisBenedict: number;
-  } | null>(null);
+export default function BMRCalculator() {
+  const [age, setAge] = useState("25");
+  const [gender, setGender] = useState("male");
+  const [weight, setWeight] = useState("70"); // kg
+  const [height, setHeight] = useState("175"); // cm
+  const [unit, setUnit] = useState("metric");
+
+  const [bmrMifflin, setBmrMifflin] = useState<number | null>(null);
+  const [bmrHarris, setBmrHarris] = useState<number | null>(null);
+
+  useEffect(() => {
+    calculateBMR();
+  }, [age, gender, weight, height, unit]);
 
   const calculateBMR = () => {
-    const a = parseFloat(age) || 0;
-    const w = parseFloat(weight) || 0;
-    const h = parseFloat(height) || 0;
+    let w = parseFloat(weight);
+    let h = parseFloat(height);
+    const a = parseFloat(age);
 
-    if (a > 0 && w > 0 && h > 0) {
-      let mifflin = 0;
+    if (unit === "imperial") {
+      w = w * 0.453592;
+      h = h * 2.54;
+    }
+
+    if (w > 0 && h > 0 && a > 0) {
+      // Mifflin-St Jeor
+      let mifflin = 10 * w + 6.25 * h - 5 * a;
+      if (gender === "male") mifflin += 5;
+      else mifflin -= 161;
+
+      // Revised Harris-Benedict (Roza and Shizgal, 1984)
       let harris = 0;
-
       if (gender === "male") {
-        mifflin = 10 * w + 6.25 * h - 5 * a + 5;
-        harris = 88.362 + 13.397 * w + 4.799 * h - 5.677 * a;
+        harris = 88.362 + (13.397 * w) + (4.799 * h) - (5.677 * a);
       } else {
-        mifflin = 10 * w + 6.25 * h - 5 * a - 161;
-        harris = 447.593 + 9.247 * w + 3.098 * h - 4.33 * a;
+        harris = 447.593 + (9.247 * w) + (3.098 * h) - (4.330 * a);
       }
 
-      setResult({
-        mifflin: Math.max(0, mifflin),
-        harrisBenedict: Math.max(0, harris),
-      });
+      setBmrMifflin(mifflin);
+      setBmrHarris(harris);
+    } else {
+      setBmrMifflin(null);
+      setBmrHarris(null);
     }
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-      <h1 className="text-4xl font-extrabold mb-4 text-orange-600 border-b pb-4">
-        BMR Calculator
-      </h1>
-      <p className="mb-8 text-gray-600 text-lg">
-        Calculate your Basal Metabolic Rate (BMR) — the exact number of calories
-        your body burns while at complete rest.
-      </p>
+    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-3xl shadow-2xl border border-blue-50">
+      <div className="text-center mb-10">
+        <h1 className="text-4xl md:text-5xl font-black mb-4 text-slate-900 tracking-tight">
+          BMR Calculator
+        </h1>
+        <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+          Calculate your Basal Metabolic Rate—the calories your body needs to maintain vital functions while completely at rest.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Inputs */}
-        <div className="bg-orange-50 p-6 rounded-xl border border-orange-100 space-y-6">
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Biological Sex
-            </label>
-            <div className="flex gap-4">
-              <label
-                className={`flex-1 flex items-center justify-center p-3 rounded-lg border-2 cursor-pointer transition ${gender === "male" ? "border-orange-500 bg-orange-100 text-orange-700 font-bold" : "border-gray-200 bg-white text-gray-600"}`}
-              >
-                <input
-                  type="radio"
-                  value="male"
-                  checked={gender === "male"}
-                  onChange={() => setGender("male")}
-                  className="hidden"
-                />
-                Male
-              </label>
-              <label
-                className={`flex-1 flex items-center justify-center p-3 rounded-lg border-2 cursor-pointer transition ${gender === "female" ? "border-orange-500 bg-orange-100 text-orange-700 font-bold" : "border-gray-200 bg-white text-gray-600"}`}
-              >
-                <input
-                  type="radio"
-                  value="female"
-                  checked={gender === "female"}
-                  onChange={() => setGender("female")}
-                  className="hidden"
-                />
-                Female
-              </label>
-            </div>
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {/* Input Panel */}
+        <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-inner flex flex-col justify-between">
+           <div className="space-y-6">
+              <div className="flex p-1 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                 <button 
+                   onClick={() => setGender("male")}
+                   className={`flex-1 py-3 rounded-xl font-bold transition-all ${gender === 'male' ? 'bg-slate-900 text-white' : 'text-slate-400 hover:text-slate-600'}`}
+                 >
+                   Male
+                 </button>
+                 <button 
+                   onClick={() => setGender("female")}
+                   className={`flex-1 py-3 rounded-xl font-bold transition-all ${gender === 'female' ? 'bg-slate-900 text-white' : 'text-slate-400 hover:text-slate-600'}`}
+                 >
+                   Female
+                 </button>
+              </div>
 
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Age (Years)
-            </label>
-            <input
-              type="number"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-              className="w-full rounded-lg border-gray-300 p-3 shadow-sm focus:border-orange-500 font-bold text-lg"
-            />
-          </div>
+              <div className="grid grid-cols-2 gap-4">
+                 <div className="relative">
+                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-1 block">Age (Years)</label>
+                    <input
+                      type="number"
+                      value={age}
+                      onChange={(e) => setAge(e.target.value)}
+                      className="w-full bg-white rounded-2xl border-transparent focus:border-slate-300 focus:ring-0 p-4 font-black text-xl text-slate-800 shadow-sm transition-all"
+                    />
+                 </div>
+                 <div className="relative">
+                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-1 block">System</label>
+                    <select
+                      value={unit}
+                      onChange={(e) => setUnit(e.target.value)}
+                      className="w-full bg-white rounded-2xl border-transparent focus:border-slate-300 focus:ring-0 p-4 font-black text-base text-slate-800 shadow-sm transition-all appearance-none"
+                    >
+                      <option value="metric">Metric (kg/cm)</option>
+                      <option value="imperial">US (lb/in)</option>
+                    </select>
+                 </div>
+              </div>
 
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Weight (kg)
-            </label>
-            <input
-              type="number"
-              step="0.1"
-              value={weight}
-              onChange={(e) => setWeight(e.target.value)}
-              className="w-full rounded-lg border-gray-300 p-3 shadow-sm focus:border-orange-500 font-bold text-lg"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Height (cm)
-            </label>
-            <input
-              type="number"
-              step="1"
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-              className="w-full rounded-lg border-gray-300 p-3 shadow-sm focus:border-orange-500 font-bold text-lg"
-            />
-          </div>
-
-          <button
-            onClick={calculateBMR}
-            className="w-full bg-orange-600 text-white font-bold py-4 rounded-xl hover:bg-orange-700 transition shadow-lg uppercase tracking-wide mt-2"
-          >
-            Calculate BMR
-          </button>
-          <p className="text-center text-xs text-gray-400 mt-2 px-4">
-            Utilizes the gold-standard Mifflin-St Jeor and Revised
-            Harris-Benedict equations.
-          </p>
-        </div>
-
-        {/* Results Screen */}
-        <div className="bg-white border-2 border-orange-100 rounded-xl overflow-hidden shadow-sm flex flex-col justify-center p-8">
-          {result !== null ? (
-            <div className="w-full text-center space-y-8">
               <div>
-                <h3 className="text-orange-800 font-bold uppercase tracking-widest text-[11px] mb-2">
-                  Mifflin-St Jeor Equation{" "}
-                  <span className="text-gray-400 normal-case">
-                    (Most Accurate)
-                  </span>
-                </h3>
-                <div className="text-6xl font-black text-gray-900 border-b border-orange-100 pb-4">
-                  {Math.round(result.mifflin).toLocaleString()}{" "}
-                  <span className="text-2xl text-gray-500 font-medium tracking-tight">
-                    kcal/day
-                  </span>
-                </div>
+                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-1 block">Weight ({unit === 'metric' ? 'kg' : 'lbs'})</label>
+                 <input
+                   type="number"
+                   value={weight}
+                   onChange={(e) => setWeight(e.target.value)}
+                   className="w-full bg-white rounded-2xl border-transparent focus:border-slate-300 focus:ring-0 p-4 font-black text-xl text-slate-800 shadow-sm transition-all"
+                 />
               </div>
 
-              <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 text-left flex justify-between items-center shadow-inner">
-                <h4 className="text-gray-500 font-bold uppercase text-[10px] tracking-wider leading-tight w-1/2">
-                  Revised Harris-Benedict Equation
-                </h4>
-                <p className="text-xl font-bold text-orange-600 w-1/2 text-right">
-                  {Math.round(result.harrisBenedict).toLocaleString()}{" "}
-                  <span className="text-sm font-normal text-gray-500">
-                    kcal
-                  </span>
-                </p>
+              <div>
+                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-1 block">Height ({unit === 'metric' ? 'cm' : 'inches'})</label>
+                 <input
+                   type="number"
+                   value={height}
+                   onChange={(e) => setHeight(e.target.value)}
+                   className="w-full bg-white rounded-2xl border-transparent focus:border-slate-300 focus:ring-0 p-4 font-black text-xl text-slate-800 shadow-sm transition-all"
+                 />
               </div>
-            </div>
-          ) : (
-            <div className="h-full flex items-center justify-center text-center text-orange-300 font-medium text-lg leading-relaxed">
-              Enter your biological metrics to determine your baseline metabolic
-              foundation.
-            </div>
-          )}
+           </div>
+        </div>
+
+        {/* Output Panel */}
+        <div className="flex flex-col gap-4">
+           {bmrMifflin ? (
+             <>
+               <div className="flex-1 bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 text-white shadow-xl flex flex-col justify-center border border-slate-700 relative overflow-hidden group">
+                  <div className="absolute top-4 right-4 text-[10px] font-black text-slate-500 uppercase tracking-widest">Recommended</div>
+                  <div className="text-slate-400 text-xs font-bold uppercase tracking-[0.2em] mb-4">Mifflin-St Jeor</div>
+                  <div className="flex items-baseline gap-2">
+                     <span className="text-6xl font-black tracking-tighter group-hover:scale-105 transition-transform duration-500">{Math.round(bmrMifflin).toLocaleString()}</span>
+                     <span className="text-slate-500 font-bold uppercase text-[10px] tracking-widest">Kcal</span>
+                  </div>
+                  <div className="mt-4 text-xs text-slate-400 leading-relaxed font-medium">
+                    This equation is considered the most accurate for the average individual in modern clinical settings.
+                  </div>
+               </div>
+
+               <div className="flex-1 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-center relative overflow-hidden group">
+                  <div className="text-slate-400 text-xs font-bold uppercase tracking-[0.2em] mb-4">Harris-Benedict</div>
+                  <div className="flex items-baseline gap-2 text-slate-900">
+                     <span className="text-4xl font-black tracking-tighter">{Math.round(bmrHarris!).toLocaleString()}</span>
+                     <span className="text-slate-500 font-bold uppercase text-[10px] tracking-widest">Kcal</span>
+                  </div>
+                  <div className="mt-4 text-[10px] text-slate-500 font-bold uppercase tracking-widest flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                    Revised Formula (1984)
+                  </div>
+               </div>
+             </>
+           ) : (
+             <div className="flex-1 border-4 border-dashed border-slate-100 rounded-3xl flex items-center justify-center p-8 bg-slate-50/20 text-slate-300 text-center text-sm font-black uppercase tracking-widest">
+                Data required for estimation
+             </div>
+           )}
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "BMR Calculator",
-            operatingSystem: "All",
-            applicationCategory: "HealthApplication",
-            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-          }),
-        }}
-      />
-
-      <div className="mt-8">
-        <CalculatorSEO
-          title="Basal Metabolic Rate Calculator"
-          whatIsIt={
-            <>
-              <p>
-                A <strong>Basal Metabolic Rate (BMR) Calculator</strong>{" "}
-                determines the absolute minimum number of calories your body
-                requires to function while at complete physical and mental rest.
-                Think of it as the energy cost just to keep you alive—powering
-                your heart, lungs, brain, and cellular regeneration while you
-                sleep.
-              </p>
-              <p>
-                Your BMR makes up the vast majority (about 60% to 75%) of your
-                total daily energy expenditure. Knowing this baseline number is
-                the critical first step before building any accurate weight
-                loss, muscle gain, or body recomposition diet plan.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Bmr Calculator, Basal Metabolic
-                Rate Calculator, Bmr Calculator To Lose Weight, Resting
-                Metabolic Rate Calculator, Metabolic Rate Calculator, Bmr
-                Formula
-              </p>
-            </>
-          }
-          formula={
-            <>
-              <p>
-                This calculator provides results for two of the most widely
-                accepted and scientifically validated formulas in clinical
-                nutrition:
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  <strong>The Mifflin-St Jeor Equation (Recommended):</strong>{" "}
-                  Developed in 1990, this is considered the gold-standard modern
-                  formula by the Academy of Nutrition and Dietetics. It is
-                  notably more accurate than older formulas, especially for
-                  modern populations.
-                </li>
-                <li>
-                  <strong>The Revised Harris-Benedict Equation:</strong>{" "}
-                  Originally published in 1919 and revised in 1984, this is a
-                  classic equation still used widely in historical medical
-                  texts, though it tends to slightly overestimate BMR in some
-                  individuals.
-                </li>
-              </ul>
-            </>
-          }
-          example={
-            <>
-              <p>
-                Here is how the <strong>Mifflin-St Jeor Equation</strong> works
-                for a hypothetical <strong>30-year-old male</strong> who weighs{" "}
-                <strong>75kg</strong> and is <strong>175cm</strong> tall.
-              </p>
-              <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-orange-50 p-4 rounded-xl border border-orange-200">
-                <li>
-                  <strong>Formula (Male):</strong> (10 × weight in kg) + (6.25 ×
-                  height in cm) - (5 × age) + 5
-                </li>
-                <li>
-                  <strong>Step 1 (Weight):</strong> 10 × 75 = 750
-                </li>
-                <li>
-                  <strong>Step 2 (Height):</strong> 6.25 × 175 = 1093.75
-                </li>
-                <li>
-                  <strong>Step 3 (Age):</strong> 5 × 30 = 150
-                </li>
-                <li>
-                  <strong>Step 4 (Calculate):</strong> 750 + 1093.75 - 150 + 5
-                </li>
-                <li className="pt-2 mt-2 font-bold text-orange-800 border-t border-orange-200">
-                  Result: 1,699 kcal/day
-                </li>
-              </ul>
-              <p className="mt-4 text-sm text-zinc-700">
-                This individual will naturally burn ~1,700 calories per day even
-                if they never get out of bed.
-              </p>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4">
-              <li>
-                <strong>Setting a Dietary Floor:</strong> Nutritionists strongly
-                advise against eating <em>below</em> your BMR on a regular
-                basis, as it can cause metabolic adaptation (slowdown), nutrient
-                deficiencies, and severe fatigue.
-              </li>
-              <li>
-                <strong>Calculating Total Macros:</strong> BMR is Step 1. You
-                use your BMR outcome, multiply it by an activity modifier to get
-                your TDEE, and then divide that final number into protein, carb,
-                and fat goals.
-              </li>
+      <CalculatorSEO
+        title="BMR Calculator"
+        whatIsIt={
+          <>
+            <p>
+              Your <strong>Basal Metabolic Rate (BMR)</strong> is the number of calories your body burns at rest to maintain basic life-sustaining functions, such as breathing, blood circulation, cell production, and nutrient processing.
+            </p>
+            <p>
+              Essentially, BMR represents the metabolic cost of being alive if you were in a coma and did nothing but stay in bed all day. It accounts for about 60% to 75% of your total daily energy expenditure.
+            </p>
+          </>
+        }
+        formula={
+          <>
+            <p>The two most popular formulas are provided. We recommend using <strong>Mifflin-St Jeor</strong> for contemporary calorie planning:</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+               <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                  <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 border-b border-slate-200 pb-1">Mifflin-St Jeor</p>
+                  <code className="text-[10px] text-slate-700">Male: (10 × W) + (6.25 × H) - (5 × A) + 5</code><br/>
+                  <code className="text-[10px] text-slate-700">Female: (10 × W) + (6.25 × H) - (5 × A) - 161</code>
+               </div>
+               <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                  <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 border-b border-slate-200 pb-1">Harris-Benedict (Rev)</p>
+                  <code className="text-[10px] text-slate-700">Male: 88.36 + (13.40 × W) + (4.80 × H) - (5.68 × A)</code><br/>
+                  <code className="text-[10px] text-slate-700">Female: 447.59 + (9.25 × W) + (3.10 × H) - (4.33 × A)</code>
+               </div>
+            </div>
+          </>
+        }
+        example={
+          <>
+            <p>For a <strong>35-year-old female</strong> weighing <strong>65kg</strong> and <strong>165cm</strong> tall:</p>
+            <ul className="list-disc pl-6 mt-4 space-y-2 text-slate-700">
+               <li>The Mifflin-St Jeor equation might estimate <strong>1,354 Kcal/day</strong>.</li>
+               <li>This means even on a day where she is completely inactive, her body requires at least 1,354 calories to function normally.</li>
             </ul>
+          </>
+        }
+        useCases={
+          <ul className="list-disc pl-6 space-y-4 text-slate-700">
+             <li><strong>Determining Nutrition 'Floor':</strong> It is generally unsafe to eat fewer calories than your BMR for extended periods without medical supervision.</li>
+             <li><strong>TDEE Calculation:</strong> BMR is the foundation for calculating your total daily maintenance calories.</li>
+             <li><strong>Metabolic Health:</strong> Tracking how BMR changes as you gain muscle (which is more metabolically 'expensive' than fat).</li>
+          </ul>
+        }
+        faqs={[
+          {
+            question: "Why does muscle mass increase BMR?",
+            answer: "Muscle is a metabolically active tissue. It requires energy just to be maintained, unlike fat which is primarily stored energy. Thus, individuals with a higher lean body mass generally have a higher BMR."
+          },
+          {
+            question: "Can I eat less than my BMR?",
+            answer: "Consistently eating below your BMR can lead to metabolic adaptation, nutrient deficiencies, and muscle loss. It is recommended to use your TDEE as a baseline for weight loss, not your BMR."
+          },
+          {
+            question: "Does climate affect BMR?",
+            answer: "Yes, extreme cold or heat can slightly increase your BMR as your body works harder to maintain its internal core temperature."
           }
-          faqs={[
-            {
-              question: "How is BMR different from TDEE?",
-              answer:
-                "BMR is just what you burn in a coma. TDEE (Total Daily Energy Expenditure) is your BMR multiplied by your physical activity level. Your TDEE is always higher than your BMR. If you want to lose weight, you eat below your TDEE, but generally not below your BMR.",
-            },
-            {
-              question: "Does muscle mass affect BMR?",
-              answer:
-                "Yes, significantly. Muscle tissue is far more metabolically active than fat tissue. If two people weigh exactly the same, but Person A is 10% body fat and Person B is 30% body fat, Person A will have a noticeably higher BMR. Standard BMR equations (like Mifflin-St Jeor) estimate this based on typical population averages. For highly muscular athletes, the Katch-McArdle formula (which requires knowing your exact body fat percentage) is more accurate.",
-            },
-            {
-              question: "Does my BMR slow down as I get older?",
-              answer:
-                "Yes. Starting in your mid-20s, BMR naturally drops by roughly 1% to 2% per decade. This is primarily driven by the natural, age-related loss of muscle mass (sarcopenia) and slowing cellular metabolic processes.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "TDEE Calculator",
-              path: "/tdee-calculator",
-              desc: "Take your BMR and add exercise to figure out your total daily calorie burn.",
-            },
-            {
-              name: "Macro Calculator",
-              path: "/macro-calculator",
-              desc: "Break your calories down into precise grams of protein, carbs, and fats.",
-            },
-            {
-              name: "BMI Calculator",
-              path: "/bmi-calculator",
-              desc: "Check if your weight falls within standard medical guidelines for your height.",
-            },
-          ]}
-        />
-      </div>
+        ]}
+        relatedCalculators={[
+          { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Add your activity to find total daily burn." },
+          { name: "BMI Calculator", path: "/bmi-calculator", desc: "Quickly assess your weight status." },
+          { name: "Body Fat Calculator", path: "/body-fat-calculator", desc: "Estimate your body composition." }
+        ]}
+      />
     </div>
   );
 }

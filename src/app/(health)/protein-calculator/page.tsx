@@ -1,386 +1,220 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
 export default function ProteinCalculator() {
-  const [age, setAge] = useState("30");
-  const [gender, setGender] = useState("male");
-  const [weight, setWeight] = useState("75");
-  const [weightUnit, setWeightUnit] = useState("kg");
-  const [activityLevel, setActivityLevel] = useState("sedentary");
-  const [goal, setGoal] = useState("maintain"); // maintain, build_muscle, lose_fat
+  const [weight, setWeight] = useState("165");
+  const [unit, setUnit] = useState("imperial");
+  const [activity, setActivity] = useState("1.5");
+  const [goal, setGoal] = useState("maintenance");
 
-  // Base protein multipliers (grams of protein per kg of body weight)
-  const ACTIVITY_MULTIPLIERS: Record<string, number> = {
-    sedentary: 0.8, // Minimum recommended
-    light: 1.1, // Light exercise 1-3 days/week
-    moderate: 1.4, // Moderate exercise 3-5 days/week
-    active: 1.7, // Hard exercise 6-7 days/week
-    very_active: 2.0, // Very hard exercise/physical job
+  const [result, setResult] = useState<{
+    low: number;
+    high: number;
+    recommended: number;
+  } | null>(null);
+
+  useEffect(() => {
+    calculateProtein();
+  }, [weight, unit, activity, goal]);
+
+  const calculateProtein = () => {
+    let w = parseFloat(weight);
+    if (unit === "imperial") {
+      w = w * 0.453592; // to kg
+    }
+
+    if (w > 0) {
+      const activityFactor = parseFloat(activity);
+      
+      // Base calculation (kg * factor)
+      // Sedentary: 0.8
+      // Light: 1.2
+      // Moderate: 1.5
+      // Intense: 1.8 - 2.2
+      
+      let baseFactor = 1.0;
+      if (activityFactor <= 1.2) baseFactor = 0.8;
+      else if (activityFactor <= 1.4) baseFactor = 1.2;
+      else if (activityFactor <= 1.6) baseFactor = 1.6;
+      else baseFactor = 2.0;
+
+      // Adjust for goal
+      if (goal === "gain") baseFactor += 0.2;
+      if (goal === "lose") baseFactor += 0.4; // Satiety and muscle sparing
+
+      const recommended = w * baseFactor;
+      
+      setResult({
+        low: recommended * 0.8,
+        high: recommended * 1.2,
+        recommended: recommended
+      });
+    } else {
+      setResult(null);
+    }
   };
-
-  // Goal adjustments (add/subtract g/kg)
-  const GOAL_ADJUSTMENTS: Record<string, number> = {
-    maintain: 0.0,
-    build_muscle: 0.3,
-    lose_fat: 0.2, // Higher protein helps preserve muscle during deficit
-  };
-
-  const w = parseFloat(weight);
-  const a = parseInt(age, 10);
-
-  let weightInKg = w;
-  if (weightUnit === "lbs") {
-    weightInKg = w / 2.20462;
-  }
-
-  let recommendedProtein = 0;
-  let minProtein = 0;
-  let maxProtein = 0;
-  let isValid = false;
-
-  if (!isNaN(weightInKg) && !isNaN(a) && weightInKg > 0 && a > 0) {
-    isValid = true;
-
-    let baseMultiplier = ACTIVITY_MULTIPLIERS[activityLevel];
-    baseMultiplier += GOAL_ADJUSTMENTS[goal];
-
-    // Ensure absolute minimum (RDA) is met
-    if (baseMultiplier < 0.8) baseMultiplier = 0.8;
-
-    recommendedProtein = weightInKg * baseMultiplier;
-
-    // Establish range
-    minProtein =
-      weightInKg * (baseMultiplier - 0.2 < 0.8 ? 0.8 : baseMultiplier - 0.2);
-    maxProtein = weightInKg * (baseMultiplier + 0.3);
-  }
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-2xl shadow-xl border border-rose-100">
+    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-3xl shadow-xl border border-rose-50">
       <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-rose-900 flex items-center justify-center">
-          <span className="mr-3">🥩</span> Protein Calculator
+        <h1 className="text-4xl md:text-5xl font-black mb-4 text-rose-950 tracking-tight">
+          Protein Calculator
         </h1>
-        <p className="text-rose-700 text-lg max-w-2xl mx-auto">
-          Calculate your optimal daily protein intake based on your body weight,
-          activity level, and fitness goals.
+        <p className="text-rose-600 text-lg">
+          Calculate your optimal daily protein intake based on weight, activity, and goals.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-        {/* Inputs */}
-        <div className="lg:col-span-3 space-y-6 bg-rose-50/50 p-6 rounded-2xl border border-rose-100 shadow-inner">
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-bold text-rose-800 mb-2 uppercase tracking-wide">
-                Age
-              </label>
-              <input
-                type="number"
-                min="1"
-                max="120"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-                className="w-full rounded-xl border-rose-200 p-3 shadow-sm focus:border-rose-500 focus:ring-2 focus:ring-rose-200 transition-all font-semibold"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-bold text-rose-800 mb-2 uppercase tracking-wide">
-                Gender
-              </label>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {/* Input UI */}
+        <div className="bg-rose-50/50 p-6 rounded-3xl border border-rose-100 space-y-5">
+           <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-bold text-rose-800 mb-2 uppercase tracking-widest">Weight ({unit === 'imperial' ? 'lb' : 'kg'})</label>
+                <input
+                  type="number"
+                  value={weight}
+                  onChange={(e) => setWeight(e.target.value)}
+                  className="w-full rounded-xl border-rose-200 p-4 font-bold text-lg focus:ring-2 focus:ring-rose-400 transition-all shadow-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-rose-800 mb-2 uppercase tracking-widest">Unit</label>
+                <select
+                  value={unit}
+                  onChange={(e) => setUnit(e.target.value)}
+                  className="w-full rounded-xl border-rose-200 p-4 font-bold text-lg focus:ring-2 focus:ring-rose-400 transition-all appearance-none bg-white shadow-sm"
+                >
+                  <option value="imperial">Imperial (lb)</option>
+                  <option value="metric">Metric (kg)</option>
+                </select>
+              </div>
+           </div>
+
+           <div>
+              <label className="block text-xs font-bold text-rose-800 mb-2 uppercase tracking-widest">Activity Level</label>
               <select
-                value={gender}
-                onChange={(e) => setGender(e.target.value)}
-                className="w-full rounded-xl border-rose-200 p-3 shadow-sm focus:border-rose-500 font-semibold bg-white cursor-pointer"
+                value={activity}
+                onChange={(e) => setActivity(e.target.value)}
+                className="w-full rounded-xl border-rose-200 p-4 font-bold text-sm focus:ring-2 focus:ring-rose-400 transition-all bg-white shadow-sm"
               >
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option value="1.2">Sedentary (Office job, little movement)</option>
+                <option value="1.4">Light (Moderate exercise 1-3 days)</option>
+                <option value="1.6">Active (Regular exercise 3-5 days)</option>
+                <option value="1.8">Intense (Physical job or 6-7 day sport)</option>
               </select>
-            </div>
-          </div>
+           </div>
 
-          <div>
-            <label className="block text-sm font-bold text-rose-800 mb-2 uppercase tracking-wide">
-              Weight
-            </label>
-            <div className="flex">
-              <input
-                type="number"
-                min="1"
-                step="0.1"
-                value={weight}
-                onChange={(e) => setWeight(e.target.value)}
-                className="w-full rounded-l-xl border-rose-200 p-3 shadow-sm focus:border-rose-500 font-bold text-lg"
-              />
-              <select
-                value={weightUnit}
-                onChange={(e) => setWeightUnit(e.target.value)}
-                className="border-y border-r border-rose-200 bg-rose-100 text-rose-800 font-bold p-3 rounded-r-xl cursor-pointer hover:bg-rose-200 transition-colors"
-              >
-                <option value="kg">kg</option>
-                <option value="lbs">lbs</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-rose-800 mb-2 uppercase tracking-wide">
-              Activity Level
-            </label>
-            <select
-              value={activityLevel}
-              onChange={(e) => setActivityLevel(e.target.value)}
-              className="w-full rounded-xl border-rose-200 p-3 shadow-sm focus:border-rose-500 font-semibold bg-white cursor-pointer"
-            >
-              <option value="sedentary">
-                Sedentary (Little to no exercise)
-              </option>
-              <option value="light">Lightly Active (1-3 days/week)</option>
-              <option value="moderate">
-                Moderately Active (3-5 days/week)
-              </option>
-              <option value="active">Very Active (6-7 days/week)</option>
-              <option value="very_active">
-                Extra Active (Physical job/training 2x a day)
-              </option>
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-rose-800 mb-2 uppercase tracking-wide">
-              Fitness Goal
-            </label>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <button
-                onClick={() => setGoal("maintain")}
-                className={`p-3 rounded-xl border font-bold text-sm transition-all ${goal === "maintain" ? "bg-rose-600 text-white border-rose-700 shadow-md transform scale-105" : "bg-white text-rose-600 border-rose-200 hover:bg-rose-50"}`}
-              >
-                Maintain Weight
-              </button>
-              <button
-                onClick={() => setGoal("build_muscle")}
-                className={`p-3 rounded-xl border font-bold text-sm transition-all ${goal === "build_muscle" ? "bg-rose-600 text-white border-rose-700 shadow-md transform scale-105" : "bg-white text-rose-600 border-rose-200 hover:bg-rose-50"}`}
-              >
-                Build Muscle
-              </button>
-              <button
-                onClick={() => setGoal("lose_fat")}
-                className={`p-3 rounded-xl border font-bold text-sm transition-all ${goal === "lose_fat" ? "bg-rose-600 text-white border-rose-700 shadow-md transform scale-105" : "bg-white text-rose-600 border-rose-200 hover:bg-rose-50"}`}
-              >
-                Lose Fat / Cut
-              </button>
-            </div>
-          </div>
+           <div>
+              <label className="block text-xs font-bold text-rose-800 mb-2 uppercase tracking-widest">Dietary Goal</label>
+              <div className="flex gap-2">
+                 {['lose', 'maintenance', 'gain'].map((g) => (
+                   <button
+                    key={g}
+                    onClick={() => setGoal(g)}
+                    className={`flex-1 py-3 rounded-xl font-bold text-[10px] uppercase tracking-widest transition-all ${goal === g ? 'bg-rose-600 text-white shadow-md' : 'bg-white text-rose-400 border border-rose-100 hover:bg-rose-50'}`}
+                   >
+                    {g}
+                   </button>
+                 ))}
+              </div>
+           </div>
         </div>
 
-        {/* Dashboard Output */}
-        <div className="lg:col-span-2">
-          {isValid ? (
-            <div className="h-full bg-gradient-to-br from-rose-700 to-rose-900 rounded-2xl p-8 shadow-2xl relative overflow-hidden flex flex-col justify-center text-white border border-rose-800">
-              {/* Decorative element */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-rose-500 rounded-full mix-blend-multiply filter blur-2xl opacity-50 pointer-events-none"></div>
-
-              <div className="relative z-10 text-center">
-                <h2 className="text-rose-200 font-bold uppercase tracking-widest text-sm mb-6">
-                  Recommended Daily Protein
-                </h2>
-
-                <div className="flex flex-col items-center justify-center space-y-2 mb-8">
-                  <div className="text-7xl font-black tracking-tight text-white drop-shadow-md">
-                    {Math.round(recommendedProtein)}
-                  </div>
-                  <div className="text-xl font-bold text-rose-300 uppercase tracking-widest">
-                    Grams / Day
-                  </div>
+        {/* Results UI */}
+        <div className="flex flex-col">
+           {result ? (
+             <div className="bg-rose-600 rounded-3xl p-8 text-white shadow-xl flex-1 relative overflow-hidden flex flex-col justify-center text-center">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-3xl"></div>
+                
+                <h2 className="text-rose-100 text-xs font-black uppercase tracking-[0.2em] mb-4">Daily Target</h2>
+                <div className="text-7xl font-black mb-2 flex items-baseline justify-center gap-2">
+                   {Math.round(result.recommended)}
+                   <span className="text-xl opacity-60">g</span>
+                </div>
+                <div className="text-rose-200 text-[10px] font-bold uppercase tracking-widest bg-rose-700/50 py-2 px-4 rounded-full inline-block self-center mb-8">
+                   Protein per Day
                 </div>
 
-                <div className="bg-rose-950/50 rounded-xl p-5 backdrop-blur-sm border border-rose-800/50">
-                  <h3 className="text-xs font-bold text-rose-400 uppercase tracking-widest mb-3 border-b border-rose-800/50 pb-2">
-                    Target Range
-                  </h3>
-                  <div className="flex justify-between items-center px-2">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-white mb-1">
-                        {Math.round(minProtein)}g
-                      </div>
-                      <div className="text-[10px] text-rose-300 uppercase">
-                        Minimum
-                      </div>
-                    </div>
-                    <div className="h-8 border-l border-rose-700 mx-4"></div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-white mb-1">
-                        {Math.round(maxProtein)}g
-                      </div>
-                      <div className="text-[10px] text-rose-300 uppercase">
-                        Maximum
-                      </div>
-                    </div>
-                  </div>
+                <div className="grid grid-cols-2 gap-4">
+                   <div className="bg-white/10 p-4 rounded-2xl border border-white/10 text-center">
+                      <div className="text-[10px] font-bold text-rose-100 uppercase mb-1">Low Range</div>
+                      <div className="text-xl font-black">{Math.round(result.low)}g</div>
+                   </div>
+                   <div className="bg-white/10 p-4 rounded-2xl border border-white/10 text-center">
+                      <div className="text-[10px] font-bold text-rose-100 uppercase mb-1">High Range</div>
+                      <div className="text-xl font-black">{Math.round(result.high)}g</div>
+                   </div>
                 </div>
-
-                <div className="mt-6 text-xs text-rose-200 text-left bg-rose-800/30 p-4 rounded-xl">
-                  <span className="font-bold text-rose-300 block mb-1">
-                    Dietary Tip:
-                  </span>
-                  Spread your protein intake evenly across{" "}
-                  {goal === "build_muscle" ? "4-5" : "3-4"} meals for optimal
-                  muscle protein synthesis and digestion.
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="h-full rounded-2xl border-2 border-dashed border-rose-200 bg-rose-50/50 flex flex-col items-center justify-center p-8 text-center">
-              <div className="text-6xl mb-4 opacity-70">🥩</div>
-              <h3 className="text-rose-900 font-bold text-xl mb-2">
-                Awaiting Input
-              </h3>
-              <p className="text-rose-600">
-                Please provide valid age and weight to calculate your protein
-                needs.
-              </p>
-            </div>
-          )}
+             </div>
+           ) : (
+             <div className="flex-1 border-4 border-dashed border-rose-100 rounded-3xl flex items-center justify-center p-8 bg-rose-50/20 text-rose-300 font-bold text-center">
+                Configure your stats to reveal<br/>protein requirements.
+             </div>
+           )}
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Protein Calculator",
-            operatingSystem: "All",
-            applicationCategory: "HealthApplication",
-          }),
-        }}
-      />
-
-      <div className="mt-8 text-left">
-        <CalculatorSEO
-          title="Daily Protein Intake & Macro Calculator"
-          whatIsIt={
+      <CalculatorSEO
+        title="Protein Calculator"
+        whatIsIt={
+          <>
             <p>
-              The <strong>Protein Calculator</strong> is an advanced dietary
-              tool that calculates your optimal daily protein target. By
-              analyzing your body weight, daily physical activity levels, and
-              specific body composition goals (like losing fat or building
-              muscle), it generates a medically-sound recommendation in daily
-              grams to ensure your body has the structural building blocks it
-              needs.
+              The <strong>Protein Calculator</strong> is an essential tool for athletes, bodybuilders, and anyone looking to optimize their body composition. It provides a data-driven recommendation for daily protein intake based on your weight, activity levels, and specific health goals.
             </p>
-          }
-          formula={
-            <>
-              <p>
-                This calculator relies on established sports nutrition
-                multipliers scaling against your total body weight. The absolute
-                minimum Dietary Reference Intake (DRI) to prevent deficiency in
-                sedentary adults is 0.8 grams per kilogram of body weight.
-              </p>
-              <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-rose-100 text-rose-900">
-                <p>
-                  <strong>
-                    Daily Protein (g) = Weight (kg) × Activity Multiplier
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-rose-200">
-                  <strong>
-                    Sedentary = 0.8g | Active = 1.2–1.7g | Strength Athlete =
-                    1.6–2.2g
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
-          example={
-            <>
-              <p>
-                Let's calculate the needs for a relatively active 180 lb male
-                trying to build muscle in the gym 4 days a week.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-rose-800">
-                <li>
-                  <strong>The Conversion:</strong> 180 lbs ÷ 2.2 = 81.8
-                  kilograms.
-                </li>
-                <li>
-                  <strong>The Multiplier:</strong> Since he is lifting weights
-                  (moderately active) and seeking hypertrophy (muscle growth),
-                  his nutrition multiplier pushes up closer to 1.7g per kg.
-                </li>
-                <li>
-                  <strong>The Math:</strong> 81.8 kg × 1.7 g/kg.
-                </li>
-                <li>
-                  <strong>The Result:</strong> He needs roughly{" "}
-                  <strong>139 grams</strong> of protein every single day to
-                  maximize his muscle protein synthesis.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-rose-800">
-              <li>
-                <strong>Bodybuilders (Bulking):</strong> Pushing protein targets
-                extremely high to ensure every broken-down muscle fiber has
-                amino acids readily available to repair and grow thicker during
-                recovery windows.
-              </li>
-              <li>
-                <strong>Weight Loss (Cutting):</strong> Dieters using
-                high-protein strategies to artificially preserve their existing
-                lean muscle mass, forcing the body to burn stubborn stored fat
-                for energy while in a caloric deficit.
-              </li>
-              <li>
-                <strong>Vegan/Vegetarian Switch:</strong> Individuals
-                transitioning away from meat-based diets utilizing this tool to
-                establish their rigid daily target, helping them consciously
-                plan out enough lentils, tofu, and beans.
-              </li>
+            <p>
+              Protein is the primary "building block" of the human body, necessary for muscle repair, enzyme production, and metabolic health. As you increase exercise intensity or enter a caloric deficit, your protein requirements naturally rise to preserve lean muscle mass.
+            </p>
+          </>
+        }
+        formula={
+          <>
+            <p>Recommendations are based on standard sports nutrition protocols:</p>
+            <ul className="list-disc pl-6 space-y-4 mt-4 text-rose-900/80">
+               <li><strong>Sedentary (RDA):</strong> 0.8g per kg of body weight.</li>
+               <li><strong>Strength Training:</strong> 1.6 - 2.2g per kg of body weight.</li>
+               <li><strong>Weight Loss:</strong> Higher coefficients (2.0+) are used to maximize satiety and prevent muscle catabolism while in a deficit.</li>
             </ul>
+          </>
+        }
+        example={
+          <>
+             <p>A <strong>180 lb (81.6 kg) male</strong> who trains regularly (Active) and wants to lose fat:</p>
+             <div className="bg-rose-50 p-6 rounded-2xl font-mono text-center text-rose-950 my-4 shadow-inner border border-rose-100">
+                81.6 kg × 2.0g = 163g Protein / Day
+             </div>
+             <p>This ensures his body prioritizes fat loss while maintaining his hard-earned muscle tissue.</p>
+          </>
+        }
+        useCases={
+          <ul className="list-disc pl-6 space-y-4 text-rose-900/80">
+             <li><strong>Bulking (Muscle Gain):</strong> Ensure you have the amino acid surplus required for hypertrophy.</li>
+             <li><strong>Satiety for Fat Loss:</strong> High protein diets reduce hunger by regulating appetite hormones.</li>
+             <li><strong>Elderly Health:</strong> Preventing Sarcopenia (age-related muscle loss) through adequate intake.</li>
+          </ul>
+        }
+        faqs={[
+          {
+            question: "How much protein is too much?",
+            answer: "For healthy individuals, intakes up to 2.5-3.0g per kg of body weight have been shown to be safe. However, those with pre-existing kidney conditions should consult a doctor before significantly increasing protein intake."
+          },
+          {
+            question: "Do plant-based proteins count the same?",
+            answer: "Yes, but some plant sources lack one or more essential amino acids. Aim for a variety of sources (beans, lentils, tofu, quinoa) to ensure a complete amino acid profile."
+          },
+          {
+            question: "Can I eat all my protein in one meal?",
+            answer: "While 'total daily intake' is most important, spreading protein across 3-5 meals can help maximize muscle protein synthesis throughout the day."
           }
-          faqs={[
-            {
-              question: "Can I just eat all my protein in one massive meal?",
-              answer:
-                "It is highly unadvisable. Your body does not store excess protein like it does fat or carbs. For optimal muscle synthesis, you should spread your protein intake evenly across 3-5 meals throughout the day (roughly 25-40g per sitting).",
-            },
-            {
-              question: "Will eating too much protein damage my kidneys?",
-              answer:
-                "For healthy individuals, extensive medical literature proves that high protein diets do NOT cause kidney damage. However, if you have pre-existing renal (kidney) dysfunction, a high protein load will accelerate damage. Always consult your doctor.",
-            },
-            {
-              question: "Do different protein sources matter?",
-              answer:
-                "Yes. Animal proteins (meat, egg, dairy) are 'Complete Proteins' containing all 9 essential amino acids. Many plant proteins are 'Incomplete' and must be combined (like rice and beans) to form a complete amino acid profile.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Carbohydrate Calculator",
-              path: "/carbohydrate-calculator",
-              desc: "Calculate your daily energy macro needs.",
-            },
-            {
-              name: "Fat Calculator",
-              path: "/fat-calculator",
-              desc: "Calculate the dietary fats needed for hormone regulation.",
-            },
-            {
-              name: "Macro Calculator",
-              path: "/macro-calculator",
-              desc: "Calculate all your macronutrients in one unified dashboard.",
-            },
-          ]}
-        />
-      </div>
+        ]}
+        relatedCalculators={[
+          { name: "BM Calculator", path: "/bmi-calculator", desc: "Check your weight status." },
+          { name: "Macro Calculator", path: "/macro-calculator", desc: "See your total dietary breakdown." },
+          { name: "LBM Calculator", path: "/lean-body-mass-calculator", desc: "Calculate protein based on lean mass." }
+        ]}
+      />
     </div>
   );
 }

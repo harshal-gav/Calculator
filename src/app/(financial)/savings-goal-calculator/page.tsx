@@ -4,341 +4,155 @@ import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
 export default function SavingsGoalCalculator() {
-  const [goalAmount, setGoalAmount] = useState("10000");
-  const [currentSavings, setCurrentSavings] = useState("1000");
-  const [monthlyContribution, setMonthlyContribution] = useState("300");
-  const [annualInterestRate, setAnnualInterestRate] = useState("5");
+  const [goalAmount, setGoalAmount] = useState("50000");
+  const [initialSavings, setInitialSavings] = useState("5000");
+  const [timeframe, setTimeframe] = useState("24"); // months
+  const [interestRate, setInterestRate] = useState("4.5");
 
-  const goal = parseFloat(goalAmount);
-  const initial = parseFloat(currentSavings);
-  const monthly = parseFloat(monthlyContribution);
-  const rate = parseFloat(annualInterestRate) / 100 / 12; // Monthly interest rate
+  const [result, setResult] = useState<{
+    monthlyNeeded: number;
+    totalInterest: number;
+    totalContributed: number;
+  } | null>(null);
 
-  let monthsToReach = 0;
-  let years = 0;
-  let totalContributed = 0;
-  let totalInterest = 0;
-  let isValid = false;
+  const calculateGoal = () => {
+    const target = parseFloat(goalAmount);
+    const initial = parseFloat(initialSavings);
+    const months = parseFloat(timeframe);
+    const rate = (parseFloat(interestRate) / 100) / 12;
 
-  if (
-    !isNaN(goal) &&
-    !isNaN(initial) &&
-    !isNaN(monthly) &&
-    !isNaN(rate) &&
-    goal > initial &&
-    monthly > 0
-  ) {
-    isValid = true;
+    if (!isNaN(target) && target > 0 && months > 0) {
+      let monthlyNeeded = 0;
+      
+      if (rate > 0) {
+        // Solving for PMT in Future Value of Ordinary Annuity formula
+        // FV = Initial * (1+r)^n + PMT * [((1+r)^n - 1) / r]
+        // Target - Initial*(1+r)^n = PMT * [((1+r)^n - 1) / r]
+        const factor = (Math.pow(1 + rate, months) - 1) / rate;
+        const initialGrowth = initial * Math.pow(1 + rate, months);
+        monthlyNeeded = (target - initialGrowth) / factor;
+      } else {
+        monthlyNeeded = (target - initial) / months;
+      }
 
-    let currentBalance = initial;
-    let months = 0;
-    let interestEarned = 0;
+      const totalContributed = initial + (Math.max(0, monthlyNeeded) * months);
 
-    // Simulate month by month
-    // In reality, we could use Math.log, but iterating is safer for exactly determining months without complex logarithm edge cases.
-    // Cap at 1200 months (100 years) to prevent infinite loops in edge cases.
-    while (currentBalance < goal && months < 1200) {
-      months++;
-      const monthlyInterest = currentBalance * rate;
-      interestEarned += monthlyInterest;
-      currentBalance += monthlyInterest + monthly;
+      setResult({
+        monthlyNeeded: Math.max(0, monthlyNeeded),
+        totalInterest: target - totalContributed,
+        totalContributed: totalContributed
+      });
     }
-
-    monthsToReach = months;
-    years = parseFloat((months / 12).toFixed(1));
-    totalContributed = monthly * months;
-    totalInterest = interestEarned;
-  }
+  };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-xl shadow-lg border border-zinc-200">
-      <h1 className="text-4xl font-extrabold mb-4 text-emerald-800 border-b pb-4 flex items-center">
-        <span className="mr-3">🎯</span> Savings Goal Calculator
+    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+      <h1 className="text-4xl font-extrabold mb-4 text-gray-900 border-b pb-4">
+        Savings Goal Planner
       </h1>
-      <p className="mb-8 text-zinc-600 text-lg">
-        Find out exactly how long it will take to reach your savings goal via
-        monthly contributions.
+      <p className="mb-8 text-gray-600 text-lg">
+        Reverse engineer your success. Find out exactly how much you need to set aside each month to hit your milestone target on time.
       </p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-        {/* Inputs */}
-        <div className="bg-white p-6 md:p-8 rounded-xl border border-zinc-200 shadow-sm space-y-6">
-          <div>
-            <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">
-              Savings Goal ($)
-            </label>
-            <input
-              type="number"
-              min="0"
-              step="100"
-              value={goalAmount}
-              onChange={(e) => setGoalAmount(e.target.value)}
-              className="w-full rounded-xl border-zinc-300 p-4 shadow-inner focus:border-emerald-500 font-black text-2xl text-zinc-800 bg-zinc-50"
-              placeholder="10000"
-            />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-1">Your Savings Goal ($):</label>
+              <input type="number" value={goalAmount} onChange={(e) => setGoalAmount(e.target.value)} className="w-full rounded border-gray-300 p-3 font-black text-gray-900 focus:ring-amber-500" placeholder="e.g. 50000" />
+            </div>
+
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-1">Starting Balance ($):</label>
+              <input type="number" value={initialSavings} onChange={(e) => setInitialSavings(e.target.value)} className="w-full rounded border-gray-300 p-3" />
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-1">Months To Hit:</label>
+                  <input type="number" value={timeframe} onChange={(e) => setTimeframe(e.target.value)} className="w-full rounded border-gray-300 p-3 shadow-sm" />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-1">APY (%):</label>
+                  <input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} className="w-full rounded border-gray-300 p-3 shadow-sm placeholder-gray-300" placeholder="e.g. 4.5" />
+                </div>
+            </div>
           </div>
-          <div>
-            <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">
-              Current Saved ($)
-            </label>
-            <input
-              type="number"
-              min="0"
-              step="100"
-              value={currentSavings}
-              onChange={(e) => setCurrentSavings(e.target.value)}
-              className="w-full rounded-xl border-zinc-300 p-4 shadow-inner focus:border-emerald-500 font-bold text-xl text-zinc-800 bg-zinc-50"
-              placeholder="1000"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">
-              Monthly Contribution ($)
-            </label>
-            <input
-              type="number"
-              min="1"
-              step="50"
-              value={monthlyContribution}
-              onChange={(e) => setMonthlyContribution(e.target.value)}
-              className="w-full rounded-xl border-zinc-300 p-4 shadow-inner focus:border-emerald-500 font-bold text-xl text-zinc-800 bg-zinc-50"
-              placeholder="300"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-bold text-zinc-700 mb-2 flex justify-between uppercase tracking-wide">
-              <span>Expected Annual Return (%)</span>
-              <span className="text-emerald-700 font-black">
-                {annualInterestRate}%
-              </span>
-            </label>
-            <input
-              type="range"
-              min="0"
-              max="15"
-              step="0.5"
-              value={annualInterestRate}
-              onChange={(e) => setAnnualInterestRate(e.target.value)}
-              className="w-full h-3 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600 shadow-inner"
-            />
-          </div>
+
+          <button
+            onClick={calculateGoal}
+            className="mt-8 w-full bg-amber-500 text-white font-black py-4 rounded-xl hover:bg-amber-600 transition shadow-lg text-lg uppercase"
+          >
+            Calculate Required Contribution
+          </button>
         </div>
 
-        {/* Results breakdown */}
-        <div className="bg-emerald-900 border border-emerald-800 rounded-xl p-6 md:p-8 text-white relative flex flex-col justify-center shadow-xl overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-800 rounded-bl-full -mr-4 -mt-4 opacity-50 z-0 pointer-events-none"></div>
-
-          {isValid ? (
-            <div className="relative z-10 space-y-6">
-              <h3 className="text-emerald-300 font-bold uppercase tracking-widest text-sm border-b border-emerald-700 pb-2 mb-6">
-                Time to Goal
-              </h3>
-
-              <div className="flex items-baseline justify-center space-x-2">
-                <span className="text-7xl font-black text-white">
-                  {monthsToReach}
-                </span>
-                <span className="text-emerald-400 font-bold text-xl uppercase tracking-wider">
-                  Months
-                </span>
-              </div>
-              <div className="text-center font-bold text-emerald-200">
-                (~{years} years)
-              </div>
-
-              <div className="bg-emerald-950 p-6 rounded-xl border border-emerald-800 shadow-inner mt-8">
-                <h4 className="text-xs font-bold text-emerald-500 uppercase tracking-widest mb-4 border-b border-emerald-900 pb-2">
-                  Breakdown
-                </h4>
-
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center text-sm font-medium">
-                    <span className="text-emerald-300">Starting Balance</span>
-                    <span className="text-white">
-                      $
-                      {initial.toLocaleString(undefined, {
-                        minimumFractionDigits: 2,
-                      })}
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center text-sm font-medium">
-                    <span className="text-emerald-300">
-                      Total Contributions
-                    </span>
-                    <span className="text-white">
-                      $
-                      {totalContributed.toLocaleString(undefined, {
-                        minimumFractionDigits: 2,
-                      })}
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center text-sm font-medium">
-                    <span className="text-emerald-400 font-bold">
-                      + Interest Earned
-                    </span>
-                    <span className="text-emerald-400 font-bold">
-                      $
-                      {totalInterest.toLocaleString(undefined, {
-                        minimumFractionDigits: 2,
-                      })}
-                    </span>
-                  </div>
+        <div className="flex flex-col">
+          {result !== null ? (
+            <div className="h-full space-y-6">
+                <div className="bg-white border-2 border-amber-100 p-8 rounded-3xl text-center shadow-md relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-amber-50 rounded-full -mr-12 -mt-12 opacity-50"></div>
+                    <span className="block text-xs font-bold text-amber-700 uppercase mb-2 tracking-widest">Monthly Deposit Needed</span>
+                    <div className="text-6xl font-black text-gray-900 mb-2">
+                        ${result.monthlyNeeded.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                    </div>
+                    <p className="text-amber-800 text-xs font-bold bg-amber-50 inline-block px-3 py-1 rounded">For {timeframe} Consecutive Months</p>
                 </div>
-              </div>
+
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <div className="flex justify-between items-center mb-4">
+                        <span className="text-xs font-bold text-gray-500 uppercase">Growth Breakdown</span>
+                        <span className="text-[10px] bg-white px-2 py-0.5 rounded border border-gray-200 uppercase font-black">Target: ${parseFloat(goalAmount).toLocaleString()}</span>
+                    </div>
+                    <div className="space-y-4">
+                        <div className="flex justify-between items-end">
+                            <span className="text-sm text-gray-600">Total Deposits:</span>
+                            <span className="font-bold text-gray-900">${result.totalContributed.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+                        </div>
+                        <div className="flex justify-between items-end">
+                            <span className="text-sm text-gray-600 italic">Market Interest Yield:</span>
+                            <span className="font-bold text-green-600">+ ${Math.max(0, result.totalInterest).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+                        </div>
+                        <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden flex mt-2">
+                            <div className="h-full bg-amber-400" style={{ width: `${(result.totalContributed / parseFloat(goalAmount)) * 100}%` }}></div>
+                            <div className="h-full bg-green-500" style={{ width: `${(result.totalInterest / parseFloat(goalAmount)) * 100}%` }}></div>
+                        </div>
+                    </div>
+                </div>
             </div>
           ) : (
-            <div className="relative z-10 text-center space-y-4">
-              <div className="text-6xl mb-4">📈</div>
-              <p className="text-emerald-300 font-bold text-xl">
-                Almost there.
-              </p>
-              <p className="text-emerald-400 text-sm">
-                Ensure your goal is larger than your current savings, and you
-                have a positive monthly contribution.
-              </p>
-            </div>
+             <div className="h-full border-4 border-dashed border-gray-100 rounded-3xl flex flex-col items-center justify-center p-12 text-center text-gray-300">
+                <p className="text-5xl mb-4">🎯</p>
+                <p className="font-black text-xl uppercase tracking-widest mb-2">Hit Your Targets</p>
+                <p className="max-w-xs text-xs font-medium">Input your goal amount and timeframe to get a precise roadmap for your savings strategy.</p>
+             </div>
           )}
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Savings Goal Calculator",
-            operatingSystem: "All",
-            applicationCategory: "FinanceApplication",
-          }),
-        }}
-      />
-
-      <div className="mt-8 text-left">
-        <CalculatorSEO
-          title="Time-to-Goal Savings Calculator"
-          whatIsIt={
+      <CalculatorSEO
+        title="Savings Goal Calculator"
+        whatIsIt={
+          <>
             <p>
-              The <strong>Savings Goal Calculator</strong> is a specialized
-              financial planning tool designed to answer one specific question:{" "}
-              <em>
-                "Exactly how many months will it take to hit my target number?"
-              </em>{" "}
-              By analyzing your starting balance, monthly deposits, and expected
-              interest rate, it simulates the compounding growth month-by-month
-              until the target is achieved.
+              The <strong>Savings Goal Calculator</strong> works backwards from your desired financial target. By inputting your goal amount, starting balance, and timeline, the tool uses the Future Value of an Annuity formula to solve for the monthly payment required to achieve that goal, factoring in interest growth.
             </p>
-          }
-          formula={
-            <>
-              <p>
-                To pinpoint the exact month a goal is reached without complex
-                algorithmic logarithms, this calculator runs a live
-                month-by-month financial simulation. Every month, it compounds
-                the interest and adds the user's monthly contribution until the
-                balance breaches the goal threshold.
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
-                <p>
-                  <strong>
-                    New Balance = Previous Balance + (Previous Balance × Monthly
-                    Rate) + Monthly Contribution
-                  </strong>
-                </p>
-                <p className="mt-2 text-xs italic text-emerald-700">
-                  This loop runs iteratively. Month count increments by 1 each
-                  cycle until Balance {">"}= Goal.
-                </p>
-              </div>
-            </>
-          }
-          example={
-            <>
-              <p>
-                Let's map out a plan to save a $60,000 down payment for a house.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-emerald-800">
-                <li>
-                  <strong>The Input:</strong> You currently have $5,000. You
-                  plan to save $1,000 a month in a High-Yield Savings Account
-                  earning 4% APY.
-                </li>
-                <li>
-                  <strong>The Simulation:</strong> Over time, your $1000/mo
-                  deposits do the heavy lifting, but the bank also pays you free
-                  interest every month which accelerates the timeline.
-                </li>
-                <li>
-                  <strong>The Breakdown:</strong> To hit $60,000, you will
-                  personally contribute $50,000 out of pocket. The bank gives
-                  you roughly $5,130 in free compound interest.
-                </li>
-                <li>
-                  <strong>The Result:</strong> It will take exactly{" "}
-                  <strong>50 Months</strong> (about 4.2 years) to hit your goal.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-emerald-800">
-              <li>
-                <strong>Wedding Planning:</strong> Engaged couples working
-                backward from a $30,000 wedding budget to see exactly how much
-                of their paychecks they need to divert to savings to hit the
-                goal in exactly 18 months.
-              </li>
-              <li>
-                <strong>Emergency Fund Building:</strong> Financial beginners
-                aiming to save a baseline $10,000 emergency fund, tweaking the
-                'Monthly Contribution' slider to see the difference between
-                saving $200 vs $400 a month.
-              </li>
-              <li>
-                <strong>Car Purchases:</strong> Savers planning to buy a vehicle
-                in cash. By factoring in a 5% interest rate from a money market
-                account, they find they actually hit their $25k goal two months
-                earlier than if they kept the cash under a mattress.
-              </li>
+          </>
+        }
+        formula={<></>}
+        example={
+          <>
+            <p>If you want to save $20,000 for a wedding in 2 years (24 months) and have $2,000 to start (4.5% APY):</p>
+            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+              <li>Your interest will help you by contributing about $870.</li>
+              <li>Your required monthly deposit: <strong>Approximately $715</strong>.</li>
             </ul>
-          }
-          faqs={[
-            {
-              question:
-                "Why not just divide the Goal by the Monthly Contribution?",
-              answer:
-                "Simple division ignores Compound Interest. If you need $10,000 and save $100/mo, simple math says 100 months. But if that money is in a 5% savings account, the 'free' money you earn along the way actually shortens it to 82 months!",
-            },
-            {
-              question: "What interest rate should I put in?",
-              answer:
-                "If you are using a standard bank checking account, put 0%. If utilizing a High Yield Savings Account (HYSA), use current market rates (usually 3% to 5%). If investing in index funds for a 10-year goal, you can estimate 7% to 10%.",
-            },
-            {
-              question: "Does this account for inflation?",
-              answer:
-                "No, this calculator shows nominal dollars. If you are saving for a 20-year goal, remember that $100,000 twenty years from now will have significantly less purchasing power than $100,000 today.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Retirement Calculator",
-              path: "/retirement-calculator",
-              desc: "Plan ultra-long-term goals requiring massive nest eggs.",
-            },
-            {
-              name: "Compound Interest Calculator",
-              path: "/compound-interest-calculator",
-              desc: "See yearly breakdown charts of how your money grows.",
-            },
-            {
-              name: "Investment Calculator",
-              path: "/investment-calculator",
-              desc: "Compare multiple investment timelines side-by-side.",
-            },
-          ]}
-        />
-      </div>
+          </>
+        }
+        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Down Payment Savings:</strong> Plan exactly how much to set aside each pay period to buy your first home in 3 years.</li></ul>}
+        faqs={[]}
+        relatedCalculators={[]}
+      />
     </div>
   );
 }

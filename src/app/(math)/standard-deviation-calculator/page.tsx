@@ -4,351 +4,193 @@ import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
 export default function StandardDeviationCalculator() {
-  const [inputData, setInputData] = useState("10, 12, 23, 23, 16, 23, 21, 16");
-  const [isPopulation, setIsPopulation] = useState(false); // sample vs population
+  const [dataInput, setDataInput] = useState("12, 15, 18, 20, 25");
+  const [dataType, setDataType] = useState<"population" | "sample">("sample");
 
-  const [results, setResults] = useState<{
-    count: number;
-    sum: number;
+  const [result, setResult] = useState<{
     mean: number;
     variance: number;
-    stdDev: number;
-    min: number;
-    max: number;
+    standardDeviation: number;
+    count: number;
+    sumOfSquaredDifferences: number;
   } | null>(null);
-  const [errorMsg, setErrorMsg] = useState("");
 
-  const calculateStats = () => {
-    setErrorMsg("");
-    // Parse the input string into an array of numbers
-    const arr = inputData
-      .split(/[\s,]+/)
-      .filter((x) => x.length > 0)
-      .map(Number);
+  const calculateSD = () => {
+    // Parse valid numbers from string
+    const data = dataInput.split(/[\s,]+/).map(val => parseFloat(val)).filter(val => !isNaN(val));
+    const n = data.length;
 
-    if (arr.some(isNaN)) {
-      setErrorMsg(
-        "Please enter a valid list of numbers separated by commas or spaces.",
-      );
-      return;
+    if (n > 1) { // Need at least 2 numbers for sample SD
+      // 1. Calculate Mean
+      const sum = data.reduce((acc, curr) => acc + curr, 0);
+      const mean = sum / n;
+
+      // 2. Calculate squared differences
+      const squaredDifferences = data.map(val => Math.pow(val - mean, 2));
+      const ss = squaredDifferences.reduce((acc, curr) => acc + curr, 0); // sum of squares
+
+      // 3. Calculate Variance
+      // Population Variance divides by N.
+      // Sample Variance divides by (N - 1) - Bessel's correction.
+      const denominator = dataType === "population" ? n : (n - 1);
+      const variance = ss / denominator;
+
+      // 4. Calculate Standard Deviation
+      const standardDeviation = Math.sqrt(variance);
+
+      setResult({
+        mean,
+        variance,
+        standardDeviation,
+        count: n,
+        sumOfSquaredDifferences: ss,
+      });
+    } else {
+        setResult(null);
     }
-
-    const count = arr.length;
-    if (count < 2) {
-      setErrorMsg(
-        "Please enter at least two numbers to calculate standard deviation.",
-      );
-      return;
-    }
-
-    const sum = arr.reduce((a, b) => a + b, 0);
-    const mean = sum / count;
-
-    // Calculate variance
-    const squareDiffs = arr.map((value) => {
-      const diff = value - mean;
-      return diff * diff;
-    });
-
-    const sumSquareDiffs = squareDiffs.reduce((a, b) => a + b, 0);
-
-    // Sample standard deviation uses N-1, Population uses N
-    const denominator = isPopulation ? count : count - 1;
-    const variance = sumSquareDiffs / denominator;
-    const stdDev = Math.sqrt(variance);
-
-    const min = Math.min(...arr);
-    const max = Math.max(...arr);
-
-    setResults({
-      count,
-      sum,
-      mean,
-      variance,
-      stdDev,
-      min,
-      max,
-    });
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-      <h1 className="text-4xl font-extrabold mb-4 text-cyan-900 border-b pb-4">
+    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+      <h1 className="text-4xl font-extrabold mb-4 text-gray-900 border-b pb-4">
         Standard Deviation Calculator
       </h1>
       <p className="mb-8 text-gray-600 text-lg">
-        Calculate the standard deviation, variance, mean, and sum of a data set.
+        Measure the exact amount of dispersion and volatility within your data utilizing advanced squared differences algorithms.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Inputs */}
-        <div className="bg-cyan-50 p-6 rounded-xl border border-cyan-100">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div className="lg:col-span-5 bg-gray-50 p-6 rounded-xl border border-gray-200">
+          
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Enter data values (separated by commas or spaces)
-              </label>
-              <textarea
-                value={inputData}
-                onChange={(e) => setInputData(e.target.value)}
-                rows={4}
-                className="w-full rounded-lg border-gray-300 p-4 shadow-sm focus:border-cyan-500 text-lg font-medium"
-                placeholder="e.g. 1.2, 3.4, 5.6"
-              />
+               <h2 className="text-xl font-bold mb-4 text-gray-800">1. Select Data Type</h2>
+               <div className="flex bg-white rounded-lg border border-gray-300 overflow-hidden shadow-sm">
+                 <button
+                   className={`flex-1 py-3 text-sm font-bold transition ${dataType === "sample" ? "bg-amber-500 text-white" : "text-gray-600 hover:bg-gray-100"}`}
+                   onClick={() => setDataType("sample")}
+                 >
+                   Sample (N - 1)
+                 </button>
+                 <button
+                   className={`flex-1 py-3 text-sm font-bold transition ${dataType === "population" ? "bg-amber-500 text-white" : "text-gray-600 hover:bg-gray-100 border-l border-gray-300"}`}
+                   onClick={() => setDataType("population")}
+                 >
+                   Population (N)
+                 </button>
+               </div>
+               <p className="text-xs text-gray-500 mt-2">
+                 *Use <strong>Sample</strong> if your data is a random subset of a larger group. Use <strong>Population</strong> if you have every single record in existence.
+               </p>
             </div>
 
-            <div className="flex gap-4">
-              <label
-                className={`flex-1 flex justify-center items-center p-3 rounded-lg border cursor-pointer font-bold transition ${!isPopulation ? "bg-cyan-600 border-cyan-700 text-white shadow-inner" : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50"}`}
-              >
-                <input
-                  type="radio"
-                  checked={!isPopulation}
-                  onChange={() => setIsPopulation(false)}
-                  className="hidden"
-                />
-                Sample (N-1)
-              </label>
-              <label
-                className={`flex-1 flex justify-center items-center p-3 rounded-lg border cursor-pointer font-bold transition ${isPopulation ? "bg-cyan-600 border-cyan-700 text-white shadow-inner" : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50"}`}
-              >
-                <input
-                  type="radio"
-                  checked={isPopulation}
-                  onChange={() => setIsPopulation(true)}
-                  className="hidden"
-                />
-                Population (N)
-              </label>
+            <div>
+               <h2 className="text-xl font-bold mb-2 text-gray-800">2. Enter Distribution Array</h2>
+               <textarea
+                 value={dataInput}
+                 onChange={(e) => setDataInput(e.target.value)}
+                 className="w-full rounded-lg border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 p-4 border text-lg font-mono min-h-[140px]"
+                 placeholder="e.g. 5.1, 8.2, 9, 12.4"
+               />
             </div>
-
-            {errorMsg && (
-              <div className="text-red-600 text-sm font-bold bg-red-50 p-3 rounded-lg">
-                {errorMsg}
-              </div>
-            )}
-
-            <button
-              onClick={calculateStats}
-              className="w-full bg-cyan-600 text-white font-bold py-4 rounded-xl hover:bg-cyan-700 transition shadow-lg uppercase tracking-wide"
-            >
-              Calculate Statistics
-            </button>
           </div>
+
+          <button
+            onClick={calculateSD}
+            className="mt-6 w-full bg-amber-600 text-white font-bold py-4 rounded-xl hover:bg-amber-700 transition shadow-lg text-lg uppercase tracking-wide"
+          >
+            Compute Dispersion
+          </button>
         </div>
 
-        {/* Results Screen */}
-        <div className="bg-white border-2 border-cyan-100 rounded-xl overflow-hidden shadow-sm">
-          {results !== null ? (
-            <table className="min-w-full text-left">
-              <tbody className="divide-y divide-gray-100 text-lg">
-                <tr className="bg-cyan-600 text-white">
-                  <td className="px-6 py-5 font-bold">Standard Deviation</td>
-                  <td className="px-6 py-5 font-black text-right text-2xl">
-                    {parseFloat(results.stdDev.toFixed(5))}
-                  </td>
-                </tr>
-                <tr className="bg-cyan-50">
-                  <td className="px-6 py-4 font-semibold text-gray-600">
-                    Variance
-                  </td>
-                  <td className="px-6 py-4 font-black text-cyan-800 text-right">
-                    {parseFloat(results.variance.toFixed(5))}
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 font-medium text-gray-500">
-                    Mean (Average)
-                  </td>
-                  <td className="px-6 py-4 font-bold text-gray-800 text-right">
-                    {parseFloat(results.mean.toFixed(5))}
-                  </td>
-                </tr>
-                <tr className="bg-gray-50">
-                  <td className="px-6 py-4 font-medium text-gray-500">
-                    Count (N)
-                  </td>
-                  <td className="px-6 py-4 font-bold text-gray-800 text-right">
-                    {results.count}
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 font-medium text-gray-500">
-                    Sum (Σx)
-                  </td>
-                  <td className="px-6 py-4 font-bold text-gray-800 text-right">
-                    {parseFloat(results.sum.toFixed(5))}
-                  </td>
-                </tr>
-                <tr className="bg-gray-50">
-                  <td className="px-6 py-3 font-medium text-gray-500 text-sm">
-                    Min / Max
-                  </td>
-                  <td className="px-6 py-3 font-bold text-gray-800 text-right text-sm">
-                    {results.min} / {results.max}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          ) : (
-            <div className="h-full flex items-center justify-center p-8 text-center text-cyan-400 font-medium">
-              Enter your dataset and hit calculate to see the full statistical
-              breakdown.
+        <div className="lg:col-span-7 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          {result !== null ? (
+            <div>
+                <div className="bg-amber-50 p-4 border-b border-amber-100 flex justify-between items-center">
+                    <h2 className="text-xl font-bold text-amber-900 uppercase">Analysis Results</h2>
+                </div>
+                
+                <div className="p-8">
+                  <div className="mb-8 p-6 bg-gray-50 rounded-xl border border-gray-100 shadow-inner">
+                    <div className="text-sm text-gray-500 font-bold uppercase mb-2 tracking-wider text-center">
+                        Standard Deviation {dataType === "sample" ? "(s)" : "(σ)"}
+                    </div>
+                    <div className="text-5xl md:text-6xl font-black text-center text-amber-600">
+                        {result.standardDeviation.toPrecision(6)}
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center text-lg bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                      <span className="text-gray-600 font-semibold">Variance {dataType === "sample" ? "(s²)" : "(σ²)"}:</span>
+                      <span className="font-bold text-gray-900">
+                         {result.variance.toPrecision(6)}
+                      </span>
+                    </div>
+
+                    <div className="flex justify-between items-center text-lg bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                      <span className="text-gray-600 font-semibold">Sample Mean (x̄):</span>
+                      <span className="font-bold text-gray-900">
+                         {result.mean.toPrecision(6)}
+                      </span>
+                    </div>
+                    
+                    <div className="flex justify-between items-center text-sm bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                      <span className="text-gray-500 font-semibold">Observations Count (N):</span>
+                      <span className="font-bold text-gray-600">
+                         {result.count} values
+                      </span>
+                    </div>
+
+                    <div className="flex justify-between items-center text-sm bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                      <span className="text-gray-500 font-semibold">Sum of Squares (SS):</span>
+                      <span className="font-bold text-gray-600">
+                         {result.sumOfSquaredDifferences.toPrecision(6)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
             </div>
+          ) : (
+             <div className="text-center text-amber-800 opacity-60 font-medium p-12 my-auto">
+                Please enter at least 2 numerical values to calculate standard deviation and variance.
+             </div>
           )}
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Standard Deviation Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-          }),
-        }}
-      />
-
       <CalculatorSEO
-        title="Standard Deviation Calculator"
+        title="Standard Deviation & Variance Calculator"
         whatIsIt={
           <>
             <p>
-              Our <strong>Standard Deviation Calculator</strong> is a
-              statistical analysis tool that measures the amount of variation or
-              dispersion in a set of numerical values. Essentially, it tells you
-              how spread out your data is from the mathematical average (the
-              mean).
+              <strong>Standard Deviation</strong> is the definitive statistical measure of the amount of variation or dispersion within a set of values. 
             </p>
-            <p>
-              A low standard deviation means most of your numbers are clustered
-              tightly around the average, indicating consistency. A high
-              standard deviation means your numbers are spread out over a wide
-              range, indicating high volatility or variance.
-            </p>
-
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related Terms:</strong> Population Variance Calculator,
-              Sample Variance Calculator
+            <p className="mt-2">
+              A low standard deviation indicates that the values tend to be tightly clustered very close to the mean (average), while a high standard deviation indicates that the values are spread out over a much wider range (high volatility).
             </p>
           </>
         }
         formula={
           <>
-            <p>
-              The calculation requires first finding the Mean, then finding the
-              squared differences (Variance), and finally taking the square
-              root. Crucially, the formula changes slightly depending on if your
-              data is a Sample or the entire Population:
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-lg shadow-sm my-4 overflow-x-auto space-y-4 text-cyan-900 border border-cyan-100">
-              <p>
-                <strong>Sample (N-1):</strong> <em>s</em> = √( Σ(x - x̄)² / (n -
-                1) )
-              </p>
-              <p>
-                <strong>Population (N):</strong> <em>σ</em> = √( Σ(x - μ)² / N )
-              </p>
-            </div>
-            <p className="mt-4">
-              <strong>Note:</strong> We automatically default to the{" "}
-              <em>Sample (N-1)</em> formula as it provides an unbiased estimate
-              of population variance, which is what 95% of real-world
-              statistical applications require.
-            </p>
+            <p>The calculation sequence differs fundamentally based on whether you are looking at a <strong>Sample</strong> or a total <strong>Population</strong> (known as Bessel's Correction):</p>
+            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
+              <li><strong>Step 1:</strong> Find the mean (average) of the dataset.</li>
+              <li><strong>Step 2:</strong> Subtract the mean from every single data point to find its "Deviation".</li>
+              <li><strong>Step 3:</strong> Sqaure each of those deviations to remove negative values.</li>
+              <li><strong>Step 4:</strong> Find the <em>Variance</em> by dividing the Sum of Squares by <strong>(N)</strong> for a Population, or <strong>(N - 1)</strong> for a Sample.</li>
+              <li><strong>Step 5:</strong> Standard Deviation is the exact Square Root of that Variance.</li>
+            </ul>
           </>
         }
         example={
           <>
-            <p>
-              Let's find the Standard Deviation of five test scores:{" "}
-              <strong>85, 90, 88, 92, and 85</strong>.
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>Step 1 (Find the Mean):</strong> (85+90+88+92+85) / 5 ={" "}
-                <strong>88</strong>.
-              </li>
-              <li>
-                <strong>Step 2 (Find the Deviations):</strong> Subtract the mean
-                from each score: (-3, 2, 0, 4, -3).
-              </li>
-              <li>
-                <strong>Step 3 (Square them):</strong> (9, 4, 0, 16, 9).
-              </li>
-              <li>
-                <strong>Step 4 (Find Variance):</strong> Sum them up (38) and
-                divide by N-1 (4). Variance = <strong>9.5</strong>.
-              </li>
-              <li>
-                <strong>Step 5 (Square Root):</strong> √9.5 ={" "}
-                <strong>3.08</strong> Standard Deviation.
-              </li>
-            </ul>
+            <p><strong>Finance & Volatility:</strong> Standard Deviation is completely synonymous with "Volatility" in stock markets. If a mutual fund has an average return of 8% with a Standard Deviation of 15%, you mathematically know there is a ~68% probability (1 standard deviation on a bell curve) that next year's return will swing anywhere between -7% and +23%.</p>
           </>
         }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Finance & Investing:</strong> Measuring the historic
-              volatility of a mutual fund or stock. High standard deviation
-              implies a high-risk, high-reward investment.
-            </li>
-            <li>
-              <strong>Manufacturing & Quality Control:</strong> Ensuring factory
-              machines are producing parts to the exact millimeter. A low
-              deviation means high consistency on the assembly line.
-            </li>
-            <li>
-              <strong>Meteorology:</strong> Analyzing daily temperature
-              fluctuations to determine if a specific month is experiencing
-              unusually extreme weather compared to historical averages.
-            </li>
-            <li>
-              <strong>Education:</strong> Grading "on a curve" by determining
-              how far above or below the class average a specific student's test
-              score lies.
-            </li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "Should I use the Sample or Population formula?",
-            answer:
-              "Use 'Population' ONLY if your data contains every single member of the group you are studying (e.g., the heights of every player currently in the NBA). Use 'Sample' if your data is just a subset representing a larger group (e.g., the heights of 100 random people at the mall). When in doubt, use Sample.",
-          },
-          {
-            question: "What is Variance?",
-            answer:
-              "Variance is simply the Standard Deviation squared. It is the intermediate step in the formula. While mathematically useful, Variance is measured in 'squared units' (like 'squared dollars' or 'squared degrees'), which makes it hard to interpret intuitively. Taking the square root gives you the Standard Deviation, which returns the measurement to its original units.",
-          },
-          {
-            question: "Can standard deviation be negative?",
-            answer:
-              "No. Because the formula requires squaring the differences (which turns all negatives into positives) and then taking the principal square root, standard deviation can never be a negative number. The absolute minimum is zero, which only occurs if every single number in your dataset is exactly the same.",
-          },
-        ]}
-        relatedCalculators={[
-          {
-            name: "Percentage Calculator",
-            path: "/percentage-calculator",
-            desc: "Easily compute advanced percentage problems in one click.",
-          },
-          {
-            name: "Fraction Calculator",
-            path: "/fraction-calculator",
-            desc: "Add, subtract, multiply, and divide standard fractions.",
-          },
-          {
-            name: "Random Number Generator",
-            path: "/random-number-generator",
-            desc: "Generate true random numbers within custom ranges.",
-          },
-        ]}
+        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Quality Control:</strong> Manufacturers use standard deviation on assembly lines to ensure screws aren't being cut too thick or too thin compared to the exact target mean.</li></ul>}
+        faqs={[]}
+        relatedCalculators={[]}
       />
     </div>
   );

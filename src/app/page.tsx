@@ -7,6 +7,106 @@ export default function Home() {
       name: "Financial Calculators",
       calculators: [
         {
+          name: "Estate Tax Calculator",
+          path: "/estate-tax-calculator",
+          desc: "Estimate your federal estate tax liability using 2024 exemption limits.",
+        },
+        {
+          name: "Real Estate Calculator",
+          path: "/real-estate-calculator",
+          desc: "Analyze rental property ROI, Cap Rate, and Monthly Cash Flow.",
+        },
+        {
+          name: "Budget Calculator",
+          path: "/budget-calculator",
+          desc: "Plan your monthly spending using the professional 50/30/20 budget rule.",
+        },
+        {
+          name: "IRR Calculator",
+          path: "/irr-calculator",
+          desc: "Calculate Internal Rate of Return (IRR) for uneven cash flows.",
+        },
+        {
+          name: "APR Calculator",
+          path: "/apr-calculator",
+          desc: "Calculate the effective Annual Percentage Rate including all loan fees.",
+        },
+        {
+          name: "VA Mortgage Calculator",
+          path: "/va-mortgage-calculator",
+          desc: "Estimate VA loan payments with funding fees and $0 down options.",
+        },
+        {
+          name: "Social Security Calculator",
+          path: "/social-security-calculator",
+          desc: "Estimate your future Social Security retirement income.",
+        },
+        {
+          name: "Cash Back vs. Low Interest Calculator",
+          path: "/cash-back-vs-low-interest-calculator",
+          desc: "Compare dealer rebates against low interest financing offers.",
+        },
+        {
+          name: "Personal Loan Calculator",
+          path: "/personal-loan-calculator",
+          desc: "Calculate monthly payments and total interest for unsecured loans.",
+        },
+        {
+          name: "Lease Calculator",
+          path: "/lease-calculator",
+          desc: "Calculate auto lease payments using depreciation and money factors.",
+        },
+        {
+          name: "Bond Calculator",
+          path: "/bond-calculator",
+          desc: "Calculate Current Yield and Yield to Maturity (YTM) for bonds.",
+        },
+        {
+          name: "Roth IRA Calculator",
+          path: "/roth-ira-calculator",
+          desc: "Project tax-free retirement growth using compound interest.",
+        },
+        {
+          name: "RMD Calculator",
+          path: "/rmd-calculator",
+          desc: "Calculate your exact Required Minimum Distribution (RMD) for 2024.",
+        },
+        {
+          name: "Income Tax Calculator",
+          path: "/income-tax-calculator",
+          desc: "Estimate your federal taxes including FICA and standard deductions.",
+        },
+        {
+          name: "House Affordability Calculator",
+          path: "/house-affordability-calculator",
+          desc: "Calculate exactly how much house you can afford based on your income and debts.",
+        },
+        {
+          name: "Debt Consolidation Calculator",
+          path: "/debt-consolidation-calculator",
+          desc: "Discover how much time you save by consolidating multiple debts.",
+        },
+        {
+          name: "Business Loan Calculator",
+          path: "/business-loan-calculator",
+          desc: "Estimate your monthly payments and Effective APR for commercial financing.",
+        },
+        {
+          name: "Student Loan Calculator",
+          path: "/student-loan-calculator",
+          desc: "Calculate your student loan payoff and the impact of extra monthly payments.",
+        },
+        {
+          name: "Rent vs. Buy Calculator",
+          path: "/rent-vs-buy-calculator",
+          desc: "Project the long-term total cost of home ownership vs. renting.",
+        },
+        {
+          name: "Canadian Mortgage Calculator",
+          path: "/canadian-mortgage-calculator",
+          desc: "Calculate mortgage payments using Canadian semi-annual compounding.",
+        },
+        {
           name: "Mortgage Calculator",
           path: "/mortgage-calculator",
           desc: "Estimate your monthly mortgage payments including taxes and insurance.",
@@ -45,6 +145,31 @@ export default function Home() {
           name: "ROI Calculator",
           path: "/roi-calculator",
           desc: "Calculate your exact Return on Investment and Annualized ROI over any timeframe.",
+        },
+        {
+          name: "Retirement Calculator",
+          path: "/retirement-calculator",
+          desc: "Project your wealth at retirement and estimate monthly drawdown income.",
+        },
+        {
+          name: "401k Calculator",
+          path: "/401k-calculator",
+          desc: "Optimize your retirement savings with employer match analysis.",
+        },
+        {
+          name: "CD Calculator",
+          path: "/cd-calculator",
+          desc: "Calculate the future value and interest earned on certificates of deposit.",
+        },
+        {
+          name: "Investment Calculator",
+          path: "/investment-calculator",
+          desc: "Project investment growth over time with compound interest.",
+        },
+        {
+          name: "Savings Goal Calculator",
+          path: "/savings-goal-calculator",
+          desc: "Reverse-engineer your savings to hit specific financial milestones.",
         },
         {
           name: "Compound Interest Calculator",
@@ -90,6 +215,16 @@ export default function Home() {
           name: "Break Even Calculator",
           path: "/break-even-calculator",
           desc: "Determine the exact number of units you need to sell to cover your costs and start making a profit.",
+        },
+        {
+          name: "Profit Calculator",
+          path: "/profit-calculator",
+          desc: "Calculate gross profit, net profit, and margins to evaluate your business performance.",
+        },
+        {
+          name: "Paycheck Calculator",
+          path: "/paycheck-calculator",
+          desc: "Estimate your take-home pay after federal and state taxes and FICA deductions.",
         },
         {
           name: "Rent Calculator",
@@ -174,7 +309,32 @@ export default function Home() {
         {
           name: "LTV Calculator",
           path: "/ltv-calculator",
-          desc: "Calculate your Loan-to-Value ratio to instantly determine mortgage risk.",
+          desc: "Calculate Loan-to-Value ratio for mortgages and vehicle financing.",
+        },
+        {
+          name: "Loan Payment Calculator",
+          path: "/loan-payment-calculator",
+          desc: "Calculate your monthly loan payments and total interest cost.",
+        },
+        {
+          name: "EMI Calculator",
+          path: "/emi-calculator",
+          desc: "Calculate Equated Monthly Installments for any amortized loan.",
+        },
+        {
+          name: "Loan Comparison Calculator",
+          path: "/loan-comparison-calculator",
+          desc: "Compare two different loan offers side-by-side to find the best deal.",
+        },
+        {
+          name: "Loan Payoff Calculator",
+          path: "/loan-payoff-calculator",
+          desc: "See how much time and money you save by making extra payments.",
+        },
+        {
+          name: "Interest-Only Calculator",
+          path: "/interest-only-calculator",
+          desc: "Calculate interest-only monthly payments for bridge loans and mortgages.",
         },
         {
           name: "DTI Calculator",
@@ -332,6 +492,26 @@ export default function Home() {
       name: "Everyday Life Calculators",
       calculators: [
         {
+          name: "Square Footage Calculator",
+          path: "/square-footage-calculator",
+          desc: "Determine the exact total area of any room or property footprint.",
+        },
+        {
+          name: "Tile Calculator",
+          path: "/tile-calculator",
+          desc: "Calculate the exact quantity of tiles you should purchase, including safety margins.",
+        },
+        {
+          name: "Fuel Cost Calculator",
+          path: "/fuel-cost-calculator",
+          desc: "Plan your road trip budget instantly by factoring in total driving distance and MPG.",
+        },
+        {
+          name: "Speed Calculator",
+          path: "/speed-calculator",
+          desc: "Determine exactly how fast an object is moving based on distance and time.",
+        },
+        {
           name: "Date Calculator",
           path: "/date-calculator",
           desc: "Calculate the exact duration between two dates in years, months, and days.",
@@ -472,6 +652,41 @@ export default function Home() {
       name: "Math Calculators",
       calculators: [
         {
+          name: "Mean, Median, Mode, Range Calculator",
+          path: "/mean-median-mode-range-calculator",
+          desc: "Calculate the mean, median, mode, and range of any data set instantly.",
+        },
+        {
+          name: "Percent Error Calculator",
+          path: "/percent-error-calculator",
+          desc: "Compute the percentage error between your experimental value and the exact true value.",
+        },
+        {
+          name: "Standard Deviation Calculator",
+          path: "/standard-deviation-calculator",
+          desc: "Determine standard deviation, variance, and mean for samples or populations.",
+        },
+        {
+          name: "Variance Calculator",
+          path: "/variance-calculator",
+          desc: "Calculate the variance (s² or σ²) of your dataset simply and precisely.",
+        },
+        {
+          name: "Slope Calculator",
+          path: "/slope-calculator",
+          desc: "Find the precise slope, y-intercept, distance, and angle between two coordinate points.",
+        },
+        {
+          name: "Root Calculator",
+          path: "/root-calculator",
+          desc: "Calculate the exact Square Root, Cube Root, or custom Nth root of any number.",
+        },
+        {
+          name: "Rounding Calculator",
+          path: "/rounding-calculator",
+          desc: "Precisely truncate or round decimal numbers with adjustable rounding strategies.",
+        },
+        {
           name: "Scientific Calculator",
           path: "/scientific-calculator",
           desc: "A comprehensive free online scientific calculator.",
@@ -610,6 +825,11 @@ export default function Home() {
           name: "Prime Factorization Calculator",
           path: "/prime-factorization-calculator",
           desc: "Decompose any integer into a product of its prime factors instantly.",
+        },
+        {
+          name: "Prime Number Calculator",
+          path: "/prime-number-calculator",
+          desc: "Test for primality, find the next prime, and generate lists of prime numbers.",
         },
         {
           name: "Order of Operations Calculator",
@@ -965,6 +1185,36 @@ export default function Home() {
           name: "Prism Calculator",
           path: "/prism-calculator",
           desc: "Calculate the volume and surface area of a rectangular prism.",
+        },
+      ],
+    },
+    {
+      name: "Health Calculators",
+      calculators: [
+        {
+          name: "Healthy Weight Calculator",
+          path: "/healthy-weight-calculator",
+          desc: "Calculate your ideal body weight (IBW) based on height and gender.",
+        },
+        {
+          name: "Target Heart Rate Calculator",
+          path: "/target-heart-rate-calculator",
+          desc: "Calculate exact target heart rate training zones using the Karvonen formula.",
+        },
+        {
+          name: "Pregnancy Conception Calculator",
+          path: "/pregnancy-conception-calculator",
+          desc: "Reverse calculate your conception timeline from your estimated due date.",
+        },
+        {
+          name: "Body Surface Area Calculator",
+          path: "/body-surface-area-calculator",
+          desc: "Calculate exact Body Surface Area (BSA) in square meters for clinical dosing.",
+        },
+        {
+          name: "BMI Calculator",
+          path: "/bmi-calculator",
+          desc: "Calculate your Body Mass Index (BMI) and discover your core healthy weight range.",
         },
       ],
     },

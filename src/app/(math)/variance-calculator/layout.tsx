@@ -1,9 +1,9 @@
-import { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Variance & Standard Deviation Calculator | Sample & Population",
-  description:
-    "Instantly calculate sample and population variance (s² and σ²). Input your dataset to automatically compute mean, sum of squares, variance, and standard deviation.",
+  title: 'Variance Calculator | Population & Sample Stats',
+  description: 'Calculate the variance of any dataset. Easily compute Sample Variance (s²) and Population Variance (σ²) online.',
+  keywords: ['variance calculator', 'population variance', 'sample variance', 'stats variance'],
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

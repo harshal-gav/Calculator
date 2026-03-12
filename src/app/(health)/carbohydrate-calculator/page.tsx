@@ -1,429 +1,181 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
 export default function CarbohydrateCalculator() {
-  const [age, setAge] = useState("30");
-  const [gender, setGender] = useState("male");
-  const [weight, setWeight] = useState("75");
-  const [weightUnit, setWeightUnit] = useState("kg");
-  const [height, setHeight] = useState("175");
-  const [heightUnit, setHeightUnit] = useState("cm");
-  const [activityLevel, setActivityLevel] = useState("moderate");
-  const [goal, setGoal] = useState("maintain"); // maintain, lose_weight, gain_muscle
+  const [calories, setCalories] = useState("2000");
+  const [goal, setGoal] = useState("moderate"); // low, moderate, high
 
-  const w = parseFloat(weight);
-  const h = parseFloat(height);
-  const a = parseInt(age, 10);
+  const [result, setResult] = useState<{
+    grams: number;
+    percent: number;
+    range: { min: number; max: number };
+  } | null>(null);
 
-  let weightInKg = w;
-  if (weightUnit === "lbs") {
-    weightInKg = w / 2.20462;
-  }
+  useEffect(() => {
+    calculateCarbs();
+  }, [calories, goal]);
 
-  let heightInCm = h;
-  if (heightUnit === "in") {
-    heightInCm = h * 2.54;
-  }
+  const calculateCarbs = () => {
+    const cals = parseFloat(calories);
+    
+    if (cals > 0) {
+      let percent = 0.5;
+      if (goal === "low") percent = 0.25;
+      else if (goal === "moderate") percent = 0.45;
+      else if (goal === "high") percent = 0.65;
 
-  let recommendedCarbs = 0;
-  let minRange = 0;
-  let maxRange = 0;
-  let totalCalories = 0;
-  let isValid = false;
-
-  if (
-    !isNaN(weightInKg) &&
-    !isNaN(heightInCm) &&
-    !isNaN(a) &&
-    weightInKg > 0 &&
-    heightInCm > 0 &&
-    a > 0
-  ) {
-    isValid = true;
-
-    // 1. Calculate BMR using Mifflin-St Jeor Equation
-    let bmr = 10 * weightInKg + 6.25 * heightInCm - 5 * a;
-    bmr += gender === "male" ? 5 : -161;
-
-    // 2. Determine TDEE (Total Daily Energy Expenditure)
-    const ACTIVITY_MULTIPLIERS: Record<string, number> = {
-      sedentary: 1.2,
-      light: 1.375,
-      moderate: 1.55,
-      active: 1.725,
-      very_active: 1.9,
-    };
-    totalCalories = bmr * ACTIVITY_MULTIPLIERS[activityLevel];
-
-    // 3. Adjust Calories for Goal
-    if (goal === "lose_weight") {
-      totalCalories *= 0.8; // 20% deficit
-    } else if (goal === "gain_muscle") {
-      totalCalories *= 1.1; // 10% surplus
+      const grams = (cals * percent) / 4;
+      
+      setResult({
+        grams: grams,
+        percent: percent * 100,
+        range: {
+          min: grams * 0.9,
+          max: grams * 1.1
+        }
+      });
+    } else {
+      setResult(null);
     }
-
-    // 4. Calculate Carb targets based on standard AMDR (Acceptable Macronutrient Distribution Range)
-    // Generally 45-65% of total calories should come from carbs.
-    // Carbs have 4 calories per gram.
-
-    let carbPercentage = 0.5; // default 50%
-    if (goal === "lose_weight") carbPercentage = 0.4; // Lower carbs for deficit
-    if (goal === "gain_muscle") carbPercentage = 0.55; // Higher carbs for performance/muscle sparing
-
-    // Overwrite based on extreme activity
-    if (activityLevel === "very_active") carbPercentage = 0.6;
-    if (activityLevel === "sedentary" && goal === "lose_weight")
-      carbPercentage = 0.35; // Lower boundary
-
-    const carbCalories = totalCalories * carbPercentage;
-    recommendedCarbs = carbCalories / 4; // 4 kcal per gram
-
-    // Established Ranges (40% to 65%)
-    minRange = (totalCalories * 0.4) / 4;
-    maxRange = (totalCalories * 0.65) / 4;
-  }
+  };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-2xl shadow-xl border border-amber-100">
+    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-3xl shadow-xl border border-amber-50">
       <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-amber-900 flex items-center justify-center">
-          <span className="mr-3">🍞</span> Carbohydrate Calculator
+        <h1 className="text-4xl md:text-5xl font-black mb-4 text-amber-950 tracking-tight">
+          Carbohydrate Calculator
         </h1>
-        <p className="text-amber-700 text-lg max-w-2xl mx-auto">
-          Determine exactly how many grams of carbohydrates you should eat daily
-          based on your metabolic rate and fitness goals.
+        <p className="text-amber-600 text-lg">
+          Optimize your energy levels by defining your ideal daily carbohydrate targets.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-        {/* Inputs */}
-        <div className="lg:col-span-3 space-y-6 bg-amber-50/50 p-6 rounded-2xl border border-amber-100 shadow-inner">
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-bold text-amber-800 mb-2 uppercase tracking-wide">
-                Age
-              </label>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {/* Input UI */}
+        <div className="bg-amber-50/50 p-8 rounded-3xl border border-amber-100 shadow-sm flex flex-col justify-center gap-8">
+           <div className="space-y-2">
+              <label className="text-[10px] font-black text-amber-700 uppercase tracking-widest block pl-1">Daily Calorie Target (TDEE)</label>
               <input
                 type="number"
-                min="15"
-                max="100"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-                className="w-full rounded-xl border-amber-200 p-3 shadow-sm focus:border-amber-500 font-semibold"
+                value={calories}
+                onChange={(e) => setCalories(e.target.value)}
+                className="w-full bg-white rounded-2xl border-amber-200 p-5 font-black text-2xl text-amber-900 focus:ring-4 focus:ring-amber-200 transition-all outline-none"
+                placeholder="2000"
               />
-            </div>
-            <div>
-              <label className="block text-sm font-bold text-amber-800 mb-2 uppercase tracking-wide">
-                Gender
-              </label>
-              <select
-                value={gender}
-                onChange={(e) => setGender(e.target.value)}
-                className="w-full rounded-xl border-amber-200 p-3 shadow-sm focus:border-amber-500 font-semibold bg-white cursor-pointer"
-              >
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-              </select>
-            </div>
-          </div>
+           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-bold text-amber-800 mb-2 uppercase tracking-wide">
-                Height
-              </label>
-              <div className="flex">
-                <input
-                  type="number"
-                  min="1"
-                  step="0.1"
-                  value={height}
-                  onChange={(e) => setHeight(e.target.value)}
-                  className="w-full rounded-l-xl border-amber-200 p-3 shadow-sm focus:border-amber-500 font-semibold text-lg"
-                />
-                <select
-                  value={heightUnit}
-                  onChange={(e) => setHeightUnit(e.target.value)}
-                  className="border-y border-r border-amber-200 bg-amber-100 text-amber-800 font-bold p-3 rounded-r-xl cursor-pointer"
-                >
-                  <option value="cm">cm</option>
-                  <option value="in">in</option>
-                </select>
+           <div className="space-y-2">
+              <label className="text-[10px] font-black text-amber-700 uppercase tracking-widest block pl-1">Preferred Intake Style</label>
+              <div className="grid grid-cols-3 gap-2">
+                 {[
+                   { id: 'low', label: 'Low', sub: '25%' },
+                   { id: 'moderate', label: 'Mod', sub: '45%' },
+                   { id: 'high', label: 'High', sub: '65%' }
+                 ].map((opt) => (
+                   <button
+                    key={opt.id}
+                    onClick={() => setGoal(opt.id as any)}
+                    className={`flex flex-col items-center py-4 rounded-2xl font-black transition-all ${goal === opt.id ? 'bg-amber-500 text-white shadow-lg scale-105' : 'bg-white text-amber-600 border border-amber-100 hover:bg-amber-50'}`}
+                   >
+                    <span className="text-xs">{opt.label}</span>
+                    <span className="text-[9px] opacity-70">{opt.sub}</span>
+                   </button>
+                 ))}
               </div>
-            </div>
-            <div>
-              <label className="block text-sm font-bold text-amber-800 mb-2 uppercase tracking-wide">
-                Weight
-              </label>
-              <div className="flex">
-                <input
-                  type="number"
-                  min="1"
-                  step="0.1"
-                  value={weight}
-                  onChange={(e) => setWeight(e.target.value)}
-                  className="w-full rounded-l-xl border-amber-200 p-3 shadow-sm focus:border-amber-500 font-semibold text-lg"
-                />
-                <select
-                  value={weightUnit}
-                  onChange={(e) => setWeightUnit(e.target.value)}
-                  className="border-y border-r border-amber-200 bg-amber-100 text-amber-800 font-bold p-3 rounded-r-xl cursor-pointer"
-                >
-                  <option value="kg">kg</option>
-                  <option value="lbs">lbs</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-amber-800 mb-2 uppercase tracking-wide">
-              Activity Level
-            </label>
-            <select
-              value={activityLevel}
-              onChange={(e) => setActivityLevel(e.target.value)}
-              className="w-full rounded-xl border-amber-200 p-3 shadow-sm focus:border-amber-500 font-semibold bg-white cursor-pointer"
-            >
-              <option value="sedentary">
-                Sedentary (Office job, little exercise)
-              </option>
-              <option value="light">
-                Lightly Active (Exercise 1-3 days/week)
-              </option>
-              <option value="moderate">
-                Moderately Active (Exercise 3-5 days/week)
-              </option>
-              <option value="active">
-                Very Active (Exercise 6-7 days/week)
-              </option>
-              <option value="very_active">
-                Extra Active (Physical job or training 2x/day)
-              </option>
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-amber-800 mb-2 uppercase tracking-wide">
-              Primary Goal
-            </label>
-            <select
-              value={goal}
-              onChange={(e) => setGoal(e.target.value)}
-              className="w-full rounded-xl border-amber-200 p-3 shadow-sm focus:border-amber-500 font-semibold bg-white cursor-pointer"
-            >
-              <option value="lose_weight">Lose Weight / Cut</option>
-              <option value="maintain">Maintain Current Weight</option>
-              <option value="gain_muscle">Gain Muscle / Bulk</option>
-            </select>
-          </div>
+           </div>
         </div>
 
-        {/* Dashboard Output */}
-        <div className="lg:col-span-2">
-          {isValid ? (
-            <div className="h-full bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-8 shadow-2xl relative overflow-hidden flex flex-col justify-center text-white border border-amber-700">
-              {/* Decorative element */}
-              <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-yellow-400/20 to-transparent pointer-events-none"></div>
-
-              <div className="relative z-10 text-center">
-                <h2 className="text-amber-200 font-bold uppercase tracking-widest text-sm mb-6">
-                  Daily Carb Intake
-                </h2>
-
-                <div className="bg-amber-900/40 rounded-3xl p-6 backdrop-blur-sm border border-amber-500/30 mb-6 shadow-inner">
-                  <div className="text-6xl md:text-7xl font-black tracking-tight text-white mb-2">
-                    {Math.round(recommendedCarbs)}
-                  </div>
-                  <div className="text-lg font-bold text-amber-300 uppercase tracking-widest">
-                    Grams
-                  </div>
+        {/* Results UI */}
+        <div className="flex flex-col">
+           {result ? (
+             <div className="bg-amber-600 rounded-[2.5rem] p-10 text-white shadow-2xl flex-1 flex flex-col justify-center items-center relative overflow-hidden text-center">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+                
+                <div className="text-amber-100 text-[10px] font-black uppercase tracking-[0.4em] mb-4">Carb Goal</div>
+                <div className="text-8xl font-black mb-1 drop-shadow-md">
+                   {Math.round(result.grams)}
+                   <span className="text-2xl ml-1 opacity-60">g</span>
+                </div>
+                <div className="text-amber-200/80 text-xs font-bold mb-10">
+                   {result.percent}% of total daily energy
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-amber-950/50 rounded-xl p-4 border border-amber-800/50">
-                    <div className="text-xs text-amber-300 uppercase font-bold mb-1 tracking-wider">
-                      Acceptable Range
-                    </div>
-                    <div className="text-lg font-bold text-white">
-                      {Math.round(minRange)} - {Math.round(maxRange)}
-                      <span className="text-sm font-normal text-amber-200">
-                        g
-                      </span>
-                    </div>
-                  </div>
-                  <div className="bg-amber-950/50 rounded-xl p-4 border border-amber-800/50">
-                    <div className="text-xs text-amber-300 uppercase font-bold mb-1 tracking-wider">
-                      Total Calories
-                    </div>
-                    <div className="text-lg font-bold text-white">
-                      {Math.round(totalCalories)}
-                      <span className="text-sm font-normal text-amber-200">
-                        {" "}
-                        kcal
-                      </span>
-                    </div>
-                  </div>
+                <div className="w-full max-w-xs bg-amber-700/40 backdrop-blur-sm p-6 rounded-3xl border border-amber-500/30">
+                   <div className="text-[10px] font-black text-amber-200 uppercase tracking-widest mb-3">Optimal Range</div>
+                   <div className="flex justify-between items-center text-xl font-black">
+                      <span>{Math.round(result.range.min)}g</span>
+                      <span className="text-amber-400 font-light">to</span>
+                      <span>{Math.round(result.range.max)}g</span>
+                   </div>
                 </div>
-
-                <div className="mt-6 text-xs text-amber-100 text-center opacity-80">
-                  Assumes carbs provide 4 calories per gram. Focus on complex
-                  carbohydrates like whole grains, vegetables, and legumes.
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="h-full rounded-2xl border-2 border-dashed border-amber-200 bg-amber-50/50 flex flex-col items-center justify-center p-8 text-center">
-              <div className="text-6xl mb-4 opacity-70">🍞</div>
-              <h3 className="text-amber-900 font-bold text-xl mb-2">
-                Awaiting Input
-              </h3>
-              <p className="text-amber-600">
-                Please provide all necessary details to calculate your
-                carbohydrate needs.
-              </p>
-            </div>
-          )}
+             </div>
+           ) : (
+             <div className="flex-1 border-4 border-dashed border-amber-100 rounded-[2.5rem] flex items-center justify-center p-8 bg-amber-50/20 text-amber-300 font-black tracking-widest text-sm uppercase text-center leading-loose">
+                Define your energy requirements<br/>to calculate carb budget
+             </div>
+           )}
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Carbohydrate Calculator",
-            operatingSystem: "All",
-            applicationCategory: "HealthApplication",
-          }),
-        }}
-      />
-
-      <div className="mt-8 text-left">
-        <CalculatorSEO
-          title="Daily Carb Target & Energy Macro Calculator"
-          whatIsIt={
+      <CalculatorSEO
+        title="Carbohydrate Calculator"
+        whatIsIt={
+          <>
             <p>
-              The <strong>Carbohydrate Calculator</strong> determines the
-              specific amount of carbohydrates you need to fuel your body every
-              day. Carbs are your brain and muscles' primary and preferred
-              energy source. By utilizing your Total Daily Energy Expenditure
-              (TDEE) and adjusting for your fitness goals, it finds the perfect
-              macro ratio to keep you energized without spilling over into fat
-              storage.
+              The <strong>Carbohydrate Calculator</strong> determines the specific amount of carbs (in grams) you should consume daily to support your metabolic and performance goals.
             </p>
+            <p>
+              Carbohydrates are your body's preferred source of fuel, especially for the brain and high-intensity physical activity. By adjusting your intake based on whether you are doing low-intensity fat loss or high-intensity athletic training, you can effectively manage your glycogen levels and fat oxidation.
+            </p>
+          </>
+        }
+        formula={
+          <>
+            <p>Calculations use the biological energy conversion factor:</p>
+            <div className="bg-amber-50 p-6 rounded-2xl font-mono text-center text-amber-950 my-4 shadow-sm border border-amber-100">
+               <strong>Grams of Carbs</strong> = (Total Calories × Carbohydrate Percentage) ÷ 4
+            </div>
+            <p className="text-amber-900/60 text-xs text-center mt-2 italic font-medium">Because there are 4 calories in every 1 gram of carbohydrates.</p>
+          </>
+        }
+        example={
+          <>
+             <p>A person on a <strong>2,000 calorie diet</strong> choosing a <strong>Moderate (45%)</strong> intake:</p>
+             <ul className="list-disc pl-6 space-y-2 mt-4 text-amber-900/80">
+                <li>Total Carb Calories: 2,000 × 0.45 = 900 kcal</li>
+                <li>Grams of Carbs: 900 ÷ 4 = <strong>225g per day</strong></li>
+             </ul>
+          </>
+        }
+        useCases={
+          <ul className="list-disc pl-6 space-y-4 text-amber-900/80">
+             <li><strong>Glycogen Replenishment:</strong> Athletes use higher targets (60%+) to ensure their muscles are refueled for back-to-back training sessions.</li>
+             <li><strong>Insulin Management:</strong> People with insulin sensitivity issues often target the 'Low' (25%) bracket to better regulate blood sugar.</li>
+             <li><strong>Energy Balance:</strong> Preventing 'hitting the wall' or brain fog by ensuring consistent carbohydrate availability.</li>
+          </ul>
+        }
+        faqs={[
+          {
+            question: "Are all carbs created equal?",
+            answer: "No. Focus on 'Complex' carbohydrates (whole grains, sweet potatoes, legumes) for sustained energy, and limit 'Simple' carbs (sugar, white bread) which cause rapid insulin spikes."
+          },
+          {
+            question: "Do I need carbs to lose weight?",
+            answer: "While you can lose weight on a zero-carb diet, many find that a moderate carb intake prevents long-term metabolic slowdown and keeps exercise intensity from dropping."
+          },
+          {
+            question: "How many net carbs should I eat?",
+            answer: "This calculator provides 'Total' carbohydrates. To find 'Net' carbs, subtract the grams of dietary fiber from the results provided by this tool."
           }
-          formula={
-            <>
-              <p>
-                This calculator first establishes your baseline BMR, scales it
-                by your physical activity to find your total daily calories,
-                applies your goal's caloric deficit or surplus, and finally
-                assigns a percentage of those calories to carbohydrates.
-              </p>
-              <div className="bg-amber-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-amber-100 text-amber-900">
-                <p>
-                  <strong>Target Calories = TDEE ± Goal Adjustment</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-amber-200">
-                  <strong>
-                    Carb Calories = Target Calories × Diet Ratio (Usually ~50%)
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-amber-200">
-                  <strong>Daily Carbs (g) = Carb Calories ÷ 4</strong>
-                </p>
-              </div>
-            </>
-          }
-          example={
-            <>
-              <p>
-                Let's map out carbs for an active woman attempting to maintain
-                her current weight.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-amber-800">
-                <li>
-                  <strong>The Energy Need:</strong> Her age, height, weight, and
-                  activity level establish that she burns 2,000 calories a day.
-                </li>
-                <li>
-                  <strong>The Ratio:</strong> To maintain high energy for her
-                  workouts, she allocates a healthy 50% of her diet strictly to
-                  carbs.
-                </li>
-                <li>
-                  <strong>The Math:</strong> 50% of 2,000 calories = 1,000
-                  calories dedicated to carbohydrates.
-                </li>
-                <li>
-                  <strong>The Gram Conversion:</strong> Because there are
-                  exactly 4 calories in every gram of carbohydrate: 1,000 ÷ 4 ={" "}
-                  <strong>250 Grams</strong>.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-amber-800">
-              <li>
-                <strong>Marathon Training:</strong> Endurance runners
-                dramatically increasing their carb percentages (up to 65% of
-                their diet) during 'carb loading' phases to ensure their muscle
-                glycogen stores are absolutely full before race day.
-              </li>
-              <li>
-                <strong>Low-Carb Dieting:</strong> Individuals attempting to
-                lose weight by restricting carbs. This tool allows them to find
-                their mathematical baseline, ensuring they don't drop their
-                carbs dangerously low and crash their energy levels.
-              </li>
-              <li>
-                <strong>Insulin Management:</strong> Diabetics calculating exact
-                carb ratios relative to their overall diet size to safely
-                predict and administer corresponding insulin units.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Are all carbohydrates equal?",
-              answer:
-                "No. 'Complex Carbs' (oats, brown rice, sweet potatoes) digest slowly, providing stable, long-lasting energy. 'Simple Carbs' (sugar, candy, white bread) digest instantly, physically spiking your blood sugar and leading to inevitable energy crashes.",
-            },
-            {
-              question: "Does eating carbs at night make you fat?",
-              answer:
-                "This is a widespread myth. Weight gain is dictated exclusively by total caloric surplus over time (eating more calories than you burn), absolutely regardless of the time of day you consume those calories.",
-            },
-            {
-              question: "What is Fiber and does it count as a carb?",
-              answer:
-                "Dietary Fiber is a carbohydrate. However, the human body cannot digest most fiber, meaning it generally provides 0 usable calories and does not spike blood sugar. Many dieters track 'Net Carbs' (Total Carbs - Fiber).",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Protein Calculator",
-              path: "/protein-calculator",
-              desc: "Calculate your daily muscle building macro needs.",
-            },
-            {
-              name: "Fat Calculator",
-              path: "/fat-calculator",
-              desc: "Calculate the dietary fats needed for your organs and hormones.",
-            },
-            {
-              name: "Calorie Calculator",
-              path: "/calorie-calculator",
-              desc: "Focus strictly on the total energy limit rather than the splits.",
-            },
-          ]}
-        />
-      </div>
+        ]}
+        relatedCalculators={[
+          { name: "Macro Calculator", path: "/macro-calculator", desc: "Total dietary split including fats/protein." },
+          { name: "Pace Calculator", path: "/pace-calculator", desc: "Calculate running speed for carb-loading." },
+          { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Find your TDEE first." }
+        ]}
+      />
     </div>
   );
 }
