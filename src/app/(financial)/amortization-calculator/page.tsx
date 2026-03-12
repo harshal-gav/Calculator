@@ -75,125 +75,93 @@ export default function AmortizationCalculator() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-      <h1 className="text-4xl font-extrabold mb-4 text-gray-900 border-b pb-4">
-        Amortization Calculator
-      </h1>
-      <p className="mb-8 text-gray-600 text-lg">
-        View a detailed month-by-month breakdown of your loan payoff schedule.
-      </p>
+    <div className="max-w-6xl mx-auto p-4 md:p-8 bg-white rounded-2xl shadow-xl border border-indigo-100">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-indigo-50 pb-6 mb-8 gap-4">
+        <div>
+          <h1 className="text-4xl font-black text-indigo-900 tracking-tight text-nowrap">Amortization Calculator</h1>
+          <p className="text-indigo-600 font-medium mt-1">Detailed month-by-month breakdown of your loan payoff.</p>
+        </div>
+        <div className="bg-indigo-50 px-4 py-2 rounded-full border border-indigo-100 shrink-0">
+          <span className="text-indigo-700 font-bold text-sm uppercase tracking-wider">Loan Schedule</span>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
         {/* Inputs */}
-        <div className="lg:col-span-1 bg-gray-50 p-6 rounded-xl border border-gray-200 h-fit">
-          <div className="space-y-4">
+        <div className="lg:col-span-1 bg-slate-50 p-6 rounded-2xl border border-slate-100 h-fit space-y-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Loan Amount ($)
-              </label>
-              <input
-                type="number"
-                value={loanAmount}
-                onChange={(e) => setLoanAmount(e.target.value)}
-                className="w-full rounded-lg border-gray-300 p-3 border focus:border-blue-500"
-              />
+              <label className="block text-xs font-bold text-slate-500 mb-1 uppercase">Loan Amount ($)</label>
+              <input type="number" value={loanAmount} onChange={(e) => setLoanAmount(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-indigo-500 focus:ring-0 transition-all font-semibold text-slate-800" />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Loan Term (Years)
-              </label>
-              <input
-                type="number"
-                value={loanTerm}
-                onChange={(e) => setLoanTerm(e.target.value)}
-                className="w-full rounded-lg border-gray-300 p-3 border focus:border-blue-500"
-              />
+              <label className="block text-xs font-bold text-slate-500 mb-1 uppercase">Loan Term (Years)</label>
+              <input type="number" value={loanTerm} onChange={(e) => setLoanTerm(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-indigo-500 focus:ring-0 transition-all font-semibold text-slate-800" />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Interest Rate (%)
-              </label>
-              <input
-                type="number"
-                step="0.1"
-                value={interestRate}
-                onChange={(e) => setInterestRate(e.target.value)}
-                className="w-full rounded-lg border-gray-300 p-3 border focus:border-blue-500"
-              />
+              <label className="block text-xs font-bold text-slate-500 mb-1 uppercase">Interest Rate (%)</label>
+              <input type="number" step="0.1" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-indigo-500 focus:ring-0 transition-all font-semibold text-slate-800" />
             </div>
-            <button
-              onClick={calculateAmortization}
-              className="w-full bg-blue-600 text-white font-bold py-3 mt-4 rounded-lg hover:bg-blue-700 transition"
-            >
+            <button onClick={calculateAmortization} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-indigo-200 active:scale-[0.98]">
               Generate Schedule
             </button>
-          </div>
         </div>
 
         {/* Summary */}
-        {summary && (
-          <div className="lg:col-span-2 bg-blue-50 rounded-xl p-6 border border-blue-200 shadow-inner flex flex-col justify-center text-center">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div>
-                <h3 className="text-gray-500 font-semibold mb-1">
-                  Monthly Payment
-                </h3>
-                <p className="text-3xl font-black text-blue-700 border-b pb-2">
-                  ${summary.monthlyPayment.toFixed(2)}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-gray-500 font-semibold mb-1">
-                  Total Interest
-                </h3>
-                <p className="text-3xl font-black text-red-600 border-b pb-2">
-                  ${summary.totalInterest.toFixed(2)}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-gray-500 font-semibold mb-1">Total Cost</h3>
-                <p className="text-3xl font-black text-blue-900 border-b pb-2">
-                  ${summary.totalCost.toFixed(2)}
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
+        <div className="lg:col-span-2">
+            {summary ? (
+                <div className="h-full bg-gradient-to-br from-indigo-600 to-slate-800 rounded-3xl p-10 text-white shadow-xl flex flex-col justify-center relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -mr-24 -mt-24 blur-3xl"></div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                        <div className="space-y-1">
+                            <span className="text-indigo-200 text-xs font-bold uppercase tracking-widest font-mono">Monthly Payment</span>
+                            <div className="text-4xl font-black">${summary.monthlyPayment.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                        </div>
+                        <div className="space-y-1">
+                            <span className="text-indigo-200 text-xs font-bold uppercase tracking-widest font-mono">Total Interest</span>
+                            <div className="text-4xl font-black text-rose-300">${summary.totalInterest.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
+                        </div>
+                        <div className="space-y-1">
+                            <span className="text-indigo-200 text-xs font-bold uppercase tracking-widest font-mono">Total Principal</span>
+                            <div className="text-4xl font-black text-emerald-300">${parseFloat(loanAmount).toLocaleString()}</div>
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <div className="h-full min-h-[200px] border-2 border-dashed border-slate-200 rounded-3xl flex flex-col items-center justify-center p-8 text-center bg-indigo-50/5">
+                    <h3 className="text-xl font-bold text-slate-800 mb-2 uppercase tracking-tighter">Amortization View</h3>
+                    <p className="text-slate-500 max-w-[320px] font-medium leading-relaxed">Enter your loan details to see exactly how each payment is split between principal and interest over time.</p>
+                </div>
+            )}
+        </div>
       </div>
 
       {/* Schedule Table */}
       {schedule.length > 0 && (
-        <div className="overflow-x-auto rounded-lg border border-gray-200 max-h-[600px] overflow-y-auto">
-          <table className="min-w-full text-sm text-left text-gray-600">
-            <thead className="bg-gray-800 text-white sticky top-0 uppercase font-semibold">
-              <tr>
-                <th className="px-6 py-4">Month</th>
-                <th className="px-6 py-4">Principal ($)</th>
-                <th className="px-6 py-4">Interest ($)</th>
-                <th className="px-6 py-4">Total Payment ($)</th>
-                <th className="px-6 py-4">Remaining Balance ($)</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100 bg-white">
-              {schedule.map((row) => (
-                <tr key={row.month} className="hover:bg-gray-50">
-                  <td className="px-6 py-3 font-bold">{row.month}</td>
-                  <td className="px-6 py-3 text-green-700 font-medium">
-                    {row.principal.toFixed(2)}
-                  </td>
-                  <td className="px-6 py-3 text-red-600 font-medium">
-                    {row.interest.toFixed(2)}
-                  </td>
-                  <td className="px-6 py-3 text-gray-900 font-bold">
-                    {(row.principal + row.interest).toFixed(2)}
-                  </td>
-                  <td className="px-6 py-3 text-blue-900 font-bold">
-                    {row.balance.toFixed(2)}
-                  </td>
+        <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 shadow-lg bg-white">
+          <div className="overflow-x-auto max-h-[600px] overflow-y-auto custom-scrollbar">
+            <table className="min-w-full text-sm text-left text-slate-600 border-collapse">
+              <thead className="bg-slate-900 text-white sticky top-0 uppercase font-bold text-[10px] tracking-widest z-20">
+                <tr>
+                  <th className="px-6 py-4">Month</th>
+                  <th className="px-6 py-4">Principal ($)</th>
+                  <th className="px-6 py-4">Interest ($)</th>
+                  <th className="px-6 py-4 text-indigo-300">Total Pmt ($)</th>
+                  <th className="px-6 py-4 bg-indigo-950">Balance ($)</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {schedule.map((row) => (
+                  <tr key={row.month} className="hover:bg-indigo-50 transition-colors group">
+                    <td className="px-6 py-3 font-bold text-slate-400 group-hover:text-indigo-600">{row.month}</td>
+                    <td className="px-6 py-3 font-semibold text-emerald-600">${row.principal.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                    <td className="px-6 py-3 font-semibold text-rose-500">${row.interest.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                    <td className="px-6 py-3 font-black text-slate-900">${(row.principal + row.interest).toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                    <td className="px-6 py-3 bg-slate-50 font-black text-indigo-900 group-hover:bg-indigo-100 transition-colors">${row.balance.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
 

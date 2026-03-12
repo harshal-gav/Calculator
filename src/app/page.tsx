@@ -222,6 +222,21 @@ export default function Home() {
           desc: "Estimate savings timeline for home ownership.",
         },
         {
+          name: "Payback Period Calculator",
+          path: "/payback-period-calculator",
+          desc: "Determine how long it takes for an investment to pay for itself.",
+        },
+        {
+          name: "Future Value Calculator",
+          path: "/future-value-calculator",
+          desc: "Project what your current savings will be worth in the future.",
+        },
+        {
+          name: "Percent Off Calculator",
+          path: "/percent-off-calculator",
+          desc: "Quickly calculate sale prices and discounts.",
+        },
+        {
           name: "Compound Interest Calculator",
           path: "/compound-interest-calculator",
           desc: "Discover how your savings and investments will grow over time through compound interest.",

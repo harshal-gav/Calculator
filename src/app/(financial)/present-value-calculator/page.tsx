@@ -33,121 +33,76 @@ export default function PresentValueCalculator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-      <h1 className="text-4xl font-extrabold mb-4 text-emerald-900 border-b pb-4">
-        Present Value Calculator
-      </h1>
-      <p className="mb-8 text-gray-600 text-lg">
-        Calculate the current worth of a future sum of money given a specific
-        rate of return.
-      </p>
+    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-2xl shadow-xl border border-indigo-100">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-indigo-50 pb-6 mb-8 gap-4">
+        <div>
+          <h1 className="text-4xl font-black text-indigo-900 tracking-tight text-nowrap">Present Value Calculator</h1>
+          <p className="text-indigo-600 font-medium mt-1">Calculate the current worth of a future sum of money.</p>
+        </div>
+        <div className="bg-indigo-50 px-4 py-2 rounded-full border border-indigo-100 shrink-0">
+          <span className="text-indigo-700 font-bold text-sm uppercase tracking-wider">Time Value Calculation</span>
+        </div>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Inputs */}
-        <div className="bg-emerald-50 p-6 rounded-xl border border-emerald-100 space-y-6 flex flex-col justify-center">
-          <div>
-            <label className="block text-sm font-semibold text-emerald-900 mb-1">
-              Expected Future Value ($)
-            </label>
-            <input
-              type="number"
-              value={futureValue}
-              onChange={(e) => setFutureValue(e.target.value)}
-              className="w-full rounded-lg border-gray-300 p-4 shadow-sm focus:border-emerald-500 font-black text-2xl text-gray-800 tracking-wide"
-            />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div className="lg:col-span-12 xl:col-span-5 space-y-4">
+          <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 space-y-4">
+            <div>
+              <label className="block text-xs font-bold text-slate-500 mb-1 uppercase">Target Future Value ($)</label>
+              <input type="number" value={futureValue} onChange={(e) => setFutureValue(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-indigo-500 focus:ring-0 transition-all font-semibold text-slate-800" />
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="block text-[10px] font-bold text-slate-500 mb-1 uppercase">Interest Rate (%)</label>
+                <input type="number" step="0.1" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} className="w-full bg-white border border-slate-200 rounded-lg px-3 py-2 text-slate-700 font-bold" />
+              </div>
+              <div>
+                <label className="block text-[10px] font-bold text-slate-500 mb-1 uppercase">Periods (Years)</label>
+                <input type="number" value={years} onChange={(e) => setYears(e.target.value)} className="w-full bg-white border border-slate-200 rounded-lg px-3 py-2 text-slate-700 font-bold" />
+              </div>
+            </div>
+
+            <button onClick={calculatePV} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-indigo-200 active:scale-[0.98]">
+              Solve for PV
+            </button>
           </div>
-
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Discount Rate / Interest (%)
-            </label>
-            <input
-              type="number"
-              step="0.1"
-              value={interestRate}
-              onChange={(e) => setInterestRate(e.target.value)}
-              className="w-full rounded-lg border-gray-300 p-3 shadow-sm focus:border-emerald-500 font-bold text-lg"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Number of Periods (Years)
-            </label>
-            <input
-              type="number"
-              step="1"
-              value={years}
-              onChange={(e) => setYears(e.target.value)}
-              className="w-full rounded-lg border-gray-300 p-3 shadow-sm focus:border-emerald-500 font-bold text-lg"
-            />
-          </div>
-
-          <button
-            onClick={calculatePV}
-            className="w-full bg-emerald-600 text-white font-black py-4 rounded-xl hover:bg-emerald-700 transition shadow-lg uppercase tracking-widest text-lg"
-          >
-            Calculate PV
-          </button>
-
-          <p className="text-xs text-emerald-700 text-center uppercase font-bold tracking-widest opacity-60">
-            Formula: PV = FV / (1 + r)^n
-          </p>
         </div>
 
-        {/* Results Screen */}
-        <div className="bg-white border-2 border-emerald-100 rounded-xl overflow-hidden shadow-sm flex flex-col justify-center p-8">
-          {result !== null ? (
-            <div className="w-full text-center space-y-8">
-              <div>
-                <h3 className="text-emerald-800 font-bold uppercase tracking-widest text-sm mb-2">
-                  Required Present Value
-                </h3>
-                <div className="text-5xl lg:text-6xl font-black text-gray-900 tracking-tighter">
-                  $
-                  {result.pv.toLocaleString("en-US", {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })}
+        <div className="lg:col-span-12 xl:col-span-7">
+          {result ? (
+            <div className="h-full flex flex-col gap-6">
+              <div className="grow bg-gradient-to-br from-indigo-600 to-slate-800 rounded-3xl p-10 text-white shadow-xl flex flex-col justify-center relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+                <div className="text-indigo-100 text-sm font-bold uppercase tracking-widest mb-2 font-mono">Required Lump Sum (PV)</div>
+                <div className="text-8xl font-black mb-6">
+                  ${result.pv.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                 </div>
-                <p className="text-sm font-medium text-gray-500 mt-4 leading-relaxed px-4">
-                  You must invest{" "}
-                  <strong className="text-emerald-600">
-                    $
-                    {result.pv.toLocaleString("en-US", {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
-                  </strong>{" "}
-                  today at exactly a{" "}
-                  <strong className="text-emerald-600">{interestRate}%</strong>{" "}
-                  interest rate to reach{" "}
-                  <strong className="text-gray-900">
-                    ${parseFloat(futureValue).toLocaleString()}
-                  </strong>{" "}
-                  in {years} years.
-                </p>
+                <div className="inline-flex items-center px-4 py-2 rounded-xl bg-white/20 text-white text-base font-bold backdrop-blur-sm self-start">
+                   Total Discount: ${result.discountedAmount.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                </div>
               </div>
 
-              <div className="h-px border-b border-dashed border-gray-300 w-full"></div>
-
-              <div className="text-left bg-gray-50 p-4 rounded-lg border border-gray-100 flex justify-between items-center shadow-inner">
-                <h4 className="text-gray-500 font-bold uppercase text-[10px] tracking-wider">
-                  Total Investment Return
-                </h4>
-                <p className="text-xl font-black text-green-600">
-                  +$
-                  {result.discountedAmount.toLocaleString("en-US", {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })}
-                </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-slate-50 border border-slate-100 p-6 rounded-2xl">
+                  <div className="text-slate-400 text-xs font-bold uppercase mb-1">FV Target</div>
+                  <div className="text-xl font-black text-indigo-600">${parseFloat(futureValue).toLocaleString()}</div>
+                </div>
+                <div className="bg-slate-50 border border-slate-100 p-6 rounded-2xl text-nowrap">
+                  <div className="text-slate-400 text-xs font-bold uppercase mb-1">Buying Power (PV/FV)</div>
+                  <div className="text-xl font-black text-slate-800">{((result.pv / parseFloat(futureValue)) * 100).toFixed(1)}%</div>
+                </div>
               </div>
             </div>
           ) : (
-            <div className="h-full flex items-center justify-center text-center text-emerald-400 font-medium p-4">
-              Determine exactly how much you need to invest today to reach a
-              target financial goal in the future.
+            <div className="h-full min-h-[400px] border-2 border-dashed border-slate-200 rounded-3xl flex flex-col items-center justify-center p-8 text-center bg-indigo-50/5">
+                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4 text-indigo-600">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-slate-800 mb-2 uppercase tracking-tighter">Value Analysis</h3>
+                <p className="text-slate-500 max-w-[320px] font-medium leading-relaxed">Reverse compound interest to find what a future amount is worth in today's dollars. Essential for determining how much to invest now to hit a specific future goal.</p>
             </div>
           )}
         </div>
