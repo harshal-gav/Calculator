@@ -66,111 +66,101 @@ export default function BodyFatCalculator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-950 rounded-[3rem] shadow-2xl border border-zinc-800 text-zinc-100">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
-          Body Fat Calculator
-        </h1>
-        <p className="text-zinc-500 text-lg uppercase tracking-widest font-bold text-xs">U.S. Navy Method</p>
+    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-white rounded-3xl shadow-xl border border-rose-50">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-rose-50 pb-6 mb-8 gap-4">
+        <div>
+          <h1 className="text-4xl font-black text-slate-900 tracking-tight text-nowrap">Body Fat Calculator</h1>
+          <p className="text-slate-500 font-medium mt-1 text-lg italic">U.S. Navy Method Body Composition Estimate.</p>
+        </div>
+        <div className="bg-rose-50 px-4 py-2 rounded-full border border-rose-100 shrink-0">
+          <span className="text-rose-600 font-bold text-sm uppercase tracking-wider">Navy Method</span>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
-        {/* Interaction Panel */}
-        <div className="space-y-8">
-           <div className="flex gap-4">
-              <button 
-                onClick={() => setGender("male")}
-                className={`flex-1 py-4 rounded-2xl font-black transition-all border-2 ${gender === 'male' ? 'border-blue-500 bg-blue-500/10 text-blue-400' : 'border-zinc-800 text-zinc-600 hover:border-zinc-700'}`}
-              >
-                MALE
-              </button>
-              <button 
-                onClick={() => setGender("female")}
-                className={`flex-1 py-4 rounded-2xl font-black transition-all border-2 ${gender === 'female' ? 'border-pink-500 bg-pink-500/10 text-pink-400' : 'border-zinc-800 text-zinc-600 hover:border-zinc-700'}`}
-              >
-                FEMALE
-              </button>
-           </div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div className="lg:col-span-5 space-y-4">
+          <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 shadow-inner space-y-6">
+            <div className="flex p-1 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden text-sm">
+               <button 
+                 onClick={() => setGender("male")}
+                 className={`flex-1 py-3 rounded-xl font-bold transition-all ${gender === 'male' ? 'bg-rose-500 text-white shadow-md' : 'text-slate-400 hover:text-slate-600'}`}
+               >
+                 Male
+               </button>
+               <button 
+                 onClick={() => setGender("female")}
+                 className={`flex-1 py-3 rounded-xl font-bold transition-all ${gender === 'female' ? 'bg-rose-500 text-white shadow-md' : 'text-slate-400 hover:text-slate-600'}`}
+               >
+                 Female
+               </button>
+            </div>
 
-           <div className="grid grid-cols-2 gap-6">
-              <div className="space-y-2">
-                 <label className="text-[10px] font-black text-zinc-600 tracking-[0.2em] block pl-1">HEIGHT ({unit === 'imperial' ? 'IN' : 'CM'})</label>
-                 <input
-                  type="number"
-                  value={height}
-                  onChange={(e) => setHeight(e.target.value)}
-                  className="w-full bg-zinc-900 rounded-2xl border-zinc-800 p-4 font-bold text-xl text-zinc-100 focus:border-blue-500 ring-0 transition-all placeholder-zinc-700"
-                 />
-              </div>
-              <div className="space-y-2">
-                 <label className="text-[10px] font-black text-zinc-600 tracking-[0.2em] block pl-1">WAIST</label>
-                 <input
-                  type="number"
-                  value={waist}
-                  onChange={(e) => setWaist(e.target.value)}
-                  className="w-full bg-zinc-900 rounded-2xl border-zinc-800 p-4 font-bold text-xl text-zinc-100 focus:border-blue-500 ring-0 transition-all"
-                 />
-              </div>
-           </div>
+            <div className="grid grid-cols-2 gap-4">
+               <div>
+                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-1 block">Height ({unit === 'imperial' ? 'In' : 'Cm'})</label>
+                  <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full bg-white rounded-xl border-2 border-slate-100 focus:border-rose-300 focus:ring-0 p-4 font-black text-xl text-slate-800 shadow-sm" />
+               </div>
+               <div>
+                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-1 block">Waist ({unit === 'imperial' ? 'In' : 'Cm'})</label>
+                  <input type="number" value={waist} onChange={(e) => setWaist(e.target.value)} className="w-full bg-white rounded-xl border-2 border-slate-100 focus:border-rose-300 focus:ring-0 p-4 font-black text-xl text-slate-800 shadow-sm" />
+               </div>
+            </div>
 
-           <div className="grid grid-cols-2 gap-6">
-              <div className="space-y-2">
-                 <label className="text-[10px] font-black text-zinc-600 tracking-[0.2em] block pl-1">NECK</label>
-                 <input
-                  type="number"
-                  value={neck}
-                  onChange={(e) => setNeck(e.target.value)}
-                  className="w-full bg-zinc-900 rounded-2xl border-zinc-800 p-4 font-bold text-xl text-zinc-100 focus:border-blue-500 ring-0 transition-all"
-                 />
-              </div>
-              {gender === 'female' && (
-                <div className="space-y-2">
-                   <label className="text-[10px] font-black text-zinc-600 tracking-[0.2em] block pl-1">HIPS</label>
-                   <input
-                    type="number"
-                    value={hip}
-                    onChange={(e) => setHip(e.target.value)}
-                    className="w-full bg-zinc-900 rounded-2xl border-zinc-800 p-4 font-bold text-xl text-zinc-100 focus:border-pink-500 ring-0 transition-all"
-                   />
-                </div>
-              )}
-           </div>
+            <div className={`grid ${gender === 'female' ? 'grid-cols-2' : 'grid-cols-1'} gap-4`}>
+               <div>
+                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-1 block">Neck ({unit === 'imperial' ? 'In' : 'Cm'})</label>
+                  <input type="number" value={neck} onChange={(e) => setNeck(e.target.value)} className="w-full bg-white rounded-xl border-2 border-slate-100 focus:border-rose-300 focus:ring-0 p-4 font-black text-xl text-slate-800 shadow-sm" />
+               </div>
+               {gender === 'female' && (
+                 <div>
+                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-1 block">Hips ({unit === 'imperial' ? 'In' : 'Cm'})</label>
+                    <input type="number" value={hip} onChange={(e) => setHip(e.target.value)} className="w-full bg-white rounded-xl border-2 border-slate-100 focus:border-rose-300 focus:ring-0 p-4 font-black text-xl text-slate-800 shadow-sm" />
+                 </div>
+               )}
+            </div>
 
-           <button 
-              onClick={() => setUnit(unit === 'imperial' ? 'metric' : 'imperial')}
-              className="w-full py-4 border border-zinc-800 rounded-2xl text-[10px] font-black tracking-widest text-zinc-400 hover:bg-zinc-900 transition-colors"
-           >
-              SWITCH TO {unit === 'imperial' ? 'METRIC' : 'IMPERIAL'}
-           </button>
+            <div className="pt-2">
+               <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-1 block text-center">Measurement Unit</label>
+               <div className="flex p-1 bg-slate-100 rounded-xl">
+                  <button onClick={() => setUnit("imperial")} className={`flex-1 py-2 text-[10px] font-bold rounded-lg transition-all ${unit === "imperial" ? "bg-white text-slate-800 shadow-sm" : "text-slate-400"}`}>Imperial (In)</button>
+                  <button onClick={() => setUnit("metric")} className={`flex-1 py-2 text-[10px] font-bold rounded-lg transition-all ${unit === "metric" ? "bg-white text-slate-800 shadow-sm" : "text-slate-400"}`}>Metric (Cm)</button>
+               </div>
+            </div>
+          </div>
         </div>
 
-        {/* Display Panel */}
-        <div className="flex flex-col relative">
-           <div className="absolute inset-0 bg-blue-500/5 blur-[100px] pointer-events-none rounded-full"></div>
+        <div className="lg:col-span-7 flex flex-col gap-4">
            {bodyFat && bodyFat > 0 ? (
-             <div className="flex-1 bg-zinc-900/50 backdrop-blur-xl border border-zinc-800 rounded-[2.5rem] p-10 flex flex-col items-center justify-center text-center">
-                <div className="text-zinc-500 text-xs font-black tracking-[0.3em] mb-6">ESTIMATED BODY FAT</div>
-                <div className="text-8xl font-black mb-4 tracking-tighter text-white">
-                   {bodyFat.toFixed(1)}<span className="text-4xl text-blue-500">%</span>
+             <div className="flex-1 bg-gradient-to-br from-slate-900 to-rose-950 rounded-[2.5rem] p-10 text-white shadow-2xl flex flex-col justify-center relative overflow-hidden group border border-slate-800">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/10 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-rose-500/20 transition-all duration-700"></div>
+                <div className="text-slate-500 text-xs font-bold uppercase tracking-[0.2em] mb-4 font-mono">Composition Estimate</div>
+                <div className="flex items-baseline gap-4 mb-6">
+                   <div className="text-8xl font-black tracking-tighter">{bodyFat.toFixed(1)}%</div>
+                   <div className={`text-xl font-black px-4 py-1.5 rounded-xl border-2 uppercase tracking-tight ${category === 'Obese' ? 'bg-red-500/10 border-red-500/50 text-red-400' : 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400'}`}>
+                      {category}
+                   </div>
                 </div>
-                <div className={`px-6 py-2 rounded-full text-[10px] font-black tracking-widest uppercase mb-8 ${category === 'Obese' ? 'bg-red-500/20 text-red-500' : 'bg-green-500/20 text-green-500'}`}>
-                   {category}
-                </div>
-                
-                <div className="w-full max-w-xs space-y-4">
-                  <div className="flex justify-between items-end border-b border-zinc-800 pb-2">
-                     <span className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest">Lean Mass</span>
-                     <span className="text-xl font-bold">{((100 - bodyFat) * parseFloat(weight) / 100).toFixed(1)} lbs</span>
+
+                <div className="grid grid-cols-2 gap-6 p-6 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-sm">
+                  <div>
+                     <div className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-1">Lean Target</div>
+                     <div className="text-2xl font-black text-emerald-400">{((100 - bodyFat) * parseFloat(weight) / 100).toFixed(1)} <span className="text-sm">lbs</span></div>
                   </div>
-                  <div className="flex justify-between items-end border-b border-zinc-800 pb-2">
-                     <span className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest">Fat Mass</span>
-                     <span className="text-xl font-bold">{(bodyFat * parseFloat(weight) / 100).toFixed(1)} lbs</span>
+                  <div>
+                     <div className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-1">Fat Mass</div>
+                     <div className="text-2xl font-black text-rose-400">{(bodyFat * parseFloat(weight) / 100).toFixed(1)} <span className="text-sm">lbs</span></div>
                   </div>
                 </div>
              </div>
            ) : (
-             <div className="flex-1 border-2 border-dashed border-zinc-800 rounded-[2.5rem] flex items-center justify-center p-12 text-zinc-700 font-black tracking-widest text-center uppercase text-sm leading-loose">
-                Specify measurements to<br/>reveal body composition
+             <div className="flex-1 border-2 border-dashed border-slate-200 rounded-[2.5rem] flex flex-col items-center justify-center p-12 bg-rose-50/5 text-center">
+                <div className="w-20 h-20 bg-rose-50 rounded-full flex items-center justify-center mb-6 text-rose-300">
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-black text-slate-900 mb-2 uppercase tracking-tighter">Mass Proportion</h3>
+                <p className="text-slate-500 max-w-[340px] font-medium leading-relaxed text-lg">Use a measuring tape to approximate your body composition using the highly-regarded Navy method.</p>
              </div>
            )}
         </div>

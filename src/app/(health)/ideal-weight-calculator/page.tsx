@@ -68,98 +68,90 @@ export default function IdealWeightCalculator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-[2.5rem] shadow-2xl border border-purple-50">
-      <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-black mb-4 text-zinc-900 tracking-tight">
-          Ideal Weight Calculator
-        </h1>
-        <p className="text-zinc-500 text-lg">
-          Determine your healthy weight range using four scientific formulas and clinical BMI standards.
-        </p>
+    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-white rounded-3xl shadow-xl border border-rose-50">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-rose-50 pb-6 mb-8 gap-4">
+        <div>
+          <h1 className="text-4xl font-black text-slate-900 tracking-tight text-nowrap">Ideal Weight Calculator</h1>
+          <p className="text-slate-500 font-medium mt-1 text-lg">Determine your target weight using scientific formulas.</p>
+        </div>
+        <div className="bg-rose-50 px-4 py-2 rounded-full border border-rose-100 shrink-0">
+          <span className="text-rose-600 font-bold text-sm uppercase tracking-wider">Target Weight</span>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        {/* Input UI */}
-        <div className="md:col-span-1 bg-white p-6 rounded-3xl shadow-sm border border-zinc-100 flex flex-col gap-6">
-           <div>
-              <label className="block text-[10px] font-black text-purple-400 uppercase tracking-widest mb-2 border-b border-purple-100 pb-1">Gender</label>
-              <div className="flex gap-2">
-                 <button 
-                  onClick={() => setGender("male")}
-                  className={`flex-1 py-3 rounded-xl font-bold transition-all text-sm ${gender === 'male' ? 'bg-zinc-900 text-white shadow-lg' : 'bg-zinc-50 text-zinc-400 hover:bg-zinc-100'}`}
-                 >
-                  Male
-                 </button>
-                 <button 
-                  onClick={() => setGender("female")}
-                  className={`flex-1 py-3 rounded-xl font-bold transition-all text-sm ${gender === 'female' ? 'bg-zinc-900 text-white shadow-lg' : 'bg-zinc-50 text-zinc-400 hover:bg-zinc-100'}`}
-                 >
-                  Female
-                 </button>
-              </div>
-           </div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div className="lg:col-span-5 space-y-4">
+          <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 shadow-inner space-y-6">
+            <div className="flex p-1 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden text-sm">
+               <button 
+                 onClick={() => setGender("male")}
+                 className={`flex-1 py-3 rounded-xl font-bold transition-all ${gender === 'male' ? 'bg-rose-500 text-white shadow-md' : 'text-slate-400 hover:text-slate-600'}`}
+               >
+                 Male
+               </button>
+               <button 
+                 onClick={() => setGender("female")}
+                 className={`flex-1 py-3 rounded-xl font-bold transition-all ${gender === 'female' ? 'bg-rose-500 text-white shadow-md' : 'text-slate-400 hover:text-slate-600'}`}
+               >
+                 Female
+               </button>
+            </div>
 
-           <div>
-              <label className="block text-[10px] font-black text-purple-400 uppercase tracking-widest mb-2 border-b border-purple-100 pb-1">Unit System</label>
-              <div className="flex gap-2">
-                 <button 
-                  onClick={() => setUnit("metric")}
-                  className={`flex-1 py-2 rounded-lg font-bold transition-all text-xs ${unit === 'metric' ? 'bg-purple-600 text-white' : 'bg-purple-50 text-purple-400'}`}
-                 >
-                  Metric
-                 </button>
-                 <button 
-                  onClick={() => setUnit("imperial")}
-                  className={`flex-1 py-2 rounded-lg font-bold transition-all text-xs ${unit === 'imperial' ? 'bg-purple-600 text-white' : 'bg-purple-50 text-purple-400'}`}
-                 >
-                  US
-                 </button>
-              </div>
-           </div>
+            <div>
+               <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-1 block">Height ({unit === 'metric' ? 'cm' : 'inches'})</label>
+               <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full bg-white rounded-xl border-2 border-slate-100 focus:border-rose-300 focus:ring-0 p-4 font-black text-xl text-slate-800 shadow-sm" />
+            </div>
 
-           <div>
-              <label className="block text-[10px] font-black text-purple-400 uppercase tracking-widest mb-1">Height ({unit === 'metric' ? 'cm' : 'inches'})</label>
-              <input
-                type="number"
-                value={height}
-                onChange={(e) => setHeight(e.target.value)}
-                className="w-full bg-zinc-50 rounded-2xl border-transparent focus:border-purple-300 focus:ring-0 p-4 font-black text-xl text-zinc-900 shadow-inner"
-              />
-           </div>
+            <div className="pt-2">
+               <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-1 block text-center">Measurement Unit</label>
+               <div className="flex p-1 bg-slate-100 rounded-xl">
+                  <button onClick={() => setUnit("imperial")} className={`flex-1 py-2 text-[10px] font-bold rounded-lg transition-all ${unit === "imperial" ? "bg-white text-slate-800 shadow-sm" : "text-slate-400"}`}>Imperial (In)</button>
+                  <button onClick={() => setUnit("metric")} className={`flex-1 py-2 text-[10px] font-bold rounded-lg transition-all ${unit === "metric" ? "bg-white text-slate-800 shadow-sm" : "text-slate-400"}`}>Metric (Cm)</button>
+               </div>
+            </div>
+          </div>
         </div>
 
-        {/* Results UI */}
-        <div className="md:col-span-2 space-y-6">
+        <div className="lg:col-span-7 flex flex-col gap-4">
            {results ? (
              <>
-               <div className="bg-gradient-to-br from-purple-600 to-indigo-700 rounded-[2rem] p-8 text-white shadow-xl relative overflow-hidden group">
-                  <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
-                  <h2 className="text-purple-100 text-xs font-black uppercase tracking-[0.3em] mb-4">BMI Healthy Range</h2>
-                  <div className="text-4xl font-black mb-2 flex items-center gap-3">
-                     {formatWeight(results.bmiRange.min)}
-                     <span className="text-purple-300/50 text-xl font-light">to</span>
-                     {formatWeight(results.bmiRange.max)}
+               <div className="bg-gradient-to-br from-slate-900 to-rose-950 rounded-[2.5rem] p-10 text-white shadow-2xl flex flex-col justify-center relative overflow-hidden group border border-slate-800">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/10 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-rose-500/20 transition-all duration-700"></div>
+                  <div className="text-slate-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 font-mono">Clinically Perfect Range</div>
+                  <div className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-4">
+                     <span className="text-white">{formatWeight(results.bmiRange.min)}</span>
+                     <span className="text-slate-600 font-light text-2xl">—</span>
+                     <span className="text-emerald-400">{formatWeight(results.bmiRange.max)}</span>
                   </div>
-                  <p className="text-purple-100/70 text-xs font-medium max-w-sm">Based on the World Health Organization standard of 18.5–25.0 BMI.</p>
+                  <p className="text-slate-400 text-sm font-medium border-l-2 border-rose-500 pl-4 py-1">
+                    Based on standard BMI 18.5 – 25.0
+                  </p>
                </div>
 
                <div className="grid grid-cols-2 gap-4">
                   {[
-                    { label: "Robinson Formula", value: results.robinson, color: "bg-blue-50 text-blue-700" },
-                    { label: "Miller Formula", value: results.miller, color: "bg-emerald-50 text-emerald-700" },
-                    { label: "Devine Formula", value: results.devine, color: "bg-orange-50 text-orange-700" },
-                    { label: "Hamwi Formula", value: results.hamwi, color: "bg-rose-50 text-rose-700" }
+                    { label: "Robinson", value: results.robinson, desc: "Modern Correction" },
+                    { label: "Miller", value: results.miller, desc: "Clinical Std" },
+                    { label: "Devine", value: results.devine, desc: "Dosage Default" },
+                    { label: "Hamwi", value: results.hamwi, desc: "Simplicity Std" }
                   ].map((formula, i) => (
-                    <div key={i} className={`p-6 rounded-3xl ${formula.color} border border-white shadow-sm hover:scale-[1.02] transition-transform`}>
-                       <div className="text-[10px] font-black uppercase tracking-widest opacity-60 mb-1">{formula.label}</div>
-                       <div className="text-2xl font-black">{formatWeight(formula.value)}</div>
+                    <div key={i} className="bg-slate-50 border border-slate-100 p-5 rounded-2xl hover:bg-rose-50 transition-colors group">
+                       <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1 group-hover:text-rose-500 transition-colors">{formula.label}</div>
+                       <div className="text-2xl font-black text-slate-800">{formatWeight(formula.value)}</div>
+                       <div className="text-[9px] font-bold text-slate-400 mt-1">{formula.desc}</div>
                     </div>
                   ))}
                </div>
              </>
            ) : (
-             <div className="h-full border-4 border-dashed border-zinc-100 rounded-[2rem] flex items-center justify-center p-8 bg-white/50 text-zinc-300 italic font-bold text-center">
-                Calculating your optimal range...
+             <div className="flex-1 border-2 border-dashed border-slate-200 rounded-[2.5rem] flex flex-col items-center justify-center p-12 bg-rose-50/5 text-center">
+                <div className="w-20 h-20 bg-rose-50 rounded-full flex items-center justify-center mb-6 text-rose-300">
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-black text-slate-900 mb-2 uppercase tracking-tighter">Healthy Floor</h3>
+                <p className="text-slate-500 max-w-[340px] font-medium leading-relaxed text-lg">Input your height to see what medical literature considers your ideal weight range.</p>
              </div>
            )}
         </div>

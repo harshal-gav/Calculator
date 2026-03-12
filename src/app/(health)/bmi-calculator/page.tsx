@@ -91,22 +91,23 @@ export default function BmiCalculator() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-      <h1 className="text-4xl font-extrabold mb-4 text-gray-900 border-b pb-4">
-        BMI Calculator
-      </h1>
-      <p className="mb-8 text-gray-600 text-lg">
-        Calculate your Body Mass Index (BMI) to determine your weight category and healthy targeted weight range.
-      </p>
+    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-white rounded-3xl shadow-xl border border-rose-50">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-rose-50 pb-6 mb-8 gap-4">
+        <div>
+          <h1 className="text-4xl font-black text-slate-900 tracking-tight text-nowrap">BMI Calculator</h1>
+          <p className="text-slate-500 font-medium mt-1 text-lg">Assess your weight status and find your healthy range.</p>
+        </div>
+        <div className="bg-rose-50 px-4 py-2 rounded-full border border-rose-100 shrink-0">
+          <span className="text-rose-600 font-bold text-sm uppercase tracking-wider">Health Metrics</span>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-        <div className="lg:col-span-5 bg-gray-50 p-6 rounded-xl border border-gray-200">
-          <h2 className="text-xl font-bold mb-6 text-gray-800">Your Measurements</h2>
-          
-          <div className="space-y-6">
-            <div className="flex bg-white rounded-lg border border-gray-300 overflow-hidden shadow-sm">
+        <div className="lg:col-span-5 space-y-4">
+          <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 shadow-inner space-y-6">
+            <div className="flex p-1 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
               <button
-                className={`flex-1 py-3 text-sm font-bold transition ${unitSystem === "imperial" ? "bg-indigo-600 text-white" : "text-gray-600 hover:bg-gray-100"}`}
+                className={`flex-1 py-3 text-sm font-bold transition-all ${unitSystem === "imperial" ? "bg-rose-500 text-white" : "text-slate-400 hover:text-slate-600"}`}
                 onClick={() => setUnitSystem("imperial")}
               >
                 Imperial (ft / lbs)
