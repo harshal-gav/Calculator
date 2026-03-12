@@ -3,6 +3,25 @@
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
+// Approximation of the error function
+function erf(x: number): number {
+  // Using the approximation formula for erf(x)
+  const a1 =  0.254829592;
+  const a2 = -0.284496736;
+  const a3 =  1.421413741;
+  const a4 = -1.453152027;
+  const a5 =  1.061405429;
+  const p  =  0.3275911;
+
+  const sign = x < 0 ? -1 : 1;
+  x = Math.abs(x);
+
+  const t = 1.0 / (1.0 + p * x);
+  const y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+
+  return sign * y;
+}
+
 // Approximation of chi-square CDF using series expansion
 function chiSquareCDF(x: number, df: number): number {
   if (x < 0) return 0;
@@ -30,7 +49,7 @@ function chiSquareCDF(x: number, df: number): number {
   // Approximate using normal distribution for larger df
   if (df > 30) {
     const z = Math.sqrt(2 * x) - Math.sqrt(2 * df - 1);
-    return (1 + Math.erf(z / Math.sqrt(2))) / 2;
+    return (1 + erf(z / Math.sqrt(2))) / 2;
   }
 
   // For small df, use numerical approximation
@@ -93,7 +112,7 @@ export default function PValueCalculator() {
       if (df > 30) {
         // Use normal approximation
         const z = absT;
-        pValue = 2 * (1 - (1 + Math.erf(z / Math.sqrt(2))) / 2);
+        pValue = 2 * (1 - (1 + erf(z / Math.sqrt(2))) / 2);
       } else {
         // Simplified t-distribution approximation
         pValue = Math.exp(-0.5 * stat * stat) / Math.sqrt(Math.PI * df);
@@ -102,7 +121,7 @@ export default function PValueCalculator() {
     } else {
       // Z-test
       const absZ = Math.abs(stat);
-      pValue = 2 * (1 - (1 + Math.erf(absZ / Math.sqrt(2))) / 2);
+      pValue = 2 * (1 - (1 + erf(absZ / Math.sqrt(2))) / 2);
     }
 
     if (tailType === "right-tailed") {

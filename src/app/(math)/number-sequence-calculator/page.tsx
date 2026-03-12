@@ -36,7 +36,7 @@ export default function NumberSequenceCalculator() {
     let ratio = 0;
 
     // Check for arithmetic sequence (constant difference)
-    const differences = [];
+    const differences: number[] = [];
     for (let i = 1; i < input.length; i++) {
       differences.push(input[i] - input[i - 1]);
     }
@@ -57,7 +57,7 @@ export default function NumberSequenceCalculator() {
       }
     } else {
       // Check for geometric sequence (constant ratio)
-      const ratios = [];
+      const ratios: number[] = [];
       for (let i = 1; i < input.length; i++) {
         if (input[i - 1] !== 0) {
           ratios.push(input[i] / input[i - 1]);
@@ -107,7 +107,7 @@ export default function NumberSequenceCalculator() {
           }
         } else {
           // Check for quadratic/polynomial patterns
-          const secondDiffs = [];
+          const secondDiffs: number[] = [];
           for (let i = 1; i < differences.length; i++) {
             secondDiffs.push(differences[i] - differences[i - 1]);
           }
