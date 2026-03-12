@@ -451,6 +451,11 @@ export default function Home() {
           path: "/expected-return-calculator",
           desc: "Calculate the expected return based on probability-weighted future scenarios.",
         },
+        {
+          name: "Repayment Calculator",
+          path: "/repayment-calculator",
+          desc: "Calculate total interest and payoff time for loans with extra monthly payments.",
+        },
       ],
     },
     {
@@ -552,6 +557,36 @@ export default function Home() {
           name: "Ovulation Calculator",
           path: "/ovulation-calculator",
           desc: "Track your most fertile days and estimated ovulation date.",
+        },
+        {
+          name: "Army Body Fat Calculator",
+          path: "/army-body-fat-calculator",
+          desc: "Calculate body fat percentage using the DOD formula with neck, waist, and hip measurements.",
+        },
+        {
+          name: "Body Type Calculator",
+          path: "/body-type-calculator",
+          desc: "Discover your somatotype (Ectomorph, Mesomorph, or Endomorph) using scientific measurements.",
+        },
+        {
+          name: "Weight Watcher Points Calculator",
+          path: "/weight-watcher-points-calculator",
+          desc: "Calculate WW SmartPoints for any food using nutrition information.",
+        },
+        {
+          name: "One Rep Max Calculator",
+          path: "/one-rep-max-calculator",
+          desc: "Calculate your one-rep max using multiple scientific formulas.",
+        },
+        {
+          name: "GFR Calculator",
+          path: "/gfr-calculator",
+          desc: "Calculate glomerular filtration rate to assess kidney function.",
+        },
+        {
+          name: "Pregnancy Weight Gain Calculator",
+          path: "/pregnancy-weight-gain-calculator",
+          desc: "Calculate recommended weight gain during pregnancy using IOM guidelines.",
         },
       ],
     },
@@ -712,6 +747,11 @@ export default function Home() {
           name: "Bill Splitter Calculator",
           path: "/bill-splitter-calculator",
           desc: "Quickly divide a check and calculate total tip per person effortlessly.",
+        },
+        {
+          name: "GDP Calculator",
+          path: "/gdp-calculator",
+          desc: "Calculate GDP growth rate, sector contribution, and economic metrics.",
         },
       ],
     },
@@ -998,6 +1038,21 @@ export default function Home() {
           path: "/empirical-rule-calculator",
           desc: "Calculate the 68-95-99.7 rule distribution ranges for normal datasets.",
         },
+        {
+          name: "Number Sequence Calculator",
+          path: "/number-sequence-calculator",
+          desc: "Identify number sequence patterns and calculate the next terms in arithmetic, geometric, and Fibonacci sequences.",
+        },
+        {
+          name: "Log Calculator",
+          path: "/log-calculator",
+          desc: "Calculate logarithms with any base (log₁₀, natural log ln, or custom base).",
+        },
+        {
+          name: "P-value Calculator",
+          path: "/p-value-calculator",
+          desc: "Calculate p-values from chi-square, t-test, and z-test statistics for hypothesis testing.",
+        },
       ],
     },
     {
@@ -1077,6 +1132,11 @@ export default function Home() {
           name: "JWT Decoder",
           path: "/jwt-decoder",
           desc: "Decode JSON Web Tokens instantly to view their header and payload information.",
+        },
+        {
+          name: "Resistor Calculator",
+          path: "/resistor-calculator",
+          desc: "Calculate total resistance for series and parallel circuits, and decode resistor color codes.",
         },
       ],
     },
