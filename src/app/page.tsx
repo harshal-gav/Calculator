@@ -197,6 +197,31 @@ export default function Home() {
           desc: "Calculate CAGR and geometric mean for investment portfolios.",
         },
         {
+          name: "Marriage Tax Calculator",
+          path: "/marriage-tax-calculator",
+          desc: "Estimate tax impact of filing jointly vs. separately.",
+        },
+        {
+          name: "College Cost Calculator",
+          path: "/college-cost-calculator",
+          desc: "Project total tuition and expenses with inflation.",
+        },
+        {
+          name: "Boat Loan Calculator",
+          path: "/boat-loan-calculator",
+          desc: "Calculate monthly payments for marine financing.",
+        },
+        {
+          name: "Rental Property Calculator",
+          path: "/rental-property-calculator",
+          desc: "Analyze real estate ROI, Cap Rate, and Cash Flow.",
+        },
+        {
+          name: "Down Payment Calculator",
+          path: "/down-payment-calculator",
+          desc: "Estimate savings timeline for home ownership.",
+        },
+        {
           name: "Compound Interest Calculator",
           path: "/compound-interest-calculator",
           desc: "Discover how your savings and investments will grow over time through compound interest.",
