@@ -1,0 +1,153 @@
+"use client";
+
+import { useState } from "react";
+import CalculatorSEO from "@/components/CalculatorSEO";
+
+export default function AverageReturnCalculator() {
+  const [initialValue, setInitialValue] = useState("10000");
+  const [finalValue, setFinalValue] = useState("25000");
+  const [years, setYears] = useState("5");
+
+  const [result, setResult] = useState<{
+    totalReturn: number;
+    annualizedReturn: number;
+    simpleAverage: number;
+  } | null>(null);
+
+  const calculate = () => {
+    const start = parseFloat(initialValue);
+    const end = parseFloat(finalValue);
+    const t = parseFloat(years);
+
+    if (start > 0 && end > 0 && t > 0) {
+      const totalReturn = ((end - start) / start) * 100;
+      
+      // CAGR Formula: [(End / Start)^(1/n) - 1] * 100
+      const annualizedReturn = (Math.pow(end / start, 1 / t) - 1) * 100;
+      
+      // Simple Average (for education)
+      const simpleAverage = totalReturn / t;
+
+      setResult({
+        totalReturn,
+        annualizedReturn,
+        simpleAverage
+      });
+    }
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-2xl shadow-xl border border-sky-100">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-sky-50 pb-6 mb-8 gap-4">
+        <div>
+          <h1 className="text-4xl font-black text-sky-900 tracking-tight text-nowrap">Average Return Calculator</h1>
+          <p className="text-sky-600 font-medium mt-1">Calculate CAGR and geometric mean for your investments.</p>
+        </div>
+        <div className="bg-sky-50 px-4 py-2 rounded-full border border-sky-100 shrink-0">
+          <span className="text-sky-700 font-bold text-sm uppercase tracking-wider">CAGR Analysis</span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div className="lg:col-span-5 space-y-6">
+          <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 space-y-5">
+            <div>
+              <label className="block text-sm font-bold text-slate-700 mb-2">Initial Portfolio Value ($)</label>
+              <input type="number" value={initialValue} onChange={(e) => setInitialValue(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-3 focus:border-sky-500 focus:ring-0 transition-all font-semibold text-slate-800" />
+            </div>
+
+            <div>
+              <label className="block text-sm font-bold text-slate-700 mb-2">Final Portfolio Value ($)</label>
+              <input type="number" value={finalValue} onChange={(e) => setFinalValue(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-3 focus:border-sky-500 focus:ring-0 transition-all font-semibold text-slate-800" />
+            </div>
+
+            <div>
+              <label className="block text-sm font-bold text-slate-700 mb-2">Number of Years (n)</label>
+              <input type="number" value={years} onChange={(e) => setYears(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-3 focus:border-sky-500 focus:ring-0 transition-all font-semibold text-slate-800" />
+            </div>
+
+            <button onClick={calculate} className="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-sky-200 active:scale-[0.98]">
+              Calculate Return
+            </button>
+          </div>
+        </div>
+
+        <div className="lg:col-span-7">
+          {result ? (
+            <div className="h-full flex flex-col gap-6">
+              <div className="grow bg-gradient-to-br from-sky-600 to-sky-800 rounded-3xl p-10 text-white shadow-xl flex flex-col justify-center">
+                <div className="text-sky-100 text-sm font-bold uppercase tracking-widest mb-2 font-mono">Annualized Return (CAGR)</div>
+                <div className="text-8xl font-black mb-6">
+                  {result.annualizedReturn.toFixed(2)}%
+                </div>
+                <div className="inline-flex items-center px-4 py-2 rounded-xl bg-white/20 text-white text-base font-bold backdrop-blur-sm self-start">
+                   Total Gain: {result.totalReturn.toFixed(1)}%
+                </div>
+              </div>
+
+              <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl flex justify-between items-center">
+                <div>
+                    <div className="text-slate-400 text-[10px] font-bold uppercase tracking-widest">Simple Average Return</div>
+                    <div className="text-xl font-bold text-slate-500 line-through decoration-red-300 decoration-2">{result.simpleAverage.toFixed(2)}%</div>
+                </div>
+                <div className="text-right max-w-[200px]">
+                    <p className="text-[10px] text-sky-600 font-bold uppercase italic tracking-tighter">Precision matters. Simple averages can inflate perceived growth.</p>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="h-full min-h-[400px] border-2 border-dashed border-slate-200 rounded-3xl flex flex-col items-center justify-center p-8 text-center bg-slate-50/50">
+               <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-4 text-sky-600">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                  </svg>
+               </div>
+               <h3 className="text-xl font-bold text-slate-800 mb-2 uppercase tracking-tighter">CAGR Calculation</h3>
+               <p className="text-slate-500 max-w-[320px] font-medium">CAGR provides a smoother, more accurate annual return rate by accounting for the effect of compounding over time.</p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <CalculatorSEO
+        title="Average Return Calculator"
+        whatIsIt={
+          <p>
+            An <strong>Average Return Calculator</strong> determines the <strong>Compound Annual Growth Rate (CAGR)</strong> of an investment over a multi-year period. Unlike a simple arithmetic average, CAGR represents the smoothed annual rate of return that would be required for an investment to grow from its initial balance to its final balance, assuming the profits were reinvested at the end of each year.
+          </p>
+        }
+        formula={
+          <div className="space-y-4">
+            <p>The geometric mean of return is calculated using the CAGR formula:</p>
+            <div className="bg-slate-50 p-4 rounded-xl font-mono text-sm overflow-x-auto text-sky-700">
+              CAGR = [(Final Value / Initial Value)^(1 / Years)] - 1
+            </div>
+            <p>This formula accurately reflects the "Time Value of Money" and the geometric nature of investment growth, which simple averages fail to capture.</p>
+          </div>
+        }
+        example={
+          <p>
+            If you start with $10,000 and have $25,000 after 5 years, your total return is 150%. A simple average would suggest a 30% return per year. However, the <strong>CAGR</strong> is actually <strong>20.11%</strong>, as each year's gains compound on top of the previous year's balance.
+          </p>
+        }
+        useCases={
+          <ul className="list-disc pl-5 space-y-2">
+            <li><strong>Benchmarking:</strong> Comparing your portfolio's performance against the S&P 500's CAGR.</li>
+            <li><strong>Investment Analysis:</strong> Determining if a specific stock or mutual fund met your growth expectations.</li>
+            <li><strong>Business Valuation:</strong> Calculating the growth rate of company revenues or profits.</li>
+          </ul>
+        }
+        faqs={[
+          {
+            question: "Why is CAGR better than simple average?",
+            answer: "Simple average can be misleading. For example, if an investment drops 50% one year and gains 50% the next, the simple average is 0%, but your actual portfolio is down 25%. CAGR accurately reflects your actual remaining wealth."
+          },
+          {
+            question: "What is a 'good' CAGR?",
+            answer: "A good CAGR depends on your risk tolerance. Historically, the S&P 500 has rewarded long-term investors with a CAGR around 7% to 10% after inflation."
+          }
+        ]}
+      />
+    </div>
+  );
+}

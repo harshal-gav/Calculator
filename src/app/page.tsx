@@ -172,6 +172,31 @@ export default function Home() {
           desc: "Reverse-engineer your savings to hit specific financial milestones.",
         },
         {
+          name: "Pension Calculator",
+          path: "/pension-calculator",
+          desc: "Estimate future monthly income from defined benefit plans.",
+        },
+        {
+          name: "Annuity Calculator",
+          path: "/annuity-calculator",
+          desc: "Project payouts from fixed or variable annuities.",
+        },
+        {
+          name: "Mutual Fund Calculator",
+          path: "/mutual-fund-calculator",
+          desc: "Calculate net returns after fees and expense ratios.",
+        },
+        {
+          name: "Traditional IRA Calculator",
+          path: "/traditional-ira-calculator",
+          desc: "Project tax-deferred growth vs. future withdrawal taxes.",
+        },
+        {
+          name: "Average Return Calculator",
+          path: "/average-return-calculator",
+          desc: "Calculate CAGR and geometric mean for investment portfolios.",
+        },
+        {
           name: "Compound Interest Calculator",
           path: "/compound-interest-calculator",
           desc: "Discover how your savings and investments will grow over time through compound interest.",
