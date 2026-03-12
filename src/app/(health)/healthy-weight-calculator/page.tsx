@@ -253,9 +253,32 @@ export default function HealthyWeightCalculator() {
           {
             question: "Is this better than a BMI Calculator?",
             answer: "Yes and No. BMI is a population-level statistical tool that often fails heavily muscled individuals. IBW formulas are more tailored to height specifically, but still do not actively measure your current body fat percentage."
-          }
-        ]}
-        relatedCalculators={[]}
+          },
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
+        relatedCalculators={[
+            {
+              name: "BMI Calculator",
+              path: "/bmi-calculator",
+              desc: "Calculate your Body Mass Index for a quick health assessment.",
+            },
+            {
+              name: "Calorie Calculator",
+              path: "/calorie-calculator",
+              desc: "Estimate the number of calories you need to maintain or lose weight.",
+            },
+            {
+              name: "BMR Calculator",
+              path: "/bmr-calculator",
+              desc: "Find your Basal Metabolic Rate to understand your calorie needs at rest.",
+            },
+            {
+              name: "Ideal Weight Calculator",
+              path: "/ideal-weight-calculator",
+              desc: "Estimate your healthy weight range based on traditional formulas.",
+            }]}
       />
     </div>
   );

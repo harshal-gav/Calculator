@@ -212,8 +212,12 @@ export default function ProteinCalculator() {
         relatedCalculators={[
           { name: "BM Calculator", path: "/bmi-calculator", desc: "Check your weight status." },
           { name: "Macro Calculator", path: "/macro-calculator", desc: "See your total dietary breakdown." },
-          { name: "LBM Calculator", path: "/lean-body-mass-calculator", desc: "Calculate protein based on lean mass." }
-        ]}
+          { name: "LBM Calculator", path: "/lean-body-mass-calculator", desc: "Calculate protein based on lean mass." },
+            {
+              name: "BMI Calculator",
+              path: "/bmi-calculator",
+              desc: "Calculate your Body Mass Index for a quick health assessment.",
+            }]}
       />
     </div>
   );

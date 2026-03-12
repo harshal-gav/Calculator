@@ -287,7 +287,11 @@ export default function ConeCalculator() {
               path: "/triangle-calculator",
               desc: "Calculate 2D cross-sections utilizing Pythagorean theorems.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

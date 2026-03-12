@@ -228,7 +228,10 @@ export default function MixedNumberCalculator() {
             answer:
               "If you have a negative mixed number like -2 1/4, the entire value is negative. You convert it normally ignoring the sign (getting 9/4), and then apply the negative sign to the final result: -9/4.",
           },
-        ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
         relatedCalculators={[
           {
             name: "Fraction to Decimal",
@@ -245,7 +248,11 @@ export default function MixedNumberCalculator() {
             path: "/percentage-calculator",
             desc: "Perform various percent-based math calculations.",
           },
-        ]}
+            {
+              name: "Scientific Calculator",
+              path: "/scientific-calculator",
+              desc: "Perform advanced mathematical operations and functions.",
+            }]}
       />
     </div>
   );

@@ -246,8 +246,12 @@ export default function PaycheckCalculator() {
           relatedCalculators={[
             { name: "Salary Calculator", path: "/salary-calculator", desc: "Compare hourly vs annual earnings." },
             { name: "Income Tax Calculator", path: "/income-tax-calculator", desc: "Deeper dive into federal and state tax liabilities." },
-            { name: "Rent Calculator", path: "/rent-calculator", desc: "See what housing you can afford based on your net paycheck." }
-          ]}
+            { name: "Rent Calculator", path: "/rent-calculator", desc: "See what housing you can afford based on your net paycheck." },
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

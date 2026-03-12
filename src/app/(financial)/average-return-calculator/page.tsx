@@ -145,8 +145,33 @@ export default function AverageReturnCalculator() {
           {
             question: "What is a 'good' CAGR?",
             answer: "A good CAGR depends on your risk tolerance. Historically, the S&P 500 has rewarded long-term investors with a CAGR around 7% to 10% after inflation."
-          }
-        ]}
+          },
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
+          relatedCalculators={[
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            },
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            },
+            {
+              name: "Investment Calculator",
+              path: "/investment-calculator",
+              desc: "Project your portfolio growth over time with compound interest.",
+            },
+            {
+              name: "Loan Payment Calculator",
+              path: "/loan-payment-calculator",
+              desc: "Estimate your monthly loan payments and total interest cost.",
+            }
+          ]}
       />
     </div>
   );

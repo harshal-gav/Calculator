@@ -351,7 +351,11 @@ export default function CaseConverter() {
               path: "/regex-tester",
               desc: "Build and test the complex Regular Expressions often used to natively parse text strings.",
             },
-          ]}
+            {
+              name: "Remove Duplicates",
+              path: "/remove-duplicates",
+              desc: "Effortlessly remove duplicate lines or items from your list.",
+            }]}
         />
       </div>
     </div>

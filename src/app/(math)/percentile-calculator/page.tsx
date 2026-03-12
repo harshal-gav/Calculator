@@ -340,7 +340,11 @@ export default function PercentileCalculator() {
               path: "/variance-calculator",
               desc: "Measure exactly how scattered your data is around the center point.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

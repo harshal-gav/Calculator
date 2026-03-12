@@ -112,7 +112,7 @@ export default function DiceRoller() {
 
         <div className="flex justify-center mb-6">
           <span className="font-mono bg-red-50 text-red-900 border border-red-200 px-6 py-2 rounded-full font-bold shadow-sm tracking-widest uppercase">
-            Formula: {diceCount}d{diceType}{" "}
+            Formula: {diceCount}d{diceType}{" "},
             {modifier > 0
               ? `+ ${modifier}`
               : modifier < 0
@@ -127,7 +127,7 @@ export default function DiceRoller() {
             disabled={isRolling}
             className="w-full bg-red-600 hover:bg-red-700 disabled:bg-red-400 text-white font-bold py-5 px-6 rounded-xl transition-all shadow-lg shadow-red-600/30 uppercase tracking-widest text-xl transform active:scale-95 flex items-center justify-center gap-3"
           >
-            {isRolling ? <span className="animate-spin">🌀</span> : "🎲"}
+            {isRolling ? <span className="animate-spin">🌀</span> : "🎲"},
             {isRolling ? "Rolling..." : "Roll Dice"}
           </button>
         </div>
@@ -309,7 +309,11 @@ export default function DiceRoller() {
               path: "/random-letter-generator",
               desc: "Generate alphabetical characters randomly instead of numbers.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
 

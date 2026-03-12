@@ -284,7 +284,11 @@ export default function GasMileageCalculator() {
             path: "/volume-calculator",
             desc: "Calculate the geometric volume of 3D objects.",
           },
-        ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
       />
     </div>
   );

@@ -389,7 +389,11 @@ export default function RegexTester() {
               path: "/random-string-generator",
               desc: "Generate random data to test your complex regex rules against.",
             },
-          ]}
+            {
+              name: "Bandwidth Calculator",
+              path: "/bandwidth-calculator",
+              desc: "Calculate download and upload times for various data sizes.",
+            }]}
         />
       </div>
     </div>

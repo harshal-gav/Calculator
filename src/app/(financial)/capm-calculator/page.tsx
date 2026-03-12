@@ -301,7 +301,11 @@ export default function CAPMCalculator() {
               path: "/investment-calculator",
               desc: "Project the growth of a portfolio over decades.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

@@ -343,7 +343,10 @@ export default function ProportionCalculator() {
             answer:
               "No, this specific calculator formula (A/B = C/D) only solves for direct proportions (when one side increases, the other increases). Inverse proportions require a different formula (A × B = C × D).",
           },
-        ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
         relatedCalculators={[
           {
             name: "Percentage Calculator",
@@ -360,7 +363,11 @@ export default function ProportionCalculator() {
             path: "/fraction-to-decimal-calculator",
             desc: "Convert ratios and fractions directly into decimals.",
           },
-        ]}
+            {
+              name: "Scientific Calculator",
+              path: "/scientific-calculator",
+              desc: "Perform advanced mathematical operations and functions.",
+            }]}
       />
     </div>
   );

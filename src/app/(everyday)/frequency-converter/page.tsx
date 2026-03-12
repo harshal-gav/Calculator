@@ -270,7 +270,11 @@ export default function FrequencyConverter() {
               path: "/pace-calculator",
               desc: "Calculate athletic split times and distance frequencies.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

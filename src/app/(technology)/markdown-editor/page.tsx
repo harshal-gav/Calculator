@@ -243,7 +243,11 @@ export default function MarkdownEditor() {
               path: "/word-count-calculator",
               desc: "Analyze the exact length, density, and reading time of your written article.",
             },
-          ]}
+            {
+              name: "Bandwidth Calculator",
+              path: "/bandwidth-calculator",
+              desc: "Calculate download and upload times for various data sizes.",
+            }]}
         />
       </div>
     </div>

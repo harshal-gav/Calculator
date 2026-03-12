@@ -295,7 +295,11 @@ export default function PrismCalculator() {
               path: "/area-calculator",
               desc: "Calculate the Base Area (\(B\)) of your 2D footprint before plugging it into this prism tool.",
             },
-          ]}
+            {
+              name: "Volume Calculator",
+              path: "/volume-calculator",
+              desc: "Calculate the volume of standard 3D objects.",
+            }]}
         />
       </div>
     </div>

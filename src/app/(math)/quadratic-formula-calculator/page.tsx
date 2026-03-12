@@ -289,7 +289,10 @@ export default function QuadraticFormulaCalculator() {
               answer:
                 "The 'i' represents an imaginary number (the square root of -1). This occurs when the discriminant (b² - 4ac) is negative. Because you cannot take the square root of a negative number in real mathematics, the result consists of two complex conjugate roots.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "Order of Operations Calculator",
@@ -306,7 +309,11 @@ export default function QuadraticFormulaCalculator() {
               path: "/projectile-motion-calculator",
               desc: "Calculate flight time and distance using physics and quadratics.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

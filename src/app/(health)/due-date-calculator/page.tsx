@@ -136,9 +136,9 @@ export default function DueDateCalculator() {
 
           <div>
             <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">
-              {calcMethod === "lmp" && "First Day of Last Period"}
-              {calcMethod === "conception" && "Date of Conception"}
-              {calcMethod === "ivf" && "Date of IVF Transfer"}
+              {calcMethod === "lmp" && "First Day of Last Period"},
+              {calcMethod === "conception" && "Date of Conception"},
+              {calcMethod === "ivf" && "Date of IVF Transfer"},
               {calcMethod === "ultrasound" && "Estimated Due Date"}
             </label>
             <input
@@ -233,7 +233,7 @@ export default function DueDateCalculator() {
                 {result.gestationalAge.weeks}{" "}
                 <span className="text-sm text-pink-300 tracking-normal font-sans">
                   wks
-                </span>{" "}
+                </span>{" "},
                 {result.gestationalAge.days}{" "}
                 <span className="text-sm text-pink-300 tracking-normal font-sans">
                   days
@@ -450,7 +450,11 @@ export default function DueDateCalculator() {
               path: "/bmi-calculator",
               desc: "Track health metrics during pregnancy.",
             },
-          ]}
+            {
+              name: "Calorie Calculator",
+              path: "/calorie-calculator",
+              desc: "Estimate the number of calories you need to maintain or lose weight.",
+            }]}
         />
       </div>
     </div>

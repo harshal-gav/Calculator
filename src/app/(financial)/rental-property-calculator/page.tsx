@@ -193,8 +193,33 @@ export default function RentalPropertyCalculator() {
           {
             question: "Should I include a vacancy rate?",
             answer: "Yes, wise investors typically budget 5-10% of gross rent for vacancy, even if the property is currently occupied."
-          }
-        ]}
+          },
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
+          relatedCalculators={[
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            },
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            },
+            {
+              name: "Investment Calculator",
+              path: "/investment-calculator",
+              desc: "Project your portfolio growth over time with compound interest.",
+            },
+            {
+              name: "Loan Payment Calculator",
+              path: "/loan-payment-calculator",
+              desc: "Estimate your monthly loan payments and total interest cost.",
+            }
+          ]}
       />
     </div>
   );

@@ -302,7 +302,11 @@ export default function AreaConverter() {
               path: "/rectangle-calculator",
               desc: "Calculate the total area of a rectangle based strictly on its length and width.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

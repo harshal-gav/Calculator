@@ -388,7 +388,10 @@ export default function CurrencyConverter() {
               answer:
                 "No. Our calculator provides the 'mid-market' rate—the true, unbiased exchange rate between global banks. Retail banks, credit cards, and airport kiosks always add a 'spread' markup (usually 1% to 5%) to make a profit. Use our rate as a baseline to negotiate or choose the cheapest transfer service.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "ROI Calculator",
@@ -400,7 +403,16 @@ export default function CurrencyConverter() {
               path: "/salary-calculator",
               desc: "Convert hourly rates to an annual salary, useful for remote global teams.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            },
+            {
+              name: "Investment Calculator",
+              path: "/investment-calculator",
+              desc: "Project your portfolio growth over time with compound interest.",
+            }]}
         />
       </div>
     </div>

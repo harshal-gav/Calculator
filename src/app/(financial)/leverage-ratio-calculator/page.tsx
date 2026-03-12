@@ -267,7 +267,10 @@ export default function LeverageRatioCalculator() {
               answer:
                 "EBITDA (Earnings Before Interest, Taxes, Depreciation, and Amortization) represents pure operating cash flow. Since debt payments must be made before taxes and depreciation is a non-cash expense, EBITDA provides a much clearer picture of a company's ability to service its debt.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "ROE Calculator",
@@ -284,7 +287,11 @@ export default function LeverageRatioCalculator() {
               path: "/wacc-calculator",
               desc: "Determine how the mix of debt and equity affects a firm's average cost of capital.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

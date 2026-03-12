@@ -334,7 +334,11 @@ export default function SimpleInterestCalculator() {
               path: "/auto-loan-calculator",
               desc: "Calculate your monthly payment on a simple interest car loan.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

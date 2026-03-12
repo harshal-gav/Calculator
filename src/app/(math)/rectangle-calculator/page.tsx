@@ -292,7 +292,11 @@ export default function RectangleCalculator() {
               path: "/pythagorean-calculator",
               desc: "Deep dive into the math behind corner-to-corner diagonals.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

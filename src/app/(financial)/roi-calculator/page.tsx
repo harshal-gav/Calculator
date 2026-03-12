@@ -109,7 +109,7 @@ export default function ROICalculator() {
                 <div
                   className={`text-6xl font-black ${result.roi >= 0 ? "text-emerald-600" : "text-red-500"} border-b border-emerald-100 pb-4`}
                 >
-                  {result.roi > 0 && "+"}
+                  {result.roi > 0 && "+"},
                   {result.roi.toFixed(2)}%
                 </div>
               </div>
@@ -136,7 +136,7 @@ export default function ROICalculator() {
                   <p
                     className={`text-2xl font-bold ${result.annualizedRoi >= 0 ? "text-gray-900" : "text-red-600"}`}
                   >
-                    {result.annualizedRoi > 0 && "+"}
+                    {result.annualizedRoi > 0 && "+"},
                     {result.annualizedRoi.toFixed(2)}%{" "}
                     <span className="text-xs text-gray-500 font-normal">
                       /yr
@@ -295,7 +295,11 @@ export default function ROICalculator() {
             path: "/present-value-calculator",
             desc: "Calculate what a future sum of money is actually worth in today's dollars.",
           },
-        ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
       />
     </div>
   );

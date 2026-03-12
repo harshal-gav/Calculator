@@ -144,8 +144,40 @@ export default function RootCalculator() {
           </>
         }
         useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Advanced Geometry:</strong> Used extensively to find the straight side length of a volumetric cube when only strictly the volume is known.</li></ul>}
-        faqs={[]}
-        relatedCalculators={[]}
+        faqs={[
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            },
+            {
+              question: "Is this tool free to use?",
+              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
+            },
+            {
+              question: "Can I use this on my mobile device?",
+              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
+            }]}
+        relatedCalculators={[
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            },
+            {
+              name: "Scientific Calculator",
+              path: "/scientific-calculator",
+              desc: "Perform advanced mathematical operations and functions.",
+            },
+            {
+              name: "Quadratic Formula Calculator",
+              path: "/quadratic-formula-calculator",
+              desc: "Solve quadratic equations instantly.",
+            },
+            {
+              name: "Matrix Calculator",
+              path: "/matrix-calculator",
+              desc: "Perform addition, subtraction, and multiplication on matrices.",
+            }]}
       />
     </div>
   );

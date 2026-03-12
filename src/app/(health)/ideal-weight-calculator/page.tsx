@@ -214,8 +214,12 @@ export default function IdealWeightCalculator() {
         relatedCalculators={[
           { name: "BMI Calculator", path: "/bmi-calculator", desc: "Check your Body Mass Index." },
           { name: "Body Fat Calculator", path: "/body-fat-calculator", desc: "Measure composition, not just weight." },
-          { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Plan your path to your ideal weight." }
-        ]}
+          { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Plan your path to your ideal weight." },
+            {
+              name: "BMR Calculator",
+              path: "/bmr-calculator",
+              desc: "Find your Basal Metabolic Rate to understand your calorie needs at rest.",
+            }]}
       />
     </div>
   );

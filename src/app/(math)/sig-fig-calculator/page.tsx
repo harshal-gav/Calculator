@@ -336,7 +336,11 @@ export default function SignificantFiguresCalculator() {
               path: "/decimal-to-fraction-calculator",
               desc: "Convert any decimal exactly into a standard fraction.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

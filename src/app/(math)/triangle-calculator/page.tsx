@@ -378,7 +378,11 @@ export default function TriangleCalculator() {
               path: "/midpoint-calculator",
               desc: "Find the geographic center of a line drawn between any two geometric points.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

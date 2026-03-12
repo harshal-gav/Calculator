@@ -466,7 +466,11 @@ export default function TimeZoneConverter() {
             path: "/age-calculator",
             desc: "Calculate your chronological age in exact days and weeks.",
           },
-        ]}
+            {
+              name: "Temperature Converter",
+              path: "/temperature-converter",
+              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
+            }]}
       />
     </div>
   );

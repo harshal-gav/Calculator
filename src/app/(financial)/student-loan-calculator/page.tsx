@@ -326,8 +326,17 @@ export default function StudentLoanCalculator() {
             name: "Personal Loan Calculator",
             path: "/personal-loan-calculator",
             desc: "Understand terms for non-educational loans."
-          }
-        ]}
+          },
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            },
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            }]}
       />
     </div>
   );

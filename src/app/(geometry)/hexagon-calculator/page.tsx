@@ -352,7 +352,10 @@ export default function HexagonCalculator() {
               answer:
                 "The apothem is the geometric term for the 'Inradius'. It is the perpendicular distance starting from the exact center of the hexagon and ending at the midpoint of any of its six flat sides. It is crucial for calculating the area.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "Octagon Calculator",
@@ -369,7 +372,11 @@ export default function HexagonCalculator() {
               path: "/area-calculator",
               desc: "Find the surface area of various standard 2D shapes.",
             },
-          ]}
+            {
+              name: "Volume Calculator",
+              path: "/volume-calculator",
+              desc: "Calculate the volume of standard 3D objects.",
+            }]}
         />
       </div>
     </div>

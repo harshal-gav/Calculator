@@ -303,7 +303,10 @@ export default function CovarianceCalculator() {
               answer:
                 "Covariance tells you the DIRECTION of the relationship (positive or negative), but the resulting number is unscaled and unbounded (it could be +0.5 or +5,000,000), making it hard to interpret the strength. Correlation 'normalizes' covariance down to a strict scale between -1 and +1, telling you both the direction AND the exact strength of the relationship.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "Standard Deviation Calculator",
@@ -320,7 +323,11 @@ export default function CovarianceCalculator() {
               path: "/margin-calculator",
               desc: "A financial tool tracking operational variables.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

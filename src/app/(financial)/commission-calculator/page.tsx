@@ -206,13 +206,20 @@ export default function CommissionCalculator() {
             {
               question: "Is base salary usually taxable?",
               answer: "Yes, both base salary and commissions are considered earned income by the IRS and are subject to standard income tax withholdings."
-            }
-          ]}
+            },
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             { name: "Salary Calculator", path: "/salary-calculator", desc: "Convert your annual earnings into hourly rates." },
             { name: "Markup Calculator", path: "/markup-calculator", desc: "Calculate profit based on cost-above-wholesale." },
-            { name: "Margin Calculator", path: "/margin-calculator", desc: "Find your gross profit percentage on sales." }
-          ]}
+            { name: "Margin Calculator", path: "/margin-calculator", desc: "Find your gross profit percentage on sales." },
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

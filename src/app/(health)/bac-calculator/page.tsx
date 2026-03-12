@@ -423,7 +423,11 @@ export default function BACalculator() {
               path: "/age-calculator",
               desc: "Easily determine exactly how many days old you are.",
             },
-          ]}
+            {
+              name: "BMI Calculator",
+              path: "/bmi-calculator",
+              desc: "Calculate your Body Mass Index for a quick health assessment.",
+            }]}
         />
       </div>
     </div>

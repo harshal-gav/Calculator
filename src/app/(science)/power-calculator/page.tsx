@@ -352,7 +352,11 @@ export default function PowerCalculator() {
               path: "/velocity-calculator",
               desc: "Determine how fast an object is moving by dividing total distance by time.",
             },
-          ]}
+            {
+              name: "Density Calculator",
+              path: "/density-calculator",
+              desc: "Calculate density, mass, or volume given two values.",
+            }]}
         />
       </div>
     </div>

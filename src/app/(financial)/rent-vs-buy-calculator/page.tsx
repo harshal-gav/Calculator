@@ -195,8 +195,33 @@ export default function RentVsBuyCalculator() {
           {
             question: "What is the 5% rule?",
             answer: "A common rule of thumb that says the unrecoverable costs of home ownership (taxes, maintenance, cost of capital) are roughly 5% of the home's value per year. If rent is less than 5% of a similar home's value annually, renting is likely better."
-          }
-        ]}
+          },
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
+          relatedCalculators={[
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            },
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            },
+            {
+              name: "Investment Calculator",
+              path: "/investment-calculator",
+              desc: "Project your portfolio growth over time with compound interest.",
+            },
+            {
+              name: "Loan Payment Calculator",
+              path: "/loan-payment-calculator",
+              desc: "Estimate your monthly loan payments and total interest cost.",
+            }
+          ]}
       />
     </div>
   );

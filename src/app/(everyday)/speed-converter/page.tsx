@@ -308,7 +308,11 @@ export default function SpeedConverter() {
               path: "/volume-converter",
               desc: "Convert fuel capacity metrics for long-distance travel.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

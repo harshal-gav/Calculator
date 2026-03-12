@@ -147,7 +147,7 @@ export default function TextReplacer() {
               <span>Modified Result</span>
               {replacementCount > 0 && (
                 <span className="bg-rose-600 text-white px-2 py-0.5 rounded text-[10px] animate-pulse">
-                  {replacementCount}{" "}
+                  {replacementCount}{" "},
                   {replacementCount === 1 ? "Replacement" : "Replacements"} Made
                 </span>
               )}
@@ -386,7 +386,11 @@ export default function TextReplacer() {
               path: "/remove-duplicates",
               desc: "Automatically scan your text and delete entire rows that perfectly duplicate previous ones.",
             },
-          ]}
+            {
+              name: "Case Converter",
+              path: "/case-converter",
+              desc: "Change text to UPPERCASE, lowercase, Title Case, and more.",
+            }]}
         />
       </div>
     </div>

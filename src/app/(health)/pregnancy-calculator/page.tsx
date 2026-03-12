@@ -335,7 +335,11 @@ export default function PregnancyCalculator() {
             path: "/date-calculator",
             desc: "Add or subtract exact days, weeks, or months from any given date.",
           },
-        ]}
+            {
+              name: "BMI Calculator",
+              path: "/bmi-calculator",
+              desc: "Calculate your Body Mass Index for a quick health assessment.",
+            }]}
       />
     </div>
   );

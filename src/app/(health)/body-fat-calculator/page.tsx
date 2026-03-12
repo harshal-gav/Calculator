@@ -220,8 +220,12 @@ export default function BodyFatCalculator() {
         relatedCalculators={[
           { name: "Ideal Weight Calculator", path: "/ideal-weight-calculator", desc: "Check your weight range." },
           { name: "Macro Calculator", path: "/macro-calculator", desc: "Define your diet by your goals." },
-          { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Energy intake based on activity." }
-        ]}
+          { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Energy intake based on activity." },
+            {
+              name: "BMI Calculator",
+              path: "/bmi-calculator",
+              desc: "Calculate your Body Mass Index for a quick health assessment.",
+            }]}
       />
     </div>
   );

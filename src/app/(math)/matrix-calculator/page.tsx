@@ -370,7 +370,10 @@ export default function MatrixCalculator() {
               answer:
                 "If the determinant of a matrix equals 0, the matrix is 'singular'. This means the matrix cannot be inverted (it has no inverse), and if it represents a system of linear equations, those equations have either entirely no solution or infinite solutions.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "Order of Operations Calculator",
@@ -387,7 +390,11 @@ export default function MatrixCalculator() {
               path: "/lcm-calculator",
               desc: "Find the Least Common Multiple of large datasets.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

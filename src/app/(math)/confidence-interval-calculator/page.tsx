@@ -196,7 +196,7 @@ export default function ConfidenceIntervalCalculator() {
               Margin of Error
             </span>
             <span className="font-mono text-xl font-bold text-teal-300">
-              ±{" "}
+              ±{" "},
               {result.marginOfError.toLocaleString("en-US", {
                 maximumFractionDigits: 4,
               })}
@@ -352,7 +352,11 @@ export default function ConfidenceIntervalCalculator() {
               path: "/empirical-rule-calculator",
               desc: "Visualize how standard deviations physically map onto the bell curve.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

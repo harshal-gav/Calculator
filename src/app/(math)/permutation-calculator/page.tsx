@@ -365,7 +365,11 @@ export default function PermutationCalculator() {
               path: "/probability-calculator",
               desc: "Turn these raw permutation counts into actual percentage odds of winning or losing.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

@@ -275,7 +275,10 @@ export default function PrimeFactorizationCalculator() {
               answer:
                 "The calculator will immediately identify and explicitly inform you that your inputted number is already a prime number, meaning its only prime factor is itself raised to the power of 1.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "LCM Calculator",
@@ -292,7 +295,11 @@ export default function PrimeFactorizationCalculator() {
               path: "/fraction-simplifier-calculator",
               desc: "Use common factor division to reduce fractions automatically.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

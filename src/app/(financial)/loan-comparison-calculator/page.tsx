@@ -218,13 +218,20 @@ export default function LoanComparisonCalculator() {
           {
             question: "Should I focus on the monthly payment or total cost?",
             answer: "A healthy financial plan balances both. You must ensure the monthly payment is comfortably within your budget, but you should also strive for the lowest total cost to maximize your long-term savings."
-          }
-        ]}
+          },
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
         relatedCalculators={[
           { name: "EMI Calculator", path: "/emi-calculator", desc: "Calculate single loan installments." },
           { name: "Payment Calculator", path: "/payment-calculator", desc: "Basic monthly payment estimator." },
-          { name: "Interest Rate Calculator", path: "/interest-rate-calculator", desc: "Discover the interest rate hiding in your loan offer." }
-        ]}
+          { name: "Interest Rate Calculator", path: "/interest-rate-calculator", desc: "Discover the interest rate hiding in your loan offer." },
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
       />
     </div>
   );

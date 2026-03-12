@@ -222,8 +222,12 @@ export default function LoanPaymentCalculator() {
         relatedCalculators={[
           { name: "EMI Calculator", path: "/emi-calculator", desc: "Calculate equated monthly installments for international loans." },
           { name: "Amortization Calculator", path: "/amortization-calculator", desc: "View a full month-by-month breakdown of your loan." },
-          { name: "Personal Loan Calculator", path: "/personal-loan-calculator", desc: "Estimate payments for unsecured bank loans." }
-        ]}
+          { name: "Personal Loan Calculator", path: "/personal-loan-calculator", desc: "Estimate payments for unsecured bank loans." },
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
       />
     </div>
   );

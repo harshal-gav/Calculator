@@ -363,7 +363,11 @@ export default function AgeCalculator() {
             path: "/time-zone-converter",
             desc: "Convert times across hundreds of global time zones instantly.",
           },
-        ]}
+            {
+              name: "Temperature Converter",
+              path: "/temperature-converter",
+              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
+            }]}
       />
     </div>
   );

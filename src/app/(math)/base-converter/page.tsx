@@ -292,7 +292,10 @@ export default function BaseConverter() {
               answer:
                 "Hardware fundamentally consists of billions of microscopic transistors. A transistor essentially only has two states: ON (conducting current / 1) or OFF (blocking current / 0). Digital binary perfectly maps to this physical hardware reality.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "Unit Converter",
@@ -309,7 +312,11 @@ export default function BaseConverter() {
               path: "/hash-generator",
               desc: "Generate cryptographic hashes which are represented in hexadecimal strings.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

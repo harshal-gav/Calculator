@@ -183,8 +183,40 @@ export default function SocialSecurityCalculator() {
           </>
         }
         useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Breakeven Analysis:</strong> While you get a larger check at 70, you missed out on 8 years of checks (from 62 to 70). Most retirees break even on total dollars received around age 80-82 if they delay until 70.</li></ul>}
-        faqs={[]}
-        relatedCalculators={[]}
+        faqs={[
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            },
+            {
+              question: "Is this tool free to use?",
+              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
+            },
+            {
+              question: "Can I use this on my mobile device?",
+              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
+            }]}
+        relatedCalculators={[
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            },
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            },
+            {
+              name: "Investment Calculator",
+              path: "/investment-calculator",
+              desc: "Project your portfolio growth over time with compound interest.",
+            },
+            {
+              name: "Loan Payment Calculator",
+              path: "/loan-payment-calculator",
+              desc: "Estimate your monthly loan payments and total interest cost.",
+            }]}
       />
     </div>
   );

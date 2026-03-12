@@ -292,7 +292,11 @@ export default function RhombusCalculator() {
               path: "/area-calculator",
               desc: "Solve area for irregular polyhedrons and standard shapes.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

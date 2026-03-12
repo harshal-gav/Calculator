@@ -450,7 +450,11 @@ export default function VelocityCalculator() {
               path: "/projectile-motion-calculator",
               desc: "Calculate the complex 2D velocity of objects moving through the air.",
             },
-          ]}
+            {
+              name: "Density Calculator",
+              path: "/density-calculator",
+              desc: "Calculate density, mass, or volume given two values.",
+            }]}
         />
       </div>
     </div>

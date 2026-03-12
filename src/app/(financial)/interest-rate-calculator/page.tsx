@@ -294,7 +294,11 @@ export default function InterestRateCalculator() {
               path: "/investment-calculator",
               desc: "Analyze the total inflation-adjusted returns of a diversified ETF portfolio.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

@@ -307,7 +307,11 @@ export default function RandomStringGenerator() {
               path: "/random-letter-generator",
               desc: "Generate alphabetical characters randomly instead of data strings.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

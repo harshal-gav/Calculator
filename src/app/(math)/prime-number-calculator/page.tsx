@@ -203,7 +203,41 @@ export default function PrimeNumberCalculator() {
         formula={<p>The calculator uses an optimized primality test (trial division) which checks for divisibility by 2, 3, and then uses a 6k ± 1 pattern to eliminate most composites quickly, significantly reducing the required calculations compared to basic trial division.</p>}
         example={<p>Testing <strong>101</strong>: The calculator checks divisors and finds none other than 1 and 101. It confirms 101 is prime. Testing <strong>45</strong>: The calculator finds divisors [1, 3, 5, 9, 15, 45] and prime factorization 3^2 × 5, confirming 45 is composite.</p>}
         useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Cryptography:</strong> Modern security relies on the difficulty of factoring extremely large prime numbers.</li><li><strong>Mathematics Homework:</strong> Quickly check work on factor trees and prime factorization.</li><li><strong>Programming:</strong> Benchmarking logical efficiency in software algorithms.</li></ul>}
-        faqs={[]}
+        faqs={[
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            },
+            {
+              question: "Is this tool free to use?",
+              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
+            },
+            {
+              question: "Can I use this on my mobile device?",
+              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
+            }]}
+          relatedCalculators={[
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            },
+            {
+              name: "Scientific Calculator",
+              path: "/scientific-calculator",
+              desc: "Perform advanced mathematical operations and functions.",
+            },
+            {
+              name: "Quadratic Formula Calculator",
+              path: "/quadratic-formula-calculator",
+              desc: "Solve quadratic equations instantly.",
+            },
+            {
+              name: "Matrix Calculator",
+              path: "/matrix-calculator",
+              desc: "Perform addition, subtraction, and multiplication on matrices.",
+            }
+          ]}
       />
     </div>
   );

@@ -391,7 +391,11 @@ export default function GPACalculator() {
               path: "/percentage-calculator",
               desc: "Convert raw test scores into 0-100 percentage grades.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

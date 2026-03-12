@@ -169,8 +169,12 @@ export default function FatCalculator() {
         relatedCalculators={[
           { name: "Macro Calculator", path: "/macro-calculator", desc: "Balance your protein and carbs too." },
           { name: "BMI Calculator", path: "/bmi-calculator", desc: "Check if your weight is in a healthy range." },
-          { name: "LBM Calculator", path: "/lean-body-mass-calculator", desc: "Separate your weight from your body fat." }
-        ]}
+          { name: "LBM Calculator", path: "/lean-body-mass-calculator", desc: "Separate your weight from your body fat." },
+            {
+              name: "Calorie Calculator",
+              path: "/calorie-calculator",
+              desc: "Estimate the number of calories you need to maintain or lose weight.",
+            }]}
       />
     </div>
   );

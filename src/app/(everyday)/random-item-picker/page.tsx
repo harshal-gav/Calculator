@@ -255,7 +255,11 @@ export default function RandomItemPicker() {
               path: "/pomodoro-timer",
               desc: "Once the item picker decides what you are going to work on, use this timer to stay focused on it.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

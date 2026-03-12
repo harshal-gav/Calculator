@@ -344,7 +344,11 @@ export default function CubicEquationCalculator() {
               path: "/scientific-calculator",
               desc: "For manual verification of your complex and imaginary roots.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

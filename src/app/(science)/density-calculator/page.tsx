@@ -261,7 +261,7 @@ export default function DensityCalculator() {
 
               <div className="relative z-10 text-center">
                 <h2 className="text-cyan-200 font-bold uppercase tracking-widest text-xs mb-8 border-b border-cyan-800/50 pb-4">
-                  Calculated{" "}
+                  Calculated{" "},
                   {calcType === "density"
                     ? "Density"
                     : calcType === "mass"
@@ -438,7 +438,11 @@ export default function DensityCalculator() {
               path: "/weight-converter",
               desc: "Instantly translate international mass and weight limits.",
             },
-          ]}
+            {
+              name: "Kinetic Energy Calculator",
+              path: "/kinetic-energy-calculator",
+              desc: "Find the energy of a moving object based on mass and velocity.",
+            }]}
         />
       </div>
     </div>

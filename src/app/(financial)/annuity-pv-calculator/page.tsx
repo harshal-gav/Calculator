@@ -311,7 +311,11 @@ export default function AnnuityPVCalculator() {
               path: "/compound-interest-calculator",
               desc: "Run the math in reverse to see Future Value.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

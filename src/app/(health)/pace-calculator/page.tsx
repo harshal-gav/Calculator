@@ -343,7 +343,11 @@ export default function PaceCalculator() {
               path: "/velocity-calculator",
               desc: "For raw physics kinematics without the running-specific split formatting.",
             },
-          ]}
+            {
+              name: "BMI Calculator",
+              path: "/bmi-calculator",
+              desc: "Calculate your Body Mass Index for a quick health assessment.",
+            }]}
         />
       </div>
     </div>

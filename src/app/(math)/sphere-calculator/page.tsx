@@ -264,7 +264,11 @@ export default function SphereCalculator() {
               path: "/distance-calculator",
               desc: "Calculate physical point-to-point distances across Earth's spheroid.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

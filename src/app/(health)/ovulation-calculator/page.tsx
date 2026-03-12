@@ -415,7 +415,11 @@ export default function OvulationCalculator() {
               path: "/bmi-calculator",
               desc: "Analyze your Body Mass Index (BMI).",
             },
-          ]}
+            {
+              name: "Calorie Calculator",
+              path: "/calorie-calculator",
+              desc: "Estimate the number of calories you need to maintain or lose weight.",
+            }]}
         />
       </div>
     </div>

@@ -284,7 +284,11 @@ export default function EllipseCalculator() {
               path: "/cone-calculator",
               desc: "Calculate the geometric volume of a three-dimensional cone.",
             },
-          ]}
+            {
+              name: "Volume Calculator",
+              path: "/volume-calculator",
+              desc: "Calculate the volume of standard 3D objects.",
+            }]}
         />
       </div>
     </div>

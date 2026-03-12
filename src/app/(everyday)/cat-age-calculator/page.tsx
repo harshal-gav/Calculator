@@ -315,7 +315,11 @@ export default function CatAgeCalculator() {
               path: "/weight-converter",
               desc: "Easily convert your pet's weight between pounds and kilograms.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

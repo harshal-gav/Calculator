@@ -310,7 +310,11 @@ export default function AmortizationCalculator() {
             path: "/payment-calculator",
             desc: "Determine your monthly payment for any standard amortized loan.",
           },
-        ]}
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            }]}
       />
     </div>
   );

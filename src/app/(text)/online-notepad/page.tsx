@@ -270,7 +270,11 @@ export default function OnlineNotepad() {
               path: "/case-converter",
               desc: "Instantly transform your notes between UPPERCASE, lowercase, and Title Case.",
             },
-          ]}
+            {
+              name: "Case Converter",
+              path: "/case-converter",
+              desc: "Change text to UPPERCASE, lowercase, Title Case, and more.",
+            }]}
         />
       </div>
     </div>

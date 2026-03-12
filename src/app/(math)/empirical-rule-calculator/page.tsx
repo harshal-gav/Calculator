@@ -125,7 +125,7 @@ export default function EmpiricalRuleCalculator() {
                 {result.sd1Lower.toLocaleString("en-US", {
                   maximumFractionDigits: 4,
                 })}{" "}
-                <span className="text-white/30 mx-2">to</span>{" "}
+                <span className="text-white/30 mx-2">to</span>{" "},
                 {result.sd1Upper.toLocaleString("en-US", {
                   maximumFractionDigits: 4,
                 })}
@@ -146,7 +146,7 @@ export default function EmpiricalRuleCalculator() {
                 {result.sd2Lower.toLocaleString("en-US", {
                   maximumFractionDigits: 4,
                 })}{" "}
-                <span className="text-white/30 mx-2">to</span>{" "}
+                <span className="text-white/30 mx-2">to</span>{" "},
                 {result.sd2Upper.toLocaleString("en-US", {
                   maximumFractionDigits: 4,
                 })}
@@ -167,7 +167,7 @@ export default function EmpiricalRuleCalculator() {
                 {result.sd3Lower.toLocaleString("en-US", {
                   maximumFractionDigits: 4,
                 })}{" "}
-                <span className="text-white/30 mx-2">to</span>{" "}
+                <span className="text-white/30 mx-2">to</span>{" "},
                 {result.sd3Upper.toLocaleString("en-US", {
                   maximumFractionDigits: 4,
                 })}
@@ -325,7 +325,11 @@ export default function EmpiricalRuleCalculator() {
               path: "/percentile-calculator",
               desc: "Calculate precise percentiles without relying on normal distribution approximations.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

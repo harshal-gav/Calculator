@@ -145,7 +145,7 @@ export default function RemoveDuplicates() {
               <span>Cleaned Output</span>
               {duplicatesRemoved > 0 && (
                 <span className="bg-red-500 text-white px-2 py-0.5 rounded text-[10px] animate-bounce">
-                  {duplicatesRemoved}{" "}
+                  {duplicatesRemoved}{" "},
                   {duplicatesRemoved === 1 ? "Duplicate" : "Duplicates"}{" "}
                   Deleted!
                 </span>
@@ -353,7 +353,11 @@ export default function RemoveDuplicates() {
               path: "/json-validator",
               desc: "If you're converting this duplicate-free list back into a database array, validate your JSON syntax first.",
             },
-          ]}
+            {
+              name: "Case Converter",
+              path: "/case-converter",
+              desc: "Change text to UPPERCASE, lowercase, Title Case, and more.",
+            }]}
         />
       </div>
     </div>

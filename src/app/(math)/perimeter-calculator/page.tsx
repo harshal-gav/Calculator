@@ -213,10 +213,10 @@ export default function PerimeterCalculator() {
 
           <div className="text-center pt-2">
             <span className="text-[11px] font-bold text-orange-600 uppercase tracking-widest whitespace-pre-wrap">
-              {shape === "rectangle" && "Formula: P = 2(L + W)"}
-              {shape === "square" && "Formula: P = 4S"}
-              {shape === "triangle" && "Formula: P = a + b + c"}
-              {shape === "circle" && "Formula: C = 2πr"}
+              {shape === "rectangle" && "Formula: P = 2(L + W)"},
+              {shape === "square" && "Formula: P = 4S"},
+              {shape === "triangle" && "Formula: P = a + b + c"},
+              {shape === "circle" && "Formula: C = 2πr"},
               {shape === "polygon" && "Formula: C = n × S"}
             </span>
           </div>
@@ -400,7 +400,11 @@ export default function PerimeterCalculator() {
               path: "/triangle-calculator",
               desc: "A deeper dive that links a triangle's three sides to its internal angles.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

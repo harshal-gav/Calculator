@@ -268,7 +268,11 @@ export default function APYCalculator() {
               path: "/simple-interest-calculator",
               desc: "See the massive mathematical difference between simple interest and APY.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

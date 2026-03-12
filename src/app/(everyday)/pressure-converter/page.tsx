@@ -275,7 +275,11 @@ export default function PressureConverter() {
               path: "/density-calculator",
               desc: "Explore how tightly mass is packed inside a specific pressurized volume.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

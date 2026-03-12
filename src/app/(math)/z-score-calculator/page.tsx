@@ -164,7 +164,7 @@ export default function ZScoreCalculator() {
                 Z-SCORE
               </span>
               <div className="font-mono font-black text-5xl md:text-6xl text-white break-all tracking-tight drop-shadow-lg p-2">
-                {result.zScore > 0 ? "+" : ""}
+                {result.zScore > 0 ? "+" : ""},
                 {result.zScore.toLocaleString("en-US", {
                   maximumFractionDigits: 4,
                 })}
@@ -334,7 +334,11 @@ export default function ZScoreCalculator() {
               path: "/percentile-calculator",
               desc: "Calculate exact data percentiles without relying on normal distribution approximations.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

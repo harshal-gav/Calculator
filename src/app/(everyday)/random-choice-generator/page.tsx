@@ -296,7 +296,11 @@ export default function RandomChoiceGenerator() {
               path: "/random-string-generator",
               desc: "Generate secure, completely random alphanumeric passwords.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

@@ -322,7 +322,10 @@ export default function OctagonCalculator() {
               answer:
                 "There are two widths. 'Width across flats' (from flat side to opposite flat side) is exactly double the Inradius (2 × r). 'Width across corners' (from point to opposite point) is exactly double the Circumradius (2 × R).",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "Hexagon Calculator",
@@ -339,7 +342,11 @@ export default function OctagonCalculator() {
               path: "/area-calculator",
               desc: "Find the surface area of other common 2D shapes.",
             },
-          ]}
+            {
+              name: "Volume Calculator",
+              path: "/volume-calculator",
+              desc: "Calculate the volume of standard 3D objects.",
+            }]}
         />
       </div>
     </div>

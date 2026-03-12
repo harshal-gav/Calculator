@@ -257,7 +257,11 @@ export default function PresentValueCalculator() {
             path: "/roi-calculator",
             desc: "Calculate your exact annualized percentage returns on recent sales.",
           },
-        ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
       />
     </div>
   );

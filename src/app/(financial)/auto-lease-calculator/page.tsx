@@ -429,7 +429,11 @@ export default function AutoLeaseCalculator() {
             path: "/investment-calculator",
             desc: "A broader tool for projecting overall stock portfolio growth.",
           },
-        ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
       />
     </div>
   );

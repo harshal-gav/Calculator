@@ -310,7 +310,11 @@ export default function RandomNumberGenerator() {
             path: "/standard-deviation-calculator",
             desc: "Compute population and sample standard deviation.",
           },
-        ]}
+            {
+              name: "Scientific Calculator",
+              path: "/scientific-calculator",
+              desc: "Perform advanced mathematical operations and functions.",
+            }]}
       />
     </div>
   );

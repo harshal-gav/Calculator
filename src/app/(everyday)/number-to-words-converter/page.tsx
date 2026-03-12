@@ -321,7 +321,11 @@ export default function NumberToWordsConverter() {
               path: "/word-count-calculator",
               desc: "Count how many words or characters are inside a massive document.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

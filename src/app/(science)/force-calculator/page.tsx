@@ -274,7 +274,7 @@ export default function ForceCalculator() {
 
               <div className="relative z-10 text-center">
                 <h2 className="text-orange-300 font-bold uppercase tracking-widest text-xs mb-8 border-b border-orange-800/50 pb-4">
-                  Calculated{" "}
+                  Calculated{" "},
                   {calcType === "force"
                     ? "Force"
                     : calcType === "mass"
@@ -454,7 +454,11 @@ export default function ForceCalculator() {
               path: "/density-calculator",
               desc: "Calculate the exact physical mass of large raw materials based on their volume.",
             },
-          ]}
+            {
+              name: "Kinetic Energy Calculator",
+              path: "/kinetic-energy-calculator",
+              desc: "Find the energy of a moving object based on mass and velocity.",
+            }]}
         />
       </div>
     </div>

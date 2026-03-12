@@ -265,7 +265,11 @@ export default function LcmCalculator() {
               path: "/prime-factorization-calculator",
               desc: "Break down integers precisely into their core prime multiplicative roots.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

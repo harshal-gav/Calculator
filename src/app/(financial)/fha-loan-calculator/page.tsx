@@ -454,7 +454,11 @@ export default function FHALoanCalculator() {
               path: "/rent-calculator",
               desc: "Discover what maximum housing payment you can algorithmically afford.",
             },
-          ]}
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            }]}
         />
       </div>
     </div>

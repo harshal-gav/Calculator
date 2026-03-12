@@ -461,7 +461,11 @@ export default function AutoLoanCalculator() {
             path: "/amortization-calculator",
             desc: "View a month-by-month breakdown of your loan payoff schedule.",
           },
-        ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
       />
     </div>
   );

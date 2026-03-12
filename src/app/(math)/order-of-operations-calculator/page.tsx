@@ -414,7 +414,10 @@ export default function OrderOfOperationsCalculator() {
               answer:
                 "Because the acronyms (like PEMDAS) place 'M' before 'D', many people incorrectly assume you must do all multiplication before any division. This is false. Multiplication and Division have equal priority, and must be evaluated strictly from Left to Right.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "Fraction Calculator",
@@ -431,7 +434,11 @@ export default function OrderOfOperationsCalculator() {
               path: "/scientific-calculator",
               desc: "A comprehensive calculator for trigonometry and advanced math.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

@@ -299,7 +299,11 @@ export default function RandomLetterGenerator() {
               path: "/number-to-words-converter",
               desc: "Convert numeric digits into alphabetical English spelled-out words.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

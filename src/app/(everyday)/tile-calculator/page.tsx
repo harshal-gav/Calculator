@@ -192,8 +192,40 @@ export default function TileCalculator() {
           </>
         }
         useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Diagonal Patterns:</strong> If you are planning to install tiles on a 45-degree diamond bias, construction experts strictly dictate upgrading the safety buffer to 15% due to significantly more corner cuts.</li></ul>}
-        faqs={[]}
-        relatedCalculators={[]}
+        faqs={[
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            },
+            {
+              question: "Is this tool free to use?",
+              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
+            },
+            {
+              question: "Can I use this on my mobile device?",
+              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
+            }]}
+        relatedCalculators={[
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            },
+            {
+              name: "Temperature Converter",
+              path: "/temperature-converter",
+              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
+            },
+            {
+              name: "Speed Calculator",
+              path: "/speed-calculator",
+              desc: "Calculate speed, distance, or time with ease.",
+            },
+            {
+              name: "Bill Splitter",
+              path: "/bill-splitter-calculator",
+              desc: "Split bills and calculate tips among friends.",
+            }]}
       />
     </div>
   );

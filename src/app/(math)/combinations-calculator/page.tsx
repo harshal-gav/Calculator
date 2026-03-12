@@ -336,7 +336,11 @@ export default function CombinationsCalculator() {
               path: "/probability-calculator",
               desc: "Turn these raw combination counts into actual percentage odds of winning or losing.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

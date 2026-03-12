@@ -298,7 +298,11 @@ export default function CircleCalculator() {
               path: "/cylinder-calculator",
               desc: "Turn your 2D circle into a 3D tube by adding the element of height.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

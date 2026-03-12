@@ -231,13 +231,20 @@ export default function LoanPayoffCalculator() {
           {
             question: "Should I pay off debt or invest?",
             answer: "It depends on the interest rate. If your loan costs 10% APR and the stock market is expected to return 7%, paying off the debt gives you a guaranteed 10% 'return' on your money, which is mathematically superior."
-          }
-        ]}
+          },
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
         relatedCalculators={[
           { name: "Debt Payoff Calculator", path: "/debt-payoff-calculator", desc: "Compare different payoff strategies for multiple debts." },
           { name: "Credit Card Payoff Calculator", path: "/credit-card-payoff-calculator", desc: "Strategy for variable-interest revolving credit." },
-          { name: "Amortization Calculator", path: "/amortization-calculator", desc: "View the full month-by-month payoff schedule." }
-        ]}
+          { name: "Amortization Calculator", path: "/amortization-calculator", desc: "View the full month-by-month payoff schedule." },
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
       />
     </div>
   );

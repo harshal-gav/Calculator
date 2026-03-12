@@ -290,8 +290,17 @@ export default function IncomeTaxCalculator() {
             name: "401k Calculator",
             path: "/401k-calculator",
             desc: "Estimate the future value of your retirement savings."
-          }
-        ]}
+          },
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            },
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            }]}
       />
     </div>
   );

@@ -179,11 +179,11 @@ export default function VectorAdditionCalculator() {
             </span>
             <div className="flex justify-center gap-10 font-mono text-indigo-100">
               <div>
-                <span className="text-indigo-400">Rx:</span>{" "}
+                <span className="text-indigo-400">Rx:</span>{" "},
                 {result.rx.toFixed(4)}
               </div>
               <div>
-                <span className="text-indigo-400">Ry:</span>{" "}
+                <span className="text-indigo-400">Ry:</span>{" "},
                 {result.ry.toFixed(4)}
               </div>
             </div>
@@ -282,7 +282,10 @@ export default function VectorAdditionCalculator() {
             answer:
               "All inputs and outputs for direction (θ) on this specific calculator are formatted in standard Degrees (0° to 360°).",
           },
-        ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
         relatedCalculators={[
           {
             name: "Dot Product Calculator",
@@ -299,7 +302,11 @@ export default function VectorAdditionCalculator() {
             path: "/projectile-motion-calculator",
             desc: "Calculate full kinematic trajectories of launched objects.",
           },
-        ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
       />
     </div>
   );

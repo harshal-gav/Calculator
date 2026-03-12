@@ -295,7 +295,11 @@ export default function LogarithmCalculator() {
               path: "/scientific-calculator",
               desc: "Access comprehensive trig, root, and log functions on a digital keypad.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

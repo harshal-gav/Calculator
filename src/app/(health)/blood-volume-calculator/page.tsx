@@ -157,7 +157,7 @@ export default function BloodVolumeCalculator() {
                     </span>
                   </div>
                   <div className="text-sm font-medium text-red-200 mt-3 opacity-90 text-center px-4">
-                    Equivalent to{" "}
+                    Equivalent to{" "},
                     {(avgVolume * 1000).toLocaleString(undefined, {
                       maximumFractionDigits: 0,
                     })}{" "}
@@ -340,7 +340,11 @@ export default function BloodVolumeCalculator() {
               path: "/bmi-calculator",
               desc: "Calculate the exact Body Mass Index utilized in the Lemmens equation.",
             },
-          ]}
+            {
+              name: "Calorie Calculator",
+              path: "/calorie-calculator",
+              desc: "Estimate the number of calories you need to maintain or lose weight.",
+            }]}
         />
       </div>
     </div>

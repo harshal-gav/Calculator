@@ -285,7 +285,11 @@ export default function InflationCalculator() {
               path: "/retirement-calculator",
               desc: "Calculate your full macroeconomic life plan including inflation adjustments.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

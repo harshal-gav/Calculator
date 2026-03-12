@@ -332,7 +332,11 @@ export default function ListSorter() {
               path: "/json-to-csv",
               desc: "Flatten complex data structures into simpler, line-by-line format for spreadsheet sorting.",
             },
-          ]}
+            {
+              name: "Case Converter",
+              path: "/case-converter",
+              desc: "Change text to UPPERCASE, lowercase, Title Case, and more.",
+            }]}
         />
       </div>
     </div>

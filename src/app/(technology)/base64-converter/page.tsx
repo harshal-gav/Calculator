@@ -332,7 +332,11 @@ export default function Base64Converter() {
               path: "/password-generator",
               desc: "Generate true securely random cryptographic strings.",
             },
-          ]}
+            {
+              name: "Bandwidth Calculator",
+              path: "/bandwidth-calculator",
+              desc: "Calculate download and upload times for various data sizes.",
+            }]}
         />
       </div>
     </div>

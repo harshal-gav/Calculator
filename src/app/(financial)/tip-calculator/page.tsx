@@ -330,7 +330,11 @@ export default function TipCalculator() {
               path: "/salary-calculator",
               desc: "Convert your hourly wages (including tips) into an annual salary.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

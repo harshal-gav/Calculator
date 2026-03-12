@@ -338,7 +338,11 @@ export default function PercentageCalculator() {
             path: "/sales-tax-calculator",
             desc: "Calculate total costs by adding local percentage sales tax.",
           },
-        ]}
+            {
+              name: "Scientific Calculator",
+              path: "/scientific-calculator",
+              desc: "Perform advanced mathematical operations and functions.",
+            }]}
       />
     </div>
   );

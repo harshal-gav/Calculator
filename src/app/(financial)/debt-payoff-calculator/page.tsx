@@ -386,7 +386,11 @@ export default function DebtPayoffCalculator() {
               path: "/compound-interest-calculator",
               desc: "See what happens when that monthly payment is invested instead of given to the bank.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

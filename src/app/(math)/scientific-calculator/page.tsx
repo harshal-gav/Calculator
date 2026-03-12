@@ -357,7 +357,11 @@ export default function ScientificCalculator() {
               path: "/logarithm-calculator",
               desc: "Calculate logs with custom, non-standard bases.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

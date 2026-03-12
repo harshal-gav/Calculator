@@ -330,7 +330,11 @@ export default function LoveCalculator() {
               path: "/age-calculator",
               desc: "Calculate your exact age in days, months, and years.",
             },
-          ]}
+            {
+              name: "Temperature Converter",
+              path: "/temperature-converter",
+              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
+            }]}
         />
       </div>
     </div>

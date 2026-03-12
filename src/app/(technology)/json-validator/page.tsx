@@ -278,7 +278,11 @@ export default function JsonValidator() {
               path: "/diff-checker",
               desc: "Compare two JSON payloads to see exactly what API data changed.",
             },
-          ]}
+            {
+              name: "Bandwidth Calculator",
+              path: "/bandwidth-calculator",
+              desc: "Calculate download and upload times for various data sizes.",
+            }]}
         />
       </div>
     </div>

@@ -307,7 +307,7 @@ export default function MacroCalculator() {
               </li>
               <li>
                 <strong>Keto Diets:</strong> Calculating strict Low-Carb
-                constraints showing exactly how few grams of carbs (typically{" "}
+                constraints showing exactly how few grams of carbs (typically{" "},
                 {"<"}20%) you can ingest before exiting nutritional ketosis.
               </li>
               <li>
@@ -351,7 +351,11 @@ export default function MacroCalculator() {
               path: "/calories-burned-calculator",
               desc: "Track how exercise allows you to increase your daily macro allowances.",
             },
-          ]}
+            {
+              name: "BMI Calculator",
+              path: "/bmi-calculator",
+              desc: "Calculate your Body Mass Index for a quick health assessment.",
+            }]}
         />
       </div>
     </div>

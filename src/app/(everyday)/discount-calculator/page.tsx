@@ -318,7 +318,11 @@ export default function DiscountCalculator() {
               path: "/percentage-calculator",
               desc: "For simple, raw percentage math without the retail formatting.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

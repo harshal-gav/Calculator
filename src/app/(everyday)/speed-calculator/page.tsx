@@ -160,8 +160,40 @@ export default function SpeedCalculator() {
           </>
         }
         useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Road Trip Planning:</strong> If your GPS says your destination is 400 miles away, and you intend to drive consistently at 70 mph, you can safely deduce it will take exactly 5.7 hours of driving time.</li></ul>}
-        faqs={[]}
-        relatedCalculators={[]}
+        faqs={[
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            },
+            {
+              question: "Is this tool free to use?",
+              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
+            },
+            {
+              question: "Can I use this on my mobile device?",
+              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
+            }]}
+        relatedCalculators={[
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            },
+            {
+              name: "Temperature Converter",
+              path: "/temperature-converter",
+              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
+            },
+            {
+              name: "Bill Splitter",
+              path: "/bill-splitter-calculator",
+              desc: "Split bills and calculate tips among friends.",
+            },
+            {
+              name: "Length Converter",
+              path: "/length-converter",
+              desc: "Convert between various units of length and distance.",
+            }]}
       />
     </div>
   );

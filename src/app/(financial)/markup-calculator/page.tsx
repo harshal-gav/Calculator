@@ -265,7 +265,11 @@ export default function MarkupCalculator() {
               path: "/break-even-calculator",
               desc: "Determine how many units you must sell at your current price to cover all fixed costs.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

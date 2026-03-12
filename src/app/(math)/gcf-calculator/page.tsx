@@ -256,7 +256,11 @@ export default function GcfCalculator() {
               path: "/prime-factorization-calculator",
               desc: "See the exact prime building blocks of any number.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

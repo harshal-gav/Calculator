@@ -355,7 +355,11 @@ export default function ExpectedReturnCalculator() {
               path: "/roi-calculator",
               desc: "Calculate your historical cash return on an investment.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

@@ -323,7 +323,10 @@ export default function MarginalTaxRateCalculator() {
               answer:
                 "This calculator uses an example standard progressive bracket system designed to match general US federal single-filer brackets. It does not factor in State taxes, FICA (Medicare/Social Security), or specific localized standard deductions.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "Salary to Hourly Calculator",
@@ -340,7 +343,11 @@ export default function MarginalTaxRateCalculator() {
               path: "/vat-calculator",
               desc: "Calculate Value-Added Tax which is essentially a flat consumption tax.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

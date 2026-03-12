@@ -185,7 +185,7 @@ export default function FractionSimplifierCalculator() {
                 Decimal Value
               </span>
               <div className="font-mono text-white text-2xl font-bold">
-                ≈{" "}
+                ≈{" "},
                 {result.decimal.toLocaleString("en-US", {
                   maximumFractionDigits: 6,
                 })}
@@ -329,7 +329,11 @@ export default function FractionSimplifierCalculator() {
               path: "/proportion-calculator",
               desc: "Solve algebraic equations involving two set fractions.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

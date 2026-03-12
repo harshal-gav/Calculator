@@ -295,7 +295,11 @@ export default function TemperatureConverter() {
               path: "/speed-converter",
               desc: "Convert mph to km/h or knots seamlessly.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

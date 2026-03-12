@@ -388,7 +388,11 @@ export default function WorkCalculator() {
               path: "/pythagorean-calculator",
               desc: "Calculate vector distances required for complex angular movement.",
             },
-          ]}
+            {
+              name: "Density Calculator",
+              path: "/density-calculator",
+              desc: "Calculate density, mass, or volume given two values.",
+            }]}
         />
       </div>
     </div>

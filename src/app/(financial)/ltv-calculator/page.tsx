@@ -328,7 +328,10 @@ export default function LTVCalculator() {
             answer:
               "You only have two options: make a larger cash down payment, or negotiate a lower purchase price for the property. Both actions immediately decrease the size of the loan you need.",
           },
-        ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
         relatedCalculators={[
           {
             name: "Mortgage Payoff",
@@ -345,7 +348,11 @@ export default function LTVCalculator() {
             path: "/dti-calculator",
             desc: "Check your Debt-to-Income ratio for loan pre-approvals.",
           },
-        ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
       />
     </div>
   );

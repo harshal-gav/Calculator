@@ -450,7 +450,11 @@ export default function MortgageCalculator() {
             path: "/auto-loan-calculator",
             desc: "Find out how much your monthly car payment will be.",
           },
-        ]}
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            }]}
       />
     </div>
   );

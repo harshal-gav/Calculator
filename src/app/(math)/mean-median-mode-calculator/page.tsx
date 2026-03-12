@@ -353,7 +353,11 @@ export default function MeanMedianModeCalculator() {
               path: "/probability-calculator",
               desc: "Determine the exact likelihood of random statistical events occurring.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

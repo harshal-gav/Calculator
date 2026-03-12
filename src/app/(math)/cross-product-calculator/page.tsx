@@ -211,7 +211,7 @@ export default function CrossProductCalculator() {
                 Standard Unit Vector Notation
               </span>
               <div className="font-mono text-white text-xl">
-                {result.i}i {result.j >= 0 ? "+" : ""} {result.j}j{" "}
+                {result.i}i {result.j >= 0 ? "+" : ""} {result.j}j{" "},
                 {result.k >= 0 ? "+" : ""} {result.k}k
               </div>
             </div>
@@ -351,7 +351,11 @@ export default function CrossProductCalculator() {
             path: "/projectile-motion-calculator",
             desc: "Calculate physical trajectories using vectors.",
           },
-        ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
       />
     </div>
   );

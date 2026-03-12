@@ -295,7 +295,11 @@ M = ( ${mx}, ${my} )`;
               path: "/fraction-simplifier-calculator",
               desc: "Clean up messy decimal midpoint coordinates into logical fractions.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

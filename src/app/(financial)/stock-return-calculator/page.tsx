@@ -279,7 +279,7 @@ export default function StockReturnCalculator() {
                     </svg>
                   )}
                   <span>
-                    {roi > 0 ? "+" : ""}
+                    {roi > 0 ? "+" : ""},
                     {roi.toFixed(2)}% ROI
                   </span>
                 </div>
@@ -477,7 +477,10 @@ export default function StockReturnCalculator() {
               answer:
                 "In real accounting and tax law, your 'Cost Basis' isn't just the price of the shares; it's the total capital you had to deploy in order to acquire the asset. The buy commission was money out of your pocket required to start the investment, so it reduces your overall ROI.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "ROI Calculator",
@@ -494,7 +497,11 @@ export default function StockReturnCalculator() {
               path: "/investment-calculator",
               desc: "Project the future value of a diversified portfolio.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

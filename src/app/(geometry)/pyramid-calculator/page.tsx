@@ -329,7 +329,11 @@ export default function PyramidCalculator() {
               path: "/rectangle-calculator",
               desc: "Easily evaluate the flat base of your structural pyramid.",
             },
-          ]}
+            {
+              name: "Area Calculator",
+              path: "/area-calculator",
+              desc: "Calculate the area of various 2D shapes.",
+            }]}
         />
       </div>
     </div>

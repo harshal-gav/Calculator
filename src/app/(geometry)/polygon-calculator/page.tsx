@@ -379,7 +379,10 @@ export default function PolygonCalculator() {
               answer:
                 "The Inradius (Apothem) is the radius of the largest circle that can fit completely inside the polygon (touching the flat sides). The Circumradius is the radius of the circle that fits completely outside the polygon (touching every pointy vertex).",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "Hexagon Calculator",
@@ -396,7 +399,11 @@ export default function PolygonCalculator() {
               path: "/arc-length-calculator",
               desc: "Calculate the exact properties of perfect circles.",
             },
-          ]}
+            {
+              name: "Area Calculator",
+              path: "/area-calculator",
+              desc: "Calculate the area of various 2D shapes.",
+            }]}
         />
       </div>
     </div>

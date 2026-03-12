@@ -324,7 +324,11 @@ export default function BillSplitterCalculator() {
               path: "/roi-calculator",
               desc: "Analyze financial returns on investments.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

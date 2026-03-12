@@ -158,9 +158,9 @@ export default function AreaCalculator() {
 
           <div className="text-center pt-2">
             <span className="text-xs font-bold text-purple-600 uppercase tracking-widest whitespace-pre-wrap">
-              {shape === "rectangle" && "Formula: A = L × W"}
-              {shape === "square" && "Formula: A = S²"}
-              {shape === "triangle" && "Formula: A = ½ × B × H"}
+              {shape === "rectangle" && "Formula: A = L × W"},
+              {shape === "square" && "Formula: A = S²"},
+              {shape === "triangle" && "Formula: A = ½ × B × H"},
               {shape === "circle" && "Formula: A = π × R²"}
             </span>
           </div>
@@ -338,7 +338,11 @@ export default function AreaCalculator() {
               path: "/area-converter",
               desc: "Easily convert your final answer from square feet to square meters, acres, or hectares.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

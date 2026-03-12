@@ -321,7 +321,11 @@ export default function BandwidthCalculator() {
               path: "/percentage-calculator",
               desc: "Calculate what percentage of your download is currently complete.",
             },
-          ]}
+            {
+              name: "Base64 Converter",
+              path: "/base64-converter",
+              desc: "Encode and decode data in Base64 format securely.",
+            }]}
         />
       </div>
     </div>

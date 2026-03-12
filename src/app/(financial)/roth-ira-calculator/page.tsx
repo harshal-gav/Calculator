@@ -224,8 +224,33 @@ export default function RothIRACalculator() {
           {
             question: "Can I withdraw from my Roth IRA before 59½?",
             answer: "You can withdraw your contributions (the principle) at any time tax and penalty-free. However, withdrawing earnings before age 59½ may trigger taxes and a 10% penalty unless it's for a qualifying reason like a first-home purchase."
-          }
-        ]}
+          },
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
+          relatedCalculators={[
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            },
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            },
+            {
+              name: "Investment Calculator",
+              path: "/investment-calculator",
+              desc: "Project your portfolio growth over time with compound interest.",
+            },
+            {
+              name: "Loan Payment Calculator",
+              path: "/loan-payment-calculator",
+              desc: "Estimate your monthly loan payments and total interest cost.",
+            }
+          ]}
       />
     </div>
   );

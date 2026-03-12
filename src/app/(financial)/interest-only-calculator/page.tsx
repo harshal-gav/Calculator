@@ -192,8 +192,12 @@ export default function InterestOnlyCalculator() {
         relatedCalculators={[
           { name: "Mortgage Calculator", path: "/mortgage-calculator", desc: "Calculate standard PITI mortgage payments." },
           { name: "Loan Payment Calculator", path: "/loan-payment-calculator", desc: "General term loan payment estimator." },
-          { name: "Amortization Calculator", path: "/amortization-calculator", desc: "See how principal is usually reduced over time." }
-        ]}
+          { name: "Amortization Calculator", path: "/amortization-calculator", desc: "See how principal is usually reduced over time." },
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            }]}
       />
     </div>
   );

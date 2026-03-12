@@ -351,7 +351,11 @@ export default function LeanBodyMassCalculator() {
               path: "/macro-calculator",
               desc: "Design a diet capable of preserving your specific LBM while shedding the remaining fat weight.",
             },
-          ]}
+            {
+              name: "BMI Calculator",
+              path: "/bmi-calculator",
+              desc: "Calculate your Body Mass Index for a quick health assessment.",
+            }]}
         />
       </div>
     </div>

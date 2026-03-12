@@ -274,7 +274,11 @@ export default function ROECalculator() {
               path: "/leverage-ratio-calculator",
               desc: "Ensure the high ROE is not just a dangerous illusion created by massive debt.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

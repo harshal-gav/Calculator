@@ -323,7 +323,11 @@ export default function DaysCalculator() {
               path: "/time-card-calculator",
               desc: "Add hours and minutes together to determine total weekly payroll.",
             },
-          ]}
+            {
+              name: "Temperature Converter",
+              path: "/temperature-converter",
+              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
+            }]}
         />
       </div>
     </div>

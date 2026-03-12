@@ -395,7 +395,10 @@ export default function CreditCardPayoffCalculator() {
             answer:
               "No, this calculator assumes a fixed starting balance and assumes you will completely stop using the card for new purchases. If you continue adding new charges to the card, your timeline will significantly increase.",
           },
-        ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
         relatedCalculators={[
           {
             name: "Debt Payoff Calculator",
@@ -412,7 +415,11 @@ export default function CreditCardPayoffCalculator() {
             path: "/compound-interest-calculator",
             desc: "See how investing that monthly payment instead builds immense wealth.",
           },
-        ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
       />
     </div>
   );

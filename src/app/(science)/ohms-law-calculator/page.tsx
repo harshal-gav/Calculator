@@ -370,7 +370,11 @@ export default function OhmsLawCalculator() {
               path: "/sequence-calculator",
               desc: "Identify mathematical patterns, useful for calculating series parallel resistor drops.",
             },
-          ]}
+            {
+              name: "Density Calculator",
+              path: "/density-calculator",
+              desc: "Calculate density, mass, or volume given two values.",
+            }]}
         />
       </div>
     </div>

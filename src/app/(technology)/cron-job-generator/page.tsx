@@ -394,7 +394,11 @@ export default function CronJobGenerator() {
               path: "/pomodoro-timer",
               desc: "Manage your own human schedule with structured automation intervals.",
             },
-          ]}
+            {
+              name: "Bandwidth Calculator",
+              path: "/bandwidth-calculator",
+              desc: "Calculate download and upload times for various data sizes.",
+            }]}
         />
       </div>
     </div>

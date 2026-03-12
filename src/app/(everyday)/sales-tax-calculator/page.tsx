@@ -295,7 +295,11 @@ export default function SalesTaxCalculator() {
               path: "/markup-calculator",
               desc: "For business owners setting their initial base retail prices.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

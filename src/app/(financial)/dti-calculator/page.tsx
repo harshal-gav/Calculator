@@ -489,7 +489,11 @@ export default function DTICalculator() {
               path: "/debt-payoff-calculator",
               desc: "Strategize the fastest way to lower your DTI.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

@@ -316,7 +316,10 @@ export default function TrapezoidCalculator() {
               answer:
                 "The formula for area requires the straight vertical distance (height) between the two parallel bases. If you use the length of a slanted leg, your area calculation will be artificially inflated and totally incorrect. If you only have the slant, you must use the Pythagorean theorem first to find the true vertical height.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "Triangle Calculator",
@@ -333,7 +336,11 @@ export default function TrapezoidCalculator() {
               path: "/area-calculator",
               desc: "Find the surface area of other common 2D shapes.",
             },
-          ]}
+            {
+              name: "Volume Calculator",
+              path: "/volume-calculator",
+              desc: "Calculate the volume of standard 3D objects.",
+            }]}
         />
       </div>
     </div>

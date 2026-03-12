@@ -388,7 +388,11 @@ export default function AccelerationCalculator() {
               path: "/projectile-motion-calculator",
               desc: "Track objects accelerating continuously downward due to standard gravity.",
             },
-          ]}
+            {
+              name: "Density Calculator",
+              path: "/density-calculator",
+              desc: "Calculate density, mass, or volume given two values.",
+            }]}
         />
       </div>
     </div>

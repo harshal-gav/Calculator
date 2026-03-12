@@ -290,7 +290,10 @@ export default function ArcLengthCalculator() {
               answer:
                 "A chord is a perfectly straight line segment that connects the two endpoints of an arc. While the arc travels along the curved boundary of the circle, the chord cuts straight through the interior space.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "Circle Calculator",
@@ -307,7 +310,11 @@ export default function ArcLengthCalculator() {
               path: "/trigonometry-calculator",
               desc: "Quickly evaluate sin, cos, tan, and other trig functions.",
             },
-          ]}
+            {
+              name: "Area Calculator",
+              path: "/area-calculator",
+              desc: "Calculate the area of various 2D shapes.",
+            }]}
         />
       </div>
     </div>

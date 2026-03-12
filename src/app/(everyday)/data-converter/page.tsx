@@ -315,7 +315,11 @@ export default function DataConverter() {
               path: "/base64-converter",
               desc: "See how binary data gets encoded directly into text.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

@@ -325,7 +325,11 @@ export default function FuelEconomyConverter() {
               path: "/speed-converter",
               desc: "Convert dashboard speeds between MPH and KPH seamlessly.",
             },
-          ]}
+            {
+              name: "Roman Numeral Converter",
+              path: "/roman-numeral-converter",
+              desc: "Convert between standard numbers and Roman numerals.",
+            }]}
         />
       </div>
     </div>

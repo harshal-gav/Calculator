@@ -331,7 +331,11 @@ export default function PythagoreanCalculator() {
               path: "/scientific-calculator",
               desc: "Execute manual root extractions on a digital keypad interface.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

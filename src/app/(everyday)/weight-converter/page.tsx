@@ -319,7 +319,11 @@ export default function WeightConverter() {
               path: "/bmi-calculator",
               desc: "Determine your Body Mass Index using either kg or lbs.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

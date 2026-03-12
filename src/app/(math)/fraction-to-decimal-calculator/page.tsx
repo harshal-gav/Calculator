@@ -184,7 +184,10 @@ export default function FractionToDecimalCalculator() {
             answer:
               "First, keep the whole number exactly as it is. Then, convert the fraction part to a decimal by dividing the numerator by the denominator. Finally, add the two together. (e.g., 2 1/4 = 2 + 0.25 = 2.25).",
           },
-        ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
         relatedCalculators={[
           {
             name: "Mixed Number Calculator",
@@ -201,7 +204,11 @@ export default function FractionToDecimalCalculator() {
             path: "/fraction-simplifier-calculator",
             desc: "Reduce fractions to their simplest form instantly.",
           },
-        ]}
+            {
+              name: "Scientific Calculator",
+              path: "/scientific-calculator",
+              desc: "Perform advanced mathematical operations and functions.",
+            }]}
       />
     </div>
   );

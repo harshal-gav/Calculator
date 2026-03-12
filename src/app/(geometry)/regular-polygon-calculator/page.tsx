@@ -310,7 +310,11 @@ export default function RegularPolygonCalculator() {
               path: "/polygon-calculator",
               desc: "Calculate basic sums of interior angles for irregular polygons.",
             },
-          ]}
+            {
+              name: "Area Calculator",
+              path: "/area-calculator",
+              desc: "Calculate the area of various 2D shapes.",
+            }]}
         />
       </div>
     </div>

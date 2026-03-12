@@ -329,7 +329,11 @@ export default function RgbHexConverter() {
               path: "/proportion-calculator",
               desc: "Scale UI elements mathematically.",
             },
-          ]}
+            {
+              name: "Bandwidth Calculator",
+              path: "/bandwidth-calculator",
+              desc: "Calculate download and upload times for various data sizes.",
+            }]}
         />
       </div>
     </div>

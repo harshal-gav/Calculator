@@ -344,7 +344,11 @@ export default function RomanNumeralConverter() {
               path: "/number-to-words-converter",
               desc: "Convert massive numerical digits mathematically out into spoken English.",
             },
-          ]}
+            {
+              name: "Word Count Calculator",
+              path: "/word-count-calculator",
+              desc: "Count the number of words, characters, and sentences in your text.",
+            }]}
         />
       </div>
     </div>

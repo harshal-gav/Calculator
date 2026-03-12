@@ -320,7 +320,11 @@ export default function BloodPressureCalculator() {
               path: "/tdee-calculator",
               desc: "Calculate your daily energy expenditure baseline.",
             },
-          ]}
+            {
+              name: "BMI Calculator",
+              path: "/bmi-calculator",
+              desc: "Calculate your Body Mass Index for a quick health assessment.",
+            }]}
         />
       </div>
     </div>

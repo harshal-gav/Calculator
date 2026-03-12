@@ -307,7 +307,11 @@ export default function JsonToCsv() {
               path: "/markdown-editor",
               desc: "Format your flattened data into standard Github tables for documentation.",
             },
-          ]}
+            {
+              name: "Bandwidth Calculator",
+              path: "/bandwidth-calculator",
+              desc: "Calculate download and upload times for various data sizes.",
+            }]}
         />
       </div>
     </div>

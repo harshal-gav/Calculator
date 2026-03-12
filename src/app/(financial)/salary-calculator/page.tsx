@@ -329,7 +329,11 @@ export default function SalaryCalculator() {
             path: "/payment-calculator",
             desc: "Calculate exact monthly loan payments to see how much debt you can handle.",
           },
-        ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
       />
     </div>
   );

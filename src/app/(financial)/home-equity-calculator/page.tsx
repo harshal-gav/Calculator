@@ -331,7 +331,11 @@ export default function HomeEquityCalculator() {
               path: "/debt-payoff-calculator",
               desc: "Compare the cost of paying off debt natively versus using a HELOC.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

@@ -279,7 +279,7 @@ export default function KineticEnergyCalculator() {
 
               <div className="relative z-10 text-center">
                 <h2 className="text-rose-200 font-bold uppercase tracking-widest text-xs mb-8 border-b border-rose-800/50 pb-4">
-                  Calculated{" "}
+                  Calculated{" "},
                   {calcType === "ke"
                     ? "Kinetic Energy"
                     : calcType === "mass"
@@ -455,7 +455,11 @@ export default function KineticEnergyCalculator() {
               path: "/projectile-motion-calculator",
               desc: "Map the physical parabolic arc of the mass acting under gravity.",
             },
-          ]}
+            {
+              name: "Density Calculator",
+              path: "/density-calculator",
+              desc: "Calculate density, mass, or volume given two values.",
+            }]}
         />
       </div>
     </div>

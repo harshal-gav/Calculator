@@ -337,7 +337,11 @@ export default function TimeCardCalculator() {
               path: "/commission-calculator",
               desc: "Add variable commission and sales bonuses on top of your standard hourly base pay.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

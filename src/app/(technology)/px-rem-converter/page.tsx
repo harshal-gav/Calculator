@@ -314,7 +314,11 @@ export default function PxRemConverter() {
               path: "/bandwidth-calculator",
               desc: "Calculate exact network transmission times.",
             },
-          ]}
+            {
+              name: "Base64 Converter",
+              path: "/base64-converter",
+              desc: "Encode and decode data in Base64 format securely.",
+            }]}
         />
       </div>
     </div>

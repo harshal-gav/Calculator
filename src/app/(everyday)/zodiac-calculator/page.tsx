@@ -352,7 +352,11 @@ export default function ZodiacCalculator() {
               path: "/random-choice-generator",
               desc: "Let the digital universe decide your fate instead of the stars.",
             },
-          ]}
+            {
+              name: "Temperature Converter",
+              path: "/temperature-converter",
+              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
+            }]}
         />
       </div>
     </div>

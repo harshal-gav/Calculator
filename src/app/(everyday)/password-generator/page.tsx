@@ -125,7 +125,7 @@ export default function PasswordGenerator() {
             onClick={copyToClipboard}
             className={`absolute right-3 top-1/2 -translate-y-1/2 px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2 ${copied ? "bg-green-500 text-white" : "bg-emerald-600 hover:bg-emerald-500 text-white"}`}
           >
-            {copied ? "Copied!" : "Copy"}
+            {copied ? "Copied!" : "Copy"},
             {!copied && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -441,7 +441,11 @@ export default function PasswordGenerator() {
               path: "/random-string-generator",
               desc: "Generate plain text randomized data for testing purposes.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

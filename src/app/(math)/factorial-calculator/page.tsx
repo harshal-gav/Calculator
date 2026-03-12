@@ -276,7 +276,11 @@ export default function FactorialCalculator() {
               path: "/probability-calculator",
               desc: "Determine exact statistical likelihoods utilizing combinatorics.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

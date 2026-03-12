@@ -290,7 +290,11 @@ export default function RentCalculator() {
               path: "/mortgage-calculator",
               desc: "Compare what buying a house would cost monthly versus renting.",
             },
-          ]}
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            }]}
         />
       </div>
     </div>

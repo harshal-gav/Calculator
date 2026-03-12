@@ -186,7 +186,7 @@ export default function IPSubnetCalculator() {
                   </div>
                   <div className="text-lg font-mono text-white">
                     {result.firstHost}{" "}
-                    <span className="text-zinc-500 mx-2">-</span>{" "}
+                    <span className="text-zinc-500 mx-2">-</span>{" "},
                     {result.lastHost}
                   </div>
                 </div>
@@ -376,7 +376,11 @@ export default function IPSubnetCalculator() {
               path: "/base64-converter",
               desc: "Encode raw data securely for server transfers.",
             },
-          ]}
+            {
+              name: "Base64 Converter",
+              path: "/base64-converter",
+              desc: "Encode and decode data in Base64 format securely.",
+            }]}
         />
       </div>
     </div>

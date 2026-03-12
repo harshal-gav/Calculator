@@ -190,7 +190,7 @@ export default function ProbabilityCalculator() {
                   <span className="text-3xl text-gray-500">%</span>
                 </div>
                 <div className="text-gray-500 font-medium mt-1">
-                  or{" "}
+                  or{" "},
                   {singleResult.prob.toLocaleString("en-US", {
                     maximumFractionDigits: 4,
                   })}
@@ -416,7 +416,11 @@ export default function ProbabilityCalculator() {
               path: "/z-score-calculator",
               desc: "Determine the probability of an event falling along a normal distribution curve.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

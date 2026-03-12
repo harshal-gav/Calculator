@@ -286,7 +286,11 @@ export default function DogAgeCalculator() {
               path: "/weight-converter",
               desc: "Easily convert your pet's weight between pounds and kilograms.",
             },
-          ]}
+            {
+              name: "Temperature Converter",
+              path: "/temperature-converter",
+              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
+            }]}
         />
       </div>
     </div>

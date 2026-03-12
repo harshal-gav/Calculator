@@ -289,7 +289,11 @@ export default function DividendYieldCalculator() {
               path: "/net-worth-calculator",
               desc: "Track your total asset growth over time.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

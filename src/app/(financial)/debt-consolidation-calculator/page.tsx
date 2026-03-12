@@ -407,8 +407,17 @@ export default function DebtConsolidationCalculator() {
             name: "Personal Loan Calculator",
             path: "/personal-loan-calculator",
             desc: "Estimate your monthly loan payments."
-          }
-        ]}
+          },
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            },
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            }]}
       />
     </div>
   );

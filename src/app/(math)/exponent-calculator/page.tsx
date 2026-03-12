@@ -253,7 +253,11 @@ export default function ExponentCalculator() {
               path: "/scientific-notation-converter",
               desc: "Format massive exponential results into clean, readable integers.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

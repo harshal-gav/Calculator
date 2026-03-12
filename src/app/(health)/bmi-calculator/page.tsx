@@ -248,9 +248,36 @@ export default function BmiCalculator() {
           {
             question: "Is BMI accurate for bodybuilders?",
             answer: "No. BMI does not differentiate between fat mass and muscle mass. A highly muscular athlete with 8% body fat could easily register as 'Obese' on a BMI scale simply due to their sheer density and mass."
-          }
-        ]}
-        relatedCalculators={[]}
+          },
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            },
+            {
+              question: "Is this tool free to use?",
+              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
+            }]}
+        relatedCalculators={[
+            {
+              name: "Calorie Calculator",
+              path: "/calorie-calculator",
+              desc: "Estimate the number of calories you need to maintain or lose weight.",
+            },
+            {
+              name: "BMR Calculator",
+              path: "/bmr-calculator",
+              desc: "Find your Basal Metabolic Rate to understand your calorie needs at rest.",
+            },
+            {
+              name: "Ideal Weight Calculator",
+              path: "/ideal-weight-calculator",
+              desc: "Estimate your healthy weight range based on traditional formulas.",
+            },
+            {
+              name: "Body Fat Calculator",
+              path: "/body-fat-calculator",
+              desc: "Estimate your body fat percentage using various methods.",
+            }]}
       />
     </div>
   );

@@ -268,7 +268,11 @@ export default function ParallelogramCalculator() {
               path: "/triangle-calculator",
               desc: "Calculate missing angles and sides of any triangular polygon.",
             },
-          ]}
+            {
+              name: "Area Calculator",
+              path: "/area-calculator",
+              desc: "Calculate the area of various 2D shapes.",
+            }]}
         />
       </div>
     </div>

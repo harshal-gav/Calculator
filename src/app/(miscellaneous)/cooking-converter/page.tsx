@@ -442,7 +442,11 @@ export default function CookingConverter() {
               path: "/temperature-converter",
               desc: "Translate oven temperatures between Fahrenheit, Celsius, and Kelvin.",
             },
-          ]}
+            {
+              name: "Roman Numeral Converter",
+              path: "/roman-numeral-converter",
+              desc: "Convert between standard numbers and Roman numerals.",
+            }]}
         />
       </div>
     </div>

@@ -328,7 +328,11 @@ export default function ShoeSizeConverter() {
               path: "/bmi-calculator",
               desc: "Check body mass index based on total height and weight.",
             },
-          ]}
+            {
+              name: "Roman Numeral Converter",
+              path: "/roman-numeral-converter",
+              desc: "Convert between standard numbers and Roman numerals.",
+            }]}
         />
       </div>
     </div>

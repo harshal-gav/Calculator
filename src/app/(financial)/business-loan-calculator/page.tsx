@@ -323,8 +323,17 @@ export default function BusinessLoanCalculator() {
             name: "Debt Consolidation Calculator",
             path: "/debt-consolidation-calculator",
             desc: "See if you can save money by refinancing multiple expensive bridging loans into one SBA loan."
-          }
-        ]}
+          },
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            },
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            }]}
       />
     </div>
   );

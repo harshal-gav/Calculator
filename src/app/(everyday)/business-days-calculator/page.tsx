@@ -363,7 +363,11 @@ export default function BusinessDaysCalculator() {
               path: "/salary-calculator",
               desc: "Convert an hourly wage into an annual salary assuming standard 260 yearly business days.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

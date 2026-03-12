@@ -331,7 +331,11 @@ export default function BinaryCalculator() {
               path: "/ip-subnet-calculator",
               desc: "Calculate IPv4 networks exactly how routers do it behind the scenes.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

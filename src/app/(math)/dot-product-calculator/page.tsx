@@ -438,7 +438,11 @@ export default function DotProductCalculator() {
               path: "/proportion-calculator",
               desc: "Solve complex algebraic variable proportions.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

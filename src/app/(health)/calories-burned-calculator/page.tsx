@@ -252,7 +252,10 @@ export default function CaloriesBurnedCalculator() {
             answer:
               "The MET formula provides a generalized estimate based on averages. Real calorie burn can vary individually depending on muscle mass, age, genetics, gender, and environmental conditions during the exercise.",
           },
-        ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
         relatedCalculators={[
           {
             name: "TDEE Calculator",
@@ -269,7 +272,11 @@ export default function CaloriesBurnedCalculator() {
             path: "/macro-calculator",
             desc: "Determine your ideal macronutrient split.",
           },
-        ]}
+            {
+              name: "BMI Calculator",
+              path: "/bmi-calculator",
+              desc: "Calculate your Body Mass Index for a quick health assessment.",
+            }]}
       />
     </div>
   );

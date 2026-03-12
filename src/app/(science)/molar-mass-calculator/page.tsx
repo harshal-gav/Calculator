@@ -406,7 +406,11 @@ export default function MolarMassCalculator() {
               path: "/kinetic-energy-calculator",
               desc: "Determine physics-based energy levels of molecules in motion.",
             },
-          ]}
+            {
+              name: "Force Calculator",
+              path: "/force-calculator",
+              desc: "Calculate force using Newton's second law (F = ma).",
+            }]}
         />
       </div>
     </div>

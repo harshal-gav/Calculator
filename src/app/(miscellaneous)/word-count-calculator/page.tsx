@@ -368,7 +368,11 @@ export default function WordCountCalculator() {
               path: "/typing-speed",
               desc: "Measure your actual Words Per Minute (WPM) capability.",
             },
-          ]}
+            {
+              name: "Roman Numeral Converter",
+              path: "/roman-numeral-converter",
+              desc: "Convert between standard numbers and Roman numerals.",
+            }]}
         />
       </div>
     </div>

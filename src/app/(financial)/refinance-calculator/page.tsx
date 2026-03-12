@@ -409,7 +409,11 @@ export default function RefinanceCalculator() {
               path: "/debt-payoff-calculator",
               desc: "See what happens if you just pay extra principal instead of refinancing.",
             },
-          ]}
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            }]}
         />
       </div>
     </div>

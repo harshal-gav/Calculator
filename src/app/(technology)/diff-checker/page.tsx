@@ -257,7 +257,11 @@ export default function DiffChecker() {
               path: "/markdown-editor",
               desc: "Write cleanly formatted documentation outlining the code changes you just made.",
             },
-          ]}
+            {
+              name: "Bandwidth Calculator",
+              path: "/bandwidth-calculator",
+              desc: "Calculate download and upload times for various data sizes.",
+            }]}
         />
       </div>
     </div>

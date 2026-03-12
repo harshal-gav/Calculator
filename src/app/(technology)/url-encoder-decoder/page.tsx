@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import CalculatorSEO from "@/components/CalculatorSEO";
 
 export default function UrlEncoderDecoder() {
   const [inputStr, setInputStr] = useState(
@@ -122,6 +123,75 @@ export default function UrlEncoderDecoder() {
             applicationCategory: "DeveloperApplication",
           }),
         }}
+      />
+
+      <CalculatorSEO
+        title="URL Encoder/Decoder"
+        whatIsIt={
+          <p>
+            The <strong>URL Encoder/Decoder</strong> is a developer utility
+            designed to convert strings into a format that can be safely
+            transmitted over the internet. This process, often called percent-encoding,
+            replaces unsafe ASCII characters with a "%" followed by two
+            hexadecimal digits.
+          </p>
+        }
+        formula={
+          <p>
+            This tool uses standard JavaScript <code>encodeURIComponent</code> and 
+            <code>decodeURIComponent</code> functions which follow the RFC 3986 
+            standard for Uniform Resource Identifiers (URI).
+          </p>
+        }
+        example={
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Input:</strong> <code>https://example.com?name=John Doe</code></li>
+            <li><strong>Encoded:</strong> <code>https%3A%2F%2Fexample.com%3Fname%3DJohn%20Doe</code></li>
+          </ul>
+        }
+        useCases={
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Form Submission:</strong> Ensuring special characters in form data don't break the URL structure.</li>
+            <li><strong>API Requests:</strong> Encoding query parameters to safely pass data to backend services.</li>
+            <li><strong>Web Scraping:</strong> Decoding URLs found in HTML to access the actual resource location.</li>
+          </ul>
+        }
+        faqs={[
+          {
+            question: "Why do I need to encode URLs?",
+            answer: "URLs can only contain a limited set of ASCII characters. Special characters like spaces, ampersands, and question marks have specific meanings in a URL and must be encoded if they are part of the data being sent."
+          },
+          {
+            question: "What is percent-encoding?",
+            answer: "It is a mechanism for encoding information in a Uniform Resource Identifier (URI) by replacing non-standard characters with a percent sign and their corresponding hexadecimal value."
+          },
+          {
+            question: "Is this the same as Base64?",
+            answer: "No. URL encoding is specifically for making characters safe for URLs, while Base64 is a general-purpose binary-to-text encoding scheme."
+          }
+        ]}
+        relatedCalculators={[
+          {
+            name: "Base64 Converter",
+            path: "/base64-converter",
+            desc: "Encode and decode data in Base64 format."
+          },
+          {
+            name: "JSON Validator",
+            path: "/json-validator",
+            desc: "Check if your JSON data is valid and well-formatted."
+          },
+          {
+            name: "HTML Encoder/Decoder",
+            path: "/html-encoder-decoder",
+            desc: "Convert characters to HTML entities and vice-versa."
+          },
+          {
+            name: "JWT Decoder",
+            path: "/jwt-decoder",
+            desc: "Decode JSON Web Tokens to see their payload."
+          }
+        ]}
       />
     </div>
   );

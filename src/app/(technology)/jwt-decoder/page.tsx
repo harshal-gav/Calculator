@@ -267,7 +267,11 @@ export default function JwtDecoder() {
               path: "/uuid-generator",
               desc: "Generate secure, random UUIDs to act as the primary 'Subject ID' (sub) inside your token claims.",
             },
-          ]}
+            {
+              name: "Bandwidth Calculator",
+              path: "/bandwidth-calculator",
+              desc: "Calculate download and upload times for various data sizes.",
+            }]}
         />
       </div>
     </div>

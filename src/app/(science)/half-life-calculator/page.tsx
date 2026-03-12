@@ -183,9 +183,9 @@ export default function HalfLifeCalculator() {
                   </div>
                   <div className="text-purple-100 font-mono mt-2 bg-black/40 p-3 rounded text-sm text-center">
                     {calcType === "remainingAmount" &&
-                      "Nₜ = N₀ × (1/2)^(t/t₁/₂)"}
-                    {calcType === "halfLife" && "t₁/₂ = t × ln(2) / ln(N₀/Nₜ)"}
-                    {calcType === "initialAmount" && "N₀ = Nₜ / (1/2)^(t/t₁/₂)"}
+                      "Nₜ = N₀ × (1/2)^(t/t₁/₂)"},
+                    {calcType === "halfLife" && "t₁/₂ = t × ln(2) / ln(N₀/Nₜ)"},
+                    {calcType === "initialAmount" && "N₀ = Nₜ / (1/2)^(t/t₁/₂)"},
                     {calcType === "time" && "t = t₁/₂ × ln(N₀/Nₜ) / ln(2)"}
                   </div>
                 </div>
@@ -332,7 +332,11 @@ export default function HalfLifeCalculator() {
               path: "/force-calculator",
               desc: "Solve for the physical force acting upon an accelerating, degrading mass.",
             },
-          ]}
+            {
+              name: "Kinetic Energy Calculator",
+              path: "/kinetic-energy-calculator",
+              desc: "Find the energy of a moving object based on mass and velocity.",
+            }]}
         />
       </div>
     </div>

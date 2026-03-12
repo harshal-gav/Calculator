@@ -262,7 +262,11 @@ export default function HtmlEncoderDecoder() {
               path: "/regex-tester",
               desc: "Use Regex to search massive documents specifically for un-encoded angle brackets.",
             },
-          ]}
+            {
+              name: "Bandwidth Calculator",
+              path: "/bandwidth-calculator",
+              desc: "Calculate download and upload times for various data sizes.",
+            }]}
         />
       </div>
     </div>

@@ -382,7 +382,11 @@ export default function NetWorthCalculator() {
               path: "/savings-goal-calculator",
               desc: "Figure out exactly how much you need to save each month.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

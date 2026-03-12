@@ -317,7 +317,11 @@ d ≈ ${obj.toFixed(4)}`;
               path: "/slope-calculator",
               desc: "Determine the angle and absolute steepness of the line connecting your two points.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

@@ -312,7 +312,10 @@ export default function ScientificNotationConverter() {
               answer:
                 "This ensures standardization. While 45 × 10⁻⁷ is mathematically equal to 4.5 × 10⁻⁶, the latter is strictly in 'Normalized Scientific Notation'. Normalizing the coefficient allows scientists to quickly compare the order of magnitude of two numbers simply by looking at their exponents.",
             },
-          ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
           relatedCalculators={[
             {
               name: "Order of Operations Calculator",
@@ -329,7 +332,11 @@ export default function ScientificNotationConverter() {
               path: "/fraction-to-decimal-calculator",
               desc: "Convert standard fractions completely down to raw decimals.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

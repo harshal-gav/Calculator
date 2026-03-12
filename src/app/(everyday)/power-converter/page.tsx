@@ -293,7 +293,11 @@ export default function PowerConverter() {
               path: "/ohms-law-calculator",
               desc: "Solve complex circuit formulas to determine live electrical Wattage.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

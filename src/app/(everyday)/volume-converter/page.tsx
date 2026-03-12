@@ -319,7 +319,11 @@ export default function VolumeConverter() {
               path: "/weight-converter",
               desc: "Convert mass metrics (Ounces to Grams) rather than volume.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

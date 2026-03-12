@@ -283,7 +283,11 @@ export default function EnergyConverter() {
               path: "/kinetic-energy-calculator",
               desc: "Solve for the exact Joule energy of solid objects moving at high velocity.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

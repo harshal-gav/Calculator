@@ -217,9 +217,36 @@ export default function PregnancyConceptionCalculator() {
           {
             question: "Is Ultrasound more accurate than LMP?",
             answer: "Yes. Early first-trimester ultrasounds measure the exact millimeter length of the fetus (Crown-Rump Length) to dictate your Due Date regardless of when you think your last period was."
-          }
-        ]}
-        relatedCalculators={[]}
+          },
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            },
+            {
+              question: "Is this tool free to use?",
+              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
+            }]}
+        relatedCalculators={[
+            {
+              name: "BMI Calculator",
+              path: "/bmi-calculator",
+              desc: "Calculate your Body Mass Index for a quick health assessment.",
+            },
+            {
+              name: "Calorie Calculator",
+              path: "/calorie-calculator",
+              desc: "Estimate the number of calories you need to maintain or lose weight.",
+            },
+            {
+              name: "BMR Calculator",
+              path: "/bmr-calculator",
+              desc: "Find your Basal Metabolic Rate to understand your calorie needs at rest.",
+            },
+            {
+              name: "Ideal Weight Calculator",
+              path: "/ideal-weight-calculator",
+              desc: "Estimate your healthy weight range based on traditional formulas.",
+            }]}
       />
     </div>
   );

@@ -295,7 +295,11 @@ export default function PaymentCalculator() {
             path: "/debt-payoff-calculator",
             desc: "Compare the avalanche vs snowball methods for paying off multiple debts.",
           },
-        ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
       />
     </div>
   );

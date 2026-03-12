@@ -247,8 +247,12 @@ export default function CalorieCalculator() {
         relatedCalculators={[
           { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Deeper dive into your total energy expenditure." },
           { name: "BMI Calculator", path: "/bmi-calculator", desc: "Check if your current weight is in a healthy range." },
-          { name: "Macro Calculator", path: "/macro-calculator", desc: "Break your calories down into Protein, Fats, and Carbs." }
-        ]}
+          { name: "Macro Calculator", path: "/macro-calculator", desc: "Break your calories down into Protein, Fats, and Carbs." },
+            {
+              name: "BMR Calculator",
+              path: "/bmr-calculator",
+              desc: "Find your Basal Metabolic Rate to understand your calorie needs at rest.",
+            }]}
       />
     </div>
   );

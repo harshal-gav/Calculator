@@ -249,7 +249,11 @@ export default function UuidGenerator() {
               path: "/jwt-decoder",
               desc: "Inspect JSON Web Tokens to see if they utilize UUIDs in their payload.",
             },
-          ]}
+            {
+              name: "Bandwidth Calculator",
+              path: "/bandwidth-calculator",
+              desc: "Calculate download and upload times for various data sizes.",
+            }]}
         />
       </div>
     </div>

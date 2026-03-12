@@ -313,7 +313,11 @@ export default function RandomGroupGenerator() {
               path: "/dice-roller",
               desc: "Generate purely random numbers or roll custom dice for tabletop gaming.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

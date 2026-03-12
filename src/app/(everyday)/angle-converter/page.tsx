@@ -296,7 +296,11 @@ export default function AngleConverter() {
               path: "/pythagorean-calculator",
               desc: "Determine rigid edge lengths of perfect 90-degree right-angle triangles.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

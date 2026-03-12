@@ -355,7 +355,11 @@ export default function PomodoroTimer() {
               path: "/word-count-calculator",
               desc: "Check exactly how many words you successfully wrote during a 25-minute sprint session.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

@@ -201,7 +201,7 @@ export default function MortgagePayoffCalculator() {
                       Time Saved
                     </div>
                     <div className="text-3xl text-green-400 font-bold">
-                      {Math.floor(result.timeSavedMonths / 12)} years,{" "}
+                      {Math.floor(result.timeSavedMonths / 12)} years,{" "},
                       {result.timeSavedMonths % 12} months
                     </div>
                   </div>
@@ -221,7 +221,7 @@ export default function MortgagePayoffCalculator() {
                     <div className="text-sm text-gray-600 mb-1">
                       Payoff Time:{" "}
                       <span className="font-bold text-gray-900">
-                        {Math.floor(result.standardMonthsToPayoff / 12)} yrs{" "}
+                        {Math.floor(result.standardMonthsToPayoff / 12)} yrs{" "},
                         {result.standardMonthsToPayoff % 12} mo
                       </span>
                     </div>
@@ -243,7 +243,7 @@ export default function MortgagePayoffCalculator() {
                     <div className="text-sm text-indigo-900 mb-1">
                       Payoff Time:{" "}
                       <span className="font-bold">
-                        {Math.floor(result.newMonthsToPayoff / 12)} yrs{" "}
+                        {Math.floor(result.newMonthsToPayoff / 12)} yrs{" "},
                         {result.newMonthsToPayoff % 12} mo
                       </span>
                     </div>
@@ -424,7 +424,11 @@ export default function MortgagePayoffCalculator() {
               path: "/debt-payoff-calculator",
               desc: "Calculate Snowball vs Avalanche methods for paying off multiple debts.",
             },
-          ]}
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            }]}
         />
       </div>
     </div>

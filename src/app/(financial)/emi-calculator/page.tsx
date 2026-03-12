@@ -224,8 +224,12 @@ export default function EMICalculator() {
         relatedCalculators={[
           { name: "Loan Payment Calculator", path: "/loan-payment-calculator", desc: "General term loan payment estimator." },
           { name: "Amortization Calculator", path: "/amortization-calculator", desc: "See your month-by-month debt reduction." },
-          { name: "Mortgage Calculator", path: "/mortgage-calculator", desc: "Estimate payments including property taxes and insurance." }
-        ]}
+          { name: "Mortgage Calculator", path: "/mortgage-calculator", desc: "Estimate payments including property taxes and insurance." },
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            }]}
       />
     </div>
   );

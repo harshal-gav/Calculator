@@ -281,7 +281,11 @@ export default function CylinderCalculator() {
               path: "/cone-calculator",
               desc: "Calculate geometry for angled, tapering circular structures.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

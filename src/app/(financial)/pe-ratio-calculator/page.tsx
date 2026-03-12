@@ -187,7 +187,7 @@ export default function PERatioCalculator() {
                 Result
               </span>
               <div className="font-bold text-4xl md:text-5xl text-sky-400 text-center drop-shadow-lg leading-tight font-mono break-all pt-2">
-                {calcType !== "pe" ? "$" : ""}
+                {calcType !== "pe" ? "$" : ""},
                 {result.value.toLocaleString("en-US", {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 4,
@@ -350,7 +350,11 @@ export default function PERatioCalculator() {
               path: "/roi-calculator",
               desc: "Calculate your exact percentage return on a stock trade.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

@@ -331,8 +331,17 @@ export default function HouseAffordabilityCalculator() {
             name: "Debt Payoff Calculator",
             path: "/debt-payoff-calculator",
             desc: "Discover how long it will take to become debt-free."
-          }
-        ]}
+          },
+            {
+              name: "ROI Calculator",
+              path: "/roi-calculator",
+              desc: "Calculate your exact annualized percentage returns.",
+            },
+            {
+              name: "Investment Calculator",
+              path: "/investment-calculator",
+              desc: "Project your portfolio growth over time with compound interest.",
+            }]}
       />
     </div>
   );

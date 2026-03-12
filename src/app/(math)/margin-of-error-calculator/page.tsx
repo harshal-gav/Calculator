@@ -367,7 +367,11 @@ export default function MarginOfErrorCalculator() {
               path: "/z-score-calculator",
               desc: "Calculate the exact Standard Score used as the base multiplier for the MoE formula.",
             },
-          ]}
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator",
+              desc: "Easily calculate percentages, increases, and decreases.",
+            }]}
         />
       </div>
     </div>

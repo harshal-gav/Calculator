@@ -260,7 +260,11 @@ export default function MarginCalculator() {
               path: "/vat-calculator",
               desc: "Calculate value-added tax impacts on your final retail pricing.",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

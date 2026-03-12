@@ -514,7 +514,11 @@ export default function CompoundInterestCalculator() {
             path: "/savings-goal-calculator",
             desc: "Figure out exactly how much you need to save each month to hit a target.",
           },
-        ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
       />
     </div>
   );

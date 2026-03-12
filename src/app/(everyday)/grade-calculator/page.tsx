@@ -404,7 +404,11 @@ export default function GradeCalculator() {
               path: "/mean-median-mode-calculator",
               desc: "Find the average if all your tests share the exact same weight.",
             },
-          ]}
+            {
+              name: "Age Calculator",
+              path: "/age-calculator",
+              desc: "Calculate your exact age in years, months, and days.",
+            }]}
         />
       </div>
     </div>

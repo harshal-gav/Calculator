@@ -339,7 +339,10 @@ export default function ProjectileMotionCalculator() {
             answer:
               "Assuming you launch from and land on flat ground (h₀ = 0), a 45-degree angle will always mathematically yield the absolute maximum horizontal range.",
           },
-        ]}
+            {
+              question: "How accurate is this calculator?",
+              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
+            }]}
         relatedCalculators={[
           {
             name: "Velocity Calculator",
@@ -356,7 +359,11 @@ export default function ProjectileMotionCalculator() {
             path: "/kinetic-energy-calculator",
             desc: "Find the energy of a moving object based on mass and velocity.",
           },
-        ]}
+            {
+              name: "Density Calculator",
+              path: "/density-calculator",
+              desc: "Calculate density, mass, or volume given two values.",
+            }]}
       />
     </div>
   );

@@ -328,7 +328,11 @@ export default function TipSplittingCalculator() {
               path: "/fraction-to-decimal-calculator",
               desc: "Helpful for splitting uneven bills (e.g., paying 1/3 of the tab).",
             },
-          ]}
+            {
+              name: "Mortgage Calculator",
+              path: "/mortgage-calculator",
+              desc: "Calculate your monthly mortgage payments and amortization schedule.",
+            }]}
         />
       </div>
     </div>

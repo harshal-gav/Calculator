@@ -320,7 +320,11 @@ export default function RomanNumeralDateConverter() {
               path: "/age-calculator",
               desc: "Calculate exact chronological age in years and months.",
             },
-          ]}
+            {
+              name: "Word Count Calculator",
+              path: "/word-count-calculator",
+              desc: "Count the number of words, characters, and sentences in your text.",
+            }]}
         />
       </div>
     </div>
