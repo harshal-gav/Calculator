@@ -24,7 +24,6 @@ export default function InflationCalculator() {
       const futureCost = A * Math.pow(1 + r, t);
 
       // What A dollars today will be worth in t years (Purchasing Power)
-      // It degrades by inflation rate
       const purchasingPower = A / Math.pow(1 + r, t);
 
       setResult({
@@ -36,262 +35,278 @@ export default function InflationCalculator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-      <h1 className="text-4xl font-extrabold mb-4 text-emerald-900 border-b pb-4">
-        Inflation Calculator
-      </h1>
-      <p className="mb-8 text-gray-600 text-lg">
-        Calculate how inflation impacts the future cost of goods and degrades
-        your purchasing power over time.
-      </p>
+    <div className="max-w-5xl mx-auto p-4 md:p-10 bg-slate-50 rounded-3xl shadow-2xl border border-slate-200">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-6xl font-black mb-4 text-slate-900 tracking-tight">
+          Inflation & Purchasing Power
+        </h1>
+        <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
+          The "Invisible Tax" decoder. Calculate how price increases erode your wealth and project the future cost of today's essentials.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-        {/* Inputs */}
-        <div className="md:col-span-5 bg-emerald-50 p-6 rounded-xl border border-emerald-100 space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
+        {/* Input Panel */}
+        <div className="lg:col-span-4 bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm space-y-8 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full -mr-16 -mt-16"></div>
+          
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Starting Amount ($)
+            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3">
+              Starting Capital ($)
             </label>
             <input
               type="number"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
-              className="w-full rounded-lg border-gray-300 p-3 shadow-sm focus:border-emerald-500 font-bold text-xl"
+              className="w-full rounded-2xl border-slate-200 p-4 shadow-inner focus:ring-4 focus:ring-red-500/10 focus:border-red-500 font-black text-2xl text-slate-800"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Average Annual Inflation Rate (%)
+            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3">
+              Avg. Annual Inflation (%)
             </label>
             <input
               type="number"
               step="0.1"
               value={rate}
               onChange={(e) => setRate(e.target.value)}
-              className="w-full rounded-lg border-gray-300 p-3 shadow-sm focus:border-emerald-500 font-medium"
+              className="w-full rounded-2xl border-slate-200 p-4 shadow-inner focus:ring-4 focus:ring-red-500/10 focus:border-red-500 font-bold text-xl text-red-600"
             />
-            <p className="text-xs text-gray-500 mt-1">
-              Historically averages 2-3% per year.
-            </p>
+            <div className="flex justify-between mt-2 px-1">
+              <span className="text-[10px] text-slate-400 font-bold italic">US Historical Avg: ~3.2%</span>
+            </div>
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Time Period (Years)
+            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3">
+              Horizon (Years)
             </label>
             <input
               type="number"
               value={years}
               onChange={(e) => setYears(e.target.value)}
-              className="w-full rounded-lg border-gray-300 p-3 shadow-sm focus:border-emerald-500 font-medium"
+              className="w-full rounded-2xl border-slate-200 p-4 shadow-inner focus:ring-4 focus:ring-red-500/10 focus:border-red-500 font-bold text-xl text-slate-700"
             />
           </div>
 
           <button
             onClick={calculateInflation}
-            className="w-full bg-emerald-600 text-white font-bold py-4 rounded-xl hover:bg-emerald-700 transition shadow-lg uppercase tracking-wide mt-2"
+            className="w-full bg-slate-900 text-white font-black py-5 rounded-2xl hover:bg-red-600 transition-all shadow-xl shadow-slate-900/10 uppercase tracking-widest text-xs active:scale-95"
           >
-            Calculate Impact
+            Measure Erosion
           </button>
         </div>
 
         {/* Results Screen */}
-        <div className="md:col-span-7 bg-white border-2 border-emerald-100 rounded-xl overflow-hidden shadow-sm flex flex-col justify-center p-8">
+        <div className="lg:col-span-8">
           {result !== null ? (
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-gray-500 font-semibold uppercase tracking-wider text-xs mb-2">
-                  Cost of the same item in {years} years
-                </h3>
-                <div className="text-5xl font-black text-gray-900 border-b border-emerald-100 pb-4">
-                  $
-                  {result.futureCost.toLocaleString("en-US", {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+              <div className="bg-white border border-slate-200 rounded-[2.5rem] p-8 flex flex-col justify-between shadow-sm">
+                <div>
+                   <h3 className="text-slate-400 font-black uppercase tracking-widest text-[10px] mb-6">Future Cost Prediction</h3>
+                   <div className="text-5xl lg:text-6xl font-black text-slate-900 tabular-nums">
+                     $
+                     {result.futureCost.toLocaleString("en-US", {
+                       minimumFractionDigits: 0,
+                       maximumFractionDigits: 0,
+                     })}
+                   </div>
                 </div>
-                <div className="text-sm font-bold text-red-600 mt-2 uppercase">
-                  +$
-                  {result.totalIncrease.toLocaleString("en-US", {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })}{" "}
-                  Price Increase
+                <div className="bg-red-50 p-4 rounded-2xl mt-8">
+                    <p className="text-[10px] font-black text-red-600 uppercase mb-1">Price Delta</p>
+                    <span className="text-lg font-bold text-red-700">+{((result.futureCost/parseFloat(amount) - 1) * 100).toFixed(1)}% Cost Hike</span>
                 </div>
               </div>
 
-              <div className="bg-emerald-50 p-5 rounded-xl border border-emerald-200 shadow-inner">
-                <h3 className="text-emerald-800 font-bold uppercase tracking-wider text-xs mb-2">
-                  Future Purchasing Power
-                </h3>
-                <p className="text-gray-700 leading-snug font-medium mb-3">
-                  Your currently saved{" "}
-                  <strong className="text-gray-900">
-                    ${parseFloat(amount).toLocaleString()}
-                  </strong>{" "}
-                  will only have the purchasing power of:
-                </p>
-                <div className="text-4xl font-black text-emerald-700">
-                  $
-                  {result.purchasingPower.toLocaleString("en-US", {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })}
+              <div className="bg-slate-950 text-white rounded-[2.5rem] p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-br from-red-600 to-transparent opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="relative z-10">
+                   <h3 className="text-slate-500 font-black uppercase tracking-widest text-[10px] mb-6">Real Value (Today's $)</h3>
+                   <div className="text-5xl lg:text-6xl font-black text-white tabular-nums">
+                     $
+                     {result.purchasingPower.toLocaleString("en-US", {
+                       minimumFractionDigits: 0,
+                       maximumFractionDigits: 0,
+                     })}
+                   </div>
                 </div>
-                <p className="text-xs text-gray-500 mt-3 font-medium uppercase">
-                  Using today's value baseline
-                </p>
+                <div className="relative z-10 border-t border-slate-800 pt-6 mt-8">
+                    <p className="text-slate-400 text-sm font-medium leading-relaxed">
+                      Your saved <span className="text-white font-bold">${parseFloat(amount).toLocaleString()}</span> effectively becomes <span className="text-red-400 font-bold">${result.purchasingPower.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span> in buying power.
+                    </p>
+                </div>
               </div>
             </div>
           ) : (
-            <div className="h-full flex items-center justify-center text-center text-emerald-400 font-medium">
-              Enter an amount and an inflation rate to model its future
-              financial impact.
+            <div className="h-full bg-white border border-dashed border-slate-200 rounded-[2.5rem] flex flex-col items-center justify-center p-12 text-center group">
+               <div className="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center text-5xl mb-6 group-hover:rotate-12 transition-transform duration-500">📉</div>
+               <h3 className="text-xl font-black text-slate-900 mb-2">Model Macroeconomic Shifts</h3>
+               <p className="text-slate-400 text-sm max-w-xs font-medium leading-relaxed">Input your capital and expected inflation rate to visualize the velocity of purchasing power decay.</p>
             </div>
           )}
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Inflation Calculator",
-            operatingSystem: "All",
-            applicationCategory: "FinanceApplication",
-            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-          }),
+      <CalculatorSEO
+        title="The Ultimate Guide to Inflation & Purchasing Power Economics"
+        whatIsIt={
+          <>
+            <p className="text-lg leading-relaxed mb-6">
+              The <strong>Inflation Calculator</strong> is a specialized macroeconomic auditing tool designed to quantify the rate at which fiat currency loses its exchange value relative to goods and services. Commonly referred to as the "silent thief" of the financial world, inflation is the process where the general level of prices rises, and consequently, the purchasing power of your money falls.
+            </p>
+            <p className="leading-relaxed mb-6">
+              In an environment of positive inflation, a dollar today is objectively more valuable than a dollar tomorrow. This calculator models that decay across any time horizon, allowing you to project what the "real" value of your savings will be in 10, 20, or 30 years. It serves as a stark reminder that simply "saving" money in cash is often a mathematically losing strategy if those savings are not earning a return that exceeds the Consumer Price Index (CPI).
+            </p>
+            <p className="leading-relaxed">
+              Understanding inflation is paramount for retirement planning, as it dictates the "real wealth" you will possess when you stop earning an active income. This tool provides the clarity needed to adjust your investment targets and lifestyle expectations for the economic realities of the future.
+            </p>
+          </>
+        }
+        comparisonTable={{
+          title: "Historical Impact of Inflation (The 100-Year Perspective)",
+          headers: ["Decade Group", "Avg. Inflation Rate", "Purchasing Power Loss ($10k)", "Economic Context"],
+          rows: [
+            ["1920s - 1930s", "-1.5% (Deflation)", "+$15,000", "Post-WWI boom followed by Great Depression."],
+            ["1940s - 1950s", "4.0%", "-$4,500", "Post-WWII reconstruction and industrial surge."],
+            ["1970s - 1980s", "7.1%", "-$1,200", "Stagflation, oil shocks, and high interest rates."],
+            ["1990s - 2010s", "2.1%", "-$8,100", "The 'Great Moderation' and tech expansion."],
+            ["2020s - Present", "4.5% - 8.0%", "-$6,500", "Supply chain shocks and monetary expansion."],
+          ]
         }}
-      />
-
-      <div className="mt-8">
-        <CalculatorSEO
-          title="Inflation & Purchasing Power Calculator"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Inflation Calculator</strong> measures how the cost
-                of living increases over time and how that macroeconomic shift
-                actively degrades the purchasing power of your saved money.
-              </p>
-              <p>
-                Inflation is the silent tax. A $100 bill locked in a safe for 20
-                years will still be a $100 bill when you open it, but the amount
-                of groceries it can actually buy will have plummeted. This
-                calculator helps you forecast that loss so you can plan
-                investments that outpace it.
-              </p>
-            </>
-          }
-          formula={
-            <>
-              <p>
-                The calculation uses the standard compound interest formula, but
-                applies it to the cost of goods rather than the growth of an
-                investment:
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-emerald-900 border border-emerald-100">
-                <strong>Future Cost</strong> = Current Price × (1 + Inflation
-                Rate)<sup>Years</sup>
+        formula={
+          <div className="space-y-8">
+            <div>
+              <p className="font-bold text-slate-900 mb-4">I. The Future Cost Formula (Standard Compounding)</p>
+              <div className="bg-slate-900 text-white p-8 rounded-3xl font-mono text-center text-2xl shadow-xl border border-red-500/20">
+                P_future = P_today × (1 + i)ᵗ
               </div>
-              <p className="mt-4">
-                Conversely, to calculate how much today's money will be worth in
-                the future (Purchasing Power):
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-emerald-900 border border-emerald-100">
-                <strong>Future Purchasing Power</strong> = Current Savings ÷ (1
-                + Inflation Rate)<sup>Years</sup>
+            </div>
+            <div>
+              <p className="font-bold text-slate-900 mb-4">II. The Purchasing Power Formula (Degradation)</p>
+              <div className="bg-slate-950 text-white p-8 rounded-3xl font-mono text-center text-2xl shadow-xl border border-slate-800">
+                Value_real = P_today ÷ (1 + i)ᵗ
               </div>
-            </>
-          }
-          example={
-            <>
-              <p>
-                Suppose you have <strong>$10,000</strong> sitting in a
-                zero-interest checking account, and the average annual inflation
-                rate is <strong>3%</strong> for the next{" "}
-                <strong>10 years</strong>.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  A car that costs $10,000 today will cost{" "}
-                  <strong>$13,439</strong> in ten years due to inflation.
-                </li>
-                <li>
-                  Because your money didn't grow, that $10,000 in your checking
-                  account will only have the purchasing power of{" "}
-                  <strong>$7,440</strong> in today's terms.
-                </li>
-                <li>
-                  <strong>The Reality Check:</strong> By "playing it safe" in
-                  cash, you actually lost over 25% of your true wealth.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Retirement Planning:</strong> Realizing that needing
-                "$5,000 a month" to live comfortably today actually means you
-                will need $9,000 a month to maintain the exact same lifestyle 20
-                years from now.
-              </li>
-              <li>
-                <strong>Salary Negotiations:</strong> Calculating if your 2%
-                annual raise actually outpaced the 3.5% inflation rate of the
-                previous year (if it didn't, you took a mathematical pay cut).
-              </li>
-              <li>
-                <strong>Real Return on Investment:</strong> Realizing that a
-                high-yield savings account paying 4% while inflation is 5% still
-                yields a <i>negative</i> real return.
-              </li>
+            </div>
+            <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-bold text-slate-500">
+              <li className="p-4 bg-white rounded-xl border border-slate-200">P = Principal Amount</li>
+              <li className="p-4 bg-white rounded-xl border border-slate-200">i = Inflation Rate (decimal)</li>
+              <li className="p-4 bg-white rounded-xl border border-slate-200">t = Time (Years)</li>
             </ul>
+          </div>
+        }
+        deepDive={
+          <div className="space-y-12">
+            <section>
+              <h4 className="text-3xl font-black text-slate-900 mb-6 underline decoration-red-500 decoration-4">The Mechanisms of Price Inflation</h4>
+              <p className="text-slate-600 leading-relaxed text-lg">
+                Inflation is rarely caused by a single factor. Economists generally group inflation into three distinct categories: <strong>Demand-Pull</strong> (when consumers want more than the economy can produce), <strong>Cost-Push</strong> (when the cost of raw materials or labor rises, forcing companies to raise prices), and <strong>Built-In</strong> (when workers expect higher prices and demand higher wages, creating a self-fulfilling loop).
+              </p>
+            </section>
+
+            <section className="bg-red-50 border border-red-100 p-10 rounded-[3rem] shadow-inner">
+               <h4 className="text-2xl font-black text-red-950 mb-4">Why Modern Governments Target 2% Inflation</h4>
+               <p className="text-red-900/80 leading-relaxed">
+                 You might wonder why we want inflation at all. Most central banks, like the Federal Reserve, target a 2% inflation rate because it encourages spending. If consumers believe prices will be slightly higher next year, they are incentivized to buy goods and invest their money today. Conversely, <strong>Deflation</strong> (falling prices) is considered more dangerous, as it leads to consumers delaying purchases, causing businesses to shrink and unemployment to rise.
+               </p>
+            </section>
+
+            <section>
+              <h4 className="text-3xl font-black text-slate-900 mb-6">Inflation as an Asset Class Filter</h4>
+              <p className="text-slate-600 leading-relaxed">
+                When inflation is high, not all assets are created equal. Fixed-income assets like bonds suffer because their "fixed" interest payments become worth less in real terms. <strong>Hard Assets</strong> like real estate, gold, and established commodity-producing companies often perform better, as their intrinsic value tends to rise alongside the general price level. This calculator helps you see why your "Real Return" is the only number that truly matters in wealth building.
+              </p>
+            </section>
+          </div>
+        }
+        example={
+          <div className="bg-white p-10 rounded-[3rem] border border-slate-200 shadow-xl">
+             <div className="flex items-center space-x-4 mb-8">
+                <div className="w-12 h-12 bg-slate-900 text-white rounded-2xl flex items-center justify-center font-black text-xl">1</div>
+                <h5 className="font-black text-slate-900 uppercase tracking-widest text-sm">Scenario: The $100 Grocery Habit</h5>
+             </div>
+             <p className="text-slate-600 mb-8 leading-relaxed">
+               If your weekly grocery bill is <strong>$100</strong> today, and we experience a period of <strong>4.5% annual inflation</strong> (similar to the 2021-2023 surge), here is what that exact same basket of milk, bread, and meat will cost you:
+             </p>
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <span className="block text-[10px] font-black text-slate-400 mb-2 uppercase">In 5 Years</span>
+                    <div className="text-3xl font-black text-slate-900">$124.62</div>
+                </div>
+                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <span className="block text-[10px] font-black text-slate-400 mb-2 uppercase">In 10 Years</span>
+                    <div className="text-3xl font-black text-slate-900">$155.30</div>
+                </div>
+                <div className="p-6 bg-red-600 text-white rounded-2xl shadow-lg">
+                    <span className="block text-[10px] font-black text-red-200 mb-2 uppercase">In 20 Years</span>
+                    <div className="text-3xl font-black">$241.17</div>
+                </div>
+             </div>
+             <p className="mt-8 text-sm text-slate-400 font-medium italic">
+                Insight: In 20 years, you will need to spend $2.41 for every $1.00 you spend today just to maintain your current diet.
+             </p>
+          </div>
+        }
+        useCases={
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+             <div className="p-8 group hover:bg-white hover:shadow-xl transition-all rounded-[2rem]">
+                <div className="text-4xl mb-6 grayscale group-hover:grayscale-0 transition">💰</div>
+                <h6 className="font-black text-slate-900 mb-4 uppercase text-xs">Retirement Planning</h6>
+                <p className="text-sm text-slate-500 leading-relaxed font-medium">Estimate what your current 'dream lifestyle' cost will actually be by the time you stop working.</p>
+             </div>
+             <div className="p-8 group hover:bg-white hover:shadow-xl transition-all rounded-[2rem]">
+                <div className="text-4xl mb-6 grayscale group-hover:grayscale-0 transition">📈</div>
+                <h6 className="font-black text-slate-900 mb-4 uppercase text-xs">Salary Benchmarking</h6>
+                <p className="text-sm text-slate-500 leading-relaxed font-medium">Verify if your cost-of-living adjustments (COLA) are keeping pace with your regional inflation.</p>
+             </div>
+             <div className="p-8 group hover:bg-white hover:shadow-xl transition-all rounded-[2rem]">
+                <div className="text-4xl mb-6 grayscale group-hover:grayscale-0 transition">🏦</div>
+                <h6 className="font-black text-slate-900 mb-4 uppercase text-xs">Debt Evaluation</h6>
+                <p className="text-sm text-slate-500 leading-relaxed font-medium">Understand why inflation benefits debtors (like mortgage holders) as they pay back loans with cheaper dollars.</p>
+             </div>
+          </div>
+        }
+        glossary={[
+          { term: "CPI (Consumer Price Index)", definition: "The official measure of the average change over time in the prices paid by urban consumers for a market basket of goods and services." },
+          { term: "Purchasing Power", definition: "The amount of goods or services that one unit of currency can buy." },
+          { term: "Real Interest Rate", definition: "The nominal interest rate minus the rate of inflation." },
+          { term: "Nominal Value", definition: "The value of an asset or income in current dollars, without adjusting for price changes." },
+          { term: "Hyperinflation", definition: "An extremely rapid and out-of-control inflation, usually exceeding 50% per month." },
+          { term: "Deflation", definition: "A general decline in prices across an economy, often associated with severe economic contraction." },
+          { term: "Stagflation", definition: "A rare and difficult economic period characterized by both high inflation and stagnant economic growth/high unemployment." },
+          { term: "Personal Inflation Rate", definition: "The specific rate of inflation an individual experiences based on their unique spending habits (e.g., high gas usage vs. high healthcare usage)." },
+          { term: "Fixed Income", definition: "An investment that yields regular, fixed payments, such as a traditional pension or a corporate bond." },
+          { term: "Fiat Currency", definition: "Money that has value because a government maintains its value, rather than being backed by a physical commodity like gold." },
+        ]}
+        faqs={[
+          {
+            question: "Is inflation always a bad thing?",
+            answer: "For savers holding cash, yes. However, for the economy as a whole, moderate inflation (2%) is considered healthy because it encourages investment and keeps the credit market functioning. It also benefits borrowers (like people with fixed-rate mortgages) because the real value of their debt shrinks over time."
+          },
+          {
+            question: "How can I protect my savings from inflation?",
+            answer: "The primary protection is investing in assets that historically appreciate faster than the CPI. This includes broadly diversified stock market index funds, real estate (which allows for rental increases), and TIPS (Treasury Inflation-Protected Securities), which are specifically indexed to inflation."
+          },
+          {
+            question: "What is 'Lifestyle Creep' vs Inflation?",
+            answer: "Inflation is the increase in the price of the same goods. Lifestyle Creep is when you choose to buy more expensive goods because your income increased. If your bills went up 10%, but your grocery items are the same, that's inflation. If you started buying organic steak instead of ground beef, that's lifestyle creep."
+          },
+          {
+            question: "Why does the government print money if it causes inflation?",
+            answer: "Governments often expand the money supply to stimulate economic growth, provide liquidity during crises, or fund government spending. While this can cause inflation, central banks attempt to balance this against the risk of high unemployment or a deflationary spiral."
+          },
+          {
+            question: "How long does it take for money to lose half its value?",
+            answer: "Using the 'Rule of 70', you can estimate this by dividing 70 by the inflation rate. At a 3% inflation rate, your money will lose half its purchasing power in approximately 23.3 years (70 / 3 = 23.3)."
           }
-          faqs={[
-            {
-              question: "What is a 'normal' inflation rate?",
-              answer:
-                "The U.g., Federal Reserve formally targets an average annual inflation rate of 2%. Historically over the last century, it has averaged closer to 3% to 3.5%.",
-            },
-            {
-              question: "How is official inflation actually measured?",
-              answer:
-                "Governments track the Consumer Price Index (CPI), which represents a fixed 'basket' of everyday goods and services (like milk, gasoline, housing, and healthcare). They physically track the price of this exact basket month over month.",
-            },
-            {
-              question: "What is Hyperinflation?",
-              answer:
-                "Hyperinflation occurs when price increases spiral completely out of a central bank's control, typically defined as exceeding 50% per month. This usually happens when a government prints massive amounts of fiat currency to cover unpayable debts.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Salary Calculator",
-              path: "/salary-calculator",
-              desc: "See your precise take-home pay to determine if your income is outpacing inflation.",
-            },
-            {
-              name: "Compound Interest Calculator",
-              path: "/compound-interest-calculator",
-              desc: "Model an investment portfolio designed to grow faster than inflation.",
-            },
-            {
-              name: "Retirement Calculator",
-              path: "/retirement-calculator",
-              desc: "Calculate your full macroeconomic life plan including inflation adjustments.",
-            },
-            {
-              name: "Age Calculator",
-              path: "/age-calculator",
-              desc: "Calculate your exact age in years, months, and days.",
-            }]}
-        />
-      </div>
+        ]}
+        relatedCalculators={[
+          { name: "Salary Calculator", path: "/salary-calculator", desc: "Compare your take-home pay across different years to see your real income growth." },
+          { name: "Retirement Calculator", path: "/retirement-calculator", desc: "Model your full retirement nest egg with inflation-adjusted withdrawal rates." },
+          { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "See how investing your cash can help you stay ahead of the inflation curve." },
+          { name: "Mortgage Calculator", path: "/mortgage-calculator", desc: "Understand how fixed-rate debt acts as a hedge against rising prices." }
+        ]}
+      />
     </div>
   );
 }

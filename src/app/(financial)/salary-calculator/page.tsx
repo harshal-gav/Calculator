@@ -196,144 +196,180 @@ export default function SalaryCalculator() {
       />
 
       <CalculatorSEO
-        title="Salary Calculator"
+        title="Salary Calculator & Income Conversion Tool"
         whatIsIt={
           <>
-            <p>
-              Our <strong>Salary Calculator</strong> is a direct and powerful
-              tool designed to easily convert your income between different time
-              periods. Need to know exactly what a $65,000 annual salary
-              translates to per hour? Or maybe you want to find out what $35 an
-              hour equals if you worked a full year? This tool handles the
-              conversion instantly.
+            <p className="text-lg leading-relaxed mb-4">
+              A <strong>Salary Calculator</strong> is the foundational tool for personal financial literacy. It bridges the gap between different payment structures, allowing you to instantly translate an <strong>annual salary</strong> into an <strong>hourly wage</strong>, or a <strong>monthly paycheck</strong> into a <strong>weekly budget</strong>. Understanding your gross income across these different time slices is the first step in effective budgeting, mortgage planning, and career negotiation.
             </p>
-            <p>
-              It acts as a universal income translator, producing the equivalent
-              hourly, daily, weekly, bi-weekly, monthly, and yearly income
-              amounts based on whatever input you provide.
+            <p className="leading-relaxed mb-4">
+              While most job offers are quoted as a lump sum (e.g., "$75,000 per year"), your life is lived in smaller increments. Our calculator provides a granular breakdown, including <strong>bi-weekly</strong> (every two weeks) and <strong>semi-monthly</strong> (twice a month) payouts, which are the most common payroll cycles in North America.
             </p>
-
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related Terms:</strong> Income Tax Calculator, Salary
-              Calculator, Paycheck Calculator, Debt To Income Ratio Calculator,
-              Federal Income Tax Calculator, Paycheck Tax Calculator, Hourly To
-              Salary Calculator, Debt To Income Ratio, Federal Income Tax Rate
-              Calculator, Annual Income Calculator, Income Tax Calculator 2022,
-              Annual Salary Calculator, Free Paycheck Calculator, Taxable Income
-              Calculator, Income Calculator
+            <p className="leading-relaxed">
+              Use this tool to evaluate job offers, determine your "real" hourly value, and ensure your income expectations align with your lifestyle goals.
             </p>
           </>
         }
+        comparisonTable={{
+          title: "U.S. Income Benchmarks & Living Standards",
+          headers: ["Income Category", "Annual (Gross)", "Hourly Equiv.", "Typical Household Role", "Financial Goal"],
+          rows: [
+            ["High Earner (Top 10%)", "$170,000+", "$81.73+", "Senior Management", "Wealth Preservation"],
+            ["U.S. Median Household", "$74,580", "$35.85", "Technical/Professional", "Home Ownership"],
+            ["Living Wage (Family of 4)", "$68,000", "$32.69", "Service/Manufacturing", "Stability"],
+            ["Federal Minimum Wage", "$15,080", "$7.25", "Entry Level", "Basic Needs"],
+          ]
+        }}
         formula={
-          <>
-            <p>
-              To convert any income into another timeframe, the key is strictly
-              standardizing everything to a <strong>Yearly Baseline</strong>{" "}
-              first, assuming 52 weeks in a year.
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-xl shadow-sm my-4 overflow-x-auto space-y-2 text-emerald-800">
-              <p>Yearly = Hourly Rate * Hours per Week * 52</p>
-              <p>Hourly Rate = Yearly / 52 / Hours per Week</p>
-              <p>Monthly Rate = Yearly / 12</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700">
+            <div className="space-y-4">
+              <h4 className="font-bold text-emerald-900 border-b border-emerald-100 pb-2">1. Annual to Hourly Basis</h4>
+              <p className="text-sm">Standardizing a 40-hour work week (2,080 hours per year):</p>
+              <div className="bg-slate-900 p-6 rounded-xl font-mono text-white text-center text-sm shadow-md">
+                Hourly = Annual / (Hours per Week × 52)
+              </div>
             </div>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-emerald-900">
-              <li>
-                <strong>Standard Work Year:</strong> The default calculation
-                uses 40 hours per week and 52 weeks a year, meaning a standard
-                work year contains exactly 2,080 working hours.
-              </li>
-              <li>
-                <strong>Customizing:</strong> You can adjust the hours per week
-                and days per week to match your actual work schedule if you work
-                part-time or do 4-day workweeks.
-              </li>
-            </ul>
-          </>
+            <div className="space-y-4">
+              <h4 className="font-bold text-emerald-900 border-b border-emerald-100 pb-2">2. Common Pay Periods</h4>
+              <p className="text-sm">Determining your gross paycheck size:</p>
+              <div className="bg-emerald-900 p-6 rounded-xl font-mono text-white text-center text-sm shadow-md">
+                Bi-Weekly = Annual / 26
+              </div>
+            </div>
+          </div>
+        }
+        deepDive={
+          <div className="space-y-12 text-gray-700">
+            <section>
+              <h4 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span className="w-12 h-12 bg-emerald-100 text-emerald-900 rounded-2xl flex items-center justify-center mr-4 shadow-sm font-black italic">$</span>
+                Gross vs. Net Income: The Reality Check
+              </h4>
+              <p className="leading-relaxed">
+                Your <strong>Gross Salary</strong> is the number on your contract, but your <strong>Net Income</strong> (Take-Home Pay) is what pays the rent. In the U.S., a combination of Federal Income Tax, Social Security (6.2%), and Medicare (1.45%) can consume 20% to 35% of your gross earnings before you even see it. When using this calculator, remember that the results are "Gross"—you must still subtract taxes, health insurance premiums, and 401k contributions to find your actual budget.
+              </p>
+            </section>
+
+            <section className="bg-gradient-to-br from-emerald-900 to-slate-800 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-400 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
+               <h4 className="text-xl font-bold mb-4 text-emerald-300 uppercase tracking-widest">The "Real" Hourly Wage Calculation</h4>
+               <p className="leading-relaxed mb-6">
+                 Is a $100k salary in NYC better than a $70k salary in Raleigh? To find your "Real" wage, you must subtract <strong>commute costs, professional attire, and unpaid lunch hours</strong> from your gross pay, then divide by your <em>actual</em> hours away from home. Use this calculator to experiment with "Hours per Week" to see how unpaid overtime or long commutes drastically reduce your hourly value.
+               </p>
+               <div className="p-4 bg-white/10 rounded-xl border border-white/20 text-xs italic">
+                 Career Hack: Negotiating for a 4-day work week (32 hours) at the same annual salary increases your hourly rate by 25%.
+               </div>
+            </section>
+
+            <section>
+              <h4 className="text-2xl font-bold text-gray-900 mb-6">Paid Time Off (PTO) and Holidays</h4>
+              <p className="leading-relaxed">
+                A standard work year has 260 weekdays. However, most professionals receive 10-20 days of PTO plus 10 federal holidays. This means you are actually being paid for roughly 230 to 240 days of work. If you are a freelancer or contractor, you must adjust your hourly rate upward by ~15% to cover these "missing" paid days that salaried employees take for granted.
+              </p>
+            </section>
+          </div>
         }
         example={
-          <>
-            <p>
-              Let's say you receive a job offer for{" "}
-              <strong>$25.00 per hour</strong> and they guarantee you{" "}
-              <strong>40 hours per week</strong>.
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>Yearly Salary:</strong> $25 * 40 * 52 ={" "}
-                <strong>$52,000.00</strong>
-              </li>
-              <li>
-                <strong>Monthly Income:</strong> $52,000 / 12 ={" "}
-                <strong>$4,333.33</strong>
-              </li>
-              <li>
-                <strong>Bi-weekly Paycheck:</strong> $52,000 / 26 ={" "}
-                <strong>$2,000.00</strong> (Before taxes)
-              </li>
-            </ul>
-            <p className="mt-4">
-              Knowing your exact gross pay breakdown is the first critical step
-              to effective budgeting.
-            </p>
-          </>
+          <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-emerald-50 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-2 h-full bg-emerald-500"></div>
+            <h5 className="font-black text-gray-900 uppercase tracking-widest text-xs mb-8">Scenario: The Promotion Jump</h5>
+            <div className="space-y-6">
+              <div className="flex justify-between items-center border-b border-gray-100 pb-4">
+                <span className="text-gray-500 font-medium">New Annual Salary</span>
+                <span className="font-bold text-gray-900">$82,000</span>
+              </div>
+              <div className="flex justify-between items-center border-b border-gray-100 pb-4">
+                <span className="text-gray-500 font-medium">Standard Hours (40h/wk)</span>
+                <span className="font-bold text-gray-900">2,080 / Yr</span>
+              </div>
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                <div className="bg-emerald-50 p-6 rounded-2xl text-center">
+                  <span className="block text-[10px] text-emerald-600 font-bold uppercase mb-1">Monthly Gross</span>
+                  <span className="text-3xl font-black text-emerald-900">$6,833</span>
+                </div>
+                <div className="bg-slate-50 p-6 rounded-2xl text-center">
+                  <span className="block text-[10px] text-slate-500 font-bold uppercase mb-1">Hourly Equiv.</span>
+                  <span className="text-3xl font-black text-slate-800">$39.42</span>
+                </div>
+              </div>
+            </div>
+            <p className="mt-8 text-xs text-gray-400 text-center italic">Result: This salary provides a bi-weekly gross paycheck of $3,153.85.</p>
+          </div>
         }
         useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Evaluating Job Offers:</strong> Quickly comparing two
-              different job offers where one employer quotes an annual salary
-              ($50,000) and the other offers an hourly wage ($24/hour).
-            </li>
-            <li>
-              <strong>Freelance Pricing:</strong> Determining what hourly rate
-              you need to charge your clients to hit your target $100,000 annual
-              income goal.
-            </li>
-            <li>
-              <strong>Budget Planning:</strong> Finding out exactly how much
-              "gross" income you make every two weeks so you can plug it into a
-              rent calculator to see what apartments you can afford.
-            </li>
-          </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
+              <h6 className="font-bold text-gray-900 mb-2">Job Offer Comparison</h6>
+              <p className="text-xs text-gray-500">Compare a $35/hour role vs. a $70,000/year role. The hourly role ($72,800/yr) actually pays more assuming full-time hours.</p>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
+              <h6 className="font-bold text-gray-900 mb-2">Mortgage Pre-Approval</h6>
+              <p className="text-xs text-gray-500">Find your "Gross Monthly Income"—the specific number lenders use to calculate your Debt-to-Income (DTI) ratio.</p>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
+              <h6 className="font-bold text-gray-900 mb-2">Freelance Rate Setting</h6>
+              <p className="text-xs text-gray-500">Determine how much to charge per hour to match your previous corporate salary, adding a 25% buffer for taxes/missing benefits.</p>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
+              <h6 className="font-bold text-gray-900 mb-2">Budgeting by Pay Period</h6>
+              <p className="text-xs text-gray-500">If you are paid Bi-Weekly, map out exactly how much income you have available every 14 days for automated savings.</p>
+            </div>
+          </div>
         }
+        glossary={[
+          { term: "Gross Income", definition: "Total pay before any taxes, health insurance premiums, or retirement contributions are deducted." },
+          { term: "Bi-Weekly", definition: "A payment schedule consisting of 26 pay periods per year, occurring every two weeks." },
+          { term: "Semi-Monthly", definition: "A payment schedule consisting of 24 pay periods per year, occurring exactly twice per month (usually 15th and 30th)." },
+          { term: "Hourly Non-Exempt", definition: "Employees entitled to overtime pay (1.5x) for hours worked beyond 40 per week." },
+          { term: "FICA Tax", definition: "The combined Social Security and Medicare taxes deducted from most U.S. paychecks." },
+          { term: "Paycheck Leap Year", definition: "Occurs when a bi-weekly cycle results in 27 pay periods in a calendar year instead of 26." },
+          { term: "DTI Ratio", definition: "Debt-to-Income ratio; the percentage of gross monthly income used to pay monthly debt obligations." },
+          { term: "Exempt Employee", definition: "A salaried professional who is exempt from overtime pay requirements under the FLSA." },
+        ]}
         faqs={[
           {
-            question: "Are taxes included in this calculation?",
-            answer:
-              "No. This calculator strictly shows Gross Income (your earnings before taxes or deductions are removed). To find your 'take-home' pay, you'll need to use an after-tax paycheck calculator that factors in your specific state and federal tax brackets.",
+            question: "Is it better to be paid Bi-Weekly or Semi-Monthly?",
+            answer: "Bi-weekly involves 26 paychecks, while semi-monthly involves 24. Bi-weekly is often preferred by budgeters because twice a year you receive a 'third paycheck' in a single month. However, semi-monthly paychecks are slightly larger because the annual salary is divided by fewer periods."
           },
           {
             question: "How many working hours are in a year?",
-            answer:
-              "For a standard full-time employee working 40 hours a week for 52 weeks a year, there are exactly 2,080 total working hours in one year.",
+            answer: "A standard 40-hour work week multiplied by 52 weeks equals exactly 2,080 working hours per year. This is the standard multiplier used by most HR departments."
           },
           {
-            question: "What does Bi-Weekly mean?",
-            answer:
-              "Bi-weekly means you are paid every two weeks. There are 52 weeks in a year, which means there are 26 bi-weekly pay periods in a year. This is different from 'semi-monthly', where you are paid exactly twice a month (24 times a year).",
+            question: "Does this calculator handle overtime?",
+            answer: "No. This tool calculates base salary. For overtime, you should multiply your calculated 'Hourly Equiv' by 1.5 and add that to your gross total manually."
           },
+          {
+            question: "Why is my take-home pay so much lower?",
+            answer: "Our calculator shows 'Gross' pay. In most cases, your 'Net' (take-home) pay will be 20% to 30% lower due to income taxes, FICA, and insurance costs."
+          },
+          {
+            question: "How do I calculate salary for a 4-day workweek?",
+            answer: "Simple! Change the 'Hours/Week' field to 32 (8 hours × 4 days). The calculator will adjust the hourly value to reflect that you are achieving the same annual pay in fewer hours."
+          }
         ]}
         relatedCalculators={[
           {
+            name: "Federal Income Tax Calculator",
+            path: "/federal-income-tax-calculator",
+            desc: "Convert your gross salary into actual take-home pay.",
+          },
+          {
+            name: "Debt-to-Income Ratio Calculator",
+            path: "/debt-to-income-ratio-calculator",
+            desc: "See how your new salary affects your ability to borrow.",
+          },
+          {
             name: "Rent Calculator",
             path: "/rent-calculator",
-            desc: "Discover exactly how much rent you can afford based on your calculated income.",
+            desc: "Use your monthly gross income to see what rent you can afford.",
           },
           {
-            name: "Auto Loan Calculator",
-            path: "/auto-loan-calculator",
-            desc: "See what monthly car payment fits into your new salary budget.",
-          },
-          {
-            name: "Payment Calculator",
-            path: "/payment-calculator",
-            desc: "Calculate exact monthly loan payments to see how much debt you can handle.",
-          },
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            }]}
+            name: "Mortgage Calculator",
+            path: "/mortgage-calculator",
+            desc: "Plan a home purchase based on your annual income results.",
+          }
+        ]}
       />
     </div>
   );

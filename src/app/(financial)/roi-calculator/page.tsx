@@ -38,268 +38,288 @@ export default function ROICalculator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-      <h1 className="text-4xl font-extrabold mb-4 text-emerald-900 border-b pb-4">
-        ROI Calculator
-      </h1>
-      <p className="mb-8 text-gray-600 text-lg">
-        Calculate your exact Return on Investment and Annualized ROI across any
-        time period.
-      </p>
+    <div className="max-w-5xl mx-auto p-4 md:p-12 bg-white rounded-[3.5rem] shadow-2xl border border-emerald-50">
+      <div className="text-center mb-16 relative">
+        <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
+        <h1 className="text-5xl md:text-7xl font-black mb-6 text-emerald-950 tracking-tight relative z-10">
+          ROI <span className="text-emerald-500 italic">Forecaster</span>
+        </h1>
+        <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+          The ultimate yardstick for capital efficiency. Measure absolute returns and annualized performance (CAGR) across any asset class.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Inputs */}
-        <div className="bg-emerald-50 p-6 rounded-xl border border-emerald-100 space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+        {/* Input Matrix */}
+        <div className="lg:col-span-5 bg-emerald-50/50 p-10 rounded-[3rem] border border-emerald-100 shadow-inner space-y-10">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Amount Invested ($)
+            <label className="block text-[10px] font-black text-emerald-800 uppercase tracking-[0.2em] mb-4">
+              Initial Capital Invested ($)
             </label>
             <input
               type="number"
               value={amountInvested}
               onChange={(e) => setAmountInvested(e.target.value)}
-              className="w-full rounded-lg border-gray-300 p-3 shadow-sm focus:border-emerald-500 font-bold text-xl"
+              className="w-full rounded-[1.5rem] border-emerald-100 p-5 shadow-sm focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 font-black text-3xl text-slate-800"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Amount Returned ($)
+            <label className="block text-[10px] font-black text-emerald-800 uppercase tracking-[0.2em] mb-4">
+              Final Value / Amount Returned ($)
             </label>
             <input
               type="number"
               value={amountReturned}
               onChange={(e) => setAmountReturned(e.target.value)}
-              className="w-full rounded-lg border-gray-300 p-3 shadow-sm focus:border-emerald-500 font-bold text-xl"
+              className="w-full rounded-[1.5rem] border-emerald-100 p-5 shadow-sm focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 font-bold text-2xl text-emerald-600"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Investment Duration (Years)
+            <label className="block text-[10px] font-black text-emerald-800 uppercase tracking-[0.2em] mb-4">
+              Time Horizon (Total Years)
             </label>
             <input
               type="number"
-              step="0.5"
+              step="0.1"
               value={investmentTimeYears}
               onChange={(e) => setInvestmentTimeYears(e.target.value)}
-              className="w-full rounded-lg border-gray-300 p-3 shadow-sm focus:border-emerald-500 font-medium"
+              className="w-full rounded-[1.5rem] border-emerald-100 p-5 shadow-sm focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 font-bold text-xl text-slate-700"
             />
-            <p className="text-xs text-gray-500 mt-1">
-              Required to calculate annualized ROI.
-            </p>
+            <p className="text-[10px] text-slate-400 mt-3 font-bold italic text-right">Crucial for Annualized ROI (CAGR) accuracy.</p>
           </div>
 
           <button
             onClick={calculateROI}
-            className="w-full bg-emerald-600 text-white font-bold py-4 rounded-xl hover:bg-emerald-700 transition shadow-lg uppercase tracking-wide mt-2"
+            className="w-full bg-emerald-950 text-white font-black py-6 rounded-[2rem] hover:bg-emerald-600 transition-all shadow-2xl shadow-emerald-900/20 uppercase tracking-[0.25em] text-xs active:scale-95 flex items-center justify-center gap-3"
           >
-            Calculate ROI
+            Execute Performance Audit <span>→</span>
           </button>
         </div>
 
-        {/* Results */}
-        <div className="bg-white border-2 border-emerald-100 rounded-xl overflow-hidden shadow-sm flex flex-col justify-center p-8">
+        {/* Analytical Results Grid */}
+        <div className="lg:col-span-7 flex flex-col gap-8">
           {result !== null ? (
-            <div className="w-full text-center space-y-8">
-              <div>
-                <h3 className="text-emerald-800 font-semibold uppercase tracking-wider text-sm mb-2">
-                  Total ROI
-                </h3>
-                <div
-                  className={`text-6xl font-black ${result.roi >= 0 ? "text-emerald-600" : "text-red-500"} border-b border-emerald-100 pb-4`}
-                >
-                  {result.roi > 0 && "+"},
-                  {result.roi.toFixed(2)}%
+            <>
+              <div className="bg-white border-2 border-emerald-50 rounded-[3rem] p-10 flex flex-col justify-between shadow-sm relative overflow-hidden group">
+                <div className="absolute bottom-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full -mr-20 -mb-20 blur-2xl"></div>
+                <div>
+                  <h3 className="text-slate-400 font-black uppercase tracking-widest text-[11px] mb-8 flex items-center gap-2">
+                    <span className="w-4 h-0.5 bg-emerald-500"></span> Total Absolute ROI
+                  </h3>
+                  <div className={`text-7xl lg:text-8xl font-black tabular-nums tracking-tighter ${result.roi >= 0 ? "text-slate-900" : "text-red-600"}`}>
+                    {result.roi > 0 && "+"}
+                    {result.roi.toLocaleString("en-US", {
+                      minimumFractionDigits: 1,
+                      maximumFractionDigits: 1,
+                    })}%
+                  </div>
+                </div>
+                <div className="mt-12 bg-emerald-900 text-white p-6 rounded-2xl flex justify-between items-center">
+                   <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400">Net Capital Gain</span>
+                   <span className="text-2xl font-black">${result.netReturn.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0})}</span>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 text-left">
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                  <h4 className="text-gray-500 font-bold uppercase text-xs mb-1">
-                    Net Investment Gain
-                  </h4>
-                  <p
-                    className={`text-2xl font-bold ${result.netReturn >= 0 ? "text-emerald-700" : "text-red-600"}`}
-                  >
-                    {result.netReturn >= 0 ? "+" : "-"}$
-                    {Math.abs(result.netReturn).toLocaleString("en-US", {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
-                  </p>
+              <div className="bg-emerald-950 text-white rounded-[3rem] p-10 flex flex-col justify-between shadow-2xl relative overflow-hidden transition-all duration-500">
+                <div className="absolute top-0 right-0 p-8 grayscale opacity-10 group-hover:opacity-100 transition duration-500">📈</div>
+                <div>
+                   <h3 className="text-emerald-500 font-black uppercase tracking-widest text-[11px] mb-6">Annualized ROI (CAGR)</h3>
+                   <div className="text-5xl font-black text-white tabular-nums tracking-tighter">
+                     {result.annualizedRoi.toLocaleString("en-US", {
+                       minimumFractionDigits: 2,
+                       maximumFractionDigits: 2,
+                     })}%
+                     <span className="text-xl text-emerald-500 font-bold ml-2">/yr</span>
+                   </div>
                 </div>
-                <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
-                  <h4 className="text-emerald-800 font-bold uppercase text-[11px] tracking-wide mb-1">
-                    Annualized ROI
-                  </h4>
-                  <p
-                    className={`text-2xl font-bold ${result.annualizedRoi >= 0 ? "text-gray-900" : "text-red-600"}`}
-                  >
-                    {result.annualizedRoi > 0 && "+"},
-                    {result.annualizedRoi.toFixed(2)}%{" "}
-                    <span className="text-xs text-gray-500 font-normal">
-                      /yr
-                    </span>
-                  </p>
+                <div className="mt-8 pt-8 border-t border-white/10">
+                   <p className="text-slate-400 text-sm font-medium leading-relaxed italic">
+                      This investment grew by an average of <strong>{result.annualizedRoi.toFixed(2)}%</strong> every single year. For context, the S&P 500 historical average is ~10%.
+                   </p>
                 </div>
               </div>
-            </div>
+            </>
           ) : (
-            <div className="h-full flex items-center justify-center text-center text-emerald-400 font-medium">
-              Enter your initial investment and final return to view your exact
-              ROI.
+            <div className="h-full bg-slate-50 border border-dashed border-slate-200 rounded-[3rem] flex flex-col items-center justify-center p-12 text-center group">
+               <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center text-5xl mb-6 shadow-xl group-hover:rotate-12 transition-transform duration-700">📊</div>
+               <h3 className="text-2xl font-black text-slate-900 mb-2">Portfolio Data Requested</h3>
+               <p className="text-slate-400 text-sm max-w-xs font-medium leading-relaxed">Input your cost basis and exit value to visualize your real-world alpha generation and capital velocity.</p>
             </div>
           )}
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "ROI Calculator",
-            operatingSystem: "All",
-            applicationCategory: "FinanceApplication",
-            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-          }),
-        }}
-      />
-
       <CalculatorSEO
-        title="ROI Calculator"
+        title="Professional ROI Analysis: Mastering Capital Efficiency and CAGR"
         whatIsIt={
           <>
-            <p>
-              Our <strong>Return on Investment (ROI) Calculator</strong> is a
-              core financial benchmark tool allowing investors to evaluate the
-              absolute performance and profitability of an investment relative
-              to its initial cost. A positive ROI indicates financial gain,
-              while a negative ROI signifies a loss.
+            <p className="text-lg leading-relaxed mb-6">
+              The <strong>Return on Investment (ROI) Calculator</strong> is the foundational analytical instrument for assessing the profitability and efficiency of capital allocation. In the simplest terms, ROI measures the magnitude of profit or loss relative to the capital invested. It is the primary metric used by venture capitalists, real estate investors, and corporate finance officers to perform "apples-to-apples" comparisons between vastly different opportunities.
             </p>
-            <p>
-              Crucially, this tool goes beyond simple ROI by calculating your{" "}
-              <strong>Annualized ROI</strong>. Earning a 50% return is
-              incredible if it happens in 1 year, but terrible if it took 30
-              years to achieve. Annualized ROI mathematically smooths your
-              return over the lifespan of the investment to give you a true
-              apples-to-apples comparison metric.
+            <p className="leading-relaxed mb-6">
+              Critical to professional analysis is the distinction between <strong>Nominal Return</strong> and <strong>Annualized ROI (CAGR)</strong>. While a raw percentage tells you how much money you made, it ignores the element of time. An investment that returns 50% in one year is fundamentally superior to one that returns 50% over five years. This calculator provides both figures, allowing you to bridge the gap between simple gains and professional performance tracking.
             </p>
-
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related Terms:</strong> Roi Calculator
+            <p className="leading-relaxed">
+              Whether you are evaluating a stock trade, a crypto venture, or a house flip, understanding your ROI is the only way to verify if your strategy is actually generating <strong>Alpha</strong> (outperformance) or if you would have been better served by a passive index fund.
             </p>
           </>
         }
+        comparisonTable={{
+          title: "Benchmarking Your ROI: Typical Returns by Asset Class",
+          headers: ["Asset Category", "Annualized Target", "Risk Profile", "Typical Lead Time"],
+          rows: [
+            ["Broad Market Index (S&P 500)", "8% - 10%", "Medium-High", "10+ Years"],
+            ["Real Estate Rental (Cash Flow)", "6% - 12%", "Medium", "5-7 Years"],
+            ["Venture Capital (Early Stage)", "25% - 40%", "Extremely High", "7-10 Years"],
+            ["U.S. Treasury Bonds (Safe)", "3% - 5%", "Very Low", "2-20 Years"],
+            ["High Yield Savings (Cash)", "0.5% - 4.5%", "Negligible", "Liquid (Daily)"],
+          ]
+        }}
         formula={
-          <>
-            <p>
-              ROI is calculated by taking the net profit of an investment,
-              dividing it by the initial cost, and multiplying by 100 to get a
-              percentage.
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 text-emerald-900 border border-emerald-100">
-              <p>
-                <strong>Total ROI</strong> = [(Final Value - Initial Cost) ÷
-                Initial Cost] × 100
+          <div className="space-y-12">
+            <section>
+              <h4 className="text-2xl font-black text-slate-900 mb-6">I. The Fundamental ROI Equation</h4>
+              <p className="text-slate-600 mb-8 italic">The basic percentage representing absolute gain relative to cost balance.</p>
+              <div className="bg-emerald-950 text-white p-10 rounded-[2.5rem] font-mono text-center text-3xl shadow-2xl border border-emerald-500/20">
+                ROI = [(Gain - Cost) / Cost] × 100
+              </div>
+            </section>
+            
+            <section>
+              <h4 className="text-2xl font-black text-slate-900 mb-6">II. The Annualized (CAGR) Equation</h4>
+              <p className="text-slate-600 mb-8 italic">Geometric progression formula used to 'smooth' returns over multiple years.</p>
+              <div className="bg-slate-900 text-white p-10 rounded-[2.5rem] font-mono text-center text-3xl shadow-2xl border border-slate-700">
+                CAGR = [(Final / Initial)^(1 / t)] - 1
+              </div>
+            </section>
+
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-black text-slate-400 uppercase tracking-widest text-center">
+              <li className="p-4 bg-slate-50 rounded-xl border border-slate-100">t = Time Horizon in Years</li>
+              <li className="p-4 bg-slate-50 rounded-xl border border-slate-100">Final = End Value (Including Dividends)</li>
+            </ul>
+          </div>
+        }
+        deepDive={
+          <div className="space-y-16">
+            <section>
+                <h4 className="text-4xl font-black text-slate-950 mb-8 border-l-8 border-emerald-900 pl-8 italic uppercase tracking-tighter">The "Net ROI" Trap: Transactional Friction</h4>
+                <p className="text-slate-600 leading-relaxed text-lg first-letter:text-5xl first-letter:font-black first-letter:text-emerald-900 first-letter:float-left first-letter:mr-3">
+                    Novice investors often overstate their ROI by failing to account for <strong>transactional friction</strong>. To get a professional result from this calculator, your "Amount Invested" must include every penny of cost: brokerage commissions, maintenance fees, property taxes, and closing costs. Similarly, your "Amount Returned" should be the figure <em>after</em> taxes (capital gains). A 15% ROI can quickly shrink to 9% after Uncle Sam takes his cut.
+                </p>
+            </section>
+
+            <section className="bg-emerald-50 p-12 rounded-[4rem] border border-emerald-100 shadow-inner">
+               <h4 className="text-2xl font-black text-emerald-900 mb-6 font-serif">Opportunity Cost: The Invisible Benchmark</h4>
+               <p className="text-slate-700 leading-relaxed mb-6 font-medium">
+                 The most important concept in ROI analysis is **Opportunity Cost**. If you spent three years and $50,000 to earn a 12% total ROI, that might feel like a win. However, if a risk-free bond was paying 5% annually, you effectively earned very little "premium" for the risk you took. 
+               </p>
+               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div className="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
+                    <span className="text-xs font-black text-emerald-600 uppercase mb-2 block">Case A: Active Business</span>
+                    <p className="text-sm text-slate-500">25% ROI required to justify the massive time and operational risk commitment.</p>
+                  </div>
+                  <div className="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
+                    <span className="text-xs font-black text-emerald-600 uppercase mb-2 block">Case B: Passive Index</span>
+                    <p className="text-sm text-slate-500">10% ROI is a major win because it requires zero time and has high historical reliability.</p>
+                  </div>
+               </div>
+            </section>
+
+            <section>
+              <h4 className="text-3xl font-black text-slate-900 mb-6">Total Return vs. Price Appreciation</h4>
+              <p className="text-slate-600 leading-relaxed uppercase text-sm font-bold tracking-wide mb-4">Crucial distinction for real estate and stocks</p>
+              <p className="text-slate-600 leading-relaxed">
+                When using this calculator for rental properties or dividend stocks, you must include the <strong>income generated</strong> during the hold period. If you bought a property for $200k and sold for $220k, your price ROI is 10%. But if you also collected $30k in net rent, your <strong>Total ROI</strong> is actually 25% ($250k return on $200k). Always calculate based on total capital flow.
               </p>
-              <p className="border-t border-emerald-100 pt-4 mt-4 text-sm font-sans text-left text-gray-700">
-                <strong>Annualized ROI Formula:</strong>
-                <br />
-                Annualized ROI = [(Final Value ÷ Initial Cost) ^ (1 ÷ Years)] -
-                1
-              </p>
-            </div>
-          </>
+            </section>
+          </div>
         }
         example={
-          <>
-            <p>
-              Imagine you buy stock for <strong>$10,000</strong>. You hold that
-              stock and reinvest dividends for exactly <strong>2 years</strong>,
-              and then sell it all for <strong>$12,500</strong>.
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>Step 1 (Find Net Return):</strong> $12,500 - $10,000 ={" "}
-                <strong>$2,500</strong>.
-              </li>
-              <li>
-                <strong>Step 2 (Find Total ROI):</strong> ($2,500 ÷ $10,000) ×
-                100 = <strong>25%</strong>.
-              </li>
-              <li>
-                <strong>Step 3 (Find Annualized ROI):</strong> Using the formula
-                [(12,500 ÷ 10,000)^(1/2)] - 1.
-              </li>
-              <li>
-                <strong>Result:</strong> Your Total ROI was 25%, but your real
-                Annualized ROI was exactly <strong>11.80% per year</strong>.
-              </li>
-            </ul>
-          </>
+          <div className="bg-slate-950 text-white p-12 rounded-[4rem] shadow-2xl relative overflow-hidden">
+             <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-[100px]"></div>
+             <div className="relative z-10">
+                <h5 className="font-black text-emerald-500 uppercase tracking-widest text-[10px] mb-8">Scenario: The 3-Year Growth Play</h5>
+                <p className="text-xl font-medium leading-relaxed mb-10 text-slate-300">
+                  You invested <strong>$25,000</strong> into a diversified crypto-tech fund. After exactly <strong>36 months (3 years)</strong>, you exited the position with <strong>$44,500</strong>.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                   <div className="p-8 bg-white/5 border border-white/10 rounded-3xl text-center">
+                      <span className="block text-[10px] font-black text-slate-500 uppercase mb-2">Absolute Gain</span>
+                      <div className="text-3xl font-black text-white">+$19,500</div>
+                   </div>
+                   <div className="p-8 bg-white/5 border border-white/10 rounded-3xl text-center">
+                      <span className="block text-[10px] font-black text-slate-500 uppercase mb-2">Total ROI</span>
+                      <div className="text-3xl font-black text-emerald-500">78.00%</div>
+                   </div>
+                   <div className="p-8 bg-emerald-600 rounded-3xl text-center shadow-lg">
+                      <span className="block text-[10px] font-black text-emerald-100 uppercase mb-2 text-center">CAGR (Annualized)</span>
+                      <div className="text-3xl font-black text-white">21.19%</div>
+                   </div>
+                </div>
+                <p className="mt-10 text-slate-500 text-xs italic font-medium leading-relaxed">
+                   Analysis: While 78% is the headline number, the 21.19% Annualized ROI is what professional managers look at. It indicates that you doubled the typical stock market return every year for three years.
+                </p>
+             </div>
+          </div>
         }
         useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Stock Market Analysis:</strong> Reviewing your brokerage
-              statements to determine if your mutual funds are beating the
-              standard S&P 500 average benchmark (typically around 9-10%
-              annualized).
-            </li>
-            <li>
-              <strong>Real Estate Flipping:</strong> Calculating whether the
-              capital gained from renovating and selling a distressed property
-              was actually worth the capital and time invested.
-            </li>
-            <li>
-              <strong>Business Marketing:</strong> Determining if a $5,000
-              advertising campaign that generated $8,000 in new sales was a
-              successful allocation of marketing budget.
-            </li>
-          </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+             {[
+               { icon: "🏛️", title: "Real Estate", text: "Evaluate house flips or rental yield efficiency." },
+               { icon: "💹", title: "Stock Options", text: "Track high-velocity returns on derivative strategies." },
+               { icon: "📢", title: "Marketing Spend", text: "Measure CAC vs LTV via campaign ROI." },
+               { icon: "🎓", title: "Education", text: "Estimate ROI on degree tuition vs. salary lift." }
+             ].map((u, i) => (
+                <div key={i} className="bg-slate-50 p-8 rounded-[2rem] border border-slate-200 hover:bg-white hover:shadow-xl hover:border-emerald-200 transition-all duration-500 group">
+                   <div className="text-3xl mb-4 group-hover:scale-125 transition duration-500">{u.icon}</div>
+                   <h6 className="font-black text-slate-900 mb-2 uppercase text-[10px] tracking-widest">{u.title}</h6>
+                   <p className="text-xs text-slate-500 font-medium leading-relaxed">{u.text}</p>
+                </div>
+             ))}
+          </div>
         }
+        glossary={[
+          { term: "Alpha", definition: "A measure of the active return on an investment, the performance above a market index benchmark (β)." },
+          { term: "Cost Basis", definition: "The original value of an asset for tax purposes, adjusted for splits, dividends, and return of capital distributions." },
+          { term: "Unrealized Gain", definition: "A profit that exists on paper resulting from an investment which has not yet been sold for cash." },
+          { term: "Holding Period", definition: "The total amount of time an investment is held by an investor, between the purchase and sale." },
+          { term: "Hurdle Rate", definition: "The minimum rate of return on a project or investment required by a manager or investor." },
+          { term: "Beta (β)", definition: "A measure of an investment's volatility or systemic risk in comparison to the market as a whole." },
+          { term: "Realized ROI", definition: "Profit earned from an investment that has been sold and converted to cash." },
+          { term: "Soft Costs", definition: "Non-transactional expenses like time, research, and legal overhead that impact true investment efficiency." },
+          { term: "Exit Value", definition: "The total price at which an investment is sold, or the projected market value at a future date." },
+          { term: "Geometric Return", definition: "The average compound return rate of an investment over multiple periods (CAGR)." },
+        ]}
         faqs={[
           {
-            question:
-              "Why is Annualized ROI lower than dividing Total ROI by the years?",
-            answer:
-              "If you have a 25% Total ROI over 2 years, dividing by 2 gives you 12.5%. However, the true Annualized ROI is 11.80%. This is because of the mathematical effect of Compound Growth. You have more money working for you in year 2 than you did in year 1, meaning the growth curve is exponential, not perfectly linear.",
+            question: "What is a 'Good' ROI for an individual investor?",
+            answer: "For passive public market investing (stocks/bonds), a 7-10% annualized ROI is considered the gold standard. For active real estate or small business ventures, you should generally target 15-25% to account for the increased labor and risk."
           },
           {
-            question: "What is a 'Good' ROI?",
-            answer:
-              "A 'good' ROI depends entirely on your risk tolerance. Historically, the US Stock Market (S&P 500) returns about 9% to 10% annually before inflation. Therefore, passive investors usually consider an Annualized ROI of 10% to be excellent. High-risk investments, like crypto or startup angel investing, expect significantly higher potential ROIs to justify the heavy risk of losing the entire principle.",
+            question: "How do I calculate ROI with dividends?",
+            answer: "Add the total cash received from dividends during the hold period to the final sale price (Amount Returned). For example, if you sell for $100 and got $5 in dividends, your returned amount is $105."
           },
           {
-            question: "Does this calculator account for inflation?",
-            answer:
-              "No. This tool calculates 'Nominal ROI' (the raw numbers). To find your 'Real ROI', you would need to manually subtract the national inflation rate from your Annualized ROI result.",
+            question: "Is ROI the same as Profit Margin?",
+            answer: "No. Profit margin measures how much of your revenue you keep on a single sale. ROI measures how much money you made relative to the total capital you put into the project or asset."
           },
+          {
+            question: "Does this calculator account for compounding?",
+            answer: "The 'Total ROI' is a simple percentage. However, the 'Annualized ROI' (CAGR) mathematically treats the return as if it were compounded annually, providing a consistent yearly growth rate."
+          },
+          {
+            question: "What is the 'Rule of 72'?",
+            answer: "A quick mental math trick: Divide 72 by your expected Annualized ROI to find how many years it will take for your money to double. (e.g., 72 / 10% = 7.2 years)."
+          }
         ]}
         relatedCalculators={[
-          {
-            name: "Compound Interest Calculator",
-            path: "/compound-interest-calculator",
-            desc: "Project future investment growth using recursive compound interest.",
-          },
-          {
-            name: "Investment Calculator",
-            path: "/investment-calculator",
-            desc: "Predict future portfolio values based on recurring monthly contributions.",
-          },
-          {
-            name: "Present Value Calculator",
-            path: "/present-value-calculator",
-            desc: "Calculate what a future sum of money is actually worth in today's dollars.",
-          },
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            }]}
+          { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "Project how consistent returns turn a small sum into millions over decades." },
+          { name: "Investment Calculator", path: "/investment-calculator", desc: "Model your portfolio growth based on specific ROI and contribution targets." },
+          { name: "Inflation Calculator", path: "/inflation-calculator", desc: "Calculate your 'Real' ROI after accounting for currency devaluation." },
+          { name: "Salary Calculator", path: "/salary-calculator", desc: "Analyze the ROI on your time—calculate your true hourly net rate." }
+        ]}
       />
     </div>
   );

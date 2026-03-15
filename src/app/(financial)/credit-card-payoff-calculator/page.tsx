@@ -292,134 +292,182 @@ export default function CreditCardPayoffCalculator() {
           }),
         }}
       />
-
-      <CalculatorSEO
-        title="Credit Card Payoff Calculator"
+ 
+       <CalculatorSEO
+        title="Credit Card Payoff Calculator & Debt Freedom Planner"
         whatIsIt={
           <>
-            <p>
-              A <strong>Credit Card Payoff Calculator</strong> is an essential
-              personal finance tool designed to help you build a strategy to
-              eliminate high-interest credit card debt. It shows you the math
-              behind your debt repayment.
+            <p className="text-lg leading-relaxed mb-4">
+              A <strong>Credit Card Payoff Calculator</strong> is a psychological and financial defensive tool designed to help you escape the "Minimum Payment Trap." Unlike structured installment loans (like mortgages or auto loans), credit card debt is <strong>revolving</strong>, meaning the interest compounds daily and the minimum payment requirements are designed to keep you in debt for as long as possible.
             </p>
-            <p>
-              You can use it in two distinct modes: seeing how long it will take
-              to pay off a balance using a fixed monthly payment, or discovering
-              exactly how much you need to pay each month to be completely
-              debt-free by a specific target date.
+            <p className="leading-relaxed mb-4">
+              Our calculator provides two powerful planning modes. You can either determine how long it will take to reach $0 balance using a <strong>fixed monthly payment</strong>, or you can set a "Freedom Date" and find out the exact <strong>extra payment</strong> required to hit that target. By visualizing the total interest costs, you can make informed decisions about debt consolidation or lifestyle adjustments.
             </p>
-
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related Terms:</strong> Credit Card Payoff Calculator
+            <p className="leading-relaxed">
+              Don't let high APRs dictate your future. Use this tool to map out your journey to being 100% debt-free.
             </p>
           </>
         }
+        comparisonTable={{
+          title: "Average Credit Card APR by Credit Score (2024)",
+          headers: ["Credit Category", "Score Range", "Average APR", "Interest Impact", "Strategy"],
+          rows: [
+            ["Excellent", "740 - 850", "15.5% - 19.5%", "Moderate", "0% APR Transfers"],
+            ["Good", "670 - 739", "21.0% - 24.5%", "High", "Debt Avalanche"],
+            ["Fair", "580 - 669", "25.0% - 28.5%", "Very High", "Consolidation Loan"],
+            ["Poor", "300 - 579", "29.9%+", "Extreme", "Credit Counseling"],
+          ]
+        }}
         formula={
-          <>
-            <p>
-              When calculating the required fixed monthly payment (P) to pay off
-              a balance (B) in a specific number of months (n), with an annual
-              interest rate (R), the calculator uses the standard amortization
-              formula:
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-xl shadow-sm my-4 overflow-x-auto">
-              P = B * [ r(1 + r)^n ] / [ (1 + r)^n - 1 ]
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700">
+            <div className="space-y-4">
+              <h4 className="font-bold text-indigo-900 border-b border-indigo-100 pb-2">1. The Payoff Timeframe</h4>
+              <p className="text-sm">Solving for 'n' (number of months) using a logarithmic formula:</p>
+              <div className="bg-slate-900 p-6 rounded-xl font-mono text-white text-center text-sm shadow-md overflow-x-auto">
+                n = -log(1 - (B × r / P)) / log(1 + r)
+              </div>
+              <p className="text-[10px] text-gray-400 italic">B = Balance, r = Monthly Interest (APR/12), P = Payment</p>
             </div>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>P:</strong> Target fixed monthly payment
-              </li>
-              <li>
-                <strong>B:</strong> Total current credit card balance
-              </li>
-              <li>
-                <strong>r:</strong> Monthly interest rate (APR / 12)
-              </li>
-              <li>
-                <strong>n:</strong> Number of months until desired payoff
-              </li>
-            </ul>
-          </>
+            <div className="space-y-4">
+              <h4 className="font-bold text-indigo-900 border-b border-indigo-100 pb-2">2. Required Payment Formula</h4>
+              <p className="text-sm">Calculating the fixed payment needed for a specific end date:</p>
+              <div className="bg-indigo-900 p-6 rounded-xl font-mono text-white text-center text-sm shadow-md overflow-x-auto">
+                P = B × [r(1+r)^n] / [(1+r)^n - 1]
+              </div>
+            </div>
+          </div>
+        }
+        deepDive={
+          <div className="space-y-12 text-gray-700">
+            <section>
+              <h4 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span className="w-12 h-12 bg-indigo-100 text-indigo-900 rounded-2xl flex items-center justify-center mr-4 shadow-sm font-black italic">!</span>
+                The Minimum Payment Trap
+              </h4>
+              <p className="leading-relaxed">
+                Most credit card issuers set your minimum payment at interest plus only 1% of your principal. If you owe $5,000 at 22% APR and only pay the minimum, it could take over <strong>20 years</strong> to pay it off and cost you more in interest than the original purchase. Our calculator assumes you will pay a <strong>fixed amount</strong>, which is the fastest way to accelerate your progress without changing your budget month-to-month.
+              </p>
+            </section>
+
+            <section className="bg-gradient-to-br from-indigo-900 to-slate-800 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-400 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
+               <h4 className="text-xl font-bold mb-4 text-indigo-300 uppercase tracking-widest">Avalanche vs. Snowball Method</h4>
+               <p className="leading-relaxed mb-6">
+                 Should you pay off the card with the highest APR first (<strong>Avalanche</strong>) or the one with the smallest balance (<strong>Snowball</strong>)? Historically, the Avalanche method saves the most money globally. Use this calculator to see exactly how much interest you save by increasing your monthly payment on your highest-rate card by just $100.
+               </p>
+               <div className="p-4 bg-white/10 rounded-xl border border-white/20 text-xs italic">
+                 Analytic Tip: Focus 100% of your extra cash on your highest APR card while maintaining minimums on others to maximize your ROI.
+               </div>
+            </section>
+
+            <section>
+              <h4 className="text-2xl font-bold text-gray-900 mb-6">0% Balance Transfer Strategy</h4>
+              <p className="leading-relaxed">
+                If your calculator results show a multi-year payoff and thousands in interest, look for a <strong>0% APR Balance Transfer</strong> offer. Even with a 3-5% transfer fee, you can stop the bleeding of 24%+ interest for 12-21 months. Once transferred, use this calculator with a 0% interest rate to see how much faster your debt vanishes when 100% of your payment goes toward the principal.
+              </p>
+            </section>
+          </div>
         }
         example={
-          <>
-            <p>
-              Let’s say you have a <strong>$5,000</strong> balance on a card
-              with a <strong>18.99% APR</strong>.
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>Scenario A:</strong> You pledge to pay exactly{" "}
-                <strong>$250</strong> per month. It will take you exactly{" "}
-                <strong>25 months</strong> to pay it off, and you will pay{" "}
-                <strong>$1,053.40</strong> in total interest.
-              </li>
-              <li>
-                <strong>Scenario B:</strong> You want to be debt-free in exactly{" "}
-                <strong>12 months</strong>. You must make a fixed monthly
-                payment of exactly <strong>$460.84</strong>, resulting in only{" "}
-                <strong>$530.04</strong> in paid interest.
-              </li>
-            </ul>
-          </>
+          <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-indigo-50 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-2 h-full bg-indigo-500"></div>
+            <h5 className="font-black text-gray-900 uppercase tracking-widest text-xs mb-8">Case Study: The $5,000 Challenge</h5>
+            <div className="space-y-6">
+              <div className="flex justify-between items-center border-b border-gray-100 pb-4">
+                <span className="text-gray-500 font-medium">Balance & APR</span>
+                <span className="font-bold text-gray-900">$5,000 at 21%</span>
+              </div>
+              <div className="flex justify-between items-center border-b border-gray-100 pb-4">
+                <span className="text-gray-500 font-medium">Scenario A (Fixed $150/mo)</span>
+                <span className="font-bold text-rose-600">54 Mo / $2,834 Int.</span>
+              </div>
+               <div className="flex justify-between items-center border-b border-gray-100 pb-4">
+                 <span className="text-gray-500 font-medium">Scenario B (Fixed $350/mo)</span>
+                 <span className="font-bold text-indigo-600">17 Mo / $817 Int.</span>
+               </div>
+              <div className="grid grid-cols-1 gap-4 mt-8">
+                <div className="bg-indigo-50 p-6 rounded-2xl text-center">
+                  <span className="block text-[10px] text-indigo-600 font-bold uppercase mb-1">Total Savings</span>
+                  <span className="text-3xl font-black text-indigo-900">$2,017 + 3 Years of Life</span>
+                </div>
+              </div>
+            </div>
+            <p className="mt-8 text-xs text-gray-400 text-center italic">Result: Tripling your payment doesn't just cut the time in half—it slashes it by 68%.</p>
+          </div>
         }
         useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Snowball/Avalanche Method Planning:</strong> Figure out
-              the exact numbers needed to aggressively tackle your
-              highest-interest debts first.
-            </li>
-            <li>
-              <strong>Avoiding Minimum Payment Traps:</strong> Credit card
-              companies calculate minimum payments to keep you in debt for
-              years; use this calculator to establish a real payoff timeline.
-            </li>
-            <li>
-              <strong>Budgeting for Financial Freedom:</strong> Adjust the
-              "Desired Months to Payoff" slider to see how much room you need to
-              make in your monthly budget to hit your debt-free target.
-            </li>
-          </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
+              <h6 className="font-bold text-gray-900 mb-2">Debt Aggregation</h6>
+              <p className="text-xs text-gray-500">Calculate the total time needed to clear all cards if you combine all current minimum payments into one "power payment."</p>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
+              <h6 className="font-bold text-gray-900 mb-2">Interest Avoidance</h6>
+              <p className="text-xs text-gray-500">Find the exact dollar amount needed monthly to pay off a holiday spending spree before the 0% promotional period ends.</p>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
+              <h6 className="font-bold text-gray-900 mb-2">Credit Score Boost</h6>
+              <p className="text-xs text-gray-500">Plan a payoff schedule to reach 30% credit utilization, which is the key threshold for significant credit score improvements.</p>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
+              <h6 className="font-bold text-gray-900 mb-2">Consolidation Comparison</h6>
+              <p className="text-xs text-gray-500">Determine if a personal loan at 12% APR is truly better than your current cards by comparing the total interest paid outputs.</p>
+            </div>
+          </div>
         }
+        glossary={[
+          { term: "APR (Annual Percentage Rate)", definition: "The yearly interest rate charged on your balance, including fees and costs associated with the credit line." },
+          { term: "Revolving Debt", definition: "A type of credit that does not have a fixed number of payments (unlike a car loan) and allows you to borrow up to a limit." },
+          { term: "Grace Period", definition: "The window of time (usually 21-25 days) where no interest is charged if the statement balance is paid in full." },
+          { term: "Residual Interest", definition: "Interest that continues to accrue on your daily balance between the statement closing date and the date you pay the bill." },
+          { term: "Credit Utilization", definition: "The ratio of your outstanding card balances to your total available credit limits; a major credit score factor." },
+          { term: "Default Rate", definition: "A much higher penalty APR (often 29.99%) triggered by missed or late payments." },
+          { term: "Principal", definition: "The original amount of money borrowed, separate from interest charges." },
+        ]}
         faqs={[
           {
-            question: "Why should I pay more than the minimum?",
-            answer:
-              "Minimum payments are often set to cover the month's interest plus just 1% to 2% of your principal balance. Paying only the minimum on thousands of dollars in debt can literally take decades to pay off, costing you double or triple the original amount in interest alone.",
+            question: "Why does my balance barely drop after a payment?",
+            answer: "If your APR is high (20%+), a large portion of your payment goes toward interest charges accrued over the last 30 days. Only the 'leftover' amount reduces the principal. This is why paying even $50 extra month can have a massive impact."
           },
           {
-            question:
-              "Does the calculator account for new purchases on the card?",
-            answer:
-              "No, this calculator assumes a fixed starting balance and assumes you will completely stop using the card for new purchases. If you continue adding new charges to the card, your timeline will significantly increase.",
+            question: "Is it better to pay once a month or twice?",
+            answer: "Because credit card interest is calculated based on your 'Average Daily Balance,' making two smaller payments (one on the 1st and one on the 15th) can actually save you a small amount of interest compared to one large payment on the 30th."
           },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
+          {
+            question: "Will paying off my card hurt my credit score?",
+            answer: "No. Paying off debt decreases your utilization ratio, which almost always improves your score. However, *closing* the account once it's paid off might slightly lower your score by reducing your total available credit and average age of accounts."
+          },
+          {
+            question: "What happens if I miss a payment during my payoff plan?",
+            answer: "Most issuers will revoke any promotional interest rates and may trigger a 'Penalty APR.' If you are on a strict payoff plan, a single missed payment can add months to your timeline."
+          },
+          {
+            question: "Should I use my savings to pay off my card?",
+            answer: "Generally, yes. If your savings account earns 4% interest but your credit card costs 24%, you are effectively losing 20% on that money. Paying off the card is a guaranteed 'return' of 24%."
+          }
+        ]}
         relatedCalculators={[
           {
             name: "Debt Payoff Calculator",
             path: "/debt-payoff-calculator",
-            desc: "Compare Snowball vs Avalanche payoff strategies for multiple debts.",
+            desc: "Compare Snowball vs Avalanche strategies for multiple cards.",
           },
           {
-            name: "Amortization Calculator",
-            path: "/amortization-calculator",
-            desc: "Generate full amortization schedules for structured loans.",
+            name: "Personal Loan Calculator",
+            path: "/personal-loan-calculator",
+            desc: "See if consolidating your cards into one low-interest loan makes sense.",
+          },
+          {
+            name: "Savings Goal Calculator",
+            path: "/savings-goal-calculator",
+            desc: "Plan what to do with your extra cash once your cards are at zero.",
           },
           {
             name: "Compound Interest Calculator",
             path: "/compound-interest-calculator",
-            desc: "See how investing that monthly payment instead builds immense wealth.",
-          },
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            }]}
+            desc: "See how much wealth you could build by investing your old monthly payment.",
+          }
+        ]}
       />
     </div>
   );

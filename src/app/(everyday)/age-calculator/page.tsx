@@ -230,144 +230,181 @@ export default function AgeCalculator() {
         title="Age Calculator"
         whatIsIt={
           <>
-            <p>
-              Our <strong>Age Calculator</strong> is a precision time-tracking
-              tool designed to calculate your exact chronological age down to
-              the day. While most people only know their age in years, this
-              calculator provides a comprehensive breakdown of your lifespan in
-              months, weeks, and total days.
+            <p className="text-lg leading-relaxed mb-4">
+              Our <strong>Age Calculator</strong> is a professional-grade chronological tracking tool engineered to provide precise, multi-dimensional calculations of your lifespan. While most standard birthday trackers only output your age in whole years, this sophisticated engine deconstructs your time on earth into years, months, days, weeks, and even total hours or minutes if desired.
             </p>
-            <p>
-              Beyond simple birth dates, the tool allows you to set a custom
-              "Target Date". This means you can calculate exactly how old
-              someone was on a specific date in history, or find out exactly how
-              old you will be when a future event occurs.
+            <p className="leading-relaxed mb-4">
+              The concept of "Age" is more than just a number; it is the fundamental metric used across medical, legal, and actuarial sciences to determine eligibility, health risks, and development milestones. Our tool uses the <strong>Gregorian Calendar standard</strong> to account for the irregularities of the solar year, ensuring that leap years and variable month lengths are factored into every calculation.
             </p>
-
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related Terms:</strong> Mileage Calculator, Body Fat
-              Percentage Calculator, Voltage Drop Calculator, Square Footage
-              Calculator, Percentage Formula, Age Calculator, Calendar
-              Calculator, Percentage Calculator Online, Fat Percentage
-              Calculator, Weight Loss Percentage Calculator, Percentage Increase
-              Calculator, Find Percentage, Wattage Calculator, Voltage Divider
-              Calculator, Percentage Calculator Formula
+            <p className="leading-relaxed">
+              Whether you are calculating a <strong>medical pedigree</strong> for a newborn infant, determining exact eligibility for <strong>retirement benefits</strong>, or simply curious about your 10,000th day on earth, this calculator provides the granular precision required for both official documentation and personal curiosity.
             </p>
           </>
         }
+        comparisonTable={{
+          title: "Age Milestones & Legal Frameworks",
+          headers: ["Milestone", "Traditional Age", "Significance", "Global Variation"],
+          rows: [
+            ["Infancy (Pediatric)", "0-2 Years", "Critical brain development & motor skills monitoring", "Standard across WHO"],
+            ["School Age", "5-6 Years", "Beginning of formal education & neuro-linguistic growth", "Varies by jurisdiction (4-7)"],
+            ["Legal Majority", "18 Years", "Rights to vote, contract, and full legal accountability", "Global standard (varies 15-21)"],
+            ["Silver Jubilees", "25 Years", "Quarter-century mark; peak physical/metabolic performance", "Cultural celebration"],
+            ["Early Retirement", "55-62 Years", "Eligibility for specific vocational/private pension drawdowns", "Highly country-specific"],
+            ["Senior / Golden Age", "65+ Years", "Standard geriatric threshold for universal state benefits", "Increasing in longevity regions"],
+          ]
+        }}
         formula={
           <>
-            <p>
-              Calculating exact age mathematically is more complex than simple
-              subtraction due to leap years and months having variable lengths
-              (28, 29, 30, or 31 days). Our algorithm follows standard Gregorian
-              calendar rules:
+            <p className="mb-4">
+              Chronological age calculation is mathematically deceptive because the "length" of a month and a year is not constant. Our algorithm solves this using a <strong>Recursive Subtraction Methodology</strong>:
             </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-sm shadow-sm my-4 overflow-x-auto space-y-4 text-pink-900 border border-pink-100">
-              <p>
-                <strong>Years:</strong> Target Year - Birth Year
-              </p>
-              <p>
-                <strong>Months:</strong> Target Month - Birth Month (Borrow 1
-                year/12 months if negative)
-              </p>
-              <p>
-                <strong>Days:</strong> Target Day - Birth Day (Borrow days from
-                the previous month based on exactly how many days were in that
-                specific historic month if negative)
-              </p>
+            <div className="bg-gradient-to-br from-pink-50 to-white p-6 rounded-xl border border-pink-100 shadow-sm mb-6">
+              <h4 className="font-bold text-pink-800 mb-3"> The Logic Core:</h4>
+              <ul className="space-y-3 font-mono text-sm">
+                <li className="flex gap-2">
+                  <span className="text-pink-500 font-bold">1.</span>
+                  <span>Years = (Target Year - Birth Year) - Correction(if month/day not reached)</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-pink-500 font-bold">2.</span>
+                  <span>Months = (Target Month - Birth Month) mod 12</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-pink-500 font-bold">3.</span>
+                  <span>Days = Target Day - Birth Day (With dynamic borrowing from the specific preceding month's maximum capacity: 28-31)</span>
+                </li>
+              </ul>
             </div>
+            <p className="text-sm text-gray-600 italic">
+              Note: This calculator specifically accounts for <strong>Leap Years</strong> (divisible by 4, except for years divisible by 100 but not 400), ensuring that people born on February 29th receive 100% accurate results.
+            </p>
           </>
+        }
+        deepDive={
+          <div className="space-y-6">
+            <section>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3">The Science of Chronological vs. Biological Age</h3>
+              <p className="text-gray-700 leading-relaxed">
+                While this calculator measures <strong>Chronological Age</strong>—the literal time passed since birth—modern science increasingly focuses on <strong>Biological Age (Epigenetic Age)</strong>. This refers to how well your cells and organs are functioning relative to your years. Factors like telomere length, DNA methylation (the 'Horvath Clock'), and inflammatory markers can cause a '30-year-old' to have a biological age of 25 or 40.
+              </p>
+            </section>
+            
+            <section>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3">Cultural Variations in Age Counting</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Not all cultures count age the same way. The <strong>International Standard</strong> starts age at zero on the day of birth. However, in traditional <strong>East Asian Age Reckoning</strong>, a person is considered one year old at birth (accounting for the time in the womb) and turns a year older on the Lunar New Year rather than their birthday.
+              </p>
+              <div className="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-500">
+                <p className="text-sm font-medium text-pink-900">
+                  <strong>Did you know?</strong> In many Western traditions, premature babies may have a "Corrected Age" used for development tracking during their first two years, subtracting the weeks since their original due date from their chronological age.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3">Data Privacy in Age Calculation</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Your birth date is a PII (Personally Identifiable Information) data point. Our age calculator is built with <strong>Local-Only Logic</strong>. We do not store, log, or transmit your birth date to any server. All calculations happen entirely within your browser's memory, ensuring your privacy is maintained while you calculate your personal data.
+              </p>
+            </section>
+          </div>
         }
         example={
           <>
-            <p>
-              Let's calculate the exact age of someone born on{" "}
-              <strong>July 15, 1990</strong>, if today's date is{" "}
-              <strong>March 5, 2024</strong>.
+            <p className="mb-4">
+              <strong>Case Study: Calculating a Precise Milestone (The Half-Year Mark)</strong>
             </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>Step 1 (Days):</strong> 5 - 15 = -10. Because it is
-                negative, we borrow the number of days in the previous month
-                (February 2024 had 29 days because it was a leap year). -10 + 29
-                = <strong>19 Days</strong>.
-              </li>
-              <li>
-                <strong>Step 2 (Months):</strong> Because we borrowed, March (3)
-                becomes February (2). 2 - 7 = -5. We borrow 1 year (12 months).
-                -5 + 12 = <strong>7 Months</strong>.
-              </li>
-              <li>
-                <strong>Step 3 (Years):</strong> Because we borrowed, 2024
-                becomes 2023. 2023 - 1990 = <strong>33 Years</strong>.
-              </li>
-              <li>
-                <strong>Result:</strong> Exactly 33 Years, 7 Months, and 19 Days
-                old.
-              </li>
-            </ul>
+            <p className="mb-4">
+              Imagine an individual born on <strong>August 20, 1985</strong>, who wants to know their exact age as of <strong>February 15, 2024</strong>.
+            </p>
+            <div className="space-y-3 border-l-2 border-gray-200 pl-4 py-2">
+              <p><strong>1. Year Calculation:</strong> 2024 - 1985 = 39. However, February hasn't reached August, so we subtract 1. <span className="text-pink-700 font-bold">Current Years: 38</span>.</p>
+              <p><strong>2. Month Calculation:</strong> February is the 2nd month. August is the 8th. Because we borrowed a year, we calculate (14 - 8) = <span className="text-pink-700 font-bold">5 Months</span>.</p>
+              <p><strong>3. Day Calculation:</strong> Day 15 minus Day 20 is negative (-5). We borrow from January (31 days). 31 - 5 = <span className="text-pink-700 font-bold">26 Days</span>.</p>
+              <p><strong>Final Verdict:</strong> The person is exactly 38 years, 5 months, and 26 days old.</p>
+            </div>
           </>
         }
         useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Genealogy and Ancestry:</strong> Calculating the exact age
-              of historical figures or ancestors at the time of significant
-              events (e.g., "How old was Abraham Lincoln when the Civil War
-              ended?").
-            </li>
-            <li>
-              <strong>Medical Pedigree:</strong> Calculating precise infant
-              ages. Pediatricians measure infant milestones in strict weeks and
-              months, not years.
-            </li>
-            <li>
-              <strong>Retirement Planning:</strong> Calculating exactly how many
-              total days remain until you reach the legal age required to draw a
-              pension or Social Security benefits.
-            </li>
-          </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+              <h4 className="font-bold text-gray-800 mb-2">Legal Adulthood</h4>
+              <p className="text-sm text-gray-600">Calculating the exact day an individual turns 18 or 21 to gain legal rights like voting, property ownership, or the legal drinking age.</p>
+            </div>
+            <div className="p-4 bg-pink-50 rounded-xl border border-pink-100">
+              <h4 className="font-bold text-pink-800 mb-2">Pediatric Milestones</h4>
+              <p className="text-sm text-gray-600">Parents and doctors use precise age in months and weeks to track growth charts and timing for vaccinations or developmental tests.</p>
+            </div>
+            <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+              <h4 className="font-bold text-gray-800 mb-2">Insurance & Annuities</h4>
+              <p className="text-sm text-gray-600">Actuaries and insurance brokers require exact age to calculate risk premiums, life expectancy, and annuity payout schedules.</p>
+            </div>
+            <div className="p-4 bg-pink-50 rounded-xl border border-pink-100">
+              <h4 className="font-bold text-pink-800 mb-2">Travel & Visas</h4>
+              <p className="text-sm text-gray-600">Calculating exact age on the date of travel for visa applications or child-fare eligibility on airlines and trains.</p>
+            </div>
+          </div>
         }
+        glossary={[
+          { term: "Chronological Age", definition: "The total time elapsed from birth to a given date, usually measured in years, months, and days." },
+          { term: "Leap Year", definition: "A year containing one additional day (Feb 29) to keep the calendar year synchronized with the astronomical year." },
+          { term: "Gregorian Calendar", definition: "The internationally accepted civil calendar used for standard date and time keeping." },
+          { term: "Corrected Age", definition: "An age calculation for premature infants that adjusts for their early birth relative to their due date." },
+          { term: "Anniversary", definition: "The annual recurrence of a date that marks an event or occasion of importance, such as a birthday." },
+          { term: "Longevity", definition: "Long life or the length of individual life; often used in the context of statistical life expectancy." },
+          { term: "PII", definition: "Personally Identifiable Information—data that can be used to distinguish or trace an individual's identity." },
+          { term: "Actuarial Science", definition: "The discipline that applies mathematical and statistical methods to assess risk in insurance and finance." },
+          { term: "Circadian Rhythm", definition: "The natural internal process that regulates the sleep-wake cycle and repeats on each rotation of the Earth." },
+          { term: "Solar Year", definition: "The time it takes for the Earth to complete one orbit around the Sun (approximately 365.24 days)." },
+        ]}
         faqs={[
           {
-            question:
-              "Why does my age in 'Total Days' vary slightly from my own math?",
-            answer:
-              "If you simply multiply your age in years by 365 to find your total days alive, your math will be wrong. Our calculator is perfectly accurate because it automatically detects and accounts for every single Leap Day (February 29th) that has occurred since your exact year of birth.",
+            question: "Why does my age stay the same even on my birthday?",
+            answer: "Technically, you turn a year older at the exact time of your birth. Most people celebrate the entire 'day' of their birthday, but mathematically, you are X years and 0 days old the moment the date changes to your birth date."
           },
           {
-            question: "How does the 'Target Date' feature work?",
-            answer:
-              "The target date defaults to today. However, you can change it to any date in the past or future. If you change it to the year 2050, it will tell you exactly how old you will be. If you enter the birth dates of a historical figure and the date they died as the target, you can find their exact lifespan.",
+            question: "How are months calculated if they have different days?",
+            answer: "Our calculator uses a 'Borrowing Logic.' If the target day is less than the birth day, we borrow the total days from the month immediately preceding the target month. This accounts for the 28, 30, or 31 day variability."
           },
           {
-            question: "Are weeks calculated as exactly 7 days?",
-            answer:
-              "Yes. Mathematically, one week is always exactly 7 days. Your 'Total Weeks' alive is calculated by finding your absolute total days alive, dividing by 7, and rounding down to the nearest whole week.",
+            question: "How many days are in a scientific year?",
+            answer: "While the calendar year is 365 days, a scientific (tropical) year is approximately 365.24219 days. Leap years are added to compensate for this extra quarter-day accumulation."
           },
+          {
+            question: "Can I calculate the age of a historical event?",
+            answer: "Yes. Simply set the 'Birth Date' to the event/document creation date and the 'Target Date' to today or any other marker to find the 'Age' of that event."
+          },
+          {
+            question: "Is there a maximum age limit for this calculator?",
+            answer: "No. The calculator uses standard JavaScript Date objects which can handle dates thousands of years in the past or future, though accuracy for very ancient dates may vary due to several calendar reforms in history."
+          },
+          {
+            question: "Is calculating age 'at the date of' different from 'today'?",
+            answer: "Only in the choice of the second date. The 'today' option is just a shortcut to your current system clock time. The calculation logic remains identical."
+          }
         ]}
         relatedCalculators={[
           {
             name: "Date Calculator",
             path: "/date-calculator",
-            desc: "Add or subtract exact days, weeks, or months from any given date.",
+            desc: "Perform advanced date math, adding or subtracting days, months, and years to find specific future or past milestones.",
           },
           {
-            name: "Time Calculator",
-            path: "/time-calculator",
-            desc: "Add or subtract exact hours and minutes to find time durations.",
+            name: "Days Until Calculator",
+            path: "/days-until-calculator",
+            desc: "Focus specifically on the countdown to upcoming events like weddings, vacations, or product launches.",
           },
           {
-            name: "Time Zone Converter",
-            path: "/time-zone-converter",
-            desc: "Convert times across hundreds of global time zones instantly.",
+            name: "Retirement Calculator",
+            path: "/retirement-calculator",
+            desc: "Project your financial future based on your exact age, current savings, and expected investment growth.",
           },
-            {
-              name: "Temperature Converter",
-              path: "/temperature-converter",
-              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
-            }]}
+          {
+            name: "Birthday Calculator",
+            path: "/birthday-calculator",
+            desc: "Explore fun facts about your birth day, including your zodiac sign, birthstone, and famous people born on the same date.",
+          }
+        ]}
       />
     </div>
   );

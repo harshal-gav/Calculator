@@ -137,65 +137,181 @@ export default function APRCalculator() {
       </div>
 
       <CalculatorSEO
-        title="APR Calculator"
+        title="Annual Percentage Rate (APR) Calculator: Find the True Cost of Your Debt"
         whatIsIt={
           <>
-            <p>
-              The <strong>APR Calculator</strong> (Annual Percentage Rate) helps you compare loans fairly. While an interest rate only accounts for the cost of borrowing the principal, the APR includes points, origination fees, and other mandatory closing costs.
+            <p className="text-lg leading-relaxed mb-4">
+              An <strong>Annual Percentage Rate (APR) Calculator</strong> is a mandatory financial transparency tool used to reveal the "all-in" cost of a loan. While the interest rate (nominal rate) tells you the cost of borrowing the principal amount, the APR provides a standardized mathematical representation that includes the base interest rate plus upfront fees, closing costs, points, and other mandatory financial charges.
+            </p>
+            <p className="leading-relaxed mb-4">
+              The APR exists because of the <strong>Truth in Lending Act (TILA)</strong> in the United States and similar consumer protection laws globally. Without APR, lenders could advertise a "low" 3% interest rate while charging $20,000 in upfront fees, making the loan significantly more expensive than a 5% rate with $0 fees. By converting those upfront fees into a percentage and spreading them across the life of the loan, the APR allows borrowers to make accurate, "apples-to-apples" comparisons between different lending offers.
+            </p>
+            <p className="leading-relaxed">
+              Use this calculator to detect hidden costs in mortgages, auto loans, personal loans, and credit cards. If you see a large gap between your interest rate and your APR, it means the upfront fees are high.
             </p>
           </>
         }
+        comparisonTable={{
+          title: "Representative APR Samples by Loan Type (Market Averages)",
+          headers: ["Loan Product", "Nominal Rate", "Estimated Fees", "Monthly Payment", "Effective APR"],
+          rows: [
+            ["30-Year Mortgage", "6.50%", "$6,000", "$1,580", "6.68%"],
+            ["15-Year Mortgage", "5.90%", "$5,500", "$2,100", "6.12%"],
+            ["New Auto Loan", "7.20%", "$499", "$580", "7.45%"],
+            ["Used Auto Loan", "8.50%", "$250", "$610", "8.65%"],
+            ["Personal Loan", "11.00%", "3% Origination", "$220", "11.85%"],
+            ["Credit Card", "21.00%", "$0 (Standard)", "Varies", "21.00%"],
+          ]
+        }}
         formula={
           <>
-            <p className="text-sm border-l-4 border-amber-500 pl-4 py-2 italic bg-gray-50">
-                It is calculated by solving for the internal rate of return (IRR) where the Net Loan Amount equals the present value of all future payments.
+            <p className="mb-4">
+              Unlike the simple interest formula, calculating APR is mathematically complex and usually requires an iterative numerical method (like the binary search used in our tool) to find the <strong>Internal Rate of Return (IRR)</strong>.
+            </p>
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
+              <p className="font-mono text-center text-lg mb-4">
+                ∑[P / (1 + i)^n] = Net Loan Amount
+              </p>
+              <p className="text-sm font-sans text-gray-700">
+                <strong>Where:</strong>
+                <br />P = Monthly Payment amount
+                <br />i = Periodic rate (APR / 12)
+                <br />n = Total number of payments
+                <br />Net Loan Amount = Principal - (Points + Origination Fees + Closing Costs)
+              </p>
+            </div>
+            <p>
+              Internally, the calculator looks for the "i" value that makes the present value of all future payments exactly equal to the amount of cash you actually received on day one of the loan.
+            </p>
+          </>
+        }
+        deepDive={
+          <>
+            <h3 className="text-xl font-bold mb-4">APR vs. APY: The Lender's Shell Game</h3>
+            <p className="mb-4">
+              It is critical to distinguish between <strong>Annual Percentage Rate (APR)</strong> and <strong>Annual Percentage Yield (APY)</strong>. APR is used for borrowing (mortgages, car loans, credit cards). It does <em>not</em> account for compounding interest within the year—it only accounts for upfront costs.
+            </p>
+            <p className="mb-4">
+              APY, on the other hand, is used for savings and investments. APY <em>does</em> account for compounding. Because compounding adds to the cost, the APY of a loan is always higher than its APR if interest is compounded more than once per year. Lenders quote APR because the number looks smaller, and banks quote APY for savings because the number looks larger.
+            </p>
+            <h3 className="text-xl font-bold mb-4">What Fees Are Included in APR?</h3>
+            <p className="mb-4">
+              Under federal guidelines, certain fees <strong>must</strong> be included in the APR calculation for mortgages:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
+              <li><strong>Points:</strong> Discount points paid to lower the interest rate.</li>
+              <li><strong>Origination Fees:</strong> Charges for processing the loan application.</li>
+              <li><strong>Underwriting Fees:</strong> Costs for evaluating your creditworthiness.</li>
+              <li><strong>Mortgage Insurance (PMI):</strong> Required if your down payment is less than 20%.</li>
+            </ul>
+            <p>
+              Note that "pass-through" costs like title insurance, appraisal fees, and credit report fees are usually <em>excluded</em> from the APR because they are paid to third parties, not kept as profit by the lender.
             </p>
           </>
         }
         example={
           <>
-            <p>If you take a $100,000 loan at 6% interest with $3,000 in upfront fees:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Your nominal rate is 6.00%.</li>
-              <li>Your <strong>effective APR will be approximately 6.25%</strong> because you effectively only "received" $97,000 to start.</li>
-            </ul>
+            <p className="mb-4 font-semibold">Scenario: The 3% Loan Trap</p>
+            <p className="mb-4">
+              Imagine you are borrowing $100,000 for 10 years.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div className="p-4 bg-red-50 rounded shadow-sm">
+                <p className="font-bold text-red-800">Lender A (The "Cheap" One)</p>
+                <p>Interest Rate: 3.00%</p>
+                <p>Upfront Fees: $10,000</p>
+                <p className="mt-2 text-red-900 font-bold">Effective APR: 5.12%</p>
+              </div>
+              <div className="p-4 bg-emerald-50 rounded shadow-sm">
+                <p className="font-bold text-emerald-800">Lender B (The "Honest" One)</p>
+                <p>Interest Rate: 4.50%</p>
+                <p>Upfront Fees: $0</p>
+                <p className="mt-2 text-emerald-900 font-bold">Effective APR: 4.50%</p>
+              </div>
+            </div>
+            <p>
+              Despite Lender A advertising a rate that is 1.5% lower, the high upfront fees make it significantly more expensive. Over 10 years, you would pay thousands of dollars more to Lender A. Standardizing to APR reveals this hidden cost instantly.
+            </p>
           </>
         }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Comparing Lenders:</strong> Lender A might offer 6.5% with $0 fees, while Lender B offers 6.3% with $10,000 in fees. The APR tool helps you see that Lender A is actually cheaper over the long run.</li></ul>}
+        useCases={
+          <div className="space-y-6">
+            <div>
+              <h4 className="font-bold text-gray-800">1. Shopping for Mortgages</h4>
+              <p className="text-gray-600">The most common use. Lenders use APR to disclose the cost of "buying down the rate." If you plan to stay in your home for 30 years, paying points for a lower APR makes sense. If you move in 3 years, a higher rate with $0 fees (lower APR) might be better.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-800">2. Comparing Credit Cards</h4>
+              <p className="text-gray-600">Credit cards use APR to describe the interest charged on balances. Note that credit cards often have different APRs for purchases, cash advances, and balance transfers.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-800">3. Personal and Payday Loans</h4>
+              <p className="text-gray-600">Payday loans can have APRs exceeding 400% when fees are annualized. Always use an APR calculator to see the triple-digit reality of short-term lending.</p>
+            </div>
+          </div>
+        }
+        glossary={[
+          {
+            term: "Nominal Interest Rate",
+            definition: "The periodic interest rate multiplied by the number of periods per year. This does not include fees or the effects of compounding."
+          },
+          {
+            term: "Internal Rate of Return (IRR)",
+            definition: "The discount rate that makes the net present value (NPV) of all cash flows from a project equal to zero. APR is fundamentally an IRR calculation."
+          },
+          {
+            term: "Discount Points",
+            definition: "Fees paid directly to the lender at closing in exchange for a reduced interest rate. One point typically equals 1% of the loan amount."
+          },
+          {
+            term: "Amortization",
+            definition: "The process of spreading out a loan into a series of fixed payments over time."
+          },
+          {
+            term: "Truth in Lending Act (TILA)",
+            definition: "A 1968 federal law designed to promote the informed use of consumer credit by requiring disclosures about its terms and cost."
+          }
+        ]}
         faqs={[
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            },
-            {
-              question: "Can I use this on my mobile device?",
-              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
-            }]}
+          {
+            question: "Why is my APR higher than my interest rate?",
+            answer: "If your APR is higher than your interest rate, it means the lender is charging you extra fees upfront (like origination, processing, or points) that are being 'financed' into the cost of the loan."
+          },
+          {
+            question: "Can APR be lower than the interest rate?",
+            answer: "In rare cases, yes. This occurs if the lender provides a 'negative point' or credit toward closing costs. However, this usually results in a higher interest rate to compensate the lender over time."
+          },
+          {
+            question: "Does APR include mortgage insurance?",
+            answer: "Yes, under federal law, private mortgage insurance (PMI) or FHA mortgage insurance premiums must be included in the APR calculation because they are a cost of obtaining the credit."
+          },
+          {
+            question: "What is a fixed APR?",
+            answer: "A fixed APR means the rate will not change over the life of the loan. This is standard for 30-year mortgages and many personal loans."
+          }
+        ]}
         relatedCalculators={[
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator",
-              desc: "Calculate your exact annualized percentage returns.",
-            },
-            {
-              name: "Investment Calculator",
-              path: "/investment-calculator",
-              desc: "Project your portfolio growth over time with compound interest.",
-            },
-            {
-              name: "Loan Payment Calculator",
-              path: "/loan-payment-calculator",
-              desc: "Estimate your monthly loan payments and total interest cost.",
-            }]}
+          {
+            name: "Mortgage Calculator",
+            path: "/mortgage-calculator",
+            desc: "Calculate your monthly mortgage payments and amortization schedule."
+          },
+          {
+            name: "APY Calculator",
+            path: "/apy-calculator",
+            desc: "Calculate the Annual Percentage Yield to see the effect of compounding on savings."
+          },
+          {
+            name: "Loan Payment Calculator",
+            path: "/loan-payment-calculator",
+            desc: "Estimate your monthly loan payments and total interest cost."
+          },
+          {
+            name: "Personal Loan Calculator",
+            path: "/personal-loan-calculator",
+            desc: "Calculate payments and see if consolidation makes sense for you."
+          }
+        ]}
       />
     </div>
   );

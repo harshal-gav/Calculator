@@ -159,69 +159,177 @@ export default function RentVsBuyCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Rent vs. Buy Calculator"
+        title="Rent vs. Buy Calculator: Real Estate Wealth & Cost Projection"
         whatIsIt={
-          <p>
-            A <strong>Rent vs. Buy Calculator</strong> project the total cost of home ownership compared to renting over a specific number of years. It factors in home price, interest rates, property taxes, and maintenance for buying, vs. monthly rent and estimated rent inflation for renting.
-          </p>
+          <>
+            <p className="text-lg leading-relaxed mb-4">
+              A <strong>Rent vs. Buy Calculator</strong> is a sophisticated financial modeling tool designed to determine the "Break-even Point" between the cost of renting a home and the multi-dimensional costs of homeownership. This isn't just about comparing a monthly mortgage payment to monthly rent; it's about projecting <strong>total unrecoverable costs</strong> over a 10, 20, or 30-year horizon.
+            </p>
+            <p className="leading-relaxed mb-4">
+              In the short term (1-5 years), renting is almost always cheaper because owners face high transactional "friction" (6% agent commissions, closing costs, and moving fees). However, as time passes, the <strong>forced savings</strong> of principal repayment and the potential for home price appreciation begin to outweigh the sunken costs of property taxes and maintenance.
+            </p>
+            <p className="leading-relaxed">
+              Our calculator uses the 2024 economic baseline, assuming 3% annual rent inflation and 1% annual maintenance reserves, to provide you with a clear winner based on your specific investment timeline.
+            </p>
+          </>
         }
+        comparisonTable={{
+          title: "The Unrecoverable Cost Comparison (Annual Assumptions)",
+          headers: ["Expense Category", "Buying (Owner)", "Renting (Tenant)", "Verdict"],
+          rows: [
+            ["Housing Payment", "Mortgage Interest (Sunken)", "Total Monthly Rent (Sunken)", "Depends on Rates"],
+            ["Taxes", "Property Tax (1.2% avg)", "None (Included in Rent)", "Renting Wins"],
+            ["Maintenance", "1% of Home Value Reserves", "None ($0 Responsibilty)", "Renting Wins"],
+            ["Insurance", "HO3 Homeowners Insurance", "HO4 Renters Insurance (Minimal)", "Renting Wins"],
+            ["Capital Gains", "Tax-Free Appreciation (up to $500k)", "Opportunity Cost of Deposit", "Buying Wins"],
+            ["Wealth Building", "Forced Equity through Principal", "Portfolio Growth in Market", "Context Dependent"],
+          ]
+        }}
         formula={
-          <div className="space-y-4">
-            <p>Our calculation uses the following sophisticated model:</p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li><strong>Buying Cost:</strong> Down Payment + (Monthly Mortgage × Months) + Property Taxes (1.2% annual) + Home Insurance (0.5% annual) + Maintenance (1% annual).</li>
-              <li><strong>Renting Cost:</strong> Total rent paid over the period, assuming a 3% annual increase in rent.</li>
+          <>
+            <p className="mb-4">
+              Our model calculates the total financial impact using the <strong>Net Expenditure Model</strong>:
+            </p>
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
+              <p className="font-mono text-center text-lg mb-4 text-emerald-900 italic">
+                Total Buying Cost = Σ(Interest + Tax + Maint + Insur) + (Entry/Exit Friction) - (Appreciation + Principal)
+              </p>
+              <p className="text-sm font-sans text-gray-700">
+                <strong>Where:</strong>
+                <br /><strong>Σ:</strong> Summated over the analysis period (e.g., 10 years).
+                <br /><strong>Entry/Exit Friction:</strong> 3% Closing Costs at buy + 6% Commission at sell.
+                <br /><strong>Maint:</strong> Constant 1% of the original home price annually.
+              </p>
+            </div>
+            <p>
+              By comparing this result to the summated cost of rent (adjusted for 3% annual increases), we find the "Crossover Year" where the red line of buying costs falls below the blue line of renting costs.
+            </p>
+          </>
+        }
+        deepDive={
+          <>
+            <h3 className="text-xl font-bold mb-4">The '5% Rule' of Real Estate</h3>
+            <p className="mb-4">
+              A quick way to estimate the unrecoverable cost of owning a home is the 5% Rule. It breaks down as:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
+              <li><strong>1% for Maintenance:</strong> The physical depreciation of the structure.</li>
+              <li><strong>1% for Property Taxes:</strong> The cost paid to local government.</li>
+              <li><strong>3% for the Cost of Capital:</strong> Either the interest you pay to the bank or the interest you <em>lose</em> by not having your down payment in the stock market.</li>
             </ul>
-            <p className="text-sm text-gray-500 italic">* This model does not include home appreciation or investment returns on the down payment for renters, but provides a direct cost-of-shelter comparison.</p>
-          </div>
+            <p className="mb-4">
+              If you can rent a similar home for <strong>less than 5% of its purchase price per year</strong>, renting is likely the mathematically superior wealth-building choice. For example, on a $500,000 home, if rent is less than $2,083/month ($25,000/year), renting wins.
+            </p>
+            <h3 className="text-xl font-bold mb-4">The Myth of 'Throwing Money Away on Rent'</h3>
+            <p className="mb-4">
+              Many people believe buying is always better because "renting is 100% interest." This is a fallacy. Interest, taxes, and maintenance are <em>also</em> 100% unrecoverable. In the first 10 years of a 30-year mortgage at 7% interest, roughly 85% of your monthly payment is "thrown away" on interest, not principal.
+            </p>
+          </>
         }
         example={
-          <p>
-            If you are choosing between buying a $400,000 house with $80,000 down (6.5% interest) or renting for $2,500/month, the calculator will show you at what year ownership becomes cheaper than renting. In many markets, renting is cheaper in the first 5 years due to closing costs and maintenance, while buying wins after 7-10 years.
-          </p>
+          <>
+            <p className="mb-4 font-semibold">Scenario: $400,000 Home vs $2,500 Rent</p>
+            <div className="bg-white border border-gray-100 p-6 rounded-xl shadow-sm space-y-4 text-sm">
+              <div className="grid grid-cols-2 gap-4 border-b pb-4">
+                <div>
+                  <p className="font-bold text-teal-700 uppercase tracking-widest text-[10px]">Buyer (Year 1)</p>
+                  <p>Interest: $20,800</p>
+                  <p>Tax: $4,800</p>
+                  <p>Maintenance: $4,000</p>
+                  <p className="font-bold border-t mt-1">Total Sunken: $29,600</p>
+                </div>
+                <div>
+                  <p className="font-bold text-indigo-700 uppercase tracking-widest text-[10px]">Renter (Year 1)</p>
+                  <p>Rent: $30,000</p>
+                  <p>Insurance: $300</p>
+                  <p>Investment Ops: $0</p>
+                  <p className="font-bold border-t mt-1">Total Sunken: $30,300</p>
+                </div>
+              </div>
+              <p className="italic text-gray-600">
+                In this high-interest environment, the renter and buyer are almost tied in year 1. However, the buyer's interest cost stays flat (or decreases), while the renter's cost increases 3% every year.
+              </p>
+            </div>
+          </>
         }
         useCases={
-          <ul className="list-disc pl-5 space-y-2">
-            <li><strong>Relocation Decisions:</strong> Deciding whether to buy or rent when moving to a new city.</li>
-            <li><strong>Financial Planning:</strong> Assessing if a higher mortgage is worth the long-term savings over rent.</li>
-            <li><strong>Market Analysis:</strong> Evaluating local rent-to-price ratios.</li>
-          </ul>
+          <div className="space-y-6">
+            <div>
+              <h4 className="font-bold text-gray-800">1. Evaluating Relocation for Work</h4>
+              <p className="text-gray-600 italic">If you only plan to stay in a city for 2-3 years, the 6% selling commission almost guarantees you will lose money compared to renting, regardless of interest rates.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-800">2. Low Interest Rate Environments</h4>
+              <p className="text-gray-600 italic">When mortgage rates are below 4%, the "cost of capital" drops significantly, making buying the winner in as little as 3-4 years.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-800">3. Maximizing Down Payment vs. Investing</h4>
+              <p className="text-gray-600 italic">Use the calculator to see if putting 20% down or putting 5% down and investing the difference yields a higher net worth after 15 years.</p>
+            </div>
+          </div>
         }
+        glossary={[
+          {
+            term: "Amortization",
+            definition: "The process of paying off a debt over time through regular payments. A portion of each payment goes to interest, and the remainder goes to the principal."
+          },
+          {
+            term: "Equity",
+            definition: "The difference between the market value of your home and the amount you still owe on your mortgage."
+          },
+          {
+            term: "Opportunity Cost",
+            definition: "The potential profit or value you give up when choosing one investment over another (e.g., spending cash on a down payment instead of the S&P 500)."
+          },
+          {
+            term: "Price-to-Rent Ratio",
+            definition: "The ratio of home prices to annual rental rates. A ratio high above 20 usually indicates that renting is more favorable."
+          },
+          {
+            term: "Closing Costs",
+            definition: "Fees paid at the end of a real estate transaction. They typically range from 2% to 5% of the purchase price."
+          }
+        ]}
         faqs={[
           {
-            question: "Why is renting sometimes cheaper than buying?",
-            answer: "Renting removes the costs of property taxes, homeowners insurance, and maintenance. If home prices are very high relative to rents (high Price-to-Rent ratio), renting allows you to invest the leftover cash elsewhere."
+            question: "Is real estate always a good investment?",
+            answer: "No. Real estate is highly dependent on local markers, interest rates, and your specific timeline. Historically, the S&P 500 has outperformed real estate appreciation on a percentage basis, but real estate allows for 5x leverage which can amplify returns."
           },
           {
-            question: "What is the 5% rule?",
-            answer: "A common rule of thumb that says the unrecoverable costs of home ownership (taxes, maintenance, cost of capital) are roughly 5% of the home's value per year. If rent is less than 5% of a similar home's value annually, renting is likely better."
+            question: "Don't I get a big tax break for owning a home?",
+            answer: "Since the 2018 TCJA reform, the standard deduction is so high that most homeowners no longer benefit from the mortgage interest deduction unless they have a very large loan."
           },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
-          relatedCalculators={[
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator",
-              desc: "Calculate your exact annualized percentage returns.",
-            },
-            {
-              name: "Investment Calculator",
-              path: "/investment-calculator",
-              desc: "Project your portfolio growth over time with compound interest.",
-            },
-            {
-              name: "Loan Payment Calculator",
-              path: "/loan-payment-calculator",
-              desc: "Estimate your monthly loan payments and total interest cost.",
-            }
-          ]}
+          {
+            question: "What is PMI and how does it impact the math?",
+            answer: "Private Mortgage Insurance (PMI) is required if your down payment is less than 20%. It is an unrecoverable cost (usually 0.5% to 1.5% of the loan amount annually) that makes renting even more attractive for low-down-payment buyers."
+          },
+          {
+            question: "How long should I live in a house to make buying worth it?",
+            answer: "The 'Rule of Thumb' is at least 5-7 years. This allows enough time for gradual appreciation and principal paydown to offset the ~10% loss you take on the entry and exit of the property (closing costs + selling commission)."
+          }
+        ]}
+        relatedCalculators={[
+          {
+            name: "Mortgage Calculator",
+            path: "/mortgage-calculator",
+            desc: "The core engine for calculating your monthly P&I, taxes, and insurance."
+          },
+          {
+            name: "ROI Calculator",
+            path: "/roi-calculator",
+            desc: "Compare your home's appreciation to other asset classes."
+          },
+          {
+            name: "Amortization Calculator",
+            path: "/amortization-calculator",
+            desc: "See exactly how much interest you will pay over the life of your loan."
+          },
+          {
+            name: "Income Tax Calculator",
+            path: "/income-tax-calculator",
+            desc: "See how much post-tax income you have left for your housing budget."
+          }
+        ]}
       />
     </div>
   );

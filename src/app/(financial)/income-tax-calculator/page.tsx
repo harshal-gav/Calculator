@@ -221,86 +221,187 @@ export default function IncomeTaxCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Income Tax Calculator"
+        title="Income Tax Calculator 2024: Federal Tax Bracket & Take-Home Pay Estimator"
         whatIsIt={
           <>
-            <p>
-              An <strong>Income Tax Calculator</strong> is a specialized financial tool that estimates the amount of Federal Income Tax and FICA tax (Social Security and Medicare) you owe based on your annual gross income. It also determines your net <strong>Take-Home Pay</strong> after all taxes have been deducted.
+            <p className="text-lg leading-relaxed mb-4">
+              An <strong>Income Tax Calculator</strong> is a strategic financial tool used to decode the complexity of the United States progressive tax system. While your gross salary is what you "earn," your take-home pay is what you actually keep after Uncle Sam takes his share. This tool calculates your estimated Federal Income Tax, Social Security (6.2%), and Medicare (1.45%) liabilities.
             </p>
-            <p>
-              By using our up-to-date IRS progressive tax brackets, this tax refund estimator acts almost like a simplified H&R Block Tax Calculator or standard IRS Tax Calculator, determining how much of your paycheck ends up in your pocket.
+            <p className="leading-relaxed mb-4">
+              Understanding your tax liability is the foundation of <strong>wealth management</strong>. Many Americans are surprised to learn that they don't actually pay their "marginal" tax rate on all their income. Instead, your money is poured into a series of "buckets" (brackets), where only the money in the highest bucket is taxed at the highest rate. Our calculator visualizes this "Tax Ladder" to help you plan for bonuses, raises, and retirement contributions.
             </p>
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related terms:</strong> hr block tax calculator, irs tax calculator, federal tax calculator, net pay calculator, take-home paycheck calculator, tax refund estimator, single filer tax return calculator.
+            <p className="leading-relaxed">
+              By inputting your filing status and pre-tax deductions (like 401k contributions), you can see exactly how much your taxable income is reduced, effectively lowering your total tax bill and increasing your net wealth.
             </p>
           </>
         }
+        comparisonTable={{
+          title: "2024 Federal Income Tax Brackets (IRS Guidelines)",
+          headers: ["Tax Rate", "Single Filers", "Married Filing Jointly", "Head of Household"],
+          rows: [
+            ["10%", "$0 to $11,600", "$0 to $23,200", "$0 to $16,550"],
+            ["12%", "$11,601 to $47,150", "$23,201 to $94,300", "$16,551 to $63,100"],
+            ["22%", "$47,151 to $100,525", "$94,301 to $201,050", "$63,101 to $100,500"],
+            ["24%", "$100,526 to $191,950", "$201,051 to $383,900", "$100,501 to $191,950"],
+            ["32%", "$191,951 to $243,725", "$383,901 to $487,450", "$191,951 to $243,700"],
+            ["35%", "$243,726 to $609,350", "$487,451 to $731,200", "$243,701 to $609,350"],
+            ["37%", "Over $609,350", "Over $731,200", "Over $609,350"],
+          ]
+        }}
         formula={
           <>
-            <p>The United States uses a <strong>progressive tax system</strong>, meaning your income is taxed at different rates across different bracket levels.</p>
-            <ol className="list-decimal pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Find Taxable Income:</strong> Gross Income - Pre-Tax Deductions (like a 401k Calculator) - Standard Deduction.</li>
-              <li><strong>Calculate Brackets:</strong> Taxable Income is filtered through the 10%, 12%, 22%, 24%, 32%, 35%, and 37% brackets depending on how high the income reaches.</li>
-              <li><strong>Calculate FICA:</strong> 6.2% for Social Security (up to the wage base limit) and 1.45% for Medicare.</li>
-              <li><strong>Net Take Home:</strong> Gross Income - Federal Tax - FICA Tax.</li>
-            </ol>
+            <p className="mb-4">
+              The calculation of your net pay follows a strict hierarchy defined by the IRS:
+            </p>
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
+              <p className="font-mono text-center text-lg mb-4 text-blue-900 italic">
+                Taxable Income = Gross Income - Pre-Tax Deductions - Standard Deduction
+              </p>
+              <p className="text-sm font-sans text-gray-700">
+                <strong>Where:</strong>
+                <br /><strong>Pre-Tax Deductions:</strong> Contributions to 401(k), 403(b), or Traditional IRAs.
+                <br /><strong>Standard Deduction (2024):</strong> $14,600 (Single) or $29,200 (Married).
+                <br /><strong>FICA Tax:</strong> Progressive calculation does not apply here; it's a flat 7.65% for most earners.
+              </p>
+            </div>
+            <p>
+              Once your <strong>Taxable Income</strong> is determined, it is distributed across the brackets. For a single person making $60,000, the first $11,600 is taxed at 10%, results in $1,160. The next $35,550 (up to $47,150) is taxed at 12%, and the remaining amount is taxed at 22%.
+            </p>
+          </>
+        }
+        deepDive={
+          <>
+            <h3 className="text-xl font-bold mb-4">Marginal Rate vs. Effective Rate: The Great Misconception</h3>
+            <p className="mb-4">
+              If you are in the "24% tax bracket," it does <strong>not</strong> mean the government takes 24% of your paycheck. That is your <em>marginal</em> rate—it only applies to the very last dollar you earned.
+            </p>
+            <p className="mb-4">
+              Your <strong>Effective Tax Rate</strong> is much more important. This is your total tax divided by your total income. Because of the standard deduction and the lower 10% and 12% brackets, someone in the 24% marginal bracket might only have an effective rate of 14-16%. This is why "getting a raise that moves you into a higher bracket" never results in less money in your pocket—you only pay the higher rate on the new income.
+            </p>
+            <h3 className="text-xl font-bold mb-4">Tax Deductions vs. Tax Credits</h3>
+            <p className="mb-4">
+              These two terms are often used interchangeably, but they work very differently in our calculator:
+            </p>
+            <ul className="list-disc pl-6 space-y-3 mb-6 text-gray-700">
+              <li><strong>Tax Deductions:</strong> These lower your <em>Taxable Income</em>. If you are in the 22% bracket, a $1,000 deduction saves you $220. (Example: 401k or Student Loan Interest).</li>
+              <li><strong>Tax Credits:</strong> These are a dollar-for-dollar reduction of the <em>Taxes You Owe</em>. A $1,000 credit saves you exactly $1,000, regardless of your bracket. (Example: Child Tax Credit or EV Tax Credit).</li>
+            </ul>
           </>
         }
         example={
           <>
-            <p>If you are a <strong>Single</strong> filer earning <strong>$75,000</strong> per year in 2024 with no 401k deductions:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Your Gross Income is $75,000.</li>
-              <li>You take the Standard Deduction of $14,600, bringing your Taxable Income to $60,400.</li>
-              <li>You pay 10% on the first $11,600.</li>
-              <li>You pay 12% on the income up to $47,150.</li>
-              <li>You pay 22% on the income above $47,150 up to $60,400.</li>
-              <li>You pay a separate flat 7.65% FICA tax on your full $75,000 ($5,737.50).</li>
-            </ul>
+            <p className="mb-4 font-semibold">Case Study: The $100,000 Single Earner (2024)</p>
+            <div className="bg-white border border-gray-100 p-6 rounded-xl shadow-sm space-y-4">
+              <div className="flex justify-between border-b pb-2">
+                <span>Gross Annual Income:</span>
+                <span className="font-bold">$100,000</span>
+              </div>
+              <div className="flex justify-between border-b pb-2 text-green-700">
+                <span>Minus Standard Deduction:</span>
+                <span className="font-bold">-$14,600</span>
+              </div>
+              <div className="flex justify-between border-b pb-2 bg-gray-50 p-2 rounded">
+                <span>Taxable Income:</span>
+                <span className="font-bold">$85,400</span>
+              </div>
+              <div className="space-y-1 text-sm text-gray-600 pl-4 italic">
+                <p>10% on first $11,600: $1,160</p>
+                <p>12% on next $35,550: $4,266</p>
+                <p>22% on remaining $38,250: $8,415</p>
+              </div>
+              <div className="flex justify-between border-t pt-2 text-red-700 font-bold">
+                <span>Total Federal Income Tax:</span>
+                <span>$13,841</span>
+              </div>
+              <div className="flex justify-between border-t pt-2 text-blue-700 font-bold">
+                <span>Total FICA (SS+Medicare):</span>
+                <span>$7,650</span>
+              </div>
+              <div className="flex justify-between border-t-2 pt-4 text-2xl text-blue-900 font-black">
+                <span>Take-Home Pay:</span>
+                <span>$78,509</span>
+              </div>
+            </div>
           </>
         }
         useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li><strong>Job Offers:</strong> Transitioning to a new role and wanting to see your actual post-tax take home pay rather than just the gross salary.</li>
-            <li><strong>Tax Prep:</strong> Roughly predicting if you will owe the IRS money during tax season or if you're due for a refund.</li>
-            <li><strong>Retirement Planning:</strong> Seeing exactly how much adjusting your 401k contribution will lower your tax liability.</li>
-          </ul>
+          <div className="space-y-6">
+            <div>
+              <h4 className="font-bold text-gray-800">1. Maximizing 401k Contributions</h4>
+              <p className="text-gray-600 italic">If you are on the edge of the 22% and 24% brackets, contributing enough to your 401k to stay in the 22% bracket can save you thousands in taxes while building your future wealth.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-800">2. Planning for Marriage</h4>
+              <p className="text-gray-600 italic">Use the "Married Filing Jointly" option to see the "Marriage Bonus" or "Marriage Penalty." If one spouse earns significantly more than the other, filing jointly often results in a massive tax reduction.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-800">3. Estimating Withholding</h4>
+              <p className="text-gray-600 italic">Compare this calculator's results to your actual pay stubs. If the calculator says you owe $10,000 but your employer is only taking $8,000, you need to adjust your W-4 to avoid a big bill in April.</p>
+            </div>
+          </div>
         }
+        glossary={[
+          {
+            term: "Adjusted Gross Income (AGI)",
+            definition: "Your total gross income minus certain adjustments like student loan interest or educator expenses, before the standard deduction is applied."
+          },
+          {
+            term: "FICA Tax",
+            definition: "Federal Insurance Contributions Act. It consists of Social Security (6.2%) and Medicare (1.45%) taxes which fund retirement and health benefits."
+          },
+          {
+            term: "Tax Bracket",
+            definition: "The range of incomes taxed at a specific percentage. Brackets are adjusted annually for inflation."
+          },
+          {
+            term: "Standard Deduction",
+            definition: "A set amount of income that the IRS allows you to subtract from your total earnings, reducing the amount on which you are taxed."
+          },
+          {
+            term: "Withholding",
+            definition: "The amount of an employee's pay that their employer sends directly to the government as partial payment of their income tax."
+          }
+        ]}
         faqs={[
           {
-            question: "What is the Standard Deduction?",
-            answer: "The Standard Deduction is a specific dollar amount that reduces your taxable income, depending on your filing status. For 2024, it is $14,600 for Single filers and $29,200 for Married Filing Jointly."
+            question: "Why is the tax on my bonus so high?",
+            answer: "Employers often use a 'supplemental withholding rate' (flat 22%) or the 'aggregate method' for bonuses. This often over-estimates your tax, making the bonus look small, but you typically get the excess back as a refund when you file your taxes."
           },
           {
-            question: "Does this calculator include State Taxes?",
-            answer: "No, this calculator strictly estimates Federal Income Tax and Federal FICA taxes. State income taxes vary drastically depending on your location, with some states having zero income tax and others having complex progressive rates of their own."
+            question: "Should I take the Standard Deduction or Itemize?",
+            answer: "Since the 2018 tax reform, the standard deduction ($14,600/$29,200) is so high that most people should take it. You should only itemize if your deductible expenses (mortgage interest, state taxes, charity) exceed those amounts."
           },
           {
-            question: "How do 401k deductions affect my taxes?",
-            answer: "Traditional 401k or IRA contributions (pre-tax) directly reduce your taxable income. For example, if you make $80,000 but put $5,000 into a 401k, the IRS only taxes you as if you made $75,000."
+            question: "What is the Wage Base Limit for Social Security?",
+            answer: "For 2024, the Social Security tax only applies to the first $168,600 of your income. Any income earned above this limit is exempt from the 6.2% Social Security tax, though the 1.45% Medicare tax applies to all income."
+          },
+          {
+            question: "Is this calculator legal tax advice?",
+            answer: "No. This tool provides estimates for planning purposes. Tax laws are complex and change frequently. Always consult with a CPA or licensed tax professional for your specific filing needs."
           }
         ]}
         relatedCalculators={[
           {
             name: "Salary Calculator",
             path: "/salary-calculator",
-            desc: "Convert your salary equivalent between hourly, daily, weekly, and annual amounts."
+            desc: "Convert your annual take-home pay into hourly, weekly, or bi-weekly amounts."
           },
           {
             name: "401k Calculator",
             path: "/401k-calculator",
-            desc: "Estimate the future value of your retirement savings."
+            desc: "See exactly how much a pre-tax contribution will lower your tax bill."
           },
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator",
-              desc: "Calculate your exact annualized percentage returns.",
-            }]}
+          {
+            name: "ROI Calculator",
+            path: "/roi-calculator",
+            desc: "Calculate the after-tax returns on your investment portfolio."
+          },
+          {
+            name: "Net Worth Calculator",
+            path: "/net-worth-calculator",
+            desc: "Track your total financial health across assets and liabilities."
+          }
+        ]}
       />
     </div>
   );

@@ -219,65 +219,178 @@ export default function BmiCalculator() {
         whatIsIt={
           <>
             <p>
-              A <strong>BMI (Body Mass Index) Calculator</strong> is a screening tool that compares your weight to your height to estimate whether you carry too much or too little body fat.
+              The <strong>BMI (Body Mass Index) Calculator</strong> is a global standard for assessing physical health based on the Relationship between body mass and stature. Originally developed by Adolphe Quetelet in the mid-19th century, Body Mass Index provides a numerical value that categorizes individuals into specific weight status groups: underweight, normal weight, overweight, and obese.
+            </p>
+            <p>
+              While BMI does not directly measure body fat percentage, it acts as a reliable surrogate for more expensive and invasive clinical measurements. For the majority of adults, BMI provides an accurate reflection of weight-related health risks. By analyzing the ratio of your height to your weight, medical professionals can screen for potential health issues such as Type 2 diabetes, high blood pressure, and cardiovascular complications before they become critical.
+            </p>
+            <p>
+              Our calculator provides instant classification based on both Imperial and Metric systems, ensuring accuracy whether you use pounds and inches or kilograms and centimeters. It is designed to be the first step in a comprehensive wellness audit.
             </p>
           </>
         }
+        comparisonTable={{
+          title: "WHO Adult BMI Classifications",
+          headers: ["Weight Category", "BMI Range", "Health Implications"],
+          rows: [
+            ["Underweight", "< 18.5", "Increased risk for nutritional deficiencies and osteoporosis."],
+            ["Normal Weight", "18.5 – 24.9", "Lowest health risk; maintain current lifestyle and diet."],
+            ["Overweight", "25.0 – 29.9", "Increased risk for cardiovascular disease and type 2 diabetes."],
+            ["Obesity (Class I)", "30.0 – 34.9", "Significant risk for chronic health conditions; consultation advised."],
+            ["Obesity (Class II)", "35.0 – 39.9", "High risk for heart disease, stroke, and sleep apnea."],
+            ["Severe Obesity (Class III)", "40.0+", "Extremely high risk for severe morbidity and quality of life issues."],
+          ]
+        }}
         formula={
+          <div className="space-y-6">
+            <p>
+              The Body Mass Index is a simple mathematical ratio. Depending on your preference for measurement systems, we use one of the two following formulas:
+            </p>
+            <div className="bg-white/10 p-6 rounded-2xl font-mono text-center text-2xl border border-white/20 shadow-inner my-6">
+              Metric: BMI = kg / m²
+            </div>
+            <p className="text-sm opacity-80">
+              Where <strong>kg</strong> is weight in kilograms and <strong>m²</strong> is height in meters squared.
+            </p>
+            <div className="bg-white/10 p-6 rounded-2xl font-mono text-center text-2xl border border-white/20 shadow-inner my-6">
+              Imperial: BMI = 703 × (lbs / inches²)
+            </div>
+            <p className="text-sm opacity-80 italic">
+              *The conversion factor of 703 is required to align the result with the standard metric scale used worldwide.
+            </p>
+          </div>
+        }
+        deepDive={
           <>
-            <p>There are two primary formulas depending on your unit system:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Imperial:</strong> 703 × [Weight(lbs) / (Height(inches))²]</li>
-              <li><strong>Metric:</strong> Weight(kg) / (Height(meters))²</li>
-            </ul>
+            <h4 className="text-2xl font-black text-gray-900 mb-6">Part I: The Limitations of BMI</h4>
+            <p>
+              While BMI is a globally recognized metric, it is important to understand its constraints. BMI is a "crude" instrument because it does not distinguish between muscle mass, bone density, and fat distribution. A professional athlete with high muscle density may register as "overweight" or "obese" despite having very low body fat percentages.
+            </p>
+            <p>
+              Furthermore, BMI does not account for <strong>waist circumference</strong>, which is often a more accurate predictor of visceral fat—the dangerous fat stored around internal organs. For this reason, medical practitioners often use BMI in conjunction with other metrics like the Waist-to-Hip ratio and blood lipid panels to get a complete picture of an individual's metabolic health.
+            </p>
+
+            <h4 className="text-2xl font-black text-gray-900 mt-12 mb-6">Part II: Ethnic and Age Variations</h4>
+            <p>
+              Recent medical research suggests that the "Standard" BMI ranges (18.5–24.9) may not be universally applicable across all ethnicities. For example, some populations may experience increased health risks at lower BMI levels than others due to different body compositions and genetic predispositions toward certain metabolic conditions.
+            </p>
+            <p>
+              Similarly, for older adults, having a slightly higher BMI (towards the upper end of the normal range or lower end of overweight) has been associated with better health outcomes and protection against frailty. If you are over the age of 65, your "optimal" BMI target may differ from that of a 25-year-old.
+            </p>
+
+            <h4 className="text-2xl font-black text-gray-900 mt-12 mb-6">Part III: From Screening to Action</h4>
+            <p>
+              If your BMI falls outside the "normal" range, it should be viewed as a signal for further investigation rather than a definitive diagnosis. Transitioning into a healthier BMI category is most effectively achieved through a combination of progressive resistance training (to preserve lean mass) and a sustainable caloric deficit or surplus depending on your starting point. Our calculator helps you identify your "Healthy Weight Range," providing a tangible target for your fitness journey.
+            </p>
           </>
         }
         example={
-          <>
-            <p>For an individual who is 5'9" (69 inches) weighing 160 lbs:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>69 squared = 4761</li>
-              <li>160 / 4761 = 0.0336</li>
-              <li>703 × 0.0336 = <strong>23.6 BMI</strong></li>
-              <li>This result falls securely in the "Normal Weight" category.</li>
-            </ul>
-          </>
+          <div className="space-y-6">
+            <p className="font-bold text-gray-900 uppercase tracking-widest text-xs mb-4">Case Study: Understanding the Scale</p>
+            <p>
+              Consider <strong>Alex</strong>, who stands at <strong>5 feet 10 inches</strong> (70 inches) and weighs <strong>190 lbs</strong>. Let's calculate Alex's BMI using the imperial formula:
+            </p>
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-rose-200">
+              <ul className="space-y-4 text-gray-700">
+                <li className="flex justify-between">
+                  <span>Step 1: Square Height (70 × 70)</span>
+                  <span className="font-bold">4,900</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Step 2: Divide Weight by Squared Height (190 / 4,900)</span>
+                  <span className="font-bold underline">0.03877</span>
+                </li>
+                <li className="flex justify-between border-t pt-4">
+                  <span className="text-rose-900 font-bold uppercase text-sm">Step 3: Multiply by 703 conversion factor</span>
+                  <span className="text-rose-700 font-black">27.3 BMI</span>
+                </li>
+                <li className="flex justify-between border-t-2 border-rose-200 pt-4 text-2xl">
+                  <span className="text-rose-950 font-black">Result:</span>
+                  <span className="text-rose-800 font-black">Overweight</span>
+                </li>
+              </ul>
+            </div>
+            <p className="text-sm italic text-gray-500 mt-6">
+              Observation: Alex's BMI of 27.3 indicates that he is currently above the healthy range. To reach a "Normal Weight" BMI of 24.9, Alex would need to reach a weight of roughly <strong>173 lbs</strong>.
+            </p>
+          </div>
         }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Risk Assessment:</strong> High BMI correctly correlates with increased risks of diabetes, hypertension, and cardiovascular disease across large population samples.</li></ul>}
+        useCases={
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+              <h5 className="font-bold text-rose-900 mb-3 uppercase text-sm tracking-wide">Public Health Screening</h5>
+              <p className="text-sm text-gray-600 leading-relaxed">Epidemiologists use BMI to track obesity trends within cities and countries, helping governments allocate resources for health initiatives and preventative care.</p>
+            </div>
+            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+              <h5 className="font-bold text-rose-900 mb-3 uppercase text-sm tracking-wide">Insurance Underwriting</h5>
+              <p className="text-sm text-gray-600 leading-relaxed">Life insurance companies often use BMI as one of many factors to assess long-term risk and determine policy premiums for applicants.</p>
+            </div>
+            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+              <h5 className="font-bold text-rose-900 mb-3 uppercase text-sm tracking-wide">Fitness Goal Setting</h5>
+              <p className="text-sm text-gray-600 leading-relaxed">Individuals starting a weight loss journey use BMI as a baseline metric to set realistic, long-term targets for their physical transformation.</p>
+            </div>
+          </div>
+        }
+        glossary={[
+          { term: "Adipose Tissue", definition: "A specialized connective tissue that functions as the major storage site for fat in the form of triglycerides." },
+          { term: "Visceral Fat", definition: "Body fat that is stored within the abdominal cavity and is therefore stored around a number of important internal organs such as the liver, pancreas and intestines." },
+          { term: "Basal Metabolic Rate (BMR)", definition: "The number of calories your body needs to accomplish its most basic (basal) life-sustaining functions." },
+          { term: "Metabolic Syndrome", definition: "A cluster of conditions that occur together, increasing your risk of heart disease, stroke and type 2 diabetes." },
+          { term: "Lean Body Mass", definition: "The amount of weight you carry on your body that isn't fat. It includes your bones, muscles, ligaments, and water." },
+          { term: "Bone Density", definition: "A measure of the amount of minerals (mostly calcium and phosphorous) contained in a certain amount of bone." },
+          { term: "Hypertrophy", definition: "The enlargement of an organ or tissue from the increase in size of its cells, common in muscle growth through resistance training." },
+          { term: "Skinfold Caliper", definition: "A device which measures the thickness of a fold of your skin with its underlying layer of fat." },
+          { term: "Dexa Scan", definition: "A non-invasive test that measures bone mineral density to assess if a person is at risk of osteoporosis or fracture, also used for body fat percentage." },
+          { term: "Type 2 Diabetes", definition: "A chronic condition that affects the way the body processes blood sugar (glucose)." },
+        ]}
         faqs={[
           {
             question: "Is BMI accurate for bodybuilders?",
-            answer: "No. BMI does not differentiate between fat mass and muscle mass. A highly muscular athlete with 8% body fat could easily register as 'Obese' on a BMI scale simply due to their sheer density and mass."
+            answer: "No. BMI does not differentiate between fat mass and muscle mass. A highly muscular athlete with 8% body fat could register as 'Obese' on a BMI scale simply due to their sheer density and mass. In these cases, body fat percentage tests (like DEXA or displacement) are more appropriate."
           },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            }]}
+          {
+            question: "What is the difference between BMI and Body Fat Percentage?",
+            answer: "BMI is a ratio of height to weight, whereas body fat percentage is the literal proportion of your weight that is adipose tissue versus lean mass. BMI is a screening tool; body fat percentage is a diagnostic tool."
+          },
+          {
+            question: "Why is visceral fat more dangerous than subcutaneous fat?",
+            answer: "Subcutaneous fat is just below the skin, while visceral fat wraps around your organs. Visceral fat is more metabolically active and secretes inflammatory markers into the bloodstream, significantly increasing the risk of chronic disease even if your overall BMI is normal."
+          },
+          {
+            question: "Does BMI increase with age?",
+            answer: "Not necessarily, but body composition often shifts as we age (sarcopenia), where muscle mass is replaced by fat mass. This means you could maintain the same BMI over 20 years but have a much higher body fat percentage in your 60s than in your 40s."
+          },
+          {
+            question: "Is there a specific BMI for children and teens?",
+            answer: "Yes. For children and adolescents (ages 2-19), BMI is calculated differently using 'BMI-for-age percentiles.' Because children grow at different rates, they are compared to other children of the same age and biological sex."
+          },
+          {
+            question: "Can I be 'Skinny Fat' and have a normal BMI?",
+            answer: "Yes. This is clinically known as MONW (Metabolically Obese Normal Weight). An individual can have a 'normal' BMI but high levels of body fat and low muscle mass, leading to the same metabolic risks as someone who is clinically obese."
+          }
+        ]}
         relatedCalculators={[
-            {
-              name: "Calorie Calculator",
-              path: "/calorie-calculator",
-              desc: "Estimate the number of calories you need to maintain or lose weight.",
-            },
-            {
-              name: "BMR Calculator",
-              path: "/bmr-calculator",
-              desc: "Find your Basal Metabolic Rate to understand your calorie needs at rest.",
-            },
-            {
-              name: "Ideal Weight Calculator",
-              path: "/ideal-weight-calculator",
-              desc: "Estimate your healthy weight range based on traditional formulas.",
-            },
-            {
-              name: "Body Fat Calculator",
-              path: "/body-fat-calculator",
-              desc: "Estimate your body fat percentage using various methods.",
-            }]}
+          {
+            name: "Calorie Calculator",
+            path: "/calorie-calculator",
+            desc: "Estimate the exact number of daily calories required to reach your target BMI through a controlled caloric deficit or surplus.",
+          },
+          {
+            name: "BMR Calculator",
+            path: "/bmr-calculator",
+            desc: "Discover your Basal Metabolic Rate—the calories you burn at rest—to better inform your weight management strategy.",
+          },
+          {
+            name: "Body Fat Calculator",
+            path: "/body-fat-calculator",
+            desc: "Go beyond BMI by estimating your actual body fat percentage using the Navy Tape method or other anthropometric data.",
+          },
+          {
+            name: "Ideal Weight Calculator",
+            path: "/ideal-weight-calculator",
+            desc: "Find the weight range where you are projected to experience the best longevity and health outcomes based on your height.",
+          }
+        ]}
       />
     </div>
   );

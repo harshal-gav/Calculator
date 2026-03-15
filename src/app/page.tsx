@@ -1,8 +1,39 @@
 import Link from "next/link";
 import HomeSearch from "@/components/HomeSearch";
+import HomeSEO from "@/components/HomeSEO";
 
 export default function Home() {
   const categories = [
+    {
+      name: "Featured & Trending",
+      calculators: [
+        {
+          name: "Compound Interest Calculator",
+          path: "/compound-interest-calculator",
+          desc: "Expert-level projection of wealth growth over time using advanced compounding math.",
+        },
+        {
+          name: "Mortgage Calculator",
+          path: "/mortgage-calculator",
+          desc: "Complete PITI breakdown and amortization schedules for informed home ownership.",
+        },
+        {
+          name: "ROI Calculator",
+          path: "/roi-calculator",
+          desc: "Analyze the efficiency of your investments with absolute and annualized return metrics.",
+        },
+        {
+          name: "Investment Calculator",
+          path: "/investment-calculator",
+          desc: "Calculate long-term portfolio growth with variable contribution and rate scenarios.",
+        },
+        {
+          name: "Inflation Calculator",
+          path: "/inflation-calculator",
+          desc: "See how currency erosion impacts your future purchasing power over time.",
+        },
+      ],
+    },
     {
       name: "Financial Calculators",
       calculators: [
@@ -107,11 +138,6 @@ export default function Home() {
           desc: "Calculate mortgage payments using Canadian semi-annual compounding.",
         },
         {
-          name: "Mortgage Calculator",
-          path: "/mortgage-calculator",
-          desc: "Estimate your monthly mortgage payments including taxes and insurance.",
-        },
-        {
           name: "Mortgage Payoff Calculator",
           path: "/mortgage-payoff-calculator",
           desc: "Calculate exactly how much time and money you can save by adding extra payments to your mortgage every month.",
@@ -142,11 +168,6 @@ export default function Home() {
           desc: "Calculate the future accumulated value of an investment with compound interest.",
         },
         {
-          name: "ROI Calculator",
-          path: "/roi-calculator",
-          desc: "Calculate your exact Return on Investment and Annualized ROI over any timeframe.",
-        },
-        {
           name: "Retirement Calculator",
           path: "/retirement-calculator",
           desc: "Project your wealth at retirement and estimate monthly drawdown income.",
@@ -160,11 +181,6 @@ export default function Home() {
           name: "CD Calculator",
           path: "/cd-calculator",
           desc: "Calculate the future value and interest earned on certificates of deposit.",
-        },
-        {
-          name: "Investment Calculator",
-          path: "/investment-calculator",
-          desc: "Project investment growth over time with compound interest.",
         },
         {
           name: "Savings Goal Calculator",
@@ -235,16 +251,6 @@ export default function Home() {
           name: "Percent Off Calculator",
           path: "/percent-off-calculator",
           desc: "Quickly calculate sale prices and discounts.",
-        },
-        {
-          name: "Compound Interest Calculator",
-          path: "/compound-interest-calculator",
-          desc: "Discover how your savings and investments will grow over time through compound interest.",
-        },
-        {
-          name: "Investment Calculator",
-          path: "/investment-calculator",
-          desc: "Forecast the long term growth of your investment portfolio and estimate future tax liabilities.",
         },
         {
           name: "Auto Lease Calculator",
@@ -622,11 +628,6 @@ export default function Home() {
           name: "Time Calculator",
           path: "/time-calculator",
           desc: "Add or subtract blocks of time easily in hours, minutes, and seconds.",
-        },
-        {
-          name: "Inflation Calculator",
-          path: "/inflation-calculator",
-          desc: "Calculate how inflation impacts the future cost of goods and purchasing power.",
         },
         {
           name: "Sales Tax Calculator",
@@ -1421,6 +1422,7 @@ export default function Home() {
       </div>
 
       <HomeSearch categories={categories} />
+      <HomeSEO />
     </div>
   );
 }

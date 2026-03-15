@@ -144,135 +144,178 @@ export default function APYCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Annual Percentage Yield (APY) Calculator"
+          title="Annual Percentage Yield (APY) Calculator: Maximize Your Compound Interest"
           whatIsIt={
             <>
-              <p>
-                Our <strong>Annual Percentage Yield (APY) Calculator</strong>{" "}
-                reveals the true, mathematically accurate rate of return on your
-                investments or savings accounts by factoring in the powerful
-                effects of compounding interest over the course of exactly one
-                year.
+              <p className="text-lg leading-relaxed mb-4">
+                Our <strong>Annual Percentage Yield (APY) Calculator</strong> is a precise mathematical tool designed to reveal the true rate of return on your savings, CDs, and investment accounts. While a nominal interest rate tells you the "simple" interest earned, the APY factors in the powerful engine of <strong>compounding</strong>—the process where you earn interest on your interest.
               </p>
-              <p>
-                Banks often deliberately quote the lower "Nominal Interest Rate"
-                or "APR" when charging you money (like on a credit card), but
-                they heavily advertise the higher "APY" when trying to get you
-                to deposit money (like in a High-Yield Savings Account). APY
-                represents the actual money that will hit your account by
-                December 31st, because it accounts for the fact that you earn
-                "interest on your interest" every month or every day.
+              <p className="leading-relaxed mb-4">
+                In the financial world, there is a distinct bias in how rates are quoted. Lenders (who charge you money) typically quote the <strong>APR</strong> because it looks smaller by ignoring compounding. Banks (who pay you interest) quote the <strong>APY</strong> because it looks larger by including compounding. Our calculator levels the playing field, allowing you to see exactly how much cash will be in your account after 365 days of growth.
+              </p>
+              <p className="leading-relaxed">
+                Whether you are comparing a High-Yield Savings Account (HYSA) with daily compounding versus a traditional savings account with monthly compounding, this tool provides the "apples-to-apples" comparison needed to maximize your wealth.
               </p>
             </>
           }
+          comparisonTable={{
+            title: "The Power of Compounding: 5.00% Nominal Rate vs. Frequencies",
+            headers: ["Compounding Frequency", "Nominal Rate", "Yield Increment", "Effective APY"],
+            rows: [
+              ["Annually", "5.00%", "+0.000%", "5.000%"],
+              ["Semi-Annually", "5.00%", "+0.063%", "5.063%"],
+              ["Quarterly", "5.00%", "+0.095%", "5.095%"],
+              ["Monthly", "5.00%", "+0.116%", "5.116%"],
+              ["Weekly", "5.00%", "+0.125%", "5.125%"],
+              ["Daily", "5.00%", "+0.127%", "5.127%"],
+              ["Continuously", "5.00%", "+0.127%", "5.127%"],
+            ]
+          }}
           formula={
             <>
-              <p>
-                The standard algebraic formula for converting a nominal interest
-                rate into an Annual Percentage Yield (APY) is:
+              <p className="mb-4">
+                The Annual Percentage Yield is calculated by taking the periodic rate, raising it to the power of the number of periods, and subtracting the original principal.
               </p>
-              <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
-                <p>
-                  <strong>APY = (1 + r/n)ⁿ - 1</strong>
+              <div className="bg-zinc-100 p-6 rounded-xl border border-zinc-200 mb-6">
+                <p className="font-mono text-center text-xl mb-4 text-emerald-900">
+                  APY = (1 + r/n)ⁿ - 1
                 </p>
-                <p className="border-t border-zinc-200 pt-3 mt-2 text-sm font-sans text-left text-zinc-700">
-                  <strong>Where:</strong>
-                  <br />r = Nominal Interest Rate (as a decimal)
-                  <br />n = Number of compounding periods per year (e.g., 12 for
-                  monthly, 365 for daily)
-                </p>
+                <div className="text-sm font-sans text-zinc-700 grid grid-cols-2 gap-4 border-t border-zinc-200 pt-4">
+                  <div>
+                    <strong>r</strong> = Nominal Interest Rate (decimal)
+                  </div>
+                  <div>
+                    <strong>n</strong> = Compounding periods per year
+                  </div>
+                </div>
               </div>
+              <p className="italic text-zinc-500 text-sm">
+                Note: For continuous compounding, the formula shifts to the natural exponential: <strong>APY = eʳ - 1</strong>, where 'e' is Euler's number (~2.71828).
+              </p>
+            </>
+          }
+          deepDive={
+            <>
+              <h3 className="text-xl font-bold mb-4 text-emerald-900">Nominal vs. Effective: Why Your Bank Quotes Both</h3>
+              <p className="mb-4">
+                Financial institutions are legally required to disclose the yield of their accounts. This "Effective Rate" (APY) is almost always higher than the "Nominal Rate" (Interest Rate). The difference represents the <strong>Compounding Bonus</strong>.
+              </p>
+              <p className="mb-4">
+                For example, if you have $10,000 in an account with a 5% nominal rate:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 mb-6 text-zinc-700">
+                <li><strong>Month 1:</strong> You earn interest on $10,000.</li>
+                <li><strong>Month 2:</strong> You earn interest on $10,041.67 (Original + Month 1 Interest).</li>
+                <li><strong>Month 3:</strong> You earn interest on $10,083.51... and so on.</li>
+              </ul>
+              <p className="mb-4">
+                By the end of the year, those tiny monthly "interest on interest" payments add up. In this 5% monthly compounding example, you end with $10,511.62 instead of $10,500. That extra $11.62 represents the difference between a 5% APR and a 5.116% APY.
+              </p>
+              <h3 className="text-xl font-bold mb-4 text-emerald-900">The "Truth in Savings" Act</h3>
+              <p>
+                In the United States, the <strong>Truth in Savings Act (Regulation DD)</strong> requires depository institutions to use the APY in all advertisements and disclosures. This was passed to prevent banks from using confusing compounding math to mislead consumers about how much their money would actually grow.
+              </p>
             </>
           }
           example={
             <>
-              <p>
-                Let's look at a standard High-Yield Savings Account (HYSA)
-                offered by an online bank.
+              <p className="mb-4 font-semibold text-emerald-800">Scenario: Daily Compounding vs. Annual Compounding</p>
+              <p className="mb-4">
+                Let's compare two high-yield savings offers for a $50,000 deposit:
               </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
-                <li>
-                  <strong>The Setup:</strong> The bank advertises a{" "}
-                  <strong>5.00%</strong> Nominal Interest Rate, but explicitly
-                  states that interest compounds <strong>Daily</strong>.
-                </li>
-                <li>
-                  <strong>The Math:</strong> APY = (1 + 0.05/365)³⁶⁵ - 1
-                </li>
-                <li>
-                  <strong>The Calculation:</strong> (1 + 0.0001369)³⁶⁵ - 1 =
-                  (1.05126) - 1 = .05126
-                </li>
-                <li>
-                  <strong>Result:</strong> Your true APY is exactly{" "}
-                  <strong>5.126%</strong>. Because your interest is compounding
-                  every single day, you actually earn 0.126% more over the year
-                  than the quoted 5.00% nominal rate.
-                </li>
-              </ul>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div className="p-5 bg-white border-2 border-zinc-100 rounded-xl">
+                  <p className="font-bold text-zinc-800">Account A (Traditional Bank)</p>
+                  <p className="text-zinc-600 text-sm mb-2">Compounded Annually</p>
+                  <p className="text-2xl font-black text-zinc-900">5.00% APY</p>
+                  <p className="mt-2 text-zinc-500 font-medium">Earnings: $2,500.00</p>
+                </div>
+                <div className="p-5 bg-emerald-50 border-2 border-emerald-100 rounded-xl">
+                  <p className="font-bold text-emerald-800">Account B (Fintech Disruptor)</p>
+                  <p className="text-emerald-600 text-sm mb-2">Compounded Daily</p>
+                  <p className="text-2xl font-black text-emerald-900">5.127% APY</p>
+                  <p className="mt-2 text-emerald-700 font-medium">Earnings: $2,563.50</p>
+                </div>
+              </div>
+              <p>
+                By choosing Account B (Daily Compounding), you earn an extra <strong>$63.50</strong> for absolutely no extra work or risk. Over 10 or 20 years, these fractions of a percent can lead to tens of thousands of dollars in additional wealth.
+              </p>
             </>
           }
           useCases={
-            <ul className="list-disc pl-6 space-y-4 text-zinc-700">
-              <li>
-                <strong>Comparing Savings Accounts:</strong> Not all 5% accounts
-                are equal. Bank A might pay 5% compounded annually (APY =
-                5.00%). Bank B might pay 5% compounded daily (APY = 5.13%). You
-                always go with Bank B.
-              </li>
-              <li>
-                <strong>Evaluating CD Rates:</strong> Certificates of Deposit
-                (CDs) often have varying compounding schedules. Converting
-                everything into a standardized APY allows for perfect
-                "apples-to-apples" comparisons across completely different
-                banking products.
-              </li>
-              <li>
-                <strong>Crypto Staking:</strong> In decentralized finance
-                (DeFi), protocols often quote daily or continuous compounding
-                returns. Calculating the true APY prevents you from being
-                manipulated by artificially low nominal rates.
-              </li>
-            </ul>
+            <div className="space-y-6 text-zinc-700">
+              <div>
+                <h4 className="font-bold text-emerald-800 uppercase text-xs tracking-widest mb-1">High-Yield Savings Accounts</h4>
+                <p>When shopping for HYSAs, look past the big bold number. If two banks offer 4.5%, check the fine print for compounding. Daily compounding always beats monthly compounding.</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-emerald-800 uppercase text-xs tracking-widest mb-1">Certificates of Deposit (CDs)</h4>
+                <p>CDs often have fixed terms. Converting a 18-month CD rate into an APY allows you to compare it directly to your liquid savings account to see if locking up your money is actually worth it.</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-emerald-800 uppercase text-xs tracking-widest mb-1">Cryptocurrency Staking</h4>
+                <p>Many crypto platforms offer "Daily Rewards." These often utilize continuous compounding math. Always use an APY calculator to find the real yield before committing your digital assets.</p>
+              </div>
+            </div>
           }
+          glossary={[
+            {
+              term: "Compounding Interest",
+              definition: "The addition of interest to the principal sum of a loan or deposit, so that interest in the next period is then earned on the principal sum plus previously-accumulated interest."
+            },
+            {
+              term: "Euler's Number (e)",
+              definition: "A mathematical constant approximately equal to 2.71828, used as the base for calculating continuous compounding return rates."
+            },
+            {
+              term: "Nominal Rate",
+              definition: "The advertised rate that does not account for compounding. Also known as the 'Stated Rate'."
+            },
+            {
+              term: "Variable APY",
+              definition: "An annual percentage yield that can change at any time, common in savings and money market accounts."
+            }
+          ]}
           faqs={[
             {
-              question: "What is the difference between APR and APY?",
-              answer:
-                "APR (Annual Percentage Rate) is the simple, flat rate that entirely ignores compounding interest. APY (Annual Percentage Yield) explicitly includes compounding interest. When you borrow money, banks quote the APR (to make the cost look lower). When you save money, banks quote the APY (to make your earnings look higher).",
+              question: "Will my APY ever change?",
+              answer: "If you have a High-Yield Savings Account, the APY is variable and usually follows the Federal Funds Rate. If the Fed raises rates, your APY goes up. If they cut rates, your bank will likely lower your APY."
             },
             {
-              question: "Does 'Continuous Compounding' make a big difference?",
-              answer:
-                "Mathematically, yes; practically, no. The jump from Annual compounding to Monthly compounding is significant. The jump from Monthly to Daily is noticeable. The jump from Daily (365 times a year) to Continuous (infinite times a year) only results in fractions of a penny for most average retail investors.",
+              question: "Is APY the same as ROI?",
+              answer: "Not quite. ROI (Return on Investment) measures the total growth of an investment from start to finish, regardless of time. APY specifically measures the growth over a standardized 365-day period."
             },
             {
-              question: "Is APY guaranteed?",
-              answer:
-                "For fixed products like CDs or fixed-rate bonds, yes. However, for a High-Yield Savings Account (HYSA), the APY is a 'variable' rate. The bank reserves the right to drastically lower the APY at any time if the Federal Reserve cuts national interest rates.",
+              question: "Does higher compounding frequency always mean more money?",
+              answer: "Yes, but with diminishing returns. The jump from annual to monthly is big. The jump from daily to continuous is virtually imperceivable for most balances."
             },
+            {
+              question: "How do I calculate APY for a partial year?",
+              answer: "APY is always annualized for a full year. If you hold an investment for 6 months, you would earn approximately half of the APY (slightly less due to the lack of compounding in the second half of the year)."
+            }
           ]}
           relatedCalculators={[
             {
               name: "Compound Interest Calculator",
               path: "/compound-interest-calculator",
-              desc: "Project the exact dollar amounts you will earn over decades using your new APY.",
+              desc: "Project the exact dollar amounts you will earn over decades using your new APY."
             },
             {
               name: "Investment Calculator",
               path: "/investment-calculator",
-              desc: "Calculate your future net worth by combining your APY with monthly deposits.",
+              desc: "Calculate your future net worth by combining your APY with monthly deposits."
             },
             {
               name: "Simple Interest Calculator",
               path: "/simple-interest-calculator",
-              desc: "See the massive mathematical difference between simple interest and APY.",
+              desc: "See the massive mathematical difference between simple interest and APY."
             },
             {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            }]}
+              name: "APR Calculator",
+              path: "/apr-calculator",
+              desc: "Compare your savings yield (APY) against your debt costs (APR)."
+            }
+          ]}
         />
       </div>
     </div>

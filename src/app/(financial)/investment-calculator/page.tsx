@@ -17,45 +17,42 @@ export default function InvestmentCalculator() {
   } | null>(null);
 
   const calculateInvestment = () => {
-    const principal = parseFloat(startingAmount);
-    const rate = parseFloat(returnRate) / 100 / 12;
-    const years = parseFloat(investmentLength);
-    const monthlyExtra = parseFloat(contribution);
+    const principal = parseFloat(startingAmount) || 0;
+    const rate = (parseFloat(returnRate) || 0) / 100 / 12;
+    const years = parseFloat(investmentLength) || 0;
+    const monthlyExtra = parseFloat(contribution) || 0;
     const freq = contributionFreq;
 
-    if (!isNaN(principal)) {
-      const months = years * 12;
-      let total = principal;
-      let totalDeposited = principal;
+    const months = years * 12;
+    let total = principal;
+    let totalDeposited = principal;
 
-      for (let i = 0; i < months; i++) {
-        // Daily/Monthly compounding simplification
-        total = total * (1 + rate);
+    for (let i = 0; i < months; i++) {
+      total = total * (1 + rate);
 
-        if (freq === "monthly") {
-          total += monthlyExtra;
-          totalDeposited += monthlyExtra;
-        } else if (freq === "annually" && (i + 1) % 12 === 0) {
-          total += monthlyExtra;
-          totalDeposited += monthlyExtra;
-        }
+      if (freq === "monthly") {
+        total += monthlyExtra;
+        totalDeposited += monthlyExtra;
+      } else if (freq === "annually" && (i + 1) % 12 === 0) {
+        total += monthlyExtra;
+        totalDeposited += monthlyExtra;
       }
-
-      setResult({
-        futureValue: total,
-        totalContributed: totalDeposited,
-        totalInterest: total - totalDeposited
-      });
     }
+
+    setResult({
+      futureValue: total,
+      totalContributed: totalDeposited,
+      totalInterest: total - totalDeposited
+    });
   };
 
   return (
     <div className="max-w-6xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
       <h1 className="text-4xl font-extrabold mb-4 text-gray-900 border-b pb-4 shadow-sm inline-block px-2">
-        Investment Growth Calculator
+         Investment Strategy Calculator
       </h1>
       <p className="mb-8 text-gray-600 text-lg">
-        Visualize your wealth. See how small, consistent contributions combined with time and compound interest create massive long-term value.
+        Master your financial destiny. Project the growth of your stock portfolio, mutual funds, and retirement accounts with our advanced modeling engine.
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
@@ -63,25 +60,49 @@ export default function InvestmentCalculator() {
           <div className="space-y-5">
             <div>
               <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Starting Amount ($):</label>
-              <input type="number" value={startingAmount} onChange={(e) => setStartingAmount(e.target.value)} className="w-full rounded border-gray-300 p-3 font-black text-gray-900" />
+              <input 
+                type="number" 
+                value={startingAmount} 
+                onChange={(e) => setStartingAmount(e.target.value)} 
+                className="w-full rounded-xl border-gray-300 p-4 font-black text-gray-900 focus:ring-2 focus:ring-blue-500" 
+              />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1 uppercase">Return (%)</label>
-                  <input type="number" value={returnRate} onChange={(e) => setReturnRate(e.target.value)} className="w-full rounded border-gray-300 p-3" />
+                  <label className="block text-xs font-bold text-gray-400 mb-1 uppercase">Annual Return (%)</label>
+                  <input 
+                    type="number" 
+                    value={returnRate} 
+                    onChange={(e) => setReturnRate(e.target.value)} 
+                    className="w-full rounded-xl border-gray-300 p-4 text-emerald-700 font-bold" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 mb-1 uppercase">Years</label>
-                  <input type="number" value={investmentLength} onChange={(e) => setInvestmentLength(e.target.value)} className="w-full rounded border-gray-300 p-3" />
+                  <label className="block text-xs font-bold text-gray-400 mb-1 uppercase">Horizon (Years)</label>
+                  <input 
+                    type="number" 
+                    value={investmentLength} 
+                    onChange={(e) => setInvestmentLength(e.target.value)} 
+                    className="w-full rounded-xl border-gray-300 p-4 font-bold" 
+                  />
                 </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Regular Contribution ($):</label>
+              <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Periodic Deposit ($):</label>
               <div className="flex space-x-2">
-                <input type="number" value={contribution} onChange={(e) => setContribution(e.target.value)} className="flex-grow rounded border-gray-300 p-3 font-black text-blue-700" />
-                <select value={contributionFreq} onChange={(e) => setContributionFreq(e.target.value)} className="rounded border-gray-300 p-3 text-xs bg-white">
+                <input 
+                  type="number" 
+                  value={contribution} 
+                  onChange={(e) => setContribution(e.target.value)} 
+                  className="flex-grow rounded-xl border-gray-300 p-4 font-black text-blue-700" 
+                />
+                <select 
+                  value={contributionFreq} 
+                  onChange={(e) => setContributionFreq(e.target.value)} 
+                  className="rounded-xl border-gray-300 p-4 text-xs font-bold bg-white"
+                >
                     <option value="monthly">Monthly</option>
                     <option value="annually">Annually</option>
                 </select>
@@ -91,105 +112,227 @@ export default function InvestmentCalculator() {
 
           <button
             onClick={calculateInvestment}
-            className="mt-8 w-full bg-blue-600 text-white font-black py-5 rounded-2xl hover:scale-[1.02] transition shadow-xl text-xl uppercase tracking-tighter"
+            className="mt-8 w-full bg-blue-600 text-white font-black py-5 rounded-2xl hover:bg-blue-700 transition-all shadow-xl text-xl uppercase tracking-wider active:scale-95"
           >
-            Calculate Wealth
+            Run Projection
           </button>
         </div>
 
         <div className="lg:col-span-8 flex flex-col space-y-6">
           {result !== null ? (
             <>
-                <div className="bg-gradient-to-br from-gray-900 to-blue-900 text-white rounded-3xl p-12 text-center shadow-2xl relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none"></div>
-                    <span className="block text-sm font-bold text-blue-300 uppercase mb-3 tracking-widest font-mono">Future Net Worth</span>
-                    <div className="text-8xl font-black mb-4 tabular-nums">
+                <div className="bg-gradient-to-br from-gray-900 to-blue-900 text-white rounded-3xl p-12 text-center shadow-2xl relative overflow-hidden group border border-blue-400/20">
+                    <div className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-5 transition-opacity pointer-events-none"></div>
+                    <span className="block text-sm font-bold text-blue-300 uppercase mb-3 tracking-[0.3em] font-mono">Projected Net Worth</span>
+                    <div className="text-7xl md:text-8xl font-black mb-4 tabular-nums drop-shadow-lg">
                         ${result.futureValue.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     </div>
+                    <p className="text-blue-200/60 text-sm font-medium">After {investmentLength} years of execution</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-white border-2 border-gray-50 p-8 rounded-3xl shadow-sm text-center">
-                        <span className="block text-xs font-black text-gray-400 uppercase mb-2">Total Contributed</span>
-                        <div className="text-3xl font-black text-gray-900">${result.totalContributed.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
-                        <div className="w-full h-1.5 bg-gray-100 rounded-full mt-4">
-                            <div className="h-full bg-blue-400 rounded-full" style={{ width: `${(result.totalContributed / result.futureValue) * 100}%` }}></div>
+                    <div className="bg-white border-2 border-gray-50 p-8 rounded-3xl shadow-sm text-center relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gray-200"></div>
+                        <span className="block text-[10px] font-black text-gray-400 uppercase mb-2 tracking-widest font-mono">Labor Yield (Principal)</span>
+                        <div className="text-4xl font-black text-gray-900">${result.totalContributed.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
+                        <div className="w-full h-2 bg-gray-100 rounded-full mt-6">
+                            <div className="h-full bg-blue-500 rounded-full transition-all duration-1000" style={{ width: `${(result.totalContributed / result.futureValue) * 100}%` }}></div>
                         </div>
                     </div>
-                    <div className="bg-white border-2 border-gray-50 p-8 rounded-3xl shadow-sm text-center">
-                        <span className="block text-xs font-black text-gray-400 uppercase mb-2">Total Interest Earned</span>
-                        <div className="text-3xl font-black text-green-600">${result.totalInterest.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
-                        <div className="w-full h-1.5 bg-gray-100 rounded-full mt-4">
-                            <div className="h-full bg-green-500 rounded-full" style={{ width: `${(result.totalInterest / result.futureValue) * 100}%` }}></div>
+                    <div className="bg-white border-2 border-gray-50 p-8 rounded-3xl shadow-sm text-center relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-emerald-100"></div>
+                        <span className="block text-[10px] font-black text-emerald-400 uppercase mb-2 tracking-widest font-mono">Capital Yield (Interest)</span>
+                        <div className="text-4xl font-black text-emerald-600">${result.totalInterest.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
+                        <div className="w-full h-2 bg-gray-100 rounded-full mt-6">
+                            <div className="h-full bg-emerald-500 rounded-full transition-all duration-1000" style={{ width: `${(result.totalInterest / result.futureValue) * 100}%` }}></div>
                         </div>
                     </div>
                 </div>
             </>
           ) : (
-             <div className="h-full border-4 border-double border-gray-100 rounded-[40px] flex flex-col items-center justify-center p-20 text-center text-gray-200">
-                <p className="text-7xl mb-6">💰</p>
-                <p className="font-black text-2xl uppercase tracking-[0.2em] mb-4">Compound Your Future</p>
-                <p className="max-w-md text-sm text-gray-400 font-medium">Input your investment strategy to see how much of your future wealth comes from interest versus your own pockets.</p>
+             <div className="h-full border-4 border-dashed border-gray-100 rounded-[40px] flex flex-col items-center justify-center p-20 text-center text-gray-200 group">
+                <p className="text-8xl mb-6 group-hover:scale-110 transition-transform duration-500">💎</p>
+                <p className="font-black text-2xl uppercase tracking-[0.2em] mb-4 text-gray-400">Wealth Architecture</p>
+                <p className="max-w-md text-sm text-gray-400 font-medium">Define your inputs to visualize the compounding avalanche that turns consistent labor into generational wealth.</p>
              </div>
           )}
         </div>
       </div>
 
       <CalculatorSEO
-        title="Investment Growth Calculator"
+        title="Deep Dive: Advanced Investment Analysis & Projections"
         whatIsIt={
           <>
-            <p>
-              The <strong>Investment Calculator</strong> is a foundational tool for financial planning. It demonstrates the profound effect of compound interest—the process where your investment's earnings generate their own earnings.
+            <p className="text-lg leading-relaxed mb-6">
+              The <strong>Investment Calculator</strong> is a sophisticated modeling suite designed for forward-looking capital allocation. Unlike a standard savings tracker, this tool isolates the variables of market returns, time horizons, and contribution frequency to create a high-fidelity simulation of long-term wealth building.
+            </p>
+            <p className="leading-relaxed mb-6">
+              In modern finance, the "Time Value of Money" (TVM) is the most critical concept. It posits that a dollar today is worth more than a dollar tomorrow due to its potential earning capacity. By leveraging this calculator, you are shifting from a passive accumulator of currency to an active architect of assets. You are modeling how consistent "dollar-cost averaging" (DCA) into income-producing vehicles can create a compounding engine that eventually outpaces your primary income.
+            </p>
+            <p className="leading-relaxed">
+              Whether you are projecting the growth of a Roth IRA, a 401(k), or a taxable brokerage account, this tool provides the mathematical clarity needed to set realistic milestones. It serves as a digital roadmap for the "FIRE" (Financial Independence, Retire Early) movement and conventional retirement planning alike.
             </p>
           </>
         }
-        formula={<></>}
-        example={
-          <>
-            <p>If you invest $10,000 today and add $500 monthly for 20 years at an 8% return:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Your total contributions: $130,000.</li>
-              <li>Your total interest earned: <strong>$218,800</strong>.</li>
-              <li>Estimated future balance: <strong>$348,800</strong>.</li>
-            </ul>
-          </>
+        comparisonTable={{
+          title: "Historically Validated Asset Growth (Nominal Averages)",
+          headers: ["Strategy Type", "Historical ROI", "Risk Delta", "Outcome Scenario"],
+          rows: [
+            ["Treasury Bills (Cash)", "3% - 4%", "Minimal", "Wealth Preservation; barely beats inflation."],
+            ["Municipal Bonds", "4% - 5.5%", "Low", "Stable income; tax-efficient in high brackets."],
+            ["Global Real Estate", "7% - 8.5%", "Moderate", "Diversified equity; hedge against currency decay."],
+            ["Equity Index (S&P 500)", "9.5% - 11%", "High", "Aggressive growth; primary wealth generator."],
+            ["Venture/Growth Equity", "15% - 25%", "Ultra-High", "Concentrated bets; potential for outlier returns."],
+          ]
+        }}
+        formula={
+          <div className="space-y-6">
+            <p>
+              The math behind this projection is a combination of <strong>Periodic Compounding</strong> and <strong>Annuity Growth</strong>. The future value (FV) of an investment with recurring deposits is:
+            </p>
+            <div className="bg-gray-900 p-8 rounded-3xl font-mono text-center text-white shadow-2xl my-8 border border-blue-500/20">
+              <div className="text-2xl mb-4 text-blue-400">FV = P(1+r/n)ⁿᵗ + C((1+r/n)ⁿᵗ - 1)/(r/n)</div>
+            </div>
+            <p className="text-sm font-bold text-gray-500 uppercase tracking-widest text-center">Variables Explained:</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+               <div className="p-4 bg-blue-50/50 rounded-xl border border-blue-100 flex justify-between items-center">
+                  <span className="font-mono font-bold text-blue-800 text-lg">P</span>
+                  <span className="text-xs text-blue-600 font-medium">Initial Principal Sum</span>
+               </div>
+               <div className="p-4 bg-blue-50/50 rounded-xl border border-blue-100 flex justify-between items-center">
+                  <span className="font-mono font-bold text-blue-800 text-lg">C</span>
+                  <span className="text-xs text-blue-600 font-medium">Periodic Contribution (Monthly/Annually)</span>
+               </div>
+               <div className="p-4 bg-blue-50/50 rounded-xl border border-blue-100 flex justify-between items-center">
+                  <span className="font-mono font-bold text-blue-800 text-lg">r</span>
+                  <span className="text-xs text-blue-600 font-medium">Annual Growth Rate (expressed as decimal)</span>
+               </div>
+               <div className="p-4 bg-blue-50/50 rounded-xl border border-blue-100 flex justify-between items-center">
+                  <span className="font-mono font-bold text-blue-800 text-lg">t</span>
+                  <span className="text-xs text-blue-600 font-medium">Number of years in the horizon</span>
+               </div>
+            </div>
+          </div>
         }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Wealth Accumulation:</strong> Compare different asset classes by adjusting the annual return percentage to see long-term outcomes.</li></ul>}
+        deepDive={
+          <div className="space-y-12">
+            <section>
+              <h4 className="text-3xl font-black text-gray-900 mb-6 border-l-4 border-blue-600 pl-6">I. The Velocity of Capital</h4>
+              <p className="text-gray-700 leading-relaxed text-lg">
+                In the context of this calculator, "Velocity" refers to the frequency of compounding. While interest rate gets the headlines, the <strong>Frequency of Calculation</strong> is the silent workhorse. Daily compounding, common in high-yield savings, yields more than annual compounding even at the same interest rate. When investing in the stock market, you are typically modeling an 'average' monthly growth that simulates the continuous nature of global commerce.
+              </p>
+            </section>
+
+            <section className="bg-gradient-to-r from-blue-900 to-indigo-900 p-10 rounded-[40px] text-white shadow-xl">
+              <h4 className="text-2xl font-bold mb-4 text-blue-300">II. Inflation: The Real Returns Filter</h4>
+              <p className="leading-relaxed opacity-90">
+                A "Common Mistake" in investment modeling is ignoring <strong>Purchasing Power Erosion</strong>. If your projection shows $2 million in 30 years, you must mentally adjust that for inflation. At a 3% average inflation rate, $2 million in 2054 will have the buying power of roughly $825,000 today. To see "Real Wealth," we recommend running your projection at a 7% return (historically the 10% market return minus 3% inflation).
+              </p>
+            </section>
+
+            <section>
+              <h4 className="text-3xl font-black text-gray-900 mb-6 border-l-4 border-blue-600 pl-6">III. Volatility & The Sequence of Returns</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Calculators assume a "Smooth Line" growth. In reality, the stock market is a "Jagged Line." The order in which you receive your returns (Sequence of Returns) matters significantly, especially as you approach your goal. A 10% average return made of (+20%, -5%, +15%) feels very different than a flat 10% every year. Professional investors use these projections as a <strong>target</strong>, while maintaining enough liquidity to survive the inevitable "jagged" downswings.
+              </p>
+            </section>
+
+            <section className="bg-gray-50 border-2 border-dashed border-gray-200 p-10 rounded-[40px]">
+              <h4 className="text-2xl font-bold text-gray-800 mb-4">IV. Tax Efficiency: Maintaining Gross Yields</h4>
+              <p className="text-gray-600 leading-relaxed">
+                The final number our calculator produces is a "Gross" figure. Depending on where this money is held (Brokerage vs. Roth IRA vs. 401k), taxes could claim between 15% and 40% of the growth. Utilizing tax-advantaged accounts allows your capital to compound "Tax-Free" or "Tax-Deferred," which keeps significantly more capital working in your favor across decades.
+              </p>
+            </section>
+          </div>
+        }
+        example={
+          <div className="bg-white p-10 rounded-[40px] border border-gray-100 shadow-2xl relative">
+            <div className="absolute -top-4 -right-4 bg-emerald-500 text-white px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest shadow-lg">Case Proof</div>
+            <h5 className="font-black text-gray-900 uppercase tracking-widest text-sm mb-8">Scenario: The 'Late Starter' vs 'Early Bird'</h5>
+            <p className="text-gray-700 mb-8 text-lg">
+               Investor A starts with <strong>$5,000</strong> and adds <strong>$300/mo</strong> for <strong>30 years</strong>. Investor B waits 10 years to start, but adds <strong>$800/mo</strong> for <strong>20 years</strong>. At an 8% return:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <div className="p-8 bg-blue-50/30 rounded-3xl border border-blue-100">
+                <span className="block text-blue-600 font-bold uppercase text-[10px] mb-4">Investor A (30-Year Run)</span>
+                <div className="text-5xl font-black text-gray-900 mb-2">$493,542</div>
+                <p className="text-xs text-gray-500 font-medium italic">Total Put In: $113,000</p>
+              </div>
+              <div className="p-8 bg-gray-50 rounded-3xl border border-gray-100">
+                <span className="block text-gray-500 font-bold uppercase text-[10px] mb-4">Investor B (20-Year Run)</span>
+                <div className="text-5xl font-black text-gray-400 mb-2">$460,253</div>
+                <p className="text-xs text-gray-500 font-medium italic">Total Put In: $192,000</p>
+              </div>
+            </div>
+            <p className="mt-10 text-base text-gray-600 leading-relaxed border-t pt-8">
+              <strong>The Verdict:</strong> Even and Investor B put in <strong>$79,000 MORE</strong> of their own money, they still ended up with <strong>$33,000 LESS</strong> than Investor A. This is the "Procrastination Penalty" personified.
+            </p>
+          </div>
+        }
+        useCases={
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition-all">
+              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">🏝️</div>
+              <h5 className="font-black text-gray-900 mb-4 text-sm uppercase">Retirement Planning</h5>
+              <p className="text-sm text-gray-500 leading-relaxed">Determine if your current 401k/IRA contribution levels will fund your target lifestyle at age 65.</p>
+            </div>
+            <div className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition-all">
+              <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6">🎓</div>
+              <h5 className="font-black text-gray-900 mb-4 text-sm uppercase">Education Fund</h5>
+              <p className="text-sm text-gray-500 leading-relaxed">Project 529 plan growth across an 18-year horizon to ensure total college tuition coverage.</p>
+            </div>
+            <div className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition-all">
+              <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6">🏠</div>
+              <h5 className="font-black text-gray-900 mb-4 text-sm uppercase">House Downpayment</h5>
+              <p className="text-sm text-gray-500 leading-relaxed">Model a 5-year aggressive investment strategy to shorten the time to home ownership.</p>
+            </div>
+            <div className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition-all">
+              <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-2xl mb-6">🔥</div>
+              <h5 className="font-black text-gray-900 mb-4 text-sm uppercase">FIRE Milestone</h5>
+              <p className="text-sm text-gray-500 leading-relaxed">Calculate the exact monthly contribution needed to retire in your 40s or early 50s.</p>
+            </div>
+          </div>
+        }
+        glossary={[
+          { term: "Compound Interest", definition: "Interest earned on both the principal and the previous interest accumulated." },
+          { term: "DCA (Dollar Cost Averaging)", definition: "Investing a fixed amount regularly, regardless of asset price, to reduce volatility impact." },
+          { term: "Nominal Return", definition: "The raw percentage growth of an investment before adjusting for inflation or taxes." },
+          { term: "Real Return", definition: "The actual growth in purchasing power (Nominal Return minus Inflation)." },
+          { term: "Asset Allocation", definition: "The distribution of a portfolio among categories like Stocks, Bonds, and Cash." },
+          { term: "Horizon", definition: "The total length of time an investor remains in a position before liquidating." },
+          { term: "Liquidity", definition: "How quickly an investment can be converted to cash without losing market value." },
+          { term: "Bear Market", definition: "A period where market prices decline by 20% or more from recent highs." },
+          { term: "Dividend Reinvestment", definition: "The practice of using stock dividends to immediately buy more shares of the same stock." },
+          { term: "Risk Premium", definition: "The additional return an investor requires to take on higher risk over a 'risk-free' rate." },
+        ]}
         faqs={[
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            },
-            {
-              question: "Can I use this on my mobile device?",
-              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
-            }]}
+          {
+            question: "Is it better to invest a lump sum or monthly?",
+            answer: "Statistically, lump-sum investing wins ~66% of the time because your money is in the market longer. However, monthly investing (DCA) is easier to implement for most earners and reduces the emotional risk of investing right before a market crash."
+          },
+          {
+            question: "How accurate are these projections for the next 20 years?",
+            answer: "The projection is a mathematical certainty based on the inputs provided. However, real-world market returns fluctuate year-to-year. The '8%' you see here might be -15% one year and +25% the next. The math works over the 'long term,' not reliably year-to-year."
+          },
+          {
+            question: "What is the 'Rule of 72' in simple terms?",
+            answer: "A mental trick to see how fast your money doubles. Divide 72 by your return rate. At 9%, your money doubles every 8 years (72/9=8). At 6%, it doubles every 12 years."
+          },
+          {
+            question: "Should I include my house as an investment in this calculator?",
+            answer: "Ideally, no. While your home value grows, you cannot 'sell' your primary residence to pay for groceries without needing a new place to live. Only include assets that produce cash or can be liquidated purely for consumption."
+          },
+          {
+            question: "What is a 'Safe Withdrawal Rate' after my investment grows?",
+            answer: "Most planners use the 4% Rule. If your calculator shows you finished with $1,000,000, you can safely withdraw $40,000 a year for 30 years with a high probability of never running out of money."
+          }
+        ]}
         relatedCalculators={[
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator",
-              desc: "Calculate your exact annualized percentage returns.",
-            },
-            {
-              name: "Loan Payment Calculator",
-              path: "/loan-payment-calculator",
-              desc: "Estimate your monthly loan payments and total interest cost.",
-            },
-            {
-              name: "Salary Calculator",
-              path: "/salary-calculator",
-              desc: "Convert your salary between hourly, weekly, monthly, and yearly rates.",
-            }]}
+          { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "Focus specifically on the frequency of interest-on-interest accumulation." },
+          { name: "ROI Calculator", path: "/roi-calculator", desc: "Calculate the specialized profit percentage of a completed investment." },
+          { name: "Savings Goal Calculator", path: "/savings-goal-calculator", desc: "Define your target and work backward to find the necessary savings velocity." },
+          { name: "Retirement Calculator", path: "/retirement-calculator", desc: "Advanced modeling for tax brackets, social security, and withdrawal phases." }
+        ]}
       />
     </div>
   );

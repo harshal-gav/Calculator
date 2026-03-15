@@ -163,71 +163,181 @@ export default function LoanPaymentCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Loan Payment Calculator"
+        title="Loan Payment & Amortization Calculator"
         whatIsIt={
           <>
-            <p>
-              A <strong>Loan Payment Calculator</strong> is a tool used to estimate the fixed amount payable to a lender at regular intervals (usually monthly) to pay off a loan principal and its accrued interest within a specific timeline.
+            <p className="text-lg leading-relaxed mb-4">
+              A <strong>Loan Payment Calculator</strong> is an essential tool for navigating the complexities of modern personal finance. It provides an immediate, mathematically precise estimate of your periodic financial obligations when borrowing capital. By calculating the <strong>fixed monthly payment</strong> required to retire a debt, this tool empowers you to make informed decisions about major purchases, debt consolidation, and long-term budgeting.
             </p>
-            <p>
-              This calculator works for virtually any amortized fixed-rate loan, including personal loans, auto loans, and student loans. By understanding your monthly commitment, you can effectively budget and plan for your financial future.
+            <p className="leading-relaxed mb-4">
+              Modern lending relies on the concept of <strong>amortization</strong>, where each payment is partitioned between interest (the cost of borrowing) and principal (the actual balance). Understanding this breakdown is critical for anyone considering a <strong>personal loan</strong>, <strong>auto loan</strong>, or <strong>student loan</strong>. Our calculator strips away the mystery of banking formulas, giving you the same clarity as a professional loan officer.
+            </p>
+            <p className="leading-relaxed">
+              Whether you are evaluating a low-interest bank offer or considering consolidating high-interest credit card debt into a single, manageable monthly sum, this calculator serves as your primary diagnostic tool for financial health.
             </p>
           </>
         }
+        comparisonTable={{
+          title: "Loan Term Impact: Total Interest vs. Payment Flexibility",
+          headers: ["Loan Term", "Monthly Payment", "Total Interest Paid", "Speed of Payoff", "Best For"],
+          rows: [
+            ["36 Months (3yr)", "Highest", "Lowest", "Very Fast", "Minimizing total cost"],
+            ["48 Months (4yr)", "Moderate", "Moderate", "Average", "Balanced budgets"],
+            ["60 Months (5yr)", "Lower", "Higher", "Slow", "Standard auto/personal loans"],
+            ["72 Months (6yr)", "Lowest", "Very High", "Very Slow", "Maximum cash flow flexibility"],
+          ]
+        }}
         formula={
-          <>
-            <p>The standard monthly payment formula for a fixed-rate amortized loan is:</p>
-            <div className="bg-blue-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-blue-900 border border-blue-100">
-              <strong>M = P [ i(1 + i)ⁿ ] / [ (1 + i)ⁿ – 1 ]</strong>
+          <div className="space-y-6 text-gray-700">
+            <p>
+              The calculation of a fixed-rate amortized loan payment is based on the <strong>Periodic Payment Formula</strong>. This formula assumes a fixed interest rate and equal payments over the life of the loan:
+            </p>
+            <div className="bg-blue-900 p-8 rounded-2xl font-mono text-center text-white shadow-xl my-6">
+              <div className="text-xl mb-2 text-blue-300">M = P [ r(1 + r)ⁿ ] / [ (1 + r)ⁿ - 1 ]</div>
             </div>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>M:</strong> Total monthly payment</li>
-              <li><strong>P:</strong> Principal loan amount</li>
-              <li><strong>i:</strong> Monthly interest rate (Annual rate divided by 12)</li>
-              <li><strong>n:</strong> Total number of months/payments</li>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <li className="bg-blue-50 p-3 rounded-lg border border-blue-100 italic"><strong>M</strong> = Your total monthly payment</li>
+              <li className="bg-blue-50 p-3 rounded-lg border border-blue-100 italic"><strong>P</strong> = Principal loan amount (Actual money borrowed)</li>
+              <li className="bg-blue-50 p-3 rounded-lg border border-blue-100 italic"><strong>r</strong> = Monthly interest rate (Annual APR / 12 / 100)</li>
+              <li className="bg-blue-50 p-3 rounded-lg border border-blue-100 italic"><strong>n</strong> = Number of monthly payments in the total term</li>
             </ul>
-          </>
+            <p className="text-sm border-l-4 border-blue-200 pl-4 py-2 bg-gray-50 uppercase tracking-tighter font-bold">
+              Mathematical Fact: Even a 1% reduction in APR can save thousands of dollars on a 5-year loan.
+            </p>
+          </div>
+        }
+        deepDive={
+          <div className="space-y-10 text-gray-700">
+            <section>
+              <h4 className="text-2xl font-bold text-blue-900 mb-6 flex items-center">
+                <span className="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">1</span>
+                The Mechanics of Loan Amortization
+              </h4>
+              <p className="leading-relaxed">
+                Amortization is the process of gradually reducing the principal balance of a loan over its term. In the early stages of your loan, a high percentage of each payment is allocated toward <strong>interest</strong>. This is because interest is calculated based on the outstanding balance, which is at its highest at the start of the loan. As you make payments and the balance decreases, the interest portion shrinks, allowing more of your money to go directly toward the <strong>principal</strong>.
+              </p>
+              <p className="mt-4">
+                By our calculations, on a 5-year loan at 10%, you don't start paying more principal than interest until roughly the second year of the term.
+              </p>
+            </section>
+
+            <section className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-3xl border border-blue-100 shadow-sm transition hover:shadow-md">
+              <h4 className="text-xl font-bold text-blue-900 mb-4">The "Prepayment Power" Strategy</h4>
+              <p className="leading-relaxed mb-4">
+                One of the most effective ways to build wealth is to pay off debt faster than the scheduled term. If your loan has no <strong>prepayment penalties</strong>, adding just $50 or $100 to your principal payment each month can:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 font-medium">
+                <li>Reduce your total interest paid by 15-20%</li>
+                <li>Shorten a 60-month loan by nearly a full year</li>
+                <li>Improve your credit score by lowering your credit utilization</li>
+              </ul>
+            </section>
+
+            <section>
+              <h4 className="text-2xl font-bold text-blue-900 mb-6 flex items-center">
+                <span className="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">2</span>
+                Secured vs. Unsecured Loans
+              </h4>
+              <p className="leading-relaxed">
+                When using this calculator, it's important to know which type of loan you are applying for. <strong>Secured loans</strong> (like auto loans or mortgages) use the asset as collateral, typically resulting in lower interest rates. <strong>Unsecured loans</strong> (like personal loans for travel or debt consolidation) rely solely on your creditworthiness and usually carry higher rates to compensate the lender for the increased risk.
+              </p>
+            </section>
+          </div>
         }
         example={
-          <>
-            <p>If you take out a <strong>$30,000</strong> car loan at <strong>7.5% APR</strong> for <strong>5 years (60 months)</strong>:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Your fixed monthly payment will be <strong>$601.14</strong>.</li>
-              <li>You will pay a total of <strong>$6,068.41</strong> in interest to the bank.</li>
-              <li>The total cost of the vehicle after financing will be <strong>$36,068.41</strong>.</li>
-            </ul>
-          </>
+          <div className="bg-white p-8 rounded-3xl border border-blue-50 shadow-sm transition hover:scale-[1.01]">
+            <h5 className="font-black text-blue-900 uppercase tracking-widest text-sm mb-6 border-b pb-4">
+              Real-World Case Study: Consolidating $30,000 in Debt
+            </h5>
+            <div className="flex flex-col md:flex-row gap-8 items-center text-gray-700">
+              <div className="flex-1">
+                <p className="mb-4">
+                  Imagine you have <strong>$30,000</strong> in credit card debt with an average <strong>22% APR</strong>. Your minimum payments are huge, and most goes to interest.
+                </p>
+                <div className="p-4 bg-red-50 rounded-xl border border-red-100 text-red-900 font-bold mb-4">
+                  Monthly Min: ~$800 | Time to Payoff: 20+ years
+                </div>
+                <p>
+                  By taking a <strong>consolidation loan</strong> at <strong>8.5% APR</strong> for <strong>5 years</strong>:
+                </p>
+              </div>
+              <div className="flex-1 grid grid-cols-1 gap-3">
+                <div className="bg-blue-900 text-white p-5 rounded-2xl shadow-lg text-center">
+                  <div className="text-[10px] uppercase font-bold text-blue-300">New Monthly Payment</div>
+                  <div className="text-3xl font-black">$615.47</div>
+                </div>
+                <div className="bg-green-600 text-white p-4 rounded-2xl shadow-md text-center">
+                  <div className="text-[10px] uppercase font-bold text-green-100">Interest Saved</div>
+                  <div className="text-2xl font-black">$25,000+</div>
+                </div>
+              </div>
+            </div>
+          </div>
         }
         useCases={
-          <ul className="list-disc pl-6 space-y-4 text-gray-700">
-            <li><strong>Auto Finance Planning:</strong> See how changing your loan term from 60 months to 48 months affects your monthly cash flow.</li>
-            <li><strong>Personal Loan Comparison:</strong> Compare offers from different banks to see the impact of even a 0.5% difference in interest rates.</li>
-            <li><strong>Budgeting:</strong> Determining the maximum loan amount you can afford based on a target monthly payment.</li>
-          </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:border-blue-300 transition group text-gray-700">
+              <h6 className="font-bold mb-2 group-hover:text-blue-700">Vehicle Financing</h6>
+              <p className="text-[11px] leading-relaxed italic">Compare dealer financing vs bank loans to find the highest savings.</p>
+            </div>
+            <div className="p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:border-blue-300 transition group text-gray-700">
+              <h6 className="font-bold mb-2 group-hover:text-blue-700">Home Improvement</h6>
+              <p className="text-[11px] leading-relaxed italic">Plan the budget for your next kitchen remodel or pool installation.</p>
+            </div>
+            <div className="p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:border-blue-300 transition group text-gray-700">
+              <h6 className="font-bold mb-2 group-hover:text-blue-700">Wedding Planning</h6>
+              <p className="text-[11px] leading-relaxed italic">Ensure your celebratory spending doesn't lead to long-term stress.</p>
+            </div>
+            <div className="p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:border-blue-300 transition group text-gray-700">
+              <h6 className="font-bold mb-2 group-hover:text-blue-700">Major Electronics</h6>
+              <p className="text-[11px] leading-relaxed italic">Is that 0% for 12 months offer actually better than a small personal loan?</p>
+            </div>
+          </div>
         }
+        glossary={[
+          { term: "APR", definition: "Annual Percentage Rate – Includes interest plus any lender fees for the true cost." },
+          { term: "Principal", definition: "The original amount of money borrowed, excluding all interest." },
+          { term: "Amortization", definition: "The predictable schedule of paying off debt through installment payments." },
+          { term: "Prepayment Penalty", definition: "A fee charged by some lenders if you pay off the loan before the scheduled time." },
+          { term: "Secured Loan", definition: "A loan backed by collateral (like a car or house) that the lender can seize if you default." },
+          { term: "Unsecured Loan", definition: "A signature loan based on your credit score, without physical collateral." },
+          { term: "Default", definition: "Failing to make payments according to the legal terms of the loan agreement." },
+          { term: "Term", definition: "The duration of the loan, usually expressed in months (e.g., 60 months)." },
+          { term: "Fix-Rate", definition: "An interest rate that remains constant throughout the entire life of the loan." },
+          { term: "Loan-to-Value (LTV)", definition: "The ratio of the loan amount to the value of the asset being purchased." },
+        ]}
         faqs={[
           {
-            question: "How does the loan term affect my payment?",
-            answer: "A longer loan term (e.g., 72 months) will lower your monthly payment but significantly increase the total interest you pay over the life of the loan. A shorter term (e.g., 36 months) will have higher monthly payments but will save you money on interest."
+            question: "Can I use this for any type of loan?",
+            answer: "Yes, this calculator works for any loan with a fixed interest rate and equal monthly payments, such as personal, auto, student, or appliance loans."
           },
           {
-            question: "What happens if I pay extra each month?",
-            answer: "Most amortized loans allow for extra principal payments. Any extra amount you pay goes directly toward the principal balance, which reduces the amount of interest calculated for the following month and shortens your overall payoff timeline."
+            question: "How is interest calculated?",
+            answer: "Interest is typically calculated 'in arrears' on the remaining principal balance. Each month, the lender takes the APR / 12 and multiplies it by your balance to determine the interest for that month."
           },
           {
-            question: "Is APR different from interest rate?",
-            answer: "Yes. The interest rate is the base cost of borrowing the principal. The APR (Annual Percentage Rate) includes the interest rate plus any lender fees or closing costs, giving you a more accurate 'true cost' of the loan."
+            question: "Does my credit score affect my monthly payment?",
+            answer: "Directly. Your credit score determines the interest rate (APR) you are offered. A 'Poor' credit score might result in a 25% APR, while an 'Excellent' score might get you 6% for the same loan amount."
+          },
+          {
+            question: "What is the benefit of a shorter loan term?",
+            answer: "Lower total interest cost. While the monthly payments are higher, you stop paying interest much sooner, often saving thousands of dollars compared to a longer term."
+          },
+          {
+            question: "What if my loan has a variable interest rate?",
+            answer: "This calculator assumes a fixed rate. If you have a variable rate (ARM), your payments will change whenever the underlying index (like the Prime Rate) changes."
+          },
+          {
+            question: "Are there fees not shown in this calculator?",
+            answer: "Yes. Lenders often charge 'Origination Fees' or 'Doc Fees' at the start of the loan. These are usually subtracted from the principal you receive but don't change the monthly payment calculation."
           }
         ]}
         relatedCalculators={[
-          { name: "EMI Calculator", path: "/emi-calculator", desc: "Calculate equated monthly installments for international loans." },
-          { name: "Amortization Calculator", path: "/amortization-calculator", desc: "View a full month-by-month breakdown of your loan." },
-          { name: "Personal Loan Calculator", path: "/personal-loan-calculator", desc: "Estimate payments for unsecured bank loans." },
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            }]}
+          { name: "Personal Loan Calculator", path: "/personal-loan-calculator", desc: "Specialized for bank-issued signature loans." },
+          { name: "Debt Consolidation", path: "/debt-consolidation-calculator", desc: "See if combining your bills into one loan saves you money." },
+          { name: "Auto Loan Calculator", path: "/auto-loan-calculator", desc: "Calculates payments specifically for vehicle purchases." },
+          { name: "Amortization Table", path: "/amortization-calculator", desc: "View the full month-by-month repayment schedule." },
+        ]}
       />
     </div>
   );
