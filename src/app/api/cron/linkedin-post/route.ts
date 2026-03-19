@@ -160,7 +160,7 @@ export async function GET(request: Request) {
         specificContent: {
           'com.linkedin.ugc.ShareContent': {
             shareCommentary: { text: shareText },
-            shareMediaCategory: 'DOCUMENT',
+              shareMediaCategory: "IMAGE",
             media: [
               {
                 status: 'READY',
@@ -176,12 +176,17 @@ export async function GET(request: Request) {
       })
     });
 
-    const postResponseData = await postResponse.json();
+    const postData = await postResponse.json();
+    console.log("LinkedIn Post Response:", JSON.stringify(postData));
 
-    return NextResponse.json({
-      success: true,
+    if (!postResponse.ok) {
+        throw new Error(`LinkedIn Post Failed: ${JSON.stringify(postData)}`);
+    }
+
+    return NextResponse.json({ 
+      success: true, 
       message: `AI generated and posted: ${aiData.pdf_title}`,
-      id: postResponseData.id
+      postId: postData.id
     });
 
   } catch (error: any) {
