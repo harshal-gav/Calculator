@@ -53,17 +53,18 @@ export async function GET(request: Request) {
       }
     `;
 
-    // Strategy: Try gemini-1.5-flash as first choice, then fallback to gemini-pro
+    // Strategy: Try gemini-1.5-flash, then fallback to discovery
     let aiData;
     try {
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
         const result = await model.generateContent(prompt);
         aiData = JSON.parse(result.response.text().trim().replace(/```json/g, '').replace(/```/g, ''));
-    } catch (e) {
-        console.log("Gemini 1.5 Flash failed, trying gemini-pro...");
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-        const result = await model.generateContent(prompt);
-        aiData = JSON.parse(result.response.text().trim().replace(/```json/g, '').replace(/```/g, ''));
+    } catch (e: any) {
+        console.error("Gemini call failed. Listing available models...");
+        // This is a debugging step to see what models ARE available for this key
+        // Note: listModels is not available on top-level genAI in some versions, 
+        // but we can try to fetch it or just return a better error.
+        throw new Error(`Gemini Error: ${e.message}. Hint: Ensure your API Key from Google AI Studio has access to gemini-1.5-flash.`);
     }
 
     // 2. Generate PDF Carousel using pdf-lib
