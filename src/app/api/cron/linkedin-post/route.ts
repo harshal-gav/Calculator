@@ -53,19 +53,11 @@ export async function GET(request: Request) {
       }
     `;
 
-    // Strategy: Try gemini-1.5-flash, then fallback to discovery
-    let aiData;
-    try {
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-        const result = await model.generateContent(prompt);
-        aiData = JSON.parse(result.response.text().trim().replace(/```json/g, '').replace(/```/g, ''));
-    } catch (e: any) {
-        console.error("Gemini call failed. Listing available models...");
-        // This is a debugging step to see what models ARE available for this key
-        // Note: listModels is not available on top-level genAI in some versions, 
-        // but we can try to fetch it or just return a better error.
-        throw new Error(`Gemini Error: ${e.message}. Hint: Ensure your API Key from Google AI Studio has access to gemini-1.5-flash.`);
-    }
+    // Use 'gemini-flash-latest' for stable free-tier access
+    const geminiModel = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
+    const result = await geminiModel.generateContent(prompt);
+    const responseText = result.response.text().trim().replace(/```json/g, '').replace(/```/g, '');
+    const aiData = JSON.parse(responseText);
 
     // 2. Generate PDF Carousel using pdf-lib
     const pdfDoc = await PDFDocument.create();
@@ -130,17 +122,16 @@ export async function GET(request: Request) {
       },
       body: JSON.stringify({
         registerUploadRequest: {
-          recipes: ['urn:li:digitalmediaRecipe:feedshare-document'],
-          owner: LINKEDIN_AUTHOR_URN,
-          serviceRelationships: [{
-            relationshipType: 'OWNER',
-            identifier: 'urn:li:userGeneratedContent'
-          }]
+          recipes: ['urn:li:digitalmediaRecipe:feedshare-image'],
+          owner: LINKEDIN_AUTHOR_URN
         }
       })
     });
 
     const registerData = await registerResponse.json();
+    if (!registerData.value || !registerData.value.uploadMechanism) {
+        throw new Error(`LinkedIn Registration Failed: ${JSON.stringify(registerData)}`);
+    }
     const uploadUrl = registerData.value.uploadMechanism['com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest'].uploadUrl;
     const assetUrn = registerData.value.asset;
 
