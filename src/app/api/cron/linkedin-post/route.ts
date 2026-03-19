@@ -2,14 +2,13 @@ import { NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 
-// Deployment trigger: 2026-03-19 19:16
+// Deployment trigger: 2026-03-19 20:15
 
 // Vercel Cron Secret for security
 const CRON_SECRET = process.env.CRON_SECRET;
 
 // Gemini API Configuration
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY || "");
-const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
 
 // LinkedIn Configuration
 const LINKEDIN_ACCESS_TOKEN = process.env.LINKEDIN_ACCESS_TOKEN;
@@ -54,9 +53,18 @@ export async function GET(request: Request) {
       }
     `;
 
-    const result = await model.generateContent(prompt);
-    const responseText = result.response.text().trim().replace(/```json/g, '').replace(/```/g, '');
-    const aiData = JSON.parse(responseText);
+    // Strategy: Try gemini-1.5-flash as first choice, then fallback to gemini-pro
+    let aiData;
+    try {
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const result = await model.generateContent(prompt);
+        aiData = JSON.parse(result.response.text().trim().replace(/```json/g, '').replace(/```/g, ''));
+    } catch (e) {
+        console.log("Gemini 1.5 Flash failed, trying gemini-pro...");
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const result = await model.generateContent(prompt);
+        aiData = JSON.parse(result.response.text().trim().replace(/```json/g, '').replace(/```/g, ''));
+    }
 
     // 2. Generate PDF Carousel using pdf-lib
     const pdfDoc = await PDFDocument.create();
