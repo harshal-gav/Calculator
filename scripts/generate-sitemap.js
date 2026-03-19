@@ -45,7 +45,7 @@ let xml = `<?xml version="1.0" encoding="UTF-8"?>
 
 // Add home page
 xml += `  <url>
-    <loc>${baseUrl}</loc>
+    <loc>${baseUrl}/</loc>
     <lastmod>${date}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -55,7 +55,7 @@ xml += `  <url>
 // Add all other pages
 for (const route of uniqueRoutes) {
     xml += `  <url>
-    <loc>${baseUrl}${route}</loc>
+    <loc>${baseUrl}${route}/</loc>
     <lastmod>${date}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

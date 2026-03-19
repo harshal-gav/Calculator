@@ -378,22 +378,22 @@ export default function GPACalculator() {
           relatedCalculators={[
             {
               name: "Grade Calculator",
-              path: "/grade-calculator",
+              path: "/grade-calculator/",
               desc: "Calculate your current weighted percentage in a specific class.",
             },
             {
               name: "Mean/Average Calculator",
-              path: "/mean-median-mode-calculator",
+              path: "/mean-median-mode-calculator/",
               desc: "Calculate simple unweighted statistical averages.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Convert raw test scores into 0-100 percentage grades.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

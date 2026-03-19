@@ -182,10 +182,10 @@ export default function PregnancyWeightGainCalculator() {
           { question: "Is this tool free to use?", answer: "Yes, all our calculators are 100% free to use." },
         ]}
         relatedCalculators={[
-          { name: "Pregnancy Calculator", path: "/pregnancy-calculator", desc: "Calculate your estimated due date." },
-          { name: "Due Date Calculator", path: "/due-date-calculator", desc: "Calculate your baby due date and timeline." },
-          { name: "BMI Calculator", path: "/bmi-calculator", desc: "Calculate your Body Mass Index." },
-          { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Estimate daily energy requirements." },
+          { name: "Pregnancy Calculator", path: "/pregnancy-calculator/", desc: "Calculate your estimated due date." },
+          { name: "Due Date Calculator", path: "/due-date-calculator/", desc: "Calculate your baby due date and timeline." },
+          { name: "BMI Calculator", path: "/bmi-calculator/", desc: "Calculate your Body Mass Index." },
+          { name: "Calorie Calculator", path: "/calorie-calculator/", desc: "Estimate daily energy requirements." },
         ]}
       />
     </div>

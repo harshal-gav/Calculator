@@ -316,22 +316,22 @@ export default function PyramidCalculator() {
           relatedCalculators={[
             {
               name: "Prism Calculator",
-              path: "/prism-calculator",
+              path: "/prism-calculator/",
               desc: "Calculate internal volume properties for long geometric prisms.",
             },
             {
               name: "Cone Calculator",
-              path: "/cone-calculator",
+              path: "/cone-calculator/",
               desc: "Evaluate a shape similar to a pyramid, but with an entirely circular flat base.",
             },
             {
               name: "Rectangle Calculator",
-              path: "/rectangle-calculator",
+              path: "/rectangle-calculator/",
               desc: "Easily evaluate the flat base of your structural pyramid.",
             },
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Calculate the area of various 2D shapes.",
             }]}
         />

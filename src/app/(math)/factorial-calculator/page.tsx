@@ -263,22 +263,22 @@ export default function FactorialCalculator() {
           relatedCalculators={[
             {
               name: "Permutation Calculator",
-              path: "/permutation-calculator",
+              path: "/permutation-calculator/",
               desc: "Calculate exact ordered arrangements using factorial logic.",
             },
             {
               name: "Combinations Calculator",
-              path: "/combinations-calculator",
+              path: "/combinations-calculator/",
               desc: "Determine unordered groups utilizing divided factorials.",
             },
             {
               name: "Probability Calculator",
-              path: "/probability-calculator",
+              path: "/probability-calculator/",
               desc: "Determine exact statistical likelihoods utilizing combinatorics.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

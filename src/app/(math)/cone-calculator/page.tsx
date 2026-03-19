@@ -274,22 +274,22 @@ export default function ConeCalculator() {
           relatedCalculators={[
             {
               name: "Cylinder Calculator",
-              path: "/cylinder-calculator",
+              path: "/cylinder-calculator/",
               desc: "Calculate the geometric metrics of a perfect cylindrical tube.",
             },
             {
               name: "Sphere Calculator",
-              path: "/sphere-calculator",
+              path: "/sphere-calculator/",
               desc: "Calculate the volume and surface metrics of a round ball.",
             },
             {
               name: "Triangle Calculator",
-              path: "/triangle-calculator",
+              path: "/triangle-calculator/",
               desc: "Calculate 2D cross-sections utilizing Pythagorean theorems.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

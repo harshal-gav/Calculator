@@ -327,22 +327,22 @@ export default function BloodVolumeCalculator() {
           relatedCalculators={[
             {
               name: "Blood Pressure Calculator",
-              path: "/blood-pressure-calculator",
+              path: "/blood-pressure-calculator/",
               desc: "Understand your systolic and diastolic cardiovascular health numbers.",
             },
             {
               name: "Blood Alcohol Calculator",
-              path: "/bac-calculator",
+              path: "/bac-calculator/",
               desc: "Estimate how much ethanol is currently circulating in your bloodstream.",
             },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Calculate the exact Body Mass Index utilized in the Lemmens equation.",
             },
             {
               name: "Calorie Calculator",
-              path: "/calorie-calculator",
+              path: "/calorie-calculator/",
               desc: "Estimate the number of calories you need to maintain or lose weight.",
             }]}
         />

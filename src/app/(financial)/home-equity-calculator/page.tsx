@@ -318,22 +318,22 @@ export default function HomeEquityCalculator() {
           relatedCalculators={[
             {
               name: "Mortgage Payoff Calculator",
-              path: "/mortgage-payoff-calculator",
+              path: "/mortgage-payoff-calculator/",
               desc: "See how making extra principal payments accelerates your equity growth.",
             },
             {
               name: "LTV Calculator",
-              path: "/ltv-calculator",
+              path: "/ltv-calculator/",
               desc: "Specifically calculate Loan-to-Value ratios for new purchases.",
             },
             {
               name: "Debt Payoff Calculator",
-              path: "/debt-payoff-calculator",
+              path: "/debt-payoff-calculator/",
               desc: "Compare the cost of paying off debt natively versus using a HELOC.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

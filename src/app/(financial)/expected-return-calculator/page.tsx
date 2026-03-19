@@ -342,22 +342,22 @@ export default function ExpectedReturnCalculator() {
           relatedCalculators={[
             {
               name: "CAPM Calculator",
-              path: "/capm-calculator",
+              path: "/capm-calculator/",
               desc: "Calculate expected return based on systemic market risk rather than probabilities.",
             },
             {
               name: "Standard Deviation Calculator",
-              path: "/standard-deviation-calculator",
+              path: "/standard-deviation-calculator/",
               desc: "Calculate the exact mathematical volatility and risk of your past returns.",
             },
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Calculate your historical cash return on an investment.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

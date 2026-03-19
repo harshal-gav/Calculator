@@ -351,22 +351,22 @@ export default function SalaryCalculator() {
         relatedCalculators={[
           {
             name: "Federal Income Tax Calculator",
-            path: "/federal-income-tax-calculator",
+            path: "/federal-income-tax-calculator/",
             desc: "Convert your gross salary into actual take-home pay.",
           },
           {
             name: "Debt-to-Income Ratio Calculator",
-            path: "/debt-to-income-ratio-calculator",
+            path: "/debt-to-income-ratio-calculator/",
             desc: "See how your new salary affects your ability to borrow.",
           },
           {
             name: "Rent Calculator",
-            path: "/rent-calculator",
+            path: "/rent-calculator/",
             desc: "Use your monthly gross income to see what rent you can afford.",
           },
           {
             name: "Mortgage Calculator",
-            path: "/mortgage-calculator",
+            path: "/mortgage-calculator/",
             desc: "Plan a home purchase based on your annual income results.",
           }
         ]}

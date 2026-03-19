@@ -247,22 +247,22 @@ export default function MarginCalculator() {
           relatedCalculators={[
             {
               name: "Markup Calculator",
-              path: "/markup-calculator",
+              path: "/markup-calculator/",
               desc: "Calculate pricing strategy based on cost percentages instead of revenue percentages.",
             },
             {
               name: "Break Even Calculator",
-              path: "/break-even-calculator",
+              path: "/break-even-calculator/",
               desc: "Determine how many items you must sell at your current margin to cover fixed costs.",
             },
             {
               name: "VAT Calculator",
-              path: "/vat-calculator",
+              path: "/vat-calculator/",
               desc: "Calculate value-added tax impacts on your final retail pricing.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

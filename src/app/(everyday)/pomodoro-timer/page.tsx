@@ -342,22 +342,22 @@ export default function PomodoroTimer() {
           relatedCalculators={[
             {
               name: "Time Card Calculator",
-              path: "/time-card-calculator",
+              path: "/time-card-calculator/",
               desc: "Track how many total billable hours you generated across all your daily Pomodoro sprints.",
             },
             {
               name: "Pomodoro Converter (Days)",
-              path: "/days-calculator",
+              path: "/days-calculator/",
               desc: "Calculate what date a massive project will be finished if you only complete 4 sprints a day.",
             },
             {
               name: "Word Count Calculator",
-              path: "/word-count-calculator",
+              path: "/word-count-calculator/",
               desc: "Check exactly how many words you successfully wrote during a 25-minute sprint session.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

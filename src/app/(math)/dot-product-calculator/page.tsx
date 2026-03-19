@@ -425,22 +425,22 @@ export default function DotProductCalculator() {
           relatedCalculators={[
             {
               name: "Cross Product Calculator",
-              path: "/cross-product-calculator",
+              path: "/cross-product-calculator/",
               desc: "Calculate the perpendicular 3D resultant vector between two input vectors.",
             },
             {
               name: "Vector Addition Calculator",
-              path: "/vector-addition-calculator",
+              path: "/vector-addition-calculator/",
               desc: "Add multiple vectors together to find their cumulative resultant magnitude and direction.",
             },
             {
               name: "Proportion Calculator",
-              path: "/proportion-calculator",
+              path: "/proportion-calculator/",
               desc: "Solve complex algebraic variable proportions.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

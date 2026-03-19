@@ -325,22 +325,22 @@ export default function AreaCalculator() {
           relatedCalculators={[
             {
               name: "Perimeter Calculator",
-              path: "/perimeter-calculator",
+              path: "/perimeter-calculator/",
               desc: "Calculate the exact outer boundary length instead of the internal space.",
             },
             {
               name: "Volume Calculator",
-              path: "/volume-converter",
+              path: "/volume-converter/",
               desc: "Translate 3D spatial units if you are moving beyond 2D area.",
             },
             {
               name: "Area Converter",
-              path: "/area-converter",
+              path: "/area-converter/",
               desc: "Easily convert your final answer from square feet to square meters, acres, or hectares.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

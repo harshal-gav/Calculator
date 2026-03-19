@@ -386,22 +386,22 @@ export default function AgeCalculator() {
         relatedCalculators={[
           {
             name: "Date Calculator",
-            path: "/date-calculator",
+            path: "/date-calculator/",
             desc: "Perform advanced date math, adding or subtracting days, months, and years to find specific future or past milestones.",
           },
           {
             name: "Days Until Calculator",
-            path: "/days-until-calculator",
+            path: "/days-until-calculator/",
             desc: "Focus specifically on the countdown to upcoming events like weddings, vacations, or product launches.",
           },
           {
             name: "Retirement Calculator",
-            path: "/retirement-calculator",
+            path: "/retirement-calculator/",
             desc: "Project your financial future based on your exact age, current savings, and expected investment growth.",
           },
           {
             name: "Birthday Calculator",
-            path: "/birthday-calculator",
+            path: "/birthday-calculator/",
             desc: "Explore fun facts about your birth day, including your zodiac sign, birthstone, and famous people born on the same date.",
           }
         ]}

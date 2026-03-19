@@ -282,22 +282,22 @@ export default function PrismCalculator() {
           relatedCalculators={[
             {
               name: "Cylinder Calculator",
-              path: "/cylinder-calculator",
+              path: "/cylinder-calculator/",
               desc: "Solve properties specifically formulated for completely circular prisms.",
             },
             {
               name: "Pyramid Calculator",
-              path: "/pyramid-calculator",
+              path: "/pyramid-calculator/",
               desc: "Compute internal volumes where the walls compress to a point rather than extending straight.",
             },
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Calculate the Base Area (\(B\)) of your 2D footprint before plugging it into this prism tool.",
             },
             {
               name: "Volume Calculator",
-              path: "/volume-calculator",
+              path: "/volume-calculator/",
               desc: "Calculate the volume of standard 3D objects.",
             }]}
         />

@@ -339,22 +339,22 @@ export default function PowerCalculator() {
           relatedCalculators={[
             {
               name: "Ohm's Law Calculator",
-              path: "/ohms-law-calculator",
+              path: "/ohms-law-calculator/",
               desc: "Calculate Electrical Power (Watts) purely from Voltage, Current (Amps), and Resistance.",
             },
             {
               name: "Kinetic Energy Calculator",
-              path: "/kinetic-energy-calculator",
+              path: "/kinetic-energy-calculator/",
               desc: "Find the total energy in Joules of a moving object using its mass and velocity.",
             },
             {
               name: "Velocity Calculator",
-              path: "/velocity-calculator",
+              path: "/velocity-calculator/",
               desc: "Determine how fast an object is moving by dividing total distance by time.",
             },
             {
               name: "Density Calculator",
-              path: "/density-calculator",
+              path: "/density-calculator/",
               desc: "Calculate density, mass, or volume given two values.",
             }]}
         />

@@ -257,22 +257,22 @@ export default function FrequencyConverter() {
           relatedCalculators={[
             {
               name: "Time Converter",
-              path: "/time-converter",
+              path: "/time-converter/",
               desc: "Convert standard temporal measurements (seconds, hours, days).",
             },
             {
               name: "Speed Converter",
-              path: "/speed-converter",
+              path: "/speed-converter/",
               desc: "Translate physical linear velocity rather than cyclical frequency.",
             },
             {
               name: "Pace Calculator",
-              path: "/pace-calculator",
+              path: "/pace-calculator/",
               desc: "Calculate athletic split times and distance frequencies.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

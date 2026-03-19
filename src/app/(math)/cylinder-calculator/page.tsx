@@ -268,22 +268,22 @@ export default function CylinderCalculator() {
           relatedCalculators={[
             {
               name: "Volume Converter",
-              path: "/volume-converter",
+              path: "/volume-converter/",
               desc: "Easily convert your cubic meter results into Fluid Gallons or Liters.",
             },
             {
               name: "Circle Calculator",
-              path: "/circle-calculator",
+              path: "/circle-calculator/",
               desc: "Analyze just the 2D flat end-caps of the cylinder.",
             },
             {
               name: "Cone Calculator",
-              path: "/cone-calculator",
+              path: "/cone-calculator/",
               desc: "Calculate geometry for angled, tapering circular structures.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

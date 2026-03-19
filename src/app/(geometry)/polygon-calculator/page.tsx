@@ -386,22 +386,22 @@ export default function PolygonCalculator() {
           relatedCalculators={[
             {
               name: "Hexagon Calculator",
-              path: "/hexagon-calculator",
+              path: "/hexagon-calculator/",
               desc: "Calculate properties of specifically 6-sided polygons.",
             },
             {
               name: "Octagon Calculator",
-              path: "/octagon-calculator",
+              path: "/octagon-calculator/",
               desc: "Calculate properties of specifically 8-sided polygons.",
             },
             {
               name: "Arc Length Calculator",
-              path: "/arc-length-calculator",
+              path: "/arc-length-calculator/",
               desc: "Calculate the exact properties of perfect circles.",
             },
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Calculate the area of various 2D shapes.",
             }]}
         />

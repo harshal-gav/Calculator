@@ -333,10 +333,10 @@ export default function LoanPaymentCalculator() {
           }
         ]}
         relatedCalculators={[
-          { name: "Personal Loan Calculator", path: "/personal-loan-calculator", desc: "Specialized for bank-issued signature loans." },
-          { name: "Debt Consolidation", path: "/debt-consolidation-calculator", desc: "See if combining your bills into one loan saves you money." },
-          { name: "Auto Loan Calculator", path: "/auto-loan-calculator", desc: "Calculates payments specifically for vehicle purchases." },
-          { name: "Amortization Table", path: "/amortization-calculator", desc: "View the full month-by-month repayment schedule." },
+          { name: "Personal Loan Calculator", path: "/personal-loan-calculator/", desc: "Specialized for bank-issued signature loans." },
+          { name: "Debt Consolidation", path: "/debt-consolidation-calculator/", desc: "See if combining your bills into one loan saves you money." },
+          { name: "Auto Loan Calculator", path: "/auto-loan-calculator/", desc: "Calculates payments specifically for vehicle purchases." },
+          { name: "Amortization Table", path: "/amortization-calculator/", desc: "View the full month-by-month repayment schedule." },
         ]}
       />
     </div>

@@ -279,22 +279,22 @@ export default function RhombusCalculator() {
           relatedCalculators={[
             {
               name: "Rectangle Calculator",
-              path: "/rectangle-calculator",
+              path: "/rectangle-calculator/",
               desc: "Calculate standard width vs length footprint boxes.",
             },
             {
               name: "Parallelogram Calculator",
-              path: "/parallelogram-calculator",
+              path: "/parallelogram-calculator/",
               desc: "Calculate area utilizing standard base and height.",
             },
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Solve area for irregular polyhedrons and standard shapes.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

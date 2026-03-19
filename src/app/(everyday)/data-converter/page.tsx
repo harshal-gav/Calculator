@@ -302,22 +302,22 @@ export default function DataConverter() {
           relatedCalculators={[
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate exact download times using data conversion metrics.",
             },
             {
               name: "IP Subnet Calculator",
-              path: "/ip-subnet-calculator",
+              path: "/ip-subnet-calculator/",
               desc: "Manage server networks, binary subnet masks, and broadcast architecture.",
             },
             {
               name: "Base64 Converter",
-              path: "/base64-converter",
+              path: "/base64-converter/",
               desc: "See how binary data gets encoded directly into text.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

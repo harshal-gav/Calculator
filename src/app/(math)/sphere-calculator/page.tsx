@@ -251,22 +251,22 @@ export default function SphereCalculator() {
           relatedCalculators={[
             {
               name: "Circle Calculator",
-              path: "/circle-calculator",
+              path: "/circle-calculator/",
               desc: "Calculate the flat 2D shadow profile of a sphere.",
             },
             {
               name: "Cylinder Calculator",
-              path: "/cylinder-calculator",
+              path: "/cylinder-calculator/",
               desc: "Compare spherical volume against bounding cylinders.",
             },
             {
               name: "Distance Calculator",
-              path: "/distance-calculator",
+              path: "/distance-calculator/",
               desc: "Calculate physical point-to-point distances across Earth's spheroid.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

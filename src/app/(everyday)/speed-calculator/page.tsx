@@ -176,22 +176,22 @@ export default function SpeedCalculator() {
         relatedCalculators={[
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             },
             {
               name: "Temperature Converter",
-              path: "/temperature-converter",
+              path: "/temperature-converter/",
               desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
             },
             {
               name: "Bill Splitter",
-              path: "/bill-splitter-calculator",
+              path: "/bill-splitter-calculator/",
               desc: "Split bills and calculate tips among friends.",
             },
             {
               name: "Length Converter",
-              path: "/length-converter",
+              path: "/length-converter/",
               desc: "Convert between various units of length and distance.",
             }]}
       />

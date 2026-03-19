@@ -403,22 +403,22 @@ export default function ProbabilityCalculator() {
           relatedCalculators={[
             {
               name: "Standard Deviation Calculator",
-              path: "/standard-deviation-calculator",
+              path: "/standard-deviation-calculator/",
               desc: "Calculate the exact mathematical variance within a set of data.",
             },
             {
               name: "Random Number Generator",
-              path: "/random-number-generator",
+              path: "/random-number-generator/",
               desc: "Simulate random probability rolls instantly.",
             },
             {
               name: "Z-Score Calculator",
-              path: "/z-score-calculator",
+              path: "/z-score-calculator/",
               desc: "Determine the probability of an event falling along a normal distribution curve.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

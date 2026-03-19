@@ -313,22 +313,22 @@ export default function AmortizationCalculator() {
         relatedCalculators={[
           {
             name: "Mortgage Calculator",
-            path: "/mortgage-calculator",
+            path: "/mortgage-calculator/",
             desc: "The companion tool for total housing cost estimation including taxes.",
           },
           {
             name: "Auto Loan Calculator",
-            path: "/auto-loan-calculator",
+            path: "/auto-loan-calculator/",
             desc: "Short-term amortization logic tailored for vehicle depreciation.",
           },
           {
             name: "Refinance Calculator",
-            path: "/refinance-calculator",
+            path: "/refinance-calculator/",
             desc: "Determine if changing your loan term actually saves money in the long run.",
           },
           {
             name: "Debt Payoff Planner",
-            path: "/debt-payoff-planner",
+            path: "/debt-payoff-planner/",
             desc: "Strategy tools for combining multiple loans (Snowball vs. Avalanche).",
           }
         ]}

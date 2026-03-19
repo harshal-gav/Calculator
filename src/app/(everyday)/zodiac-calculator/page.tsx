@@ -339,22 +339,22 @@ export default function ZodiacCalculator() {
           relatedCalculators={[
             {
               name: "Love Calculator",
-              path: "/love-calculator",
+              path: "/love-calculator/",
               desc: "Test the romantic name compatibility between you and your crush.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Find out exactly how many total days old you are.",
             },
             {
               name: "Random Picker",
-              path: "/random-choice-generator",
+              path: "/random-choice-generator/",
               desc: "Let the digital universe decide your fate instead of the stars.",
             },
             {
               name: "Temperature Converter",
-              path: "/temperature-converter",
+              path: "/temperature-converter/",
               desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
             }]}
         />

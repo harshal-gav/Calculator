@@ -319,22 +319,22 @@ export default function ListSorter() {
           relatedCalculators={[
             {
               name: "Text Replacer",
-              path: "/text-replacer",
+              path: "/text-replacer/",
               desc: "Perform massive Find-and-Replace string operations across your newly sorted list.",
             },
             {
               name: "Remove Duplicate Lines",
-              path: "/remove-duplicates",
+              path: "/remove-duplicates/",
               desc: "Strip out exact duplicate names or URLs from your dataset before sorting them.",
             },
             {
               name: "JSON to CSV",
-              path: "/json-to-csv",
+              path: "/json-to-csv/",
               desc: "Flatten complex data structures into simpler, line-by-line format for spreadsheet sorting.",
             },
             {
               name: "Case Converter",
-              path: "/case-converter",
+              path: "/case-converter/",
               desc: "Change text to UPPERCASE, lowercase, Title Case, and more.",
             }]}
         />

@@ -352,22 +352,22 @@ export default function PermutationCalculator() {
           relatedCalculators={[
             {
               name: "Combinations Calculator",
-              path: "/combinations-calculator",
+              path: "/combinations-calculator/",
               desc: "Calculate groupings where the internal order does not matter.",
             },
             {
               name: "Factorial Calculator",
-              path: "/factorial-calculator",
+              path: "/factorial-calculator/",
               desc: "Calculate the base n! values that power these statistical probability formulas.",
             },
             {
               name: "Probability Calculator",
-              path: "/probability-calculator",
+              path: "/probability-calculator/",
               desc: "Turn these raw permutation counts into actual percentage odds of winning or losing.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

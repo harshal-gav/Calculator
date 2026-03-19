@@ -213,12 +213,12 @@ export default function BMRCalculator() {
           }
         ]}
         relatedCalculators={[
-          { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Add your activity to find total daily burn." },
-          { name: "BMI Calculator", path: "/bmi-calculator", desc: "Quickly assess your weight status." },
-          { name: "Body Fat Calculator", path: "/body-fat-calculator", desc: "Estimate your body composition." },
+          { name: "TDEE Calculator", path: "/tdee-calculator/", desc: "Add your activity to find total daily burn." },
+          { name: "BMI Calculator", path: "/bmi-calculator/", desc: "Quickly assess your weight status." },
+          { name: "Body Fat Calculator", path: "/body-fat-calculator/", desc: "Estimate your body composition." },
             {
               name: "Calorie Calculator",
-              path: "/calorie-calculator",
+              path: "/calorie-calculator/",
               desc: "Estimate the number of calories you need to maintain or lose weight.",
             }]}
       />

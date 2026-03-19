@@ -321,22 +321,22 @@ export default function SimpleInterestCalculator() {
           relatedCalculators={[
             {
               name: "Compound Interest Calculator",
-              path: "/compound-interest-calculator",
+              path: "/compound-interest-calculator/",
               desc: "See how much faster your money grows when it compounds.",
             },
             {
               name: "Investment Calculator",
-              path: "/investment-calculator",
+              path: "/investment-calculator/",
               desc: "Project the future gross and net value of your portfolio.",
             },
             {
               name: "Auto Loan Calculator",
-              path: "/auto-loan-calculator",
+              path: "/auto-loan-calculator/",
               desc: "Calculate your monthly payment on a simple interest car loan.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

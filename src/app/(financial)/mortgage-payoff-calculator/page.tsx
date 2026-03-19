@@ -411,22 +411,22 @@ export default function MortgagePayoffCalculator() {
           relatedCalculators={[
             {
               name: "Amortization Calculator",
-              path: "/amortization-calculator",
+              path: "/amortization-calculator/",
               desc: "View the exact month-by-month breakdown of how your mortgage shrinks.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly PITI limits when purchasing a new home.",
             },
             {
               name: "Debt Payoff Calculator",
-              path: "/debt-payoff-calculator",
+              path: "/debt-payoff-calculator/",
               desc: "Calculate Snowball vs Avalanche methods for paying off multiple debts.",
             },
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Calculate your exact annualized percentage returns.",
             }]}
         />

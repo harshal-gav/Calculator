@@ -312,22 +312,22 @@ export default function EmpiricalRuleCalculator() {
           relatedCalculators={[
             {
               name: "Variance & Std Deviation",
-              path: "/variance-calculator",
+              path: "/variance-calculator/",
               desc: "Calculate the base σ value required to utilize this Empirical Rule.",
             },
             {
               name: "Z-Score Calculator",
-              path: "/z-score-calculator",
+              path: "/z-score-calculator/",
               desc: "Map exact scores to find precisely where they fall on the 68-95-99.7 bell curve.",
             },
             {
               name: "Percentile Calculator",
-              path: "/percentile-calculator",
+              path: "/percentile-calculator/",
               desc: "Calculate precise percentiles without relying on normal distribution approximations.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

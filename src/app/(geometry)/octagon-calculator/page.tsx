@@ -329,22 +329,22 @@ export default function OctagonCalculator() {
           relatedCalculators={[
             {
               name: "Hexagon Calculator",
-              path: "/hexagon-calculator",
+              path: "/hexagon-calculator/",
               desc: "Calculate properties of 6-sided hex polygons.",
             },
             {
               name: "Polygon Calculator",
-              path: "/polygon-calculator",
+              path: "/polygon-calculator/",
               desc: "Calculate math properties for any regular polygon.",
             },
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Find the surface area of other common 2D shapes.",
             },
             {
               name: "Volume Calculator",
-              path: "/volume-calculator",
+              path: "/volume-calculator/",
               desc: "Calculate the volume of standard 3D objects.",
             }]}
         />

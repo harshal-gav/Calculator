@@ -218,12 +218,12 @@ export default function TDEECalculator() {
           }
         ]}
         relatedCalculators={[
-          { name: "BMR Calculator", path: "/bmr-calculator", desc: "Find your caloric floor (resting burn)." },
-          { name: "Ideal Weight Calculator", path: "/ideal-weight-calculator", desc: "See where your body naturally thrives." },
-          { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Standard goal-based calorie estimator." },
+          { name: "BMR Calculator", path: "/bmr-calculator/", desc: "Find your caloric floor (resting burn)." },
+          { name: "Ideal Weight Calculator", path: "/ideal-weight-calculator/", desc: "See where your body naturally thrives." },
+          { name: "Calorie Calculator", path: "/calorie-calculator/", desc: "Standard goal-based calorie estimator." },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Calculate your Body Mass Index for a quick health assessment.",
             }]}
       />

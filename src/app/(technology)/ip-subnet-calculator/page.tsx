@@ -363,22 +363,22 @@ export default function IPSubnetCalculator() {
           relatedCalculators={[
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate exact network transmission times.",
             },
             {
               name: "Base Converter",
-              path: "/base-converter",
+              path: "/base-converter/",
               desc: "Convert numbers natively between binary, decimal, and hexadecimal.",
             },
             {
               name: "Base64 Encoder",
-              path: "/base64-converter",
+              path: "/base64-converter/",
               desc: "Encode raw data securely for server transfers.",
             },
             {
               name: "Base64 Converter",
-              path: "/base64-converter",
+              path: "/base64-converter/",
               desc: "Encode and decode data in Base64 format securely.",
             }]}
         />

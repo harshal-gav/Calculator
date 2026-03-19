@@ -230,22 +230,22 @@ export default function BodySurfaceAreaCalculator() {
         relatedCalculators={[
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Calculate your Body Mass Index for a quick health assessment.",
             },
             {
               name: "Calorie Calculator",
-              path: "/calorie-calculator",
+              path: "/calorie-calculator/",
               desc: "Estimate the number of calories you need to maintain or lose weight.",
             },
             {
               name: "BMR Calculator",
-              path: "/bmr-calculator",
+              path: "/bmr-calculator/",
               desc: "Find your Basal Metabolic Rate to understand your calorie needs at rest.",
             },
             {
               name: "Ideal Weight Calculator",
-              path: "/ideal-weight-calculator",
+              path: "/ideal-weight-calculator/",
               desc: "Estimate your healthy weight range based on traditional formulas.",
             }]}
       />

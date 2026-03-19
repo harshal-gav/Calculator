@@ -321,22 +321,22 @@ export default function ZScoreCalculator() {
           relatedCalculators={[
             {
               name: "Variance & Std Deviation",
-              path: "/variance-calculator",
+              path: "/variance-calculator/",
               desc: "Calculate the base σ value required to power this Z-Score formula.",
             },
             {
               name: "Empirical Rule Calculator",
-              path: "/empirical-rule-calculator",
+              path: "/empirical-rule-calculator/",
               desc: "Visualize how Z-Scores map onto the 68-95-99.7 bell curve.",
             },
             {
               name: "Percentile Calculator",
-              path: "/percentile-calculator",
+              path: "/percentile-calculator/",
               desc: "Calculate exact data percentiles without relying on normal distribution approximations.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

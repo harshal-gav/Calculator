@@ -186,10 +186,10 @@ export default function RepaymentCalculator() {
           { question: "Is this tool free to use?", answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions." },
         ]}
         relatedCalculators={[
-          { name: "Mortgage Calculator", path: "/mortgage-calculator", desc: "Estimate monthly mortgage payments including taxes and insurance." },
-          { name: "Loan Payment Calculator", path: "/loan-payment-calculator", desc: "Calculate your monthly loan payments and total interest cost." },
-          { name: "Debt Payoff Calculator", path: "/debt-payoff-calculator", desc: "Discover how long it will take to become debt-free." },
-          { name: "Amortization Calculator", path: "/amortization-calculator", desc: "View a detailed month-by-month breakdown of your loan payoff schedule." },
+          { name: "Mortgage Calculator", path: "/mortgage-calculator/", desc: "Estimate monthly mortgage payments including taxes and insurance." },
+          { name: "Loan Payment Calculator", path: "/loan-payment-calculator/", desc: "Calculate your monthly loan payments and total interest cost." },
+          { name: "Debt Payoff Calculator", path: "/debt-payoff-calculator/", desc: "Discover how long it will take to become debt-free." },
+          { name: "Amortization Calculator", path: "/amortization-calculator/", desc: "View a detailed month-by-month breakdown of your loan payoff schedule." },
         ]}
       />
     </div>

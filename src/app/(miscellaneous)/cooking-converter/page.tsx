@@ -429,22 +429,22 @@ export default function CookingConverter() {
           relatedCalculators={[
             {
               name: "Volume Converter",
-              path: "/volume-converter",
+              path: "/volume-converter/",
               desc: "Scientific tool for converting cubic meters, liters, and gallons.",
             },
             {
               name: "Weight Converter",
-              path: "/weight-converter",
+              path: "/weight-converter/",
               desc: "Convert industrial weights like tons, kilograms, and pounds.",
             },
             {
               name: "Temperature Converter",
-              path: "/temperature-converter",
+              path: "/temperature-converter/",
               desc: "Translate oven temperatures between Fahrenheit, Celsius, and Kelvin.",
             },
             {
               name: "Roman Numeral Converter",
-              path: "/roman-numeral-converter",
+              path: "/roman-numeral-converter/",
               desc: "Convert between standard numbers and Roman numerals.",
             }]}
         />

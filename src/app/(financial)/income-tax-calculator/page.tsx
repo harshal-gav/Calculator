@@ -383,22 +383,22 @@ export default function IncomeTaxCalculator() {
         relatedCalculators={[
           {
             name: "Salary Calculator",
-            path: "/salary-calculator",
+            path: "/salary-calculator/",
             desc: "Convert your annual take-home pay into hourly, weekly, or bi-weekly amounts."
           },
           {
             name: "401k Calculator",
-            path: "/401k-calculator",
+            path: "/401k-calculator/",
             desc: "See exactly how much a pre-tax contribution will lower your tax bill."
           },
           {
             name: "ROI Calculator",
-            path: "/roi-calculator",
+            path: "/roi-calculator/",
             desc: "Calculate the after-tax returns on your investment portfolio."
           },
           {
             name: "Net Worth Calculator",
-            path: "/net-worth-calculator",
+            path: "/net-worth-calculator/",
             desc: "Track your total financial health across assets and liabilities."
           }
         ]}

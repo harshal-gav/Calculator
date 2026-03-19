@@ -261,22 +261,22 @@ export default function ROECalculator() {
           relatedCalculators={[
             {
               name: "P/E Ratio Calculator",
-              path: "/pe-ratio-calculator",
+              path: "/pe-ratio-calculator/",
               desc: "Evaluate if a high-ROE stock is currently trading at a fair price.",
             },
             {
               name: "Dividend Yield Calculator",
-              path: "/dividend-yield-calculator",
+              path: "/dividend-yield-calculator/",
               desc: "See what percentage of those profits are returned directly to you.",
             },
             {
               name: "Leverage Ratio Calculator",
-              path: "/leverage-ratio-calculator",
+              path: "/leverage-ratio-calculator/",
               desc: "Ensure the high ROE is not just a dangerous illusion created by massive debt.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

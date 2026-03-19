@@ -323,22 +323,22 @@ export default function SignificantFiguresCalculator() {
           relatedCalculators={[
             {
               name: "Scientific Notation Converter",
-              path: "/scientific-notation-converter",
+              path: "/scientific-notation-converter/",
               desc: 'Instantly convert massive numbers to and from scientific "E" notation.',
             },
             {
               name: "Fraction Simplifier",
-              path: "/fraction-simplifier-calculator",
+              path: "/fraction-simplifier-calculator/",
               desc: "Reduce complex mathematical fractions to lowest terms.",
             },
             {
               name: "Decimal to Fraction",
-              path: "/decimal-to-fraction-calculator",
+              path: "/decimal-to-fraction-calculator/",
               desc: "Convert any decimal exactly into a standard fraction.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

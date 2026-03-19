@@ -421,22 +421,22 @@ export default function OrderOfOperationsCalculator() {
           relatedCalculators={[
             {
               name: "Fraction Calculator",
-              path: "/fraction-calculator",
+              path: "/fraction-calculator/",
               desc: "Add, subtract, multiply, and divide complex fractions.",
             },
             {
               name: "Quadratic Formula Calculator",
-              path: "/quadratic-formula-calculator",
+              path: "/quadratic-formula-calculator/",
               desc: "Solve algebraic quadratic equations instantly.",
             },
             {
               name: "Scientific Calculator",
-              path: "/scientific-calculator",
+              path: "/scientific-calculator/",
               desc: "A comprehensive calculator for trigonometry and advanced math.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

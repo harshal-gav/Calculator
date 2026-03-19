@@ -307,22 +307,22 @@ export default function RomanNumeralDateConverter() {
           relatedCalculators={[
             {
               name: "Roman Numeral Converter",
-              path: "/roman-numeral-converter",
+              path: "/roman-numeral-converter/",
               desc: "Translate raw individual numbers back and forth without date formatting.",
             },
             {
               name: "Date Calculator",
-              path: "/date-calculator",
+              path: "/date-calculator/",
               desc: "Subtract exact dates from each other to find durations.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate exact chronological age in years and months.",
             },
             {
               name: "Word Count Calculator",
-              path: "/word-count-calculator",
+              path: "/word-count-calculator/",
               desc: "Count the number of words, characters, and sentences in your text.",
             }]}
         />

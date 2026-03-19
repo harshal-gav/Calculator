@@ -306,22 +306,22 @@ export default function VolumeConverter() {
           relatedCalculators={[
             {
               name: "Cooking Measurement Converter",
-              path: "/cooking-converter",
+              path: "/cooking-converter/",
               desc: "Instantly convert specialized kitchen and recipe ingredients.",
             },
             {
               name: "Gas Mileage Calculator",
-              path: "/gas-mileage-calculator",
+              path: "/gas-mileage-calculator/",
               desc: "Calculate driving efficiency utilizing volume and distance.",
             },
             {
               name: "Weight Converter",
-              path: "/weight-converter",
+              path: "/weight-converter/",
               desc: "Convert mass metrics (Ounces to Grams) rather than volume.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

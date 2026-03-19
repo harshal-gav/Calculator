@@ -139,10 +139,10 @@ export default function GFRCalculator() {
           { question: "Is this tool free to use?", answer: "Yes, all our calculators are 100% free to use." },
         ]}
         relatedCalculators={[
-          { name: "BMI Calculator", path: "/bmi-calculator", desc: "Calculate your Body Mass Index." },
-          { name: "Blood Pressure Calculator", path: "/blood-pressure-calculator", desc: "Classify cardiovascular health." },
-          { name: "Blood Volume Calculator", path: "/blood-volume-calculator", desc: "Estimate total blood volume." },
-          { name: "Body Surface Area Calculator", path: "/body-surface-area-calculator", desc: "Calculate BSA for clinical dosing." },
+          { name: "BMI Calculator", path: "/bmi-calculator/", desc: "Calculate your Body Mass Index." },
+          { name: "Blood Pressure Calculator", path: "/blood-pressure-calculator/", desc: "Classify cardiovascular health." },
+          { name: "Blood Volume Calculator", path: "/blood-volume-calculator/", desc: "Estimate total blood volume." },
+          { name: "Body Surface Area Calculator", path: "/body-surface-area-calculator/", desc: "Calculate BSA for clinical dosing." },
         ]}
       />
     </div>

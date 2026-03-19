@@ -280,22 +280,22 @@ export default function PowerConverter() {
           relatedCalculators={[
             {
               name: "Energy Converter",
-              path: "/energy-converter",
+              path: "/energy-converter/",
               desc: "Convert total accumulated physical energy rather than live transfer speeds.",
             },
             {
               name: "Work Calculator",
-              path: "/work-calculator",
+              path: "/work-calculator/",
               desc: "Calculate mechanical tasks successfully accomplished over physical distances.",
             },
             {
               name: "Ohm's Law Calculator",
-              path: "/ohms-law-calculator",
+              path: "/ohms-law-calculator/",
               desc: "Solve complex circuit formulas to determine live electrical Wattage.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

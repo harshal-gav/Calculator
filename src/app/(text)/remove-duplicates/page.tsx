@@ -340,22 +340,22 @@ export default function RemoveDuplicates() {
           relatedCalculators={[
             {
               name: "List Sorter",
-              path: "/list-sorter",
+              path: "/list-sorter/",
               desc: "Now that you have uniquely clean rows, organize them perfectly alphabetically A-Z.",
             },
             {
               name: "Text Replacer",
-              path: "/text-replacer",
+              path: "/text-replacer/",
               desc: "Find any specific remaining anomalies within your un-duplicated dataset and instantly replace them.",
             },
             {
               name: "JSON Validator",
-              path: "/json-validator",
+              path: "/json-validator/",
               desc: "If you're converting this duplicate-free list back into a database array, validate your JSON syntax first.",
             },
             {
               name: "Case Converter",
-              path: "/case-converter",
+              path: "/case-converter/",
               desc: "Change text to UPPERCASE, lowercase, Title Case, and more.",
             }]}
         />

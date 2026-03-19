@@ -338,22 +338,22 @@ export default function CaseConverter() {
           relatedCalculators={[
             {
               name: "Word Count Calculator",
-              path: "/word-count-calculator",
+              path: "/word-count-calculator/",
               desc: "Get an incredibly detailed breakdown of your characters, words, paragraphs, and reading time.",
             },
             {
               name: "Markdown Editor",
-              path: "/markdown-editor",
+              path: "/markdown-editor/",
               desc: "Write and format rich-text HTML documents quickly using simple markdown syntax.",
             },
             {
               name: "Regex Tester",
-              path: "/regex-tester",
+              path: "/regex-tester/",
               desc: "Build and test the complex Regular Expressions often used to natively parse text strings.",
             },
             {
               name: "Remove Duplicates",
-              path: "/remove-duplicates",
+              path: "/remove-duplicates/",
               desc: "Effortlessly remove duplicate lines or items from your list.",
             }]}
         />

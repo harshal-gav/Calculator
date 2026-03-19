@@ -316,22 +316,22 @@ export default function FractionSimplifierCalculator() {
           relatedCalculators={[
             {
               name: "Fraction to Decimal",
-              path: "/fraction-to-decimal-calculator",
+              path: "/fraction-to-decimal-calculator/",
               desc: "Easily convert fractions into standard decimals.",
             },
             {
               name: "Mixed Number Calculator",
-              path: "/mixed-number-calculator",
+              path: "/mixed-number-calculator/",
               desc: "Add, subtract, and multiply mixed numbers.",
             },
             {
               name: "Proportion Calculator",
-              path: "/proportion-calculator",
+              path: "/proportion-calculator/",
               desc: "Solve algebraic equations involving two set fractions.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

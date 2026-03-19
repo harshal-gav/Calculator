@@ -331,22 +331,22 @@ export default function RomanNumeralConverter() {
           relatedCalculators={[
             {
               name: "Base Converter",
-              path: "/base-converter",
+              path: "/base-converter/",
               desc: "Translate digits into modern computational Base formats like Binary and Hexadecimal.",
             },
             {
               name: "Roman Numeral Date Converter",
-              path: "/roman-numeral-date-converter",
+              path: "/roman-numeral-date-converter/",
               desc: "Format full MM/DD/YYYY calendar dates entirely in Roman notation.",
             },
             {
               name: "Number to Words",
-              path: "/number-to-words-converter",
+              path: "/number-to-words-converter/",
               desc: "Convert massive numerical digits mathematically out into spoken English.",
             },
             {
               name: "Word Count Calculator",
-              path: "/word-count-calculator",
+              path: "/word-count-calculator/",
               desc: "Count the number of words, characters, and sentences in your text.",
             }]}
         />

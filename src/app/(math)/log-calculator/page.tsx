@@ -280,10 +280,10 @@ export default function LogCalculator() {
           },
         ]}
         relatedCalculators={[
-          { name: "Exponential Calculator", path: "/exponential-calculator", desc: "Calculate exponents and powers" },
-          { name: "Scientific Calculator", path: "/scientific-calculator", desc: "Advanced mathematical calculations" },
-          { name: "Square Root Calculator", path: "/square-root-calculator", desc: "Calculate square roots and nth roots" },
-          { name: "Antilog Calculator", path: "/antilog-calculator", desc: "Find the antilogarithm" },
+          { name: "Exponential Calculator", path: "/exponential-calculator/", desc: "Calculate exponents and powers" },
+          { name: "Scientific Calculator", path: "/scientific-calculator/", desc: "Advanced mathematical calculations" },
+          { name: "Square Root Calculator", path: "/square-root-calculator/", desc: "Calculate square roots and nth roots" },
+          { name: "Antilog Calculator", path: "/antilog-calculator/", desc: "Find the antilogarithm" },
         ]}
       />
     </div>

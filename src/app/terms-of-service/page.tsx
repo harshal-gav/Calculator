@@ -146,7 +146,7 @@ export default function TermsOfService() {
         <p>
           Our website displays advertisements served by third-party networks
           such as Google AdSense. Please review our{" "}
-          <a href="/privacy-policy" className="text-blue-600 hover:underline">
+          <a href="/privacy-policy/" className="text-blue-600 hover:underline">
             Privacy Policy
           </a>{" "}
           for more information on how data is collected for targeted advertising

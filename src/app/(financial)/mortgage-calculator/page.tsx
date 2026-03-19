@@ -421,10 +421,10 @@ export default function MortgageCalculator() {
           }
         ]}
         relatedCalculators={[
-          { name: "Rent vs Buy Calculator", path: "/rent-vs-buy", desc: "The definitive analysis to see if owning actually beats renting in your market." },
-          { name: "Amortization Schedule", path: "/amortization-calculator", desc: "View the granular month-by-month breakdown of every payment over 30 years." },
-          { name: "ROI Calculator", path: "/roi-calculator", desc: "Measure the investment performance of your property after upgrades and repairs." },
-          { name: "Income Tax Calculator", path: "/income-tax-calculator", desc: "Estimate how mortgage interest deductions might impact your annual tax liability." }
+          { name: "Rent vs Buy Calculator", path: "/rent-vs-buy/", desc: "The definitive analysis to see if owning actually beats renting in your market." },
+          { name: "Amortization Schedule", path: "/amortization-calculator/", desc: "View the granular month-by-month breakdown of every payment over 30 years." },
+          { name: "ROI Calculator", path: "/roi-calculator/", desc: "Measure the investment performance of your property after upgrades and repairs." },
+          { name: "Income Tax Calculator", path: "/income-tax-calculator/", desc: "Estimate how mortgage interest deductions might impact your annual tax liability." }
         ]}
       />
     </div>

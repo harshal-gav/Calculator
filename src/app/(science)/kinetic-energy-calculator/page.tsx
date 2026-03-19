@@ -442,22 +442,22 @@ export default function KineticEnergyCalculator() {
           relatedCalculators={[
             {
               name: "Velocity Calculator",
-              path: "/velocity-calculator",
+              path: "/velocity-calculator/",
               desc: "Solve for the pure speed variable required for kinematic equations.",
             },
             {
               name: "Force Calculator",
-              path: "/force-calculator",
+              path: "/force-calculator/",
               desc: "Calculate the Newton impact required to accelerate the given mass.",
             },
             {
               name: "Projectile Calculator",
-              path: "/projectile-motion-calculator",
+              path: "/projectile-motion-calculator/",
               desc: "Map the physical parabolic arc of the mass acting under gravity.",
             },
             {
               name: "Density Calculator",
-              path: "/density-calculator",
+              path: "/density-calculator/",
               desc: "Calculate density, mass, or volume given two values.",
             }]}
         />

@@ -305,22 +305,22 @@ export default function DiscountCalculator() {
           relatedCalculators={[
             {
               name: "Sales Tax Calculator",
-              path: "/sales-tax-calculator",
+              path: "/sales-tax-calculator/",
               desc: "Take your discounted final price and add the local municipal tax burden.",
             },
             {
               name: "Margin Calculator",
-              path: "/margin-calculator",
+              path: "/margin-calculator/",
               desc: "If you are a business owner, see how offering a discount damages your profit margins.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "For simple, raw percentage math without the retail formatting.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

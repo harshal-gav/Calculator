@@ -338,22 +338,22 @@ export default function CrossProductCalculator() {
         relatedCalculators={[
           {
             name: "Dot Product",
-            path: "/dot-product-calculator",
+            path: "/dot-product-calculator/",
             desc: "Calculate the scalar dot product of two vectors.",
           },
           {
             name: "Vector Addition",
-            path: "/vector-addition-calculator",
+            path: "/vector-addition-calculator/",
             desc: "Add two vectors together to find the resultant.",
           },
           {
             name: "Projectile Motion",
-            path: "/projectile-motion-calculator",
+            path: "/projectile-motion-calculator/",
             desc: "Calculate physical trajectories using vectors.",
           },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
       />

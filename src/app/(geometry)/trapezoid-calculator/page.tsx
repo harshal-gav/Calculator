@@ -323,22 +323,22 @@ export default function TrapezoidCalculator() {
           relatedCalculators={[
             {
               name: "Triangle Calculator",
-              path: "/triangle-calculator",
+              path: "/triangle-calculator/",
               desc: "Solve all geometric properties of a 3-sided shape.",
             },
             {
               name: "Parallelogram Calculator",
-              path: "/parallelogram-calculator",
+              path: "/parallelogram-calculator/",
               desc: "Calculate properties of shapes with two parallel pairs.",
             },
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Find the surface area of other common 2D shapes.",
             },
             {
               name: "Volume Calculator",
-              path: "/volume-calculator",
+              path: "/volume-calculator/",
               desc: "Calculate the volume of standard 3D objects.",
             }]}
         />

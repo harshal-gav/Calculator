@@ -335,22 +335,22 @@ export default function LTVCalculator() {
         relatedCalculators={[
           {
             name: "Mortgage Payoff",
-            path: "/mortgage-payoff-calculator",
+            path: "/mortgage-payoff-calculator/",
             desc: "Calculate your exact timeline to become mortgage-free.",
           },
           {
             name: "Net Worth Calculator",
-            path: "/net-worth-calculator",
+            path: "/net-worth-calculator/",
             desc: "Track your overall wealth by balancing assets against liabilities.",
           },
           {
             name: "DTI Calculator",
-            path: "/dti-calculator",
+            path: "/dti-calculator/",
             desc: "Check your Debt-to-Income ratio for loan pre-approvals.",
           },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
       />

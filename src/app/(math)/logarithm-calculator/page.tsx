@@ -282,22 +282,22 @@ export default function LogarithmCalculator() {
           relatedCalculators={[
             {
               name: "Exponent Calculator",
-              path: "/exponent-calculator",
+              path: "/exponent-calculator/",
               desc: "Perform the exact mathematical inverse operation of a logarithm.",
             },
             {
               name: "Compound Interest Calculator",
-              path: "/compound-interest-calculator",
+              path: "/compound-interest-calculator/",
               desc: "See where the natural logarithm 'e' applies to continuous compounding finance.",
             },
             {
               name: "Scientific Calculator",
-              path: "/scientific-calculator",
+              path: "/scientific-calculator/",
               desc: "Access comprehensive trig, root, and log functions on a digital keypad.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

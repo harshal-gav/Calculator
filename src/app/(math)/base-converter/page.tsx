@@ -299,22 +299,22 @@ export default function BaseConverter() {
           relatedCalculators={[
             {
               name: "Unit Converter",
-              path: "/unit-converter",
+              path: "/unit-converter/",
               desc: "For converting between real-world measurement systems instead of number systems.",
             },
             {
               name: "Decimal to Fraction",
-              path: "/fraction-simplifier-calculator",
+              path: "/fraction-simplifier-calculator/",
               desc: "Convert standard decimals into exact simplified fractions.",
             },
             {
               name: "Hash Generator",
-              path: "/hash-generator",
+              path: "/hash-generator/",
               desc: "Generate cryptographic hashes which are represented in hexadecimal strings.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

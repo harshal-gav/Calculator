@@ -302,22 +302,22 @@ export default function CatAgeCalculator() {
           relatedCalculators={[
             {
               name: "Dog Age Calculator",
-              path: "/dog-age-calculator",
+              path: "/dog-age-calculator/",
               desc: "Discover how dog aging wildly varies by breed size.",
             },
             {
               name: "Date Calculator",
-              path: "/date-calculator",
+              path: "/date-calculator/",
               desc: "Calculate exact durations between two calendar dates.",
             },
             {
               name: "Weight Converter",
-              path: "/weight-converter",
+              path: "/weight-converter/",
               desc: "Easily convert your pet's weight between pounds and kilograms.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

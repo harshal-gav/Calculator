@@ -449,22 +449,22 @@ export default function DepreciationCalculator() {
           relatedCalculators={[
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Calculate your return on investment to see if the asset purchase was profitable.",
             },
             {
               name: "Net Worth Calculator",
-              path: "/net-worth-calculator",
+              path: "/net-worth-calculator/",
               desc: "Track how your physical assets affect your total net worth.",
             },
             {
               name: "Auto Lease Calculator",
-              path: "/auto-lease-calculator",
+              path: "/auto-lease-calculator/",
               desc: "Calculate monthly payments based heavily on a vehicle's estimated depreciation.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

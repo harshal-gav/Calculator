@@ -350,22 +350,22 @@ export default function BusinessDaysCalculator() {
           relatedCalculators={[
             {
               name: "Days Calculator",
-              path: "/days-calculator",
+              path: "/days-calculator/",
               desc: "Add or subtract exact chronological time (including weekends) to find a target date.",
             },
             {
               name: "Time Card Calculator",
-              path: "/time-card-calculator",
+              path: "/time-card-calculator/",
               desc: "Sum up daily clocked hours to determine total weekly work time and gross pay.",
             },
             {
               name: "Salary Calculator",
-              path: "/salary-calculator",
+              path: "/salary-calculator/",
               desc: "Convert an hourly wage into an annual salary assuming standard 260 yearly business days.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

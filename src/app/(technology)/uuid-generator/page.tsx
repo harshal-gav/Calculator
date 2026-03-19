@@ -236,22 +236,22 @@ export default function UuidGenerator() {
           relatedCalculators={[
             {
               name: "Random String Generator",
-              path: "/random-string-generator",
+              path: "/random-string-generator/",
               desc: "Generate purely random strings without being restricted to the UUID hexadecimal format.",
             },
             {
               name: "Base64 Converter",
-              path: "/base64-converter",
+              path: "/base64-converter/",
               desc: "Convert generated IDs into transmission-safe Base64 encoding.",
             },
             {
               name: "JWT Decoder",
-              path: "/jwt-decoder",
+              path: "/jwt-decoder/",
               desc: "Inspect JSON Web Tokens to see if they utilize UUIDs in their payload.",
             },
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate download and upload times for various data sizes.",
             }]}
         />

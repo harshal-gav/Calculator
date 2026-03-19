@@ -286,22 +286,22 @@ export default function RandomLetterGenerator() {
           relatedCalculators={[
             {
               name: "Random Choice Generator",
-              path: "/random-choice-generator",
+              path: "/random-choice-generator/",
               desc: "Select a random winner or item out of a custom list.",
             },
             {
               name: "Random String Generator",
-              path: "/random-string-generator",
+              path: "/random-string-generator/",
               desc: "Generate secure, long strings of random alphanumeric characters.",
             },
             {
               name: "Number to Words Converter",
-              path: "/number-to-words-converter",
+              path: "/number-to-words-converter/",
               desc: "Convert numeric digits into alphabetical English spelled-out words.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

@@ -298,22 +298,22 @@ export default function AnnuityPVCalculator() {
           relatedCalculators={[
             {
               name: "Present Value Calculator",
-              path: "/present-value-calculator",
+              path: "/present-value-calculator/",
               desc: "Calculate the PV of a single future lump sum, rather than a stream of payments.",
             },
             {
               name: "Retirement Calculator",
-              path: "/retirement-calculator",
+              path: "/retirement-calculator/",
               desc: "Project the broader macroeconomic feasibility of your entire nest egg.",
             },
             {
               name: "Compound Interest Calculator",
-              path: "/compound-interest-calculator",
+              path: "/compound-interest-calculator/",
               desc: "Run the math in reverse to see Future Value.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

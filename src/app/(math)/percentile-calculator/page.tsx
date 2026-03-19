@@ -327,22 +327,22 @@ export default function PercentileCalculator() {
           relatedCalculators={[
             {
               name: "Mean, Median, Mode",
-              path: "/mean-median-mode-calculator",
+              path: "/mean-median-mode-calculator/",
               desc: "Calculate the true '50th percentile' median of your dataset.",
             },
             {
               name: "Z-Score Calculator",
-              path: "/z-score-calculator",
+              path: "/z-score-calculator/",
               desc: "Map raw scores onto a bell curve to approximate their percentile.",
             },
             {
               name: "Variance Calculator",
-              path: "/variance-calculator",
+              path: "/variance-calculator/",
               desc: "Measure exactly how scattered your data is around the center point.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

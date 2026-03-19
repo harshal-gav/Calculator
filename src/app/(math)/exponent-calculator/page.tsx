@@ -240,22 +240,22 @@ export default function ExponentCalculator() {
           relatedCalculators={[
             {
               name: "Logarithm Calculator",
-              path: "/logarithm-calculator",
+              path: "/logarithm-calculator/",
               desc: "Perform the inverse operation by calculating the required exponent for a specific target.",
             },
             {
               name: "Square Root / Scientific",
-              path: "/scientific-calculator",
+              path: "/scientific-calculator/",
               desc: "Calculate fractional exponents acting as root denominators.",
             },
             {
               name: "Scientific Notation Converter",
-              path: "/scientific-notation-converter",
+              path: "/scientific-notation-converter/",
               desc: "Format massive exponential results into clean, readable integers.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

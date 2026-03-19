@@ -311,22 +311,22 @@ export default function BillSplitterCalculator() {
           relatedCalculators={[
             {
               name: "Sales Tax Calculator",
-              path: "/sales-tax-calculator",
+              path: "/sales-tax-calculator/",
               desc: "Calculate total costs with local state taxes.",
             },
             {
               name: "Discount Calculator",
-              path: "/discount-calculator",
+              path: "/discount-calculator/",
               desc: "Calculate final prices after coupons or sales.",
             },
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Analyze financial returns on investments.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

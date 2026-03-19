@@ -349,22 +349,22 @@ export default function HexCalculator() {
           relatedCalculators={[
             {
               name: "Binary Calculator",
-              path: "/binary-calculator",
+              path: "/binary-calculator/",
               desc: "Perform arithmetic directly on 1s and 0s.",
             },
             {
               name: "Base Converter",
-              path: "/base-converter",
+              path: "/base-converter/",
               desc: "Convert numbers instantly between Decimal, Binary, Octal, and Hexadecimal.",
             },
             {
               name: "RGB to Hex Converter",
-              path: "/rgb-hex-converter",
+              path: "/rgb-hex-converter/",
               desc: "Convert visual web colors between decimal RGB and hex format.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

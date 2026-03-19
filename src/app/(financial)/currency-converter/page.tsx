@@ -395,22 +395,22 @@ export default function CurrencyConverter() {
           relatedCalculators={[
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Calculate your overall return on investments, including forex trades.",
             },
             {
               name: "Salary Calculator",
-              path: "/salary-calculator",
+              path: "/salary-calculator/",
               desc: "Convert hourly rates to an annual salary, useful for remote global teams.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             },
             {
               name: "Investment Calculator",
-              path: "/investment-calculator",
+              path: "/investment-calculator/",
               desc: "Project your portfolio growth over time with compound interest.",
             }]}
         />

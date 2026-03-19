@@ -318,22 +318,22 @@ export default function BinaryCalculator() {
           relatedCalculators={[
             {
               name: "Hex Calculator",
-              path: "/hex-calculator",
+              path: "/hex-calculator/",
               desc: "Perform arithmetic on Base-16 values used in memory architecture.",
             },
             {
               name: "Base Converter",
-              path: "/base-converter",
+              path: "/base-converter/",
               desc: "Translate values between Hexadecimal, Decimal, Octal, and Binary.",
             },
             {
               name: "IP Subnet Calculator",
-              path: "/ip-subnet-calculator",
+              path: "/ip-subnet-calculator/",
               desc: "Calculate IPv4 networks exactly how routers do it behind the scenes.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

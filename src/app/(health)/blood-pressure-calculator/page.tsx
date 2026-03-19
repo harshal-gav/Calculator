@@ -307,22 +307,22 @@ export default function BloodPressureCalculator() {
           relatedCalculators={[
             {
               name: "Ideal Weight Calculator",
-              path: "/ideal-weight-calculator",
+              path: "/ideal-weight-calculator/",
               desc: "Check BMI targets, as weight loss is a primary driver in lowering blood pressure naturally.",
             },
             {
               name: "Macronutrient Calculator",
-              path: "/macro-calculator",
+              path: "/macro-calculator/",
               desc: "Plan a DASH (Dietary Approaches to Stop Hypertension) diet macronutrient split.",
             },
             {
               name: "TDEE Calculator",
-              path: "/tdee-calculator",
+              path: "/tdee-calculator/",
               desc: "Calculate your daily energy expenditure baseline.",
             },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Calculate your Body Mass Index for a quick health assessment.",
             }]}
         />

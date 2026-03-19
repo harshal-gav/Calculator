@@ -337,22 +337,22 @@ export default function PERatioCalculator() {
           relatedCalculators={[
             {
               name: "Dividend Yield Calculator",
-              path: "/dividend-yield-calculator",
+              path: "/dividend-yield-calculator/",
               desc: "Evaluate the cash return on a stock.",
             },
             {
               name: "Investment Calculator",
-              path: "/investment-calculator",
+              path: "/investment-calculator/",
               desc: "Project the compounding growth of your stock portfolio.",
             },
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Calculate your exact percentage return on a stock trade.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

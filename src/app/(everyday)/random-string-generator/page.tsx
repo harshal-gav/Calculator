@@ -294,22 +294,22 @@ export default function RandomStringGenerator() {
           relatedCalculators={[
             {
               name: "UUID Generator",
-              path: "/uuid-generator",
+              path: "/uuid-generator/",
               desc: "Generate standardized Universal Unique Identifiers (v4) for database keys.",
             },
             {
               name: "Base64 Converter",
-              path: "/base64-converter",
+              path: "/base64-converter/",
               desc: "Encode or decode strings using Base64 encryption.",
             },
             {
               name: "Random Letter Generator",
-              path: "/random-letter-generator",
+              path: "/random-letter-generator/",
               desc: "Generate alphabetical characters randomly instead of data strings.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

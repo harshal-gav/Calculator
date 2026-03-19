@@ -300,22 +300,22 @@ export default function RandomGroupGenerator() {
           relatedCalculators={[
             {
               name: "Random Name/Item Picker",
-              path: "/random-item-picker",
+              path: "/random-item-picker/",
               desc: "Spin a randomized wheel to select a single winner out of a large list.",
             },
             {
               name: "List Sorter Tool",
-              path: "/list-sorter",
+              path: "/list-sorter/",
               desc: "Alphabetize or formally structure your list of names before randomizing.",
             },
             {
               name: "Online Dice Roller",
-              path: "/dice-roller",
+              path: "/dice-roller/",
               desc: "Generate purely random numbers or roll custom dice for tabletop gaming.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

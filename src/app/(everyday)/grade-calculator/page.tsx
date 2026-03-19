@@ -391,22 +391,22 @@ export default function GradeCalculator() {
           relatedCalculators={[
             {
               name: "GPA Calculator",
-              path: "/gpa-calculator",
+              path: "/gpa-calculator/",
               desc: "Translate your final class percentage into a 4.0 scale GPA.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily figure out your grade percentage (e.g., 47/60 on a test).",
             },
             {
               name: "Mean/Average Calculator",
-              path: "/mean-median-mode-calculator",
+              path: "/mean-median-mode-calculator/",
               desc: "Find the average if all your tests share the exact same weight.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

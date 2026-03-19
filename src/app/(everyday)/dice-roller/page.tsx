@@ -296,22 +296,22 @@ export default function DiceRoller() {
           relatedCalculators={[
             {
               name: "Random Choice Generator",
-              path: "/random-choice-generator",
+              path: "/random-choice-generator/",
               desc: "Select a random winner or item out of a custom text list.",
             },
             {
               name: "Probability Calculator",
-              path: "/probability-calculator",
+              path: "/probability-calculator/",
               desc: "Calculate the exact mathematical odds of winning a dice roll.",
             },
             {
               name: "Random Letter Generator",
-              path: "/random-letter-generator",
+              path: "/random-letter-generator/",
               desc: "Generate alphabetical characters randomly instead of numbers.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

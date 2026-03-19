@@ -274,22 +274,22 @@ export default function LeverageRatioCalculator() {
           relatedCalculators={[
             {
               name: "ROE Calculator",
-              path: "/roe-calculator",
+              path: "/roe-calculator/",
               desc: "Calculate Return on Equity to see how leverage impacts shareholder returns.",
             },
             {
               name: "Debt-to-Income Calculator",
-              path: "/dti-calculator",
+              path: "/dti-calculator/",
               desc: "The personal finance equivalent of corporate leverage ratios.",
             },
             {
               name: "WACC Calculator",
-              path: "/wacc-calculator",
+              path: "/wacc-calculator/",
               desc: "Determine how the mix of debt and equity affects a firm's average cost of capital.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

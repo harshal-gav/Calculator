@@ -294,22 +294,22 @@ export default function JsonToCsv() {
           relatedCalculators={[
             {
               name: "JSON Validator",
-              path: "/json-validator",
+              path: "/json-validator/",
               desc: "Ensure your JSON syntax is 100% correct before attempting to convert it.",
             },
             {
               name: "Regex Tester",
-              path: "/regex-tester",
+              path: "/regex-tester/",
               desc: "Use Regex to clean up or manipulate specific strings inside your CSV cells.",
             },
             {
               name: "Markdown Editor",
-              path: "/markdown-editor",
+              path: "/markdown-editor/",
               desc: "Format your flattened data into standard Github tables for documentation.",
             },
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate download and upload times for various data sizes.",
             }]}
         />

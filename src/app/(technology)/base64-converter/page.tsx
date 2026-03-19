@@ -319,22 +319,22 @@ export default function Base64Converter() {
           relatedCalculators={[
             {
               name: "JWT Decoder",
-              path: "/jwt-decoder",
+              path: "/jwt-decoder/",
               desc: "Specifically parse and decode JSON Web Tokens and analyze their claims.",
             },
             {
               name: "URL Encoder",
-              path: "/url-encoder-decoder",
+              path: "/url-encoder-decoder/",
               desc: "Format URLs securely to prevent query parameter collisions.",
             },
             {
               name: "Password Generator",
-              path: "/password-generator",
+              path: "/password-generator/",
               desc: "Generate true securely random cryptographic strings.",
             },
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate download and upload times for various data sizes.",
             }]}
         />

@@ -315,22 +315,22 @@ export default function ShoeSizeConverter() {
           relatedCalculators={[
             {
               name: "Length Converter",
-              path: "/length-converter",
+              path: "/length-converter/",
               desc: "Convert centimeters, inches, and feet manually.",
             },
             {
               name: "Proportion Calculator",
-              path: "/proportion-calculator",
+              path: "/proportion-calculator/",
               desc: "Calculate ratios for tailoring and physical dimensions.",
             },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Check body mass index based on total height and weight.",
             },
             {
               name: "Roman Numeral Converter",
-              path: "/roman-numeral-converter",
+              path: "/roman-numeral-converter/",
               desc: "Convert between standard numbers and Roman numerals.",
             }]}
         />

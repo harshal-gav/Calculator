@@ -372,22 +372,22 @@ export default function BmiCalculator() {
         relatedCalculators={[
           {
             name: "Calorie Calculator",
-            path: "/calorie-calculator",
+            path: "/calorie-calculator/",
             desc: "Estimate the exact number of daily calories required to reach your target BMI through a controlled caloric deficit or surplus.",
           },
           {
             name: "BMR Calculator",
-            path: "/bmr-calculator",
+            path: "/bmr-calculator/",
             desc: "Discover your Basal Metabolic Rate—the calories you burn at rest—to better inform your weight management strategy.",
           },
           {
             name: "Body Fat Calculator",
-            path: "/body-fat-calculator",
+            path: "/body-fat-calculator/",
             desc: "Go beyond BMI by estimating your actual body fat percentage using the Navy Tape method or other anthropometric data.",
           },
           {
             name: "Ideal Weight Calculator",
-            path: "/ideal-weight-calculator",
+            path: "/ideal-weight-calculator/",
             desc: "Find the weight range where you are projected to experience the best longevity and health outcomes based on your height.",
           }
         ]}

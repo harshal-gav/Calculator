@@ -282,22 +282,22 @@ export default function PrimeFactorizationCalculator() {
           relatedCalculators={[
             {
               name: "LCM Calculator",
-              path: "/lcm-calculator",
+              path: "/lcm-calculator/",
               desc: "Determine the Least Common Multiple of up to 5 integers.",
             },
             {
               name: "GCF Calculator",
-              path: "/gcf-calculator",
+              path: "/gcf-calculator/",
               desc: "Find the Greatest Common Factor using prime components.",
             },
             {
               name: "Fraction Simplifier",
-              path: "/fraction-simplifier-calculator",
+              path: "/fraction-simplifier-calculator/",
               desc: "Use common factor division to reduce fractions automatically.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

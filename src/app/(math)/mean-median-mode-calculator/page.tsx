@@ -340,22 +340,22 @@ export default function MeanMedianModeCalculator() {
           relatedCalculators={[
             {
               name: "Standard Deviation Calculator",
-              path: "/standard-deviation-calculator",
+              path: "/standard-deviation-calculator/",
               desc: "Measure exactly how scattered or clustered your dataset is.",
             },
             {
               name: "Z-Score Calculator",
-              path: "/z-score-calculator",
+              path: "/z-score-calculator/",
               desc: "Compare individual data points against the statistical normal.",
             },
             {
               name: "Probability Calculator",
-              path: "/probability-calculator",
+              path: "/probability-calculator/",
               desc: "Determine the exact likelihood of random statistical events occurring.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

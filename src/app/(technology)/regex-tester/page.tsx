@@ -376,22 +376,22 @@ export default function RegexTester() {
           relatedCalculators={[
             {
               name: "Cron Job Generator",
-              path: "/cron-job-generator",
+              path: "/cron-job-generator/",
               desc: "Write perfectly formatted server scheduling expressions.",
             },
             {
               name: "JSON Validator",
-              path: "/json-validator",
+              path: "/json-validator/",
               desc: "Test, format, and debug your JSON data payloads.",
             },
             {
               name: "Random String Generator",
-              path: "/random-string-generator",
+              path: "/random-string-generator/",
               desc: "Generate random data to test your complex regex rules against.",
             },
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate download and upload times for various data sizes.",
             }]}
         />

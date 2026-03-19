@@ -252,22 +252,22 @@ export default function LcmCalculator() {
           relatedCalculators={[
             {
               name: "GCF Calculator",
-              path: "/gcf-calculator",
+              path: "/gcf-calculator/",
               desc: "Calculate the exact Greatest Common Factor used inside LCM equations.",
             },
             {
               name: "Fraction Calculator",
-              path: "/fraction-calculator",
+              path: "/fraction-calculator/",
               desc: "Directly add and subtract fractions utilizing hidden LCM logic.",
             },
             {
               name: "Prime Factorization",
-              path: "/prime-factorization-calculator",
+              path: "/prime-factorization-calculator/",
               desc: "Break down integers precisely into their core prime multiplicative roots.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

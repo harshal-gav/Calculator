@@ -297,22 +297,22 @@ export default function ArcLengthCalculator() {
           relatedCalculators={[
             {
               name: "Circle Calculator",
-              path: "/circle-calculator",
+              path: "/circle-calculator/",
               desc: "Calculate full perimeter and area of standard circles.",
             },
             {
               name: "Unit Circle Calculator",
-              path: "/unit-circle-calculator",
+              path: "/unit-circle-calculator/",
               desc: "Interactive tool for mapping angles to sine and cosine.",
             },
             {
               name: "Trigonometry Calculator",
-              path: "/trigonometry-calculator",
+              path: "/trigonometry-calculator/",
               desc: "Quickly evaluate sin, cos, tan, and other trig functions.",
             },
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Calculate the area of various 2D shapes.",
             }]}
         />

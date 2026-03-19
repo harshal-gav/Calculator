@@ -255,22 +255,22 @@ export default function ParallelogramCalculator() {
           relatedCalculators={[
             {
               name: "Rhombus Calculator",
-              path: "/rhombus-calculator",
+              path: "/rhombus-calculator/",
               desc: "Calculate diagonals, perimeter and area specifically for rhombus shapes.",
             },
             {
               name: "Trapezoid Calculator",
-              path: "/trapezoid-calculator",
+              path: "/trapezoid-calculator/",
               desc: "Calculate the area of a quadrilateral with only one set of parallel sides.",
             },
             {
               name: "Triangle Calculator",
-              path: "/triangle-calculator",
+              path: "/triangle-calculator/",
               desc: "Calculate missing angles and sides of any triangular polygon.",
             },
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Calculate the area of various 2D shapes.",
             }]}
         />

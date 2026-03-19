@@ -311,22 +311,22 @@ export default function RentVsBuyCalculator() {
         relatedCalculators={[
           {
             name: "Mortgage Calculator",
-            path: "/mortgage-calculator",
+            path: "/mortgage-calculator/",
             desc: "The core engine for calculating your monthly P&I, taxes, and insurance."
           },
           {
             name: "ROI Calculator",
-            path: "/roi-calculator",
+            path: "/roi-calculator/",
             desc: "Compare your home's appreciation to other asset classes."
           },
           {
             name: "Amortization Calculator",
-            path: "/amortization-calculator",
+            path: "/amortization-calculator/",
             desc: "See exactly how much interest you will pay over the life of your loan."
           },
           {
             name: "Income Tax Calculator",
-            path: "/income-tax-calculator",
+            path: "/income-tax-calculator/",
             desc: "See how much post-tax income you have left for your housing budget."
           }
         ]}

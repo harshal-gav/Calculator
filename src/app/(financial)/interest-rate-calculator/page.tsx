@@ -281,22 +281,22 @@ export default function InterestRateCalculator() {
           relatedCalculators={[
             {
               name: "Compound Interest Calculator",
-              path: "/compound-interest-calculator",
+              path: "/compound-interest-calculator/",
               desc: "For running projections that include regular monthly deposits on top of the principal.",
             },
             {
               name: "Debt Payoff Calculator",
-              path: "/debt-payoff-calculator",
+              path: "/debt-payoff-calculator/",
               desc: "Build a structured amortization schedule to mathematically kill high-interest debt.",
             },
             {
               name: "Investment Calculator",
-              path: "/investment-calculator",
+              path: "/investment-calculator/",
               desc: "Analyze the total inflation-adjusted returns of a diversified ETF portfolio.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

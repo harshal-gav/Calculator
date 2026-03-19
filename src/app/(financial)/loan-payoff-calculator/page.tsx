@@ -237,12 +237,12 @@ export default function LoanPayoffCalculator() {
               answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
             }]}
         relatedCalculators={[
-          { name: "Debt Payoff Calculator", path: "/debt-payoff-calculator", desc: "Compare different payoff strategies for multiple debts." },
-          { name: "Credit Card Payoff Calculator", path: "/credit-card-payoff-calculator", desc: "Strategy for variable-interest revolving credit." },
-          { name: "Amortization Calculator", path: "/amortization-calculator", desc: "View the full month-by-month payoff schedule." },
+          { name: "Debt Payoff Calculator", path: "/debt-payoff-calculator/", desc: "Compare different payoff strategies for multiple debts." },
+          { name: "Credit Card Payoff Calculator", path: "/credit-card-payoff-calculator/", desc: "Strategy for variable-interest revolving credit." },
+          { name: "Amortization Calculator", path: "/amortization-calculator/", desc: "View the full month-by-month payoff schedule." },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
       />

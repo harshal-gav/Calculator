@@ -243,22 +243,22 @@ export default function GcfCalculator() {
           relatedCalculators={[
             {
               name: "LCM Calculator",
-              path: "/lcm-calculator",
+              path: "/lcm-calculator/",
               desc: "Calculate the exact opposite: the lowest common multiple.",
             },
             {
               name: "Fraction Simplifier",
-              path: "/fraction-simplifier-calculator",
+              path: "/fraction-simplifier-calculator/",
               desc: "Instantly reduce complex fractions using hidden GCF logic.",
             },
             {
               name: "Prime Factorization",
-              path: "/prime-factorization-calculator",
+              path: "/prime-factorization-calculator/",
               desc: "See the exact prime building blocks of any number.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

@@ -441,22 +441,22 @@ export default function ForceCalculator() {
           relatedCalculators={[
             {
               name: "Acceleration Calculator",
-              path: "/acceleration-calculator",
+              path: "/acceleration-calculator/",
               desc: "Calculate your acceleration first before plugging it into the Force equation.",
             },
             {
               name: "Work Calculator",
-              path: "/work-calculator",
+              path: "/work-calculator/",
               desc: "Calculate how much energy is expended when a force moves an object across a distance.",
             },
             {
               name: "Density Calculator",
-              path: "/density-calculator",
+              path: "/density-calculator/",
               desc: "Calculate the exact physical mass of large raw materials based on their volume.",
             },
             {
               name: "Kinetic Energy Calculator",
-              path: "/kinetic-energy-calculator",
+              path: "/kinetic-energy-calculator/",
               desc: "Find the energy of a moving object based on mass and velocity.",
             }]}
         />

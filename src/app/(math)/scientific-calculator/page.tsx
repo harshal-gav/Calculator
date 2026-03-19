@@ -344,22 +344,22 @@ export default function ScientificCalculator() {
           relatedCalculators={[
             {
               name: "Order of Operations Calculator",
-              path: "/order-of-operations-calculator",
+              path: "/order-of-operations-calculator/",
               desc: "A detailed breakdown of how mathematical parsing hierarchy works step-by-step.",
             },
             {
               name: "Fraction Simplifier",
-              path: "/fraction-simplifier-calculator",
+              path: "/fraction-simplifier-calculator/",
               desc: "Reduce raw mathematical outputs into clean, simplified rational fractions.",
             },
             {
               name: "Logarithm Calculator",
-              path: "/logarithm-calculator",
+              path: "/logarithm-calculator/",
               desc: "Calculate logs with custom, non-standard bases.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

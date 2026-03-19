@@ -349,22 +349,22 @@ export default function WACCCalculator() {
           relatedCalculators={[
             {
               name: "CAPM Calculator",
-              path: "/capm-calculator",
+              path: "/capm-calculator/",
               desc: "Calculate the Cost of Equity required to complete the WACC formula.",
             },
             {
               name: "Present Value Calculator",
-              path: "/present-value-calculator",
+              path: "/present-value-calculator/",
               desc: "Discount a future cash flow back to today using WACC as the discount rate.",
             },
             {
               name: "Dividend Yield Calculator",
-              path: "/dividend-yield-calculator",
+              path: "/dividend-yield-calculator/",
               desc: "Evaluate the direct cash returns paid to the equity portion of the capital stack.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

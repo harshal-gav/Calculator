@@ -257,22 +257,22 @@ export default function OnlineNotepad() {
           relatedCalculators={[
             {
               name: "Markdown Editor",
-              path: "/markdown-editor",
+              path: "/markdown-editor/",
               desc: "A robust editor allowing for headers, bold text, links, and HTML exports.",
             },
             {
               name: "Word Count Calculator",
-              path: "/word-count-calculator",
+              path: "/word-count-calculator/",
               desc: "Analyze massive text documents for reading time, keyword density, and syllable counts.",
             },
             {
               name: "Text Case Converter",
-              path: "/case-converter",
+              path: "/case-converter/",
               desc: "Instantly transform your notes between UPPERCASE, lowercase, and Title Case.",
             },
             {
               name: "Case Converter",
-              path: "/case-converter",
+              path: "/case-converter/",
               desc: "Change text to UPPERCASE, lowercase, Title Case, and more.",
             }]}
         />

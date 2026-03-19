@@ -291,10 +291,10 @@ export default function GDPCalculator() {
           },
         ]}
         relatedCalculators={[
-          { name: "Inflation Calculator", path: "/inflation-calculator", desc: "Calculate inflation rates and purchasing power" },
-          { name: "Compound Growth Rate", path: "/cagr-calculator", desc: "Calculate CAGR and compound growth" },
-          { name: "Percentage Change Calculator", path: "/percentage-change-calculator", desc: "Calculate percentage changes" },
-          { name: "Revenue Calculator", path: "/revenue-calculator", desc: "Calculate business revenue metrics" },
+          { name: "Inflation Calculator", path: "/inflation-calculator/", desc: "Calculate inflation rates and purchasing power" },
+          { name: "Compound Growth Rate", path: "/cagr-calculator/", desc: "Calculate CAGR and compound growth" },
+          { name: "Percentage Change Calculator", path: "/percentage-change-calculator/", desc: "Calculate percentage changes" },
+          { name: "Revenue Calculator", path: "/revenue-calculator/", desc: "Calculate business revenue metrics" },
         ]}
       />
     </div>

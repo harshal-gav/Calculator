@@ -315,22 +315,22 @@ export default function TipSplittingCalculator() {
           relatedCalculators={[
             {
               name: "Tip Calculator",
-              path: "/tip-calculator",
+              path: "/tip-calculator/",
               desc: "A simpler interface when you only need gratuity without splitting.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "For manual percentage math and reverse engineering totals.",
             },
             {
               name: "Fraction to Decimal",
-              path: "/fraction-to-decimal-calculator",
+              path: "/fraction-to-decimal-calculator/",
               desc: "Helpful for splitting uneven bills (e.g., paying 1/3 of the tab).",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

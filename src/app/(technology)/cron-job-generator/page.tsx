@@ -381,22 +381,22 @@ export default function CronJobGenerator() {
           relatedCalculators={[
             {
               name: "Regex Tester",
-              path: "/regex-tester",
+              path: "/regex-tester/",
               desc: "Test complex pattern matching syntax for your automation scripts.",
             },
             {
               name: "Time Zone Converter",
-              path: "/time-zone-converter",
+              path: "/time-zone-converter/",
               desc: "Convert your local time to UTC to ensure your remote cron jobs execute accurately.",
             },
             {
               name: "Pomodoro Timer",
-              path: "/pomodoro-timer",
+              path: "/pomodoro-timer/",
               desc: "Manage your own human schedule with structured automation intervals.",
             },
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate download and upload times for various data sizes.",
             }]}
         />

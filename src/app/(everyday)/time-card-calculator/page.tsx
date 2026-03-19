@@ -324,22 +324,22 @@ export default function TimeCardCalculator() {
           relatedCalculators={[
             {
               name: "Salary Calculator",
-              path: "/salary-calculator",
+              path: "/salary-calculator/",
               desc: "Convert your calculated hourly wage into weekly, monthly, and yearly salary totals.",
             },
             {
               name: "Business Days Calculator",
-              path: "/business-days-calculator",
+              path: "/business-days-calculator/",
               desc: "Count exactly how many working days fall within a specific month's payroll cycle.",
             },
             {
               name: "Commission Calculator",
-              path: "/commission-calculator",
+              path: "/commission-calculator/",
               desc: "Add variable commission and sales bonuses on top of your standard hourly base pay.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

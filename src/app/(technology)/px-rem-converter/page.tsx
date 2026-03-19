@@ -301,22 +301,22 @@ export default function PxRemConverter() {
           relatedCalculators={[
             {
               name: "RGB to HEX Converter",
-              path: "/rgb-hex-converter",
+              path: "/rgb-hex-converter/",
               desc: "Convert digital screen light values to CSS color strings.",
             },
             {
               name: "Proportion Calculator",
-              path: "/proportion-calculator",
+              path: "/proportion-calculator/",
               desc: "Mathematical tool to ensure images scale at precise aspect ratios.",
             },
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate exact network transmission times.",
             },
             {
               name: "Base64 Converter",
-              path: "/base64-converter",
+              path: "/base64-converter/",
               desc: "Encode and decode data in Base64 format securely.",
             }]}
         />

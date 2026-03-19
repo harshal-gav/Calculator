@@ -282,22 +282,22 @@ export default function PaymentCalculator() {
         relatedCalculators={[
           {
             name: "Amortization Calculator",
-            path: "/amortization-calculator",
+            path: "/amortization-calculator/",
             desc: "View a complete month-by-month breakdown of your loan payoff schedule.",
           },
           {
             name: "Auto Loan Calculator",
-            path: "/auto-loan-calculator",
+            path: "/auto-loan-calculator/",
             desc: "Calculate your exact monthly car payment including dealer fees and taxes.",
           },
           {
             name: "Debt Payoff Calculator",
-            path: "/debt-payoff-calculator",
+            path: "/debt-payoff-calculator/",
             desc: "Compare the avalanche vs snowball methods for paying off multiple debts.",
           },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
       />

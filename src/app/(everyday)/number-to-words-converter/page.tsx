@@ -308,22 +308,22 @@ export default function NumberToWordsConverter() {
           relatedCalculators={[
             {
               name: "Roman Numeral Converter",
-              path: "/roman-numeral-converter",
+              path: "/roman-numeral-converter/",
               desc: "Convert standard Arabic digits into historic Roman Numerals.",
             },
             {
               name: "Base Converter",
-              path: "/base-converter",
+              path: "/base-converter/",
               desc: "Translate numbers from Decimal format into Hex or Binaries.",
             },
             {
               name: "Word Count Calculator",
-              path: "/word-count-calculator",
+              path: "/word-count-calculator/",
               desc: "Count how many words or characters are inside a massive document.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

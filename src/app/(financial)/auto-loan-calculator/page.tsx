@@ -389,22 +389,22 @@ export default function AutoLoanCalculator() {
         relatedCalculators={[
           {
             name: "Auto Lease Calculator",
-            path: "/auto-lease-calculator",
+            path: "/auto-lease-calculator/",
             desc: "Compare the costs of leasing versus buying to see which fits your lifestyle and financial goals.",
           },
           {
             name: "Fuel Cost Calculator",
-            path: "/fuel-cost-calculator",
+            path: "/fuel-cost-calculator/",
             desc: "Estimate your monthly and annual gas expenses based on your vehicle's MPG and your driving habits.",
           },
           {
             name: "Loan Payoff Calculator",
-            path: "/loan-payoff-calculator",
+            path: "/loan-payoff-calculator/",
             desc: "See how much time and money you can save by making extra payments toward your principal.",
           },
           {
             name: "Car Depreciation Calculator",
-            path: "/car-depreciation-calculator",
+            path: "/car-depreciation-calculator/",
             desc: "Predict how much your vehicle will be worth in 3, 5, or 10 years based on historical data.",
           }
         ]}

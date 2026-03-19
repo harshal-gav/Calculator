@@ -214,22 +214,22 @@ export default function MeanMedianModeRangeCalculator() {
         relatedCalculators={[
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             },
             {
               name: "Scientific Calculator",
-              path: "/scientific-calculator",
+              path: "/scientific-calculator/",
               desc: "Perform advanced mathematical operations and functions.",
             },
             {
               name: "Quadratic Formula Calculator",
-              path: "/quadratic-formula-calculator",
+              path: "/quadratic-formula-calculator/",
               desc: "Solve quadratic equations instantly.",
             },
             {
               name: "Matrix Calculator",
-              path: "/matrix-calculator",
+              path: "/matrix-calculator/",
               desc: "Perform addition, subtraction, and multiplication on matrices.",
             }]}
       />

@@ -476,22 +476,22 @@ export default function DTICalculator() {
           relatedCalculators={[
             {
               name: "LTV Calculator",
-              path: "/ltv-calculator",
+              path: "/ltv-calculator/",
               desc: "Calculate your Loan-to-Value ratio for mortgages.",
             },
             {
               name: "Net Worth Calculator",
-              path: "/net-worth-calculator",
+              path: "/net-worth-calculator/",
               desc: "Determine your true financial health by balancing assets and debts.",
             },
             {
               name: "Debt Payoff",
-              path: "/debt-payoff-calculator",
+              path: "/debt-payoff-calculator/",
               desc: "Strategize the fastest way to lower your DTI.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

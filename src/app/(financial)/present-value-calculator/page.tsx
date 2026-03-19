@@ -244,22 +244,22 @@ export default function PresentValueCalculator() {
         relatedCalculators={[
           {
             name: "Investment Calculator",
-            path: "/investment-calculator",
+            path: "/investment-calculator/",
             desc: "A broader tool for projecting overall stock portfolio growth.",
           },
           {
             name: "Compound Interest Calculator",
-            path: "/compound-interest-calculator",
+            path: "/compound-interest-calculator/",
             desc: "Project future investment growth using recursive compound interest.",
           },
           {
             name: "ROI Calculator",
-            path: "/roi-calculator",
+            path: "/roi-calculator/",
             desc: "Calculate your exact annualized percentage returns on recent sales.",
           },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
       />

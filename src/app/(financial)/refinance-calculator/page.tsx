@@ -396,22 +396,22 @@ export default function RefinanceCalculator() {
           relatedCalculators={[
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "For calculating initial purchase scenarios, taxes, and PMI.",
             },
             {
               name: "FHA Loan Calculator",
-              path: "/fha-loan-calculator",
+              path: "/fha-loan-calculator/",
               desc: "Account for FHA-specific Upfront and Annual Mortgage Insurance Premiums.",
             },
             {
               name: "Debt Payoff Calculator",
-              path: "/debt-payoff-calculator",
+              path: "/debt-payoff-calculator/",
               desc: "See what happens if you just pay extra principal instead of refinancing.",
             },
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Calculate your exact annualized percentage returns.",
             }]}
         />

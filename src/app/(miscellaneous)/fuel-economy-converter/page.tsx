@@ -312,22 +312,22 @@ export default function FuelEconomyConverter() {
           relatedCalculators={[
             {
               name: "Gas Mileage Calculator",
-              path: "/gas-mileage-calculator",
+              path: "/gas-mileage-calculator/",
               desc: "Calculate your vehicle's actual real-world MPG based on your odometer.",
             },
             {
               name: "Distance Calculator",
-              path: "/distance-calculator",
+              path: "/distance-calculator/",
               desc: "Calculate exact travel distance to plan fuel requirements.",
             },
             {
               name: "Speed Converter",
-              path: "/speed-converter",
+              path: "/speed-converter/",
               desc: "Convert dashboard speeds between MPH and KPH seamlessly.",
             },
             {
               name: "Roman Numeral Converter",
-              path: "/roman-numeral-converter",
+              path: "/roman-numeral-converter/",
               desc: "Convert between standard numbers and Roman numerals.",
             }]}
         />

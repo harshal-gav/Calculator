@@ -133,10 +133,10 @@ export default function OneRepMaxCalculator() {
           { question: "Is this tool free to use?", answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions." },
         ]}
         relatedCalculators={[
-          { name: "BMI Calculator", path: "/bmi-calculator", desc: "Calculate your Body Mass Index." },
-          { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Estimate daily energy requirements." },
-          { name: "Body Fat Calculator", path: "/body-fat-calculator", desc: "Estimate your body fat percentage." },
-          { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Calculate your Total Daily Energy Expenditure." },
+          { name: "BMI Calculator", path: "/bmi-calculator/", desc: "Calculate your Body Mass Index." },
+          { name: "Calorie Calculator", path: "/calorie-calculator/", desc: "Estimate daily energy requirements." },
+          { name: "Body Fat Calculator", path: "/body-fat-calculator/", desc: "Estimate your body fat percentage." },
+          { name: "TDEE Calculator", path: "/tdee-calculator/", desc: "Calculate your Total Daily Energy Expenditure." },
         ]}
       />
     </div>

@@ -338,22 +338,22 @@ export default function MacroCalculator() {
           relatedCalculators={[
             {
               name: "TDEE Calculator",
-              path: "/tdee-calculator",
+              path: "/tdee-calculator/",
               desc: "Find your Total Daily Energy Expenditure before using this calculator.",
             },
             {
               name: "Protein Calculator",
-              path: "/protein-calculator",
+              path: "/protein-calculator/",
               desc: "Calculate protein specifically based on lean body mass metrics.",
             },
             {
               name: "Calories Burned Calculator",
-              path: "/calories-burned-calculator",
+              path: "/calories-burned-calculator/",
               desc: "Track how exercise allows you to increase your daily macro allowances.",
             },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Calculate your Body Mass Index for a quick health assessment.",
             }]}
         />

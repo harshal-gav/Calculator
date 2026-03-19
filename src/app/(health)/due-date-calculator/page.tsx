@@ -437,22 +437,22 @@ export default function DueDateCalculator() {
           relatedCalculators={[
             {
               name: "Ovulation Calculator",
-              path: "/ovulation-calculator",
+              path: "/ovulation-calculator/",
               desc: "Find your prime fertile window for conception.",
             },
             {
               name: "Weight Converter",
-              path: "/weight-converter",
+              path: "/weight-converter/",
               desc: "Convert standard baby weights between lbs/oz and kg/grams.",
             },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Track health metrics during pregnancy.",
             },
             {
               name: "Calorie Calculator",
-              path: "/calorie-calculator",
+              path: "/calorie-calculator/",
               desc: "Estimate the number of calories you need to maintain or lose weight.",
             }]}
         />

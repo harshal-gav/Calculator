@@ -344,22 +344,22 @@ export default function BreakEvenCalculator() {
           relatedCalculators={[
             {
               name: "Margin Calculator",
-              path: "/margin-calculator",
+              path: "/margin-calculator/",
               desc: "Calculate your overall company profitability percentages.",
             },
             {
               name: "Markup Calculator",
-              path: "/markup-calculator",
+              path: "/markup-calculator/",
               desc: "Determine how to price your goods to ensure your contribution margin is high enough.",
             },
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Once past break-even, calculate the return on your initial business investment.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

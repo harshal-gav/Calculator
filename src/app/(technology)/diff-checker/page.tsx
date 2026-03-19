@@ -244,22 +244,22 @@ export default function DiffChecker() {
           relatedCalculators={[
             {
               name: "JSON Validator",
-              path: "/json-validator",
+              path: "/json-validator/",
               desc: "Format minified code before diffing it to actually see line-by-line changes.",
             },
             {
               name: "Regex Tester",
-              path: "/regex-tester",
+              path: "/regex-tester/",
               desc: "Use Regex to mass-find syntax errors revealed by your diff check.",
             },
             {
               name: "Markdown Editor",
-              path: "/markdown-editor",
+              path: "/markdown-editor/",
               desc: "Write cleanly formatted documentation outlining the code changes you just made.",
             },
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate download and upload times for various data sizes.",
             }]}
         />

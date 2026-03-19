@@ -441,22 +441,22 @@ export default function FHALoanCalculator() {
           relatedCalculators={[
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "For calculating standard Conventional loans without the mandatory FHA UFMIP layer.",
             },
             {
               name: "Refinance Calculator",
-              path: "/refinance-calculator",
+              path: "/refinance-calculator/",
               desc: "Calculate if escaping your FHA MIP via refinancing mathematically justifies the closing costs.",
             },
             {
               name: "Rent Calculator",
-              path: "/rent-calculator",
+              path: "/rent-calculator/",
               desc: "Discover what maximum housing payment you can algorithmically afford.",
             },
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Calculate your exact annualized percentage returns.",
             }]}
         />

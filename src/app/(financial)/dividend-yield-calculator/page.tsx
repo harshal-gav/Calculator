@@ -307,22 +307,22 @@ export default function DividendYieldCalculator() {
         relatedCalculators={[
           {
             name: "Investment Calculator",
-            path: "/investment-calculator",
+            path: "/investment-calculator/",
             desc: "Project the long-term compounding growth of your reinvested dividends.",
           },
           {
             name: "ROI Calculator",
-            path: "/roi-calculator",
+            path: "/roi-calculator/",
             desc: "Calculate your total return including both stock appreciation and dividends.",
           },
           {
             name: "Net Worth Calculator",
-            path: "/net-worth-calculator",
+            path: "/net-worth-calculator/",
             desc: "Track your total asset growth over time.",
           },
           {
             name: "Savings Goal Calculator",
-            path: "/savings-goal-calculator",
+            path: "/savings-goal-calculator/",
             desc: "Figure out how much to save to hit a target income goal.",
           }
         ]}

@@ -339,22 +339,22 @@ export default function ConfidenceIntervalCalculator() {
           relatedCalculators={[
             {
               name: "Margin of Error Calculator",
-              path: "/margin-of-error-calculator",
+              path: "/margin-of-error-calculator/",
               desc: "Isolate and purely calculate the ± padding used in this interval.",
             },
             {
               name: "Variance Calculator",
-              path: "/variance-calculator",
+              path: "/variance-calculator/",
               desc: "Quickly calculate the base Standard Deviation (s) required for this formula.",
             },
             {
               name: "Empirical Rule Calculator",
-              path: "/empirical-rule-calculator",
+              path: "/empirical-rule-calculator/",
               desc: "Visualize how standard deviations physically map onto the bell curve.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

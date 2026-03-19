@@ -308,22 +308,22 @@ export default function BandwidthCalculator() {
           relatedCalculators={[
             {
               name: "Data Converter",
-              path: "/data-converter",
+              path: "/data-converter/",
               desc: "Easily convert exact file sizes between Bytes, Kilobytes, and Terabytes.",
             },
             {
               name: "Time Calculator",
-              path: "/time-calculator",
+              path: "/time-calculator/",
               desc: "Add or subtract exact durations of time.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Calculate what percentage of your download is currently complete.",
             },
             {
               name: "Base64 Converter",
-              path: "/base64-converter",
+              path: "/base64-converter/",
               desc: "Encode and decode data in Base64 format securely.",
             }]}
         />

@@ -318,22 +318,22 @@ export default function PythagoreanCalculator() {
           relatedCalculators={[
             {
               name: "Distance Calculator",
-              path: "/distance-calculator",
+              path: "/distance-calculator/",
               desc: "A practical application of Pythagoras used to measure spacing on a 2D coordinate grid.",
             },
             {
               name: "Triangle Calculator",
-              path: "/triangle-calculator",
+              path: "/triangle-calculator/",
               desc: "A more advanced solver for non-right-angled triangles utilizing the Law of Cosines.",
             },
             {
               name: "Square Root / Scientific",
-              path: "/scientific-calculator",
+              path: "/scientific-calculator/",
               desc: "Execute manual root extractions on a digital keypad interface.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

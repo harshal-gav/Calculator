@@ -277,22 +277,22 @@ export default function RentCalculator() {
           relatedCalculators={[
             {
               name: "Debt-to-Income (DTI) Calculator",
-              path: "/dti-calculator",
+              path: "/dti-calculator/",
               desc: "Evaluate your overall debt profile exactly how mortgage lenders do.",
             },
             {
               name: "Salary Calculator",
-              path: "/salary-calculator",
+              path: "/salary-calculator/",
               desc: "Break down your exact gross and net paycheck amounts.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Compare what buying a house would cost monthly versus renting.",
             },
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Calculate your exact annualized percentage returns.",
             }]}
         />

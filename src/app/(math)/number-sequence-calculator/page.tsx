@@ -322,10 +322,10 @@ export default function NumberSequenceCalculator() {
           },
         ]}
         relatedCalculators={[
-          { name: "Fibonacci Calculator", path: "/fibonacci-calculator", desc: "Generate Fibonacci sequence up to any term" },
-          { name: "Sum Calculator", path: "/sum-calculator", desc: "Calculate sum of number series" },
-          { name: "Average Calculator", path: "/average-calculator", desc: "Find mean, median, and mode" },
-          { name: "Permutation Calculator", path: "/permutation-calculator", desc: "Calculate permutations and combinations" },
+          { name: "Fibonacci Calculator", path: "/fibonacci-calculator/", desc: "Generate Fibonacci sequence up to any term" },
+          { name: "Sum Calculator", path: "/sum-calculator/", desc: "Calculate sum of number series" },
+          { name: "Average Calculator", path: "/average-calculator/", desc: "Find mean, median, and mode" },
+          { name: "Permutation Calculator", path: "/permutation-calculator/", desc: "Calculate permutations and combinations" },
         ]}
       />
     </div>

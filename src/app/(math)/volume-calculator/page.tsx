@@ -338,22 +338,22 @@ export default function VolumeCalculator() {
         relatedCalculators={[
           {
             name: "Fraction Calculator",
-            path: "/fraction-calculator",
+            path: "/fraction-calculator/",
             desc: "Add, subtract, multiply, and divide standard fractions.",
           },
           {
             name: "Percentage Calculator",
-            path: "/percentage-calculator",
+            path: "/percentage-calculator/",
             desc: "Easily compute advanced percentage problems in one click.",
           },
           {
             name: "Standard Deviation Calculator",
-            path: "/standard-deviation-calculator",
+            path: "/standard-deviation-calculator/",
             desc: "Compute population and sample standard deviation.",
           },
             {
               name: "Scientific Calculator",
-              path: "/scientific-calculator",
+              path: "/scientific-calculator/",
               desc: "Perform advanced mathematical operations and functions.",
             }]}
       />

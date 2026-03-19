@@ -449,22 +449,22 @@ export default function CreditCardPayoffCalculator() {
         relatedCalculators={[
           {
             name: "Debt Payoff Calculator",
-            path: "/debt-payoff-calculator",
+            path: "/debt-payoff-calculator/",
             desc: "Compare Snowball vs Avalanche strategies for multiple cards.",
           },
           {
             name: "Personal Loan Calculator",
-            path: "/personal-loan-calculator",
+            path: "/personal-loan-calculator/",
             desc: "See if consolidating your cards into one low-interest loan makes sense.",
           },
           {
             name: "Savings Goal Calculator",
-            path: "/savings-goal-calculator",
+            path: "/savings-goal-calculator/",
             desc: "Plan what to do with your extra cash once your cards are at zero.",
           },
           {
             name: "Compound Interest Calculator",
-            path: "/compound-interest-calculator",
+            path: "/compound-interest-calculator/",
             desc: "See how much wealth you could build by investing your old monthly payment.",
           }
         ]}

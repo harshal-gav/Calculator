@@ -315,10 +315,10 @@ export default function ROICalculator() {
           }
         ]}
         relatedCalculators={[
-          { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "Project how consistent returns turn a small sum into millions over decades." },
-          { name: "Investment Calculator", path: "/investment-calculator", desc: "Model your portfolio growth based on specific ROI and contribution targets." },
-          { name: "Inflation Calculator", path: "/inflation-calculator", desc: "Calculate your 'Real' ROI after accounting for currency devaluation." },
-          { name: "Salary Calculator", path: "/salary-calculator", desc: "Analyze the ROI on your time—calculate your true hourly net rate." }
+          { name: "Compound Interest Calculator", path: "/compound-interest-calculator/", desc: "Project how consistent returns turn a small sum into millions over decades." },
+          { name: "Investment Calculator", path: "/investment-calculator/", desc: "Model your portfolio growth based on specific ROI and contribution targets." },
+          { name: "Inflation Calculator", path: "/inflation-calculator/", desc: "Calculate your 'Real' ROI after accounting for currency devaluation." },
+          { name: "Salary Calculator", path: "/salary-calculator/", desc: "Analyze the ROI on your time—calculate your true hourly net rate." }
         ]}
       />
     </div>

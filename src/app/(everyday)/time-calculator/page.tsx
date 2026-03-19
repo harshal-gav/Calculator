@@ -351,22 +351,22 @@ export default function TimeCalculator() {
         relatedCalculators={[
           {
             name: "Date Calculator",
-            path: "/date-calculator",
+            path: "/date-calculator/",
             desc: "Add or subtract exact days, weeks, or months from any given date.",
           },
           {
             name: "Age Calculator",
-            path: "/age-calculator",
+            path: "/age-calculator/",
             desc: "Calculate your chronological age in exact days and weeks.",
           },
           {
             name: "Time Zone Converter",
-            path: "/time-zone-converter",
+            path: "/time-zone-converter/",
             desc: "Convert times across hundreds of global time zones instantly.",
           },
             {
               name: "Temperature Converter",
-              path: "/temperature-converter",
+              path: "/temperature-converter/",
               desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
             }]}
       />

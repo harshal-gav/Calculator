@@ -410,22 +410,22 @@ export default function BACalculator() {
           relatedCalculators={[
             {
               name: "Blood Volume Calculator",
-              path: "/blood-volume-calculator",
+              path: "/blood-volume-calculator/",
               desc: "Estimate the total liters of blood the alcohol is diluting into.",
             },
             {
               name: "Blood Pressure Calculator",
-              path: "/blood-pressure-calculator",
+              path: "/blood-pressure-calculator/",
               desc: "Track cardiovascular health metrics.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Easily determine exactly how many days old you are.",
             },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Calculate your Body Mass Index for a quick health assessment.",
             }]}
         />

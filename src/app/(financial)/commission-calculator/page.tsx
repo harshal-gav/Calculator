@@ -212,12 +212,12 @@ export default function CommissionCalculator() {
               answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
             }]}
           relatedCalculators={[
-            { name: "Salary Calculator", path: "/salary-calculator", desc: "Convert your annual earnings into hourly rates." },
-            { name: "Markup Calculator", path: "/markup-calculator", desc: "Calculate profit based on cost-above-wholesale." },
-            { name: "Margin Calculator", path: "/margin-calculator", desc: "Find your gross profit percentage on sales." },
+            { name: "Salary Calculator", path: "/salary-calculator/", desc: "Convert your annual earnings into hourly rates." },
+            { name: "Markup Calculator", path: "/markup-calculator/", desc: "Calculate profit based on cost-above-wholesale." },
+            { name: "Margin Calculator", path: "/margin-calculator/", desc: "Find your gross profit percentage on sales." },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

@@ -171,12 +171,12 @@ export default function CarbohydrateCalculator() {
           }
         ]}
         relatedCalculators={[
-          { name: "Macro Calculator", path: "/macro-calculator", desc: "Total dietary split including fats/protein." },
-          { name: "Pace Calculator", path: "/pace-calculator", desc: "Calculate running speed for carb-loading." },
-          { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Find your TDEE first." },
+          { name: "Macro Calculator", path: "/macro-calculator/", desc: "Total dietary split including fats/protein." },
+          { name: "Pace Calculator", path: "/pace-calculator/", desc: "Calculate running speed for carb-loading." },
+          { name: "Calorie Calculator", path: "/calorie-calculator/", desc: "Find your TDEE first." },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Calculate your Body Mass Index for a quick health assessment.",
             }]}
       />

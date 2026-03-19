@@ -325,22 +325,22 @@ export default function PercentageCalculator() {
         relatedCalculators={[
           {
             name: "Fraction Calculator",
-            path: "/fraction-calculator",
+            path: "/fraction-calculator/",
             desc: "Easily add, subtract, multiply, and divide standard fractions.",
           },
           {
             name: "Margin Calculator",
-            path: "/margin-calculator",
+            path: "/margin-calculator/",
             desc: "Calculate your gross margin percentage and profit dollars.",
           },
           {
             name: "Sales Tax Calculator",
-            path: "/sales-tax-calculator",
+            path: "/sales-tax-calculator/",
             desc: "Calculate total costs by adding local percentage sales tax.",
           },
             {
               name: "Scientific Calculator",
-              path: "/scientific-calculator",
+              path: "/scientific-calculator/",
               desc: "Perform advanced mathematical operations and functions.",
             }]}
       />

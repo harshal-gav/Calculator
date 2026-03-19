@@ -262,22 +262,22 @@ export default function PressureConverter() {
           relatedCalculators={[
             {
               name: "Force Calculator",
-              path: "/force-calculator",
+              path: "/force-calculator/",
               desc: "Calculate the exact physical Newton force pushing down on a surface.",
             },
             {
               name: "Area Converter",
-              path: "/area-converter",
+              path: "/area-converter/",
               desc: "Understand the square spatial dimensions that pressure is applied against.",
             },
             {
               name: "Density Calculator",
-              path: "/density-calculator",
+              path: "/density-calculator/",
               desc: "Explore how tightly mass is packed inside a specific pressurized volume.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

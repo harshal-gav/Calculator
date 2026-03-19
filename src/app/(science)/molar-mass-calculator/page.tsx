@@ -393,22 +393,22 @@ export default function MolarMassCalculator() {
           relatedCalculators={[
             {
               name: "Density Calculator",
-              path: "/density-calculator",
+              path: "/density-calculator/",
               desc: "Calculate physical material mass relative to physical volume.",
             },
             {
               name: "Half-Life Calculator",
-              path: "/half-life-calculator",
+              path: "/half-life-calculator/",
               desc: "Compute atomic timeline decay for unstable radioactive isotopes.",
             },
             {
               name: "Kinetic Energy Calculator",
-              path: "/kinetic-energy-calculator",
+              path: "/kinetic-energy-calculator/",
               desc: "Determine physics-based energy levels of molecules in motion.",
             },
             {
               name: "Force Calculator",
-              path: "/force-calculator",
+              path: "/force-calculator/",
               desc: "Calculate force using Newton's second law (F = ma).",
             }]}
         />

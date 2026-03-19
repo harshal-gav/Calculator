@@ -453,22 +453,22 @@ export default function TimeZoneConverter() {
         relatedCalculators={[
           {
             name: "Time Calculator",
-            path: "/time-calculator",
+            path: "/time-calculator/",
             desc: "Add or subtract exact hours and minutes to find time durations.",
           },
           {
             name: "Date Calculator",
-            path: "/date-calculator",
+            path: "/date-calculator/",
             desc: "Add or subtract exact days, weeks, or months from any given date.",
           },
           {
             name: "Age Calculator",
-            path: "/age-calculator",
+            path: "/age-calculator/",
             desc: "Calculate your chronological age in exact days and weeks.",
           },
             {
               name: "Temperature Converter",
-              path: "/temperature-converter",
+              path: "/temperature-converter/",
               desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
             }]}
       />

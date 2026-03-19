@@ -342,22 +342,22 @@ export default function FractionCalculator() {
         relatedCalculators={[
           {
             name: "Percentage Calculator",
-            path: "/percentage-calculator",
+            path: "/percentage-calculator/",
             desc: "Easily compute advanced percentage problems in one click.",
           },
           {
             name: "Volume Calculator",
-            path: "/volume-calculator",
+            path: "/volume-calculator/",
             desc: "Calculate the geometric volume of 3D shapes.",
           },
           {
             name: "Standard Deviation Calculator",
-            path: "/standard-deviation-calculator",
+            path: "/standard-deviation-calculator/",
             desc: "Compute population and sample standard deviation.",
           },
             {
               name: "Scientific Calculator",
-              path: "/scientific-calculator",
+              path: "/scientific-calculator/",
               desc: "Perform advanced mathematical operations and functions.",
             }]}
       />

@@ -310,22 +310,22 @@ export default function DaysCalculator() {
           relatedCalculators={[
             {
               name: "Business Days Calculator",
-              path: "/business-days-calculator",
+              path: "/business-days-calculator/",
               desc: "Calculate day spans while specifically skipping Saturdays, Sundays, and Holidays.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate exactly how many years, months, and days old you are right now.",
             },
             {
               name: "Time Card Calculator",
-              path: "/time-card-calculator",
+              path: "/time-card-calculator/",
               desc: "Add hours and minutes together to determine total weekly payroll.",
             },
             {
               name: "Temperature Converter",
-              path: "/temperature-converter",
+              path: "/temperature-converter/",
               desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
             }]}
         />

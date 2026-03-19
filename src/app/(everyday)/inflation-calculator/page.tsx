@@ -301,10 +301,10 @@ export default function InflationCalculator() {
           }
         ]}
         relatedCalculators={[
-          { name: "Salary Calculator", path: "/salary-calculator", desc: "Compare your take-home pay across different years to see your real income growth." },
-          { name: "Retirement Calculator", path: "/retirement-calculator", desc: "Model your full retirement nest egg with inflation-adjusted withdrawal rates." },
-          { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "See how investing your cash can help you stay ahead of the inflation curve." },
-          { name: "Mortgage Calculator", path: "/mortgage-calculator", desc: "Understand how fixed-rate debt acts as a hedge against rising prices." }
+          { name: "Salary Calculator", path: "/salary-calculator/", desc: "Compare your take-home pay across different years to see your real income growth." },
+          { name: "Retirement Calculator", path: "/retirement-calculator/", desc: "Model your full retirement nest egg with inflation-adjusted withdrawal rates." },
+          { name: "Compound Interest Calculator", path: "/compound-interest-calculator/", desc: "See how investing your cash can help you stay ahead of the inflation curve." },
+          { name: "Mortgage Calculator", path: "/mortgage-calculator/", desc: "Understand how fixed-rate debt acts as a hedge against rising prices." }
         ]}
       />
     </div>

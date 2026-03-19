@@ -322,22 +322,22 @@ export default function RetirementCalculator() {
         relatedCalculators={[
           {
             name: "Mortgage Calculator",
-            path: "/mortgage-calculator",
+            path: "/mortgage-calculator/",
             desc: "Plan your housing costs to ensure they fit within your long-term retirement budget.",
           },
           {
             name: "Savings Goal Calculator",
-            path: "/savings-goal-calculator",
+            path: "/savings-goal-calculator/",
             desc: "Work backward from a specific number to see what monthly contribution is required.",
           },
           {
             name: "Investment Calculator",
-            path: "/investment-calculator",
+            path: "/investment-calculator/",
             desc: "Drill down into specific portfolio growth scenarios with varying market returns.",
           },
           {
             name: "Inflation Calculator",
-            path: "/inflation-calculator",
+            path: "/inflation-calculator/",
             desc: "See exactly how much your future lifestyle will cost in tomorrow's currency.",
           }
         ]}

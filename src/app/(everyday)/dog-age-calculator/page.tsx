@@ -273,22 +273,22 @@ export default function DogAgeCalculator() {
           relatedCalculators={[
             {
               name: "Cat Age Calculator",
-              path: "/cat-age-calculator",
+              path: "/cat-age-calculator/",
               desc: "Discover how cats age completely differently compared to dogs.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate exact human ages by birthdate.",
             },
             {
               name: "Weight Converter",
-              path: "/weight-converter",
+              path: "/weight-converter/",
               desc: "Easily convert your pet's weight between pounds and kilograms.",
             },
             {
               name: "Temperature Converter",
-              path: "/temperature-converter",
+              path: "/temperature-converter/",
               desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
             }]}
         />

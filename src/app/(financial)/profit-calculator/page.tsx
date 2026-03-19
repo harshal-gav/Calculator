@@ -219,12 +219,12 @@ export default function ProfitCalculator() {
               answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
             }]}
           relatedCalculators={[
-            { name: "Markup Calculator", path: "/markup-calculator", desc: "Calculate price based on cost and target markup percentage." },
-            { name: "Margin Calculator", path: "/margin-calculator", desc: "Focus specifically on revenue-based profit ratios." },
-            { name: "Break Even Calculator", path: "/break-even-calculator", desc: "Find the point where your total revenue equals your total expenses." },
+            { name: "Markup Calculator", path: "/markup-calculator/", desc: "Calculate price based on cost and target markup percentage." },
+            { name: "Margin Calculator", path: "/margin-calculator/", desc: "Focus specifically on revenue-based profit ratios." },
+            { name: "Break Even Calculator", path: "/break-even-calculator/", desc: "Find the point where your total revenue equals your total expenses." },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

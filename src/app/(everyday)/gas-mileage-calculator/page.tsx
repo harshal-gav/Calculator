@@ -271,22 +271,22 @@ export default function GasMileageCalculator() {
         relatedCalculators={[
           {
             name: "Speed Converter",
-            path: "/speed-converter",
+            path: "/speed-converter/",
             desc: "Instantly convert velocities like MPH, KM/H, and Knots.",
           },
           {
             name: "Percentage Calculator",
-            path: "/percentage-calculator",
+            path: "/percentage-calculator/",
             desc: "Calculate exact percentage increases or decreases.",
           },
           {
             name: "Volume Calculator",
-            path: "/volume-calculator",
+            path: "/volume-calculator/",
             desc: "Calculate the geometric volume of 3D objects.",
           },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
       />

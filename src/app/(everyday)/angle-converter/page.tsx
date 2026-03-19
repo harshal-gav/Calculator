@@ -283,22 +283,22 @@ export default function AngleConverter() {
           relatedCalculators={[
             {
               name: "Triangle Calculator",
-              path: "/triangle-calculator",
+              path: "/triangle-calculator/",
               desc: "Solve complete inner triangles and missing 180-degree interior angles.",
             },
             {
               name: "Circle Calculator",
-              path: "/circle-calculator",
+              path: "/circle-calculator/",
               desc: "Calculate circumference and 2D spatial surface areas mapped to pi.",
             },
             {
               name: "Pythagorean Theorem",
-              path: "/pythagorean-calculator",
+              path: "/pythagorean-calculator/",
               desc: "Determine rigid edge lengths of perfect 90-degree right-angle triangles.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

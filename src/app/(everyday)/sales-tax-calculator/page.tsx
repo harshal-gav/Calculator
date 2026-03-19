@@ -282,22 +282,22 @@ export default function SalesTaxCalculator() {
           relatedCalculators={[
             {
               name: "VAT Calculator",
-              path: "/vat-calculator",
+              path: "/vat-calculator/",
               desc: "Calculate Value Added Tax (VAT) used in Europe and most of the world.",
             },
             {
               name: "Discount Calculator",
-              path: "/discount-calculator",
+              path: "/discount-calculator/",
               desc: "Apply retail discounts before applying the final sales tax.",
             },
             {
               name: "Markup Calculator",
-              path: "/markup-calculator",
+              path: "/markup-calculator/",
               desc: "For business owners setting their initial base retail prices.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

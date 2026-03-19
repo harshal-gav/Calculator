@@ -283,22 +283,22 @@ export default function RandomChoiceGenerator() {
           relatedCalculators={[
             {
               name: "Online Dice Roller",
-              path: "/dice-roller",
+              path: "/dice-roller/",
               desc: "Roll virtual D6, D20, or custom dice for board games and RPGs.",
             },
             {
               name: "Random Letter Generator",
-              path: "/random-letter-generator",
+              path: "/random-letter-generator/",
               desc: "Generate random alphabet letters for word games and categories.",
             },
             {
               name: "Random String Generator",
-              path: "/random-string-generator",
+              path: "/random-string-generator/",
               desc: "Generate secure, completely random alphanumeric passwords.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

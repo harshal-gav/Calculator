@@ -373,22 +373,22 @@ export default function TextReplacer() {
           relatedCalculators={[
             {
               name: "List Sorter",
-              path: "/list-sorter",
+              path: "/list-sorter/",
               desc: "After cleaning your text, automatically organize lists alphabetically or by length.",
             },
             {
               name: "Regex Tester",
-              path: "/regex-tester",
+              path: "/regex-tester/",
               desc: "Need to build a complex Regular Expression string to use here? Test it safely first.",
             },
             {
               name: "Remove Duplicate Lines",
-              path: "/remove-duplicates",
+              path: "/remove-duplicates/",
               desc: "Automatically scan your text and delete entire rows that perfectly duplicate previous ones.",
             },
             {
               name: "Case Converter",
-              path: "/case-converter",
+              path: "/case-converter/",
               desc: "Change text to UPPERCASE, lowercase, Title Case, and more.",
             }]}
         />

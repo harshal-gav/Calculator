@@ -400,22 +400,22 @@ export default function DebtConsolidationCalculator() {
         relatedCalculators={[
           {
             name: "Credit Card Payoff Calculator",
-            path: "/credit-card-payoff-calculator",
+            path: "/credit-card-payoff-calculator/",
             desc: "Determine the exact date you will become debt-free."
           },
           {
             name: "Personal Loan Calculator",
-            path: "/personal-loan-calculator",
+            path: "/personal-loan-calculator/",
             desc: "Estimate your monthly loan payments."
           },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             },
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Calculate your exact annualized percentage returns.",
             }]}
       />

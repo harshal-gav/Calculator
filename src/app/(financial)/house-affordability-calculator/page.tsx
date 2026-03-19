@@ -324,22 +324,22 @@ export default function HouseAffordabilityCalculator() {
         relatedCalculators={[
           {
             name: "Mortgage Calculator",
-            path: "/mortgage-calculator",
+            path: "/mortgage-calculator/",
             desc: "Estimate your monthly mortgage payments including taxes and insurance."
           },
           {
             name: "Debt Payoff Calculator",
-            path: "/debt-payoff-calculator",
+            path: "/debt-payoff-calculator/",
             desc: "Discover how long it will take to become debt-free."
           },
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Calculate your exact annualized percentage returns.",
             },
             {
               name: "Investment Calculator",
-              path: "/investment-calculator",
+              path: "/investment-calculator/",
               desc: "Project your portfolio growth over time with compound interest.",
             }]}
       />

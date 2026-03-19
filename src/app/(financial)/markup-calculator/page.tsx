@@ -252,22 +252,22 @@ export default function MarkupCalculator() {
           relatedCalculators={[
             {
               name: "Margin Calculator",
-              path: "/margin-calculator",
+              path: "/margin-calculator/",
               desc: "Calculate profitability using revenue-based percentages instead of cost-based offsets.",
             },
             {
               name: "Discount Calculator",
-              path: "/discount-calculator",
+              path: "/discount-calculator/",
               desc: "Determine how much margin you surrender when applying a retail sale discount.",
             },
             {
               name: "Break Even Calculator",
-              path: "/break-even-calculator",
+              path: "/break-even-calculator/",
               desc: "Determine how many units you must sell at your current price to cover all fixed costs.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

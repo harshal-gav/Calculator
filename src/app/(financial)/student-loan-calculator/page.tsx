@@ -319,22 +319,22 @@ export default function StudentLoanCalculator() {
         relatedCalculators={[
           {
             name: "Debt Consolidation Calculator",
-            path: "/debt-consolidation-calculator",
+            path: "/debt-consolidation-calculator/",
             desc: "If you have numerous tiny student loans, see if consolidating them makes sense."
           },
           {
             name: "Personal Loan Calculator",
-            path: "/personal-loan-calculator",
+            path: "/personal-loan-calculator/",
             desc: "Understand terms for non-educational loans."
           },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             },
             {
               name: "ROI Calculator",
-              path: "/roi-calculator",
+              path: "/roi-calculator/",
               desc: "Calculate your exact annualized percentage returns.",
             }]}
       />

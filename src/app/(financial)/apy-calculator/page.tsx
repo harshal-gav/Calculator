@@ -297,22 +297,22 @@ export default function APYCalculator() {
           relatedCalculators={[
             {
               name: "Compound Interest Calculator",
-              path: "/compound-interest-calculator",
+              path: "/compound-interest-calculator/",
               desc: "Project the exact dollar amounts you will earn over decades using your new APY."
             },
             {
               name: "Investment Calculator",
-              path: "/investment-calculator",
+              path: "/investment-calculator/",
               desc: "Calculate your future net worth by combining your APY with monthly deposits."
             },
             {
               name: "Simple Interest Calculator",
-              path: "/simple-interest-calculator",
+              path: "/simple-interest-calculator/",
               desc: "See the massive mathematical difference between simple interest and APY."
             },
             {
               name: "APR Calculator",
-              path: "/apr-calculator",
+              path: "/apr-calculator/",
               desc: "Compare your savings yield (APY) against your debt costs (APR)."
             }
           ]}

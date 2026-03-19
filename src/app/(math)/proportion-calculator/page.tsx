@@ -350,22 +350,22 @@ export default function ProportionCalculator() {
         relatedCalculators={[
           {
             name: "Percentage Calculator",
-            path: "/percentage-calculator",
+            path: "/percentage-calculator/",
             desc: "Easily compute advanced percentage changes and totals.",
           },
           {
             name: "Fraction Simplifier",
-            path: "/fraction-simplifier-calculator",
+            path: "/fraction-simplifier-calculator/",
             desc: "Reduce complex fractions instantly.",
           },
           {
             name: "Fraction to Decimal",
-            path: "/fraction-to-decimal-calculator",
+            path: "/fraction-to-decimal-calculator/",
             desc: "Convert ratios and fractions directly into decimals.",
           },
             {
               name: "Scientific Calculator",
-              path: "/scientific-calculator",
+              path: "/scientific-calculator/",
               desc: "Perform advanced mathematical operations and functions.",
             }]}
       />

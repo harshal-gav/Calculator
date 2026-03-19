@@ -377,22 +377,22 @@ export default function MatrixCalculator() {
           relatedCalculators={[
             {
               name: "Order of Operations Calculator",
-              path: "/order-of-operations-calculator",
+              path: "/order-of-operations-calculator/",
               desc: "Evaluate basic arithmetic operations step-by-step.",
             },
             {
               name: "Quadratic Formula Calculator",
-              path: "/quadratic-formula-calculator",
+              path: "/quadratic-formula-calculator/",
               desc: "Solve polynomials up to the second degree safely.",
             },
             {
               name: "LCM Calculator",
-              path: "/lcm-calculator",
+              path: "/lcm-calculator/",
               desc: "Find the Least Common Multiple of large datasets.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

@@ -365,22 +365,22 @@ export default function TriangleCalculator() {
           relatedCalculators={[
             {
               name: "Pythagorean Calculator",
-              path: "/pythagorean-calculator",
+              path: "/pythagorean-calculator/",
               desc: "A specialized tool specifically for solving unknown lengths on Right-Angled triangles.",
             },
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Calculate basic triangle area the traditional way (using base and height).",
             },
             {
               name: "Midpoint Calculator",
-              path: "/midpoint-calculator",
+              path: "/midpoint-calculator/",
               desc: "Find the geographic center of a line drawn between any two geometric points.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

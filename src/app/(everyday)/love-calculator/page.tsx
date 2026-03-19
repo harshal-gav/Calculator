@@ -317,22 +317,22 @@ export default function LoveCalculator() {
           relatedCalculators={[
             {
               name: "Zodiac Calculator",
-              path: "/zodiac-calculator",
+              path: "/zodiac-calculator/",
               desc: "Discover your astrological sign based on your birth date.",
             },
             {
               name: "Random Picker",
-              path: "/random-choice-generator",
+              path: "/random-choice-generator/",
               desc: "Can't decide where to go for a date? Let the random picker choose.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in days, months, and years.",
             },
             {
               name: "Temperature Converter",
-              path: "/temperature-converter",
+              path: "/temperature-converter/",
               desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
             }]}
         />

@@ -173,22 +173,22 @@ export default function UrlEncoderDecoder() {
         relatedCalculators={[
           {
             name: "Base64 Converter",
-            path: "/base64-converter",
+            path: "/base64-converter/",
             desc: "Encode and decode data in Base64 format."
           },
           {
             name: "JSON Validator",
-            path: "/json-validator",
+            path: "/json-validator/",
             desc: "Check if your JSON data is valid and well-formatted."
           },
           {
             name: "HTML Encoder/Decoder",
-            path: "/html-encoder-decoder",
+            path: "/html-encoder-decoder/",
             desc: "Convert characters to HTML entities and vice-versa."
           },
           {
             name: "JWT Decoder",
-            path: "/jwt-decoder",
+            path: "/jwt-decoder/",
             desc: "Decode JSON Web Tokens to see their payload."
           }
         ]}

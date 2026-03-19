@@ -338,22 +338,22 @@ export default function LeanBodyMassCalculator() {
           relatedCalculators={[
             {
               name: "Protein Calculator",
-              path: "/protein-calculator",
+              path: "/protein-calculator/",
               desc: "Feed your newly calculated Lean Body Mass into this calculator to determine your precise daily protein needs.",
             },
             {
               name: "TDEE Calculator",
-              path: "/tdee-calculator",
+              path: "/tdee-calculator/",
               desc: "Discover how your lean mass influences your overall basal metabolic burn rate.",
             },
             {
               name: "Macronutrient Calculator",
-              path: "/macro-calculator",
+              path: "/macro-calculator/",
               desc: "Design a diet capable of preserving your specific LBM while shedding the remaining fat weight.",
             },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Calculate your Body Mass Index for a quick health assessment.",
             }]}
         />

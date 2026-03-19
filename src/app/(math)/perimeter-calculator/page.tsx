@@ -387,22 +387,22 @@ export default function PerimeterCalculator() {
           relatedCalculators={[
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Calculate the internal 2-dimensional space enclosed by your perimeter fence.",
             },
             {
               name: "Circle Calculator",
-              path: "/circle-calculator",
+              path: "/circle-calculator/",
               desc: "Instantly link your calculated circumference to the circle's radius and area.",
             },
             {
               name: "Triangle Calculator",
-              path: "/triangle-calculator",
+              path: "/triangle-calculator/",
               desc: "A deeper dive that links a triangle's three sides to its internal angles.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

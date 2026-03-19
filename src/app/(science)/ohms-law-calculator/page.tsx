@@ -357,22 +357,22 @@ export default function OhmsLawCalculator() {
           relatedCalculators={[
             {
               name: "Power Calculator",
-              path: "/power-calculator",
+              path: "/power-calculator/",
               desc: "Calculate physical mechanical power Output (Joules/Seconds) rather than electrical.",
             },
             {
               name: "Kinetic Energy Calculator",
-              path: "/kinetic-energy-calculator",
+              path: "/kinetic-energy-calculator/",
               desc: "Calculate the energy of mass in motion, which electrical motors often generate.",
             },
             {
               name: "Sequence Calculator",
-              path: "/sequence-calculator",
+              path: "/sequence-calculator/",
               desc: "Identify mathematical patterns, useful for calculating series parallel resistor drops.",
             },
             {
               name: "Density Calculator",
-              path: "/density-calculator",
+              path: "/density-calculator/",
               desc: "Calculate density, mass, or volume given two values.",
             }]}
         />

@@ -375,22 +375,22 @@ export default function WorkCalculator() {
           relatedCalculators={[
             {
               name: "Force Calculator",
-              path: "/force-calculator",
+              path: "/force-calculator/",
               desc: "Calculate your force variable before plugging it into the Work equation.",
             },
             {
               name: "Velocity Calculator",
-              path: "/velocity-calculator",
+              path: "/velocity-calculator/",
               desc: "Calculate how long it will take your displaced object to arrive at its destination.",
             },
             {
               name: "Pythagorean Theorem",
-              path: "/pythagorean-calculator",
+              path: "/pythagorean-calculator/",
               desc: "Calculate vector distances required for complex angular movement.",
             },
             {
               name: "Density Calculator",
-              path: "/density-calculator",
+              path: "/density-calculator/",
               desc: "Calculate density, mass, or volume given two values.",
             }]}
         />

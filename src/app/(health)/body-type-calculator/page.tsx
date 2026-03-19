@@ -330,10 +330,10 @@ export default function BodyTypeCalculator() {
           },
         ]}
         relatedCalculators={[
-          { name: "BMI Calculator", path: "/bmi-calculator", desc: "Calculate your Body Mass Index" },
-          { name: "Army Body Fat Calculator", path: "/army-body-fat-calculator", desc: "Measure body fat percentage accurately" },
-          { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Calculate daily calorie needs" },
-          { name: "Macro Calculator", path: "/macro-calculator", desc: "Determine macronutrient distribution" },
+          { name: "BMI Calculator", path: "/bmi-calculator/", desc: "Calculate your Body Mass Index" },
+          { name: "Army Body Fat Calculator", path: "/army-body-fat-calculator/", desc: "Measure body fat percentage accurately" },
+          { name: "TDEE Calculator", path: "/tdee-calculator/", desc: "Calculate daily calorie needs" },
+          { name: "Macro Calculator", path: "/macro-calculator/", desc: "Determine macronutrient distribution" },
         ]}
       />
     </div>

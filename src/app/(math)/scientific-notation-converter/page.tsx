@@ -319,22 +319,22 @@ export default function ScientificNotationConverter() {
           relatedCalculators={[
             {
               name: "Order of Operations Calculator",
-              path: "/order-of-operations-calculator",
+              path: "/order-of-operations-calculator/",
               desc: "Evaluate mathematical expressions utilizing exponents.",
             },
             {
               name: "Density Calculator",
-              path: "/density-calculator",
+              path: "/density-calculator/",
               desc: "Calculate mass and volume using extremely small metric units.",
             },
             {
               name: "Fraction to Decimal",
-              path: "/fraction-to-decimal-calculator",
+              path: "/fraction-to-decimal-calculator/",
               desc: "Convert standard fractions completely down to raw decimals.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

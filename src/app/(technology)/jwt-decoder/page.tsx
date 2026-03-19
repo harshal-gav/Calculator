@@ -254,22 +254,22 @@ export default function JwtDecoder() {
           relatedCalculators={[
             {
               name: "Base64 Converter",
-              path: "/base64-converter",
+              path: "/base64-converter/",
               desc: "Manually encode or decode specific strings without requiring the strict 3-part JWT structure.",
             },
             {
               name: "JSON Validator",
-              path: "/json-validator",
+              path: "/json-validator/",
               desc: "Ensure the raw Javascript objects you plan to inject into a token payload are structurally valid.",
             },
             {
               name: "UUID Generator",
-              path: "/uuid-generator",
+              path: "/uuid-generator/",
               desc: "Generate secure, random UUIDs to act as the primary 'Subject ID' (sub) inside your token claims.",
             },
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate download and upload times for various data sizes.",
             }]}
         />

@@ -437,22 +437,22 @@ export default function VelocityCalculator() {
           relatedCalculators={[
             {
               name: "Acceleration Calculator",
-              path: "/acceleration-calculator",
+              path: "/acceleration-calculator/",
               desc: "Calculate changes in velocity over a specific duration of time.",
             },
             {
               name: "Speed Converter",
-              path: "/speed-converter",
+              path: "/speed-converter/",
               desc: "Instantly convert velocities between metric and imperial scale systems.",
             },
             {
               name: "Projectile Motion Calculator",
-              path: "/projectile-motion-calculator",
+              path: "/projectile-motion-calculator/",
               desc: "Calculate the complex 2D velocity of objects moving through the air.",
             },
             {
               name: "Density Calculator",
-              path: "/density-calculator",
+              path: "/density-calculator/",
               desc: "Calculate density, mass, or volume given two values.",
             }]}
         />

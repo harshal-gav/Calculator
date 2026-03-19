@@ -402,22 +402,22 @@ export default function OvulationCalculator() {
           relatedCalculators={[
             {
               name: "Due Date Calculator",
-              path: "/due-date-calculator",
+              path: "/due-date-calculator/",
               desc: "Calculate when your baby will arrive if you conceived.",
             },
             {
               name: "Time Calculator",
-              path: "/time-calculator",
+              path: "/time-calculator/",
               desc: "Easily add or subtract time intervals.",
             },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Analyze your Body Mass Index (BMI).",
             },
             {
               name: "Calorie Calculator",
-              path: "/calorie-calculator",
+              path: "/calorie-calculator/",
               desc: "Estimate the number of calories you need to maintain or lose weight.",
             }]}
         />

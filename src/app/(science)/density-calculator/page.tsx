@@ -425,22 +425,22 @@ export default function DensityCalculator() {
           relatedCalculators={[
             {
               name: "Volume Calculator",
-              path: "/volume-calculator",
+              path: "/volume-calculator/",
               desc: "Calculate complex 3D spherical and conical volumes before determining density.",
             },
             {
               name: "Force Calculator",
-              path: "/force-calculator",
+              path: "/force-calculator/",
               desc: "Plug your resulting mass directly into Newton's Second Law.",
             },
             {
               name: "Weight Converter",
-              path: "/weight-converter",
+              path: "/weight-converter/",
               desc: "Instantly translate international mass and weight limits.",
             },
             {
               name: "Kinetic Energy Calculator",
-              path: "/kinetic-energy-calculator",
+              path: "/kinetic-energy-calculator/",
               desc: "Find the energy of a moving object based on mass and velocity.",
             }]}
         />

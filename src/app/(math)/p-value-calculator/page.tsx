@@ -370,10 +370,10 @@ export default function PValueCalculator() {
           },
         ]}
         relatedCalculators={[
-          { name: "T-Test Calculator", path: "/t-test-calculator", desc: "Perform independent and paired t-tests" },
-          { name: "Chi-Square Test", path: "/chi-square-calculator", desc: "Calculate chi-square statistics" },
-          { name: "Z-Score Calculator", path: "/z-score-calculator", desc: "Calculate standard normal values" },
-          { name: "Standard Deviation", path: "/standard-deviation-calculator", desc: "Calculate statistical measures" },
+          { name: "T-Test Calculator", path: "/t-test-calculator/", desc: "Perform independent and paired t-tests" },
+          { name: "Chi-Square Test", path: "/chi-square-calculator/", desc: "Calculate chi-square statistics" },
+          { name: "Z-Score Calculator", path: "/z-score-calculator/", desc: "Calculate standard normal values" },
+          { name: "Standard Deviation", path: "/standard-deviation-calculator/", desc: "Calculate statistical measures" },
         ]}
       />
     </div>

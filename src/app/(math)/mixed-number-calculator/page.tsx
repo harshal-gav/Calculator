@@ -235,22 +235,22 @@ export default function MixedNumberCalculator() {
         relatedCalculators={[
           {
             name: "Fraction to Decimal",
-            path: "/fraction-to-decimal-calculator",
+            path: "/fraction-to-decimal-calculator/",
             desc: "Easily convert standard fractions to decimals and percentages.",
           },
           {
             name: "Fraction Simplifier",
-            path: "/fraction-simplifier-calculator",
+            path: "/fraction-simplifier-calculator/",
             desc: "Reduce complex fractions down to their lowest terms instantly.",
           },
           {
             name: "Percentage Calculator",
-            path: "/percentage-calculator",
+            path: "/percentage-calculator/",
             desc: "Perform various percent-based math calculations.",
           },
             {
               name: "Scientific Calculator",
-              path: "/scientific-calculator",
+              path: "/scientific-calculator/",
               desc: "Perform advanced mathematical operations and functions.",
             }]}
       />

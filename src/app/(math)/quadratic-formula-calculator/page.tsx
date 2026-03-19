@@ -296,22 +296,22 @@ export default function QuadraticFormulaCalculator() {
           relatedCalculators={[
             {
               name: "Order of Operations Calculator",
-              path: "/order-of-operations-calculator",
+              path: "/order-of-operations-calculator/",
               desc: "Evaluate mathematical expressions step-by-step.",
             },
             {
               name: "Cubic Equation Calculator",
-              path: "/cubic-equation-calculator",
+              path: "/cubic-equation-calculator/",
               desc: "Solve polynomials up to the third degree.",
             },
             {
               name: "Projectile Motion Calculator",
-              path: "/projectile-motion-calculator",
+              path: "/projectile-motion-calculator/",
               desc: "Calculate flight time and distance using physics and quadratics.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

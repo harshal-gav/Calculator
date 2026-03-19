@@ -348,22 +348,22 @@ export default function SequenceCalculator() {
           relatedCalculators={[
             {
               name: "Compound Interest Calculator",
-              path: "/compound-interest-calculator",
+              path: "/compound-interest-calculator/",
               desc: "The most famous real-world application of Geometric Sequences.",
             },
             {
               name: "Fraction Simplifier",
-              path: "/fraction-simplifier-calculator",
+              path: "/fraction-simplifier-calculator/",
               desc: "Reduce complex mathematical fractions to their absolute lowest terms.",
             },
             {
               name: "Significant Figures",
-              path: "/sig-fig-calculator",
+              path: "/sig-fig-calculator/",
               desc: "Identify valid structural digits within scientific sequence data.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

@@ -306,22 +306,22 @@ export default function WeightConverter() {
           relatedCalculators={[
             {
               name: "Length Converter",
-              path: "/length-converter",
+              path: "/length-converter/",
               desc: "Instantly translate miles, kilometers, feet, and meters.",
             },
             {
               name: "Ideal Weight Calculator",
-              path: "/ideal-weight-calculator",
+              path: "/ideal-weight-calculator/",
               desc: "Calculate the healthiest weight range for your exact height.",
             },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Determine your Body Mass Index using either kg or lbs.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

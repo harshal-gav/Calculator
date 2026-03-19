@@ -346,22 +346,22 @@ export default function ProjectileMotionCalculator() {
         relatedCalculators={[
           {
             name: "Velocity Calculator",
-            path: "/velocity-calculator",
+            path: "/velocity-calculator/",
             desc: "Calculate basic speed, distance, and time.",
           },
           {
             name: "Force Calculator",
-            path: "/force-calculator",
+            path: "/force-calculator/",
             desc: "Calculate force based on mass and acceleration (Newton's Second Law).",
           },
           {
             name: "Kinetic Energy",
-            path: "/kinetic-energy-calculator",
+            path: "/kinetic-energy-calculator/",
             desc: "Find the energy of a moving object based on mass and velocity.",
           },
             {
               name: "Density Calculator",
-              path: "/density-calculator",
+              path: "/density-calculator/",
               desc: "Calculate density, mass, or volume given two values.",
             }]}
       />

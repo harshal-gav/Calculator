@@ -249,22 +249,22 @@ export default function HtmlEncoderDecoder() {
           relatedCalculators={[
             {
               name: "URL Encoder/Decoder",
-              path: "/url-encoder-decoder",
+              path: "/url-encoder-decoder/",
               desc: "Format unsafe characters specifically for transmission in web browser address bars.",
             },
             {
               name: "Base64 Converter",
-              path: "/base64-converter",
+              path: "/base64-converter/",
               desc: "Completely obfuscate entire files or strings into pure, safe ASCII characters.",
             },
             {
               name: "Regex Tester",
-              path: "/regex-tester",
+              path: "/regex-tester/",
               desc: "Use Regex to search massive documents specifically for un-encoded angle brackets.",
             },
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate download and upload times for various data sizes.",
             }]}
         />

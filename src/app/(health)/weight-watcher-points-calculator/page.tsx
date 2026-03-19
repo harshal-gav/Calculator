@@ -234,10 +234,10 @@ export default function WeightWatcherPointsCalculator() {
           },
         ]}
         relatedCalculators={[
-          { name: "Calorie Calculator", path: "/calorie-calculator", desc: "Calculate daily calorie needs" },
-          { name: "Macro Calculator", path: "/macro-calculator", desc: "Calculate macronutrient breakdown" },
-          { name: "BMI Calculator", path: "/bmi-calculator", desc: "Check your Body Mass Index" },
-          { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Calculate total daily energy expenditure" },
+          { name: "Calorie Calculator", path: "/calorie-calculator/", desc: "Calculate daily calorie needs" },
+          { name: "Macro Calculator", path: "/macro-calculator/", desc: "Calculate macronutrient breakdown" },
+          { name: "BMI Calculator", path: "/bmi-calculator/", desc: "Check your Body Mass Index" },
+          { name: "TDEE Calculator", path: "/tdee-calculator/", desc: "Calculate total daily energy expenditure" },
         ]}
       />
     </div>

@@ -364,10 +364,10 @@ export default function ResistorCalculator() {
           },
         ]}
         relatedCalculators={[
-          { name: "Ohms Law Calculator", path: "/ohms-law-calculator", desc: "Calculate voltage, current, and resistance" },
-          { name: "Wire Gauge Calculator", path: "/wire-gauge-calculator", desc: "Determine proper wire sizes" },
-          { name: "Capacitor Calculator", path: "/capacitor-calculator", desc: "Analyze capacitor values and circuits" },
-          { name: "Power Calculator", path: "/power-calculator", desc: "Calculate electrical power and energy" },
+          { name: "Ohms Law Calculator", path: "/ohms-law-calculator/", desc: "Calculate voltage, current, and resistance" },
+          { name: "Wire Gauge Calculator", path: "/wire-gauge-calculator/", desc: "Determine proper wire sizes" },
+          { name: "Capacitor Calculator", path: "/capacitor-calculator/", desc: "Analyze capacitor values and circuits" },
+          { name: "Power Calculator", path: "/power-calculator/", desc: "Calculate electrical power and energy" },
         ]}
       />
     </div>

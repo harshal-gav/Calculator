@@ -328,10 +328,10 @@ export default function InvestmentCalculator() {
           }
         ]}
         relatedCalculators={[
-          { name: "Compound Interest Calculator", path: "/compound-interest-calculator", desc: "Focus specifically on the frequency of interest-on-interest accumulation." },
-          { name: "ROI Calculator", path: "/roi-calculator", desc: "Calculate the specialized profit percentage of a completed investment." },
-          { name: "Savings Goal Calculator", path: "/savings-goal-calculator", desc: "Define your target and work backward to find the necessary savings velocity." },
-          { name: "Retirement Calculator", path: "/retirement-calculator", desc: "Advanced modeling for tax brackets, social security, and withdrawal phases." }
+          { name: "Compound Interest Calculator", path: "/compound-interest-calculator/", desc: "Focus specifically on the frequency of interest-on-interest accumulation." },
+          { name: "ROI Calculator", path: "/roi-calculator/", desc: "Calculate the specialized profit percentage of a completed investment." },
+          { name: "Savings Goal Calculator", path: "/savings-goal-calculator/", desc: "Define your target and work backward to find the necessary savings velocity." },
+          { name: "Retirement Calculator", path: "/retirement-calculator/", desc: "Advanced modeling for tax brackets, social security, and withdrawal phases." }
         ]}
       />
     </div>

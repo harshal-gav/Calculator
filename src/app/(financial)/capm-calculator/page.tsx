@@ -288,22 +288,22 @@ export default function CAPMCalculator() {
           relatedCalculators={[
             {
               name: "WACC Calculator",
-              path: "/wacc-calculator",
+              path: "/wacc-calculator/",
               desc: "Calculate a firm's Weighted Average Cost of Capital using CAPM.",
             },
             {
               name: "Expected Return Calculator",
-              path: "/expected-return-calculator",
+              path: "/expected-return-calculator/",
               desc: "Calculate the probability-weighted return of an asset.",
             },
             {
               name: "Investment Calculator",
-              path: "/investment-calculator",
+              path: "/investment-calculator/",
               desc: "Project the growth of a portfolio over decades.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

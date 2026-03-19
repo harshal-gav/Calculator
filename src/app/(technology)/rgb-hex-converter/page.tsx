@@ -316,22 +316,22 @@ export default function RgbHexConverter() {
           relatedCalculators={[
             {
               name: "PX to REM Converter",
-              path: "/px-rem-converter",
+              path: "/px-rem-converter/",
               desc: "Convert standard pixel values to responsive CSS units.",
             },
             {
               name: "Base Converter",
-              path: "/base-converter",
+              path: "/base-converter/",
               desc: "See the math behind converting Decimal (Base-10) to Hexadecimal (Base-16).",
             },
             {
               name: "Proportion Calculator",
-              path: "/proportion-calculator",
+              path: "/proportion-calculator/",
               desc: "Scale UI elements mathematically.",
             },
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate download and upload times for various data sizes.",
             }]}
         />

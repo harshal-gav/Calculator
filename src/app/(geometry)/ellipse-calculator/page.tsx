@@ -271,22 +271,22 @@ export default function EllipseCalculator() {
           relatedCalculators={[
             {
               name: "Circle Calculator",
-              path: "/circle-calculator",
+              path: "/circle-calculator/",
               desc: "Calculate the area and circumference of a perfect circle.",
             },
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Find the surface area of dozens of different geometric shapes.",
             },
             {
               name: "Cone Calculator",
-              path: "/cone-calculator",
+              path: "/cone-calculator/",
               desc: "Calculate the geometric volume of a three-dimensional cone.",
             },
             {
               name: "Volume Calculator",
-              path: "/volume-calculator",
+              path: "/volume-calculator/",
               desc: "Calculate the volume of standard 3D objects.",
             }]}
         />

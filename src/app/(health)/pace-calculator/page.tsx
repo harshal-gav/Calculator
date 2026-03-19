@@ -330,22 +330,22 @@ export default function PaceCalculator() {
           relatedCalculators={[
             {
               name: "Calories Burned Calculator",
-              path: "/calories-burned-calculator",
+              path: "/calories-burned-calculator/",
               desc: "Calculate the exact metabolic cost of hitting that specific pace.",
             },
             {
               name: "TDEE Calculator",
-              path: "/tdee-calculator",
+              path: "/tdee-calculator/",
               desc: "See how your rigorous training plan impacts your total daily caloric baseline.",
             },
             {
               name: "Velocity Calculator",
-              path: "/velocity-calculator",
+              path: "/velocity-calculator/",
               desc: "For raw physics kinematics without the running-specific split formatting.",
             },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Calculate your Body Mass Index for a quick health assessment.",
             }]}
         />

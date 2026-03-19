@@ -293,22 +293,22 @@ export default function APRCalculator() {
         relatedCalculators={[
           {
             name: "Mortgage Calculator",
-            path: "/mortgage-calculator",
+            path: "/mortgage-calculator/",
             desc: "Calculate your monthly mortgage payments and amortization schedule."
           },
           {
             name: "APY Calculator",
-            path: "/apy-calculator",
+            path: "/apy-calculator/",
             desc: "Calculate the Annual Percentage Yield to see the effect of compounding on savings."
           },
           {
             name: "Loan Payment Calculator",
-            path: "/loan-payment-calculator",
+            path: "/loan-payment-calculator/",
             desc: "Estimate your monthly loan payments and total interest cost."
           },
           {
             name: "Personal Loan Calculator",
-            path: "/personal-loan-calculator",
+            path: "/personal-loan-calculator/",
             desc: "Calculate payments and see if consolidation makes sense for you."
           }
         ]}

@@ -297,22 +297,22 @@ export default function SavingsGoalCalculator() {
         relatedCalculators={[
           {
             name: "Compound Interest Calculator",
-            path: "/compound-interest-calculator",
+            path: "/compound-interest-calculator/",
             desc: "The opposite view: see how your money grows over time without a specific target.",
           },
           {
             name: "Investment Calculator",
-            path: "/investment-calculator",
+            path: "/investment-calculator/",
             desc: "Simulate portfolio growth with variable market returns and risk profiles.",
           },
           {
             name: "Inflation Calculator",
-            path: "/inflation-calculator",
+            path: "/inflation-calculator/",
             desc: "Adjust your goal amount for the future cost of living.",
           },
           {
             name: "ROI Calculator",
-            path: "/roi-calculator",
+            path: "/roi-calculator/",
             desc: "Determine the total return on assets you've already purchased.",
           }
         ]}

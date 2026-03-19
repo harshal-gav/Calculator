@@ -322,22 +322,22 @@ export default function PregnancyCalculator() {
         relatedCalculators={[
           {
             name: "Ideal Weight Calculator",
-            path: "/ideal-weight-calculator",
+            path: "/ideal-weight-calculator/",
             desc: "Discover exactly how much you should weigh based on clinical formulas.",
           },
           {
             name: "Calorie Calculator",
-            path: "/calorie-calculator",
+            path: "/calorie-calculator/",
             desc: "Calculate your daily calorie needs to ensure you are fueling your pregnancy properly.",
           },
           {
             name: "Date Calculator",
-            path: "/date-calculator",
+            path: "/date-calculator/",
             desc: "Add or subtract exact days, weeks, or months from any given date.",
           },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Calculate your Body Mass Index for a quick health assessment.",
             }]}
       />

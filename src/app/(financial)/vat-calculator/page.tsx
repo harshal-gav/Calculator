@@ -295,22 +295,22 @@ export default function VatCalculator() {
           relatedCalculators={[
             {
               name: "Sales Tax Calculator",
-              path: "/sales-tax-calculator",
+              path: "/sales-tax-calculator/",
               desc: "Calculate standard United States single-point sales tax.",
             },
             {
               name: "Margin Calculator",
-              path: "/margin-calculator",
+              path: "/margin-calculator/",
               desc: "Calculate your true profit margin after stripping away the VAT you owe the government.",
             },
             {
               name: "Tip Calculator",
-              path: "/tip-calculator",
+              path: "/tip-calculator/",
               desc: "Calculate hospitality gratuity on pre-VAT restaurant tabs.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

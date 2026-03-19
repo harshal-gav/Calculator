@@ -230,22 +230,22 @@ export default function MarkdownEditor() {
           relatedCalculators={[
             {
               name: "Diff Checker",
-              path: "/diff-checker",
+              path: "/diff-checker/",
               desc: "Compare two massive versions of your documentation file to identify changes.",
             },
             {
               name: "JSON Validator",
-              path: "/json-validator",
+              path: "/json-validator/",
               desc: "Ensure your front-matter metadata configuration is structurally valid.",
             },
             {
               name: "Word Count Calculator",
-              path: "/word-count-calculator",
+              path: "/word-count-calculator/",
               desc: "Analyze the exact length, density, and reading time of your written article.",
             },
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate download and upload times for various data sizes.",
             }]}
         />

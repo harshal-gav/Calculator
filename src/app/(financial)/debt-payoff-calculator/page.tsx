@@ -373,22 +373,22 @@ export default function DebtPayoffCalculator() {
           relatedCalculators={[
             {
               name: "Credit Card Payoff Calculator",
-              path: "/credit-card-payoff-calculator",
+              path: "/credit-card-payoff-calculator/",
               desc: "Specifically designed for variable-minimum credit cards.",
             },
             {
               name: "Auto Loan Calculator",
-              path: "/auto-loan-calculator",
+              path: "/auto-loan-calculator/",
               desc: "Analyze the total cost of fixed-term vehicle financing.",
             },
             {
               name: "Compound Interest Calculator",
-              path: "/compound-interest-calculator",
+              path: "/compound-interest-calculator/",
               desc: "See what happens when that monthly payment is invested instead of given to the bank.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

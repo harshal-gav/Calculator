@@ -191,22 +191,22 @@ export default function FractionToDecimalCalculator() {
         relatedCalculators={[
           {
             name: "Mixed Number Calculator",
-            path: "/mixed-number-calculator",
+            path: "/mixed-number-calculator/",
             desc: "Convert mixed numbers into decimals and improper fractions.",
           },
           {
             name: "Percentage Calculator",
-            path: "/percentage-calculator",
+            path: "/percentage-calculator/",
             desc: "Easily calculate percentages, increases, and differences.",
           },
           {
             name: "Fraction Simplifier",
-            path: "/fraction-simplifier-calculator",
+            path: "/fraction-simplifier-calculator/",
             desc: "Reduce fractions to their simplest form instantly.",
           },
             {
               name: "Scientific Calculator",
-              path: "/scientific-calculator",
+              path: "/scientific-calculator/",
               desc: "Perform advanced mathematical operations and functions.",
             }]}
       />

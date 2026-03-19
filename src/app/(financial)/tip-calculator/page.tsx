@@ -317,22 +317,22 @@ export default function TipCalculator() {
           relatedCalculators={[
             {
               name: "Discount Calculator",
-              path: "/discount-calculator",
+              path: "/discount-calculator/",
               desc: "Calculate savings before figuring out the tip.",
             },
             {
               name: "Sales Tax Calculator",
-              path: "/sales-tax-calculator",
+              path: "/sales-tax-calculator/",
               desc: "Determine exact tax amounts on your purchases.",
             },
             {
               name: "Salary Calculator",
-              path: "/salary-calculator",
+              path: "/salary-calculator/",
               desc: "Convert your hourly wages (including tips) into an annual salary.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

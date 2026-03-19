@@ -297,22 +297,22 @@ export default function RegularPolygonCalculator() {
           relatedCalculators={[
             {
               name: "Hexagon Calculator",
-              path: "/hexagon-calculator",
+              path: "/hexagon-calculator/",
               desc: "A specialized calculator strictly for 6-sided regular polygons.",
             },
             {
               name: "Octagon Calculator",
-              path: "/octagon-calculator",
+              path: "/octagon-calculator/",
               desc: "A specialized calculator strictly for 8-sided regular polygons.",
             },
             {
               name: "Polygon Calculator",
-              path: "/polygon-calculator",
+              path: "/polygon-calculator/",
               desc: "Calculate basic sums of interior angles for irregular polygons.",
             },
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Calculate the area of various 2D shapes.",
             }]}
         />

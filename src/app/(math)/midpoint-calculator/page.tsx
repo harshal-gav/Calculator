@@ -282,22 +282,22 @@ M = ( ${mx}, ${my} )`;
           relatedCalculators={[
             {
               name: "Distance Calculator",
-              path: "/distance-calculator",
+              path: "/distance-calculator/",
               desc: "Discover exactly how far apart your two points are.",
             },
             {
               name: "Mean Median Mode",
-              path: "/mean-median-mode-calculator",
+              path: "/mean-median-mode-calculator/",
               desc: "Explore statistical averages (the mathematical logic behind the midpoint formula).",
             },
             {
               name: "Fraction Simplifier",
-              path: "/fraction-simplifier-calculator",
+              path: "/fraction-simplifier-calculator/",
               desc: "Clean up messy decimal midpoint coordinates into logical fractions.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

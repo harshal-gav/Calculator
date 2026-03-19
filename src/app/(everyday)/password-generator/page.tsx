@@ -428,22 +428,22 @@ export default function PasswordGenerator() {
           relatedCalculators={[
             {
               name: "UUID Generator",
-              path: "/uuid-generator",
+              path: "/uuid-generator/",
               desc: "Generate standardized unique identifier strings for database keys.",
             },
             {
               name: "QR Code Generator",
-              path: "/qr-code-generator",
+              path: "/qr-code-generator/",
               desc: "Turn complex secure passwords into scannable QR images for mobile login.",
             },
             {
               name: "Random String Generator",
-              path: "/random-string-generator",
+              path: "/random-string-generator/",
               desc: "Generate plain text randomized data for testing purposes.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

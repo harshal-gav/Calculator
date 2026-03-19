@@ -369,22 +369,22 @@ export default function NetWorthCalculator() {
           relatedCalculators={[
             {
               name: "Investment Calculator",
-              path: "/investment-calculator",
+              path: "/investment-calculator/",
               desc: "Project the future value of your stock portfolio.",
             },
             {
               name: "Debt Payoff Calculator",
-              path: "/debt-payoff-calculator",
+              path: "/debt-payoff-calculator/",
               desc: "Calculate the fastest way to become debt-free.",
             },
             {
               name: "Savings Goal Calculator",
-              path: "/savings-goal-calculator",
+              path: "/savings-goal-calculator/",
               desc: "Figure out exactly how much you need to save each month.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

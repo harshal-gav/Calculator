@@ -375,22 +375,22 @@ export default function AccelerationCalculator() {
           relatedCalculators={[
             {
               name: "Force Calculator",
-              path: "/force-calculator",
+              path: "/force-calculator/",
               desc: "Calculate the exact physical force required to generate a specific acceleration.",
             },
             {
               name: "Velocity Calculator",
-              path: "/velocity-calculator",
+              path: "/velocity-calculator/",
               desc: "Calculate constant speeds without using acceleration variables.",
             },
             {
               name: "Projectile Motion Calculator",
-              path: "/projectile-motion-calculator",
+              path: "/projectile-motion-calculator/",
               desc: "Track objects accelerating continuously downward due to standard gravity.",
             },
             {
               name: "Density Calculator",
-              path: "/density-calculator",
+              path: "/density-calculator/",
               desc: "Calculate density, mass, or volume given two values.",
             }]}
         />

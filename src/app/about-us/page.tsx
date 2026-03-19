@@ -125,7 +125,7 @@ export default function AboutUs() {
             <br />
             <span className="inline-block mt-4 text-sm text-gray-500">
               Or use our dedicated{" "}
-              <a href="/contact-us" className="text-blue-600 hover:underline">
+              <a href="/contact-us/" className="text-blue-600 hover:underline">
                 Contact Form
               </a>
               .

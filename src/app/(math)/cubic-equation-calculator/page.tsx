@@ -331,22 +331,22 @@ export default function CubicEquationCalculator() {
           relatedCalculators={[
             {
               name: "Quadratic Formula Calculator",
-              path: "/quadratic-formula-calculator",
+              path: "/quadratic-formula-calculator/",
               desc: "Solve second-degree polynomials (parabolas) using the standard quadratic formula.",
             },
             {
               name: "Order of Operations Calculator",
-              path: "/order-of-operations-calculator",
+              path: "/order-of-operations-calculator/",
               desc: "Ensure your cubic coefficients were calculated in the correct PEMDAS order.",
             },
             {
               name: "Scientific Calculator",
-              path: "/scientific-calculator",
+              path: "/scientific-calculator/",
               desc: "For manual verification of your complex and imaginary roots.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

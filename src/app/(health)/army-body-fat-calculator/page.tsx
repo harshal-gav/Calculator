@@ -357,10 +357,10 @@ export default function ArmyBodyFatCalculator() {
           },
         ]}
         relatedCalculators={[
-          { name: "BMI Calculator", path: "/bmi-calculator", desc: "Check your Body Mass Index using height and weight" },
-          { name: "Body Fat Calculator", path: "/body-fat-calculator", desc: "Estimate body fat using multiple methods" },
-          { name: "TDEE Calculator", path: "/tdee-calculator", desc: "Calculate daily calorie expenditure" },
-          { name: "Macro Calculator", path: "/macro-calculator", desc: "Calculate macronutrient needs" },
+          { name: "BMI Calculator", path: "/bmi-calculator/", desc: "Check your Body Mass Index using height and weight" },
+          { name: "Body Fat Calculator", path: "/body-fat-calculator/", desc: "Estimate body fat using multiple methods" },
+          { name: "TDEE Calculator", path: "/tdee-calculator/", desc: "Calculate daily calorie expenditure" },
+          { name: "Macro Calculator", path: "/macro-calculator/", desc: "Calculate macronutrient needs" },
         ]}
       />
     </div>

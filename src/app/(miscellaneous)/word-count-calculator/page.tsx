@@ -355,22 +355,22 @@ export default function WordCountCalculator() {
           relatedCalculators={[
             {
               name: "Pomodoro Timer",
-              path: "/pomodoro-timer",
+              path: "/pomodoro-timer/",
               desc: "Use time-blocking techniques to focus while writing.",
             },
             {
               name: "Readability Score",
-              path: "/readability-checker",
+              path: "/readability-checker/",
               desc: "Analyze the complexity and grade level of your text.",
             },
             {
               name: "Typing Speed Test",
-              path: "/typing-speed",
+              path: "/typing-speed/",
               desc: "Measure your actual Words Per Minute (WPM) capability.",
             },
             {
               name: "Roman Numeral Converter",
-              path: "/roman-numeral-converter",
+              path: "/roman-numeral-converter/",
               desc: "Convert between standard numbers and Roman numerals.",
             }]}
         />

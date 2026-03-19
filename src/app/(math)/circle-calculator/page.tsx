@@ -285,22 +285,22 @@ export default function CircleCalculator() {
           relatedCalculators={[
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Easily compare the surface area of your circle to squares or rectangles.",
             },
             {
               name: "Perimeter Calculator",
-              path: "/perimeter-calculator",
+              path: "/perimeter-calculator/",
               desc: "Compare circle circumference with the straight-line perimeter of polygons.",
             },
             {
               name: "Cylinder Calculator",
-              path: "/cylinder-calculator",
+              path: "/cylinder-calculator/",
               desc: "Turn your 2D circle into a 3D tube by adding the element of height.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

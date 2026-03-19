@@ -295,22 +295,22 @@ export default function SpeedConverter() {
           relatedCalculators={[
             {
               name: "Length Converter",
-              path: "/length-converter",
+              path: "/length-converter/",
               desc: "Translate the distance variables used in speed calculations.",
             },
             {
               name: "Time Zone Converter",
-              path: "/time-zone-converter",
+              path: "/time-zone-converter/",
               desc: "Calculate the exact time difference of a fast international flight.",
             },
             {
               name: "Volume Converter",
-              path: "/volume-converter",
+              path: "/volume-converter/",
               desc: "Convert fuel capacity metrics for long-distance travel.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

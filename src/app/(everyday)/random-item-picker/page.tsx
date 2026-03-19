@@ -242,22 +242,22 @@ export default function RandomItemPicker() {
           relatedCalculators={[
             {
               name: "Random Group Generator",
-              path: "/random-group-generator",
+              path: "/random-group-generator/",
               desc: "Divide a giant list of names into smaller, perfectly randomized teams or squads.",
             },
             {
               name: "Random Number Generator",
-              path: "/random-number-generator",
+              path: "/random-number-generator/",
               desc: "Generate a purely mathematical random integer between a specific minimum and maximum range.",
             },
             {
               name: "Pomodoro Timer",
-              path: "/pomodoro-timer",
+              path: "/pomodoro-timer/",
               desc: "Once the item picker decides what you are going to work on, use this timer to stay focused on it.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

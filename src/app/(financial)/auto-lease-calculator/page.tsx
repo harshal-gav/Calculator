@@ -353,22 +353,22 @@ export default function AutoLeaseCalculator() {
         relatedCalculators={[
           {
             name: "Auto Loan Calculator",
-            path: "/auto-loan-calculator",
+            path: "/auto-loan-calculator/",
             desc: "The alternative to leasing: calculate the cost of buying a car with a traditional loan.",
           },
           {
             name: "Rent vs Buy Calculator",
-            path: "/rent-vs-buy-calculator",
+            path: "/rent-vs-buy-calculator/",
             desc: "Explore the same financial logic applied to your primary residence.",
           },
           {
             name: "Loan Payoff Calculator",
-            path: "/loan-payoff-calculator",
+            path: "/loan-payoff-calculator/",
             desc: "Determine how much you save by paying down debt earlier than scheduled.",
           },
           {
             name: "Gas Mileage Calculator",
-            path: "/gas-mileage-calculator",
+            path: "/gas-mileage-calculator/",
             desc: "Consider the operational costs (fuel) in tandem with your lease payment.",
           }
         ]}

@@ -306,22 +306,22 @@ export default function LengthConverter() {
           relatedCalculators={[
             {
               name: "Weight Converter",
-              path: "/weight-converter",
+              path: "/weight-converter/",
               desc: "Instantly translate pounds to kilograms and grams.",
             },
             {
               name: "Temperature Converter",
-              path: "/temperature-converter",
+              path: "/temperature-converter/",
               desc: "Toggle between Fahrenheit, Celsius, and Kelvin scales.",
             },
             {
               name: "Volume Converter",
-              path: "/volume-converter",
+              path: "/volume-converter/",
               desc: "Convert liquid measurements like Gallons, Liters, and Ounces.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

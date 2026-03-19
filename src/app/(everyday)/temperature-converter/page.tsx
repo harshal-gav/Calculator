@@ -282,22 +282,22 @@ export default function TemperatureConverter() {
           relatedCalculators={[
             {
               name: "Length Converter",
-              path: "/length-converter",
+              path: "/length-converter/",
               desc: "Instantly translate miles, kilometers, feet, and meters.",
             },
             {
               name: "Cooking Measurement Converter",
-              path: "/cooking-converter",
+              path: "/cooking-converter/",
               desc: "Convert cups, fluid ounces, tablespoons, and milliliters.",
             },
             {
               name: "Speed Converter",
-              path: "/speed-converter",
+              path: "/speed-converter/",
               desc: "Convert mph to km/h or knots seamlessly.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

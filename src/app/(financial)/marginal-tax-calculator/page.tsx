@@ -330,22 +330,22 @@ export default function MarginalTaxRateCalculator() {
           relatedCalculators={[
             {
               name: "Salary to Hourly Calculator",
-              path: "/salary-to-hourly-calculator",
+              path: "/salary-to-hourly-calculator/",
               desc: "Break down your annual take-home pay into an hourly equivalent.",
             },
             {
               name: "Margin Calculator",
-              path: "/margin-calculator",
+              path: "/margin-calculator/",
               desc: "Calculate business profit margins to understand pricing power.",
             },
             {
               name: "VAT Calculator",
-              path: "/vat-calculator",
+              path: "/vat-calculator/",
               desc: "Calculate Value-Added Tax which is essentially a flat consumption tax.",
             },
             {
               name: "Mortgage Calculator",
-              path: "/mortgage-calculator",
+              path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
             }]}
         />

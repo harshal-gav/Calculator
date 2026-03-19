@@ -289,22 +289,22 @@ export default function AreaConverter() {
           relatedCalculators={[
             {
               name: "Length Converter",
-              path: "/length-converter",
+              path: "/length-converter/",
               desc: "Convert standard 1D linear distances (miles, kilometers, feet).",
             },
             {
               name: "Volume Converter",
-              path: "/volume-converter",
+              path: "/volume-converter/",
               desc: "Convert complex 3D capacity measurements (gallons, liters, cubic meters).",
             },
             {
               name: "Rectangle Calculator",
-              path: "/rectangle-calculator",
+              path: "/rectangle-calculator/",
               desc: "Calculate the total area of a rectangle based strictly on its length and width.",
             },
             {
               name: "Age Calculator",
-              path: "/age-calculator",
+              path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
             }]}
         />

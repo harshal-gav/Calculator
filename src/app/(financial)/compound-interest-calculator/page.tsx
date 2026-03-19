@@ -494,10 +494,10 @@ export default function CompoundInterestCalculator() {
           }
         ]}
         relatedCalculators={[
-          { name: "Investment Calculator", path: "/investment-calculator", desc: "A broader tool for modeling stock market portfolios with varying risk levels." },
-          { name: "Savings Goal Calculator", path: "/savings-goal-calculator", desc: "Work backwards from your target amount to find the required monthly savings." },
-          { name: "Retirement Calculator", path: "/retirement-calculator", desc: "Advanced tool including social security and safe withdrawal rate modeling." },
-          { name: "Inflation Calculator", path: "/inflation-calculator", desc: "See how much the value of your dollar has changed over historic time periods." }
+          { name: "Investment Calculator", path: "/investment-calculator/", desc: "A broader tool for modeling stock market portfolios with varying risk levels." },
+          { name: "Savings Goal Calculator", path: "/savings-goal-calculator/", desc: "Work backwards from your target amount to find the required monthly savings." },
+          { name: "Retirement Calculator", path: "/retirement-calculator/", desc: "Advanced tool including social security and safe withdrawal rate modeling." },
+          { name: "Inflation Calculator", path: "/inflation-calculator/", desc: "See how much the value of your dollar has changed over historic time periods." }
         ]}
       />
     </div>

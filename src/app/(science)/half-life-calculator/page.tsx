@@ -319,22 +319,22 @@ export default function HalfLifeCalculator() {
           relatedCalculators={[
             {
               name: "Molar Mass Calculator",
-              path: "/molar-mass-calculator",
+              path: "/molar-mass-calculator/",
               desc: "Calculate the exact molecular atomic weight of the starting substance.",
             },
             {
               name: "Density Calculator",
-              path: "/density-calculator",
+              path: "/density-calculator/",
               desc: "Examine the physical material mass before structural radioactive decay.",
             },
             {
               name: "Force Calculator",
-              path: "/force-calculator",
+              path: "/force-calculator/",
               desc: "Solve for the physical force acting upon an accelerating, degrading mass.",
             },
             {
               name: "Kinetic Energy Calculator",
-              path: "/kinetic-energy-calculator",
+              path: "/kinetic-energy-calculator/",
               desc: "Find the energy of a moving object based on mass and velocity.",
             }]}
         />

@@ -265,22 +265,22 @@ export default function JsonValidator() {
           relatedCalculators={[
             {
               name: "JSON to CSV Converter",
-              path: "/json-to-csv",
+              path: "/json-to-csv/",
               desc: "Convert your validated JSON arrays directly into Excel-ready CSV sheets.",
             },
             {
               name: "Regex Tester",
-              path: "/regex-tester",
+              path: "/regex-tester/",
               desc: "Extract specific string patterns from inside massive JSON files.",
             },
             {
               name: "Diff Checker",
-              path: "/diff-checker",
+              path: "/diff-checker/",
               desc: "Compare two JSON payloads to see exactly what API data changed.",
             },
             {
               name: "Bandwidth Calculator",
-              path: "/bandwidth-calculator",
+              path: "/bandwidth-calculator/",
               desc: "Calculate download and upload times for various data sizes.",
             }]}
         />

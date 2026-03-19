@@ -259,22 +259,22 @@ export default function CaloriesBurnedCalculator() {
         relatedCalculators={[
           {
             name: "TDEE Calculator",
-            path: "/tdee-calculator",
+            path: "/tdee-calculator/",
             desc: "Calculate your Total Daily Energy Expenditure.",
           },
           {
             name: "BMR Calculator",
-            path: "/bmr-calculator",
+            path: "/bmr-calculator/",
             desc: "Find out your Basal Metabolic Rate for resting calorie burn.",
           },
           {
             name: "Macro Calculator",
-            path: "/macro-calculator",
+            path: "/macro-calculator/",
             desc: "Determine your ideal macronutrient split.",
           },
             {
               name: "BMI Calculator",
-              path: "/bmi-calculator",
+              path: "/bmi-calculator/",
               desc: "Calculate your Body Mass Index for a quick health assessment.",
             }]}
       />

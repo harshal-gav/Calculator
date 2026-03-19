@@ -279,22 +279,22 @@ export default function RectangleCalculator() {
           relatedCalculators={[
             {
               name: "Area Calculator",
-              path: "/area-calculator",
+              path: "/area-calculator/",
               desc: "Calculate total square footage across various irregular shapes.",
             },
             {
               name: "Triangle Calculator",
-              path: "/triangle-calculator",
+              path: "/triangle-calculator/",
               desc: "Calculate properties of the shape created by the diagonal slice.",
             },
             {
               name: "Pythagorean Theorem",
-              path: "/pythagorean-calculator",
+              path: "/pythagorean-calculator/",
               desc: "Deep dive into the math behind corner-to-corner diagonals.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

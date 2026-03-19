@@ -310,22 +310,22 @@ export default function CovarianceCalculator() {
           relatedCalculators={[
             {
               name: "Standard Deviation Calculator",
-              path: "/standard-deviation-calculator",
+              path: "/standard-deviation-calculator/",
               desc: "Measure the absolute dispersion or spread of a single dataset.",
             },
             {
               name: "Variance Calculator",
-              path: "/variance-calculator",
+              path: "/variance-calculator/",
               desc: "Calculate the mathematical precursor to Standard Deviation.",
             },
             {
               name: "Margin Calculator",
-              path: "/margin-calculator",
+              path: "/margin-calculator/",
               desc: "A financial tool tracking operational variables.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

@@ -304,22 +304,22 @@ d ≈ ${obj.toFixed(4)}`;
           relatedCalculators={[
             {
               name: "Midpoint Calculator",
-              path: "/midpoint-calculator",
+              path: "/midpoint-calculator/",
               desc: "Find the exact halfway coordinate located between these two same points.",
             },
             {
               name: "Pythagorean Theorem Calculator",
-              path: "/pythagorean-calculator",
+              path: "/pythagorean-calculator/",
               desc: "Explore the core geometric concept that powers the distance formula.",
             },
             {
               name: "Slope Calculator",
-              path: "/slope-calculator",
+              path: "/slope-calculator/",
               desc: "Determine the angle and absolute steepness of the line connecting your two points.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />

@@ -354,22 +354,22 @@ export default function MarginOfErrorCalculator() {
           relatedCalculators={[
             {
               name: "Confidence Interval Calculator",
-              path: "/confidence-interval-calculator",
+              path: "/confidence-interval-calculator/",
               desc: "Calculate the exact upper and lower bounds based on your Margin of Error.",
             },
             {
               name: "Variance Calculator",
-              path: "/variance-calculator",
+              path: "/variance-calculator/",
               desc: "Measure the underlying spread and volatility of your raw survey data.",
             },
             {
               name: "Z-Score Calculator",
-              path: "/z-score-calculator",
+              path: "/z-score-calculator/",
               desc: "Calculate the exact Standard Score used as the base multiplier for the MoE formula.",
             },
             {
               name: "Percentage Calculator",
-              path: "/percentage-calculator",
+              path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
             }]}
         />
