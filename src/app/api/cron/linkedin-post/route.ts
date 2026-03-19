@@ -1,162 +1,123 @@
 import { NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 
-// Deployment trigger: 2026-03-19 20:15
-
-// Vercel Cron Secret for security
 const CRON_SECRET = process.env.CRON_SECRET;
-
-// Gemini API Configuration
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY || "");
-
-// LinkedIn Configuration
 const LINKEDIN_ACCESS_TOKEN = process.env.LINKEDIN_ACCESS_TOKEN;
 const LINKEDIN_AUTHOR_URN = process.env.LINKEDIN_AUTHOR_URN;
 
-export const maxDuration = 300; // Extend timeout for AI generation and PDF processing
+export const maxDuration = 300;
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const secret = searchParams.get('secret');
   const authHeader = request.headers.get('authorization');
 
-  // Verify security
   if (secret !== CRON_SECRET && authHeader !== `Bearer ${CRON_SECRET}`) {
     return new NextResponse(JSON.stringify({ message: "Unauthorized" }), { status: 401 });
   }
 
   if (!process.env.GOOGLE_GEMINI_API_KEY || !LINKEDIN_ACCESS_TOKEN || !LINKEDIN_AUTHOR_URN) {
-    return new NextResponse(JSON.stringify({ message: "Missing environment variables (Gemini, LinkedIn Token, or URN)." }), { status: 500 });
+    return new NextResponse(JSON.stringify({ message: "Missing environment variables." }), { status: 500 });
   }
 
   try {
-    // 1. Generate LinkedIn Post Data using Gemini
+    // 1. Generate content with Gemini
     const prompt = `
-      You are a world-class LinkedIn marketing expert for a utility tools website called calculator-all.com.
-      Generate a brand new, unique, high-engagement LinkedIn post including:
-      1. A "Personal Storytelling" style post copy (hooks, insights, and call to action to https://calculator-all.com).
-      2. 100 relevant hashtags for reach.
-      3. Content for a 10-page educational PDF carousel.
-      
-      The topic should be randomly chosen from: Math secrets, Finance tips (Mortgage/Investment), Next.js 15 technical deep dives, or the journey of building a 100+ tool platform.
-      
-      RESPONSE TEMPLATE (JSON ONLY, NO MARKDOWN):
+      You are a LinkedIn marketing expert for calculator-all.com.
+      Generate a unique, high-engagement LinkedIn post including:
+      1. A storytelling style post copy with hooks and call to action to https://calculator-all.com
+      2. 15 relevant hashtags as a single string
+      3. A catchy title for an image post
+
+      Topic: randomly choose from Math secrets, Finance tips, Next.js deep dives, or building a 100+ tool platform.
+
+      RESPONSE FORMAT (JSON ONLY, NO MARKDOWN):
       {
-        "post_copy": "...",
-        "hashtags": "...",
-        "pdf_title": "...",
-        "slides": [
-          {"header": "Slide 1 Header", "content": "Slide 1 Bullet points..."},
-          ... (10 slides)
-        ]
+        "post_copy": "the full post text...",
+        "hashtags": "#tag1 #tag2 #tag3...",
+        "image_title": "A catchy title for the post image"
       }
     `;
 
-    // Use 'gemini-flash-latest' for stable free-tier access
     const geminiModel = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
     const result = await geminiModel.generateContent(prompt);
     const responseText = result.response.text().trim().replace(/```json/g, '').replace(/```/g, '');
     const aiData = JSON.parse(responseText);
 
-    // 2. Generate PDF Carousel using pdf-lib
-    const pdfDoc = await PDFDocument.create();
-    const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
-    const boldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
-
-    for (const slide of aiData.slides) {
-      // 1080x1080 square format for LinkedIn
-      const page = pdfDoc.addPage([1080, 1080]);
-
-      // Page Background (Brand Navy)
-      page.drawRectangle({
-        x: 0,
-        y: 0,
-        width: 1080,
-        height: 1080,
-        color: rgb(0.05, 0.15, 0.3), // Dark Blue
-      });
-
-      // Header Text (Brand Orange)
-      page.drawText(slide.header, {
-        x: 100,
-        y: 900,
-        size: 60,
-        font: boldFont,
-        color: rgb(1, 0.5, 0), // Orange
-      });
-
-      // Body Content
-      const bodyLines = slide.content.split('\n');
-      let yOffset = 800;
-      for (const line of bodyLines) {
-        page.drawText(line, {
-          x: 100,
-          y: yOffset,
-          size: 35,
-          font: font,
-          color: rgb(1, 1, 1), // White
-        });
-        yOffset -= 50;
-      }
-
-      // Branding Footer
-      page.drawText("calculator-all.com", {
-        x: 100,
-        y: 100,
-        size: 30,
-        font: boldFont,
-        color: rgb(0.8, 0.8, 0.8),
-      });
+    // 2. Build share text (LinkedIn max 3000 chars)
+    let shareText = `${aiData.post_copy}\n\n${aiData.hashtags}`;
+    if (shareText.length > 2990) {
+      shareText = shareText.substring(0, 2980) + "...";
     }
 
-    const pdfBuffer = await pdfDoc.save();
-
-    // 3. Register Assets with LinkedIn
+    // 3. Register image asset with LinkedIn
     const registerResponse = await fetch('https://api.linkedin.com/v2/assets?action=registerUpload', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${LINKEDIN_ACCESS_TOKEN}`,
-        'Content-Type': 'application/json',
-        'X-Restli-Protocol-Version': '2.0.0'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         registerUploadRequest: {
           recipes: ['urn:li:digitalmediaRecipe:feedshare-image'],
-          owner: LINKEDIN_AUTHOR_URN
+          owner: LINKEDIN_AUTHOR_URN,
+          serviceRelationships: [{
+            relationshipType: 'OWNER',
+            identifier: 'urn:li:userGeneratedContent'
+          }]
         }
       })
     });
 
     const registerData = await registerResponse.json();
-    if (!registerData.value || !registerData.value.uploadMechanism) {
-        throw new Error(`LinkedIn Registration Failed: ${JSON.stringify(registerData)}`);
-    }
+    if (!registerResponse.ok) throw new Error(`Register Failed: ${JSON.stringify(registerData)}`);
+
     const uploadUrl = registerData.value.uploadMechanism['com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest'].uploadUrl;
     const assetUrn = registerData.value.asset;
 
-    // 4. Upload PDF Buffer to LinkedIn
-    await fetch(uploadUrl, {
-      method: 'PUT',
+    // 4. Fetch and upload image
+    const imageResponse = await fetch('https://picsum.photos/1200/630');
+    const imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
+
+    const uploadResponse = await fetch(uploadUrl, {
+      method: 'POST',
       headers: {
         'Authorization': `Bearer ${LINKEDIN_ACCESS_TOKEN}`,
-        'Content-Type': 'application/pdf'
+        'Content-Type': 'image/jpeg'
       },
-      body: Buffer.from(pdfBuffer)
+      body: imageBuffer
     });
 
-    // 5. Final Post to LinkedIn
-    const slidesText = Array.isArray(aiData.slides) 
-      ? aiData.slides.map((s: any, i: number) => `Page ${i + 1}: ${s.title}\n${s.content}`).join('\n\n')
-      : "Check out our latest insights on Calculator-All.com!";
+    if (!uploadResponse.ok) throw new Error("Image Upload Failed");
 
-    const hashText = Array.isArray(aiData.hashtags) 
-      ? aiData.hashtags.join(' ') 
-      : (typeof aiData.hashtags === 'string' ? aiData.hashtags : "#CalculatorAll #FinanceTools");
+    // 5. Poll until asset is READY
+    console.log("Waiting for LinkedIn to process image...");
+    let assetReady = false;
+    for (let i = 0; i < 10; i++) {
+      await new Promise(r => setTimeout(r, 3000));
+      try {
+        const statusCheck = await fetch(`https://api.linkedin.com/v2/assets/${encodeURIComponent(assetUrn)}`, {
+          headers: { 'Authorization': `Bearer ${LINKEDIN_ACCESS_TOKEN}` }
+        });
+        if (statusCheck.ok) {
+          const statusData = await statusCheck.json();
+          const recipe = statusData?.recipes?.[0];
+          if (recipe?.status === 'AVAILABLE' || recipe?.status === 'READY') {
+            assetReady = true;
+            console.log(`Asset ready after ${i + 1} attempts`);
+            break;
+          }
+        }
+      } catch {
+        // ignore polling errors, keep retrying
+      }
+    }
 
-    const shareText = `${aiData.pdf_title || "New Update from Calculator-All"}\n\n${slidesText}\n\n${hashText}`;
+    // Even if polling didn't confirm, try posting (LinkedIn often accepts it)
+    if (!assetReady) console.log("Polling didn't confirm READY, attempting post anyway...");
 
-    // 3. Post to LinkedIn as a Text-Only Post (for Phase 1.5)
+    // 6. Create the LinkedIn post with image
     const postResponse = await fetch('https://api.linkedin.com/v2/ugcPosts', {
       method: 'POST',
       headers: {
@@ -170,7 +131,13 @@ export async function GET(request: Request) {
         specificContent: {
           'com.linkedin.ugc.ShareContent': {
             shareCommentary: { text: shareText },
-            shareMediaCategory: 'NONE'
+            shareMediaCategory: 'IMAGE',
+            media: [{
+              status: 'READY',
+              description: { text: aiData.image_title || "Calculator-All.com" },
+              media: assetUrn,
+              title: { text: aiData.image_title || "Calculator-All.com" }
+            }]
           }
         },
         visibility: {
@@ -180,13 +147,11 @@ export async function GET(request: Request) {
     });
 
     const postData = await postResponse.json();
-    if (!postResponse.ok) {
-        throw new Error(`LinkedIn Post Failed: ${JSON.stringify(postData)}`);
-    }
+    if (!postResponse.ok) throw new Error(`Post Failed: ${JSON.stringify(postData)}`);
 
-    return NextResponse.json({ 
-      success: true, 
-      message: `AI generated and posted: ${aiData.pdf_title}`,
+    return NextResponse.json({
+      success: true,
+      message: `AI generated and posted with image: ${aiData.image_title}`,
       postId: postData.id
     });
 
