@@ -1,0 +1,16 @@
+name: LinkedIn Auto-Post Cron
+
+on:
+  schedule:
+    # Runs every 3 hours
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+    # Allows manual trigger from the GitHub UI
+
+jobs:
+  ping-cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger LinkedIn Post API
+        run: |
+          curl -X GET "${{ secrets.CRON_URL }}?secret=${{ secrets.CRON_SECRET }}"
