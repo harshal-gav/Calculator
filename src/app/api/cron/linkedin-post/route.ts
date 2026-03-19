@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 
-// Deployment trigger: 2026-03-19 19:10
+// Deployment trigger: 2026-03-19 19:16
 
 // Vercel Cron Secret for security
 const CRON_SECRET = process.env.CRON_SECRET;
