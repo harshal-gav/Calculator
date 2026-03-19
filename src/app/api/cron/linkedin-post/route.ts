@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 
-// Deployment trigger: 2026-03-19 19:16
 
 // Vercel Cron Secret for security
 const CRON_SECRET = process.env.CRON_SECRET;
@@ -66,7 +65,7 @@ export async function GET(request: Request) {
     for (const slide of aiData.slides) {
       // 1080x1080 square format for LinkedIn
       const page = pdfDoc.addPage([1080, 1080]);
-      
+
       // Page Background (Brand Navy)
       page.drawRectangle({
         x: 0,
