@@ -93,7 +93,6 @@ export default function HomeSearch({ categories }: { categories: Category[] }) {
                                 <li key={calc.name} className="h-full">
                                     <Link
                                         href={calc.path}
-                                        prefetch={false}
                                         className="group bg-white p-5 rounded-xl border border-gray-200 hover:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex flex-col h-full shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1 block"
                                     >
                                         <h3 className="text-lg font-bold text-slate-800 group-hover:text-blue-600 mb-2 transition-colors flex items-start justify-between">

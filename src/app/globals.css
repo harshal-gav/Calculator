@@ -27,3 +27,15 @@ body {
     color: #000000 !important;
   }
 }
+
+/* Prevent large calculator outputs and headings from overflowing on mobile */
+[class*="text-4xl"],
+[class*="text-5xl"],
+[class*="text-6xl"],
+[class*="text-7xl"],
+[class*="text-8xl"],
+[class*="text-9xl"] {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
