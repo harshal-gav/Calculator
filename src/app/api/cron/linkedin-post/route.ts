@@ -146,7 +146,17 @@ export async function GET(request: Request) {
     });
 
     // 5. Final Post to LinkedIn
-    const shareText = `${aiData.post_copy}\n\n${aiData.hashtags}`;
+    const slidesText = Array.isArray(aiData.slides) 
+      ? aiData.slides.map((s: any, i: number) => `Page ${i + 1}: ${s.title}\n${s.content}`).join('\n\n')
+      : "Check out our latest insights on Calculator-All.com!";
+
+    const hashText = Array.isArray(aiData.hashtags) 
+      ? aiData.hashtags.join(' ') 
+      : (typeof aiData.hashtags === 'string' ? aiData.hashtags : "#CalculatorAll #FinanceTools");
+
+    const shareText = `${aiData.pdf_title || "New Update from Calculator-All"}\n\n${slidesText}\n\n${hashText}`;
+
+    // 3. Post to LinkedIn as a Text-Only Post (for Phase 1.5)
     const postResponse = await fetch('https://api.linkedin.com/v2/ugcPosts', {
       method: 'POST',
       headers: {
@@ -160,14 +170,7 @@ export async function GET(request: Request) {
         specificContent: {
           'com.linkedin.ugc.ShareContent': {
             shareCommentary: { text: shareText },
-              shareMediaCategory: "IMAGE",
-            media: [
-              {
-                status: 'READY',
-                media: assetUrn,
-                title: { text: aiData.pdf_title }
-              }
-            ]
+            shareMediaCategory: 'NONE'
           }
         },
         visibility: {
@@ -177,8 +180,6 @@ export async function GET(request: Request) {
     });
 
     const postData = await postResponse.json();
-    console.log("LinkedIn Post Response:", JSON.stringify(postData));
-
     if (!postResponse.ok) {
         throw new Error(`LinkedIn Post Failed: ${JSON.stringify(postData)}`);
     }
