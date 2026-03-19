@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.calculator-all.com"),
   title: {
     template: "%s | Calculator All",
     default: "Free Online Calculators for Everything",

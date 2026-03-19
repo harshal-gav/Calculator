@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/mortgage-calculator/',
+  },
   title: "Mortgage Calculator",
   description:
     "Calculate your monthly mortgage payments precisely. Our free mortgage calculator includes principal, interest, property taxes, home insurance, and HOA fees. Including specialized USA tools like mortgage calculator, reverse mortgage calculator, mortgage payment calculator.",

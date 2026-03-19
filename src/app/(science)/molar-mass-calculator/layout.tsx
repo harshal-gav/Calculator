@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/molar-mass-calculator/',
+  },
   title: "Molar Mass Calculator – Chemical Formula Weight",
   description:
     "Free Molar Mass Calculator. Quickly calculate the exact molecular weight and elemental composition breakdown of any chemical formula.",

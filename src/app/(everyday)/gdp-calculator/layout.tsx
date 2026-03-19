@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/gdp-calculator/',
+  },
   title: 'GDP Calculator | Economic Growth & Percentage Calculator',
   description: 'Calculate GDP growth rates, economic contributions, and percentage changes. Analyze economic performance and growth.',
   keywords: ['GDP calculator', 'GDP growth calculator', 'economic growth calculator', 'percentage change', 'economic metrics'],

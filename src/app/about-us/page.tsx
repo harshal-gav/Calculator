@@ -1,4 +1,8 @@
-export const metadata = {
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/about-us/',
+  },
   title: "About Us | Calculator All",
   description:
     "Learn about Calculator All, our mission to provide free, accurate, and easy-to-use calculators for everyday life, finance, health, and more.",

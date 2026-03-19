@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/percentage-calculator/',
+  },
   title: "Percentage Calculator",
   description:
     "Free online percentage calculator simplifies math computation. Includes specialized USA tools like percentage calculator, percent off calculator, weight percentile calculator. 'what is % of",

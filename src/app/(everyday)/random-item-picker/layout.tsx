@@ -1,4 +1,8 @@
-export const metadata = {
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/random-item-picker/',
+  },
   title: "Random Item Picker - Wheel Spin & Selection Generator",
   description:
     "Instantly pick a random winner or choice from any list of names or items. 100% unbiased, free, and perfect for giveaways or dinner decisions.",

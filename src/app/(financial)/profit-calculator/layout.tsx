@@ -1,6 +1,9 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/profit-calculator/',
+  },
   title: 'Profit Calculator | Calculate Gross Profit & Margin',
   description: 'Calculate gross profit, net profit, and profit margins based on cost and revenue. Professional tool for business pricing and analysis.',
 }

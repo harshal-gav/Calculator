@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/covariance-calculator/',
+  },
   title: "Covariance Calculator | Sample & Population",
   description:
     "Calculate the Sample Covariance and Population Covariance to determine the directional relationship and variance between two numerical datasets.",

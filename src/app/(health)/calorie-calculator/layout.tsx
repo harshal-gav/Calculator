@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/calorie-calculator/',
+  },
   title: "Calorie Calculator",
   description:
     "Free online Calorie Calculator. Estimate your TDEE (Total Daily Energy Expenditure) and find out exactly how many calories you need to lose, maintain, or gain weight. Including specialized USA tools like calorie deficit calculator, calorie calculator, calorie calculator to lose weight.",

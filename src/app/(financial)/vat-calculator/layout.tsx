@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/vat-calculator/',
+  },
   title: "VAT Calculator",
   description:
     "Free online Value-Added Tax (VAT) Calculator. Instantly add VAT to a net price or extract VAT from a gross price.",

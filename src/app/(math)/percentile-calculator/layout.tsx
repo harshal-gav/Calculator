@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/percentile-calculator/',
+  },
   title: "Percentile Calculator | Find Exact Data Percentiles",
   description:
     "Calculate the exact value at any given percentile (0-100) from a raw dataset. Perfect for grading, salary comparison, and statistical analysis. Including specialized USA tools like percentile calculator.",

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/pressure-converter/',
+  },
   title: "Pressure Converter",
   description:
     "Free online Pressure Converter. Convert pressure measurements between Pascals, PSI, Bar, and Atmospheres.",

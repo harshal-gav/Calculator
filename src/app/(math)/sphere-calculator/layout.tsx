@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/sphere-calculator/',
+  },
   title: "Sphere Volume & Surface Area Calculator",
   description:
     "Free online Sphere Calculator. Instantly calculate the volume, surface area, circumference, and diameter of a perfect sphere given its radius.",

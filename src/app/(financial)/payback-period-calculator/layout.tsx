@@ -1,6 +1,10 @@
+import { Metadata } from "next";
 import { ReactNode } from "react";
 
-export const metadata = {
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/payback-period-calculator/',
+  },
   title: "Payback Period Calculator - Time to Break Even",
   description: "Calculate how long it will take to recover your initial investment with simple and discounted payback period analysis. Perfect for business and personal finance.",
 };

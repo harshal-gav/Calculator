@@ -1,6 +1,10 @@
+import { Metadata } from "next";
 import { ReactNode } from "react";
 
-export const metadata = {
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/traditional-ira-calculator/',
+  },
   title: "Traditional IRA Calculator - Project Tax-Deferred Retirement Growth",
   description: "Calculate the future value of your Traditional IRA, estimate current tax savings, and project after-tax retirement income.",
 };

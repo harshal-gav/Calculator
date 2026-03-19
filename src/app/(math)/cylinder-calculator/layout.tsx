@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/cylinder-calculator/',
+  },
   title: "Cylinder Volume & Surface Area Calculator",
   description:
     "Free online Cylinder Calculator. Instantly calculate the volume, total surface area, lateral area, and base area of any right circular cylinder. Including specialized USA tools like cylinder calculator.",

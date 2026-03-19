@@ -1,4 +1,8 @@
-export const metadata = {
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/privacy-policy/',
+  },
   title: "Privacy Policy",
   description:
     "Privacy Policy for Calculator All - Learn how we collect, use, and protect your information.",

@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/combinations-calculator/',
+  },
   title: "Combinations Calculator (nCr) | Find Unique Groups",
   description:
     "Calculate the total number of unique combinations (where order does not matter) from a set. Perfectly solves nCr problems instantly.",

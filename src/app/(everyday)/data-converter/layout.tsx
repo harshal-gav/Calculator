@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/data-converter/',
+  },
   title: "Data Storage Converter",
   description:
     "Free online Data Storage Converter. Convert bits, bytes, kilobytes, megabytes, gigabytes, and terabytes instantly.",

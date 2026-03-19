@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/bac-calculator/',
+  },
   title: "Blood Alcohol Calculator (BAC) – Drinking Estimate",
   description:
     "Free Blood Alcohol Content (BAC) Calculator. Estimate your current BAC level and time to sober up based on the Widmark formula. For educational use only.",

@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/fuel-cost-calculator/',
+  },
   title: 'Fuel Cost Calculator | Gas Trip Estimator',
   description: 'Calculate the exact fuel cost of your road trip. Enter your distance, car MPG, and local gas prices to instantly estimate total gas expenses.',
   keywords: ['fuel cost calculator', 'gas trip calculator', 'gas cost estimator', 'mpg calculator road trip'],

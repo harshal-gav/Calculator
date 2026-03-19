@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/base-converter/',
+  },
   title: "Base Converter | Decimal, Binary, Octal, Hexadecimal",
   description:
     "Instantly convert numbers between Base-10 (Decimal), Base-2 (Binary), Base-8 (Octal), and Base-16 (Hexadecimal) formats.",

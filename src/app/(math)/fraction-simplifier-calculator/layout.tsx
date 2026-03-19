@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/fraction-simplifier-calculator/',
+  },
   title: "Fraction Simplifier | Reduce Fractions to Lowest Terms",
   description:
     "Instantly reduce any complex mathematical fraction to its lowest terms. Automatically converts improper fractions into clean mixed numbers.",

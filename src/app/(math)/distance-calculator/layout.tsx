@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/distance-calculator/',
+  },
   title: "Distance Calculator | 2D Coordinate Point Lengths",
   description:
     "Calculate the exact straight-line distance between two points on an x,y coordinate plane. Step-by-step solutions using the Euclidean distance formula. Including specialized USA tools like distance calculator.",

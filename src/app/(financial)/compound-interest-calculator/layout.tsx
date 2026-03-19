@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/compound-interest-calculator/',
+  },
   title: "Compound Interest Calculator",
   description:
     "Free online Compound Interest Calculator. Project future investment growth using recursive compound interest with daily, monthly, or annual frequency. Including specialized USA tools like compound interest calculator, apy calculator, compound interest.",

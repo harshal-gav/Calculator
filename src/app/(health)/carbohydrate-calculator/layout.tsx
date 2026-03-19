@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/carbohydrate-calculator/',
+  },
   title: "Carbohydrate Calculator – Daily Carb Intake",
   description:
     "Free Carbohydrate Calculator. Find out how many grams of carbs you should eat every day based on your body weight, activity, and goals.",

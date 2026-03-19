@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/margin-of-error-calculator/',
+  },
   title: "Margin of Error Calculator | Find Survey Accuracy",
   description:
     "Calculate the margin of error for polls, surveys, and research data. Understand your statistical confidence interval instantly with our accurate tool.",

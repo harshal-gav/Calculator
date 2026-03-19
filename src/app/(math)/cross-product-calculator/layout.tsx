@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/cross-product-calculator/',
+  },
   title: "Cross Product Calculator | 3D Vector Multiplication",
   description:
     "Calculate the cross product of two 3D vectors. Instantly find the resultant vector (w), Cartesian components (i, j, k), and magnitude. Including specialized USA tools like cross product calculator.",

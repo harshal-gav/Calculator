@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/hexagon-calculator/',
+  },
   title: "Hexagon Calculator – Area, Perimeter, Side & Radii",
   description:
     "Free Hexagon Calculator. Calculate the area, perimeter, side length, and radii of a regular hexagon instantly.",

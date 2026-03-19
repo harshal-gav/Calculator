@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/parallelogram-calculator/',
+  },
   title: "Parallelogram Calculator | Area & Perimeter",
   description:
     "Free online Parallelogram Calculator. Calculate the exact area and perimeter of any parallelogram using base, height, and side length.",

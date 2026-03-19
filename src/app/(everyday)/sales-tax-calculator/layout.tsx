@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/sales-tax-calculator/',
+  },
   title: "Sales Tax Calculator | Forward Add & Reverse Extract",
   description:
     "Rapidly calculate total checkout cost by adding local sales tax, or reverse-calculate a receipt to find the original pre-tax base cost of an item.",

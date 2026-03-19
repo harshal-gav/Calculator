@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/date-calculator/',
+  },
   title: "Date Calculator",
   description:
     "Free online Date Calculator. Discover the exact duration between two dates, or add/subtract days, weeks, and months from a specific date. Including specialized USA tools like date calculator.",

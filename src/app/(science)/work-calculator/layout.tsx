@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/work-calculator/',
+  },
   title: "Work Calculator",
   description:
     "Free online Work Calculator. Calculate mechanical work, force, distance, and angle using standard physics formulas.",

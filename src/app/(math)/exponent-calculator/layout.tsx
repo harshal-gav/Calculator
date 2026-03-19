@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/exponent-calculator/',
+  },
   title: "Exponent Calculator | Raise Numbers to Powers",
   description:
     "Solve immense exponential equations accurately. Calculate integer powers, fractional root exponents, and negative exponent division with a robust mathematical engine. Including specialized USA tools like exponent calculator.",

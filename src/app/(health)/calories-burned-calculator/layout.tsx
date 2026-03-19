@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/calories-burned-calculator/',
+  },
   title:
     "Calories Burned Calculator | Accurate MET Exercise Energy Expenditure",
   description:

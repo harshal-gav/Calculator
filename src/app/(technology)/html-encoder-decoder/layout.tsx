@@ -1,4 +1,8 @@
-export const metadata = {
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/html-encoder-decoder/',
+  },
   title: "HTML Entity Encoder & Decoder - Escape & Revert HTML Tags",
   description:
     "Safely encode HTML tags into entities (&amp;lt; &amp;gt; &amp;amp;) to prevent execution, or automatically decode rendered entities back into readable source text.",

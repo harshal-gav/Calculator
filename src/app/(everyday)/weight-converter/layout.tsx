@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/weight-converter/',
+  },
   title: "Weight Converter",
   description:
     "Free online Weight and Mass Converter. Convert accurately between kilograms, pounds, ounces, grams, tons, and stones.",

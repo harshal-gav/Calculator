@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/scientific-calculator/',
+  },
   title: "Scientific Calculator | Trigonometric & Logarithmic Math",
   description:
     "Solve advanced STEM equations online. Execute trigonometry operations, calculate logarithms, and process exponents with strict order of operations. Including specialized USA tools like scientific calculator, ti 84 plus ce, graphing calculator.",

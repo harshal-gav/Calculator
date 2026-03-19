@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/resistor-calculator/',
+  },
   title: 'Resistor Calculator | Resistance Series & Parallel Calculator',
   description: 'Calculate total resistance for resistors in series and parallel circuits. Find color code values and combinations.',
   keywords: ['resistor calculator', 'resistance calculator', 'series resistor', 'parallel resistor', 'ohms calculator'],

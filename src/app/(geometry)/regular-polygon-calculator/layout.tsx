@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/regular-polygon-calculator/',
+  },
   title: "Regular Polygon Calculator | Area, Perimeter & Radii",
   description:
     "Free online Regular Polygon Calculator. Calculate area, perimeter, internal angles, inradius, and circumradius for any regular polygon.",

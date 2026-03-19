@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/frequency-converter/',
+  },
   title: "Frequency Converter – Hz to RPM",
   description:
     "Free Frequency Converter. Instantly convert between Hertz, Kilohertz, Megahertz, Gigahertz, Terahertz, and RPM (Revolutions per minute).",

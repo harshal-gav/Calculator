@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/speed-converter/',
+  },
   title: "Speed Converter",
   description:
     "Free online Speed and Velocity Converter. Instantly convert between mph, km/h, m/s, knots, and Mach speed. Including specialized USA tools like speed converter.",

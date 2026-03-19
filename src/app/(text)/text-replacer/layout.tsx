@@ -1,4 +1,8 @@
-export const metadata = {
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/text-replacer/',
+  },
   title: "Find and Replace Text Online - Bulk Word & Regex Replacer",
   description:
     "Instantly find and replace words, phrases, or complex regex patterns across massive text documents. Free online bulk text replacement tool.",

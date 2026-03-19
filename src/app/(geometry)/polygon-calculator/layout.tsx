@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/polygon-calculator/',
+  },
   title: "Polygon Calculator – Area, Angles, Apothem & Perimeter",
   description:
     "Free Polygon Calculator. Calculate precise properties for any regular polygon with 3 or more sides including interior angles and circumradius.",

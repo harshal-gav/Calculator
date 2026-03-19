@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/projectile-motion-calculator/',
+  },
   title: "Projectile Motion Calculator | Flight Trajectories",
   description:
     "Calculate exact kinematic trajectories, maximum height, horizontal range, and flight time of objects launched with initial velocity and angle.",

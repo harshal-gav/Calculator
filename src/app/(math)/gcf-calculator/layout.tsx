@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/gcf-calculator/',
+  },
   title: "GCF Calculator",
   description:
     "Free online Greatest Common Factor (GCF / HCF) Calculator. Calculate the largest common divisor of two or more numbers. Including specialized USA tools like gcf calculator.",

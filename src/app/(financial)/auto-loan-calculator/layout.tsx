@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/auto-loan-calculator/',
+  },
   title: "Auto Loan Calculator",
   description:
     "Estimate your monthly auto loan payments. Factor in car price, down payment, trade-in value, interest rate, and loan term instantly. Including specialized USA tools like car loan calculator, car payment calculator, auto loan calculator.",

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/age-calculator/',
+  },
   title: "Age Calculator",
   description:
     "Free online Age Calculator. Calculate your exact chronological age in years, months, days, weeks, and find out exactly how many days until your next birthday. Including specialized USA tools like mileage calculator, body fat percentage calculator, voltage drop calculator.",

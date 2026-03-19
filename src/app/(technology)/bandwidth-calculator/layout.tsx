@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/bandwidth-calculator/',
+  },
   title: "Bandwidth Calculator - Download & Upload Time Estimator",
   description:
     "Free online Bandwidth Calculator. Calculate exactly how long it will take to download or upload a file based on your internet connection speed in Mbps or MB/s.",

@@ -1,4 +1,8 @@
-export const metadata = {
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/list-sorter/',
+  },
   title: "Alphabetize & Sort List Online - A-Z, Length, Reverse & Shuffle",
   description:
     "Instantly sort text lists alphabetically (A-Z or Z-A), sequentially by length, randomly shuffle items, or reverse line order. Free bulk text sorter tool.",

@@ -1,6 +1,13 @@
 import Link from "next/link";
 import HomeSearch from "@/components/HomeSearch";
 import HomeSEO from "@/components/HomeSEO";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   const categories = [

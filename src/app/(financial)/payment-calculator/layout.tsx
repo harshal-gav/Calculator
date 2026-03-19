@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/payment-calculator/',
+  },
   title: "Payment Calculator",
   description:
     "Calculate exact monthly payments for any fixed-term loan including personal loans, student loans, and business financing. Including specialized USA tools like loan repayment calculator, heloc payment calculator, home loan repayment calculator.",

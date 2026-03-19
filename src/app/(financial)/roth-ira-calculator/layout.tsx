@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/roth-ira-calculator/',
+  },
   title: 'Roth IRA Calculator | Tax-Free Retirement Growth',
   description: 'Project how your Roth IRA will grow over time through tax-free compound interest, and visualize your future retirement wealth.',
   keywords: ['roth ira calculator', 'retirement calculator', 'tax free growth', 'ira compound interest', 'retirement savings calculator'],

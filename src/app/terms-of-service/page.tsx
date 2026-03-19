@@ -1,4 +1,8 @@
-export const metadata = {
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/terms-of-service/',
+  },
   title: "Terms of Service",
   description: "Terms of Service and Conditions of Use for Calculator All",
 };

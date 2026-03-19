@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/margin-calculator/',
+  },
   title: "Margin Calculator",
   description:
     "Free online margin calculator. Calculate gross profit margin, profit dollars, and compare against markup percentages. Including specialized USA tools like margin calculator.",

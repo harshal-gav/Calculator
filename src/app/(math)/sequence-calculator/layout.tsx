@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/sequence-calculator/',
+  },
   title: "Sequence Calculator | Arithmetic & Geometric Progressions",
   description:
     "Find the Nth term and the exact sum of the first N terms for both Arithmetic and Geometric mathematical sequences. Including specialized USA tools like sequence calculator.",

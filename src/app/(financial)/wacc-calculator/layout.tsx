@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/wacc-calculator/',
+  },
   title: "WACC Calculator",
   description:
     "Free online Weighted Average Cost of Capital (WACC) Calculator. Determine a company's blended cost of financing across debt and equity.",

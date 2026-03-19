@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/number-to-words-converter/',
+  },
   title: "Number to Words Converter | Convert Digits to English Text",
   description:
     "Free online Number to Words Converter. Instantly translate large numeric digits (up to quintillions) into alphabetical written English words.",

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/pregnancy-calculator/',
+  },
   title: "Pregnancy Calculator",
   description:
     "Free online Pregnancy Calculator. Calculate your estimated due date, conception date, and see your current trimester timeline based on your LMP and cycle length. Including specialized USA tools like gestational age calculator, reverse due date calculator, birth calculator.",

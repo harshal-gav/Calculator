@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/mean-median-mode-calculator/',
+  },
   title: "Mean, Median, & Mode Calculator",
   description:
     "Free online statistical calculator to instantly find the mean, median, mode, and range of any data set.",

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/random-letter-generator/',
+  },
   title: "Random Letter Generator | Generate Alphabet Characters",
   description:
     "Free online Random Letter Generator. Instantly generate one or multiple random letters from the English alphabet for games, testing, or education.",

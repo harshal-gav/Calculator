@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/fraction-calculator/',
+  },
   title: "Fraction Calculator",
   description:
     "Free online fraction calculator. Add, subtract, multiply, divide, and simplify fractions effortlessly with step-by-step results. Including specialized USA tools like fraction calculator, mixed fraction calculator, scientific calculator with fraction.",

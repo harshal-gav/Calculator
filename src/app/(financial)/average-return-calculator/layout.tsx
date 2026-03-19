@@ -1,6 +1,10 @@
+import { Metadata } from "next";
 import { ReactNode } from "react";
 
-export const metadata = {
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/average-return-calculator/',
+  },
   title: "Average Return Calculator - Compound Annual Growth Rate (CAGR)",
   description: "Calculate the geometric mean and CAGR for your investment portfolio. Compare simple average returns against compound growth rates.",
 };

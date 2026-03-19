@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/inflation-calculator/',
+  },
   title: "Inflation Calculator | Purchasing Power Forecaster",
   description:
     "Calculate the future cost of goods due to inflation. Discover how historical and projected inflation rates degrade your total purchasing power over time.",
