@@ -11,11 +11,5 @@
             "destination": "https://calculator-all.com/$1",
             "permanent": true
         }
-    ],
-    "crons": [
-        {
-            "path": "/api/cron/linkedin-post",
-            "schedule": "0 0 * * *"
-        }
     ]
 }
