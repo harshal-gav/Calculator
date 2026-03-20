@@ -14,8 +14,17 @@ export const maxDuration = 300;
 let cachedFont: ArrayBuffer | null = null;
 async function loadFont(): Promise<ArrayBuffer> {
   if (cachedFont) return cachedFont;
-  const res = await fetch('https://fonts.gstatic.com/s/inter/v18/UcCo3FwrK3iLTcviYwYZ90RqCnh8CvE.woff');
-  cachedFont = await res.arrayBuffer();
+  // Fetch Google Fonts CSS with older User-Agent to get woff (not woff2) — satori needs woff
+  const cssResponse = await fetch(
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;700',
+    { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; rv:27.0) Gecko/20100101 Firefox/27.0' } }
+  );
+  const css = await cssResponse.text();
+  // Extract the first font URL from the CSS
+  const fontUrl = css.match(/url\((https:\/\/fonts\.gstatic\.com\/[^)]+)\)/)?.[1];
+  if (!fontUrl) throw new Error('Could not extract font URL from Google Fonts CSS');
+  const fontResponse = await fetch(fontUrl);
+  cachedFont = await fontResponse.arrayBuffer();
   return cachedFont;
 }
 
