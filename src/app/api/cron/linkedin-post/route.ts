@@ -22,36 +22,78 @@ export async function GET(request: Request) {
   }
 
   try {
-    // 1. Generate content with Gemini
+    // === STEP 1: Generate human-like LinkedIn post with Gemini ===
     const prompt = `
-      You are a LinkedIn marketing expert for calculator-all.com.
-      Generate a unique, high-engagement LinkedIn post including:
-      1. A storytelling style post copy with hooks and call to action to https://calculator-all.com
-      2. 15 relevant hashtags as a single string
-      3. A catchy title for an image post
+You are ghostwriting a LinkedIn post for a senior frontend engineer named Harshal who builds calculator-all.com — a platform with 100+ free calculators.
 
-      Topic: randomly choose from Math secrets, Finance tips, Next.js deep dives, or building a 100+ tool platform.
+YOUR TASK:
+1. Randomly pick ONE post style from these 4 categories:
+   - "Code-to-Value Breakdown" — A project showcase explaining WHY a specific tech was chosen, with measurable results (e.g., "reduced FID by 40%"). Show the thought process, not just code.
+   - "Modern Baseline" — A lesson learned using AI tools or modern dev practices. Show where the AI/tool FAILED and how human judgment fixed it. Be honest and vulnerable.
+   - "Deep Dive Carousel" — A mini-tutorial or breakdown of a concept (e.g., "5 things I wish I knew about React Server Components"). Use numbered points. Teach something specific.
+   - "Culture & Workflow" — A post about remote work discipline, PR review checklists, deep work setup, or async communication. Target the "trust factor" for remote hiring managers.
 
-      RESPONSE FORMAT (JSON ONLY, NO MARKDOWN):
-      {
-        "post_copy": "the full post text...",
-        "hashtags": "#tag1 #tag2 #tag3...",
-        "image_title": "A catchy title for the post image"
-      }
-    `;
+2. Randomly pick 1-3 technologies from this list to weave naturally into your story:
+   HTML5, CSS3, JavaScript ES6+, TypeScript, WebAssembly, React 19, Next.js 15, Vue.js 4, Nuxt.js, Angular 18, Svelte 5, SvelteKit, Remix, Astro, Qwik, SolidJS, Alpine.js, HTMX, Tailwind CSS, Radix UI, shadcn/ui, DaisyUI, Styled Components, Framer Motion, Material UI, Zustand, TanStack Query, Redux Toolkit, Pinia, Jotai, XState, Apollo Client, SWR, tRPC, Vite, TurboPack, Bun, Node.js, Biome, esbuild, Nx, Turborepo, Vitest, Playwright, Cypress, Testing Library, ESLint, Storybook, Cursor, GitHub Copilot, Claude Code, Vercel v0, Windsurf, Vercel, Netlify, Cloudflare Pages, Firebase, Supabase, AWS Amplify, Clerk, Auth0
+
+WRITING RULES (CRITICAL):
+- Write in FIRST PERSON as Harshal. Sound like a real human, not a marketing bot.
+- Start with a strong hook in the first line that makes people stop scrolling.
+- Use short paragraphs (1-2 sentences max per paragraph).
+- Include a personal anecdote or "aha moment" — something that happened during actual development.
+- Add 1-2 moments of vulnerability or humor (e.g., "I spent 3 hours debugging this before realizing...").
+- End with a genuine question to spark comments (not generic "What do you think?").
+- Naturally mention calculator-all.com ONCE in the middle as context, not as a sales pitch.
+- Include "Remote Frontend Engineer" or "TypeScript" or "Next.js" in the first 2 lines for LinkedIn SEO.
+- Keep the total post under 1800 characters.
+- Use line breaks liberally. No walls of text.
+- Use 1-2 emojis maximum. Don't overdo it.
+
+3. Generate an image search query that would find a relevant, professional tech/coding image for this specific post.
+
+RESPOND IN THIS EXACT JSON FORMAT (NO MARKDOWN, NO CODE FENCES):
+{
+  "post_type": "one of: code-to-value | modern-baseline | deep-dive | culture-workflow",
+  "tech_stack": ["the 1-3 technologies you picked"],
+  "post_text": "the full LinkedIn post text ready to publish",
+  "hashtags": "#RemoteFrontendEngineer #TypeScript #NextJS #tag4 #tag5 #tag6 #tag7 #tag8 #tag9 #tag10 #tag11 #tag12 #tag13 #tag14 #tag15",
+  "image_query": "a short descriptive query for finding a relevant stock photo, e.g. 'developer working on performance optimization dark mode code editor'"
+}
+`;
 
     const geminiModel = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
     const result = await geminiModel.generateContent(prompt);
     const responseText = result.response.text().trim().replace(/```json/g, '').replace(/```/g, '');
     const aiData = JSON.parse(responseText);
 
-    // 2. Build share text (LinkedIn max 3000 chars)
-    let shareText = `${aiData.post_copy}\n\n${aiData.hashtags}`;
+    // === STEP 2: Build share text (LinkedIn max 3000 chars) ===
+    let shareText = `${aiData.post_text}\n\n${aiData.hashtags}`;
     if (shareText.length > 2990) {
-      shareText = shareText.substring(0, 2980) + "...";
+      // Trim the post text, keep hashtags
+      const maxPostLen = 2990 - aiData.hashtags.length - 4;
+      shareText = `${aiData.post_text.substring(0, maxPostLen)}...\n\n${aiData.hashtags}`;
     }
 
-    // 3. Register image asset with LinkedIn
+    // === STEP 3: Get a relevant image using the AI-generated query ===
+    // Use Unsplash Source API for topic-relevant images (free, no API key needed)
+    const imageQuery = encodeURIComponent(aiData.image_query || "coding technology");
+    const imageSourceUrl = `https://source.unsplash.com/1200x630/?${imageQuery}`;
+
+    let imageBuffer: Buffer;
+    try {
+      const imageResponse = await fetch(imageSourceUrl, { redirect: 'follow' });
+      if (!imageResponse.ok) throw new Error("Unsplash failed");
+      imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
+      // Verify we got an actual image (not an HTML error page)
+      if (imageBuffer.length < 5000) throw new Error("Image too small, likely error page");
+    } catch {
+      // Fallback to picsum if Unsplash fails
+      console.log("Unsplash failed, falling back to picsum...");
+      const fallbackResponse = await fetch('https://picsum.photos/1200/630');
+      imageBuffer = Buffer.from(await fallbackResponse.arrayBuffer());
+    }
+
+    // === STEP 4: Register image asset with LinkedIn ===
     const registerResponse = await fetch('https://api.linkedin.com/v2/assets?action=registerUpload', {
       method: 'POST',
       headers: {
@@ -76,10 +118,7 @@ export async function GET(request: Request) {
     const uploadUrl = registerData.value.uploadMechanism['com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest'].uploadUrl;
     const assetUrn = registerData.value.asset;
 
-    // 4. Fetch and upload image
-    const imageResponse = await fetch('https://picsum.photos/1200/630');
-    const imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
-
+    // === STEP 5: Upload image to LinkedIn ===
     const uploadResponse = await fetch(uploadUrl, {
       method: 'POST',
       headers: {
@@ -91,9 +130,8 @@ export async function GET(request: Request) {
 
     if (!uploadResponse.ok) throw new Error("Image Upload Failed");
 
-    // 5. Poll until asset is READY
+    // === STEP 6: Poll until asset is processed ===
     console.log("Waiting for LinkedIn to process image...");
-    let assetReady = false;
     for (let i = 0; i < 10; i++) {
       await new Promise(r => setTimeout(r, 3000));
       try {
@@ -102,22 +140,19 @@ export async function GET(request: Request) {
         });
         if (statusCheck.ok) {
           const statusData = await statusCheck.json();
-          const recipe = statusData?.recipes?.[0];
-          if (recipe?.status === 'AVAILABLE' || recipe?.status === 'READY') {
-            assetReady = true;
+          const status = statusData?.recipes?.[0]?.status;
+          if (status === 'AVAILABLE' || status === 'READY') {
             console.log(`Asset ready after ${i + 1} attempts`);
             break;
           }
         }
       } catch {
-        // ignore polling errors, keep retrying
+        // ignore polling errors
       }
     }
 
-    // Even if polling didn't confirm, try posting (LinkedIn often accepts it)
-    if (!assetReady) console.log("Polling didn't confirm READY, attempting post anyway...");
-
-    // 6. Create the LinkedIn post with image
+    // === STEP 7: Create the LinkedIn post ===
+    const postTitle = aiData.post_text.split('\n')[0].substring(0, 100);
     const postResponse = await fetch('https://api.linkedin.com/v2/ugcPosts', {
       method: 'POST',
       headers: {
@@ -134,9 +169,9 @@ export async function GET(request: Request) {
             shareMediaCategory: 'IMAGE',
             media: [{
               status: 'READY',
-              description: { text: aiData.image_title || "Calculator-All.com" },
+              description: { text: postTitle },
               media: assetUrn,
-              title: { text: aiData.image_title || "Calculator-All.com" }
+              title: { text: postTitle }
             }]
           }
         },
@@ -151,7 +186,9 @@ export async function GET(request: Request) {
 
     return NextResponse.json({
       success: true,
-      message: `AI generated and posted with image: ${aiData.image_title}`,
+      postType: aiData.post_type,
+      techStack: aiData.tech_stack,
+      message: postTitle,
       postId: postData.id
     });
 
