@@ -149,7 +149,7 @@ RESPOND IN THIS EXACT JSON FORMAT (NO MARKDOWN, NO CODE FENCES):
 }
 `;
 
-    const geminiModel = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const geminiModel = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
     const result = await geminiModel.generateContent(prompt);
     const responseText = result.response.text().trim().replace(/```json/g, '').replace(/```/g, '');
     const aiData = JSON.parse(responseText);
