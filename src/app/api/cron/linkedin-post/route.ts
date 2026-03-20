@@ -31,7 +31,7 @@ YOUR TASK:
    - "Code-to-Value Breakdown" — A project showcase explaining WHY a specific tech was chosen, with measurable results (e.g., "reduced FID by 40%"). Show the thought process, not just code.
    - "Modern Baseline" — A lesson learned using AI tools or modern dev practices. Show where the AI/tool FAILED and how human judgment fixed it. Be honest and vulnerable.
    - "Deep Dive Carousel" — A mini-tutorial or breakdown of a concept (e.g., "5 things I wish I knew about React Server Components"). Use numbered points. Teach something specific.
-   - "Culture & Workflow" — A post about remote work discipline, PR review checklists, deep work setup, or async communication. Target the "trust factor" for remote hiring managers.
+   - "Culture & Workflow" — A post about remote work discipline, PR review checklists, deep work setup, or async communication. Target the "trust factor" for hiring managers.
 
 2. Randomly pick 1-3 technologies from this list to weave naturally into your story:
    HTML5, CSS3, JavaScript ES6+, TypeScript, WebAssembly, React 19, Next.js 15, Vue.js 4, Nuxt.js, Angular 18, Svelte 5, SvelteKit, Remix, Astro, Qwik, SolidJS, Alpine.js, HTMX, Tailwind CSS, Radix UI, shadcn/ui, DaisyUI, Styled Components, Framer Motion, Material UI, Zustand, TanStack Query, Redux Toolkit, Pinia, Jotai, XState, Apollo Client, SWR, tRPC, Vite, TurboPack, Bun, Node.js, Biome, esbuild, Nx, Turborepo, Vitest, Playwright, Cypress, Testing Library, ESLint, Storybook, Cursor, GitHub Copilot, Claude Code, Vercel v0, Windsurf, Vercel, Netlify, Cloudflare Pages, Firebase, Supabase, AWS Amplify, Clerk, Auth0
@@ -44,20 +44,21 @@ WRITING RULES (CRITICAL):
 - Add 1-2 moments of vulnerability or humor (e.g., "I spent 3 hours debugging this before realizing...").
 - End with a genuine question to spark comments (not generic "What do you think?").
 - Naturally mention calculator-all.com ONCE in the middle as context, not as a sales pitch.
-- Include "Remote Frontend Engineer" or "TypeScript" or "Next.js" in the first 2 lines for LinkedIn SEO.
+- Include "Frontend Engineer" or "TypeScript" or "Next.js" in the first 2 lines for LinkedIn SEO.
+- NEVER use the phrase "Remote Frontend Engineer". Use "Frontend Engineer" instead.
 - Keep the total post under 1800 characters.
 - Use line breaks liberally. No walls of text.
 - Use 1-2 emojis maximum. Don't overdo it.
 
-3. Generate an image search query that would find a relevant, professional tech/coding image for this specific post.
+3. Generate an image prompt that will be used to create an AI-generated image with Gemini. The image should be a professional, visually stunning tech/coding themed image relevant to the post topic. Think: code editors, futuristic dashboards, abstract tech patterns, developer workspaces.
 
 RESPOND IN THIS EXACT JSON FORMAT (NO MARKDOWN, NO CODE FENCES):
 {
   "post_type": "one of: code-to-value | modern-baseline | deep-dive | culture-workflow",
   "tech_stack": ["the 1-3 technologies you picked"],
   "post_text": "the full LinkedIn post text ready to publish",
-  "hashtags": "#RemoteFrontendEngineer #TypeScript #NextJS #tag4 #tag5 #tag6 #tag7 #tag8 #tag9 #tag10 #tag11 #tag12 #tag13 #tag14 #tag15",
-  "image_query": "a short descriptive query for finding a relevant stock photo, e.g. 'developer working on performance optimization dark mode code editor'"
+  "hashtags": "#FrontendEngineer #TypeScript #NextJS #tag4 #tag5 #tag6 #tag7 #tag8 #tag9 #tag10 #tag11 #tag12 #tag13 #tag14 #tag15",
+  "image_prompt": "A professional, high-quality image of [describe scene relevant to post]. Style: modern, clean, tech-focused. Colors: dark mode with vibrant accent colors. No text overlays."
 }
 `;
 
@@ -69,28 +70,83 @@ RESPOND IN THIS EXACT JSON FORMAT (NO MARKDOWN, NO CODE FENCES):
     // === STEP 2: Build share text (LinkedIn max 3000 chars) ===
     let shareText = `${aiData.post_text}\n\n${aiData.hashtags}`;
     if (shareText.length > 2990) {
-      // Trim the post text, keep hashtags
       const maxPostLen = 2990 - aiData.hashtags.length - 4;
       shareText = `${aiData.post_text.substring(0, maxPostLen)}...\n\n${aiData.hashtags}`;
     }
 
-    // === STEP 3: Get a relevant image using the AI-generated query ===
-    // Use Unsplash Source API for topic-relevant images (free, no API key needed)
-    const imageQuery = encodeURIComponent(aiData.image_query || "coding technology");
-    const imageSourceUrl = `https://source.unsplash.com/1200x630/?${imageQuery}`;
+    // === STEP 3: Generate image with Gemini Imagen API ===
+    const imagePrompt = aiData.image_prompt || "A professional tech workspace with code on screen, dark mode, modern and clean aesthetic";
+    
+    // Use Gemini's Imagen model to generate the image
+    const apiKey = process.env.GOOGLE_GEMINI_API_KEY;
+    const imagenResponse = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          instances: [{ prompt: imagePrompt }],
+          parameters: {
+            sampleCount: 1,
+            aspectRatio: "16:9",
+            safetyFilterLevel: "BLOCK_MEDIUM_AND_ABOVE"
+          }
+        })
+      }
+    );
 
-    let imageBuffer: Buffer;
-    try {
-      const imageResponse = await fetch(imageSourceUrl, { redirect: 'follow' });
-      if (!imageResponse.ok) throw new Error("Unsplash failed");
-      imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
-      // Verify we got an actual image (not an HTML error page)
-      if (imageBuffer.length < 5000) throw new Error("Image too small, likely error page");
-    } catch {
-      // Fallback to picsum if Unsplash fails
-      console.log("Unsplash failed, falling back to picsum...");
-      const fallbackResponse = await fetch('https://picsum.photos/1200/630');
-      imageBuffer = Buffer.from(await fallbackResponse.arrayBuffer());
+    let imageBlob: Blob;
+    
+    if (imagenResponse.ok) {
+      const imagenData = await imagenResponse.json();
+      // Imagen returns base64 encoded image
+      const base64Image = imagenData.predictions?.[0]?.bytesBase64Encoded;
+      if (base64Image) {
+        const binaryString = atob(base64Image);
+        const bytes = new Uint8Array(binaryString.length);
+        for (let i = 0; i < binaryString.length; i++) {
+          bytes[i] = binaryString.charCodeAt(i);
+        }
+        imageBlob = new Blob([bytes], { type: 'image/png' });
+        console.log("Gemini Imagen generated image successfully!");
+      } else {
+        throw new Error("No image data in Imagen response");
+      }
+    } else {
+      // Fallback: try Gemini 2.0 Flash with image generation
+      console.log("Imagen model failed, trying Gemini 2.0 Flash image generation...");
+      const geminiImageResponse = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: `Generate an image: ${imagePrompt}` }] }],
+            generationConfig: { responseModalities: ["IMAGE", "TEXT"] }
+          })
+        }
+      );
+
+      if (geminiImageResponse.ok) {
+        const geminiImageData = await geminiImageResponse.json();
+        const parts = geminiImageData.candidates?.[0]?.content?.parts || [];
+        const imagePart = parts.find((p: any) => p.inlineData?.mimeType?.startsWith('image/'));
+        
+        if (imagePart) {
+          const base64 = imagePart.inlineData.data;
+          const binaryString = atob(base64);
+          const bytes = new Uint8Array(binaryString.length);
+          for (let i = 0; i < binaryString.length; i++) {
+            bytes[i] = binaryString.charCodeAt(i);
+          }
+          imageBlob = new Blob([bytes], { type: imagePart.inlineData.mimeType });
+          console.log("Gemini 2.0 Flash generated image successfully!");
+        } else {
+          throw new Error("No image in Gemini response");
+        }
+      } else {
+        throw new Error("All Gemini image generation failed");
+      }
     }
 
     // === STEP 4: Register image asset with LinkedIn ===
@@ -118,14 +174,14 @@ RESPOND IN THIS EXACT JSON FORMAT (NO MARKDOWN, NO CODE FENCES):
     const uploadUrl = registerData.value.uploadMechanism['com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest'].uploadUrl;
     const assetUrn = registerData.value.asset;
 
-    // === STEP 5: Upload image to LinkedIn ===
+    // === STEP 5: Upload AI-generated image to LinkedIn ===
     const uploadResponse = await fetch(uploadUrl, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${LINKEDIN_ACCESS_TOKEN}`,
-        'Content-Type': 'image/jpeg'
+        'Content-Type': 'image/png'
       },
-      body: imageBuffer
+      body: imageBlob
     });
 
     if (!uploadResponse.ok) throw new Error("Image Upload Failed");
@@ -188,6 +244,7 @@ RESPOND IN THIS EXACT JSON FORMAT (NO MARKDOWN, NO CODE FENCES):
       success: true,
       postType: aiData.post_type,
       techStack: aiData.tech_stack,
+      imageSource: "gemini-generated",
       message: postTitle,
       postId: postData.id
     });
