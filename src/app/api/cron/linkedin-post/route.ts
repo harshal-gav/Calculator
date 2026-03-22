@@ -111,7 +111,7 @@ export async function GET(request: Request) {
   try {
     // === STEP 1: Generate human-like LinkedIn post with Gemini ===
     const prompt = `
-You are ghostwriting a LinkedIn post for a senior frontend engineer named Harshal who builds calculator-all.com — a platform with 100+ free calculators.
+You are ghostwriting a LinkedIn post for a senior frontend engineer named Harshal who builds calculator-all.com — a platform with 300+ free calculators.
 
 YOUR TASK:
 1. Randomly pick ONE post style from these 4 categories:
@@ -120,7 +120,7 @@ YOUR TASK:
    - "Deep Dive" — A mini-tutorial or breakdown of a concept. Use numbered points. Teach something specific.
    - "Culture & Workflow" — A post about work discipline, PR review checklists, deep work setup. Target the "trust factor" for hiring managers.
 
-2. Randomly pick 1-3 technologies from this list to weave naturally into your story:
+2. Randomly pick 5-8 technologies from this list to weave naturally into your story:
    HTML5, CSS3, JavaScript ES6+, TypeScript, WebAssembly, React 19, Next.js 15, Vue.js 4, Nuxt.js, Angular 18, Svelte 5, SvelteKit, Remix, Astro, Qwik, SolidJS, Alpine.js, HTMX, Tailwind CSS, Radix UI, shadcn/ui, DaisyUI, Styled Components, Framer Motion, Material UI, Zustand, TanStack Query, Redux Toolkit, Pinia, Jotai, XState, Apollo Client, SWR, tRPC, Vite, TurboPack, Bun, Node.js, Biome, esbuild, Nx, Turborepo, Vitest, Playwright, Cypress, Testing Library, ESLint, Storybook, Cursor, GitHub Copilot, Claude Code, Vercel v0, Windsurf, Vercel, Netlify, Cloudflare Pages, Firebase, Supabase, AWS Amplify, Clerk, Auth0
 
 WRITING RULES (CRITICAL):
@@ -130,21 +130,21 @@ WRITING RULES (CRITICAL):
 - Include a personal anecdote or "aha moment".
 - Add 1-2 moments of vulnerability or humor.
 - End with a genuine question to spark comments.
-- Naturally mention calculator-all.com ONCE in the middle.
-- Include "Frontend Engineer" or "TypeScript" or "Next.js" in the first 2 lines for LinkedIn SEO.
+- Naturally mention calculator-all.com ONCE in the start.
+- Include "Frontend Engineer" or "TypeScript" or "Next.js" or "React.js" in the first 2 lines for LinkedIn SEO.
 - NEVER use "Remote Frontend Engineer". Use "Frontend Engineer" instead.
 - Keep the total post under 1800 characters.
 - Use line breaks liberally. No walls of text.
-- Use 1-2 emojis maximum.
+- Use 8-10 emojis maximum.
 
 3. Generate a SHORT, catchy one-liner headline (5-8 words max) that captures the post's essence. This will be shown as large text on a branded image.
 
 RESPOND IN THIS EXACT JSON FORMAT (NO MARKDOWN, NO CODE FENCES):
 {
   "post_type": "one of: code-to-value | modern-baseline | deep-dive | culture-workflow",
-  "tech_stack": ["the 1-3 technologies you picked"],
+  "tech_stack": ["the 5-8 technologies you picked"],
   "post_text": "the full LinkedIn post text ready to publish",
-  "hashtags": "#FrontendEngineer #TypeScript #NextJS #tag4 #tag5 #tag6 #tag7 #tag8 #tag9 #tag10 #tag11 #tag12 #tag13 #tag14 #tag15",
+  "hashtags": "#FrontendEngineer #TypeScript #ReactJS #tag4 #tag5 #tag6 #tag7 #tag8 #tag9 #tag10 #tag11 #tag12 #tag13 #tag14 #tag15",
   "image_headline": "Catchy 5-8 Word Headline Here"
 }
 `;
