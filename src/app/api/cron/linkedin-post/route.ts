@@ -77,7 +77,7 @@ async function generateBrandedImage(headline: string, techStack: string[]): Prom
       e('div', { style: { display: 'flex', flexDirection: 'column' as const } },
         e('div', { style: { width: 200, height: 2, background: t.accent, opacity: 0.6, marginBottom: 16 } }),
         e('div', { style: { fontSize: 30, fontWeight: 700, color: 'white' } }, 'calculator-all.com'),
-        e('div', { style: { fontSize: 16, color: 'rgba(255,255,255,0.5)', marginTop: 4 } }, '100+ Free Calculators & Tools'),
+        e('div', { style: { fontSize: 16, color: 'rgba(255,255,255,0.5)', marginTop: 4 } }, '300+ Free Calculators & Tools'),
       ),
       // Right: author badge
       e('div', { style: { background: t.accentLight, color: t.accent, padding: '10px 24px', borderRadius: 24, fontSize: 16, fontWeight: 600 } }, 'by Harshal \u00B7 Frontend Engineer'),
