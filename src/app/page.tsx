@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   },
 };
 
+import ChapterNavbar from "@/components/ChapterNavbar";
+
 export default function Home() {
   const categories = [
     {
@@ -330,21 +332,6 @@ export default function Home() {
           desc: "Discover your total home equity and calculate exactly how much cash you can borrow via a HELOC or Home Equity Loan.",
         },
         {
-          name: "Tip Splitting Calculator",
-          path: "/tip-splitting-calculator/",
-          desc: "Quickly calculate the tip and easily divide the total bill among your group.",
-        },
-        {
-          name: "Savings Goal Calculator",
-          path: "/savings-goal-calculator/",
-          desc: "Find out exactly how long it will take to reach your savings goal via monthly contributions.",
-        },
-        {
-          name: "Retirement Calculator",
-          path: "/retirement-calculator/",
-          desc: "Project your retirement nest egg and see if it safely covers your estimated annual expenses.",
-        },
-        {
           name: "Credit Card Payoff Calculator",
           path: "/credit-card-payoff-calculator/",
           desc: "Determine the exact date you will become debt-free by calculating an optimal payoff strategy.",
@@ -476,11 +463,6 @@ export default function Home() {
       icon: <span className="rotate-12 group-hover:rotate-0 transition-transform duration-500">🥗</span>,
       color: "from-rose-500 to-rose-600",
       calculators: [
-        {
-          name: "BMI Calculator",
-          path: "/bmi-calculator/",
-          desc: "Calculate your body mass index.",
-        },
         {
           name: "BMR Calculator",
           path: "/bmr-calculator/",
@@ -822,16 +804,6 @@ export default function Home() {
           desc: "Generate true random numbers instantly within a custom range.",
         },
         {
-          name: "Volume Calculator",
-          path: "/volume-calculator/",
-          desc: "Calculate the internal volume of common 3D geometric shapes.",
-        },
-        {
-          name: "Standard Deviation Calculator",
-          path: "/standard-deviation-calculator/",
-          desc: "Calculate the standard deviation, variance, mean, and sum of a data set.",
-        },
-        {
           name: "Binary Calculator",
           path: "/binary-calculator/",
           desc: "Perform addition, subtraction, division, and logical operations on binary numbers.",
@@ -855,11 +827,6 @@ export default function Home() {
           name: "Midpoint Calculator",
           path: "/midpoint-calculator/",
           desc: "Find the exact midpoint halfway between two given coordinates.",
-        },
-        {
-          name: "Slope Calculator",
-          path: "/slope-calculator/",
-          desc: "Calculate the exact slope (m), y-intercept, and angle of a line from two coordinate points.",
         },
         {
           name: "Logarithm Calculator",
@@ -1015,11 +982,6 @@ export default function Home() {
           name: "Permutation Calculator",
           path: "/permutation-calculator/",
           desc: "Calculate nPr: The number of ways to arrange items where order matters.",
-        },
-        {
-          name: "Variance Calculator",
-          path: "/variance-calculator/",
-          desc: "Calculate Population and Sample Variance from a dataset, along with Standard Deviation.",
         },
         {
           name: "Z-Score Calculator",
@@ -1416,20 +1378,21 @@ export default function Home() {
   ];
 
   return (
-    <div className="py-8">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-          Free Online Calculators
-        </h1>
-        <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
-          Calculator All offers a wide selection of free, fast, and highly
-          accurate online calculators to help you with math, finance, health,
-          and more.
-        </p>
-      </div>
+    <>
+      <ChapterNavbar />
+      <div className="py-8">
+        <div className="text-center mb-12 px-4">
+          <h1 className="text-5xl lg:text-7xl font-black text-gray-900 leading-tightest tracking-tightest">
+            The World's Most <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Powerful</span> Calculators
+          </h1>
+          <p className="mt-6 text-xl text-gray-500 max-w-3xl mx-auto font-medium">
+            Calculator All delivers expert-grade precision across 280+ financial, health, and scientific tools. Engineered for accuracy, built for enlightenment.
+          </p>
+        </div>
 
-      <HomeSearch categories={categories} />
-      <HomeSEO />
-    </div>
+        <HomeSearch categories={categories} />
+        <HomeSEO />
+      </div>
+    </>
   );
 }

@@ -62,46 +62,48 @@ export default function CalculatorSEO({
     };
 
     return (
-        <div className="mt-16 bg-white border-t border-gray-200 pt-16 pb-16">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mt-12 bg-white border-t border-gray-100 pt-12 pb-16">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
                 />
 
-                <div className="prose prose-blue max-w-none prose-headings:text-black prose-p:text-black prose-li:text-black">
-                    <h2 className="text-4xl font-extrabold mb-12 pb-6 border-b-2 border-gray-100 tracking-tight">
+                <div className="prose prose-slate max-w-none prose-headings:text-slate-900 prose-p:text-slate-700 prose-li:text-slate-700">
+                    <h2 className="text-3xl md:text-5xl font-black mb-10 pb-8 border-b border-slate-100 tracking-tight text-slate-900">
                         The Comprehensive Guide to {title}
                     </h2>
 
-                    <section className="mb-16">
-                        <h3 className="text-2xl font-bold mb-6 flex items-center">
-                            <span className="bg-blue-600 w-2 h-8 rounded-full mr-4"></span>
+                    <section className="mb-12 md:mb-16">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-6 flex items-center text-slate-900">
+                            <span className="bg-indigo-600 w-1.5 h-8 rounded-full mr-4"></span>
                             What is a {title}?
                         </h3>
-                        <div className="space-y-6 text-xl leading-relaxed text-gray-800">{whatIsIt}</div>
+                        <div className="space-y-4 md:space-y-6 text-lg md:text-xl leading-relaxed text-slate-700">
+                            {whatIsIt}
+                        </div>
                     </section>
 
                     {comparisonTable && (
-                        <section className="mb-16 bg-gray-50 border border-gray-200 rounded-3xl p-8 overflow-hidden shadow-inner">
-                            <h3 className="text-2xl font-bold mb-8 text-center">{comparisonTable.title}</h3>
-                            <div className="overflow-x-auto rounded-xl border border-gray-200">
-                                <table className="w-full text-left bg-white">
-                                    <thead className="bg-gray-100 border-b border-gray-200">
+                        <section className="mb-12 md:mb-16 bg-slate-50 border border-slate-200 rounded-2xl md:rounded-3xl p-5 md:p-10 overflow-hidden">
+                            <h3 className="text-2xl font-bold mb-6 md:mb-8 text-slate-900">{comparisonTable.title}</h3>
+                            <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+                                <table className="w-full text-left border-collapse">
+                                    <thead className="bg-slate-50 border-b border-slate-200">
                                         <tr>
                                             {comparisonTable.headers.map((header, i) => (
-                                                <th key={i} className="px-6 py-4 font-bold text-gray-700">
+                                                <th key={i} className="px-4 py-3 md:px-6 md:py-4 font-bold text-slate-700 text-sm md:text-base whitespace-nowrap">
                                                     {header}
                                                 </th>
                                             ))}
                                         </tr>
                                     </thead>
-                                    <tbody className="divide-y divide-gray-100">
+                                    <tbody className="divide-y divide-slate-100">
                                         {comparisonTable.rows.map((row, i) => (
-                                            <tr key={i} className="hover:bg-blue-50/30 transition-colors">
+                                            <tr key={i} className="hover:bg-indigo-50/30 transition-colors">
                                                 {row.map((cell, j) => (
-                                                    <td key={j} className="px-6 py-4">
-                                                        <div className={j === 0 ? "font-bold text-gray-900" : "text-gray-700"}>
+                                                    <td key={j} className="px-4 py-3 md:px-6 md:py-4 text-sm md:text-base">
+                                                        <div className={j === 0 ? "font-bold text-slate-900" : "text-slate-700"}>
                                                             {cell}
                                                         </div>
                                                     </td>
@@ -114,68 +116,74 @@ export default function CalculatorSEO({
                         </section>
                     )}
 
-                    <section className="mb-16 bg-gradient-to-br from-blue-600 to-indigo-700 p-10 rounded-3xl text-white shadow-xl relative overflow-hidden group">
-                        <div className="absolute -right-20 -top-20 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:scale-110 transition duration-700"></div>
-                        <h3 className="text-2xl font-bold mb-6 relative z-10 flex items-center">
-                            <svg className="w-8 h-8 mr-3 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    <section className="mb-12 md:mb-16 bg-slate-900 p-6 md:p-12 rounded-2xl md:rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden">
+                        <div className="absolute -right-20 -top-20 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl"></div>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-6 relative z-10 flex items-center">
+                            <svg className="w-8 h-8 mr-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
                             The Mathematical Formula
                         </h3>
-                        <div className="text-xl leading-relaxed text-blue-50 opacity-95 relative z-10">{formula}</div>
+                        <div className="text-lg md:text-xl leading-relaxed text-slate-300 relative z-10 prose-strong:text-white prose-p:text-slate-300">
+                            {formula}
+                        </div>
                     </section>
 
                     {deepDive && (
-                        <section className="mb-20 space-y-8 bg-white border-l-4 border-blue-600 pl-10 py-4">
-                            <h3 className="text-3xl font-black mb-8 tracking-tight">Expert Analysis & Deep Dive</h3>
-                            <div className="deep-dive-content space-y-8 text-xl leading-loose text-gray-800 font-serif italic">
+                        <section className="mb-16 md:mb-20 space-y-8 bg-indigo-50/30 border-l-4 border-indigo-600 px-6 md:px-12 py-8 rounded-r-3xl">
+                            <h3 className="text-2xl md:text-3xl font-black mb-6 tracking-tight text-slate-900">Expert Analysis & Deep Dive</h3>
+                            <div className="space-y-4 md:space-y-6 text-lg md:text-xl leading-relaxed text-slate-700">
                                 {deepDive}
                             </div>
                         </section>
                     )}
 
-                    <section className="mb-16">
-                        <h3 className="text-2xl font-bold mb-6 flex items-center">
-                            <span className="bg-amber-500 w-2 h-8 rounded-full mr-4"></span>
+                    <section className="mb-12 md:mb-16">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-6 flex items-center text-slate-900">
+                            <span className="bg-amber-500 w-1.5 h-8 rounded-full mr-4"></span>
                             Calculation Example
                         </h3>
-                        <div className="space-y-6 text-xl bg-amber-50/50 p-10 rounded-3xl border border-amber-100 leading-relaxed shadow-sm">{example}</div>
+                        <div className="space-y-4 md:space-y-6 text-lg md:text-xl bg-amber-50/50 p-6 md:p-12 rounded-2xl md:rounded-3xl border border-amber-100 leading-relaxed text-slate-700">
+                            {example}
+                        </div>
                     </section>
 
-                    <section className="mb-16">
-                        <h3 className="text-2xl font-bold mb-6 flex items-center">
-                            <span className="bg-emerald-500 w-2 h-8 rounded-full mr-4"></span>
+                    <section className="mb-12 md:mb-16">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-6 flex items-center text-slate-900">
+                            <span className="bg-emerald-500 w-1.5 h-8 rounded-full mr-4"></span>
                             Strategic Use Cases
                         </h3>
-                        <div className="space-y-6 text-xl leading-relaxed text-gray-800">{useCases}</div>
+                        <div className="space-y-4 md:space-y-6 text-lg md:text-xl leading-relaxed text-slate-700">
+                            {useCases}
+                        </div>
                     </section>
 
                     {glossary && (
-                        <section className="mb-20 bg-gray-50 p-10 rounded-3xl border border-gray-200">
-                            <h3 className="text-2xl font-bold mb-8">Glossary of Key Terms</h3>
+                        <section className="mb-16 md:mb-20 bg-slate-50 p-6 md:p-12 rounded-2xl md:rounded-[2.5rem] border border-slate-200">
+                            <h3 className="text-2xl md:text-3xl font-bold mb-8 text-slate-900">Glossary of Key Terms</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                                 {glossary.map((term, idx) => (
                                     <div key={idx} className="group">
-                                        <dt className="font-black text-gray-900 text-lg mb-2 group-hover:text-blue-600 transition-colors uppercase tracking-tight">{term.term}</dt>
-                                        <dd className="text-gray-600 leading-relaxed">{term.definition}</dd>
+                                        <dt className="font-bold text-slate-900 text-lg mb-2 group-hover:text-indigo-600 transition-colors uppercase tracking-tight">{term.term}</dt>
+                                        <dd className="text-slate-600 leading-relaxed text-base">{term.definition}</dd>
                                     </div>
                                 ))}
                             </div>
                         </section>
                     )}
 
-                    <section className="mb-16">
-                        <h3 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h3>
-                        <div className="grid grid-cols-1 gap-6">
+                    <section className="mb-12 md:mb-16">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center text-slate-900">Frequently Asked Questions</h3>
+                        <div className="grid grid-cols-1 gap-4 md:gap-6">
                             {faqs.map((faq, index) => (
-                                <details key={index} className="group bg-white border-2 border-gray-100 rounded-3xl p-8 [&_summary::-webkit-details-marker]:hidden shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300">
-                                    <summary className="flex cursor-pointer items-center justify-between gap-1.5 font-bold text-black">
-                                        <h4 className="text-xl pr-4 tracking-tight leading-snug">{faq.question}</h4>
-                                        <span className="shrink-0 rounded-2xl bg-blue-50 p-3 text-blue-600 group-open:bg-blue-600 group-open:text-white shadow-sm transition-all duration-500 transform group-open:rotate-180">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <details key={index} className="group bg-white border border-slate-200 rounded-2xl p-5 md:p-8 [&_summary::-webkit-details-marker]:hidden hover:border-indigo-300 transition-all duration-300">
+                                    <summary className="flex cursor-pointer items-center justify-between gap-1.5 font-bold text-slate-900">
+                                        <h4 className="text-lg md:text-xl pr-4 tracking-tight leading-snug">{faq.question}</h4>
+                                        <span className="shrink-0 rounded-xl bg-slate-50 p-2 text-slate-500 group-open:bg-indigo-600 group-open:text-white transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="size-5 md:size-6 transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                                             </svg>
                                         </span>
                                     </summary>
-                                    <div className="mt-8 leading-relaxed text-gray-700 text-xl border-t border-blue-50 pt-8 animate-in fade-in slide-in-from-top-4">
+                                    <div className="mt-6 leading-relaxed text-slate-600 text-lg border-t border-slate-100 pt-6">
                                         <p>{faq.answer}</p>
                                     </div>
                                 </details>
@@ -184,13 +192,13 @@ export default function CalculatorSEO({
                     </section>
 
                     {relatedCalculators.length > 0 && (
-                        <section className="mb-8 p-10 bg-slate-900 rounded-[3rem] text-white">
-                            <h3 className="text-2xl font-bold mb-10 border-b border-white/10 pb-6 opacity-90">Related Strategic Tools</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <section className="p-8 md:p-16 bg-slate-900 rounded-2xl md:rounded-[3rem] text-white">
+                            <h3 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 border-b border-white/10 pb-6">Related Strategic Tools</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                 {relatedCalculators.map((calc, idx) => (
-                                    <Link key={idx} href={calc.path} className="block group p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-500 transition-all duration-300">
-                                        <h4 className="font-bold text-xl group-hover:text-blue-400 transition mb-3">{calc.name}</h4>
-                                        <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition">{calc.desc}</p>
+                                    <Link key={idx} href={calc.path} className="block group p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-indigo-500 transition-all duration-300">
+                                        <h4 className="font-bold text-xl group-hover:text-indigo-400 transition mb-3">{calc.name}</h4>
+                                        <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition text-sm md:text-base">{calc.desc}</p>
                                     </Link>
                                 ))}
                             </div>

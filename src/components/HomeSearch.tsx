@@ -89,8 +89,8 @@ export default function HomeSearch({ categories }: { categories: Category[] }) {
                         </h2>
 
                         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 list-none p-0 m-0">
-                            {cat.calculators.map((calc) => (
-                                <li key={calc.name} className="h-full">
+                            {cat.calculators.map((calc, idx) => (
+                                <li key={`${cat.name}-${calc.name}-${idx}`} className="h-full">
                                     <Link
                                         href={calc.path}
                                         className="group bg-white p-5 rounded-xl border border-gray-200 hover:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex flex-col h-full shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1 block"
