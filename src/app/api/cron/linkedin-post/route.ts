@@ -94,7 +94,6 @@ async function generateBrandedImage(headline: string, techStack: string[]): Prom
   return pngBuffer;
 }
 
-
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const secret = searchParams.get('secret');
@@ -258,7 +257,7 @@ RESPOND IN THIS EXACT JSON FORMAT (NO MARKDOWN, NO CODE FENCES):
     });
 
     const postData = await postResponse.json();
-    if (!postResponse.ok) throw new Error(`Post Failed: ${JSON.stringify(postData)}`);
+    if (!postResponse.ok) throw new Error(`LinkedIn Post Failed: ${JSON.stringify(postData)}`);
 
     return NextResponse.json({
       success: true,
