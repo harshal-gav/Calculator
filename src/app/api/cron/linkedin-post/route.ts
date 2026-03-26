@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import satori from 'satori';
 import sharp from 'sharp';
+import fs from 'fs';
+import path from 'path';
 
 const CRON_SECRET = process.env.CRON_SECRET;
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY || "");
@@ -94,6 +96,36 @@ async function generateBrandedImage(headline: string, techStack: string[]): Prom
   return pngBuffer;
 }
 
+function getRandomCalculatorUrl(): { url: string; name: string } {
+  try {
+    const sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml');
+    const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+    const urls = [...sitemapContent.matchAll(/<loc>(https?:\/\/[^<]+)<\/loc>/g)].map(m => m[1]);
+    
+    // Filter out the homepage and any non-calculator pages if necessary
+    const calculatorUrls = urls.filter(url => 
+      url !== 'https://www.calculator-all.com/' && 
+      url !== 'https://www.calculator-all.com' &&
+      !url.endsWith('.xml')
+    );
+
+    if (calculatorUrls.length === 0) {
+      return { url: 'https://www.calculator-all.com/', name: 'Calculator-All' };
+    }
+
+    const randomUrl = calculatorUrls[Math.floor(Math.random() * calculatorUrls.length)];
+    // Extract name from URL (e.g., https://.../age-calculator/ -> age-calculator)
+    const name = randomUrl.split('/').filter(Boolean).pop()?.replace(/-/g, ' ') || 'Calculator';
+    // Capitalize each word
+    const formattedName = name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    return { url: randomUrl, name: formattedName };
+  } catch (error) {
+    console.error("Error reading sitemap:", error);
+    return { url: 'https://www.calculator-all.com/', name: 'Calculator-All' };
+  }
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const secret = searchParams.get('secret');
@@ -108,43 +140,46 @@ export async function GET(request: Request) {
   }
 
   try {
-    // === STEP 1: Generate human-like LinkedIn post with Gemini ===
+    // === STEP 1: Select a random calculator to promote ===
+    const promotedCalc = getRandomCalculatorUrl();
+    console.log(`Promoting calculator: ${promotedCalc.name} (${promotedCalc.url})`);
+
+    // === STEP 2: Generate human-like LinkedIn post with Gemini ===
     const prompt = `
 You are ghostwriting a LinkedIn post for a senior frontend engineer named Harshal who builds calculator-all.com — a platform with 300+ free calculators.
 
 YOUR TASK:
-1. Randomly pick ONE post style from these 4 categories:
-   - "Code-to-Value Breakdown" — A project showcase explaining WHY a specific tech was chosen, with measurable results. Show the thought process.
-   - "Modern Baseline" — A lesson learned using AI tools or modern dev practices. Show where the AI/tool FAILED and how human judgment fixed it.
-   - "Deep Dive" — A mini-tutorial or breakdown of a concept. Use numbered points. Teach something specific.
-   - "Culture & Workflow" — A post about work discipline, PR review checklists, deep work setup. Target the "trust factor" for hiring managers.
+1. Promote this specific calculator/tool: "${promotedCalc.name}" available at: ${promotedCalc.url}
+2. Randomly pick ONE post style from these 4 categories:
+   - "Code-to-Value Breakdown" — Explain why this calculator was built, the tech behind it (e.g., specific algorithms or React optimization), and the value it provides.
+   - "Modern Baseline" — A lesson learned while building ${promotedCalc.name}. Maybe a edge case handled or how AI helped/failed in generating the logic.
+   - "Deep Dive" — A mini-tutorial on the math or logic behind ${promotedCalc.name}. Use numbered points.
+   - "Culture & Workflow" — How adding ${promotedCalc.name} fits into your goal of building the ultimate toolset.
 
-2. Randomly pick 5-8 technologies from this list to weave naturally into your story:
+3. Randomly pick 5-8 technologies from this list to weave naturally into your story:
    HTML5, CSS3, JavaScript ES6+, TypeScript, WebAssembly, React 19, Next.js 15, Vue.js 4, Nuxt.js, Angular 18, Svelte 5, SvelteKit, Remix, Astro, Qwik, SolidJS, Alpine.js, HTMX, Tailwind CSS, Radix UI, shadcn/ui, DaisyUI, Styled Components, Framer Motion, Material UI, Zustand, TanStack Query, Redux Toolkit, Pinia, Jotai, XState, Apollo Client, SWR, tRPC, Vite, TurboPack, Bun, Node.js, Biome, esbuild, Nx, Turborepo, Vitest, Playwright, Cypress, Testing Library, ESLint, Storybook, Cursor, GitHub Copilot, Claude Code, Vercel v0, Windsurf, Vercel, Netlify, Cloudflare Pages, Firebase, Supabase, AWS Amplify, Clerk, Auth0
 
 WRITING RULES (CRITICAL):
 - Write in FIRST PERSON as Harshal. Sound like a real human, not a marketing bot.
-- Start with a strong hook in the first line that makes people stop scrolling.
-- Use short paragraphs (1-2 sentences max).
-- Include a personal anecdote or "aha moment".
-- Add 1-2 moments of vulnerability or humor.
-- End with a genuine question to spark comments.
-- Naturally mention calculator-all.com ONCE in the start.
+- START THE POST by mentioning the URL: ${promotedCalc.url}
+- The first line must include the URL and a strong hook that makes people stop scrolling.
 - Include "Frontend Engineer" or "TypeScript" or "Next.js" or "React.js" in the first 2 lines for LinkedIn SEO.
-- NEVER use "Remote Frontend Engineer". Use "Frontend Engineer" instead.
+- Use short paragraphs (1-2 sentences max).
+- Include a personal anecdote related to building tools like "${promotedCalc.name}".
+- End with a genuine question to spark comments.
 - Keep the total post under 1800 characters.
 - Use line breaks liberally. No walls of text.
 - Use 8-10 emojis maximum.
 
-3. Generate a SHORT, catchy one-liner headline (5-8 words max) that captures the post's essence. This will be shown as large text on a branded image.
+4. Generate a SHORT, catchy one-liner headline (5-8 words max) that captures the post's essence and specifically mentions "${promotedCalc.name}". This will be shown as large text on a branded image.
 
 RESPOND IN THIS EXACT JSON FORMAT (NO MARKDOWN, NO CODE FENCES):
 {
   "post_type": "one of: code-to-value | modern-baseline | deep-dive | culture-workflow",
   "tech_stack": ["the 5-8 technologies you picked"],
   "post_text": "the full LinkedIn post text ready to publish",
-  "hashtags": "#FrontendEngineer #TypeScript #ReactJS #tag4 #tag5 #tag6 #tag7 #tag8 #tag9 #tag10 #tag11 #tag12 #tag13 #tag14 #tag15",
-  "image_headline": "Catchy 5-8 Word Headline Here"
+  "hashtags": "#${promotedCalc.name.replace(/\s+/g, '')} #FrontendEngineer #TypeScript #ReactJS #tag4 #tag5 #tag6 #tag7 #tag8 #tag9 #tag10 #tag11 #tag12 #tag13 #tag14 #tag15",
+  "image_headline": "Catchy  headline about ${promotedCalc.name}"
 }
 `;
 
