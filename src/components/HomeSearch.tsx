@@ -46,7 +46,7 @@ export default function HomeSearch({ categories }: { categories: Category[] }) {
             <div className="max-w-4xl mx-auto mb-16 px-4">
                 <div className="relative group">
                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <svg className="h-6 w-6 text-gray-400 group-focus-within:text-blue-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="h-6 w-6 text-gray-500 group-focus-within:text-blue-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </div>
@@ -54,7 +54,7 @@ export default function HomeSearch({ categories }: { categories: Category[] }) {
                         type="search"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="block w-full pl-12 pr-4 py-4 rounded-full border-2 border-gray-200 focus:ring-0 focus:border-blue-500 bg-white text-lg shadow-sm focus:shadow-md transition-all outline-none text-gray-800 placeholder-gray-400"
+                        className="block w-full pl-12 pr-4 py-4 rounded-full border-2 border-gray-300 focus:ring-0 focus:border-blue-600 bg-white text-lg shadow-sm focus:shadow-md transition-all outline-none text-gray-900 placeholder-gray-500"
                         placeholder="Search for any calculator (e.g., 'BMI', 'Mortgage', 'Volume')..."
                         autoComplete="off"
                         spellCheck="false"
@@ -65,11 +65,11 @@ export default function HomeSearch({ categories }: { categories: Category[] }) {
             {/* No Results Fallback */}
             {filteredCategories.length === 0 && (
                 <div className="text-center py-20 bg-gray-50 rounded-2xl mx-4 shadow-inner border border-gray-200">
-                    <svg className="mx-auto h-12 w-12 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="mx-auto h-12 w-12 text-gray-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <h3 className="text-xl font-bold text-gray-700">No calculators found</h3>
-                    <p className="text-gray-500 mt-2">Try adjusting your search terms or browsing the categories below.</p>
+                    <h3 className="text-xl font-bold text-gray-800">No calculators found</h3>
+                    <p className="text-gray-700 mt-2">Try adjusting your search terms or browsing the categories below.</p>
                     <button
                         onClick={() => setSearchTerm('')}
                         className="mt-6 text-blue-600 font-semibold hover:text-blue-800 focus:outline-none underline"
@@ -97,11 +97,11 @@ export default function HomeSearch({ categories }: { categories: Category[] }) {
                                     >
                                         <h3 className="text-lg font-bold text-slate-800 group-hover:text-blue-600 mb-2 transition-colors flex items-start justify-between">
                                             {calc.name}
-                                            <svg className="w-5 h-5 text-gray-300 group-hover:text-blue-500 transition-colors shrink-0 mt-0.5 ml-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors shrink-0 mt-0.5 ml-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                             </svg>
                                         </h3>
-                                        <p className="text-sm text-slate-500 leading-relaxed group-hover:text-slate-600 mt-auto">
+                                        <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 mt-auto">
                                             {calc.desc}
                                         </p>
                                     </Link>
