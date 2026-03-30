@@ -14,7 +14,7 @@ const ChapterNavbar = () => {
   ];
 
   return (
-    <div className="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-16 z-40 transition-all duration-300">
+    <div className="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-16 z-40 transition-all duration-300" style={{ transform: 'translateZ(0)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between overflow-x-auto no-scrollbar py-4 gap-4">
           <div className="flex-shrink-0 flex items-center gap-2">
@@ -39,7 +39,7 @@ const ChapterNavbar = () => {
 
           <div className="flex-shrink-0 flex items-center gap-2 ml-4">
             <div className="h-4 w-px bg-gray-200 hidden lg:block mr-2"></div>
-            <span className="text-[9px] font-black text-indigo-500 uppercase tracking-[0.3em] hidden lg:block animate-pulse">20k+ Word Manifesto</span>
+            <span className="text-[9px] font-black text-indigo-500 uppercase tracking-[0.3em] hidden lg:block">20k+ Word Manifesto</span>
           </div>
         </div>
       </div>

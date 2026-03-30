@@ -1,6 +1,6 @@
 import Link from "next/link";
 import HomeSearch from "@/components/HomeSearch";
-import HomeSEO from "@/components/HomeSEO";
+import HomeSEOWrapper from "@/components/HomeSEOWrapper";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -1391,7 +1391,7 @@ export default function Home() {
         </div>
 
         <HomeSearch categories={categories} />
-        <HomeSEO />
+        <HomeSEOWrapper />
       </div>
     </>
   );

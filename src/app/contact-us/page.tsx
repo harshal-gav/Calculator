@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { db } from "@/lib/firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { getDb } from "@/lib/firebase";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -30,6 +29,8 @@ export default function ContactUs() {
 
     setStatus("submitting");
     try {
+      const { collection, addDoc, serverTimestamp } = await import("firebase/firestore");
+      const db = await getDb();
       await addDoc(collection(db, "contacts"), {
         name: formData.name,
         email: formData.email,

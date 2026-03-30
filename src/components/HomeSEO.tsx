@@ -74,7 +74,7 @@ const HomeSEO = () => {
             {/* Chapter 1: The Dawn of Logic */}
             <section id="chapter-1" className="scroll-mt-32 space-y-16" style={{ contentVisibility: 'auto' }}>
                <div className="relative rounded-[4rem] overflow-hidden shadow-2xl aspect-[21/9] mb-20 group">
-                  <Image src="/images/seo/ancient_calculus_art_1774358768689.png" alt="Ancient Calculus" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <Image src="/images/seo/ancient_calculus_art_1774358768689.png" alt="Ancient Calculus" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-12 lg:p-20">
                     <div>
                       <h3 className="text-white text-5xl lg:text-7xl font-black tracking-tighter uppercase mb-4">Chapter I: The Dawn of Logic</h3>
@@ -109,7 +109,7 @@ const HomeSEO = () => {
             {/* Chapter 2: The Great Synthesis */}
             <section id="chapter-2" className="scroll-mt-32 space-y-16" style={{ contentVisibility: 'auto' }}>
                <div className="relative rounded-[4rem] overflow-hidden shadow-2xl aspect-[21/9] mb-20 group">
-                  <Image src="/images/seo/engine_era_steampunk_1774358787434.png" alt="Engine Era" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <Image src="/images/seo/engine_era_steampunk_1774358787434.png" alt="Engine Era" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-12 lg:p-20">
                     <div>
                       <h3 className="text-white text-5xl lg:text-7xl font-black tracking-tighter uppercase mb-4">Chapter II: The Great Synthesis</h3>
@@ -143,7 +143,7 @@ const HomeSEO = () => {
             {/* Chapter 3: The Industrial Heartbeat */}
             <section id="chapter-3" className="scroll-mt-32 space-y-16" style={{ contentVisibility: 'auto' }}>
                <div className="relative rounded-[4rem] overflow-hidden shadow-2xl aspect-[21/9] mb-20 group">
-                  <Image src="/images/seo/engine_era_steampunk_1774358787434.png" alt="The Engine Era" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <Image src="/images/seo/engine_era_steampunk_1774358787434.png" alt="The Engine Era" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-12 lg:p-20">
                     <div>
                       <h3 className="text-white text-5xl lg:text-7xl font-black tracking-tighter uppercase mb-4">Chapter III: The Industrial Heartbeat</h3>
@@ -196,7 +196,7 @@ const HomeSEO = () => {
             {/* Chapter 5: The Quantum Horizon */}
             <section id="chapter-5" className="scroll-mt-32 space-y-16" style={{ contentVisibility: 'auto' }}>
                <div className="relative rounded-[4rem] overflow-hidden shadow-2xl aspect-[21/9] mb-20 group">
-                  <Image src="/images/seo/quantum_future_processor_1774358805714.png" alt="Quantum Future" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <Image src="/images/seo/quantum_future_processor_1774358805714.png" alt="Quantum Future" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-12 lg:p-20">
                     <div>
                       <h3 className="text-white text-5xl lg:text-7xl font-black tracking-tighter uppercase mb-4">Chapter V: The Quantum Horizon</h3>
@@ -228,7 +228,7 @@ const HomeSEO = () => {
             <section id="faq-section" className="scroll-mt-32 space-y-24 bg-slate-50 p-16 lg:p-32 rounded-[5rem] border-2 border-slate-100">
                <div className="text-center space-y-12">
                   <div className="relative rounded-[3rem] overflow-hidden shadow-2xl aspect-[21/9] mb-12 max-w-5xl mx-auto group">
-                    <Image src="/images/seo/encyclopedia_hero.png" alt="Global Encyclopedia" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <Image src="/images/seo/encyclopedia_hero.png" alt="Global Encyclopedia" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
                   </div>
                   <div className="space-y-6">

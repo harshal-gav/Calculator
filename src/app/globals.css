@@ -39,3 +39,21 @@ body {
   word-break: break-word;
   hyphens: auto;
 }
+
+/* Mask fade for expandable content sections — avoids forced reflow from JS measurement */
+.mask-fade {
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+/* Promote backdrop-blur elements to own compositing layer (reduces forced reflows) */
+.backdrop-blur-xl,
+.backdrop-blur-md {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Contain paint for sticky elements to reduce layout recalculation scope */
+.sticky {
+  contain: layout style;
+}

@@ -1,6 +1,5 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAnalytics, isSupported, Analytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCi0JM0u2lhs0-qEqJjBIsRzewZ7lijV0o",
@@ -13,7 +12,6 @@ const firebaseConfig = {
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore(app);
 
 let analytics: Analytics | null = null;
 if (typeof window !== "undefined") {
@@ -24,4 +22,14 @@ if (typeof window !== "undefined") {
     });
 }
 
-export { app, analytics, db };
+// Lazy-load Firestore only when needed to avoid pulling ~200KB into initial bundle
+let _db: ReturnType<typeof import("firebase/firestore").getFirestore> | null = null;
+async function getDb() {
+    if (!_db) {
+        const { getFirestore } = await import("firebase/firestore");
+        _db = getFirestore(app);
+    }
+    return _db;
+}
+
+export { app, analytics, getDb };
