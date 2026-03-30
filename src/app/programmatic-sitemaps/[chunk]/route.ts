@@ -34,13 +34,19 @@ export async function GET(request: Request, { params }: { params: Promise<{ chun
     }
   }
 
-  // Normally we would slice via BATCH_SIZE e.g.
-  // const batch = urls.slice((chunkId - 1) * BATCH_SIZE, chunkId * BATCH_SIZE);
-  // Total permutations generated right now is ~7,980 which safely fits in chunk "1".
+  // Segment the 532,000 URLs into their respective 10,000 chunk slice
+  const startIndex = (chunkId - 1) * BATCH_SIZE;
+  const endIndex = chunkId * BATCH_SIZE;
+  const batch = urls.slice(startIndex, endIndex);
+
+  // If they request a chunk that doesn't exist anymore (e.g. chunk 999 where there's no urls)
+  if (batch.length === 0) {
+    return new NextResponse('Sitemap Chunk not found', { status: 404 });
+  }
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${urls.map((url) => {
+      ${batch.map((url) => {
         return `
           <url>
             <loc>${url}</loc>

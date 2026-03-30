@@ -5,7 +5,6 @@ const srcAppDir = path.join(__dirname, '../src/app');
 const registryPath = path.join(__dirname, '../src/data/programmable-registry.json');
 const sitemapIndexPath = path.join(__dirname, '../src/data/sitemap-registry.json');
 
-// Get categories
 const categories = fs.readdirSync(srcAppDir, { withFileTypes: true })
   .filter(dirent => dirent.isDirectory() && dirent.name.startsWith('(') && dirent.name.endsWith(')'))
   .map(dirent => dirent.name);
@@ -13,48 +12,58 @@ const categories = fs.readdirSync(srcAppDir, { withFileTypes: true })
 const registry = {};
 let totalTrackableCalculators = 0;
 
-// Heuristic parameter generation based on category & name
+function generateRange(start, step, count) {
+  const arr = [];
+  for (let i = 0; i < count; i++) {
+    arr.push(start + (i * step));
+  }
+  return arr;
+}
+
 function getHeuristicParameters(category, calcName) {
   let v1 = [];
   let v2 = [];
   
+  // We need roughly 2000 combinations per calculator (2000 * 266 = 530,000 URLs).
+  // So V1 length = 50, V2 length = 40. (50 * 40 = 2000)
+
   if (category === 'financial') {
     if (calcName.includes('loan') || calcName.includes('mortgage') || calcName.includes('emi')) {
-      v1 = [50000, 100000, 250000, 500000, 1000000]; // Principal amounts
-      v2 = [5, 10, 15, 20, 30]; // Years
+      v1 = generateRange(10000, 10000, 50); // 10k to 500k
+      v2 = generateRange(1, 1, 40); // 1 to 40 years
     } else if (calcName.includes('tax') || calcName.includes('salary')) {
-      v1 = [30000, 50000, 75000, 100000, 150000]; // Income
-      v2 = [0, 5, 10, 20]; // Deductions / Rates
+      v1 = generateRange(20000, 5000, 50); // 20k to 265k income
+      v2 = generateRange(1, 1, 40); // 1% to 40% deductions
     } else {
-      v1 = [1000, 5000, 10000, 20000, 50000]; // Standard Investment
-      v2 = [1, 2, 3, 5, 10]; // Years
+      v1 = generateRange(1000, 1000, 50); // 1k to 50k
+      v2 = generateRange(1, 1, 40); 
     }
   } else if (category === 'health') {
     if (calcName.includes('bmi') || calcName.includes('bmr') || calcName.includes('calorie')) {
-      v1 = [50, 60, 70, 80, 90, 100]; // Weight in Kg
-      v2 = [150, 160, 170, 180, 190]; // Height in Cm
+      v1 = generateRange(40, 2, 50); // 40kg to 138kg
+      v2 = generateRange(140, 1, 40); // 140cm to 179cm
     } else {
-      v1 = [20, 30, 40, 50, 60]; // Age etc
-      v2 = [1, 2, 3, 4, 5]; 
+      v1 = generateRange(10, 1, 50); // 10 to 59 age
+      v2 = generateRange(1, 1, 40); 
     }
   } else if (category === 'everyday') {
     if (calcName.includes('age') || calcName.includes('dog') || calcName.includes('cat')) {
-      v1 = [1, 5, 10, 15, 20]; // Years
-      v2 = [0, 1, 6, 12]; // Months
+      v1 = generateRange(1, 1, 50); // 1 to 50 years
+      v2 = generateRange(0, 1, 40); // 0 to 39 months (for permutations)
     } else if (calcName.includes('discount') || calcName.includes('tip')) {
-      v1 = [10, 50, 100, 500, 1000]; // Bill amounts
-      v2 = [5, 10, 15, 20, 25]; // Percentages
+      v1 = generateRange(10, 5, 50); // $10 to $255 bill
+      v2 = generateRange(1, 1, 40); // 1% to 40% discount
     } else {
-      v1 = [10, 20, 50, 100];
-      v2 = [1, 5, 10];
+      v1 = generateRange(10, 20, 50);
+      v2 = generateRange(1, 2, 40);
     }
   } else if (category === 'math' || category === 'science') {
-    v1 = [1, 10, 25, 50, 100]; // generic sequences
-    v2 = [2, 5, 10, 20]; 
+    v1 = generateRange(10, 10, 50); 
+    v2 = generateRange(1, 1, 40); 
   } else {
     // Universal fallback
-    v1 = [10, 50, 100, 500];
-    v2 = [1, 2, 5, 10];
+    v1 = generateRange(1, 5, 50);
+    v2 = generateRange(1, 2, 40);
   }
   
   return { val1: v1, val2: v2 };
@@ -76,36 +85,22 @@ for (const cat of categories) {
     registry[calc] = {
       title: `${title} Tools`,
       category: categoryClean,
-      parameters: {
-        val1: val1,
-        val2: val2
-      },
+      parameters: { val1, val2 },
       permutations: val1.length * val2.length
     };
     totalTrackableCalculators++;
   }
 }
 
-// Ensure dir exists
-if (!fs.existsSync(path.dirname(registryPath))) {
-  fs.mkdirSync(path.dirname(registryPath), { recursive: true });
-}
-
+if (!fs.existsSync(path.dirname(registryPath))) fs.mkdirSync(path.dirname(registryPath), { recursive: true });
 fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
 
-console.log(`Successfully mapped ${totalTrackableCalculators} categorised & heuristic calculators!`);
+console.log(`Successfully mapped ${totalTrackableCalculators} calculators!`);
 
 const chunkLimit = 10000;
 let totalPermutations = Object.values(registry).reduce((acc, curr) => acc + curr.permutations, 0);
-
 console.log(`Total generated SEO permutations: ${totalPermutations}`);
 
 const neededChunks = Math.ceil(totalPermutations / chunkLimit);
-
-const sitemapRegistry = {
-  totalSitemaps: neededChunks,
-  calculatorsIncluded: totalTrackableCalculators
-};
-
-fs.writeFileSync(sitemapIndexPath, JSON.stringify(sitemapRegistry, null, 2));
+fs.writeFileSync(sitemapIndexPath, JSON.stringify({ totalSitemaps: neededChunks, calculatorsIncluded: totalTrackableCalculators }, null, 2));
 console.log(`Sitemap Chunks allocated: ${neededChunks}`);
