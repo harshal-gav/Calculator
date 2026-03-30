@@ -1,0 +1,5854 @@
+{
+  "age-calculator": {
+    "title": "Age Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "angle-converter": {
+    "title": "Angle Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "area-converter": {
+    "title": "Area Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "bill-splitter-calculator": {
+    "title": "Bill splitter Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "business-days-calculator": {
+    "title": "Business days Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "cat-age-calculator": {
+    "title": "Cat age Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "data-converter": {
+    "title": "Data Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "date-calculator": {
+    "title": "Date Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "days-calculator": {
+    "title": "Days Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "discount-calculator": {
+    "title": "Discount Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "dog-age-calculator": {
+    "title": "Dog age Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "electricity-calculator": {
+    "title": "Electricity Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "energy-converter": {
+    "title": "Energy Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "frequency-converter": {
+    "title": "Frequency Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "fuel-cost-calculator": {
+    "title": "Fuel cost Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "gas-mileage-calculator": {
+    "title": "Gas mileage Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "gdp-calculator": {
+    "title": "Gdp Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "gpa-calculator": {
+    "title": "Gpa Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "grade-calculator": {
+    "title": "Grade Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "inflation-calculator": {
+    "title": "Inflation Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "length-converter": {
+    "title": "Length Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "love-calculator": {
+    "title": "Love Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "mulch-calculator": {
+    "title": "Mulch Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "number-to-words-converter": {
+    "title": "Number to words Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "power-converter": {
+    "title": "Power Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "pressure-converter": {
+    "title": "Pressure Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "sales-tax-calculator": {
+    "title": "Sales tax Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "speed-calculator": {
+    "title": "Speed Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "speed-converter": {
+    "title": "Speed Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "square-footage-calculator": {
+    "title": "Square footage Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "temperature-converter": {
+    "title": "Temperature Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "tile-calculator": {
+    "title": "Tile Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "time-calculator": {
+    "title": "Time Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "time-card-calculator": {
+    "title": "Time card Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "time-zone-converter": {
+    "title": "Time zone Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "volume-converter": {
+    "title": "Volume Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "weight-converter": {
+    "title": "Weight Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "zodiac-calculator": {
+    "title": "Zodiac Tools",
+    "category": "everyday",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "401k-calculator": {
+    "title": "401k Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "amortization-calculator": {
+    "title": "Amortization Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "annuity-calculator": {
+    "title": "Annuity Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "annuity-pv-calculator": {
+    "title": "Annuity pv Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "apr-calculator": {
+    "title": "Apr Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "apy-calculator": {
+    "title": "Apy Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "auto-lease-calculator": {
+    "title": "Auto lease Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "auto-loan-calculator": {
+    "title": "Auto loan Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "average-return-calculator": {
+    "title": "Average return Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "boat-loan-calculator": {
+    "title": "Boat loan Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "bond-calculator": {
+    "title": "Bond Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "break-even-calculator": {
+    "title": "Break even Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "budget-calculator": {
+    "title": "Budget Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "business-loan-calculator": {
+    "title": "Business loan Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "cagr-calculator": {
+    "title": "Cagr Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "canadian-mortgage-calculator": {
+    "title": "Canadian mortgage Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "capm-calculator": {
+    "title": "Capm Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "cash-back-vs-low-interest-calculator": {
+    "title": "Cash back vs low interest Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "cd-calculator": {
+    "title": "Cd Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "college-cost-calculator": {
+    "title": "College cost Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "commission-calculator": {
+    "title": "Commission Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "compound-interest-calculator": {
+    "title": "Compound interest Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "credit-card-payoff-calculator": {
+    "title": "Credit card payoff Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "currency-converter": {
+    "title": "Currency Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "debt-consolidation-calculator": {
+    "title": "Debt consolidation Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "debt-payoff-calculator": {
+    "title": "Debt payoff Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "depreciation-calculator": {
+    "title": "Depreciation Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "dividend-yield-calculator": {
+    "title": "Dividend yield Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "down-payment-calculator": {
+    "title": "Down payment Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "dti-calculator": {
+    "title": "Dti Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "emi-calculator": {
+    "title": "Emi Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "estate-tax-calculator": {
+    "title": "Estate tax Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "expected-return-calculator": {
+    "title": "Expected return Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "fha-loan-calculator": {
+    "title": "Fha loan Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "future-value-calculator": {
+    "title": "Future value Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "home-equity-calculator": {
+    "title": "Home equity Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "house-affordability-calculator": {
+    "title": "House affordability Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "income-tax-calculator": {
+    "title": "Income tax Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "interest-only-calculator": {
+    "title": "Interest only Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "interest-rate-calculator": {
+    "title": "Interest rate Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "investment-calculator": {
+    "title": "Investment Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "irr-calculator": {
+    "title": "Irr Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "lease-calculator": {
+    "title": "Lease Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "leverage-ratio-calculator": {
+    "title": "Leverage ratio Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "loan-comparison-calculator": {
+    "title": "Loan comparison Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "loan-payment-calculator": {
+    "title": "Loan payment Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "loan-payoff-calculator": {
+    "title": "Loan payoff Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "ltv-calculator": {
+    "title": "Ltv Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "margin-calculator": {
+    "title": "Margin Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "marginal-tax-calculator": {
+    "title": "Marginal tax Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "markup-calculator": {
+    "title": "Markup Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "marriage-tax-calculator": {
+    "title": "Marriage tax Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "mortgage-calculator": {
+    "title": "Mortgage Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "mortgage-payoff-calculator": {
+    "title": "Mortgage payoff Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "mutual-fund-calculator": {
+    "title": "Mutual fund Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "net-worth-calculator": {
+    "title": "Net worth Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "payback-period-calculator": {
+    "title": "Payback period Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "paycheck-calculator": {
+    "title": "Paycheck Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "payment-calculator": {
+    "title": "Payment Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "pe-ratio-calculator": {
+    "title": "Pe ratio Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "pension-calculator": {
+    "title": "Pension Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "percent-off-calculator": {
+    "title": "Percent off Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "percentage-change-calculator": {
+    "title": "Percentage change Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "personal-loan-calculator": {
+    "title": "Personal loan Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "present-value-calculator": {
+    "title": "Present value Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "profit-calculator": {
+    "title": "Profit Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "real-estate-calculator": {
+    "title": "Real estate Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "refinance-calculator": {
+    "title": "Refinance Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "rent-calculator": {
+    "title": "Rent Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "rent-vs-buy-calculator": {
+    "title": "Rent vs buy Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "rental-property-calculator": {
+    "title": "Rental property Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "repayment-calculator": {
+    "title": "Repayment Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "retirement-calculator": {
+    "title": "Retirement Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "revenue-calculator": {
+    "title": "Revenue Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "rmd-calculator": {
+    "title": "Rmd Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "roe-calculator": {
+    "title": "Roe Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "roi-calculator": {
+    "title": "Roi Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "roth-ira-calculator": {
+    "title": "Roth ira Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "salary-calculator": {
+    "title": "Salary Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "savings-goal-calculator": {
+    "title": "Savings goal Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "simple-interest-calculator": {
+    "title": "Simple interest Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "social-security-calculator": {
+    "title": "Social security Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "stock-return-calculator": {
+    "title": "Stock return Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "student-loan-calculator": {
+    "title": "Student loan Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "take-home-paycheck-calculator": {
+    "title": "Take home paycheck Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "tip-calculator": {
+    "title": "Tip Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "tip-splitting-calculator": {
+    "title": "Tip splitting Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "traditional-ira-calculator": {
+    "title": "Traditional ira Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "va-mortgage-calculator": {
+    "title": "Va mortgage Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "vat-calculator": {
+    "title": "Vat Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "wacc-calculator": {
+    "title": "Wacc Tools",
+    "category": "financial",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "arc-length-calculator": {
+    "title": "Arc length Tools",
+    "category": "geometry",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "ellipse-calculator": {
+    "title": "Ellipse Tools",
+    "category": "geometry",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "hexagon-calculator": {
+    "title": "Hexagon Tools",
+    "category": "geometry",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "octagon-calculator": {
+    "title": "Octagon Tools",
+    "category": "geometry",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "parallelogram-calculator": {
+    "title": "Parallelogram Tools",
+    "category": "geometry",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "polygon-calculator": {
+    "title": "Polygon Tools",
+    "category": "geometry",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "prism-calculator": {
+    "title": "Prism Tools",
+    "category": "geometry",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "pyramid-calculator": {
+    "title": "Pyramid Tools",
+    "category": "geometry",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "regular-polygon-calculator": {
+    "title": "Regular polygon Tools",
+    "category": "geometry",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "trapezoid-calculator": {
+    "title": "Trapezoid Tools",
+    "category": "geometry",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "unit-circle-calculator": {
+    "title": "Unit circle Tools",
+    "category": "geometry",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "army-body-fat-calculator": {
+    "title": "Army body fat Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "bac-calculator": {
+    "title": "Bac Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "blood-pressure-calculator": {
+    "title": "Blood pressure Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "blood-volume-calculator": {
+    "title": "Blood volume Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "bmi-calculator": {
+    "title": "Bmi Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "bmr-calculator": {
+    "title": "Bmr Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "body-fat-calculator": {
+    "title": "Body fat Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "body-surface-area-calculator": {
+    "title": "Body surface area Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "body-type-calculator": {
+    "title": "Body type Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "calorie-calculator": {
+    "title": "Calorie Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "calories-burned-calculator": {
+    "title": "Calories burned Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "carbohydrate-calculator": {
+    "title": "Carbohydrate Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "due-date-calculator": {
+    "title": "Due date Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "fat-calculator": {
+    "title": "Fat Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "gfr-calculator": {
+    "title": "Gfr Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "healthy-weight-calculator": {
+    "title": "Healthy weight Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "ideal-weight-calculator": {
+    "title": "Ideal weight Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "lean-body-mass-calculator": {
+    "title": "Lean body mass Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "macro-calculator": {
+    "title": "Macro Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "one-rep-max-calculator": {
+    "title": "One rep max Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "ovulation-calculator": {
+    "title": "Ovulation Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "pace-calculator": {
+    "title": "Pace Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "pregnancy-calculator": {
+    "title": "Pregnancy Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "pregnancy-conception-calculator": {
+    "title": "Pregnancy conception Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "pregnancy-weight-gain-calculator": {
+    "title": "Pregnancy weight gain Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "protein-calculator": {
+    "title": "Protein Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "target-heart-rate-calculator": {
+    "title": "Target heart rate Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "tdee-calculator": {
+    "title": "Tdee Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "weight-watcher-points-calculator": {
+    "title": "Weight watcher points Tools",
+    "category": "health",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "antilog-calculator": {
+    "title": "Antilog Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "area-calculator": {
+    "title": "Area Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "average-calculator": {
+    "title": "Average Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "base-converter": {
+    "title": "Base Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "basic-calculator": {
+    "title": "Basic Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "binary-calculator": {
+    "title": "Binary Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "chi-square-calculator": {
+    "title": "Chi square Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "circle-calculator": {
+    "title": "Circle Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "combinations-calculator": {
+    "title": "Combinations Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "cone-calculator": {
+    "title": "Cone Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "confidence-interval-calculator": {
+    "title": "Confidence interval Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "covariance-calculator": {
+    "title": "Covariance Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "cross-product-calculator": {
+    "title": "Cross product Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "cubic-equation-calculator": {
+    "title": "Cubic equation Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "cylinder-calculator": {
+    "title": "Cylinder Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "decimal-to-fraction-calculator": {
+    "title": "Decimal to fraction Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "distance-calculator": {
+    "title": "Distance Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "dot-product-calculator": {
+    "title": "Dot product Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "empirical-rule-calculator": {
+    "title": "Empirical rule Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "exponent-calculator": {
+    "title": "Exponent Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "exponential-calculator": {
+    "title": "Exponential Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "factorial-calculator": {
+    "title": "Factorial Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "fibonacci-calculator": {
+    "title": "Fibonacci Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "fraction-calculator": {
+    "title": "Fraction Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "fraction-simplifier-calculator": {
+    "title": "Fraction simplifier Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "fraction-to-decimal-calculator": {
+    "title": "Fraction to decimal Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "gcf-calculator": {
+    "title": "Gcf Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "hex-calculator": {
+    "title": "Hex Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "lcm-calculator": {
+    "title": "Lcm Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "log-calculator": {
+    "title": "Log Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "logarithm-calculator": {
+    "title": "Logarithm Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "margin-of-error-calculator": {
+    "title": "Margin of error Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "matrix-calculator": {
+    "title": "Matrix Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "mean-median-mode-calculator": {
+    "title": "Mean median mode Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "mean-median-mode-range-calculator": {
+    "title": "Mean median mode range Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "midpoint-calculator": {
+    "title": "Midpoint Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "mixed-number-calculator": {
+    "title": "Mixed number Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "number-sequence-calculator": {
+    "title": "Number sequence Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "order-of-operations-calculator": {
+    "title": "Order of operations Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "p-value-calculator": {
+    "title": "P value Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "percent-error-calculator": {
+    "title": "Percent error Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "percentage-calculator": {
+    "title": "Percentage Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "percentile-calculator": {
+    "title": "Percentile Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "perimeter-calculator": {
+    "title": "Perimeter Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "permutation-calculator": {
+    "title": "Permutation Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "prime-factorization-calculator": {
+    "title": "Prime factorization Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "prime-number-calculator": {
+    "title": "Prime number Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "probability-calculator": {
+    "title": "Probability Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "proportion-calculator": {
+    "title": "Proportion Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "pythagorean-calculator": {
+    "title": "Pythagorean Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "quadratic-formula-calculator": {
+    "title": "Quadratic formula Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "rectangle-calculator": {
+    "title": "Rectangle Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "rhombus-calculator": {
+    "title": "Rhombus Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "root-calculator": {
+    "title": "Root Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "rounding-calculator": {
+    "title": "Rounding Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "scientific-calculator": {
+    "title": "Scientific Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "scientific-notation-converter": {
+    "title": "Scientific notation Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "sequence-calculator": {
+    "title": "Sequence Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "sig-fig-calculator": {
+    "title": "Sig fig Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "slope-calculator": {
+    "title": "Slope Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "sphere-calculator": {
+    "title": "Sphere Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "square-root-calculator": {
+    "title": "Square root Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "standard-deviation-calculator": {
+    "title": "Standard deviation Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "sum-calculator": {
+    "title": "Sum Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "t-test-calculator": {
+    "title": "T test Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "triangle-calculator": {
+    "title": "Triangle Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "trigonometry-calculator": {
+    "title": "Trigonometry Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "variance-calculator": {
+    "title": "Variance Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "vector-addition-calculator": {
+    "title": "Vector addition Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "volume-calculator": {
+    "title": "Volume Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "z-score-calculator": {
+    "title": "Z score Tools",
+    "category": "math",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "cooking-converter": {
+    "title": "Cooking Tools",
+    "category": "miscellaneous",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "fuel-economy-converter": {
+    "title": "Fuel economy Tools",
+    "category": "miscellaneous",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "roman-numeral-converter": {
+    "title": "Roman numeral Tools",
+    "category": "miscellaneous",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "roman-numeral-date-converter": {
+    "title": "Roman numeral date Tools",
+    "category": "miscellaneous",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "shoe-size-calculator": {
+    "title": "Shoe size Tools",
+    "category": "miscellaneous",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "word-count-calculator": {
+    "title": "Word count Tools",
+    "category": "miscellaneous",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "acceleration-calculator": {
+    "title": "Acceleration Tools",
+    "category": "science",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "density-calculator": {
+    "title": "Density Tools",
+    "category": "science",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "force-calculator": {
+    "title": "Force Tools",
+    "category": "science",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "half-life-calculator": {
+    "title": "Half life Tools",
+    "category": "science",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "kinetic-energy-calculator": {
+    "title": "Kinetic energy Tools",
+    "category": "science",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "molar-mass-calculator": {
+    "title": "Molar mass Tools",
+    "category": "science",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "ohms-law-calculator": {
+    "title": "Ohms law Tools",
+    "category": "science",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "power-calculator": {
+    "title": "Power Tools",
+    "category": "science",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "projectile-motion-calculator": {
+    "title": "Projectile motion Tools",
+    "category": "science",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "velocity-calculator": {
+    "title": "Velocity Tools",
+    "category": "science",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "work-calculator": {
+    "title": "Work Tools",
+    "category": "science",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "bandwidth-calculator": {
+    "title": "Bandwidth Tools",
+    "category": "technology",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "base64-converter": {
+    "title": "Base64 Tools",
+    "category": "technology",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "capacitor-calculator": {
+    "title": "Capacitor Tools",
+    "category": "technology",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "ip-subnet-calculator": {
+    "title": "Ip subnet Tools",
+    "category": "technology",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "px-rem-converter": {
+    "title": "Px rem Tools",
+    "category": "technology",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "resistor-calculator": {
+    "title": "Resistor Tools",
+    "category": "technology",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "rgb-hex-converter": {
+    "title": "Rgb hex Tools",
+    "category": "technology",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "wire-gauge-calculator": {
+    "title": "Wire gauge Tools",
+    "category": "technology",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  },
+  "case-converter": {
+    "title": "Case Tools",
+    "category": "text",
+    "parameters": {
+      "val1": [
+        1000,
+        5000,
+        10000,
+        25000,
+        50000
+      ],
+      "val2": [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30
+      ]
+    },
+    "permutations": 30
+  }
+}
