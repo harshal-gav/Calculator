@@ -6,9 +6,10 @@ const BATCH_SIZE = 10000;
 
 export async function GET(request: Request, { params }: { params: Promise<{ chunk: string }> }) {
   const { chunk } = await params;
-  const chunkId = parseInt(chunk, 10);
+  // Extract chunk sequence out of filenames like "sitemap-1.xml" or "1"
+  const chunkId = parseInt(chunk.replace(/\D/g, ''), 10);
 
-  if (isNaN(chunkId)) {
+  if (isNaN(chunkId) || chunkId <= 0) {
     return new NextResponse('Invalid sitemap chunk', { status: 400 });
   }
 
