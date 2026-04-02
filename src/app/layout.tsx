@@ -65,11 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script
-          id="adsterra-script"
-          src="https://pl29042745.profitablecpmratenetwork.com/75/3f/0b/753f0b6627513464b4b90af461d2bf49.js"
-          strategy="lazyOnload"
-        />
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-gray-50`}
@@ -82,6 +78,11 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Script
+          id="adsterra-social-bar"
+          src="https://pl29042747.profitablecpmratenetwork.com/7a/47/fd/7a47fd360cce722626d103ccace5d6f5.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
