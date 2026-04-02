@@ -7,6 +7,7 @@ import FirebaseAnalytics from "@/components/FirebaseAnalytics";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
+import StickyAd from "@/components/StickyAd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -83,6 +84,7 @@ export default function RootLayout({
           src="https://pl29042747.profitablecpmratenetwork.com/7a/47/fd/7a47fd360cce722626d103ccace5d6f5.js"
           strategy="lazyOnload"
         />
+        <StickyAd />
       </body>
     </html>
   );
