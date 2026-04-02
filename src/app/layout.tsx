@@ -66,10 +66,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script
-          id="adsbygoogle-script"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1126148240601289"
-          crossOrigin="anonymous"
+          id="adsterra-script"
+          src="https://pl29042745.profitablecpmratenetwork.com/75/3f/0b/753f0b6627513464b4b90af461d2bf49.js"
           strategy="lazyOnload"
         />
       </head>
