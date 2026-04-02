@@ -2,8 +2,8 @@ name: LinkedIn Auto-Post Cron
 
 on:
   schedule:
-    # Runs every 2 hours
-    - cron: '0 */2 * * *'
+    # Runs at minute 45 every hour (15 minutes prior) to absorb GitHub Actions queue delays
+    - cron: '45 * * * *'
   workflow_dispatch:
     # Allows manual trigger from the GitHub UI
 
@@ -11,6 +11,23 @@ jobs:
   ping-cron:
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for exact top of the hour
+        run: |
+          min=$(date +%M)
+          sec=$(date +%S)
+          min=$((10#$min))
+          sec=$((10#$sec))
+          
+          # Only delay if the workflow started in the final 15 minutes of an hour
+          if [ "$min" -ge 45 ]; then
+            rem=$(( (60 - min) * 60 - sec ))
+            echo "GitHub action started at minute $min. Sleeping for $rem seconds until the exact top of the hour."
+            sleep $rem
+          else
+            echo "Workflow triggered manually or outside the 45-59 window, executing immediately."
+          fi
+
       - name: Trigger LinkedIn Post API
         run: |
-          curl -X GET "${{ secrets.CRON_URL }}?secret=${{ secrets.CRON_SECRET }}"
+          echo "Triggering API exactly at: $(date)"
+          curl -sL -X GET "${{ secrets.CRON_URL }}?secret=${{ secrets.CRON_SECRET }}"
