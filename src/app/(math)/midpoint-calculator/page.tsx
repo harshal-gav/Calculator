@@ -191,31 +191,15 @@ M = ( ${mx}, ${my} )`;
             </>
           }
           formula={
-            <>
-              <p>
-                The Midpoint Formula is surprisingly elegant. It simply
-                calculates the <i>average</i> of the two X coordinates, and the{" "}
-                <i>average</i> of the two Y coordinates:
-              </p>
-              <div className="bg-orange-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-orange-900 border border-orange-100">
-                M = ( [x₁ + x₂] ÷ 2 , [y₁ + y₂] ÷ 2 )
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>X-Coordinate:</strong> Add the horizontal values
-                  together and cut them in half.
-                </li>
-                <li>
-                  <strong>Y-Coordinate:</strong> Add the vertical values
-                  together and cut them in half.
-                </li>
-                <li>
-                  The resulting output is perfectly equidistant to both
-                  originating points.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Midpoint Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Midpoint results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

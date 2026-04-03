@@ -117,13 +117,14 @@ export default function AverageReturnCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The geometric mean of return is calculated using the CAGR formula:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-sm overflow-x-auto text-sky-700">
-              CAGR = [(Final Value / Initial Value)^(1 / Years)] - 1
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Average Return Analysis Model
             </div>
-            <p>This formula accurately reflects the "Time Value of Money" and the geometric nature of investment growth, which simple averages fail to capture.</p>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Average Return results.
+            </p>
+          </>
         }
         example={
           <p>

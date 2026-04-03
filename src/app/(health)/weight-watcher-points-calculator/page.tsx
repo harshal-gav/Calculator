@@ -191,12 +191,12 @@ export default function WeightWatcherPointsCalculator() {
         }
         formula={
           <>
-            <p>The SmartPoints formula considers four nutrition factors:</p>
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mt-4 font-mono text-sm">
-              <p>SmartPoints = (Calories ÷ 50) + (Fat ÷ 4)</p>
-              <p className="mt-2">+ (Fiber ÷ 5) - (Protein ÷ 8)</p>
-              <p className="mt-2 text-gray-600">Minimum: 0 points per serving</p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = f(Metric, Age, Sex)
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              Biometric calculation utilizing standardized biological and physiological models for Weight Watcher Points.
+            </p>
           </>
         }
         example={

@@ -83,7 +83,14 @@ export default function SquareRootCalculator() {
           </p>
         }
         formula={
-          <p>The exact formula depends on the parameters provided.</p>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              √x = y ⇔ y² = x
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Determining the number that, squared, equals x.
+            </p>
+          </>
         }
         example={
           <p>Enter your inputs to see an example calculation.</p>

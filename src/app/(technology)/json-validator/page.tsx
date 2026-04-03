@@ -162,36 +162,15 @@ export default function JsonValidator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Valid JSON must strictly adhere to specific syntax rules. It
-                primarily consists of Key-Value pairs wrapped in curly braces
-                (Objects) or square brackets (Arrays):
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-emerald-900 border border-emerald-100 flex flex-col gap-2">
-                {`{
-  "keyName": "String Value",
-  "numberValue": 42,
-  "booleanValue": true,
-  "arrayValue": [1, 2, 3]
-}`}
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Strings:</strong> Must always be enclosed in double
-                  quotes (<code>"..."</code>), never single quotes.
-                </li>
-                <li>
-                  <strong>Keys:</strong> All keys (property names) must also be
-                  enclosed in double quotes.
-                </li>
-                <li>
-                  <strong>Commas:</strong> The final item in an object or array
-                  must NOT have a trailing comma.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Json Validator Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Json Validator results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

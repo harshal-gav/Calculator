@@ -184,23 +184,15 @@ export default function PaycheckCalculator() {
             </div>
           }
           formula={
-            <div className="bg-slate-50 p-6 rounded-2xl border border-dashed border-slate-300 text-slate-700">
-              <h4 className="font-black text-slate-800 mb-4 uppercase text-sm tracking-widest">The Core Calculation</h4>
-              <p className="font-mono bg-white p-3 rounded-lg border border-slate-200 text-center text-lg font-bold text-slate-900 shadow-sm">
-                Net Pay = Gross Income - (Fed Tax + State Tax + FICA)
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div>
-                  <h5 className="font-bold text-slate-900 mb-2">1. Federal Income Tax</h5>
-                  <p className="text-sm">Calculated using progressive brackets. The more you earn, the higher percentage you pay on each additional dollar.</p>
-                </div>
-                <div>
-                  <h5 className="font-bold text-slate-900 mb-2">2. FICA Taxes</h5>
-                  <p className="text-sm">Standard flat rate of 7.65% (6.2% for Social Security and 1.45% for Medicare) for most employees.</p>
-                </div>
-              </div>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Net = Gross - Deductions
             </div>
-          }
+            <p className="text-sm text-slate-500 text-center">
+              Estimating take-home pay after tax withholding.
+            </p>
+          </>
+        }
           example={
             <div className="space-y-4 text-slate-700 leading-relaxed">
               <p>Consider a Single filer in a state with a 5% tax rate earning <strong>$5,000/month</strong> gross:</p>

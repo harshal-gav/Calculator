@@ -247,31 +247,15 @@ export default function CaseConverter() {
             </>
           }
           formula={
-            <>
-              <p>
-                Our tool uses advanced regular expressions (Regex) to correctly
-                identify word boundaries and sentence terminations:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Sentence case:</strong> Capitalizes only the first
-                  letter of the first word in a sentence, and converts the rest
-                  to lowercase.
-                </li>
-                <li>
-                  <strong>Title Case:</strong> Capitalizes the first letter of
-                  every word <em>except</em> common prepositions and
-                  conjunctions (and, the, of, in).
-                </li>
-                <li>
-                  <strong>Code Cases:</strong> Programmatically strips all
-                  spaces and punctuation, capitalizing specific letters
-                  depending on standard syntax styles (camelCase, snake_case,
-                  PascalCase, kebab-case).
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Case Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

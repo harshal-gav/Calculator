@@ -317,21 +317,15 @@ export default function OvulationCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The standard medical formula relies on subtracting the length of
-                the luteal phase from the total cycle length.
-              </p>
-              <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-                <strong>Estimated Ovulation Day</strong> = Cycle Length - Luteal
-                Phase Length
-                <br />
-                <br />
-                <strong>Fertile Window</strong> = (Ovulation Day minus 5 days) +
-                (Ovulation Day plus 1 day)
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Ovulation = Last Date + Cycle Length - 14
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Estimating the fertile window.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

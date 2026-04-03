@@ -152,31 +152,15 @@ export default function RandomItemPicker() {
             </>
           }
           formula={
-            <>
-              <p>
-                Behind the spinning animation is a deeply unbiased cryptographic
-                pseudorandom number generator:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Step 1 (Parsing):</strong> The tool takes your text
-                  block and splits it by line breaks or commas, ignoring any
-                  blank lines.
-                </li>
-                <li>
-                  <strong>Step 2 (Indexing):</strong> It assigns a hidden
-                  numerical index to every valid item (e.g., Pizza = 0, Burgers
-                  = 1, Sushi = 2).
-                </li>
-                <li>
-                  <strong>Step 3 (The Core Pick):</strong> It generates a highly
-                  precise floating-point number between 0 and 1 using{" "}
-                  <code>Math.random()</code>, multiplies it by the total number
-                  of items, and rounds down to select the winning index.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Random Item Picker Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Random Item Picker results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

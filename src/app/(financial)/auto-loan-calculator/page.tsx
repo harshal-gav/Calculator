@@ -222,74 +222,16 @@ export default function AutoLoanCalculator() {
           ]
         }}
         formula={
-          <div className="space-y-6">
-            <p>
-              The engine of this calculator uses the <strong>Standard Amortization Formula</strong>, which calculates the fixed payment required to bring a loan balance to zero over a specific number of periods:
-            </p>
-            <div className="bg-slate-900 p-8 rounded-3xl text-center shadow-2xl border border-blue-500/30">
-              <code className="text-2xl md:text-3xl text-blue-300 font-mono">
-                M = P [ i(1 + i)ⁿ ] / [ (1 + i)ⁿ – 1 ]
-              </code>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                <span className="font-bold text-blue-400">M</span> = Total Monthly Payment
-              </div>
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                <span className="font-bold text-blue-400">P</span> = Principal Loan Amount (Price - Down Payment + Tax)
-              </div>
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                <span className="font-bold text-blue-400">i</span> = Monthly Interest Rate (Annual Rate / 12)
-              </div>
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                <span className="font-bold text-blue-400">n</span> = Total Number of Months (Term)
-              </div>
-            </div>
-            <p className="text-sm italic text-slate-400">
-              *Note: The principal (P) is adjusted by subtracting the down payment and trade-in value, and adding sales tax (expressed as a percentage of the purchase price).
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Auto Loan Calculator using industry-standard conversion constants.
             </p>
-          </div>
+          </>
         }
-        deepDive={
-          <div className="space-y-12">
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-blue-600 pl-6">I. The Psychology of the 'Monthly Payment' Trap</h4>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Dealerships often employ a tactic known as "Four-Square" selling, where they focus almost exclusively on a monthly payment target. If you tell a seller you want to pay "$500 a month," they can achieve that goal by extending the loan term to 84 or even 96 months. This is a mathematical sleight-of-hand. 
-              </p>
-              <p className="text-lg text-slate-700 mt-4 leading-relaxed">
-                While your monthly cash flow feels manageable, the <strong>Total Interest Cost</strong> explodes. A $30,000 loan at 7% for 60 months costs you ~$5,600 in interest. Stretching that same loan to 84 months (7 years) to lower the payment might cost you over $8,000 in interest. Even worse, you are likely to owe more than the car is worth for almost the entire duration of the loan.
-              </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-blue-600 pl-6">II. The 20/4/10 Rule of Thumb</h4>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Financial experts often suggest the "20/4/10 Rule" to ensure you aren't "car poor":
-              </p>
-              <ul className="list-disc pl-8 mt-6 space-y-4 text-slate-700 font-medium">
-                <li><strong className="text-blue-700">20% Down Payment:</strong> Protects you from instant depreciation and helps you avoid negative equity.</li>
-                <li><strong className="text-blue-700">4-Year Term (48 Months):</strong> Keeps interest costs low and aligns the loan payoff with the vehicle's highest-value years.</li>
-                <li><strong className="text-blue-700">10% of Income:</strong> Your total vehicle costs (Loan, Insurance, Fuel, Maintenance) should not exceed 10% of your gross monthly income.</li>
-              </ul>
-            </section>
-
-            <section className="bg-blue-50 p-10 rounded-[40px] border border-blue-100 italic shadow-inner">
-              <h4 className="text-2xl font-bold text-blue-900 mb-4 not-italic">III. Depreciation: The Invisible Cost</h4>
-              <p className="text-blue-800 leading-relaxed">
-                Unlike a mortgage, an auto loan is financing a <strong>depreciating asset</strong>. Most new cars lose 20% of their value in the first year and 60% after five years. This is why credit score matters differently here. If your rate is high (above 10%), you aren't just paying for the car; you are racing against the car's vanishing value. If the car depreciates faster than you pay down the principal, you become "upside down," making it impossible to sell or trade the vehicle without paying the lender out of your own pocket.
-              </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-blue-600 pl-6">IV. New vs. Used: The Interest Rate Delta</h4>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Used car loans almost always carry higher interest rates than new car loans—often 2% to 4% higher. This is because lenders view used cars as higher-risk collateral; if you default, the bank has a harder time auctioning a used vehicle for a predictable price. When using this calculator, ensure you toggle between "New" and "Used" market rates to see if buying a slightly more expensive new car with a promotional 0.9% or 1.9% APR might actually be cheaper than a "bargain" used car at 8.5% APR.
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-slate-900 p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden text-white">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
             <h5 className="text-blue-400 font-black uppercase tracking-[0.2em] text-sm mb-10 flex items-center">

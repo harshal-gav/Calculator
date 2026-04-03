@@ -253,30 +253,15 @@ export default function ZodiacCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Western Astrology divides the 360-degree ecliptic (Earth's orbit
-                around the sun) into twelve 30-degree sectors. Because the
-                Earth's orbit is roughly 365 days, each zodiac sign roughly
-                spans a specific 30-day "month," though these do not align
-                perfectly with modern Gregorian calendar months.
-              </p>
-              <div className="bg-purple-950 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-purple-800 text-purple-200">
-                <p>
-                  <strong>Fire Signs:</strong> Aries, Leo, Sagittarius
-                </p>
-                <p className="mt-2 pt-2 border-t border-purple-800">
-                  <strong>Earth Signs:</strong> Taurus, Virgo, Capricorn
-                </p>
-                <p className="mt-2 pt-2 border-t border-purple-800">
-                  <strong>Air Signs:</strong> Gemini, Libra, Aquarius
-                </p>
-                <p className="mt-2 pt-2 border-t border-purple-800">
-                  <strong>Water Signs:</strong> Cancer, Scorpio, Pisces
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Zodiac Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Zodiac results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>Let's find the sign for someone born on Halloween.</p>

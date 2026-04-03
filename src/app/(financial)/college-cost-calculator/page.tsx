@@ -155,13 +155,14 @@ export default function CollegeCostCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The calculator uses a compounding sum formula to account for tuition inflation each year:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-xs text-violet-700 scrollbar-hide">
-              Total Cost = Σ [Yearly Base × (1 + inflation)^year-1]
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              College Cost Analysis Model
             </div>
-            <p>The "Net Cost" is derived by subtracting the total projected financial aid (grants/scholarships) from the gross total cost.</p>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise College Cost results.
+            </p>
+          </>
         }
         example={
           <p>

@@ -223,27 +223,15 @@ export default function TipSplittingCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                This calculator utilizes basic percentage multiplication
-                combined with straightforward divisional fractions to ensure
-                every penny is accounted for among the group.
-              </p>
-              <div className="bg-sky-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-sky-100 text-sky-900">
-                <p>
-                  <strong>Total Gratuity = Bill Amount × (Tip % ÷ 100)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-sky-200">
-                  <strong>Final Bill = Bill Amount + Total Gratuity</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-sky-200">
-                  <strong>
-                    Per Person Share = Final Bill ÷ Number of People
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Tip Splitting Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Tip Splitting results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

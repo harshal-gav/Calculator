@@ -209,31 +209,15 @@ export default function NumberToWordsConverter() {
             </>
           }
           formula={
-            <>
-              <p>
-                To perform this translation, the algorithm heavily utilizes the
-                mathematical <strong>modulo</strong> and{" "}
-                <strong>division</strong> operators to split large numbers into
-                standard 'chunks' of 1,000.
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  It first evaluates groups of three digits from right to left
-                  (Thousands, Millions, Billions).
-                </li>
-                <li>
-                  Within each three-digit chunk, it further divides by 100 to
-                  extract the 'hundreds' place.
-                </li>
-                <li>
-                  It uses hardcoded English linguistic arrays (e.g., matching
-                  "3" to "Thirty" if it's in the tens place) to build out the
-                  inner string before appending the massive scale identifier at
-                  the end.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Number To Words Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

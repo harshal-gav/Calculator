@@ -306,22 +306,15 @@ export default function RefinanceCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The primary metric for analyzing a refinance is the{" "}
-                <strong>Break-Even Timeline</strong>:
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-emerald-900 border border-emerald-100">
-                <strong>Break-Even Months</strong> = Total Closing Costs ÷
-                Monthly Payment Savings
-              </div>
-              <p className="text-sm mt-2">
-                If you plan to sell the house or move <em>before</em> reaching
-                that break-even month, refinancing is mathematically a
-                guaranteed loss, despite the lower monthly payment.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Refinance results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -239,35 +239,15 @@ export default function ConfidenceIntervalCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The formula for a Confidence Interval centers around the Sample
-                Mean (x̄) and expands evenly in both directions by adding and
-                subtracting the Margin of Error:
-              </p>
-              <div className="bg-teal-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-teal-900 border border-teal-100">
-                CI = x̄ ± z * (s / √n)
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>x̄:</strong> The Sample Mean (the average result from
-                  the data you actually collected).
-                </li>
-                <li>
-                  <strong>z:</strong> The Z-Score mapping to your chosen
-                  confidence level (e.g., 1.96 for 95%).
-                </li>
-                <li>
-                  <strong>s:</strong> The Standard Deviation (how spread out
-                  your data is).
-                </li>
-                <li>
-                  <strong>n:</strong> The Sample Size (the amount of data points
-                  you collected).
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Confidence Interval Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Confidence Interval results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

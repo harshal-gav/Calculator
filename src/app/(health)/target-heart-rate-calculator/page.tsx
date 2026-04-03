@@ -167,12 +167,12 @@ export default function TargetHeartRateCalculator() {
         }
         formula={
           <>
-            <p>Our calculator uses the highly accurate <strong>Karvonen Formula</strong> which accounts for your unique resting heart rate (RHR):</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Max HR</strong> = 220 - Age</li>
-              <li><strong>Heart Rate Reserve (HRR)</strong> = Max HR - Resting HR</li>
-              <li><strong>Target Zone</strong> = (HRR × Intensity Percentage) + Resting HR</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              THR = (MHR-RHR) × % + RHR
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Karvonen Formula for optimal workout intensity.
+            </p>
           </>
         }
         example={

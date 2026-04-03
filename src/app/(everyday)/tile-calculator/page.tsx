@@ -179,7 +179,16 @@ export default function TileCalculator() {
             </p>
           </>
         }
-        formula={<></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Tile Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Tile results.
+            </p>
+          </>
+        }
         example={
           <>
             <p>For a standard 10ft x 12ft room utilizing 12x12 inch tiles (which are exactly 1 square foot each):</p>

@@ -219,34 +219,15 @@ export default function SignificantFiguresCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Counting significant figures requires following four strict,
-                sequential rules:
-              </p>
-              <div className="bg-white p-4 rounded-lg font-mono text-left text-[15px] shadow-sm my-4 border border-zinc-200">
-                <ul className="list-decimal pl-6 space-y-2">
-                  <li>
-                    <strong>Rule 1:</strong> All non-zero numbers are ALWAYS
-                    significant.
-                  </li>
-                  <li>
-                    <strong>Rule 2:</strong> Zeros trapped <em>between</em> two
-                    non-zero numbers are ALWAYS significant.
-                  </li>
-                  <li>
-                    <strong>Rule 3:</strong> Leading zeros (zeros before the
-                    first non-zero number) are NEVER significant.
-                  </li>
-                  <li>
-                    <strong>Rule 4:</strong> Trailing zeros (zeros at the very
-                    end of a number) are ONLY significant if the number contains
-                    a written decimal point.
-                  </li>
-                </ul>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Significant Figures
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Counting non-zero digits and specific zero placements.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -196,35 +196,15 @@ export default function RegularPolygonCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Calculating the complex radii and areas of multi-sided polygons
-                relies heavily on standard trigonometry (tangent and sine data).
-                Assume <strong>n</strong> = number of sides, and{" "}
-                <strong>s</strong> = side length:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
-                <li>
-                  <strong>Perimeter (\(P\)):</strong> <code>n × s</code>
-                </li>
-                <li>
-                  <strong>Area (\(A\)):</strong>{" "}
-                  <code>(s² × n) / [4 × tan(π/n)]</code>
-                </li>
-                <li>
-                  <strong>Internal Angle:</strong>{" "}
-                  <code>[(n - 2) × 180°] / n</code>
-                </li>
-                <li>
-                  <strong>Inradius (apothem):</strong>{" "}
-                  <code>s / [2 × tan(π/n)]</code>
-                </li>
-                <li>
-                  <strong>Circumradius:</strong> <code>s / [2 × sin(π/n)]</code>
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Regular Polygon Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Regular Polygon results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -313,12 +313,12 @@ export default function ArmyBodyFatCalculator() {
         }
         formula={
           <>
-            <p>The calculator uses gender-specific logarithmic formulas:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Males:</strong> 86.010 × log₁₀(Waist - Neck) - 70.041 × log₁₀(Height) + 36.76</li>
-              <li><strong>Females:</strong> 163.205 × log₁₀(Waist + Hip - Neck) - 97.684 × log₁₀(Height) - 78.387</li>
-            </ul>
-            <p className="mt-4"><em>All measurements in inches; height precision is critical for accuracy.</em></p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = f(Metric, Age, Sex)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Biometric calculation utilizing standardized biological and physiological models for Army Body Fat.
+            </p>
           </>
         }
         example={

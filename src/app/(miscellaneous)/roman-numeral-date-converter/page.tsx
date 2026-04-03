@@ -216,28 +216,15 @@ export default function RomanNumeralDateConverter() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Roman numerals operate by combining seven specific Latin letters
-                (I, V, X, L, C, D, M). Rather than possessing a "Zero" or
-                utilizing formal decimal places, the system involves adding
-                characters left-to-right (XII = 12) or subtracting a smaller
-                character placed before a larger one (IX = 9).
-              </p>
-              <div className="bg-stone-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-stone-200 text-stone-900">
-                <p>
-                  <strong>Key Characters:</strong> I (1), V (5), X (10), L (50),
-                  C (100), D (500), M (1000)
-                </p>
-                <p className="mt-2 pt-2 border-t border-stone-300">
-                  <strong>Addition Rule:</strong> VII = 5 + 1 + 1 = 7
-                </p>
-                <p className="mt-2 pt-2 border-t border-stone-300">
-                  <strong>Subtraction Rule:</strong> IV = 5 - 1 = 4
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Roman Numeral Date Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

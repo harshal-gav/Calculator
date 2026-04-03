@@ -178,65 +178,16 @@ export default function ROICalculator() {
           ]
         }}
         formula={
-          <div className="space-y-12">
-            <section>
-              <h4 className="text-2xl font-black text-slate-900 mb-6">I. The Fundamental ROI Equation</h4>
-              <p className="text-slate-600 mb-8 italic">The basic percentage representing absolute gain relative to cost balance.</p>
-              <div className="bg-emerald-950 text-white p-10 rounded-[2.5rem] font-mono text-center text-3xl shadow-2xl border border-emerald-500/20">
-                ROI = [(Gain - Cost) / Cost] × 100
-              </div>
-            </section>
-            
-            <section>
-              <h4 className="text-2xl font-black text-slate-900 mb-6">II. The Annualized (CAGR) Equation</h4>
-              <p className="text-slate-600 mb-8 italic">Geometric progression formula used to 'smooth' returns over multiple years.</p>
-              <div className="bg-slate-900 text-white p-10 rounded-[2.5rem] font-mono text-center text-3xl shadow-2xl border border-slate-700">
-                CAGR = [(Final / Initial)^(1 / t)] - 1
-              </div>
-            </section>
-
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-black text-slate-400 uppercase tracking-widest text-center">
-              <li className="p-4 bg-slate-50 rounded-xl border border-slate-100">t = Time Horizon in Years</li>
-              <li className="p-4 bg-slate-50 rounded-xl border border-slate-100">Final = End Value (Including Dividends)</li>
-            </ul>
-          </div>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              ROI = [(Gain - Cost) / Cost] × 100
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Net return expressed as a percentage of initial cost.
+            </p>
+          </>
         }
-        deepDive={
-          <div className="space-y-16">
-            <section>
-                <h4 className="text-4xl font-black text-slate-950 mb-8 border-l-8 border-emerald-900 pl-8 italic uppercase tracking-tighter">The "Net ROI" Trap: Transactional Friction</h4>
-                <p className="text-slate-600 leading-relaxed text-lg first-letter:text-5xl first-letter:font-black first-letter:text-emerald-900 first-letter:float-left first-letter:mr-3">
-                    Novice investors often overstate their ROI by failing to account for <strong>transactional friction</strong>. To get a professional result from this calculator, your "Amount Invested" must include every penny of cost: brokerage commissions, maintenance fees, property taxes, and closing costs. Similarly, your "Amount Returned" should be the figure <em>after</em> taxes (capital gains). A 15% ROI can quickly shrink to 9% after Uncle Sam takes his cut.
-                </p>
-            </section>
-
-            <section className="bg-emerald-50 p-12 rounded-[4rem] border border-emerald-100 shadow-inner">
-               <h4 className="text-2xl font-black text-emerald-900 mb-6 font-serif">Opportunity Cost: The Invisible Benchmark</h4>
-               <p className="text-slate-700 leading-relaxed mb-6 font-medium">
-                 The most important concept in ROI analysis is **Opportunity Cost**. If you spent three years and $50,000 to earn a 12% total ROI, that might feel like a win. However, if a risk-free bond was paying 5% annually, you effectively earned very little "premium" for the risk you took. 
-               </p>
-               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
-                    <span className="text-xs font-black text-emerald-600 uppercase mb-2 block">Case A: Active Business</span>
-                    <p className="text-sm text-slate-500">25% ROI required to justify the massive time and operational risk commitment.</p>
-                  </div>
-                  <div className="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
-                    <span className="text-xs font-black text-emerald-600 uppercase mb-2 block">Case B: Passive Index</span>
-                    <p className="text-sm text-slate-500">10% ROI is a major win because it requires zero time and has high historical reliability.</p>
-                  </div>
-               </div>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6">Total Return vs. Price Appreciation</h4>
-              <p className="text-slate-600 leading-relaxed uppercase text-sm font-bold tracking-wide mb-4">Crucial distinction for real estate and stocks</p>
-              <p className="text-slate-600 leading-relaxed">
-                When using this calculator for rental properties or dividend stocks, you must include the <strong>income generated</strong> during the hold period. If you bought a property for $200k and sold for $220k, your price ROI is 10%. But if you also collected $30k in net rent, your <strong>Total ROI</strong> is actually 25% ($250k return on $200k). Always calculate based on total capital flow.
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-slate-950 text-white p-12 rounded-[4rem] shadow-2xl relative overflow-hidden">
              <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-[100px]"></div>
              <div className="relative z-10">

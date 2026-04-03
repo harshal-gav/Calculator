@@ -180,62 +180,16 @@ export default function RetirementCalculator() {
           ]
         }}
         formula={
-          <div className="space-y-8">
-            <p>
-              The wealth projection uses the <strong>Future Value of an Annuity</strong> formula, which calculates how an initial sum and regular monthly payments grow over time at a fixed interest rate:
-            </p>
-            <div className="bg-slate-900 p-8 rounded-3xl text-center shadow-2xl border border-blue-500/30">
-              <code className="text-2xl md:text-3xl text-blue-300 font-mono">
-                FV = PV(1 + r)ⁿ + PMT [ ((1 + r)ⁿ - 1) / r ]
-              </code>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Retirement Analysis Model
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-bold uppercase tracking-widest text-slate-500">
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10 flex justify-between"><span>FV</span> <span className="text-blue-400">Final Nest Egg</span></div>
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10 flex justify-between"><span>PV</span> <span className="text-blue-400">Current Savings</span></div>
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10 flex justify-between"><span>PMT</span> <span className="text-blue-400">Monthly Contribution</span></div>
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10 flex justify-between"><span>n</span> <span className="text-blue-400">Total Months (Years × 12)</span></div>
-            </div>
-            <p className="text-sm italic text-slate-500">
-              *Note: Final results are adjusted for inflation using <strong>PV_real = FV / (1 + i)ⁿ</strong>, where 'i' is the inflation rate.
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Retirement results.
             </p>
-          </div>
+          </>
         }
-        deepDive={
-          <div className="space-y-16">
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-blue-600 pl-6">I. The 4% Rule: The Holy Grail of Retirement</h4>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                The <strong>SWR (Safe Withdrawal Rate)</strong>, commonly referred to as the 4% Rule, originated from the Trinity Study. It suggests that a retiree can withdraw 4% of their total portfolio in year one, adjust for inflation annually, and have a 95%+ probability of the money lasting 30 years. 
-              </p>
-              <p className="text-lg text-slate-700 mt-4 leading-relaxed">
-                However, in a higher-inflation environment or if retiring early (e.g., at age 40), many experts now recommend a more conservative <strong>3.25% or 3.5% withdrawal rate</strong>. Our calculator allows you to adjust this percentage to see how much more "capital cushion" you need for a truly bulletproof retirement.
-              </p>
-            </section>
-
-            <section className="bg-slate-900 p-12 rounded-[40px] text-white shadow-2xl relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
-               <h4 className="text-2xl font-black mb-6 text-blue-400 uppercase tracking-widest italic">II. Sequence of Returns Risk</h4>
-               <p className="text-slate-300 leading-relaxed text-lg">
-                 The single greatest mathematical threat to a retiree is not a low average return, but <strong>Bad Timing</strong>. If the stock market crashes by 30% in your first two years of retirement, your portfolio may never recover, even if the average return over 20 years is high. This is why financial planners often suggest a "Bond Tent" or a "Cash Bucket" (2 years of expenses in high-yield savings) as you approach your retirement age to avoid selling stocks during a downturn.
-               </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-blue-600 pl-6">III. Purchasing Power Erosion</h4>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                A million dollars sounds like a functional retirement today, but at a 3% inflation rate, that million dollars will only buy <strong>$411,000 worth of "today's groceries" in 30 years</strong>. This calculator is unique because it forces you to look at the "Today's Purchasing Power" metric. If your projected nest egg doesn't match your current lifestyle requirements when adjusted for inflation, you are likely under-saving.
-              </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-blue-600 pl-6">IV. The "Glide Path" to Retirement</h4>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                As you age, your "Human Capital" (the ability to earn a salary) decreases, making your "Financial Capital" more precious. Your <strong>Asset Allocation</strong> should shift accordingly. A 25-year-old can afford an 100% stock portfolio, but a 60-year-old should generally have 30-40% in fixed-income assets (Bonds/CDs) to dampen volatility.
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-white p-10 md:p-14 rounded-[3rem] shadow-sm border border-slate-100 flex flex-col md:flex-row gap-12">
             <div className="flex-1 space-y-6">
                <h5 className="font-black text-blue-600 uppercase tracking-widest text-xs mb-4">Case Study: The Cost of Delay</h5>

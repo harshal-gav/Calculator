@@ -162,12 +162,15 @@ export default function CommissionCalculator() {
             </>
           }
           formula={
-            <div className="bg-white p-6 rounded-xl border border-indigo-100 shadow-sm font-mono text-center text-indigo-900">
-              <p className="font-bold text-lg mb-2">Commission = Total Sales × (Rate / 100)</p>
-              <p className="text-gray-400">then</p>
-              <p className="font-bold text-lg mt-2">Total Pay = Commission + Base Salary + Bonus</p>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Commission = Sale × Rate
             </div>
-          }
+            <p className="text-sm text-slate-500 text-center">
+              Earnings based on a percentage of successful sales.
+            </p>
+          </>
+        }
           example={
             <div className="space-y-4">
               <p>Let's say a real estate agent sells a house for <strong>$500,000</strong> with a <strong>3%</strong> commission rate.</p>

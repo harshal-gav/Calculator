@@ -279,69 +279,16 @@ export default function MortgageCalculator() {
           ]
         }}
         formula={
-          <div className="space-y-12">
-            <section>
-              <h4 className="text-2xl font-black text-slate-900 mb-6">The Standard Amortization Formula</h4>
-              <p className="text-slate-600 leading-relaxed mb-8 italic">
-                The core of every fixed-rate mortgage calculation is based on the compounding annuity formula, which determines the specific payment required to reduce the loan balance to exactly zero over a set number of periods.
-              </p>
-              <div className="bg-emerald-950 text-white p-12 rounded-[2.5rem] font-mono text-center text-3xl shadow-2xl border border-emerald-500/30 overflow-x-auto">
-                M = P [ i(1 + i)ⁿ ] / [ (1 + i)ⁿ - 1 ]
-              </div>
-            </section>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              {[
-                { label: "M", desc: "Total Monthly Principal & Interest" },
-                { label: "P", desc: "Principal Amount (Home Price - Down)" },
-                { label: "i", desc: "Monthly Interest Rate (Annual Rate / 12)" },
-                { label: "n", desc: "Total Payments (Years × 12)" }
-              ].map((item, idx) => (
-                <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center">
-                   <div className="text-2xl font-black text-emerald-600 mb-2">{item.label}</div>
-                   <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{item.desc}</div>
-                </div>
-              ))}
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n - 1 ]
             </div>
-            <p className="text-sm text-slate-400 text-center font-medium">
-                *Note: The total payment displayed by our calculator adds linear monthly estimates for property taxes, insurance, and HOA fees to this base mathematical result.
+            <p className="text-sm text-slate-500 text-center">
+              Total monthly mortgage payment calculation.
             </p>
-          </div>
+          </>
         }
-        deepDive={
-          <div className="space-y-16">
-            <section>
-                <h4 className="text-4xl font-black text-slate-950 mb-8 border-l-8 border-emerald-500 pl-8">The Lifecycle of an Interest-Heavy Loan</h4>
-                <p className="text-slate-600 leading-relaxed text-lg first-letter:text-5xl first-letter:font-black first-letter:text-emerald-600 first-letter:float-left first-letter:mr-3">
-                    During the initial phase of a 30-year mortgage, the majority of your payment—often as much as 80%—is allocated to <strong>interest</strong>. This is because interest is calculated on the remaining principal balance. As you "amortize" the loan, your payments slowly shift to favor the principal. Our calculator provides the "Interest Lifecycle" figure to help you visualize the cost of the bank's capital across the decades.
-                </p>
-            </section>
-
-            <section className="bg-slate-50 p-12 rounded-[4rem] border border-slate-200 shadow-inner">
-               <h4 className="text-2xl font-black text-slate-900 mb-6 uppercase tracking-tight">Understanding 'Escrow' and PITI Complexity</h4>
-               <p className="text-slate-700 leading-relaxed mb-8">
-                 Lenders often manage your property taxes and insurance via an **escrow account**. This means you pay 1/12th of your annual bills to the lender each month, and they pay the government on your behalf.
-               </p>
-               <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <li className="flex space-x-4 italic">
-                    <span className="text-emerald-500 font-black">●</span>
-                    <span className="text-sm font-medium"><strong>Variable Taxes:</strong> Your payment may rise even if interest rates stay flat, as cities reassess home values and property taxes.</span>
-                  </li>
-                  <li className="flex space-x-4 italic">
-                    <span className="text-emerald-500 font-black">●</span>
-                    <span className="text-sm font-medium"><strong>Insurance Adjustments:</strong> Rising construction costs often lead to higher homeowner insurance premiums, further inflating the "PITI" total.</span>
-                  </li>
-               </ul>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6">PMI: The Small Down Payment Penalty</h4>
-              <p className="text-slate-600 leading-relaxed">
-                If your down payment is less than <strong>20%</strong> of the home value, lenders generally require <strong>Private Mortgage Insurance</strong>. This protects the lender, not you. This fee can add $100 - $300 to your monthly payment but can usually be removed once you achieve 20% equity (Loan-to-Value ratio). Use this calculator to see how saving for a larger down payment changes your long-term wealth trajectory.
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-emerald-950 text-white p-12 rounded-[4rem] shadow-2xl relative overflow-hidden group">
              <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500 rounded-full filter blur-[120px] opacity-10 group-hover:opacity-20 transition duration-700"></div>
              <div className="relative z-10">

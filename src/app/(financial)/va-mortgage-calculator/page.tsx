@@ -164,7 +164,16 @@ export default function VAMortgageCalculator() {
             </p>
           </>
         }
-        formula={<></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = [(P-D)+F] * [r(1+r)^n] / [(1+r)^n - 1]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Where F is the VA Funding Fee and P is Price.
+            </p>
+          </>
+        }
         example={
           <>
             <p>If you are a first-time VA user buying a $400,000 home with $0 down:</p>

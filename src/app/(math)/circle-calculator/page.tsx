@@ -192,37 +192,15 @@ export default function CircleCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                All circle geometry revolves around the mathematical constant Pi
-                (π ≈ 3.14159). Once the radius 'r' is determined, all other
-                properties are found using:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Diameter (d):</strong>{" "}
-                  <span className="font-mono bg-indigo-50 px-1 rounded">
-                    2 × r
-                  </span>{" "}
-                  (Simply double the radius).
-                </li>
-                <li>
-                  <strong>Circumference (C):</strong>{" "}
-                  <span className="font-mono bg-indigo-50 px-1 rounded">
-                    2 × π × r
-                  </span>{" "}
-                  (Alternatively, π × d).
-                </li>
-                <li>
-                  <strong>Area (A):</strong>{" "}
-                  <span className="font-mono bg-indigo-50 px-1 rounded">
-                    π × r²
-                  </span>{" "}
-                  (Pi times radius squared).
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              A = πr² | C = 2πr
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Where r is radius, A is area, and C is circumference.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -247,23 +247,15 @@ export default function PERatioCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The P/E ratio is calculated by taking the current stock price
-                and dividing it by the company's Earnings Per Share (EPS).
-              </p>
-              <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
-                <p>
-                  <strong>P/E Ratio</strong> = Stock Price / Earnings Per Share
-                </p>
-              </div>
-              <p>
-                Our tool can also seamlessly solve for the other variables
-                algebraically: <em>Price = P/E × EPS</em> or{" "}
-                <em>EPS = Price / P/E</em>.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Pe Ratio Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Pe Ratio results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>Let's evaluate a hypothetical technology stock.</p>

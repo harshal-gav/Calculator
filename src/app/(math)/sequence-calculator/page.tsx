@@ -255,39 +255,15 @@ export default function SequenceCalculator() {
             </>
           }
           formula={
-            <>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-                <div className="bg-emerald-50 p-4 rounded-lg font-mono text-[14px] shadow-sm text-emerald-900 border border-emerald-100 flex flex-col justify-center">
-                  <h4 className="font-bold text-center border-b border-emerald-200 pb-2 mb-2 font-sans tracking-wide">
-                    Arithmetic Formulas
-                  </h4>
-                  <p className="mb-2">
-                    <strong>Nth Term:</strong> aₙ = a₁ + (n - 1)d
-                  </p>
-                  <p>
-                    <strong>Sum to N:</strong> Sₙ = (n/2) × (a₁ + aₙ)
-                  </p>
-                </div>
-                <div className="bg-emerald-50 p-4 rounded-lg font-mono text-[14px] shadow-sm text-emerald-900 border border-emerald-100 flex flex-col justify-center">
-                  <h4 className="font-bold text-center border-b border-emerald-200 pb-2 mb-2 font-sans tracking-wide">
-                    Geometric Formulas
-                  </h4>
-                  <p className="mb-2">
-                    <strong>Nth Term:</strong> aₙ = a₁ × r^(n-1)
-                  </p>
-                  <p>
-                    <strong>Sum to N:</strong> Sₙ = a₁ × [ (1 - r^n) / (1 - r) ]
-                  </p>
-                </div>
-              </div>
-              <p className="text-sm text-zinc-600">
-                <em>
-                  Where a₁ is the first term, d is the common difference, r is
-                  the common ratio, and n is the number of terms.
-                </em>
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Sequence Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Sequence results.
+            </p>
+          </>
+        }
           example={
             <>
               <h4 className="font-bold mb-2">Arithmetic Example</h4>

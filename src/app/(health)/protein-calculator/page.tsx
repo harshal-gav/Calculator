@@ -171,12 +171,12 @@ export default function ProteinCalculator() {
         }
         formula={
           <>
-            <p>Recommendations are based on standard sports nutrition protocols:</p>
-            <ul className="list-disc pl-6 space-y-4 mt-4 text-rose-900/80">
-               <li><strong>Sedentary (RDA):</strong> 0.8g per kg of body weight.</li>
-               <li><strong>Strength Training:</strong> 1.6 - 2.2g per kg of body weight.</li>
-               <li><strong>Weight Loss:</strong> Higher coefficients (2.0+) are used to maximize satiety and prevent muscle catabolism while in a deficit.</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Protein = 0.8g - 2.2g per kg of body weight
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Daily protein requirements based on muscle goals.
+            </p>
           </>
         }
         example={

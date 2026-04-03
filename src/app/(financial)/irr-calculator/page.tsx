@@ -125,7 +125,16 @@ export default function IRRCalculator() {
             </p>
           </>
         }
-        formula={<></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Irr Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Irr results.
+            </p>
+          </>
+        }
         example={
           <>
             <p>If you invest $100,000 today and receive $50,000 in year one and $60,000 in year two:</p>

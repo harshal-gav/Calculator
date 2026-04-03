@@ -170,23 +170,15 @@ export default function FactorialCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The mathematical formula for a factorial is expanding the number
-                backwards down to 1, multiplying every digit together.
-              </p>
-              <div className="bg-pink-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-pink-100 text-pink-900">
-                <p>
-                  <strong>n! = n × (n - 1) × (n - 2) × ... × 1</strong>
-                </p>
-              </div>
-              <p>
-                The sole exception to this rule is the number 0. By universal
-                mathematical convention, <strong>0! = 1</strong>. This is
-                required to prevent permutation fractions from dividing by zero.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              n! = n × (n-1) × ... × 1
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              The product of all positive integers up to n.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -175,30 +175,15 @@ export default function CylinderCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                A cylinder is essentially a flat circle that has been extruded
-                through 3D space. Therefore, all cylindrical calculations begin
-                by determining the 2D area (πr²) or circumference (2πr) of the
-                circular face, and then multiplying that characteristic by the
-                specified depth (h).
-              </p>
-              <div className="bg-cyan-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-cyan-100 text-cyan-900">
-                <p>
-                  <strong>Base Area (B) = π × r²</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-cyan-200">
-                  <strong>Volume (V) = π × r² × h</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-cyan-200">
-                  <strong>Lateral Area (L) = 2 × π × r × h</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-cyan-200">
-                  <strong>Total Area (A) = 2πr(r + h)</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              V = πr²h | SA = 2πrh + 2πr²
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Where r is radius and h is height.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

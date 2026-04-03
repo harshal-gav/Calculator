@@ -232,25 +232,15 @@ export default function TipCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Calculating a tip mathematically requires converting the desired
-                gratuity percentage into a decimal, then multiplying it against
-                the original bill.
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
-                <p>
-                  <strong>Tip Amount = Bill × (Tip Percentage ÷ 100)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-emerald-200">
-                  <strong>Total = Bill + Tip Amount</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-emerald-200">
-                  <strong>Per Person = Total ÷ Number of People</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Tip = Total × %
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard service gratuity calculation.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -177,28 +177,15 @@ export default function EnergyConverter() {
             </p>
           }
           formula={
-            <>
-              <p>
-                All forms of physical energy—whether thermal, kinetic, or
-                electrical—are fundamentally identical in classical physics.
-                Because they measure the exact same potential, they scale
-                linearly. To convert, we translate the input value directly into
-                mathematical Joules (J), and then reconstruct it in your desired
-                output scale.
-              </p>
-              <div className="bg-amber-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-amber-100 text-amber-900">
-                <p>
-                  <strong>1 kcal (Food Calorie) = 4,184 Joules</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-amber-200">
-                  <strong>1 kWh = 3,600,000 Joules</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-amber-200">
-                  <strong>1 BTU ≈ 1,055 Joules</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Energy Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

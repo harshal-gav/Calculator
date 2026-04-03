@@ -277,38 +277,15 @@ export default function CronJobGenerator() {
             </>
           }
           formula={
-            <>
-              <p>
-                A standard cron expression consists of exactly 5 fields
-                separated by spaces. The system checks this expression every
-                single minute. If the current server time perfectly matches the
-                expression, the task executes:
-              </p>
-              <div className="bg-slate-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-slate-900 border border-slate-200 text-center">
-                * * * * *
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Field 1 (Minute):</strong> 0-59. (e.g., '30' means
-                  exactly on the half-hour).
-                </li>
-                <li>
-                  <strong>Field 2 (Hour):</strong> 0-23. Uses 24-hour military
-                  time.
-                </li>
-                <li>
-                  <strong>Field 3 (Day of Month):</strong> 1-31.
-                </li>
-                <li>
-                  <strong>Field 4 (Month):</strong> 1-12.
-                </li>
-                <li>
-                  <strong>Field 5 (Day of Week):</strong> 0-6. (0 is Sunday, 6
-                  is Saturday).
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Cron Job Generator Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Cron Job Generator results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

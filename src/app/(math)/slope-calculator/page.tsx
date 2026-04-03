@@ -186,13 +186,11 @@ export default function SlopeCalculator() {
         }
         formula={
           <>
-            <p>We dictate the slope as mathematical <code>m</code> inside algebra. The formula to calculate it relies strictly on "Rise over Run":</p>
-            <p className="mt-4 font-mono text-lg bg-gray-50 py-3 font-bold text-gray-800 px-6 inline-block rounded-lg shadow-sm">
-               m = (y₂ - y₁) / (x₂ - x₁)
-            </p>
-            <p className="mt-4">Furthermore, to express the entire infinite geometric line, we rely on standard Slope-Intercept form:</p>
-            <p className="mt-2 font-mono text-lg bg-gray-50 py-3 font-bold text-gray-800 px-6 inline-block rounded-lg shadow-sm">
-               y = mx + b
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              m = (y₂ - y₁) / (x₂ - x₁)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              The steepness or gradient of a line between two points.
             </p>
           </>
         }

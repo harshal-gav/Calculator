@@ -245,21 +245,15 @@ export default function PaceCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Pace is simply the mathematical inversion of speed, representing
-                Time over Distance rather than Distance over Time:
-              </p>
-              <div className="bg-sky-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-sky-900 border border-sky-100">
-                <strong>Pace = Total Time ÷ Total Distance</strong>
-              </div>
-              <p className="text-sm mt-2">
-                The calculator then runs a strict conversion matrix (1 mile =
-                1.60934 kilometers) to ensure athletes can translate splits
-                across metric and imperial race standards.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Pace Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Pace results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

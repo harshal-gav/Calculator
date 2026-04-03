@@ -365,23 +365,12 @@ export default function TimeZoneConverter() {
         }
         formula={
           <>
-            <p>
-              To calculate time across borders, the algorithm must first convert
-              your local time into{" "}
-              <strong>Coordinated Universal Time (UTC)</strong>, which serves as
-              the anchor point for all global clocks. Once anchored, it applies
-              the mathematical offset of the target destination.
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 text-slate-900 border border-slate-100">
-              <p>
-                <strong>Step 1:</strong> Local Time - Local UTC Offset =
-                Absolute UTC
-              </p>
-              <p>
-                <strong>Step 2:</strong> Absolute UTC + Target UTC Offset =
-                Target Local Time
-              </p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Time Zone Converter using industry-standard conversion constants.
+            </p>
           </>
         }
         example={

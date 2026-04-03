@@ -279,13 +279,12 @@ export default function NumberSequenceCalculator() {
         }
         formula={
           <>
-            <p>The calculator identifies patterns using these formulas:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Arithmetic:</strong> aₙ = a₁ + (n-1)d, where d is common difference</li>
-              <li><strong>Geometric:</strong> aₙ = a₁ × rⁿ⁻¹, where r is common ratio</li>
-              <li><strong>Fibonacci:</strong> aₙ = aₙ₋₁ + aₙ₋₂</li>
-              <li><strong>Quadratic:</strong> aₙ = an² + bn + c</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Number Sequence Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Number Sequence results.
+            </p>
           </>
         }
         example={

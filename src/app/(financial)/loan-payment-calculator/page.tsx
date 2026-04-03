@@ -188,63 +188,16 @@ export default function LoanPaymentCalculator() {
           ]
         }}
         formula={
-          <div className="space-y-6 text-gray-700">
-            <p>
-              The calculation of a fixed-rate amortized loan payment is based on the <strong>Periodic Payment Formula</strong>. This formula assumes a fixed interest rate and equal payments over the life of the loan:
-            </p>
-            <div className="bg-blue-900 p-8 rounded-2xl font-mono text-center text-white shadow-xl my-6">
-              <div className="text-xl mb-2 text-blue-300">M = P [ r(1 + r)ⁿ ] / [ (1 + r)ⁿ - 1 ]</div>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
             </div>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-              <li className="bg-blue-50 p-3 rounded-lg border border-blue-100 italic"><strong>M</strong> = Your total monthly payment</li>
-              <li className="bg-blue-50 p-3 rounded-lg border border-blue-100 italic"><strong>P</strong> = Principal loan amount (Actual money borrowed)</li>
-              <li className="bg-blue-50 p-3 rounded-lg border border-blue-100 italic"><strong>r</strong> = Monthly interest rate (Annual APR / 12 / 100)</li>
-              <li className="bg-blue-50 p-3 rounded-lg border border-blue-100 italic"><strong>n</strong> = Number of monthly payments in the total term</li>
-            </ul>
-            <p className="text-sm border-l-4 border-blue-200 pl-4 py-2 bg-gray-50 uppercase tracking-tighter font-bold">
-              Mathematical Fact: Even a 1% reduction in APR can save thousands of dollars on a 5-year loan.
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Loan Payment results.
             </p>
-          </div>
+          </>
         }
-        deepDive={
-          <div className="space-y-10 text-gray-700">
-            <section>
-              <h4 className="text-2xl font-bold text-blue-900 mb-6 flex items-center">
-                <span className="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">1</span>
-                The Mechanics of Loan Amortization
-              </h4>
-              <p className="leading-relaxed">
-                Amortization is the process of gradually reducing the principal balance of a loan over its term. In the early stages of your loan, a high percentage of each payment is allocated toward <strong>interest</strong>. This is because interest is calculated based on the outstanding balance, which is at its highest at the start of the loan. As you make payments and the balance decreases, the interest portion shrinks, allowing more of your money to go directly toward the <strong>principal</strong>.
-              </p>
-              <p className="mt-4">
-                By our calculations, on a 5-year loan at 10%, you don't start paying more principal than interest until roughly the second year of the term.
-              </p>
-            </section>
-
-            <section className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-3xl border border-blue-100 shadow-sm transition hover:shadow-md">
-              <h4 className="text-xl font-bold text-blue-900 mb-4">The "Prepayment Power" Strategy</h4>
-              <p className="leading-relaxed mb-4">
-                One of the most effective ways to build wealth is to pay off debt faster than the scheduled term. If your loan has no <strong>prepayment penalties</strong>, adding just $50 or $100 to your principal payment each month can:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 font-medium">
-                <li>Reduce your total interest paid by 15-20%</li>
-                <li>Shorten a 60-month loan by nearly a full year</li>
-                <li>Improve your credit score by lowering your credit utilization</li>
-              </ul>
-            </section>
-
-            <section>
-              <h4 className="text-2xl font-bold text-blue-900 mb-6 flex items-center">
-                <span className="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">2</span>
-                Secured vs. Unsecured Loans
-              </h4>
-              <p className="leading-relaxed">
-                When using this calculator, it's important to know which type of loan you are applying for. <strong>Secured loans</strong> (like auto loans or mortgages) use the asset as collateral, typically resulting in lower interest rates. <strong>Unsecured loans</strong> (like personal loans for travel or debt consolidation) rely solely on your creditworthiness and usually carry higher rates to compensate the lender for the increased risk.
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-white p-8 rounded-3xl border border-blue-50 shadow-sm transition hover:scale-[1.01]">
             <h5 className="font-black text-blue-900 uppercase tracking-widest text-sm mb-6 border-b pb-4">
               Real-World Case Study: Consolidating $30,000 in Debt

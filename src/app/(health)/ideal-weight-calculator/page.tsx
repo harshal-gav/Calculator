@@ -171,13 +171,12 @@ export default function IdealWeightCalculator() {
         }
         formula={
           <>
-            <p>This calculator utilizes the most widely used formulas in medical literature:</p>
-            <ul className="list-disc pl-6 space-y-4 mt-4 text-zinc-700">
-               <li><strong>Devine Formula (1974):</strong> The standard used for most medication dosage calculations.</li>
-               <li><strong>Robinson Formula (1983):</strong> A refinement of the Devine formula designed for better accuracy.</li>
-               <li><strong>Miller Formula (1983):</strong> Another popular variant frequently used in clinical settings.</li>
-               <li><strong>Hamwi Formula (1964):</strong> One of the oldest and simplest methods for estimation.</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              W = 50kg + 2.3kg per inch over 5ft
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Devine Formula for healthy body mass projection.
+            </p>
           </>
         }
         example={

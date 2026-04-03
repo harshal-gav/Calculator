@@ -215,31 +215,15 @@ export default function DaysCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The calculator utilizes the standard Gregorian Calendar
-                algorithm to evaluate date shifts. Under the hood, modern
-                programming converts your "Start Date" into an exact{" "}
-                <strong>Unix Timestamp</strong> (the total number of
-                milliseconds that have passed since January 1, 1970).
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Adding Days/Weeks:</strong> This is perfectly linear.
-                  Adding 3 weeks simply adds exactly 21 days (1,814,400,000
-                  milliseconds) to the starting timestamp.
-                </li>
-                <li>
-                  <strong>Adding Months:</strong> This is complex constraint
-                  computing. If you start on <em>January 31st</em> and add 1
-                  Month, the result is technically <em>February 31st</em> (which
-                  doesn't exist). Standard algorithms will aggressively "roll
-                  over" this invalid date, landing you firmly on{" "}
-                  <em>March 3rd</em> (or March 2nd on leap years).
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Days Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Days results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

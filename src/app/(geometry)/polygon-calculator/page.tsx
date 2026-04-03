@@ -290,43 +290,15 @@ export default function PolygonCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The universal math for a regular n-gon relies on dividing the
-                shape into <em>n</em> isosceles triangles originating from the
-                absolute center. These formulas use trigonometry (tangent and
-                sine) evaluated in radians (where π / n).
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  <strong>Area (A):</strong> <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">
-                    A = (n × s²) / (4 × tan(π/n))
-                  </code>
-                </li>
-                <li>
-                  <strong>Perimeter (P):</strong> <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">
-                    P = n × s
-                  </code>
-                </li>
-                <li>
-                  <strong>Interior Angle:</strong> The inside angle at any
-                  vertex. <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">
-                    Angle = [(n - 2) × 180°] / n
-                  </code>
-                </li>
-                <li>
-                  <strong>Apothem (Inradius):</strong> Distance from center to
-                  flat edge. <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold text-sm">
-                    r = s / (2 × tan(π/n))
-                  </code>
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Polygon Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Polygon results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

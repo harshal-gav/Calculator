@@ -200,17 +200,12 @@ export default function CalorieCalculator() {
         }
         formula={
           <>
-            <p>The Mifflin-St Jeor formulas for Basal Metabolic Rate (BMR) are:</p>
-            <div className="bg-orange-50 p-6 rounded-2xl font-mono text-center text-sm shadow-sm my-4 border border-orange-100 text-orange-950">
-               <strong>Male:</strong> 10W + 6.25H - 5A + 5 <br/>
-               <strong>Female:</strong> 10W + 6.25H - 5A - 161
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Daily Calories = BMR × Activity Multiplier
             </div>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-orange-900/80">
-              <li><strong>W:</strong> Body weight in kg</li>
-              <li><strong>H:</strong> Stature in cm</li>
-              <li><strong>A:</strong> Age in years</li>
-            </ul>
-            <p className="mt-4">Final calories are calculated by multiplying the BMR by an activity factor (TDEE).</p>
+            <p className="text-sm text-slate-500 text-center">
+              Estimating total daily energy expenditure.
+            </p>
           </>
         }
         example={

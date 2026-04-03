@@ -164,13 +164,14 @@ export default function DownPaymentCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The calculator uses an iterative future value formula to find the time (n) required to reach the target balance:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-xs text-rose-700">
-              Future Balance = Current × (1+r)^n + Monthly × [ ((1+r)^n - 1) / r ]
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Down Payment Analysis Model
             </div>
-            <p className="text-sm text-slate-500">The tool solves for 'n' iteratively to ensure precision across diverse interest rates and contribution amounts.</p>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Down Payment results.
+            </p>
+          </>
         }
         example={
           <p>

@@ -170,27 +170,15 @@ export default function ParallelogramCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                To accurately assess a parallelogram, you need entirely distinct
-                measurements for the Area versus the Perimeter:
-              </p>
-              <ul className="list-disc pl-6 space-y-4 mt-4 text-zinc-700">
-                <li>
-                  <strong>Area (\(A\)):</strong>{" "}
-                  <code>Base (b) × Height (h)</code>. Note that the 'Height'
-                  must be the strict perpendicular vertical distance between the
-                  bases, not the slanted side length.
-                </li>
-                <li>
-                  <strong>Perimeter (\(P\)):</strong>{" "}
-                  <code>2 × (Base + Slanted Side)</code>. You completely ignore
-                  the perpendicular height when calculating outer perimeter
-                  boundaries.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              A = b × h
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Area equals base times perpendicular height.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

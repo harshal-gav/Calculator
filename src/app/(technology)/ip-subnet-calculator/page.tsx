@@ -129,7 +129,7 @@ export default function IPSubnetCalculator() {
               type="text"
               value={ipAddress}
               onChange={(e) => setIpAddress(e.target.value)}
-              className="w-full rounded-lg border-2 border-zinc-800 bg-black p-3 focus:border-cyan-500 text-white font-mono shadow-inner outline-none transition"
+              className="w-full rounded-lg border-2 border-zinc-800 bg-zinc-950 p-3 focus:border-cyan-500 text-white font-mono shadow-inner outline-none transition"
               placeholder="192.168.1.1"
             />
           </div>
@@ -148,7 +148,7 @@ export default function IPSubnetCalculator() {
                 max="32"
                 value={subnetMask}
                 onChange={(e) => setSubnetMask(e.target.value)}
-                className="w-full rounded-r-lg border-2 border-l-0 border-zinc-800 bg-black p-3 focus:border-cyan-500 text-white font-mono shadow-inner outline-none transition"
+                className="w-full rounded-r-lg border-2 border-l-0 border-zinc-800 bg-zinc-950 p-3 focus:border-cyan-500 text-white font-mono shadow-inner outline-none transition"
               />
             </div>
             {result?.maskString && (
@@ -259,40 +259,15 @@ export default function IPSubnetCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Subnetting fundamentally relies on translating human-readable IP
-                addresses (like 192.168.1.1) into raw 32-bit binary strings (1s
-                and 0s). The calculator uses Bitwise logic operators (AND, OR,
-                NOT) to filter the IP address strictly against the binary subnet
-                mask, instantly separating the "network" portion from the "host"
-                portion.
-              </p>
-              <div className="bg-zinc-800 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-700 text-cyan-400">
-                <p>
-                  <strong>
-                    Network ID = IP <span className="text-zinc-400">AND</span>{" "}
-                    Subnet Mask
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-zinc-700">
-                  <strong>
-                    Wildcard = <span className="text-zinc-400">NOT</span> Subnet
-                    Mask
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-zinc-700">
-                  <strong>
-                    Broadcast = Network ID{" "}
-                    <span className="text-zinc-400">OR</span> Wildcard
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-zinc-700">
-                  <strong>Usable Hosts = (2 ^ Unmasked Bits) - 2</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Ip Subnet Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Ip Subnet results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

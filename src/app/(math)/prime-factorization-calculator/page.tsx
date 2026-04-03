@@ -202,21 +202,15 @@ export default function PrimeFactorizationCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The Fundamental Theorem of Arithmetic states that every integer
-                greater than 1 has exactly one unique prime factorization.
-              </p>
-              <div className="bg-zinc-100 p-4 rounded-lg text-center text-lg md:text-xl shadow-inner my-4 text-emerald-900 border border-zinc-200">
-                N = (p₁)<sup>a</sup> × (p₂)<sup>b</sup> × (p₃)<sup>c</sup> ...
-              </div>
-              <p>
-                Where <strong>p</strong> represents strictly prime numbers (2,
-                3, 5, 7, 11...) and the superscript (<strong>a, b, c</strong>)
-                represents how many times that exact prime is multiplied.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Prime Factorization Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Prime Factorization results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -210,35 +210,15 @@ export default function EmpiricalRuleCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The rule is rigid and relies purely on basic addition and
-                subtraction of the Standard Deviation (σ) from the dataset's
-                Mean (μ):
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-emerald-900 border border-emerald-100 flex flex-col gap-2">
-                <div>
-                  <strong>68% of Data:</strong> falls within μ ± 1σ
-                </div>
-                <div>
-                  <strong>95% of Data:</strong> falls within μ ± 2σ
-                </div>
-                <div>
-                  <strong>99.7% of Data:</strong> falls within μ ± 3σ
-                </div>
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Mean (μ):</strong> The exact center or peak of the
-                  bell curve.
-                </li>
-                <li>
-                  <strong>Standard Deviation (σ):</strong> The unit that
-                  measures how "fat" or "skinny" the bell curve is.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Empirical Rule Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Empirical Rule results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

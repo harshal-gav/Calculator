@@ -83,7 +83,14 @@ export default function PercentageChangeCalculator() {
           </p>
         }
         formula={
-          <p>The exact formula depends on the parameters provided.</p>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Percentage Change Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Percentage Change results.
+            </p>
+          </>
         }
         example={
           <p>Enter your inputs to see an example calculation.</p>

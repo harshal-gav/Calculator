@@ -223,27 +223,15 @@ export default function FuelEconomyConverter() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Because the US system measures "How far can I go on one unit of
-                fuel?" while the European system measures "How much fuel is
-                required to go a fixed distance?", the conversion requires an
-                inverse mathematical translation anchored against the metric
-                constants of the mile and the specific gallon variant.
-              </p>
-              <div className="bg-slate-800 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-slate-700 text-slate-300">
-                <p>
-                  <strong>MPG (US) to L/100km = 235.215 ÷ Math.Abs(MPG)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-slate-700">
-                  <strong>MPG (UK) to L/100km = 282.481 ÷ Math.Abs(MPG)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-slate-700">
-                  <strong>km/L to L/100km = 100 ÷ Math.Abs(km/L)</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Fuel Economy Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

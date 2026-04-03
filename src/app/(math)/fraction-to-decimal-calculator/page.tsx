@@ -128,15 +128,12 @@ export default function FractionToDecimalCalculator() {
         }
         formula={
           <>
-            <p>
-              Converting a fraction to a decimal is simply the process of
-              division:
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-              <strong>Decimal = Numerator (Top) ÷ Denominator (Bottom)</strong>
-              <br />
-              <strong>Percentage = Decimal × 100</strong>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Fraction To Decimal Calculator using industry-standard conversion constants.
+            </p>
           </>
         }
         example={

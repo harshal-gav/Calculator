@@ -236,25 +236,12 @@ export default function PercentageCalculator() {
         }
         formula={
           <>
-            <p>
-              Percentages (from Latin <em>per centum</em> "by a hundred") are
-              simply fractions with a denominator of 100. Our calculator solves
-              three distinct formulas:
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-lg shadow-sm my-4 overflow-x-auto space-y-4">
-              <p>
-                <strong>1. What is X% of Y?</strong>
-                <br /> Result = (X / 100) * Y
-              </p>
-              <p>
-                <strong>2. X is what % of Y?</strong>
-                <br /> Result = (X / Y) * 100
-              </p>
-              <p>
-                <strong>3. Percentage Change (X to Y):</strong>
-                <br /> Result = (|Y - X| / |X|) * 100
-              </p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              P = (V / Total) × 100
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              Expressing a number as a fraction of 100.
+            </p>
           </>
         }
         example={

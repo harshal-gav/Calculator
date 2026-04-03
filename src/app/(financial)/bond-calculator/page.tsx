@@ -174,18 +174,14 @@ export default function BondCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The price of a bond is calculated by summing the present value of all future coupon payments and the present value of the par value at maturity:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-sm overflow-x-auto">
-              Price = [C × (1 - (1 + r)⁻ⁿ) / r] + [F / (1 + r)ⁿ]
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Bond Analysis Model
             </div>
-            <ul className="list-disc pl-5 space-y-1">
-              <li><strong>C:</strong> Periodic Coupon Payment</li>
-              <li><strong>r:</strong> Periodic Market Yield (YTM)</li>
-              <li><strong>n:</strong> Total number of periods</li>
-              <li><strong>F:</strong> Face Value (Par Value)</li>
-            </ul>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Bond results.
+            </p>
+          </>
         }
         example={
           <p>

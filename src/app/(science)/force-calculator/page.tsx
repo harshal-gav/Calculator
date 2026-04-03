@@ -354,25 +354,15 @@ export default function ForceCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Newton's Second Law is one of the most famous equations in human
-                history. It states that the heavier an object is, and the faster
-                it speeds up, the more force it carries.
-              </p>
-              <div className="bg-orange-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-orange-100 text-orange-900">
-                <p>
-                  <strong>Force (F) = m × a</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-orange-200">
-                  <strong>Mass (m) = F ÷ a</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-orange-200">
-                  <strong>Acceleration (a) = F ÷ m</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              F = m × a
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Newton's Second Law: Force equals mass times acceleration.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -180,29 +180,15 @@ export default function EllipseCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Calculating the area of an ellipse is straightforward, but
-                finding the exact perimeter requires infinite calculus series.
-                We use Srinivasa Ramanujan's highly accurate second
-                approximation:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
-                <li>
-                  <strong>Area (\(A\)):</strong> <code>π × a × b</code>
-                </li>
-                <li>
-                  <strong>Eccentricity (\(e\)):</strong>{" "}
-                  <code>√(1 - (b² / a²))</code>
-                </li>
-                <li>
-                  <strong>Perimeter (\(P\)) Approx:</strong>{" "}
-                  <code>π(a+b) [1 + 3h / (10 + √(4-3h))]</code>, where{" "}
-                  <code>h = (a-b)² / (a+b)²</code>.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              A = π × a × b
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Where a and b are the semi-axes (major and minor).
+            </p>
+          </>
+        }
           example={
             <>
               <p>

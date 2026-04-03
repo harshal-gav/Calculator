@@ -233,40 +233,15 @@ export default function HexCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Hex calculations involve standard arithmetic or binary bitwise
-                logic. This tool immediately converts both hex inputs into
-                standard decimal numbers, performs your selected operation, and
-                then translates the integer result back into an uppercase
-                hexadecimal string.
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  <strong>Arithmetic:</strong> Standard addition (+),
-                  subtraction (-), multiplication (×), and integer division (÷).
-                </li>
-                <li>
-                  <strong>Bitwise AND (&amp;):</strong> Compares two hex numbers
-                  bit-by-bit. The output bit is 1 only if <em>both</em>{" "}
-                  corresponding input bits are 1.
-                </li>
-                <li>
-                  <strong>Bitwise OR (|):</strong> The output bit is 1 if{" "}
-                  <em>either</em> of the corresponding input bits is 1.
-                </li>
-                <li>
-                  <strong>Bitwise XOR (^):</strong> The output bit is 1 if the
-                  corresponding input bits are <em>different</em>.
-                </li>
-                <li>
-                  <strong>Bitwise NOT (~):</strong> Inverts the bits of the
-                  first input value (turns 0s to 1s and 1s to 0s), returning the
-                  two's complement.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Hex Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Hex results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

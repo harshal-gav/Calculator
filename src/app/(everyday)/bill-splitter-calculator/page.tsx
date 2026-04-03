@@ -230,21 +230,15 @@ export default function BillSplitterCalculator() {
             </>
           }
           formula={
-            <>
-              <p>The math requires three simple, sequential algebraic steps:</p>
-              <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-                <strong>1. Tip Amount</strong> = Total Bill × (Tip Percentage ÷
-                100)
-                <br />
-                <br />
-                <strong>2. Grand Total</strong> = Total Bill + Tip Amount
-                <br />
-                <br />
-                <strong>3. Per Person Share</strong> = Grand Total ÷ Number of
-                People
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Bill Splitter Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Bill Splitter results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>Imagine 4 friends go out for expensive sushi:</p>

@@ -240,32 +240,11 @@ export default function VolumeCalculator() {
         }
         formula={
           <>
-            <p>
-              Every three-dimensional shape requires a unique mathematical
-              formula to determine its exact volume. Here are the core formulas
-              this calculator uses natively:
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-lg shadow-sm my-4 overflow-x-auto space-y-4 text-pink-900 border border-pink-100">
-              <p>
-                <strong>Cube:</strong> Volume = edge³
-              </p>
-              <p>
-                <strong>Rectangular Prism:</strong> Volume = length × width ×
-                height
-              </p>
-              <p>
-                <strong>Cylinder:</strong> Volume = πr²h
-              </p>
-              <p>
-                <strong>Sphere:</strong> Volume = ⁴⁄₃πr³
-              </p>
-              <p>
-                <strong>Cone:</strong> Volume = ¹⁄₃πr²h
-              </p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              V = L × W × H
             </div>
-            <p className="mt-4">
-              Where <strong>r</strong> represents the radius (half the diameter)
-              and <strong>h</strong> represents the total height of the object.
+            <p className="text-sm text-slate-500 text-center">
+              Volume represents the 3D space occupied by an object.
             </p>
           </>
         }

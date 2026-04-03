@@ -183,56 +183,16 @@ export default function AmortizationCalculator() {
           ]
         }}
         formula={
-          <div className="space-y-8">
-            <p>
-              The monthly payment (P) is calculated using the standard <strong>Fixed-Rate Amortization Formula</strong>:
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1+r)^n ] / [ (1+r)^n - 1 ]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Detailed periodic repayment schedule.
             </p>
-            <div className="bg-slate-900 p-8 rounded-3xl text-center shadow-2xl border border-slate-500/30">
-              <code className="text-2xl md:text-3xl text-blue-400 font-mono">
-                P = L [ i(1 + i)ⁿ ] / [ (1 + i)ⁿ - 1 ]
-              </code>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-bold uppercase tracking-widest text-slate-400">
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10 flex justify-between"><span>L</span> <span className="text-blue-500">Loan Amount (Principal)</span></div>
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10 flex justify-between"><span>i</span> <span className="text-blue-500">Monthly Interest Rate (Annual / 12)</span></div>
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10 flex justify-between"><span>n</span> <span className="text-blue-500">Total Payments (Years × 12)</span></div>
-            </div>
-          </div>
+          </>
         }
-        deepDive={
-          <div className="space-y-16 text-slate-700">
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-slate-900 pl-6">I. The Anatomy of an Amortization Table</h4>
-              <p className="text-lg leading-relaxed">
-                Every amortization schedule is characterized by "front-loaded" interest. Because interest is calculated based on the *current* balance, and your balance is highest on day one, your largest interest payments occur at the beginning of the loan. This is why banks love 30-year fixed mortgages; if you sell your house after 7 years, you have paid off almost all the interest the bank expected, but very little of the house itself.
-              </p>
-            </section>
-
-            <section className="bg-emerald-50 p-12 rounded-[40px] border border-emerald-100 shadow-inner">
-               <h4 className="text-2xl font-black mb-6 text-emerald-900 uppercase tracking-widest italic flex items-center">
-                 <span className="mr-3">🚀</span> Extra Payments: The "Guaranteed Return"
-               </h4>
-               <p className="leading-relaxed text-lg text-emerald-950/80">
-                 Paying an extra $100 toward a mortgage with a 7% interest rate is mathematically equivalent to putting that $100 into a savings account that yields a <strong>guaranteed 7% return</strong>. Because that interest is avoided entirely, it is often the most productive "investment" a homeowner can make, safely outperforming high-yield savings accounts and competing with stock market averages—with zero risk.
-               </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-slate-900 pl-6">II. Comparison: 15-Year vs. 30-Year Schedules</h4>
-              <p className="text-lg leading-relaxed">
-                A 15-year mortgage typically carries a lower interest rate, but that's not where the real savings come from. The real magic is in the <strong>amortization velocity</strong>. In a 15-year loan, roughly 50% of your first payment goes toward principal. In a 30-year loan, that number is closer to 15%. Over the life of a $300,000 loan, choosing a 15-year term instead of 30 can save you over <strong>$250,000 in pure interest</strong>.
-              </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-slate-900 pl-6">III. Negative Amortization and ARMs</h4>
-              <p className="text-lg leading-relaxed">
-                Some loans, like Adjustable-Rate Mortgages (ARMs) or during certain deferment periods, can experience "Negative Amortization." This occurs when your monthly payment doesn't even cover the monthly interest cost. The unpaid interest is added back to your principal balance, causing you to owe *more* money to the bank even as you make payments. This calculator helps you identify if your current strategy is truly reducing your debt or simply treading water.
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-white p-10 md:p-14 rounded-[3rem] shadow-sm border border-slate-100 flex flex-col md:flex-row gap-12">
             <div className="flex-1 space-y-6">
                <h5 className="font-black text-slate-900 uppercase tracking-widest text-xs mb-4">The Impact of One Extra Payment</h5>

@@ -171,7 +171,16 @@ export default function SocialSecurityCalculator() {
             </p>
           </>
         }
-        formula={<></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Social Security Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Social Security results.
+            </p>
+          </>
+        }
         example={
           <>
             <p>If your Full Retirement Age (FRA) is 67 and your base benefit (PIA) is $2,000:</p>

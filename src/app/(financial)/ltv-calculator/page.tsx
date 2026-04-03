@@ -272,12 +272,12 @@ export default function LTVCalculator() {
         }
         formula={
           <>
-            <p>The LTV ratio is a simple percentage equation:</p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-              <strong>
-                LTV = (Total Loan Amount ÷ Property Appraised Value) × 100
-              </strong>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Ltv Analysis Model
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Ltv results.
+            </p>
           </>
         }
         example={

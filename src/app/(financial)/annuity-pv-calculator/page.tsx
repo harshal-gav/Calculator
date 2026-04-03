@@ -207,27 +207,15 @@ export default function AnnuityPVCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The calculation uses the standard Time Value of Money (TVM)
-                formula for an <strong>Ordinary Annuity</strong> (payments at
-                the end of the period):
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-emerald-900 border border-emerald-100">
-                <strong>PV</strong> = PMT × [ 1 − (1 + r)<sup>−n</sup> ] / r
-              </div>
-              <p className="text-sm mt-2">
-                For an <strong>Annuity Due</strong> (payments at the beginning
-                of the period), the entire result is multiplied by{" "}
-                <code>(1 + r)</code>.
-              </p>
-              <p className="text-sm mt-2">
-                <strong>PMT</strong> = Payment per period, <strong>r</strong> =
-                Interest rate per period, <strong>n</strong> = Total number of
-                periods.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Annuity Pv Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Annuity Pv results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

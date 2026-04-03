@@ -194,43 +194,15 @@ export default function JsonToCsv() {
             </>
           }
           formula={
-            <>
-              <p>
-                The conversion process requires the parser to extract the unique
-                "Keys" from the JSON objects to act as the Column Headers, and
-                then map every subsequent "Value" into the correct row:
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-emerald-900 border border-emerald-100 flex flex-col gap-2">
-                {`[
-  { "id": 1, "name": "Apple", "price": 1.99 },
-  { "id": 2, "name": "Banana", "price": 0.99 }
-]`}
-                <div className="text-center font-bold text-emerald-600">
-                  ↓ Converts To ↓
-                </div>
-                {`id,name,price
-1,Apple,1.99
-2,Banana,0.99`}
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Headers:</strong> The parser scans the first object
-                  (or all objects) to generate a master list of all possible
-                  column names.
-                </li>
-                <li>
-                  <strong>Delimiters:</strong> A comma (,) acts as the wall
-                  between columns. A line break (\n) signifies a brand new row.
-                </li>
-                <li>
-                  <strong>Escaping:</strong> If a piece of data actually
-                  contains a comma (like "Smith, John"), the converter must wrap
-                  it in double-quotes to prevent Excel from accidentally
-                  splitting his name across two columns.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Json To Csv using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

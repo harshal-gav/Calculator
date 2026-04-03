@@ -211,32 +211,15 @@ d ≈ ${obj.toFixed(4)}`;
             </>
           }
           formula={
-            <>
-              <p>
-                The Distance Formula is actually just a direct algebraic
-                derivation of the famous Pythagorean Theorem (a² + b² = c²).
-                Instead of solving for the hypotenuse 'c', you are solving for
-                distance 'd':
-              </p>
-              <div className="bg-sky-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-sky-900 border border-sky-100">
-                d = √ [ (x₂ - x₁)² + (y₂ - y₁)² ]
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>(x₂ - x₁)</strong> represents the horizontal distance
-                  traveled between the points.
-                </li>
-                <li>
-                  <strong>(y₂ - y₁)</strong> represents the vertical distance
-                  traveled between the points.
-                </li>
-                <li>
-                  By squaring these differences, adding them, and taking the
-                  square root, you find the exact diagonal distance.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Distance Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Distance results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

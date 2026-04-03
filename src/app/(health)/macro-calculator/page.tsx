@@ -243,31 +243,15 @@ export default function MacroCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The basic thermodynamic translation from energy (calories) to
-                physical food weight (grams) is strictly fixed by biology:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Protein:</strong> Contains exactly{" "}
-                  <strong>4 kilocalories per gram</strong>.
-                </li>
-                <li>
-                  <strong>Carbohydrates:</strong> Contains exactly{" "}
-                  <strong>4 kilocalories per gram</strong>.
-                </li>
-                <li>
-                  <strong>Fats:</strong> Are much more energy-dense, containing{" "}
-                  <strong>9 kilocalories per gram</strong>.
-                </li>
-              </ul>
-              <div className="bg-orange-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-orange-900 border border-orange-100">
-                <strong>Macro Grams</strong> = (Total Daily Calories × Macro %)
-                ÷ (4 or 9 kcal/g)
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Protein: 4 kcal/g | Fat: 9 kcal/g | Carbs: 4 kcal/g
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Macronutrient breakdown based on daily caloric goals.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

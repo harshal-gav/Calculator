@@ -158,20 +158,14 @@ export default function RentalPropertyCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>Key Real Estate Formulas:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-slate-50 p-4 rounded-xl">
-                    <span className="block text-[10px] font-bold uppercase text-slate-400 mb-2 font-mono">Capture Rate (Cap Rate)</span>
-                    <code className="text-xs text-emerald-700">NOI / Purchase Price</code>
-                </div>
-                <div className="bg-slate-50 p-4 rounded-xl">
-                    <span className="block text-[10px] font-bold uppercase text-slate-400 mb-2 font-mono">Cash-on-Cash Return</span>
-                    <code className="text-xs text-emerald-700">Annual Cash Flow / Total Cash Invested</code>
-                </div>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Rental Property Analysis Model
             </div>
-            <p className="text-sm text-slate-500 italic">Net Operating Income (NOI) = Gross Rent - Operating Expenses (Tax, Insurance, Repairs).</p>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Rental Property results.
+            </p>
+          </>
         }
         example={
           <p>

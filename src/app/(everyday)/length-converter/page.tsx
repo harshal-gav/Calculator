@@ -215,27 +215,15 @@ export default function LengthConverter() {
             </>
           }
           formula={
-            <>
-              <p>
-                The standard algebraic formula for converting length involves
-                multiplying your original value by a specific "Conversion
-                Factor".
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
-                <p>
-                  <strong>
-                    Target Value = Original Value × Conversion Factor
-                  </strong>
-                </p>
-              </div>
-              <p>
-                For example, to convert exactly 1 Mile into Kilometers, the
-                universally recognized mathematical conversion factor is{" "}
-                <strong>1.609344</strong>. Therefore, 10 miles × 1.609344 =
-                16.09 kilometers.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Length Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

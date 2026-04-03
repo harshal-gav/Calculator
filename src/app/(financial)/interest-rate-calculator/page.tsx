@@ -197,22 +197,15 @@ export default function InterestRateCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                This calculator utilizes the standard mathematical formula for
-                compound interest:
-              </p>
-              <div className="bg-indigo-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-indigo-900 border border-indigo-100">
-                <strong>A = P × (1 + r/n)^(n×t)</strong>
-              </div>
-              <p className="text-sm mt-2">
-                <strong>A</strong> = Final Amount, <strong>P</strong> = Starting
-                Principal, <strong>r</strong> = Annual Interest Rate (decimal),{" "}
-                <strong>n</strong> = Compounding frequency per year,{" "}
-                <strong>t</strong> = Time in years.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Interest Rate results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

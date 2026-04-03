@@ -364,32 +364,14 @@ export default function AgeCalculator() {
           </div>
         }
         formula={
-          <div className="space-y-10 bg-gray-900 text-white p-12 md:p-16 rounded-[4rem] mb-24 relative overflow-hidden shadow-2xl">
-             <div className="absolute right-0 bottom-0 w-64 h-64 bg-pink-500/5 rounded-full blur-3xl"></div>
-             <h4 className="text-3xl font-black text-pink-500 tracking-tighter uppercase mb-2 text-center">The Recursive Borrowing Engine: Version 2.4</h4>
-             <p className="text-gray-400 text-center font-bold text-sm tracking-widest mb-10">MATHEMATICAL PROOF OF CHRONOLOGICAL INTEGRITY</p>
-             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="bg-white/5 p-10 rounded-3xl border border-white/10 font-mono text-xs leading-relaxed">
-                   <p className="text-pink-500 mb-4 font-bold">// Algorithm: Segmented Temporal Subtraction</p>
-                   <p>1. Identify Target [T] and Origin [O]</p>
-                   <p>2. Calculate Days [dD = tD - oD]</p>
-                   <p>&nbsp;&nbsp;&nbsp;IF dD &lt; 0: </p>
-                   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONSTANT prevMonth = GET_DAYS_IN_MONTH(tM - 1, tY);</p>
-                   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dD += prevMonth;</p>
-                   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tM -= 1;</p>
-                   <p>3. Calculate Months [mD = tM - oM]</p>
-                   <p>&nbsp;&nbsp;&nbsp;IF mD &lt; 0: </p>
-                   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mD += 12;</p>
-                   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tY -= 1;</p>
-                   <p>4. Result = [tY - oY, mD, dD]</p>
-                   <p className="text-pink-500 mt-4 font-bold">// Note: This avoids the &apos;30-day month&apos; fallacy.</p>
-                </div>
-                <div className="space-y-6">
-                   <p className="text-xl leading-relaxed text-gray-300">Our engine handles the <strong>Irregular Boundary Problem</strong> perfectly. Because months vary from 28 to 31 days, a simple day-count divided by 30 is always 3.33% inaccurate per month. Our algorithm checks the *specific* calendar months lived through, ensuring that if you are born on August 31st, you aren&apos;t 1 month old until September 30th (the end of the container), but you are 1 month and 1 day old on October 1st. This is the difference between data and truth in the science of human history.</p>
-                   <p className="text-gray-500 font-bold italic">By calculating every leap year intercalary day and every centurial shift, we provide a result that is legally and scientifically indisputable.</p>
-                </div>
-             </div>
-          </div>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Age Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Age results.
+            </p>
+          </>
         }
         example={
           <div className="bg-gradient-to-br from-pink-50 to-indigo-50 p-16 rounded-[4rem] border-4 border-white shadow-2xl mb-24 text-center relative overflow-hidden">

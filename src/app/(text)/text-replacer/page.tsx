@@ -289,32 +289,15 @@ export default function TextReplacer() {
             </>
           }
           formula={
-            <>
-              <p>
-                Our tool runs complex logic algorithms to ensure you don't
-                accidentally ruin your document with a bad replacement
-                operation:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Whole Word Safety:</strong> By default, finding "cat"
-                  and replacing it with "dog" would accidentally turn "catalog"
-                  into "dogalog". Toggling "Whole Word" uses <code>\b</code>{" "}
-                  regex boundaries to ensure only isolated words are replaced.
-                </li>
-                <li>
-                  <strong>Case Sensitivity:</strong> If turned off, searching
-                  for "Apple" will equally replace "apple" and "APPLE". Turn it
-                  on to enforce strict exact-casing matches.
-                </li>
-                <li>
-                  <strong>Regex Power:</strong> Allows programmers to use full
-                  regular expressions (like <code>[0-9]+</code> to find any
-                  numbers) instead of static strings.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Text Replacer Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Text Replacer results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -183,29 +183,12 @@ export default function PaymentCalculator() {
         }
         formula={
           <>
-            <p>
-              The calculation uses the standard formula for an annuity or
-              amortized loan:
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-xl shadow-sm my-4 overflow-x-auto">
-              PMT = P * (r(1 + r)^n) / ((1 + r)^n - 1)
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Payment Analysis Model
             </div>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>PMT:</strong> The monthly payment amount
-              </li>
-              <li>
-                <strong>P:</strong> The Principal loan amount you are borrowing
-              </li>
-              <li>
-                <strong>r:</strong> The monthly interest rate (Annual rate
-                divided by 12)
-              </li>
-              <li>
-                <strong>n:</strong> The total number of payments (Loan term in
-                months)
-              </li>
-            </ul>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Payment results.
+            </p>
           </>
         }
         example={

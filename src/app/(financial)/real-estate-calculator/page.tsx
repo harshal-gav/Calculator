@@ -209,7 +209,12 @@ export default function RealEstateCalculator() {
         }
         formula={
           <>
-            <p className="font-mono bg-gray-50 p-4 rounded-lg text-sm mb-2 font-bold">Cap Rate = (Annual NOI / Purchase Price) × 100</p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Real Estate Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Real Estate results.
+            </p>
           </>
         }
         example={

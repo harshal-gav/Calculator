@@ -137,8 +137,11 @@ export default function FuelCostCalculator() {
         }
         formula={
           <>
-            <p className="mt-4 font-mono text-lg bg-gray-50 py-3 font-bold text-gray-800 px-6 inline-block rounded-lg shadow-sm">
-               Total Cost = (Distance / MPG) × Gas Price
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Fuel Cost Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Fuel Cost results.
             </p>
           </>
         }

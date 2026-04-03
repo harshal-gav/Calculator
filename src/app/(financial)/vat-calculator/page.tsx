@@ -202,26 +202,15 @@ export default function VatCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Calculating Value-Added Tax requires completely different math
-                depending on whether you are adding it to a wholesale price or
-                extracting it from a retail price.
-              </p>
-              <div className="bg-orange-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-orange-100 text-orange-900">
-                <p>
-                  <strong>
-                    Adding VAT: Gross = Net + (Net × [VAT Rate ÷ 100])
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-orange-200">
-                  <strong>
-                    Removing VAT: Net = Gross ÷ (1 + [VAT Rate ÷ 100])
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Vat Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Vat results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

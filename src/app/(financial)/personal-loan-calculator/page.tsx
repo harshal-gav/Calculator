@@ -149,7 +149,16 @@ export default function PersonalLoanCalculator() {
             </p>
           </>
         }
-        formula={<></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Personal Loan results.
+            </p>
+          </>
+        }
         example={
           <>
             <p>If you take out a <strong>$10,000</strong> medical loan at <strong>9.5% APR</strong> over <strong>3 years (36 months)</strong>:</p>

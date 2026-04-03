@@ -256,22 +256,12 @@ export default function FractionCalculator() {
         }
         formula={
           <>
-            <p>
-              Calculating fractions requires utilizing the numerator (top
-              number) and the denominator (bottom number) according to the order
-              of operations. Let's look at the basic rules:
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-lg shadow-sm my-4 overflow-x-auto space-y-4">
-              <p>
-                <strong>Addition:</strong> (a/b) + (c/d) = (ad + bc) / bd
-              </p>
-              <p>
-                <strong>Multiplication:</strong> (a/b) × (c/d) = (ac) / (bd)
-              </p>
-              <p>
-                <strong>Division:</strong> (a/b) ÷ (c/d) = (ad) / (bc)
-              </p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              (a/b) [+,-,×,÷] (c/d)
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              Arithmetic operations involving rational numbers.
+            </p>
           </>
         }
         example={

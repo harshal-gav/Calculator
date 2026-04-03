@@ -161,25 +161,15 @@ export default function LcmCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The most programmatically efficient way to find the Lowest
-                Common Multiple of two numbers is to calculate their Greatest
-                Common Divisor (GCD) first, and then apply this reduction
-                formula.
-              </p>
-              <div className="bg-cyan-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-cyan-100 text-cyan-900">
-                <p>
-                  <strong>LCM(a, b) = (a × b) ÷ GCD(a, b)</strong>
-                </p>
-              </div>
-              <p>
-                For more than two numbers, this exact algorithmic formula is
-                iterated sequentially against the running total until the entire
-                dataset has been successfully processed.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              LCM(a, b) = |a×b| / GCF(a, b)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              The smallest positive integer divisible by both a and b.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

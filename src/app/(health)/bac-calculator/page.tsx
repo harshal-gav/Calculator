@@ -311,31 +311,15 @@ export default function BACalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                This tool utilizes the internationally recognized{" "}
-                <strong>Widmark Formula</strong>, developed by Swedish physician
-                Erik Widmark in the 1920s. It mathematically factors in the
-                volume of alcohol, human water-distribution constants, and a
-                standard metabolic elimination rate.
-              </p>
-              <div className="bg-sky-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-sky-100 text-sky-900">
-                <p>
-                  <strong>
-                    BAC = [ (Alcohol Ounces × 5.14) ÷ (Weight in lbs × r) ] -
-                    (0.015 × Hours)
-                  </strong>
-                </p>
-                <p className="mt-2 text-xs italic text-sky-700">
-                  Where 'r' is the gender constant (0.73 for men, 0.66 for
-                  women).
-                  <br />
-                  0.015 calculates the average hourly rate the liver destroys
-                  alcohol.
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Bac Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Bac results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

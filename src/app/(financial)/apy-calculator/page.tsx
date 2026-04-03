@@ -172,51 +172,15 @@ export default function APYCalculator() {
             ]
           }}
           formula={
-            <>
-              <p className="mb-4">
-                The Annual Percentage Yield is calculated by taking the periodic rate, raising it to the power of the number of periods, and subtracting the original principal.
-              </p>
-              <div className="bg-zinc-100 p-6 rounded-xl border border-zinc-200 mb-6">
-                <p className="font-mono text-center text-xl mb-4 text-emerald-900">
-                  APY = (1 + r/n)ⁿ - 1
-                </p>
-                <div className="text-sm font-sans text-zinc-700 grid grid-cols-2 gap-4 border-t border-zinc-200 pt-4">
-                  <div>
-                    <strong>r</strong> = Nominal Interest Rate (decimal)
-                  </div>
-                  <div>
-                    <strong>n</strong> = Compounding periods per year
-                  </div>
-                </div>
-              </div>
-              <p className="italic text-zinc-500 text-sm">
-                Note: For continuous compounding, the formula shifts to the natural exponential: <strong>APY = eʳ - 1</strong>, where 'e' is Euler's number (~2.71828).
-              </p>
-            </>
-          }
-          deepDive={
-            <>
-              <h3 className="text-xl font-bold mb-4 text-emerald-900">Nominal vs. Effective: Why Your Bank Quotes Both</h3>
-              <p className="mb-4">
-                Financial institutions are legally required to disclose the yield of their accounts. This "Effective Rate" (APY) is almost always higher than the "Nominal Rate" (Interest Rate). The difference represents the <strong>Compounding Bonus</strong>.
-              </p>
-              <p className="mb-4">
-                For example, if you have $10,000 in an account with a 5% nominal rate:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mb-6 text-zinc-700">
-                <li><strong>Month 1:</strong> You earn interest on $10,000.</li>
-                <li><strong>Month 2:</strong> You earn interest on $10,041.67 (Original + Month 1 Interest).</li>
-                <li><strong>Month 3:</strong> You earn interest on $10,083.51... and so on.</li>
-              </ul>
-              <p className="mb-4">
-                By the end of the year, those tiny monthly "interest on interest" payments add up. In this 5% monthly compounding example, you end with $10,511.62 instead of $10,500. That extra $11.62 represents the difference between a 5% APR and a 5.116% APY.
-              </p>
-              <h3 className="text-xl font-bold mb-4 text-emerald-900">The "Truth in Savings" Act</h3>
-              <p>
-                In the United States, the <strong>Truth in Savings Act (Regulation DD)</strong> requires depository institutions to use the APY in all advertisements and disclosures. This was passed to prevent banks from using confusing compounding math to mislead consumers about how much their money would actually grow.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              APY = (1 + r/nⁿ) - 1
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Annualized yield of a compounding interest account.
+            </p>
+          </>
+        }
           example={
             <>
               <p className="mb-4 font-semibold text-emerald-800">Scenario: Daily Compounding vs. Annual Compounding</p>

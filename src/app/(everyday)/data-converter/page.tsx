@@ -207,25 +207,15 @@ export default function DataConverter() {
             </>
           }
           formula={
-            <>
-              <p>
-                To move up the modern digital storage scale, you mathematically
-                divide your value by exactly 1,024. To move down the scale, you
-                multiply by 1,024.
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
-                <p>
-                  <strong>1 Megabyte (MB) = 1,024 Kilobytes (KB)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-emerald-200">
-                  <strong>1 Gigabyte (GB) = 1,024 Megabytes (MB)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-emerald-200">
-                  <strong>1 Terabyte (TB) = 1,024 Gigabytes (GB)</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Data Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -323,12 +323,12 @@ export default function ResistorCalculator() {
         }
         formula={
           <>
-            <p>The calculator uses standard electrical formulas:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Series:</strong> R_total = R₁ + R₂ + R₃ + ...</li>
-              <li><strong>Parallel:</strong> 1/R_total = 1/R₁ + 1/R₂ + 1/R₃ + ...</li>
-              <li><strong>Color Code:</strong> Resistance = (First Digit × Second Digit) × Multiplier</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Resistor Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Resistor results.
+            </p>
           </>
         }
         example={

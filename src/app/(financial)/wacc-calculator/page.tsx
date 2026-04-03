@@ -247,31 +247,15 @@ export default function WACCCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The WACC formula multiplies the cost of each capital component
-                by its proportional weight, factoring in the tax-deductibility
-                of corporate debt.
-              </p>
-              <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900 overflow-x-auto">
-                <p className="whitespace-nowrap">
-                  <strong>
-                    WACC = (E/V × R<sub>e</sub>) + [ (D/V × R<sub>d</sub>) × (1
-                    - T<sub>c</sub>) ]
-                  </strong>
-                </p>
-                <p className="border-t border-zinc-200 pt-3 mt-2 text-sm font-sans text-left text-zinc-700">
-                  <strong>Where:</strong>
-                  <br />E = Market Value of Equity
-                  <br />D = Market Value of Debt
-                  <br />V = Total Market Value (E + D)
-                  <br />R<sub>e</sub> = Cost of Equity
-                  <br />R<sub>d</sub> = Cost of Debt
-                  <br />T<sub>c</sub> = Corporate Tax Rate
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Wacc Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Wacc results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

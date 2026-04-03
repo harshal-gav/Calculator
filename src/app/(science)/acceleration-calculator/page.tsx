@@ -274,34 +274,15 @@ export default function AccelerationCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The standard formula for constant straight-line acceleration
-                requires you to subtract the original speed from the final
-                speed, and divide by the amount of time that passed.
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
-                <p>
-                  <strong>
-                    a = (v<sub>f</sub> - v<sub>i</sub>) ÷ t
-                  </strong>
-                </p>
-                <p className="text-sm mt-2 font-sans text-emerald-800">
-                  <em>
-                    Where <strong>a</strong> is acceleration,{" "}
-                    <strong>
-                      v<sub>f</sub>
-                    </strong>{" "}
-                    is final velocity,{" "}
-                    <strong>
-                      v<sub>i</sub>
-                    </strong>{" "}
-                    is initial velocity, and <strong>t</strong> is time.
-                  </em>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              a = (vᵪ - v₀) / t
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Rate of change of velocity over duration.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

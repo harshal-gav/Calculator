@@ -184,34 +184,15 @@ export default function PrismCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                To accurately calculate the properties of ANY prism, regardless
-                of what the front/back shape looks like, you only need three
-                core variables: <strong>Base Area (\(B\))</strong>,{" "}
-                <strong>Base Perimeter (\(p\))</strong>, and the{" "}
-                <strong>Prism Height (\(h\))</strong> (its 3D depth).
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  <strong>Volume (\(V\)):</strong>{" "}
-                  <code>Base Area × Height</code>. (The 2D floor area extruded
-                  upwards into the 3rd dimension).
-                </li>
-                <li>
-                  <strong>Lateral Surface Area (\(L\)):</strong>{" "}
-                  <code>Base Perimeter × Height</code>. (This calculates the
-                  total surface area of all the walls, ignoring the top lid and
-                  bottom floor).
-                </li>
-                <li>
-                  <strong>Total Surface Area (\(S\)):</strong>{" "}
-                  <code>(2 × Base Area) + Lateral Area</code>. (Adding the two
-                  base caps back onto the lateral walls).
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Prism Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Prism results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

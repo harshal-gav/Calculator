@@ -163,13 +163,14 @@ export default function TraditionalIRACalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The standard compound interest formula is used, with a focus on the tax delta:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-sm overflow-x-auto text-orange-700">
-              Tax Savings Now = (Annual Contribution) × (Current Marginal Tax Rate)
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Traditional Ira Analysis Model
             </div>
-            <p>While the gross balance grows tax-free, the <em>After-Tax Value</em> is estimated by deducting the expected retirement tax rate from the total withdrawals.</p>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Traditional Ira results.
+            </p>
+          </>
         }
         example={
           <p>

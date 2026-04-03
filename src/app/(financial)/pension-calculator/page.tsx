@@ -144,13 +144,14 @@ export default function PensionCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The standard pension formula used by most employers is:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-sm overflow-x-auto text-indigo-700">
-              Annual Pension = (Final Average Salary) × (Years of Service) × (Pension Multiplier)
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Pension Analysis Model
             </div>
-            <p>For example, if you earn $100,000, work for 30 years, and have a 2.0% multiplier: $100,000 × 30 × 0.02 = $60,000 per year.</p>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Pension results.
+            </p>
+          </>
         }
         example={
           <p>

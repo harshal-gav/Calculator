@@ -147,13 +147,14 @@ export default function BoatLoanCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The standard amortization formula is used for boat loans:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-xs text-cyan-700 overflow-x-auto">
-              M = P [ i(1 + i)^n ] / [ (1 + i)^n – 1 ]
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
             </div>
-            <p>Where <em>P</em> is the loan amount (Price + Tax - Down Payment), <em>i</em> is the monthly interest rate, and <em>n</em> is the number of months.</p>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Boat Loan results.
+            </p>
+          </>
         }
         example={
           <p>

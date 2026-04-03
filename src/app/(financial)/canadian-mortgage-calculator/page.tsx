@@ -165,13 +165,14 @@ export default function CanadianMortgageCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>Unlike US mortgages which compound monthly, Canadian law requires semi-annual compounding for fixed rates. The effective monthly rate is:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-sm overflow-x-auto">
-              i = (1 + r / 2)^(2 / 12) - 1
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
             </div>
-            <p>Where <em>r</em> is the annual quoted interest rate. This result <em>i</em> is then used in the standard amortization formula to calculate the periodic payment.</p>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Canadian Mortgage results.
+            </p>
+          </>
         }
         example={
           <p>

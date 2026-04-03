@@ -271,12 +271,12 @@ export default function BusinessLoanCalculator() {
         }
         formula={
           <>
-            <p>While the monthly payment is generated via a standard amortization formula based on your Gross Loan Amount, the <strong>Effective APR</strong> is far more complex.</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Lenders charge you interest on the <strong>Gross Loan Amount</strong> (e.g. $100,000).</li>
-              <li>However, if there is a 3% origination fee, the bank instantly keeps $3,000 and hands you <strong>$97,000 (Net Funds Received)</strong>.</li>
-              <li>The <strong>Effective APR</strong> runs a reverse Internal Rate of Return (IRR) to calculate exactly what interest rate you are *actually* paying if you borrowed $97,000 but made payments sized for $100,000.</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Business Loan results.
+            </p>
           </>
         }
         example={

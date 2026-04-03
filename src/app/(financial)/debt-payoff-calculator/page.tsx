@@ -286,23 +286,15 @@ export default function DebtPayoffCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                This calculator steps through a standard monthly loan
-                amortization schedule until the balance hits zero. For any given
-                month, the interest portion is calculated by:
-              </p>
-              <div className="bg-red-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-red-900 border border-red-100">
-                <strong>Monthly Interest</strong> = Current Balance × (Annual
-                APR ÷ 12)
-              </div>
-              <p className="text-sm mt-2">
-                Any dollars in your monthly payment beyond that exact minimum
-                immediately pay down the principal balance, permanently reducing
-                your interest charge for the following month.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Debt Payoff Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Debt Payoff results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -158,27 +158,15 @@ export default function ExponentCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Exponentiation is simply a mathematical shorthand for writing
-                out repeated multiplication.
-              </p>
-              <div className="bg-violet-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-violet-900 border border-violet-100">
-                x<sup className="text-[10px]">n</sup> = x × x × x ... (n times)
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Base (x):</strong> The core foundational number being
-                  multiplied.
-                </li>
-                <li>
-                  <strong>Exponent (n):</strong> The "power", representing
-                  exactly how many times the base should be multiplied by
-                  itself.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Exponent Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Exponent results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

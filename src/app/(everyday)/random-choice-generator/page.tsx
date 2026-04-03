@@ -178,28 +178,15 @@ export default function RandomChoiceGenerator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Instead of drawing names from a hat or flipping a coin, this
-                tool operates in the background by assigning a unique numeric
-                index to every single line of text you provide.
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  The algorithm counts exactly how many total items you entered.
-                </li>
-                <li>
-                  It then generates a floating-point decimal between 0 and 1,
-                  and multiplies it by the total count.
-                </li>
-                <li>
-                  Finally, it rounds down to the nearest integer, using that
-                  number to instantly fetch the corresponding "winning" item
-                  from your list.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Random Choice Generator Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Random Choice Generator results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

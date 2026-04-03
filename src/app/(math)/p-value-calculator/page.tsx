@@ -328,12 +328,12 @@ export default function PValueCalculator() {
         }
         formula={
           <>
-            <p>The p-value depends on the type of statistical test:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Chi-Square:</strong> p = P(χ² ≥ test statistic | df)</li>
-              <li><strong>T-Test:</strong> p = P(|t| ≥ |test statistic| | df)</li>
-              <li><strong>Z-Test:</strong> p = P(|Z| ≥ |test statistic|)</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              P Value Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise P Value results.
+            </p>
           </>
         }
         example={

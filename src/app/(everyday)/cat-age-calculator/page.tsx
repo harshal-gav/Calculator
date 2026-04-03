@@ -214,29 +214,15 @@ export default function CatAgeCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                According to the American Animal Hospital Association (AAHA),
-                kittens progress through human childhood and adolescence at
-                lightning speed. Within just two years, a cat has biologically
-                reached its mid-20s. After that, the aging process stabilizes
-                into a flat, linear progression.
-              </p>
-              <div className="bg-fuchsia-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-fuchsia-100 text-fuchsia-900">
-                <p>
-                  <strong>Year 1 = 15 Human Years</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-fuchsia-200">
-                  <strong>Year 2 = +9 Human Years (Total 24)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-fuchsia-200">
-                  <strong>
-                    Years 3+ = Exactly +4 Human Years per Calendar Year
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Cat Age Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Cat Age results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

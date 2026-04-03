@@ -137,11 +137,14 @@ export default function UrlEncoderDecoder() {
           </p>
         }
         formula={
-          <p>
-            This tool uses standard JavaScript <code>encodeURIComponent</code> and 
-            <code>decodeURIComponent</code> functions which follow the RFC 3986 
-            standard for Uniform Resource Identifiers (URI).
-          </p>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Url Encoder Decoder Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Url Encoder Decoder results.
+            </p>
+          </>
         }
         example={
           <ul className="list-disc pl-6 space-y-2">

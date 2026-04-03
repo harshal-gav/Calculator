@@ -212,24 +212,15 @@ export default function RandomNumberGenerator() {
         }
         formula={
           <>
-            <p>
-              Under the hood, computer-generated random numbers are created
-              using an algorithmic function called a{" "}
-              <em>Pseudo-Random Number Generator</em> (PRNG). While the
-              underlying javascript formula is highly complex, the logical
-              constraint looks like this:
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-lg shadow-sm my-4 overflow-x-auto space-y-4">
-              <p>Result = Math.floor(Math.random() * (Max - Min + 1)) + Min</p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              R = [min, max]
             </div>
-            <p className="mt-4">
-              This math converts a long decimal (like 0.849204) into a perfectly
-              rounded integer safely nestled between your exact Minimum and
-              Maximum parameters.
+            <p className="text-sm text-slate-500 text-center">
+              Generating a pseudo-random integer within a range.
             </p>
           </>
         }
-        example={
+          example={
           <>
             <p>
               Let's say you are hosting a raffle and you sold{" "}

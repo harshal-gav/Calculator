@@ -175,26 +175,15 @@ export default function PressureConverter() {
             </p>
           }
           formula={
-            <>
-              <p>
-                In physics, pressure is officially defined as Force (Newtons)
-                applied over a continuous Area (Square Meters). This converter
-                utilizes the International System (SI) base unit—the Pascal—as
-                its central conversion bridge.
-              </p>
-              <div className="bg-purple-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-purple-100 text-purple-900">
-                <p>
-                  <strong>1 Bar = 100,000 Pascals (Pa)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-purple-200">
-                  <strong>1 Atmosphere (atm) = 14.696 PSI</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-purple-200">
-                  <strong>1 PSI ≈ 6,894 Pascals (Pa)</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Pressure Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

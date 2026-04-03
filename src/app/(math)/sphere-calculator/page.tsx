@@ -157,31 +157,15 @@ export default function SphereCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                A sphere represents the most efficient geometric shape in the
-                universe—providing the absolute maximum internal volume for the
-                minimum possible surface area. Because it consists entirely of a
-                single continuous rotational curve, every computation relies
-                mathematically entirely on the number Pi (π) and algebraic
-                powers of the radius (r).
-              </p>
-              <div className="bg-violet-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-violet-100 text-violet-900">
-                <p>
-                  <strong>Diameter (d) = 2 × r</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-violet-200">
-                  <strong>Circumference (C) = 2 × π × r</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-violet-200">
-                  <strong>Surface Area (A) = 4 × π × r²</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-violet-200">
-                  <strong>Volume (V) = ⁴/₃ × π × r³</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              V = (4/3)πr³ | SA = 4πr²
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Where r is the radius of the sphere.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

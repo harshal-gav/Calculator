@@ -149,29 +149,15 @@ export default function GcfCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                To compute the GCF at scale without manually listing out
-                hundreds of individual factors, modern algorithms rely on the
-                ancient Euclidean Algorithm.
-              </p>
-              <div className="bg-cyan-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-cyan-100 text-cyan-900">
-                <p>
-                  <strong>GCD(a, b) = GCD(b, a % b)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-cyan-200">
-                  Where <strong>%</strong> is the mathematical modulo
-                  (remainder) operator.
-                </p>
-              </div>
-              <p>
-                This algorithm rapidly loops, taking the remainder of the
-                previous division until the remainder equals zero. The very last
-                non-zero divisor is mathematically guaranteed to be the Greatest
-                Common Factor.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              GCF(a, b)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Greatest Common Factor using Euclidean Algorithm.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

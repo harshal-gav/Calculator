@@ -285,37 +285,15 @@ export default function MatrixCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Matrix operations follow very specific grid-based mathematics:
-              </p>
-              <ul className="list-disc pl-6 space-y-4 mt-4 text-zinc-700">
-                <li>
-                  <strong>Addition / Subtraction:</strong> Elements are added or
-                  subtracted by their corresponding position in the grid. <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded">
-                    (A₁₁ + B₁₁)
-                  </code>
-                </li>
-                <li>
-                  <strong>Determinant |A|:</strong> For a 2x2 matrix{" "}
-                  <code>[a, b; c, d]</code>, the determinant determines if the
-                  matrix is strictly invertible. <br />{" "}
-                  <strong className="font-mono bg-zinc-100 p-1 rounded">
-                    |A| = (a × d) - (b × c)
-                  </strong>
-                </li>
-                <li>
-                  <strong>Multiplication (A × B):</strong> Dot product
-                  calculated by multiplying rows of the first matrix by columns
-                  of the second. <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded">
-                    C₁₁ = (A₁₁ × B₁₁) + (A₁₂ × B₂₁)
-                  </code>
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Matrix Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Matrix results.
+            </p>
+          </>
+        }
           example={
             <>
               <p className="mb-2">

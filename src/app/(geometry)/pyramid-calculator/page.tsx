@@ -214,34 +214,15 @@ export default function PyramidCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Deriving the volume is simple enough, but assessing surface area
-                requires utilizing the Pythagorean Theorem to find the exact
-                heights of the slanted, angled triangular walls. Assuming Length
-                (\(l\)), Width (\(w\)), and Height (\(h\)):
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  <strong>Volume (\(V\)):</strong> <code>(l × w × h) / 3</code>.
-                  It is exactly one-third the volume of a cubic prism of the
-                  same dimensions.
-                </li>
-                <li>
-                  <strong>Slant Height (Length Side, \(s_l\)):</strong>{" "}
-                  <code>√(h² + (w/2)²)</code>
-                </li>
-                <li>
-                  <strong>Slant Height (Width Side, \(s_w\)):</strong>{" "}
-                  <code>√(h² + (l/2)²)</code>
-                </li>
-                <li>
-                  <strong>Total Surface Area:</strong>{" "}
-                  <code>(l × w) + (l × s_l) + (w × s_w)</code>
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Pyramid Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Pyramid results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

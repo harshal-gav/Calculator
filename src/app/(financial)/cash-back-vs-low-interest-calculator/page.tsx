@@ -220,7 +220,16 @@ export default function CashBackVsLowInterest() {
             </p>
           </>
         }
-        formula={<></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Cash Back Vs Low Interest results.
+            </p>
+          </>
+        }
         example={
           <>
              <p>A $35,000 car offers a choice: <strong>$3,000 rebate (and 5% standard bank APR)</strong> OR <strong>0% APR for 60 months.</strong></p>

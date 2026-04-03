@@ -234,24 +234,12 @@ export default function PregnancyCalculator() {
         }
         formula={
           <>
-            <p>
-              The global medical standard for estimating a pregnancy due date is{" "}
-              <strong>Naegele's Rule</strong>. Because the exact moment of
-              conception is usually unknown, pregnancies are universally
-              measured starting from the first day of the mother's Last
-              Menstrual Period (LMP).
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-lg shadow-sm my-4 overflow-x-auto space-y-4 text-fuchsia-900 border border-fuchsia-100">
-              <p>
-                <strong>Standard Formula:</strong> Due Date = LMP + 280 Days
-              </p>
-              <p className="border-t border-fuchsia-100 pt-4 mt-4 text-sm font-sans">
-                For women with non-standard cycles, we adjust the formula:
-                <br />
-                <strong>Adjusted Formula:</strong> Due Date = LMP + 280 Days +
-                (Your Cycle Length - 28 Days)
-              </p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Pregnancy Analysis Model
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Pregnancy results.
+            </p>
           </>
         }
         example={

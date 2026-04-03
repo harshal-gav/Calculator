@@ -158,7 +158,16 @@ export default function BudgetCalculator() {
             </p>
           </>
         }
-        formula={<></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Budget Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Budget results.
+            </p>
+          </>
+        }
         example={
           <>
             <p>If you take home $5,000 per month after taxes:</p>

@@ -355,25 +355,15 @@ export default function DepreciationCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The standard <strong>Straight-Line</strong> depreciation formula
-                is straightforward algebra:
-              </p>
-              <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
-                <p>
-                  <strong>Annual Expense</strong> = (Asset Cost - Salvage Value)
-                  / Useful Life
-                </p>
-              </div>
-              <p>
-                The <strong>Double Declining Balance</strong> method is slightly
-                more aggressive, calculating the straight-line percentage rate,
-                doubling it, and applying that percentage to the remaining book
-                value every year.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Depreciation Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Depreciation results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

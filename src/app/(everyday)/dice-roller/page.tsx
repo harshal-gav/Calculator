@@ -199,32 +199,15 @@ export default function DiceRoller() {
             </>
           }
           formula={
-            <>
-              <p>
-                This roller operates on the standard tabletop gaming notation,
-                often written as <strong>NdX + M</strong>, where:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
-                <li>
-                  <strong>N (Number of Dice):</strong> How many dice are being
-                  thrown.
-                </li>
-                <li>
-                  <strong>X (Dice Type):</strong> The number of faces on the die
-                  (e.g., 6, 20).
-                </li>
-                <li>
-                  <strong>M (Modifier):</strong> Any flat numeric bonus or
-                  penalty added to the final sum.
-                </li>
-              </ul>
-              <p className="mt-4">
-                Under the hood, it executes a random number generator bounded
-                between 1 and X for every single die thrown, sums those
-                individual results, and finally applies the modifier.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Dice Roller Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Dice Roller results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

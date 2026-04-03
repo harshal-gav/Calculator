@@ -173,14 +173,12 @@ export default function StandardDeviationCalculator() {
         }
         formula={
           <>
-            <p>The calculation sequence differs fundamentally based on whether you are looking at a <strong>Sample</strong> or a total <strong>Population</strong> (known as Bessel's Correction):</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Step 1:</strong> Find the mean (average) of the dataset.</li>
-              <li><strong>Step 2:</strong> Subtract the mean from every single data point to find its "Deviation".</li>
-              <li><strong>Step 3:</strong> Sqaure each of those deviations to remove negative values.</li>
-              <li><strong>Step 4:</strong> Find the <em>Variance</em> by dividing the Sum of Squares by <strong>(N)</strong> for a Population, or <strong>(N - 1)</strong> for a Sample.</li>
-              <li><strong>Step 5:</strong> Standard Deviation is the exact Square Root of that Variance.</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              σ = √[Σ(x - μ)² / N]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Measuring the amount of variation or dispersion.
+            </p>
           </>
         }
         example={

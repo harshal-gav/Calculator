@@ -229,28 +229,15 @@ export default function Base64Converter() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Base64 is not encryption; it is an encoding scheme. The original
-                computer data is broken down into exactly 3-byte groups (24
-                total bits). Those 24 bits are mathematically sliced into four
-                6-bit groups. Each 6-bit group is then mapped explicitly to an
-                index of 64 ultra-safe characters (A-Z, a-z, 0-9, +, /) that
-                safely survive network transport protocols.
-              </p>
-              <div className="bg-zinc-800 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-700 text-zinc-300">
-                <p>
-                  <strong>3 Bytes of Input Data = 24 total bits</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-zinc-700">
-                  <strong>24 bits / 4 chunks = Four 6-bit indices</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-zinc-700">
-                  <strong>Output = 4 Safe Base64 ASCII Characters</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Base64 Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>Let's trace how the basic word "Hi" is expanded in Base64.</p>

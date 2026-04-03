@@ -213,34 +213,15 @@ export default function BloodPressureCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The calculator does not use a single mathematical formula, but
-                rather a strict diagnostic decision tree based on two required
-                variables:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Systolic Pressure (Top Number):</strong> Measures the
-                  pressure in your arteries when your heart beats (contracts).
-                </li>
-                <li>
-                  <strong>Diastolic Pressure (Bottom Number):</strong> Measures
-                  the pressure in your arteries when your heart rests between
-                  beats.
-                </li>
-              </ul>
-              <p className="mt-4">
-                It also calculates two advanced cardiovascular metrics:
-              </p>
-              <div className="bg-red-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-red-900 border border-red-100">
-                <strong>Pulse Pressure</strong> = Systolic − Diastolic
-                <br />
-                <strong>MAP (Mean Arterial Pressure)</strong> ≈ Diastolic +
-                (Pulse Pressure / 3)
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Blood Pressure Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Blood Pressure results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

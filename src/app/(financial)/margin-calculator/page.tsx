@@ -163,21 +163,15 @@ export default function MarginCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Gross margin measures profit as a percentage of the final
-                selling price (revenue).
-              </p>
-              <div className="bg-blue-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-blue-100 text-blue-900">
-                <p>
-                  <strong>Gross Profit ($) = Revenue - Cost</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-blue-200">
-                  <strong>Margin (%) = (Gross Profit ÷ Revenue) × 100</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Margin % = [(Revenue-Cost)/Revenue]×100
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Profitability ratio of sales price minus cost.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

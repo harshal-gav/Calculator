@@ -169,57 +169,16 @@ export default function SavingsGoalCalculator() {
           ]
         }}
         formula={
-          <div className="space-y-8">
-            <p>
-              To find the monthly contribution, we solve for <strong>PMT</strong> in the Future Value of an Ordinary Annuity formula, while accounting for the growth of your starting principal:
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Savings Goal Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Savings Goal results.
             </p>
-            <div className="bg-slate-900 p-8 rounded-3xl text-center shadow-2xl border border-amber-500/30">
-              <code className="text-2xl md:text-3xl text-amber-400 font-mono">
-                PMT = [ FV - P(1+r)ⁿ ] / [ ((1+r)ⁿ - 1) / r ]
-              </code>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-bold uppercase tracking-widest text-slate-400">
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10 flex justify-between"><span>FV</span> <span className="text-amber-500">Target Goal Amount</span></div>
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10 flex justify-between"><span>P</span> <span className="text-amber-500">Initial Savings</span></div>
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10 flex justify-between"><span>r</span> <span className="text-amber-500">Monthly Yield (APY / 12)</span></div>
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10 flex justify-between"><span>n</span> <span className="text-amber-500">Total Months to Goal</span></div>
-            </div>
-          </div>
+          </>
         }
-        deepDive={
-          <div className="space-y-16 text-slate-700">
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-amber-500 pl-6">I. The Psychology of the 'Milestone First' Approach</h4>
-              <p className="text-lg leading-relaxed">
-                Behavioral economists have shown that naming a savings goal (e.g., "Pacific Coast Honeymoon") makes you 20% more likely to hit the target compared to saving for "general wealth." This calculator allows you to assign a hard deadline to that name. When you see that a dream costs exactly $423/month, it shifts from an abstract dream to a manageable daily choice. You are no longer "restricting" your spending; you are "buying" your future milestone.
-              </p>
-            </section>
-
-            <section className="bg-amber-50 p-12 rounded-[40px] border border-amber-100 shadow-inner">
-               <h4 className="text-2xl font-black mb-6 text-amber-900 uppercase tracking-widest italic flex items-center">
-                 <span className="mr-3">⚠️</span> Inflation: The Invisible Expansion of Your Goal
-               </h4>
-               <p className="leading-relaxed text-lg text-amber-950/80">
-                 If you are saving for a goal that is 10+ years away (like a child's university education), a $50,000 target today will not buy $50,000 of services in the future. At 3% inflation, you would actually need roughly $67,000 to maintain the same purchasing power. When planning long-term, it is wise to add a "buffer" to your goal amount or use a more conservative APY to offset inflationary erosion.
-               </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-amber-500 pl-6">II. Automation: The Wealth-Building Cheat Code</h4>
-              <p className="text-lg leading-relaxed">
-                The single biggest variable in your success is not the interest rate—it is the <strong>consistency of your deposits</strong>. Most high-yield savings accounts now allow for "Buckets" or sub-accounts. Once this calculator gives you the monthly requirement, set up a Direct Deposit from your paycheck to go straight into your goal bucket. If the money never hits your checking account, you won't miss it, ensuring you hit your goal with zero willpower required.
-              </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-amber-500 pl-6">III. Sinking Funds vs. Emergency Funds</h4>
-              <p className="text-lg leading-relaxed">
-                A <strong>Sinking Fund</strong> (what this calculator plans for) is for a *known* future expense like a car or property tax. An <strong>Emergency Fund</strong> is for the *unknown*. You should use this planner to build your emergency fund first (e.g., matching 6 months of expenses) before diverting your monthly "Savings Power" toward luxury sinking funds.
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-slate-900 text-white p-10 md:p-14 rounded-[3rem] shadow-2xl relative overflow-hidden">
              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
              <h5 className="font-black text-amber-400 uppercase tracking-widest text-xs mb-10">Case Study: The First-Home Down Payment</h5>

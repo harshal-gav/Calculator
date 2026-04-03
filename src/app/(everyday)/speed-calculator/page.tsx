@@ -142,12 +142,12 @@ export default function SpeedCalculator() {
         }
         formula={
           <>
-            <p>Calculations adhere to standard Newtonian kinematics:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 font-mono text-gray-800">
-              <li><strong>Speed (s)</strong> = Distance / Time</li>
-              <li><strong>Time (t)</strong> = Distance / Speed</li>
-              <li><strong>Distance (d)</strong> = Speed × Time</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Speed Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Speed results.
+            </p>
           </>
         }
         example={

@@ -129,14 +129,14 @@ export default function PercentOffCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The math behind the discount:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-center text-sm text-indigo-700">
-              1. Savings = Price × (Discount % ÷ 100)<br/>
-              2. Sale Price = Price - Savings<br/>
-              3. Final Price = Sale Price × (1 + Sales Tax %)
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Percent Off Analysis Model
             </div>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Percent Off results.
+            </p>
+          </>
         }
         example={
           <p>

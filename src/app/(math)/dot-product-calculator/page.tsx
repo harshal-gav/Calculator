@@ -332,24 +332,15 @@ export default function DotProductCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The algebraic formula for calculating the dot product of two 3D
-                vectors <strong>u</strong> = [u₁, u₂, u₃] and <strong>v</strong>{" "}
-                = [v₁, v₂, v₃] is strictly additive multiplication:
-              </p>
-              <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-                <strong>u · v</strong> = (u₁ × v₁) + (u₂ × v₂) + (u₃ × v₃)
-              </div>
-              <p className="mt-4">
-                Alternatively, if you already know the magnitudes and the angle
-                (θ) between the vectors, the geometric formula is:
-              </p>
-              <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-                <strong>u · v</strong> = |u| × |v| × cos(θ)
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Dot Product Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Dot Product results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

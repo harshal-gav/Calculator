@@ -229,30 +229,15 @@ export default function CombinationsCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The standard combinations formula utilizes factorials (!) to
-                eliminate redundant, out-of-order duplicates. It is written as:
-              </p>
-              <div className="bg-pink-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-pink-900 border border-pink-100">
-                C(n, r) = n! / [r! × (n - r)!]
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>n:</strong> The total number of items available to
-                  pick from in the set.
-                </li>
-                <li>
-                  <strong>r:</strong> The number of items you are actually
-                  selecting.
-                </li>
-                <li>
-                  <strong>!:</strong> The factorial symbol (e.g., 5! = 5 × 4 × 3
-                  × 2 × 1).
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              nCr = n! / [r!(n-r)!]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Selecting r items from n without regarding order.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

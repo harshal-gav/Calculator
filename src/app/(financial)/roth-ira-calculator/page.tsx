@@ -191,18 +191,14 @@ export default function RothIRACalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The calculator uses the compound interest formula with regular monthly contributions:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-sm overflow-x-auto">
-              Future Value = P × (1 + r)ⁿ + PMT × [((1 + r)ⁿ - 1) / r] × (1 + r)
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Roth Ira Analysis Model
             </div>
-            <ul className="list-disc pl-5 space-y-1">
-              <li><strong>P:</strong> Principal (Initial Balance)</li>
-              <li><strong>PMT:</strong> Monthly Contribution</li>
-              <li><strong>r:</strong> Monthly Interest Rate (Annual Rate / 12)</li>
-              <li><strong>n:</strong> Total number of months</li>
-            </ul>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Roth Ira results.
+            </p>
+          </>
         }
         example={
           <p>

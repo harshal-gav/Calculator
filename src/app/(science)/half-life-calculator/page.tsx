@@ -235,20 +235,15 @@ export default function HalfLifeCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Half-life decay is mathematically driven by an exponential
-                reduction curve. The fundamental formula requires the Initial
-                Amount (N₀), Elapsed Time (t), and the Half-Life duration
-                (t₁/₂).
-              </p>
-              <div className="bg-purple-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-purple-100 text-purple-900">
-                <p>
-                  <strong>Nₜ = N₀ × (1/2)^(t / t₁/₂)</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              N(t) = N₀(½)^(t/T)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Radioactive decay model for chemical isotopes.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

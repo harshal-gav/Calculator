@@ -286,26 +286,15 @@ export default function GPACalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                A cumulative Grade Point Average is not a simple average of
-                percentages. It is a <em>weighted average</em> based on the
-                "Credit Hours" of the class. Getting an 'A' in a 4-credit
-                Calculus class affects your GPA much more positively than an 'A'
-                in a 1-credit PE class.
-              </p>
-              <div className="bg-amber-100/50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-amber-200 text-amber-900">
-                <p>
-                  <strong>
-                    Total Quality Points = ∑ (Grade Value × Credits)
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-amber-300">
-                  <strong>GPA = Total Quality Points ÷ Total Credits</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Gpa Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Gpa results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -129,11 +129,12 @@ export default function FatCalculator() {
         }
         formula={
           <>
-            <p>Dietary fat is the most energy-dense macronutrient:</p>
-            <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm my-4 font-mono text-center text-zinc-800">
-               <strong>Grams of Fat</strong> = (Total Daily Calories × Fat %) ÷ 9
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = f(Metric, Age, Sex)
             </div>
-            <p className="text-xs text-zinc-500 italic mt-2">Unlike protein and carbs (4 kcal/g), fat contains 9 kilocalories per gram.</p>
+            <p className="text-sm text-slate-500 text-center">
+              Biometric calculation utilizing standardized biological and physiological models for Fat.
+            </p>
           </>
         }
         example={

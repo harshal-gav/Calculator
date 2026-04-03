@@ -149,22 +149,12 @@ export default function PresentValueCalculator() {
         }
         formula={
           <>
-            <p>
-              The Present Value formula simply reverses the standard compound
-              interest equation.
-            </p>
-            <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
-              <p>
-                <strong>PV</strong> = FV ÷ (1 + r)<sup>n</sup>
-              </p>
-              <p className="border-t border-emerald-100 pt-3 mt-2 text-sm font-sans text-left text-gray-700">
-                <strong>Where:</strong>
-                <br />
-                FV = Future Value
-                <br />r = Discount Rate / Interest Rate per period
-                <br />n = Number of periods (Years)
-              </p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Present Value Analysis Model
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Present Value results.
+            </p>
           </>
         }
         example={

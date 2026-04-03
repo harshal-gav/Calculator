@@ -186,28 +186,15 @@ export default function PowerConverter() {
             </p>
           }
           formula={
-            <>
-              <p>
-                It is vital to understand that power is a measurement of a{" "}
-                <strong>RATE</strong>, not an amount. "Energy" is the total
-                volume of work. "Power" is how violently fast that Energy is
-                being burned or transferred. Our converter routes everything
-                through the SI baseline unit: the Watt (which equals exactly 1
-                Joule per second).
-              </p>
-              <div className="bg-yellow-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-yellow-100 text-yellow-900">
-                <p>
-                  <strong>1 Kilowatt (kW) = 1,000 Watts (W)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-yellow-200">
-                  <strong>1 Mechanical Horsepower (HP) ≈ 745.7 Watts</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-yellow-200">
-                  <strong>1 Metric Horsepower (PS) ≈ 735.5 Watts</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Power Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

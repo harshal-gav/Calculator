@@ -242,49 +242,16 @@ export default function BmiCalculator() {
           ]
         }}
         formula={
-          <div className="space-y-6">
-            <p>
-              The Body Mass Index is a simple mathematical ratio. Depending on your preference for measurement systems, we use one of the two following formulas:
-            </p>
-            <div className="bg-white/10 p-6 rounded-2xl font-mono text-center text-2xl border border-white/20 shadow-inner my-6">
-              Metric: BMI = kg / m²
-            </div>
-            <p className="text-sm opacity-80">
-              Where <strong>kg</strong> is weight in kilograms and <strong>m²</strong> is height in meters squared.
-            </p>
-            <div className="bg-white/10 p-6 rounded-2xl font-mono text-center text-2xl border border-white/20 shadow-inner my-6">
-              Imperial: BMI = 703 × (lbs / inches²)
-            </div>
-            <p className="text-sm opacity-80 italic">
-              *The conversion factor of 703 is required to align the result with the standard metric scale used worldwide.
-            </p>
-          </div>
-        }
-        deepDive={
           <>
-            <h4 className="text-2xl font-black text-gray-900 mb-6">Part I: The Limitations of BMI</h4>
-            <p>
-              While BMI is a globally recognized metric, it is important to understand its constraints. BMI is a "crude" instrument because it does not distinguish between muscle mass, bone density, and fat distribution. A professional athlete with high muscle density may register as "overweight" or "obese" despite having very low body fat percentages.
-            </p>
-            <p>
-              Furthermore, BMI does not account for <strong>waist circumference</strong>, which is often a more accurate predictor of visceral fat—the dangerous fat stored around internal organs. For this reason, medical practitioners often use BMI in conjunction with other metrics like the Waist-to-Hip ratio and blood lipid panels to get a complete picture of an individual's metabolic health.
-            </p>
-
-            <h4 className="text-2xl font-black text-gray-900 mt-12 mb-6">Part II: Ethnic and Age Variations</h4>
-            <p>
-              Recent medical research suggests that the "Standard" BMI ranges (18.5–24.9) may not be universally applicable across all ethnicities. For example, some populations may experience increased health risks at lower BMI levels than others due to different body compositions and genetic predispositions toward certain metabolic conditions.
-            </p>
-            <p>
-              Similarly, for older adults, having a slightly higher BMI (towards the upper end of the normal range or lower end of overweight) has been associated with better health outcomes and protection against frailty. If you are over the age of 65, your "optimal" BMI target may differ from that of a 25-year-old.
-            </p>
-
-            <h4 className="text-2xl font-black text-gray-900 mt-12 mb-6">Part III: From Screening to Action</h4>
-            <p>
-              If your BMI falls outside the "normal" range, it should be viewed as a signal for further investigation rather than a definitive diagnosis. Transitioning into a healthier BMI category is most effectively achieved through a combination of progressive resistance training (to preserve lean mass) and a sustainable caloric deficit or surplus depending on your starting point. Our calculator helps you identify your "Healthy Weight Range," providing a tangible target for your fitness journey.
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              BMI = weight (kg) / [height (m)]²
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard Body Mass Index calculation.
             </p>
           </>
         }
-        example={
+          example={
           <div className="space-y-6">
             <p className="font-bold text-gray-900 uppercase tracking-widest text-xs mb-4">Case Study: Understanding the Scale</p>
             <p>

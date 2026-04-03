@@ -244,31 +244,15 @@ export default function BusinessDaysCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The core logic requires iterating through a raw calendar span
-                and filtering out specific days of the week.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Step 1 (Find Total Span):</strong> Subtract the Start
-                  Date from the End Date to find the absolute number of calendar
-                  days between the two.
-                </li>
-                <li>
-                  <strong>Step 2 (The Loop):</strong> The algorithm loops
-                  through every single day individually, checking its "Day
-                  Index" (0=Sunday, 1=Monday... 6=Saturday).
-                </li>
-                <li>
-                  <strong>Step 3 (Filtering):</strong> If the Day Index is 0 or
-                  6 (and exclusions are checked), that day is discarded. The
-                  remaining valid days are summed up to give the final Working
-                  Days count.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Business Days Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Business Days results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

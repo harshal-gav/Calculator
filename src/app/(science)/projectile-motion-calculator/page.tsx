@@ -270,20 +270,11 @@ export default function ProjectileMotionCalculator() {
         }
         formula={
           <>
-            <p>
-              Projectile motion uses two independent 1D kinematic equations
-              (horizontal and vertical):
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-              <strong>Max Height (h)</strong> = (v₀² × sin²θ) / (2g)
-              <br />
-              <strong>Time of Flight (t)</strong> = (2 × v₀ × sinθ) / g<br />
-              <strong>Total Range (R)</strong> = (v₀² × sin(2θ)) / g
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              y = x tan(θ) - gx² / (2v₀² cos²θ)
             </div>
-            <p className="text-sm text-zinc-500 mt-2">
-              *Note: These specific formulas assume the launch height (h₀) is
-              exactly 0. Our calculator accounts for variable launch heights
-              using the full quadratic equation.*
+            <p className="text-sm text-slate-500 text-center">
+              Predicting flight paths in physics simulations.
             </p>
           </>
         }

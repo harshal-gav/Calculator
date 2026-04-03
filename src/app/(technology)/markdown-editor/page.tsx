@@ -137,35 +137,15 @@ export default function MarkdownEditor() {
             </>
           }
           formula={
-            <>
-              <p>
-                Markdown strictly avoids complex tags in favor of intuitive,
-                visual syntax that can be read even in its completely raw state:
-              </p>
-              <div className="bg-violet-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-violet-900 border border-violet-100 flex flex-col gap-2">
-                <div># H1 Main Header</div>
-                <div>## H2 Sub-header</div>
-                <div>**Bold Text** and *Italic Text*</div>
-                <div>- Unordered List Item</div>
-                <div>1. Ordered List Item</div>
-                <div>[Link Text](https://example.com)</div>
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Zero Lock-in:</strong> Because Markdown is just pure
-                  text, a file created in 2004 will open perfectly in any editor
-                  built in 2040. proprietary formats like .docx do not have this
-                  guarantee.
-                </li>
-                <li>
-                  <strong>HTML Conversion:</strong> Under the hood, parsers
-                  instantly strip the asterisks and hashes and silently convert
-                  them into standard HTML <code>&lt;strong&gt;</code> and{" "}
-                  <code>&lt;h1&gt;</code> tags.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Markdown Editor Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Markdown Editor results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -253,35 +253,15 @@ export default function RemoveDuplicates() {
             </>
           }
           formula={
-            <>
-              <p>
-                Our duplication removal executes via a{" "}
-                <code>JavaScript Set Object</code> which inherently enforces a
-                strict mathematical uniqueness upon your data:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Set Operation:</strong> We pour your 10,000 lines
-                  into an array array and then cast it into a <code>Set()</code>{" "}
-                  natively in the browser. A Set mathematically rejects any
-                  value that already exists within its collection.
-                </li>
-                <li>
-                  <strong>Trimming Intelligence:</strong> A human might type
-                  "Apple" and then accidentally type "Apple ". Those are
-                  technically completely different strings to a computer.
-                  Checking "Trim Whitespace" fixes these invisible human errors
-                  before the deduplication process kicks in.
-                </li>
-                <li>
-                  <strong>Preserved Order:</strong> The algorithm securely
-                  preserves the very first instance of the line it discovers,
-                  and deletes all subsequent clones, maintaining your general
-                  list structure.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Remove Duplicates Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Remove Duplicates results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

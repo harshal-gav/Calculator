@@ -352,12 +352,12 @@ export default function DebtConsolidationCalculator() {
         }
         formula={
           <>
-            <p>To accurately calculate consolidation savings, the calculator performs complex comparative amortization schedules simultaneously:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Current Debts:</strong> Using your balance, interest rate, and specific monthly payment, the tool maps out exactly how many months it will take to reach zero for each individual account.</li>
-              <li><strong>Consolidation Loan:</strong> The tool pools all your balances into a single Principal amount, applies the new fixed interest rate, and distributes it equally over your chosen term limit (e.g., 36 months).</li>
-            </ul>
-            <p className="mt-4 text-gray-700"><strong>Interest Savings = (Total Current Interest Scheduled) - (Total Interest on New Loan)</strong></p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Debt Consolidation Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Debt Consolidation results.
+            </p>
           </>
         }
         example={

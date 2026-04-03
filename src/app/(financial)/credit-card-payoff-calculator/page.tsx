@@ -319,56 +319,16 @@ export default function CreditCardPayoffCalculator() {
           ]
         }}
         formula={
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700">
-            <div className="space-y-4">
-              <h4 className="font-bold text-indigo-900 border-b border-indigo-100 pb-2">1. The Payoff Timeframe</h4>
-              <p className="text-sm">Solving for 'n' (number of months) using a logarithmic formula:</p>
-              <div className="bg-slate-900 p-6 rounded-xl font-mono text-white text-center text-sm shadow-md overflow-x-auto">
-                n = -log(1 - (B × r / P)) / log(1 + r)
-              </div>
-              <p className="text-[10px] text-gray-400 italic">B = Balance, r = Monthly Interest (APR/12), P = Payment</p>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Credit Card Payoff Analysis Model
             </div>
-            <div className="space-y-4">
-              <h4 className="font-bold text-indigo-900 border-b border-indigo-100 pb-2">2. Required Payment Formula</h4>
-              <p className="text-sm">Calculating the fixed payment needed for a specific end date:</p>
-              <div className="bg-indigo-900 p-6 rounded-xl font-mono text-white text-center text-sm shadow-md overflow-x-auto">
-                P = B × [r(1+r)^n] / [(1+r)^n - 1]
-              </div>
-            </div>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Credit Card Payoff results.
+            </p>
+          </>
         }
-        deepDive={
-          <div className="space-y-12 text-gray-700">
-            <section>
-              <h4 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <span className="w-12 h-12 bg-indigo-100 text-indigo-900 rounded-2xl flex items-center justify-center mr-4 shadow-sm font-black italic">!</span>
-                The Minimum Payment Trap
-              </h4>
-              <p className="leading-relaxed">
-                Most credit card issuers set your minimum payment at interest plus only 1% of your principal. If you owe $5,000 at 22% APR and only pay the minimum, it could take over <strong>20 years</strong> to pay it off and cost you more in interest than the original purchase. Our calculator assumes you will pay a <strong>fixed amount</strong>, which is the fastest way to accelerate your progress without changing your budget month-to-month.
-              </p>
-            </section>
-
-            <section className="bg-gradient-to-br from-indigo-900 to-slate-800 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-400 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
-               <h4 className="text-xl font-bold mb-4 text-indigo-300 uppercase tracking-widest">Avalanche vs. Snowball Method</h4>
-               <p className="leading-relaxed mb-6">
-                 Should you pay off the card with the highest APR first (<strong>Avalanche</strong>) or the one with the smallest balance (<strong>Snowball</strong>)? Historically, the Avalanche method saves the most money globally. Use this calculator to see exactly how much interest you save by increasing your monthly payment on your highest-rate card by just $100.
-               </p>
-               <div className="p-4 bg-white/10 rounded-xl border border-white/20 text-xs italic">
-                 Analytic Tip: Focus 100% of your extra cash on your highest APR card while maintaining minimums on others to maximize your ROI.
-               </div>
-            </section>
-
-            <section>
-              <h4 className="text-2xl font-bold text-gray-900 mb-6">0% Balance Transfer Strategy</h4>
-              <p className="leading-relaxed">
-                If your calculator results show a multi-year payoff and thousands in interest, look for a <strong>0% APR Balance Transfer</strong> offer. Even with a 3-5% transfer fee, you can stop the bleeding of 24%+ interest for 12-21 months. Once transferred, use this calculator with a 0% interest rate to see how much faster your debt vanishes when 100% of your payment goes toward the principal.
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-indigo-50 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-2 h-full bg-indigo-500"></div>
             <h5 className="font-black text-gray-900 uppercase tracking-widest text-xs mb-8">Case Study: The $5,000 Challenge</h5>

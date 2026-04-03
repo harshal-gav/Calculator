@@ -220,12 +220,12 @@ export default function HealthyWeightCalculator() {
         }
         formula={
           <>
-            <p>The most widely used clinical method is the <strong>Devine Formula (1974)</strong>:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Men:</strong> 50.0 kg + 2.3 kg per inch over 5 feet</li>
-              <li><strong>Women:</strong> 45.5 kg + 2.3 kg per inch over 5 feet</li>
-            </ul>
-            <p className="mt-4 text-gray-700">Because body frames (bone density, muscle mass) vary, a +/- 10% range is universally applied to the base formula to create the "Healthy Weight Range".</p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = f(Metric, Age, Sex)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Biometric calculation utilizing standardized biological and physiological models for Healthy Weight.
+            </p>
           </>
         }
         example={

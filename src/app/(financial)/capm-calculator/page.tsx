@@ -192,30 +192,15 @@ export default function CAPMCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The classic CAPM equation models Expected Return as the
-                Risk-Free Rate plus a Risk Premium.
-              </p>
-              <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
-                <p>
-                  <strong>
-                    E(R) = R<sub>f</sub> + β × (R<sub>m</sub> - R<sub>f</sub>)
-                  </strong>
-                </p>
-                <p className="border-t border-zinc-200 pt-3 mt-2 text-sm font-sans text-left text-zinc-700">
-                  <strong>Where:</strong>
-                  <br />
-                  E(R) = Expected Return of the investment
-                  <br />R<sub>f</sub> = Risk-Free Rate
-                  <br />β = Beta of the investment
-                  <br />R<sub>m</sub> = Expected Market Return
-                  <br />
-                  (R<sub>m</sub> - R<sub>f</sub>) = Market Risk Premium
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Capm Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Capm results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

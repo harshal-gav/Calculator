@@ -191,12 +191,12 @@ export default function LeaseCalculator() {
         }
         formula={
           <>
-             <p className="font-mono bg-gray-50 p-4 rounded-lg text-sm mb-2 font-bold">Base Payment = Depreciation Fee + Finance Fee</p>
-             <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Depreciation Fee:</strong> (Net Cap Cost - Residual Value) ÷ Term</li>
-              <li><strong>Finance Fee:</strong> (Net Cap Cost + Residual Value) × Money Factor</li>
-            </ul>
-             <p className="mt-4 text-xs italic">* Note that the Finance Fee strangely involves <i>adding</i> the cap cost and residual, rather than subtracting. This is industry standard.</p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Lease Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Lease results.
+            </p>
           </>
         }
         example={

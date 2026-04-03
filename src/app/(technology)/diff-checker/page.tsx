@@ -162,21 +162,15 @@ export default function DiffChecker() {
             </>
           }
           formula={
-            <>
-              <p>
-                While this specific tool uses a rapid line-by-line strict
-                matching approach, professional diff tools rely on complex
-                computer science algorithms (like the Myers Difference
-                Algorithm) to calculate the "Longest Common Subsequence."
-              </p>
-              <p>
-                The goal is always to find the series of changes (edits,
-                inserts, deletes) that require the{" "}
-                <strong>absolute fewest operations</strong> to turn Text A into
-                Text B.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Diff Checker Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Diff Checker results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

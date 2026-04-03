@@ -197,35 +197,15 @@ export default function RandomGroupGenerator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Under the hood, this generator uses the industry-standard{" "}
-                <strong>Fisher-Yates Shuffle Algorithm</strong> to randomize the
-                master list before distributing members. The process works like
-                this:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Step 1 (Extraction):</strong> The input text is
-                  scanned, ignoring empty lines and extracting every valid name
-                  separated by a comma or newline.
-                </li>
-                <li>
-                  <strong>Step 2 (The Shuffle):</strong> The computer picks the
-                  last name on the list, generates a random number, and swaps
-                  that name with whatever name currently sits at the random
-                  number's position. It repeats this for every single name
-                  working backwards.
-                </li>
-                <li>
-                  <strong>Step 3 (Distribution):</strong> Similar to dealing a
-                  deck of cards to players around a table, the newly shuffled
-                  list is dealt into the requested number of groups one by one
-                  until the master list is empty.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Random Group Generator Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Random Group Generator results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

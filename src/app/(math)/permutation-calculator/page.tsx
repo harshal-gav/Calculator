@@ -260,31 +260,15 @@ export default function PermutationCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Because every microscopic change in order creates a brand-new
-                permutation, the formula utilizes factorials (!) but does not
-                divide out the duplicates. It is written as:
-              </p>
-              <div className="bg-purple-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-purple-900 border border-purple-100">
-                P(n, r) = n! / (n - r)!
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>n:</strong> The total number of unique items available
-                  to pick from in the set.
-                </li>
-                <li>
-                  <strong>r:</strong> The number of items you are actually
-                  selecting and arranging.
-                </li>
-                <li>
-                  <strong>!:</strong> The factorial symbol (e.g., 5! = 5 × 4 × 3
-                  × 2 × 1).
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              nPr = n! / (n-r)!
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Arranging r items from a set of n in a specific order.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

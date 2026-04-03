@@ -201,40 +201,15 @@ export default function ArcLengthCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The mathematics for an arc directly scale based on what fraction
-                of the full 360-degree circle it represents. If the central
-                angle (θ) is in <strong>Radians</strong>:
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  <strong>Arc Length (s):</strong> <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold">
-                    s = r × θ
-                  </code>
-                </li>
-                <li>
-                  <strong>Sector Area (A):</strong> <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold">
-                    A = ½ × r² × θ
-                  </code>
-                </li>
-                <li>
-                  <strong>Chord Length (c):</strong> <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold">
-                    c = 2r × sin(θ/2)
-                  </code>
-                </li>
-              </ul>
-              <p className="mt-4 text-sm text-zinc-600">
-                <em>
-                  Note: If your angle is in Degrees, multiply it by (π / 180) to
-                  convert it to Radians before using the formulas above.
-                </em>
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Arc Length Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Arc Length results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -164,13 +164,14 @@ export default function RMDCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The formula for calculating an RMD is simple:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-sm">
-              RMD = Account Balance (dec 31) / Life Expectancy Factor
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Rmd Analysis Model
             </div>
-            <p>The "Life Expectancy Factor" is provided by the IRS in the <strong>Uniform Lifetime Table</strong>, which is updated periodically.</p>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Rmd results.
+            </p>
+          </>
         }
         example={
           <p>

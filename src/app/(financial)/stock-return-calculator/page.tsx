@@ -381,34 +381,15 @@ export default function StockReturnCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                To accurately determine the true net profit and ROI of a stock
-                trade, multiple financial variables must be calculated together:
-              </p>
-              <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] sm:text-lg shadow-inner my-4 overflow-x-auto text-zinc-800 border border-zinc-200">
-                Net Profit = (Sell Price × Shares) + Dividends - (Buy Price ×
-                Shares) - Buy Fee - Sell Fee
-                <br />
-                <br />
-                ROI = (Net Profit / Cost Basis) × 100
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-emerald-800">
-                <li>
-                  <strong>Cost Basis:</strong> The total original amount spent
-                  (Shares × Buy Price) + Buy Fee.
-                </li>
-                <li>
-                  <strong>Gross Proceeds:</strong> Raw sale value (Shares × Sell
-                  Price).
-                </li>
-                <li>
-                  <strong>Dividends:</strong> Total cash paid out to you by the
-                  company while you held the stock.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Stock Return Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Stock Return results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

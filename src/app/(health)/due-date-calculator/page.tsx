@@ -346,28 +346,15 @@ export default function DueDateCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The calculation depends entirely on which medical method you
-                choose:
-              </p>
-              <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-                <strong>LMP Rule (Naegele's Rule):</strong>
-                <br />
-                <em>LMP Date + 280 Days (adjusted for cycle length)</em>
-                <br />
-                <br />
-                <strong>Conception Rule:</strong>
-                <br />
-                <em>Conception Date + 266 Days</em>
-                <br />
-                <br />
-                <strong>IVF Transfer Rule:</strong>
-                <br />
-                <em>Transfer Date + 266 Days - Age of Embryo (3 or 5 days)</em>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Due Date Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Due Date results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

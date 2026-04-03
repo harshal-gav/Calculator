@@ -312,30 +312,15 @@ export default function CurrencyConverter() {
             </>
           }
           formula={
-            <>
-              <p>
-                Converting currencies relies on an Exchange Rate multiplier. The
-                standard mathematical conversion is incredibly simple:
-              </p>
-              <div className="bg-white p-4 rounded-lg font-mono text-center text-xl shadow-sm my-4 overflow-x-auto">
-                Target Amount = Base Amount × Exchange Rate
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4">
-                <li>
-                  <strong>Base Amount:</strong> The quantity of the currency you
-                  currently own.
-                </li>
-                <li>
-                  <strong>Exchange Rate:</strong> The live market ratio
-                  indicating how much of the target currency 1 unit of the base
-                  currency buys.
-                </li>
-                <li>
-                  <strong>Target Amount:</strong> The final converted value.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Currency Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -231,36 +231,15 @@ export default function CubicEquationCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                A standard cubic equation takes the following form, where{" "}
-                <span className="font-mono">a, b, c,</span> and{" "}
-                <span className="font-mono">d</span> are known coefficients, and{" "}
-                <span className="font-mono">a ≠ 0</span>:
-              </p>
-              <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-rose-900 border border-rose-100">
-                ax³ + bx² + cx + d = 0
-              </div>
-              <p className="mt-4">
-                By evaluating the <strong>Discriminant (Δ)</strong> of the cubic
-                function, we can determine the nature of the three roots before
-                even calculating them:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Δ &gt; 0:</strong> Three distinct, real roots.
-                </li>
-                <li>
-                  <strong>Δ = 0:</strong> All three roots are real, but at least
-                  two of them are identical (a repeating root).
-                </li>
-                <li>
-                  <strong>Δ &lt; 0:</strong> One real root, and two complex
-                  conjugate (imaginary) roots.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Cubic Equation Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Cubic Equation results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

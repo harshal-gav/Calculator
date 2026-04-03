@@ -249,26 +249,15 @@ export default function BreakEvenCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                To calculate the break-even point, you must divide your
-                inescapable fixed costs by the "Contribution Margin" (the profit
-                made on each individual unit).
-              </p>
-              <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-rose-100 text-rose-900">
-                <p>
-                  <strong>
-                    Unit Contribution Margin = Selling Price - Variable Cost
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-rose-200">
-                  <strong>
-                    Break-Even Units = Fixed Costs ÷ Unit Contribution Margin
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Break Even Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Break Even results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

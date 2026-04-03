@@ -232,37 +232,15 @@ export default function TrapezoidCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The mathematics behind a trapezoid relies on averaging the
-                lengths of the two parallel bases.
-              </p>
-              <ul className="list-disc pl-6 space-y-4 mt-4 text-zinc-700">
-                <li>
-                  <strong>Area (A):</strong> Found by averaging the top and
-                  bottom base, and multiplying by the vertical height. <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold whitespace-nowrap">
-                    A = ½ × (a + b) × h
-                  </code>
-                </li>
-                <li>
-                  <strong>Median (m):</strong> The line segment that connects
-                  the midpoints of the non-parallel legs. <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold whitespace-nowrap">
-                    m = ½ × (a + b)
-                  </code>
-                </li>
-                <li>
-                  <strong>Perimeter (P):</strong> If the two non-parallel sides
-                  (c and d) are known, you simply add all four borders together.{" "}
-                  <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold whitespace-nowrap">
-                    P = a + b + c + d
-                  </code>
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              A = [(a + b) / 2] × h
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Area equals the average of the bases times the height.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

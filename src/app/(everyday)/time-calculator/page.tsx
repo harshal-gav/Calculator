@@ -254,26 +254,12 @@ export default function TimeCalculator() {
         }
         formula={
           <>
-            <p>
-              Time mathematics requires converting all values into their
-              smallest base unit (seconds), performing standard arithmetic, and
-              then breaking the result back out into base-60 chunks.
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 overflow-x-auto space-y-4 text-violet-900 border border-violet-100">
-              <p>
-                <strong>Total Seconds =</strong> (Hours × 3600) + (Minutes × 60)
-                + Seconds
-              </p>
-              <p className="border-t border-violet-100 pt-4 mt-4 text-sm font-sans text-left text-gray-700">
-                <strong>Conversion Back:</strong>
-                <br />
-                1. Hours = Floor(Total Seconds ÷ 3600)
-                <br />
-                2. Minutes = Floor(Remaining Seconds ÷ 60)
-                <br />
-                3. Seconds = Remaining Seconds
-              </p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Time Analysis Model
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Time results.
+            </p>
           </>
         }
         example={

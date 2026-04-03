@@ -273,36 +273,15 @@ export default function RegexTester() {
             </>
           }
           formula={
-            <>
-              <p>
-                Regex patterns are built using literal characters alongside
-                special "Metacharacters" that act as wildcards or quantifiers. A
-                standard structure looks like this:
-              </p>
-              <div className="bg-sky-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-sky-900 border border-sky-100 flex flex-col gap-2 center">
-                /pattern/flags
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>\d or \w:</strong> Wildcards for matching any single
-                  Digit (0-9) or any single Word Character (A-Z).
-                </li>
-                <li>
-                  <strong>+ or *:</strong> Quantifiers meaning "match 1 or more"
-                  (+) or "match 0 or more" (*).
-                </li>
-                <li>
-                  <strong>[...] or (...):</strong> Square brackets define a
-                  character set (match anything inside). Parentheses define a
-                  Capture Group (extract this specific part).
-                </li>
-                <li>
-                  <strong>Flags (g, i, m):</strong> Global (find all, not just
-                  the first), Ignore Case (case-insensitive), and Multi-line.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Regex Tester Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Regex Tester results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

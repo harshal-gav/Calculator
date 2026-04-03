@@ -187,27 +187,15 @@ export default function RhombusCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                A rhombus is a specific type of quadrilateral shape (often
-                called a 'diamond') where all four resting outer sides are of
-                identical length. Because its two internal diagonals always
-                perfectly bisect each other at strict 90-degree right angles, we
-                can calculate its properties using triangle geometry.
-              </p>
-              <div className="bg-fuchsia-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-fuchsia-100 text-fuchsia-900">
-                <p>
-                  <strong>Area (A) = (p × q) ÷ 2</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-fuchsia-200">
-                  <strong>Side Length (a) = √((p ÷ 2)² + (q ÷ 2)²)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-fuchsia-200">
-                  <strong>Perimeter (P) = 4 × a</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Rhombus Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Rhombus results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

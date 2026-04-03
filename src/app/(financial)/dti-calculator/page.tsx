@@ -399,17 +399,15 @@ export default function DTICalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The DTI calculation is a simple percentage equation utilizing
-                your gross income (before taxes are taken out):
-              </p>
-              <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-                <strong>DTI Ratio</strong> = (Total Monthly Debt Payments ÷
-                Gross Monthly Income) × 100
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Dti Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Dti results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>Let's evaluate a standard American household:</p>

@@ -236,34 +236,15 @@ export default function LeanBodyMassCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                This calculator aggregates the three most trusted biometric
-                impedance formulas used in medical settings to find the most
-                statistically sound average:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Boer Formula (1984):</strong> Often considered the
-                  gold standard for clinical pharmacology (anesthesia dosing).
-                </li>
-                <li>
-                  <strong>The James Formula (1976):</strong> Accurate for most
-                  people, but known to break down scientifically if the
-                  patient's body fat exceeds 40%.
-                </li>
-                <li>
-                  <strong>The Hume Formula (1966):</strong> A classic model that
-                  heavily weights the interaction between height and biological
-                  sex.
-                </li>
-              </ul>
-              <div className="bg-orange-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-orange-900 border border-orange-100">
-                <strong>Implied Body Fat %</strong> = [ (Total Weight − LBM) ÷
-                Total Weight ] × 100
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = f(Metric, Age, Sex)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Biometric calculation utilizing standardized biological and physiological models for Lean Body Mass.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -180,12 +180,12 @@ export default function BodyFatCalculator() {
         }
         formula={
           <>
-            <p className="text-zinc-400 font-medium mb-4">U.S. Navy Method Equations (using log10):</p>
-            <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl font-mono text-[11px] text-blue-400 overflow-x-auto">
-               <strong>Males:</strong> 495 / (1.0324 - 0.19077 * log10(Waist - Neck) + 0.15456 * log10(Height)) - 450 <br/><br/>
-               <strong>Females:</strong> 495 / (1.29579 - 0.35004 * log10(Waist + Hips - Neck) + 0.22100 * log10(Height)) - 450
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              BF% = 495 / (1.032 - 0.19log(W-N) + 0.15log(H)) - 450
             </div>
-            <p className="text-zinc-500 text-[10px] mt-4 uppercase tracking-widest italic font-bold">Note: All measurements are internally converted to centimeters for formula precision.</p>
+            <p className="text-sm text-slate-500 text-center">
+              U.S. Navy Method for body fat estimation.
+            </p>
           </>
         }
         example={

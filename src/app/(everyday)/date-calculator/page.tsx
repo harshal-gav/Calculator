@@ -242,26 +242,12 @@ export default function DateCalculator() {
         }
         formula={
           <>
-            <p>
-              To accurately calculate the duration between two dates, our
-              algorithm checks the exact number of days that exist in the
-              specific months and years you have selected. During subtraction or
-              addition, it "borrows" days based on those specific historical
-              calendar months.
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 text-sky-900 border border-sky-100">
-              <p>
-                <strong>Years:</strong> End Year - Start Year
-              </p>
-              <p>
-                <strong>Months:</strong> End Month - Start Month (Borrow 12 if
-                end month is smaller)
-              </p>
-              <p>
-                <strong>Days:</strong> End Day - Start Day (Borrow days equal to
-                the length of the <em>previous</em> month if end day is smaller)
-              </p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Date Analysis Model
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Date results.
+            </p>
           </>
         }
         example={

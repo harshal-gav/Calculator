@@ -215,30 +215,15 @@ export default function BandwidthCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                To calculate transfer time, you must convert the file size into
-                the absolute smallest unit (bits) and divide it by the
-                connection speed (bits per second). A crucial distinction is
-                that network ISPs advertise in Mega<strong>bits</strong> (Mbps),
-                while operating systems display files in Mega
-                <strong>bytes</strong> (MB).
-              </p>
-              <div className="bg-indigo-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-indigo-100 text-indigo-900">
-                <p>
-                  <strong>1 Byte (B) = 8 bits (b)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-indigo-200">
-                  <strong>File Size in Bits = Size × Unit Multiplier</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-indigo-200">
-                  <strong>
-                    Transfer Time (s) = Size in Bits ÷ Speed (bps)
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Bandwidth Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Bandwidth results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

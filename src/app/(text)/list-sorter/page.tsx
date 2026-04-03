@@ -220,31 +220,15 @@ export default function ListSorter() {
             </>
           }
           formula={
-            <>
-              <p>
-                Our sorting engine automatically performs a crucial "Data
-                Cleaning" algorithm on your input before executing the
-                arrangement:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Whitespace Trimming:</strong> It removes accidental
-                  spaces at the beginning or end of every line. (e.g., " Apple "
-                  becomes "Apple").
-                </li>
-                <li>
-                  <strong>Blank Line Deletion:</strong> Extra paragraph breaks
-                  or accidental empty lines are completely eradicated so the
-                  output list is uninterrupted.
-                </li>
-                <li>
-                  <strong>Numeric Awareness:</strong> The A-Z sort utilizes
-                  "Natural Sorting" (Locale Compare), meaning "Item 2" properly
-                  sorts <em>before</em> "Item 10".
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              List Sorter Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise List Sorter results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

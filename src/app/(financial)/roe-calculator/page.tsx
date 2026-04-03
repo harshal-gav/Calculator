@@ -164,29 +164,15 @@ export default function ROECalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                ROE is calculated by dividing annual Net Income by the total
-                Shareholder's Equity.
-              </p>
-              <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
-                <p>
-                  <strong>
-                    ROE = (Net Income / Shareholder's Equity) × 100
-                  </strong>
-                </p>
-                <p className="border-t border-zinc-200 pt-3 mt-2 text-sm font-sans text-left text-zinc-700">
-                  <strong>Where:</strong>
-                  <br />
-                  Net Income = The company's total profit after all taxes and
-                  expenses (found on the Income Statement).
-                  <br />
-                  Shareholder's Equity = Total Assets minus Total Liabilities
-                  (found on the Balance Sheet).
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Roe Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Roe results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

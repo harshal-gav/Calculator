@@ -288,15 +288,12 @@ export default function ProportionCalculator() {
         }
         formula={
           <>
-            <p>
-              A proportion is simply two ratios (fractions) set equal to each
-              other. The core formula to solve them is cross-multiplication:
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-              <strong>A / B = C / D</strong>
-              <br />
-              <strong>A × D = B × C</strong>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              a / b = c / d
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              Solving for a missing value in equal ratios.
+            </p>
           </>
         }
         example={

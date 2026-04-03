@@ -181,13 +181,12 @@ export default function EstateTaxCalculator() {
         }
         formula={
           <>
-            <p>The standard logic for calculating federal estate exposure is:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 font-mono text-gray-800">
-              <li>Determine Gross Estate (Real estate, cash, stocks, insurance)</li>
-              <li>Subtract Lifetime Exemption (~$13.61 Million per individual in 2024)</li>
-              <li>Remaining amount is the <strong>Taxable Estate</strong></li>
-              <li>Taxable Estate is taxed at graduated rates topping out at <strong>40%</strong></li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Estate Tax results.
+            </p>
           </>
         }
         example={

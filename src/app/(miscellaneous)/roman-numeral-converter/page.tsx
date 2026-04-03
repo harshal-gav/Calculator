@@ -228,30 +228,15 @@ export default function RomanNumeralConverter() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Roman numerals act as an additive and subtractive tally system,
-                not a positional decimal system like modern math. To convert an
-                Arabic number, the algorithm cascades downward globally,
-                subtracting the largest possible Roman letter value until the
-                baseline reaches zero. If a smaller numeral strictly precedes a
-                larger one, it triggers a unified subtraction rule (e.g., IX
-                means 10 minus 1).
-              </p>
-              <div className="bg-amber-100/50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-amber-200 text-amber-900">
-                <p>
-                  <strong>
-                    Primary Tokens: I=1, V=5, X=10, L=50, C=100, D=500, M=1000
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-amber-200">
-                  <strong>
-                    Subtractive Tokens: IV=4, IX=9, XL=40, XC=90, CD=400, CM=900
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Roman Numeral Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

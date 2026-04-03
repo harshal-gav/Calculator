@@ -116,13 +116,13 @@ export default function CalculatorSEO({
                         </section>
                     )}
 
-                    <section className="mb-12 md:mb-16 bg-slate-900 p-6 md:p-12 rounded-2xl md:rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden">
-                        <div className="absolute -right-20 -top-20 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl"></div>
-                        <h3 className="text-2xl md:text-3xl font-bold mb-6 relative z-10 flex items-center">
-                            <svg className="w-8 h-8 mr-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    <section className="mb-12 md:mb-16 bg-indigo-50/50 p-6 md:p-12 rounded-2xl md:rounded-[2.5rem] border border-indigo-100 shadow-sm relative overflow-hidden">
+                        <div className="absolute -right-20 -top-20 w-64 h-64 bg-indigo-200/20 rounded-full blur-3xl"></div>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-6 relative z-10 flex items-center text-slate-900">
+                            <svg className="w-8 h-8 mr-3 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
                             The Mathematical Formula
                         </h3>
-                        <div className="text-lg md:text-xl leading-relaxed text-slate-300 relative z-10 prose-strong:text-white prose-p:text-slate-300">
+                        <div className="text-lg md:text-xl leading-relaxed text-slate-700 relative z-10 prose-strong:text-slate-900 prose-p:text-slate-700">
                             {formula}
                         </div>
                     </section>
@@ -192,13 +192,13 @@ export default function CalculatorSEO({
                     </section>
 
                     {relatedCalculators.length > 0 && (
-                        <section className="p-8 md:p-16 bg-slate-900 rounded-2xl md:rounded-[3rem] text-white">
-                            <h3 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 border-b border-white/10 pb-6">Related Strategic Tools</h3>
+                        <section className="p-8 md:p-16 bg-slate-50 border border-slate-200 rounded-2xl md:rounded-[3rem]">
+                            <h3 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 border-b border-slate-200 pb-6 text-slate-900">Related Strategic Tools</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                 {relatedCalculators.map((calc, idx) => (
-                                    <Link key={idx} href={calc.path} className="block group p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-indigo-500 transition-all duration-300">
-                                        <h4 className="font-bold text-xl group-hover:text-indigo-400 transition mb-3">{calc.name}</h4>
-                                        <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition text-sm md:text-base">{calc.desc}</p>
+                                    <Link key={idx} href={calc.path} className="block group p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-slate-200 hover:bg-slate-100 hover:border-indigo-500 transition-all duration-300 shadow-sm">
+                                        <h4 className="font-bold text-xl text-slate-900 group-hover:text-indigo-600 transition mb-3">{calc.name}</h4>
+                                        <p className="text-slate-600 leading-relaxed group-hover:text-slate-800 transition text-sm md:text-base">{calc.desc}</p>
                                     </Link>
                                 ))}
                             </div>

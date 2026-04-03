@@ -128,9 +128,11 @@ export default function PercentErrorCalculator() {
         }
         formula={
           <>
-            <p>The universal percent error equation employs absolute values to ensure the error magnitude is always expressed as a positive percentage:</p>
-            <p className="mt-4 pl-4 border-l-4 border-purple-500 font-mono text-lg bg-gray-50 py-2 font-bold text-gray-800">
-              % Error = (| Experimental - Accepted | / | Accepted |) × 100
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              % Error = [|Actual - Ideal| / Ideal] × 100
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Measuring experimental accuracy.
             </p>
           </>
         }

@@ -133,16 +133,14 @@ export default function AnnuityCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>For <strong>Future Value (Accumulation)</strong>, we use:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-sm overflow-x-auto text-teal-700">
-              FV = P(1+r)^n + C[((1+r)^n - 1) / r]
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Payout = P * [r(1+r)^n] / [(1+r)^n - 1]
             </div>
-            <p>For <strong>Monthly Payout (Distribution)</strong>, we use the amortization formula:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-sm overflow-x-auto text-teal-700">
-              C = P * [r(1+r)^n] / [(1+r)^n - 1]
-            </div>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              Amortization formula for fixed income payouts.
+            </p>
+          </>
         }
         example={
           <p>

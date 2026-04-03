@@ -155,13 +155,14 @@ export default function MutualFundCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The core logic uses the compound interest formula with a adjusted net yield:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-sm overflow-x-auto text-emerald-700">
-              Net Annual Rate = Gross Rate − Expense Ratio
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Mutual Fund Analysis Model
             </div>
-            <p>The future value is then calculated by applying this net rate over the specified time horizon, after deducting any initial sales commissions (loads).</p>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Mutual Fund results.
+            </p>
+          </>
         }
         example={
           <p>

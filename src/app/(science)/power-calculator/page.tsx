@@ -247,30 +247,15 @@ export default function PowerCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The core relationship is defined by the standard classical
-                mechanics formula:
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-xl mt-4 border border-emerald-100 italic text-center text-lg text-emerald-800">
-                <strong>P = W / t</strong>
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Power (P):</strong> Measured in Watts (W). 1 Watt
-                  equals exactly 1 Joule per second.
-                </li>
-                <li>
-                  <strong>Work/Energy (W):</strong> Measured in Joules (J). The
-                  total absolute amount of energy transferred.
-                </li>
-                <li>
-                  <strong>Time (t):</strong> Measured in Seconds (s). The
-                  duration over which the work is performed.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              P = W / t
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Work done per unit of time.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

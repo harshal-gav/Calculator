@@ -185,7 +185,16 @@ export default function MeanMedianModeRangeCalculator() {
             </ul>
           </>
         }
-        formula={<></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Mean Median Mode Range Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Mean Median Mode Range results.
+            </p>
+          </>
+        }
         example={
           <>
             <p>For the dataset: <strong>[2, 4, 4, 6, 8, 12, 14, 14, 14]</strong></p>

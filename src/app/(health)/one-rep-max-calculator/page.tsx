@@ -125,7 +125,16 @@ export default function OneRepMaxCalculator() {
       <CalculatorSEO
         title="One Rep Max (1RM) Calculator"
         whatIsIt={<p>The <strong>One Rep Max Calculator</strong> estimates the heaviest weight you could lift for a single repetition based on your performance at lighter loads. It uses seven scientifically validated formulas and averages them for reliability.</p>}
-        formula={<><p>Seven formulas are used:</p><ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700"><li><strong>Epley:</strong> w × (1 + r/30)</li><li><strong>Brzycki:</strong> w × 36 / (37 - r)</li><li><strong>Lander:</strong> 100 × w / (101.3 - 2.67123 × r)</li></ul></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              One Rep Max Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise One Rep Max results.
+            </p>
+          </>
+        }
         example={<><p>If you bench press 185 lbs for 5 reps:</p><ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700"><li>Epley estimated 1RM: ~215.8 lbs</li><li>Brzycki estimated 1RM: ~208.1 lbs</li><li>Average across all formulas: ~211.4 lbs</li></ul></>}
         useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Strength Programming:</strong> Set training loads based on percentages of your 1RM for progressive overload.</li><li><strong>Progress Tracking:</strong> Monitor estimated strength gains over time without maxing out.</li></ul>}
         faqs={[

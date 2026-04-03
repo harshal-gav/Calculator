@@ -268,34 +268,15 @@ export default function OhmsLawCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Ohm's Law relies on three primary variables, with Power (Watt's
-                Law) acting as the fourth derivative metric:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Voltage (V):</strong> The electrical "pressure"
-                  pushing electrons, measured in Volts. The core formula is{" "}
-                  <code>V = I × R</code>.
-                </li>
-                <li>
-                  <strong>Current (I):</strong> The volume of electrons actually
-                  flowing, measured in Amperes (Amps). The formula is{" "}
-                  <code>I = V / R</code>.
-                </li>
-                <li>
-                  <strong>Resistance (R):</strong> The friction resisting the
-                  flow, measured in Ohms (Ω). The formula is{" "}
-                  <code>R = V / I</code>.
-                </li>
-                <li>
-                  <strong>Power (P):</strong> The total energetic output,
-                  measured in Watts. The formula is <code>P = V × I</code>.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              V = I × R
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Voltage equals current multiplied by resistance.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

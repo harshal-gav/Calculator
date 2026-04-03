@@ -229,31 +229,15 @@ export default function ZScoreCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The core philosophy of the Standard Score is subtracting the
-                mean from the raw score, then dividing by the standard deviation
-                to "normalize" the scale. It is written as:
-              </p>
-              <div className="bg-blue-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-blue-900 border border-blue-100">
-                Z = (x - μ) / σ
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>x:</strong> The Raw Score (the specific data point you
-                  are analyzing).
-                </li>
-                <li>
-                  <strong>μ (Mu):</strong> The Population Mean (the average of
-                  the entire dataset).
-                </li>
-                <li>
-                  <strong>σ (Sigma):</strong> The Standard Deviation (how spread
-                  out the data generally is).
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Z Score Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Z Score results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

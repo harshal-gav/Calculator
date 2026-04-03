@@ -187,46 +187,15 @@ export default function RentVsBuyCalculator() {
         }}
         formula={
           <>
-            <p className="mb-4">
-              Our model calculates the total financial impact using the <strong>Net Expenditure Model</strong>:
-            </p>
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
-              <p className="font-mono text-center text-lg mb-4 text-emerald-900 italic">
-                Total Buying Cost = Σ(Interest + Tax + Maint + Insur) + (Entry/Exit Friction) - (Appreciation + Principal)
-              </p>
-              <p className="text-sm font-sans text-gray-700">
-                <strong>Where:</strong>
-                <br /><strong>Σ:</strong> Summated over the analysis period (e.g., 10 years).
-                <br /><strong>Entry/Exit Friction:</strong> 3% Closing Costs at buy + 6% Commission at sell.
-                <br /><strong>Maint:</strong> Constant 1% of the original home price annually.
-              </p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Rent Vs Buy Analysis Model
             </div>
-            <p>
-              By comparing this result to the summated cost of rent (adjusted for 3% annual increases), we find the "Crossover Year" where the red line of buying costs falls below the blue line of renting costs.
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Rent Vs Buy results.
             </p>
           </>
         }
-        deepDive={
-          <>
-            <h3 className="text-xl font-bold mb-4">The '5% Rule' of Real Estate</h3>
-            <p className="mb-4">
-              A quick way to estimate the unrecoverable cost of owning a home is the 5% Rule. It breaks down as:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
-              <li><strong>1% for Maintenance:</strong> The physical depreciation of the structure.</li>
-              <li><strong>1% for Property Taxes:</strong> The cost paid to local government.</li>
-              <li><strong>3% for the Cost of Capital:</strong> Either the interest you pay to the bank or the interest you <em>lose</em> by not having your down payment in the stock market.</li>
-            </ul>
-            <p className="mb-4">
-              If you can rent a similar home for <strong>less than 5% of its purchase price per year</strong>, renting is likely the mathematically superior wealth-building choice. For example, on a $500,000 home, if rent is less than $2,083/month ($25,000/year), renting wins.
-            </p>
-            <h3 className="text-xl font-bold mb-4">The Myth of 'Throwing Money Away on Rent'</h3>
-            <p className="mb-4">
-              Many people believe buying is always better because "renting is 100% interest." This is a fallacy. Interest, taxes, and maintenance are <em>also</em> 100% unrecoverable. In the first 10 years of a 30-year mortgage at 7% interest, roughly 85% of your monthly payment is "thrown away" on interest, not principal.
-            </p>
-          </>
-        }
-        example={
+          example={
           <>
             <p className="mb-4 font-semibold">Scenario: $400,000 Home vs $2,500 Rent</p>
             <div className="bg-white border border-gray-100 p-6 rounded-xl shadow-sm space-y-4 text-sm">

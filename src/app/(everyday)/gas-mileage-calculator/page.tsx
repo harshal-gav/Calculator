@@ -180,25 +180,12 @@ export default function GasMileageCalculator() {
         }
         formula={
           <>
-            <p>
-              The standard formula for calculating fuel efficiency in the United
-              States is incredibly straightforward: distance divided by volume.
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 text-slate-900 border border-slate-200">
-              <p>
-                <strong>MPG</strong> = Total Miles Driven ÷ Total Gallons
-                Consumed
-              </p>
-              <p className="border-t border-slate-200 pt-4 mt-4 text-sm font-sans text-left text-gray-700">
-                <strong>Metric Conversions:</strong>
-                <br />
-                1. Convert Miles to KM (Multiply by 1.60934)
-                <br />
-                2. Convert Gallons to Liters (Multiply by 3.78541)
-                <br />
-                3. L/100km = (Liters ÷ KM) × 100
-              </p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Gas Mileage Analysis Model
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Gas Mileage results.
+            </p>
           </>
         }
         example={

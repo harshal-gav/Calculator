@@ -169,26 +169,15 @@ export default function FrequencyConverter() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Every frequency unit measures "cycles per unit of time". The
-                globally recognized baseline is the <strong>Hertz (Hz)</strong>,
-                which dictates exactly "one event per second". All other units
-                are simply multiplied or divided against this standard measure.
-              </p>
-              <div className="bg-teal-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 text-teal-900 border border-teal-100">
-                <p>
-                  <strong>1 Hertz (Hz) = 1 Cycle per Second</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-teal-200">
-                  <strong>1 Kilohertz (kHz) = 1,000 Hz</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-teal-200">
-                  <strong>60 RPM (Revolutions per Minute) = 1 Hz</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Frequency Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

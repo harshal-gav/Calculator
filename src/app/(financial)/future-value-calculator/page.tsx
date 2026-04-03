@@ -132,19 +132,14 @@ export default function FutureValueCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The Future Value formula with compounding:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-center text-sm text-blue-700">
-              FV = PV × (1 + r/n)<sup>(n × t)</sup>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Future Value Analysis Model
             </div>
-            <p className="text-sm text-slate-500">
-              Where:<br/>
-              PV = Present Value<br/>
-              r = Annual Interest Rate<br/>
-              n = Compounding periods per year<br/>
-              t = Number of years
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Future Value results.
             </p>
-          </div>
+          </>
         }
         example={
           <p>

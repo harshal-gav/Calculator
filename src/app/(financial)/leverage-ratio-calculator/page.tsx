@@ -200,18 +200,15 @@ export default function LeverageRatioCalculator() {
             </>
           }
           formula={
-            <>
-              <p>This tool calculates three core leverage metrics:</p>
-              <div className="bg-slate-100 p-4 rounded-lg font-mono text-center text-sm shadow-inner my-4 text-slate-900 border border-slate-200">
-                <strong>Debt-to-Equity</strong> = Total Debt / Total Equity
-                <br />
-                <strong>Debt/EBITDA</strong> = Total Debt / EBITDA
-                <br />
-                <strong>Financial Leverage</strong> = (Total Debt + Total
-                Equity) / Total Equity
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Leverage Ratio Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Leverage Ratio results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

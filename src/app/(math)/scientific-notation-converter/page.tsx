@@ -226,34 +226,15 @@ export default function ScientificNotationConverter() {
             </>
           }
           formula={
-            <>
-              <p>
-                Scientific Notation expresses a number as the product of a
-                coefficient and base 10 raised to an integer power.
-              </p>
-              <div className="bg-white p-4 rounded-lg font-mono text-center text-2xl shadow-sm my-4 overflow-x-auto text-emerald-900 font-bold border border-emerald-100">
-                a × 10ⁿ
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
-                <li>
-                  <strong>a (The Coefficient):</strong> A real number, strictly
-                  where <strong>1 ≤ |a| &lt; 10</strong>.
-                </li>
-                <li>
-                  <strong>n (The Exponent):</strong> An integer indicating how
-                  many places the decimal point moved.
-                </li>
-                <li>
-                  A <strong>Positive n</strong> means the original number was
-                  massive (move decimal right).
-                </li>
-                <li>
-                  A <strong>Negative n</strong> means the original number was a
-                  tiny decimal (move decimal left).
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Scientific Notation Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">

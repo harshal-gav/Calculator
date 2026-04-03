@@ -133,11 +133,12 @@ export default function CarbohydrateCalculator() {
         }
         formula={
           <>
-            <p>Calculations use the biological energy conversion factor:</p>
-            <div className="bg-amber-50 p-6 rounded-2xl font-mono text-center text-amber-950 my-4 shadow-sm border border-amber-100">
-               <strong>Grams of Carbs</strong> = (Total Calories × Carbohydrate Percentage) ÷ 4
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Carbohydrate Analysis Model
             </div>
-            <p className="text-amber-900/60 text-xs text-center mt-2 italic font-medium">Because there are 4 calories in every 1 gram of carbohydrates.</p>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Carbohydrate results.
+            </p>
           </>
         }
         example={

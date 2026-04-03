@@ -289,12 +289,12 @@ export default function BodyTypeCalculator() {
         }
         formula={
           <>
-            <p>The Sheldon classification uses the wrist circumference to height ratio:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Males:</strong> Ectomorph &lt;9.55%, Mesomorph 9.55%-11%, Endomorph &gt;11%</li>
-              <li><strong>Females:</strong> Ectomorph &lt;8.8%, Mesomorph 8.8%-9.8%, Endomorph &gt;9.8%</li>
-            </ul>
-            <p className="mt-4"><em>Ratio = (Wrist Circumference ÷ Height) × 100</em></p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = f(Metric, Age, Sex)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Biometric calculation utilizing standardized biological and physiological models for Body Type.
+            </p>
           </>
         }
         example={

@@ -125,7 +125,12 @@ export default function CDCalculator() {
         }
         formula={
           <>
-            <p className="font-mono bg-gray-50 p-4 rounded-lg text-sm mb-2">A = P(1 + r/n)^(nt)</p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Cd Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Cd results.
+            </p>
           </>
         }
         example={

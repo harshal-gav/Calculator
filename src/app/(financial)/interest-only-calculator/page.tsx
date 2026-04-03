@@ -149,12 +149,11 @@ export default function InterestOnlyCalculator() {
         }
         formula={
           <>
-            <p>The math for interest-only payments is significantly simpler than standard amortized loans:</p>
-            <div className="bg-amber-50 p-6 rounded-lg font-mono text-center text-lg shadow-sm my-4 border border-amber-100 text-amber-900">
-              <strong>Monthly Interest = (Principal x Annual Rate) / 12</strong>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
             </div>
-            <p className="text-sm">
-              Because the principal (P) does not change, the interest portion remains the same every month for the entire interest-only duration.
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Interest Only results.
             </p>
           </>
         }

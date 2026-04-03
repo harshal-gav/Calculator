@@ -228,28 +228,15 @@ export default function PythagoreanCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The Pythagorean Theorem is one of geometry's most foundational
-                rules, applying exclusively to triangles containing one exact
-                90-degree angle. It states:
-              </p>
-              <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-rose-900 border border-rose-100">
-                a² + b² = c²
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Legs (a & b):</strong> The two shorter sides that
-                  physically intersect to create the 90-degree right angle.
-                </li>
-                <li>
-                  <strong>Hypotenuse (c):</strong> Always the longest side of
-                  the triangle, resting perfectly opposite from the 90-degree
-                  angle.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              a² + b² = c²
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Used to find the hypotenuse (c) of a right triangle.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

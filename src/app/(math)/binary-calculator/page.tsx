@@ -222,34 +222,15 @@ export default function BinaryCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                This calculator supports standard arithmetic as well as bitwise
-                logic gates that mirror actual hardware circuits.
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  <strong>Addition &amp; Subtraction:</strong> Standard math
-                  carrying rules apply, but the base is 2 instead of 10. E.g., 1
-                  + 1 = 10 (which is 2 in decimal).
-                </li>
-                <li>
-                  <strong>AND Gate:</strong> Compares two binary numbers. The
-                  output bit is '1' ONLY if both input bits in that position are
-                  '1'.
-                </li>
-                <li>
-                  <strong>OR Gate:</strong> The output bit is '1' if EITHER of
-                  the input bits is '1'.
-                </li>
-                <li>
-                  <strong>XOR Gate (Exclusive OR):</strong> The output bit is
-                  '1' ONLY if the input bits are different (one is '1' and the
-                  other is '0').
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              N = Σ (dᵢ × 2ⁱ)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Converting binary digits to decimal base-10.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

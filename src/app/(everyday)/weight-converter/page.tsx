@@ -210,28 +210,15 @@ export default function WeightConverter() {
             </>
           }
           formula={
-            <>
-              <p>
-                To mathematically convert a specific weight, you multiply your
-                starting value by an exact, internationally standardized
-                "Conversion Factor".
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
-                <p>
-                  <strong>
-                    Target Weight = Original Weight × Conversion Factor
-                  </strong>
-                </p>
-              </div>
-              <p>
-                The most important conversion factor to memorize in daily life
-                is the translation between Kilograms and Pounds. Exactly{" "}
-                <strong>1 Kilogram = 2.20462 Pounds</strong>. Therefore, if
-                someone weighs 100 kg, you multiply 100 × 2.20462 to realize
-                they weigh roughly 220 lbs.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Weight Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

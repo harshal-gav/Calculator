@@ -312,21 +312,15 @@ export default function MolarMassCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Calculating molar mass requires breaking down a chemical formula
-                into its individual atoms, finding each atom's weight on the
-                periodic table, and summing the results.
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
-                <p>
-                  <strong>
-                    Molar Mass = Σ (Atomic Weight of Element × Number of Atoms)
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = Σ (nᵢ × mᵢ)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              The mass of one mole of a specific chemical substance.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

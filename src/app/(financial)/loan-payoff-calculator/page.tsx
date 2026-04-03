@@ -197,12 +197,11 @@ export default function LoanPayoffCalculator() {
         }
         formula={
           <>
-            <p>The time to payoff (n) in months is calculated by solving the amortization equation for n:</p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-sm shadow-sm my-4 border border-zinc-200 overflow-x-auto text-zinc-800">
-              n = -log(1 - (Principal * Monthly Rate) / Payment) / log(1 + Monthly Rate)
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
             </div>
-            <p className="text-sm">
-              We calculate this twice: once for your current payment, and again for your current payment plus your extra monthly contribution. The difference between these two values represents your <strong>Months Saved</strong>.
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Loan Payoff results.
             </p>
           </>
         }

@@ -335,31 +335,15 @@ export default function PasswordGenerator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Most basic random generators use `Math.random()`, which is
-                physically predictable and highly vulnerable to advanced cyber
-                attacks. Our tool exclusively uses{" "}
-                <code>window.crypto.getRandomValues()</code>, a physically
-                secure cryptographic API built directly into modern browsers
-                that utilizes the operating system's true entropy pool.
-              </p>
-              <div className="bg-zinc-800 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-700 text-zinc-300">
-                <p>
-                  <strong>6-character lowercase = Cracked Instantly</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-zinc-700">
-                  <strong>8-character mixed = Cracked in ~5 minutes</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-zinc-700">
-                  <strong>
-                    16-character mixed w/ symbols = Uncrackable by modern
-                    supercomputers
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Password Generator Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Password Generator results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

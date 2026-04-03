@@ -178,13 +178,12 @@ export default function TDEECalculator() {
         }
         formula={
           <>
-            <p>TDEE is calculated using a two-step process:</p>
-            <div className="bg-white p-6 rounded-xl border border-zinc-200 my-6 shadow-sm">
-               <ol className="list-decimal pl-6 space-y-4 text-emerald-900/80">
-                  <li><strong>Calculate BMR:</strong> Using the Mifflin-St Jeor equation based on height, weight, age, and sex.</li>
-                  <li><strong>Apply Activity Factor:</strong> TDEE = BMR × Activity Level (PAL).</li>
-               </ol>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              TDEE = BMR × Activity Factor
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              Total Daily Energy Expenditure.
+            </p>
           </>
         }
         example={

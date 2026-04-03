@@ -65,138 +65,125 @@ export default function ScientificCalculator() {
             {errorMsg}
           </div>
         )}
-        <div className="text-[#3b4131] h-6 text-sm font-mono tracking-widest opacity-70 mb-1 truncate">
+        <div className="text-slate-800 h-6 text-sm font-mono tracking-widest opacity-60 mb-1 truncate">
           {history}
         </div>
-        <div className="text-[#2b3024] text-5xl font-mono tracking-tight font-bold break-all leading-none">
+        <div className="text-slate-900 text-5xl font-mono tracking-tight font-bold break-all leading-none">
           {display || "0"}
         </div>
       </div>
 
       <div className="grid grid-cols-5 gap-2 sm:gap-3">
         {/* Row 1 Scientific + Actions */}
-        <button onClick={() => append("sin(")} className="calc-btn-sci">
+        <button onClick={() => append("sin(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           sin
         </button>
-        <button onClick={() => append("cos(")} className="calc-btn-sci">
+        <button onClick={() => append("cos(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           cos
         </button>
-        <button onClick={() => append("tan(")} className="calc-btn-sci">
+        <button onClick={() => append("tan(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           tan
         </button>
         <button
           onClick={backspace}
-          className="calc-btn-action bg-yellow-600 hover:bg-yellow-500 text-white"
+          className="bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center text-sm md:text-lg"
         >
           ⌫
         </button>
         <button
           onClick={clear}
-          className="calc-btn-action bg-red-600 hover:bg-red-500 text-white font-bold"
+          className="bg-red-600 hover:bg-red-500 text-white font-bold font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center text-sm md:text-lg"
         >
           AC
         </button>
 
         {/* Row 2 Scientific + Ops */}
-        <button onClick={() => append("log(")} className="calc-btn-sci">
+        <button onClick={() => append("log(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           log
         </button>
-        <button onClick={() => append("ln(")} className="calc-btn-sci">
+        <button onClick={() => append("ln(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           ln
         </button>
-        <button onClick={() => append("(")} className="calc-btn-sci">
+        <button onClick={() => append("(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           (
         </button>
-        <button onClick={() => append(")")} className="calc-btn-sci">
+        <button onClick={() => append(")")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           )
         </button>
-        <button onClick={() => append("÷")} className="calc-btn-op">
+        <button onClick={() => append("÷")} className="bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           ÷
         </button>
 
         {/* Row 3 Digits + Ops */}
-        <button onClick={() => append("sqrt(")} className="calc-btn-sci">
+        <button onClick={() => append("sqrt(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           √
         </button>
-        <button onClick={() => append("7")} className="calc-btn-num">
+        <button onClick={() => append("7")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           7
         </button>
-        <button onClick={() => append("8")} className="calc-btn-num">
+        <button onClick={() => append("8")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           8
         </button>
-        <button onClick={() => append("9")} className="calc-btn-num">
+        <button onClick={() => append("9")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           9
         </button>
-        <button onClick={() => append("×")} className="calc-btn-op">
+        <button onClick={() => append("×")} className="bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           ×
         </button>
 
         {/* Row 4 Digits + Ops */}
-        <button onClick={() => append("^")} className="calc-btn-sci">
+        <button onClick={() => append("^")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           xʸ
         </button>
-        <button onClick={() => append("4")} className="calc-btn-num">
+        <button onClick={() => append("4")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           4
         </button>
-        <button onClick={() => append("5")} className="calc-btn-num">
+        <button onClick={() => append("5")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           5
         </button>
-        <button onClick={() => append("6")} className="calc-btn-num">
+        <button onClick={() => append("6")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           6
         </button>
-        <button onClick={() => append("-")} className="calc-btn-op">
+        <button onClick={() => append("-")} className="bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           -
         </button>
 
         {/* Row 5 Digits + Ops */}
-        <button onClick={() => append("π")} className="calc-btn-sci">
+        <button onClick={() => append("π")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           π
         </button>
-        <button onClick={() => append("1")} className="calc-btn-num">
+        <button onClick={() => append("1")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           1
         </button>
-        <button onClick={() => append("2")} className="calc-btn-num">
+        <button onClick={() => append("2")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           2
         </button>
-        <button onClick={() => append("3")} className="calc-btn-num">
+        <button onClick={() => append("3")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           3
         </button>
-        <button onClick={() => append("+")} className="calc-btn-op">
+        <button onClick={() => append("+")} className="bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           +
         </button>
 
         {/* Row 6 Digits + Ops */}
-        <button onClick={() => append("e")} className="calc-btn-sci">
+        <button onClick={() => append("e")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           e
         </button>
-        <button onClick={() => append("0")} className="calc-btn-num col-span-2">
+        <button onClick={() => append("0")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center col-span-2">
           0
         </button>
-        <button onClick={() => append(".")} className="calc-btn-num">
+        <button onClick={() => append(".")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
           .
         </button>
         <button
           onClick={calculate}
-          className="col-span-1 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white text-xl md:text-2xl font-bold rounded-lg shadow-sm transition"
+          className="col-span-1 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white text-xl md:text-2xl font-bold rounded-lg shadow-sm transition flex justify-center items-center"
         >
           =
         </button>
       </div>
 
-      <style jsx>{`
-        .calc-btn-sci {
-          @apply bg-gray-700 hover:bg-gray-600 active:bg-gray-800 text-gray-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center;
-        }
-        .calc-btn-num {
-          @apply bg-gray-200 hover:bg-white active:bg-gray-400 text-gray-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center;
-        }
-        .calc-btn-op {
-          @apply bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center;
-        }
-        .calc-btn-action {
-          @apply font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center text-sm md:text-lg;
-        }
-      `}</style>
+
 
       <script
         type="application/ld+json"
@@ -241,36 +228,15 @@ export default function ScientificCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                A scientific calculator parses complex expressions respecting
-                the strict mathematical{" "}
-                <strong>Order of Operations (PEMDAS / BODMAS)</strong>:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Parentheses:</strong> Evaluating any expressions
-                  contained inside <code>( )</code> first.
-                </li>
-                <li>
-                  <strong>Exponents & Logic:</strong> Handling powers, square
-                  roots, and logarithms.
-                </li>
-                <li>
-                  <strong>Trigonometry:</strong> Calculating spatial wave
-                  functions like <code>sin(x)</code>.
-                </li>
-                <li>
-                  <strong>Multiplication & Division:</strong> Calculated left to
-                  right.
-                </li>
-                <li>
-                  <strong>Addition & Subtraction:</strong> Calculated last, left
-                  to right.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Scientific Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Scientific results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

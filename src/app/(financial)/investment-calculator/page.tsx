@@ -186,66 +186,16 @@ export default function InvestmentCalculator() {
           ]
         }}
         formula={
-          <div className="space-y-6">
-            <p>
-              The math behind this projection is a combination of <strong>Periodic Compounding</strong> and <strong>Annuity Growth</strong>. The future value (FV) of an investment with recurring deposits is:
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              FV = P(1 + r)^n + PMT[((1 + r)^n - 1) / r]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Future value of investment with regular contributions.
             </p>
-            <div className="bg-gray-900 p-8 rounded-3xl font-mono text-center text-white shadow-2xl my-8 border border-blue-500/20">
-              <div className="text-2xl mb-4 text-blue-400">FV = P(1+r/n)ⁿᵗ + C((1+r/n)ⁿᵗ - 1)/(r/n)</div>
-            </div>
-            <p className="text-sm font-bold text-gray-500 uppercase tracking-widest text-center">Variables Explained:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-               <div className="p-4 bg-blue-50/50 rounded-xl border border-blue-100 flex justify-between items-center">
-                  <span className="font-mono font-bold text-blue-800 text-lg">P</span>
-                  <span className="text-xs text-blue-600 font-medium">Initial Principal Sum</span>
-               </div>
-               <div className="p-4 bg-blue-50/50 rounded-xl border border-blue-100 flex justify-between items-center">
-                  <span className="font-mono font-bold text-blue-800 text-lg">C</span>
-                  <span className="text-xs text-blue-600 font-medium">Periodic Contribution (Monthly/Annually)</span>
-               </div>
-               <div className="p-4 bg-blue-50/50 rounded-xl border border-blue-100 flex justify-between items-center">
-                  <span className="font-mono font-bold text-blue-800 text-lg">r</span>
-                  <span className="text-xs text-blue-600 font-medium">Annual Growth Rate (expressed as decimal)</span>
-               </div>
-               <div className="p-4 bg-blue-50/50 rounded-xl border border-blue-100 flex justify-between items-center">
-                  <span className="font-mono font-bold text-blue-800 text-lg">t</span>
-                  <span className="text-xs text-blue-600 font-medium">Number of years in the horizon</span>
-               </div>
-            </div>
-          </div>
+          </>
         }
-        deepDive={
-          <div className="space-y-12">
-            <section>
-              <h4 className="text-3xl font-black text-gray-900 mb-6 border-l-4 border-blue-600 pl-6">I. The Velocity of Capital</h4>
-              <p className="text-gray-700 leading-relaxed text-lg">
-                In the context of this calculator, "Velocity" refers to the frequency of compounding. While interest rate gets the headlines, the <strong>Frequency of Calculation</strong> is the silent workhorse. Daily compounding, common in high-yield savings, yields more than annual compounding even at the same interest rate. When investing in the stock market, you are typically modeling an 'average' monthly growth that simulates the continuous nature of global commerce.
-              </p>
-            </section>
-
-            <section className="bg-gradient-to-r from-blue-900 to-indigo-900 p-10 rounded-[40px] text-white shadow-xl">
-              <h4 className="text-2xl font-bold mb-4 text-blue-300">II. Inflation: The Real Returns Filter</h4>
-              <p className="leading-relaxed opacity-90">
-                A "Common Mistake" in investment modeling is ignoring <strong>Purchasing Power Erosion</strong>. If your projection shows $2 million in 30 years, you must mentally adjust that for inflation. At a 3% average inflation rate, $2 million in 2054 will have the buying power of roughly $825,000 today. To see "Real Wealth," we recommend running your projection at a 7% return (historically the 10% market return minus 3% inflation).
-              </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-gray-900 mb-6 border-l-4 border-blue-600 pl-6">III. Volatility & The Sequence of Returns</h4>
-              <p className="text-gray-700 leading-relaxed">
-                Calculators assume a "Smooth Line" growth. In reality, the stock market is a "Jagged Line." The order in which you receive your returns (Sequence of Returns) matters significantly, especially as you approach your goal. A 10% average return made of (+20%, -5%, +15%) feels very different than a flat 10% every year. Professional investors use these projections as a <strong>target</strong>, while maintaining enough liquidity to survive the inevitable "jagged" downswings.
-              </p>
-            </section>
-
-            <section className="bg-gray-50 border-2 border-dashed border-gray-200 p-10 rounded-[40px]">
-              <h4 className="text-2xl font-bold text-gray-800 mb-4">IV. Tax Efficiency: Maintaining Gross Yields</h4>
-              <p className="text-gray-600 leading-relaxed">
-                The final number our calculator produces is a "Gross" figure. Depending on where this money is held (Brokerage vs. Roth IRA vs. 401k), taxes could claim between 15% and 40% of the growth. Utilizing tax-advantaged accounts allows your capital to compound "Tax-Free" or "Tax-Deferred," which keeps significantly more capital working in your favor across decades.
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-white p-10 rounded-[40px] border border-gray-100 shadow-2xl relative">
             <div className="absolute -top-4 -right-4 bg-emerald-500 text-white px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest shadow-lg">Case Proof</div>
             <h5 className="font-black text-gray-900 uppercase tracking-widest text-sm mb-8">Scenario: The 'Late Starter' vs 'Early Bird'</h5>

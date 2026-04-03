@@ -217,19 +217,12 @@ export default function VectorAdditionCalculator() {
         }
         formula={
           <>
-            <p>
-              Adding vectors requires breaking them down into their horizontal
-              (X) and vertical (Y) Cartesian components using sine and cosine:
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 border border-zinc-200">
-              <strong>Rx</strong>: V1 × cos(θ1) + V2 × cos(θ2)
-              <br />
-              <strong>Ry</strong>: V1 × sin(θ1) + V2 × sin(θ2)
-              <br />
-              <strong>Resultant Magnitude (|R|)</strong> = √(Rx² + Ry²)
-              <br />
-              <strong>Resultant Direction (θ)</strong> = arctan(Ry / Rx)
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Vector Addition Analysis Model
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Vector Addition results.
+            </p>
           </>
         }
         example={

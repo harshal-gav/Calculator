@@ -256,18 +256,12 @@ export default function CrossProductCalculator() {
         }
         formula={
           <>
-            <p>
-              The cross product of vectors <strong>u = (u₁, u₂, u₃)</strong> and{" "}
-              <strong>v = (v₁, v₂, v₃)</strong> is calculated by finding the
-              determinant of a specific matrix:
-            </p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-              <strong>w = u × v</strong>
-              <br />
-              <strong>
-                w = (u₂v₃ - u₃v₂) i - (u₁v₃ - u₃v₁) j + (u₁v₂ - u₂v₁) k
-              </strong>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Cross Product Analysis Model
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Cross Product results.
+            </p>
           </>
         }
         example={

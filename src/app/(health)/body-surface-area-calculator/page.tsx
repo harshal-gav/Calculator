@@ -197,9 +197,11 @@ export default function BodySurfaceAreaCalculator() {
         }
         formula={
           <>
-            <p>The global medical standard today is the simple but highly accurate <strong>Mosteller Formula (1987)</strong>:</p>
-            <p className="mt-2 pl-4 border-l-4 border-cyan-500 font-mono text-lg bg-gray-50 py-2">
-              BSA (m²) = √(Height(cm) × Weight(kg) / 3600)
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = f(Metric, Age, Sex)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Biometric calculation utilizing standardized biological and physiological models for Body Surface Area.
             </p>
           </>
         }

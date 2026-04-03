@@ -260,31 +260,15 @@ export default function MarginOfErrorCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The standard formula for calculating the margin of error of a
-                proportion is driven by the Z-Score of your designated
-                confidence level, multiplied by the standard error:
-              </p>
-              <div className="bg-fuchsia-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-fuchsia-900 border border-fuchsia-100">
-                MoE = z * √ [ (p * (1 - p)) / n ]
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>z:</strong> The Z-Score tied to your Confidence Level
-                  (e.g., 1.96 for 95% confidence).
-                </li>
-                <li>
-                  <strong>p:</strong> The sample proportion (usually set at 0.50
-                  for the most conservative, widest margin).
-                </li>
-                <li>
-                  <strong>n:</strong> The sample size (the absolute number of
-                  people you actually surveyed).
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Margin Of Error Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Margin Of Error results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

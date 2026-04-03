@@ -281,12 +281,12 @@ export default function HouseAffordabilityCalculator() {
         }
         formula={
           <>
-            <p>Mortgage lenders generally adhere to the <strong>28/36 Rule</strong> to determine your affordability capacity:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>The Front-End Ratio (28%):</strong> Your total monthly housing cost (Principal, Interest, Taxes, and Insurance) should not exceed 28% of your gross monthly income.</li>
-              <li><strong>The Back-End Ratio (36%):</strong> Your total monthly housing cost PLUS all your other existing monthly debt payments (student loans, credit cards, auto loans) should not exceed 36% of your gross monthly income.</li>
-            </ul>
-            <p className="mt-4 text-gray-700">Our calculator evaluates both limits to establish the strict ceiling of your affordability known as Debt-to-Income (DTI).</p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              House Affordability Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise House Affordability results.
+            </p>
           </>
         }
         example={

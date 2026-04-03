@@ -184,12 +184,11 @@ export default function LoanComparisonCalculator() {
         }
         formula={
           <>
-            <p>To compare the loans, we apply the standard amortized payment formula to both scenarios:</p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-sm shadow-sm my-4 border border-slate-200">
-              Payment = [Principal x Rate x (1+Rate)ⁿ] / [(1+Rate)ⁿ - 1]
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
             </div>
-            <p>
-              We then calculate the <strong>Total Cost</strong> by multiplying the monthly payment by the number of months (n), and the <strong>Total Interest</strong> by subtracting the original Principal from that Total Cost.
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Loan Comparison results.
             </p>
           </>
         }

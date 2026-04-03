@@ -188,25 +188,15 @@ export default function RentCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Property managers use two distinct mathematical hurdles to
-                approve tenant applications:
-              </p>
-              <div className="grid md:grid-cols-2 gap-4 my-4">
-                <div className="bg-sky-50 p-4 rounded-lg font-mono text-[14px] text-sky-900 border border-sky-100">
-                  <strong>The Landlord 40x Rule:</strong>
-                  <br />
-                  Annual Income ≥ (Monthly Rent × 40)
-                </div>
-                <div className="bg-sky-50 p-4 rounded-lg font-mono text-[14px] text-sky-900 border border-sky-100">
-                  <strong>The 43% DTI Ceiling:</strong>
-                  <br />
-                  (Rent + Minimum Debt Payments) ÷ Gross Income ≤ 43%
-                </div>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Rent Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Rent results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

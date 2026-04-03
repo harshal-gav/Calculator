@@ -168,64 +168,16 @@ export default function DividendYieldCalculator() {
           ]
         }}
         formula={
-          <div className="space-y-6">
-            <p className="text-lg">
-              The mathematical logic of dividend yield is deceptively simple, but its implications for <strong>total return</strong> are profound:
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Dividend Yield Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Dividend Yield results.
             </p>
-            <div className="bg-slate-900 p-8 rounded-3xl text-center shadow-inner border border-emerald-500/30">
-              <code className="text-3xl text-emerald-400 font-mono">
-                Yield = (Annual Dividend / Stock Price) × 100
-              </code>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-medium">
-              <div className="p-4 bg-emerald-50 border border-emerald-100 rounded-xl">
-                <strong>Annual Dividend:</strong> The sum of all dividends paid in the last 4 quarters (trailing) or projected for the next 4 (forward).
-              </div>
-              <div className="p-4 bg-emerald-50 border border-emerald-100 rounded-xl">
-                <strong>Stock Price:</strong> The current market clearing price for one share of the company's equity.
-              </div>
-            </div>
-          </div>
+          </>
         }
-        deepDive={
-          <div className="space-y-12">
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-emerald-600 pl-6">I. The Dividend 'Yield Trap' Warning</h4>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                A massive dividend yield (e.g., 12% or 15%) is often a flashing red siren rather than an opportunity. This is known as a <strong>Yield Trap</strong>. Because yield is calculated by dividing the dividend by the price, a crashing stock price mathematically drives the yield UP.
-              </p>
-              <p className="text-slate-700 mt-4 leading-relaxed">
-                If a company's stock drops 50% because its business model is failing, its yield will instantly double. Investors who buy solely based on this "high yield" often experience a "Dividend Cut"—where the company cancels the payment to save cash—followed by further price collapses. Always verify the <strong>Payout Ratio</strong> (the percentage of earnings used to pay the dividend) before chasing high yields.
-              </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-emerald-600 pl-6">II. Total Return vs. Income</h4>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Do not confuse a high yield with a high return. A stock with a 0% yield (like Amazon or Berkshire Hathaway) can return 20% a year through price appreciation. Conversely, a stock with a 6% yield can lose 10% of its price, resulting in a <strong>negative 4% total return</strong>. 
-              </p>
-              <p className="text-slate-700 mt-4 leading-relaxed">
-                When using this calculator, consider it as one piece of the puzzle. The ideal "Aristocrat" stock is one that offers a moderate yield (2-4%) but grows that dividend payment by 7-10% every year. This "Dividend Growth" strategy often outperforms both pure income and pure growth strategies.
-              </p>
-            </section>
-
-            <section className="bg-emerald-950 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
-               <div className="absolute top-0 left-0 w-full h-1 bg-emerald-500"></div>
-               <h4 className="text-2xl font-bold mb-4">III. The Yield-on-Cost (YOC) Phenomenon</h4>
-               <p className="text-emerald-100/80 leading-relaxed">
-                 Yield-on-Cost is the dividends you receive today divided by the price you <strong>originally paid</strong> years ago. This is how long-term investors like Warren Buffett achieve yields of 50% or more. If you buy a stock for $100 with a $3 dividend (3% yield), and 20 years later the dividend has grown to $25 per share, your Yield-on-Cost is a staggering 25%, regardless of what the current stock price is. This is the ultimate goal of patient dividend investing.
-               </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-emerald-600 pl-6">IV. Tax Implications: Qualified vs. Ordinary</h4>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Not all dividends are taxed equally. "Qualified" dividends are taxed at the lower long-term capital gains rate (0%, 15%, or 20%), while "Ordinary" dividends (like those from REITs or short-term holdings) are taxed at your standard income tax bracket. This calculator shows the <strong>Pre-Tax Yield</strong>. Always account for your specific tax situation to understand your true "Spendable Yield."
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-neutral-200">
              <h5 className="font-black text-emerald-900 uppercase tracking-widest text-[10px] mb-8">Scenario: Comparative Yield Analysis</h5>
              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

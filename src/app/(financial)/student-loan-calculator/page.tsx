@@ -269,11 +269,12 @@ export default function StudentLoanCalculator() {
         }
         formula={
           <>
-            <p>Student loans utilize compound amortizing mathematics. This means every month, some of your payment destroys the Principal, while the rest vanishes into Interest.</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Standard Payoff:</strong> Based on the standard 10-year (120 month) federal student loan term, your total loan and interest are divided so that your balance hits exactly $0.00 on month 120.</li>
-              <li><strong>Extra Payments:</strong> If your required payment is $300, and you pay $400, that extra $100 completely bypasses the interest calculation for that month and annihilates $100 of pure principal. By dramatically shrinking the principal early, the *future* interest equations yield much smaller numbers!</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Student Loan results.
+            </p>
           </>
         }
         example={

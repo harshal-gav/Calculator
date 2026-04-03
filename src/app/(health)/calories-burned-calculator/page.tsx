@@ -201,12 +201,12 @@ export default function CaloriesBurnedCalculator() {
         }
         formula={
           <>
-            <p>The calculation is based on the MET formula:</p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-              <strong>
-                Calories Burned = MET × Weight (in kg) × Duration (in hours)
-              </strong>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = f(Metric, Age, Sex)
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              Biometric calculation utilizing standardized biological and physiological models for Calories Burned.
+            </p>
           </>
         }
         example={

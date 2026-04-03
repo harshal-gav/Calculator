@@ -272,31 +272,15 @@ export default function TriangleCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                This calculator relies on two advanced geometric theorems rather
-                than basic algebra:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Heron's Formula:</strong> Used to calculate Area when
-                  height is unknown. <br />
-                  <span className="font-mono bg-purple-50 px-1 rounded">
-                    Area = √[s(s-a)(s-b)(s-c)]
-                  </span>{" "}
-                  where 's' is the semi-perimeter.
-                </li>
-                <li>
-                  <strong>The Law of Cosines:</strong> Used to reverse-engineer
-                  the internal angles based exclusively on the side lengths.{" "}
-                  <br />
-                  <span className="font-mono bg-purple-50 px-1 rounded">
-                    Angle A = arccos[(b² + c² - a²) / 2bc]
-                  </span>
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              A = ½bh
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Where b is base and h is vertical height.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

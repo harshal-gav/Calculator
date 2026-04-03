@@ -282,47 +282,15 @@ export default function PerimeterCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The calculation essentially involves adding up all the outer
-                sides of a shape. Here are the specific shortcut formulas
-                applied:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Rectangle:</strong>{" "}
-                  <span className="font-mono bg-orange-50 px-1 rounded">
-                    2 × (Length + Width)
-                  </span>
-                </li>
-                <li>
-                  <strong>Square:</strong>{" "}
-                  <span className="font-mono bg-orange-50 px-1 rounded">
-                    4 × Side
-                  </span>
-                </li>
-                <li>
-                  <strong>Triangle:</strong>{" "}
-                  <span className="font-mono bg-orange-50 px-1 rounded">
-                    Side a + Side b + Side c
-                  </span>
-                </li>
-                <li>
-                  <strong>Circle:</strong>{" "}
-                  <span className="font-mono bg-orange-50 px-1 rounded">
-                    2 × π × Radius
-                  </span>{" "}
-                  (This is uniquely called Circumference).
-                </li>
-                <li>
-                  <strong>Polygon:</strong>{" "}
-                  <span className="font-mono bg-orange-50 px-1 rounded">
-                    Number of Sides × Length of One Side
-                  </span>
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              P = 2(L + W) | C = 2πr
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Perimeter is the total length of the boundary.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

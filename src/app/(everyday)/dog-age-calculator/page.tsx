@@ -185,29 +185,15 @@ export default function DogAgeCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                According to the American Veterinary Medical Association (AVMA),
-                dogs age very rapidly in their first two years, maturing to
-                roughly a 24-year-old human. After year two, the rate of aging
-                slows down but varies drastically based on the dog's size (small
-                dogs live significantly longer than giant breeds).
-              </p>
-              <div className="bg-amber-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-amber-100 text-amber-900">
-                <p>
-                  <strong>Year 1 = Approx. 15 Human Years</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-amber-200">
-                  <strong>Year 2 = +9 Human Years (Total 24)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-amber-200">
-                  <strong>
-                    Years 3+ = +4 to +7 Human Years (Depending on breed size)
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Dog Age Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Dog Age results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

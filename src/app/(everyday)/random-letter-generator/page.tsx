@@ -177,29 +177,15 @@ export default function RandomLetterGenerator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Behind the scenes, the generator maps the alphabet to an array
-                index from 0 to 25:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
-                <li>
-                  <code>A = 0, B = 1, C = 2 ... Z = 25</code>
-                </li>
-                <li>
-                  The program generates a random decimal between 0.0 and 1.0.
-                </li>
-                <li>
-                  It multiplies that decimal by 26 (the length of the alphabet).
-                </li>
-                <li>It rounds down to get a clean integer between 0 and 25.</li>
-                <li>
-                  It returns the specific letter assigned to that resulting
-                  number.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Random Letter Generator Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Random Letter Generator results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

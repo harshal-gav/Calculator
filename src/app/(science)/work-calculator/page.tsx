@@ -278,28 +278,15 @@ export default function WorkCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The calculation for Work requires multiplying the Force applied
-                against the Distance traveled. It also relies heavily on
-                trigonometry (cosine) because only the force applied in the
-                exact direction of travel actually contributes to the Work.
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
-                <p>
-                  <strong>Work (W) = F × d × cos(θ)</strong>
-                </p>
-                <p className="text-sm mt-2 font-sans text-emerald-800">
-                  <em>
-                    Where <strong>F</strong> is Force in Newtons,{" "}
-                    <strong>d</strong> is Distance in meters, and{" "}
-                    <strong>θ</strong> (theta) is the angle separating your
-                    pushing direction from the object's travel direction.
-                  </em>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              W = F × d
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Transfer of energy when force moves an object.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

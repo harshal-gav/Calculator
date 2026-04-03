@@ -356,20 +356,15 @@ export default function KineticEnergyCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Kinetic Energy (KE) is driven by the square of the velocity,
-                emphasizing that moving twice as fast actually generates four
-                times as much physical energy. The base physics formula requires
-                Mass in Kilograms (kg) and Velocity in Meters per Second (m/s).
-              </p>
-              <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-rose-100 text-rose-900">
-                <p>
-                  <strong>KE = ½ × m × v²</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              KE = ½mv²
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Possessed energy due to an object's motion.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

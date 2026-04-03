@@ -187,25 +187,15 @@ export default function TemperatureConverter() {
             </>
           }
           formula={
-            <>
-              <p>
-                Unlike length or weight conversions which just use simple
-                multiplication, temperature conversion requires multi-step
-                algebra involving fractions and addition/subtraction.
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
-                <p>
-                  <strong>°C to °F:</strong> (°C × 9/5) + 32
-                </p>
-                <p className="mt-2 pt-2 border-t border-emerald-200">
-                  <strong>°F to °C:</strong> (°F - 32) × 5/9
-                </p>
-                <p className="mt-2 pt-2 border-t border-emerald-200">
-                  <strong>°C to Kelvin:</strong> °C + 273.15
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Temperature Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

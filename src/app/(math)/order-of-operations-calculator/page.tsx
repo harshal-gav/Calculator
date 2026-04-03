@@ -322,31 +322,15 @@ export default function OrderOfOperationsCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                This calculator aggressively follows the standard{" "}
-                <strong>PEMDAS</strong> hierarchy of mathematical evaluation:
-              </p>
-              <ol className="list-decimal pl-6 space-y-2 mt-4 font-medium text-emerald-800 bg-zinc-50 p-4 rounded-lg border border-zinc-200">
-                <li>
-                  <strong>P</strong>arentheses (Brackets): Evaluate everything
-                  inside grouping symbols first.
-                </li>
-                <li>
-                  <strong>E</strong>xponents (Order/Indices): Calculate powers
-                  and square roots.
-                </li>
-                <li>
-                  <strong>M</strong>ultiplication & <strong>D</strong>ivision:
-                  Evaluate from left to right.
-                </li>
-                <li>
-                  <strong>A</strong>ddition & <strong>S</strong>ubtraction:
-                  Evaluate from left to right.
-                </li>
-              </ol>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Order Of Operations Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Order Of Operations results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -131,7 +131,16 @@ export default function GFRCalculator() {
       <CalculatorSEO
         title="GFR Calculator — Kidney Function"
         whatIsIt={<p>The <strong>GFR Calculator</strong> estimates your Glomerular Filtration Rate — a measure of how well your kidneys are filtering waste from your blood. It uses the CKD-EPI 2021 equation, the current clinical standard.</p>}
-        formula={<><p>Uses the CKD-EPI 2021 race-free equation:</p><div className="bg-teal-50 p-4 rounded-lg font-mono text-center my-4 border border-teal-100 text-teal-900 text-sm"><strong>eGFR = 142 × min(Cr/κ, 1)^α × max(Cr/κ, 1)^-1.200 × 0.9938^Age × (1.012 if female)</strong></div><p className="text-sm text-gray-600">Where κ = 0.7 (female) or 0.9 (male), α = -0.241 (female) or -0.302 (male).</p></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Gfr Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Gfr results.
+            </p>
+          </>
+        }
         example={<><p>A 45-year-old male with creatinine of 1.1 mg/dL:</p><ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700"><li>eGFR ≈ 84.5 mL/min/1.73 m²</li><li>Stage 2 — Mildly Decreased (but generally acceptable)</li></ul></>}
         useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>CKD Screening:</strong> Early detection of declining kidney function.</li><li><strong>Drug Dosing:</strong> Many medications require dose adjustments based on renal function.</li></ul>}
         faqs={[

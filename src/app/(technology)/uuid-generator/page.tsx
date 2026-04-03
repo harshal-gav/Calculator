@@ -149,31 +149,15 @@ export default function UuidGenerator() {
             </>
           }
           formula={
-            <>
-              <p>
-                A standard UUID v4 contains 32 hexadecimal digits and 4 hyphens,
-                structured exactly like this:
-              </p>
-              <div className="bg-fuchsia-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-fuchsia-900 border border-fuchsia-100 flex flex-col gap-2 center">
-                8-4-4-4-12 (e.g., 123e4567-e89b-12d3-a456-426614174000)
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Hexadecimal:</strong> Made entirely of numbers (0-9)
-                  and lowercase letters (a-f).
-                </li>
-                <li>
-                  <strong>Version 4:</strong> The 13th character is strictly a
-                  '4' to indicate it was generated via pure randomness, not time
-                  or hardware-based data.
-                </li>
-                <li>
-                  <strong>Variant:</strong> The 17th character will always be an
-                  8, 9, A, or B to identify the UUID variant.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Uuid Generator Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Uuid Generator results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

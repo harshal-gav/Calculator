@@ -83,7 +83,14 @@ export default function AverageCalculator() {
           </p>
         }
         formula={
-          <p>The exact formula depends on the parameters provided.</p>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              x̄ = (Σ xᵢ) / n
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Arithmetic Mean: divide sum of values by the count.
+            </p>
+          </>
         }
         example={
           <p>Enter your inputs to see an example calculation.</p>

@@ -185,39 +185,15 @@ export default function LogarithmCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                A logarithm asks one fundamental question: "
-                <i>Base (b) raised to what power (y) equals number (x)?</i>".
-                This relationship is written as:
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-emerald-900 border border-emerald-100">
-                y = log<sub className="text-[10px]">b</sub>(x) &nbsp;&nbsp; ⟺
-                &nbsp;&nbsp; b<sup className="text-[10px]">y</sup> = x
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Base (b):</strong> The underlying number being
-                  multiplied by itself. It must be greater than 0, and not equal
-                  to 1.
-                </li>
-                <li>
-                  <strong>Number (x):</strong> The target product you are trying
-                  to reach. It must be greater than 0.
-                </li>
-                <li>
-                  <strong>Exponent (y):</strong> The result calculated by this
-                  tool. The number of times the base must multiply itself.
-                </li>
-              </ul>
-              <p className="mt-4 text-sm bg-zinc-100 p-3 rounded">
-                <strong>Note:</strong> To calculate uncommon custom bases across
-                different programming systems, this calculator internally
-                utilizes the <i>Change of Base Formula</i>:{" "}
-                <code>log_b(x) = ln(x) / ln(b)</code>.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              logᵦ(x) = y ⇔ bʸ = x
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              The exponent to which a base must be raised to yield x.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

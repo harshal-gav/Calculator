@@ -250,12 +250,12 @@ export default function GDPCalculator() {
         }
         formula={
           <>
-            <p>The calculator uses three different economic formulas:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Growth Rate:</strong> [(Current GDP / Previous GDP)^(1/Years) - 1] × 100</li>
-              <li><strong>Contribution:</strong> (Sector GDP / Total GDP) × 100</li>
-              <li><strong>Deflator:</strong> (Nominal GDP / Real GDP) × 100</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Gdp Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Gdp results.
+            </p>
           </>
         }
         example={

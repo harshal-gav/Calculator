@@ -339,29 +339,15 @@ export default function CookingConverter() {
             </p>
           }
           formula={
-            <>
-              <p>
-                To accurately cross-calculate these diverse units, this tool
-                anchors all inputs to a universal mathematical constant. For
-                volume, everything is first converted backward into precise{" "}
-                <strong>Milliliters (mL)</strong>. For mass and weight,
-                everything is translated backward into base{" "}
-                <strong>Grams (g)</strong>. Once standardized, we multiply into
-                the requested output unit.
-              </p>
-              <div className="bg-orange-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-orange-100 text-orange-900">
-                <p>
-                  <strong>1 US Cup = 240 mL</strong> (or 236.588 mL precisely)
-                </p>
-                <p className="mt-2 pt-2 border-t border-orange-200">
-                  <strong>1 Tablespoon (tbsp) = 3 Teaspoons (tsp)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-orange-200">
-                  <strong>1 Ounce (oz) = 28.3495 Grams (g)</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Cooking Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

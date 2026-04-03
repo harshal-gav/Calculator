@@ -229,21 +229,15 @@ export default function CovarianceCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Covariance is calculated by finding the average of the products
-                of the deviations from the means for both variables.
-              </p>
-              <div className="bg-purple-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-purple-900 border border-purple-100 overflow-x-auto">
-                <strong>Sample Covariance:</strong>
-                <br /> Cov(x,y) = Σ [ (xᵢ - x̄) × (yᵢ - ȳ) ] ÷ (n - 1)
-                <br />
-                <br />
-                <strong>Population Covariance:</strong>
-                <br /> Cov(X,Y) = Σ [ (Xᵢ - μx) × (Yᵢ - μy) ] ÷ N
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Covariance Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Covariance results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -309,35 +309,15 @@ export default function MortgagePayoffCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Mortgage interest is calculated monthly based on your
-                outstanding principal balance at that exact moment in time.
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  <strong>Monthly Interest:</strong>{" "}
-                  <code className="bg-zinc-100 px-2 rounded">
-                    Remaining Balance × (Annual Yield / 12)
-                  </code>
-                </li>
-                <li>
-                  <strong>Principal Reduction:</strong>{" "}
-                  <code className="bg-zinc-100 px-2 rounded">
-                    Total Monthly Payment - Monthly Interest
-                  </code>
-                </li>
-                <li>
-                  By adding an <em>Extra Payment</em>, you permanently lower the
-                  Remaining Balance for the next month. Because that balance is
-                  lower, the bank charges you less interest in Month 2. Because
-                  they charged less interest, even more of your standard payment
-                  attacks the principal. This triggers an compounding effect of
-                  savings!
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Mortgage Payoff results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

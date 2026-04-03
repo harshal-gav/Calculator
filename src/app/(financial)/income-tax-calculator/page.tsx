@@ -250,45 +250,15 @@ export default function IncomeTaxCalculator() {
         }}
         formula={
           <>
-            <p className="mb-4">
-              The calculation of your net pay follows a strict hierarchy defined by the IRS:
-            </p>
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
-              <p className="font-mono text-center text-lg mb-4 text-blue-900 italic">
-                Taxable Income = Gross Income - Pre-Tax Deductions - Standard Deduction
-              </p>
-              <p className="text-sm font-sans text-gray-700">
-                <strong>Where:</strong>
-                <br /><strong>Pre-Tax Deductions:</strong> Contributions to 401(k), 403(b), or Traditional IRAs.
-                <br /><strong>Standard Deduction (2024):</strong> $14,600 (Single) or $29,200 (Married).
-                <br /><strong>FICA Tax:</strong> Progressive calculation does not apply here; it's a flat 7.65% for most earners.
-              </p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
             </div>
-            <p>
-              Once your <strong>Taxable Income</strong> is determined, it is distributed across the brackets. For a single person making $60,000, the first $11,600 is taxed at 10%, results in $1,160. The next $35,550 (up to $47,150) is taxed at 12%, and the remaining amount is taxed at 22%.
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Income Tax results.
             </p>
           </>
         }
-        deepDive={
-          <>
-            <h3 className="text-xl font-bold mb-4">Marginal Rate vs. Effective Rate: The Great Misconception</h3>
-            <p className="mb-4">
-              If you are in the "24% tax bracket," it does <strong>not</strong> mean the government takes 24% of your paycheck. That is your <em>marginal</em> rate—it only applies to the very last dollar you earned.
-            </p>
-            <p className="mb-4">
-              Your <strong>Effective Tax Rate</strong> is much more important. This is your total tax divided by your total income. Because of the standard deduction and the lower 10% and 12% brackets, someone in the 24% marginal bracket might only have an effective rate of 14-16%. This is why "getting a raise that moves you into a higher bracket" never results in less money in your pocket—you only pay the higher rate on the new income.
-            </p>
-            <h3 className="text-xl font-bold mb-4">Tax Deductions vs. Tax Credits</h3>
-            <p className="mb-4">
-              These two terms are often used interchangeably, but they work very differently in our calculator:
-            </p>
-            <ul className="list-disc pl-6 space-y-3 mb-6 text-gray-700">
-              <li><strong>Tax Deductions:</strong> These lower your <em>Taxable Income</em>. If you are in the 22% bracket, a $1,000 deduction saves you $220. (Example: 401k or Student Loan Interest).</li>
-              <li><strong>Tax Credits:</strong> These are a dollar-for-dollar reduction of the <em>Taxes You Owe</em>. A $1,000 credit saves you exactly $1,000, regardless of your bracket. (Example: Child Tax Credit or EV Tax Credit).</li>
-            </ul>
-          </>
-        }
-        example={
+          example={
           <>
             <p className="mb-4 font-semibold">Case Study: The $100,000 Single Earner (2024)</p>
             <div className="bg-white border border-gray-100 p-6 rounded-xl shadow-sm space-y-4">

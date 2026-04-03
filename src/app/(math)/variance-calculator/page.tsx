@@ -168,11 +168,11 @@ export default function VarianceCalculator() {
         }
         formula={
           <>
-            <p className="mt-4 font-mono text-lg bg-gray-50 py-2 font-bold text-gray-800 px-4">
-              s² = Σ ( xi - x̄ )² / ( n - 1 )
-            </p>
-            <p className="text-sm mt-2 text-gray-500">
-              Where <strong>s²</strong> is Sample Variance, <strong>x̄</strong> is sample mean, and <strong>n</strong> is observations count. For a population (σ²), divide by exactly N instead of N-1.
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              σ² = Σ(x - μ)² / N
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              The average of the squared differences from the Mean.
             </p>
           </>
         }

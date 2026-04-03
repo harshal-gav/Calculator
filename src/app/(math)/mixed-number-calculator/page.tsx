@@ -171,14 +171,12 @@ export default function MixedNumberCalculator() {
         }
         formula={
           <>
-            <p>To convert a mixed number into an improper fraction:</p>
-            <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-              <strong>
-                New Numerator = (Whole Number × Denominator) + Numerator
-              </strong>
-              <br />
-              <strong>Denominator stays the same.</strong>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Mixed Number Analysis Model
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Mixed Number results.
+            </p>
           </>
         }
         example={

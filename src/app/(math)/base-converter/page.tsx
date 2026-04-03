@@ -219,25 +219,15 @@ export default function BaseConverter() {
             </>
           }
           formula={
-            <>
-              <p>
-                Converting between bases involves continuous division by the
-                target base and mapping the remainders.
-              </p>
-              <div className="bg-sky-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-sky-900 border border-sky-100">
-                <strong>Decimal to Binary Example:</strong>
-                <br />
-                25 ÷ 2 = 12 R <strong>1</strong>
-                <br />
-                12 ÷ 2 = 6 R <strong>0</strong>
-                <br />6 ÷ 2 = 3 R <strong>0</strong>
-                <br />3 ÷ 2 = 1 R <strong>1</strong>
-                <br />1 ÷ 2 = 0 R <strong>1</strong>
-                <br />
-                Read remainders bottom-to-top = <strong>11001₂</strong>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Base Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

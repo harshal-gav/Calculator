@@ -162,7 +162,16 @@ export default function FourOhOneKCalculator() {
             </p>
           </>
         }
-        formula={<></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              FV = Σ contributions × (1+r)^n
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Future Value of retirement savings contributions.
+            </p>
+          </>
+        }
         example={
           <>
             <p>If you earn $100,000 and your company matches 100% of your contributions up to 6%:</p>

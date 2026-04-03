@@ -246,44 +246,15 @@ export default function HexagonCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                A regular hexagon is mathematically unique because it can be
-                divided into exactly six equilateral triangles. This gives rise
-                to several constants involving the square root of 3 (√3).
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  <strong>Area (A):</strong> <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold">
-                    A = (3√3 / 2) × a²
-                  </code>{" "}
-                  (where <em>a</em> is the side length)
-                </li>
-                <li>
-                  <strong>Perimeter (P):</strong> <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold">
-                    P = 6 × a
-                  </code>
-                </li>
-                <li>
-                  <strong>Inradius / Apothem (r):</strong> The distance from the
-                  center to the midpoint of any side. <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold">
-                    r = (√3 / 2) × a
-                  </code>
-                </li>
-                <li>
-                  <strong>Circumradius (R):</strong> The distance from the
-                  center to any vertex. In a regular hexagon, this is exactly
-                  equal to the side length. <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold">
-                    R = a
-                  </code>
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              A = (3√3 / 2)s²
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Where s is the length of one side of a regular hexagon.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

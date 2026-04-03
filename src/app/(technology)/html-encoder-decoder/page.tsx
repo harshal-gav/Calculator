@@ -150,35 +150,15 @@ export default function HtmlEncoderDecoder() {
             </>
           }
           formula={
-            <>
-              <p>
-                HTML Encoding is essentially a rigorous Find-and-Replace
-                operation focusing on these 5 hyper-critical characters:
-              </p>
-              <div className="bg-orange-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-orange-900 border border-orange-100 grid grid-cols-2 gap-2 text-center">
-                <div>
-                  <span className="font-bold text-lg">&amp;</span> →{" "}
-                  <code>&amp;amp;</code>
-                </div>
-                <div>
-                  <span className="font-bold text-lg">&lt;</span> →{" "}
-                  <code>&amp;lt;</code>
-                </div>
-                <div>
-                  <span className="font-bold text-lg">&gt;</span> →{" "}
-                  <code>&amp;gt;</code>
-                </div>
-                <div>
-                  <span className="font-bold text-lg">"</span> →{" "}
-                  <code>&amp;quot;</code>
-                </div>
-                <div className="col-span-2">
-                  <span className="font-bold text-lg">'</span> →{" "}
-                  <code>&amp;#39;</code>
-                </div>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Html Encoder Decoder Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Html Encoder Decoder results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -167,19 +167,12 @@ export default function BMRCalculator() {
         }
         formula={
           <>
-            <p>The two most popular formulas are provided. We recommend using <strong>Mifflin-St Jeor</strong> for contemporary calorie planning:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-               <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                  <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 border-b border-slate-200 pb-1">Mifflin-St Jeor</p>
-                  <code className="text-[10px] text-slate-700">Male: (10 × W) + (6.25 × H) - (5 × A) + 5</code><br/>
-                  <code className="text-[10px] text-slate-700">Female: (10 × W) + (6.25 × H) - (5 × A) - 161</code>
-               </div>
-               <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                  <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 border-b border-slate-200 pb-1">Harris-Benedict (Rev)</p>
-                  <code className="text-[10px] text-slate-700">Male: 88.36 + (13.40 × W) + (4.80 × H) - (5.68 × A)</code><br/>
-                  <code className="text-[10px] text-slate-700">Female: 447.59 + (9.25 × W) + (3.10 × H) - (4.33 × A)</code>
-               </div>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              BMR = 10W + 6.25H - 5A + s
             </div>
+            <p className="text-sm text-slate-500 text-center">
+              Mifflin-St Jeor Equation for Basal Metabolic Rate.
+            </p>
           </>
         }
         example={

@@ -369,50 +369,16 @@ export default function CompoundInterestCalculator() {
           ]
         }}
         formula={
-          <div className="space-y-6">
-            <p>
-              The basic formula for compound interest, without periodic contributions, is:
-            </p>
-            <div className="bg-stone-900 text-white p-6 rounded-2xl font-mono text-center text-2xl border border-emerald-500/30 my-6">
-              A = P(1 + r/n)ⁿᵗ
-            </div>
-            <p>Where:</p>
-            <ul className="list-disc pl-8 space-y-2 text-stone-700">
-              <li><strong>A</strong> = the future value of the investment/loan, including interest</li>
-              <li><strong>P</strong> = the principal investment amount (the initial deposit)</li>
-              <li><strong>r</strong> = the annual interest rate (decimal)</li>
-              <li><strong>n</strong> = the number of times that interest is compounded per unit t</li>
-              <li><strong>t</strong> = the time the money is invested or borrowed for</li>
-            </ul>
-            <p>
-              When you add regular monthly contributions, the formula becomes significantly more complex as it incorporates the future value of an ordinary annuity. Our calculator handles this summation automatically, providing precise results for any frequency you select.
-            </p>
-          </div>
-        }
-        deepDive={
           <>
-            <h4 className="text-2xl font-black text-emerald-950 mb-6">Strategy 1: Starting Early (The Time Advantage)</h4>
-            <p>
-              The single most important factor in compounding is not the interest rate, but time. A 20-year-old who invests $200 a month until age 30 and then stops will often end up with more money at age 65 than someone who starts at age 30 and invests $200 a month for the next 35 years. This "head start" allows the interest to generate its own interest for an extra decade, creating a lead that is nearly impossible to catch.
-            </p>
-
-            <h4 className="text-2xl font-black text-emerald-950 mt-12 mb-6">Strategy 2: The Power of 'End vs. Start' Timing</h4>
-            <p>
-              Our calculator allows you to choose if you contribute at the 'Beginning' or 'End' of a compounding period. While it seems minor, contributing at the beginning of the month gives that specific deposit 30 extra days of compounding every single month. Over 30 years, this small change can result in a difference of thousands of dollars in your final nest egg.
-            </p>
-
-            <h4 className="text-2xl font-black text-emerald-950 mt-12 mb-6">Strategy 3: Managing Compounding Frequency</h4>
-            <p>
-              Banks and credit card companies often use daily compounding to maximize the amount of interest they collect. For investors, seeking accounts that compound monthly or daily (like some high-yield savings accounts) provides a marginal but meaningful boost over annual compounding. Our tool lets you toggle between these frequencies to see exactly how many extra dollars "Interest on Interest" generates in each scenario.
-            </p>
-
-            <h4 className="text-2xl font-black text-emerald-950 mt-12 mb-6">Strategy 4: The Impact of Taxes and Inflation</h4>
-            <p>
-              In the real world, you must account for "Real Rate of Return." If your investment grows at 7% but inflation is 3%, your actual purchasing power only grows by 4%. Additionally, if your money is in a taxable account, you must subtract taxes from your annual gains. This is why tax-advantaged accounts like IRAs and 401(k)s are so popular—they allow your money to compound without the friction of annual taxation.
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              A = P(1 + r/n)^(nt)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Future value with compounding frequency n.
             </p>
           </>
         }
-        example={
+          example={
           <div className="space-y-6">
             <p className="font-bold text-emerald-900 uppercase tracking-widest text-xs mb-4">Case Study: The Coffee Fund</p>
             <p>

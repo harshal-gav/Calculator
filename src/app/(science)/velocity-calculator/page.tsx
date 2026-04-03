@@ -350,25 +350,15 @@ export default function VelocityCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The core kinematic equation states that velocity equals distance
-                divided by time. By algebraically rearranging this single,
-                constant formula, you can solve for any missing variable.
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
-                <p>
-                  <strong>Velocity: v = d ÷ t</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-emerald-200">
-                  <strong>Distance: d = v × t</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-emerald-200">
-                  <strong>Time: t = d ÷ v</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Velocity Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Velocity results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

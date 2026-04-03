@@ -257,34 +257,15 @@ export default function WordCountCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Most basic word counters simply split text on empty spaces,
-                which is incredibly inaccurate. This tool utilizes advanced
-                Regular Expressions (Regex) to correctly identify hyphenated
-                words, ignore stray punctuation, and accurately define what
-                constitutes a grammatical sentence versus an abbreviation.
-              </p>
-              <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-rose-100 text-rose-900">
-                <p>
-                  <strong>Word = Match(/\\b[\w-']+\\b/gi)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-rose-200">
-                  <strong>Sentence = Match(/[^.!?]+[.!?]+/gi)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-rose-200">
-                  <strong>
-                    Reading Time = Total Words ÷ 238 words per minute
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-rose-200">
-                  <strong>
-                    Speaking Time = Total Words ÷ 130 words per minute
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Word Count Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Word Count results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

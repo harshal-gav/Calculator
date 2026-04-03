@@ -230,27 +230,15 @@ export default function RgbHexConverter() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Monitors mix red, green, and blue light from an intensity of 0
-                (off) to 255 (full brightness). To create a Hex code, we take
-                each of these base-10 integer values, convert them individually
-                into a base-16 numerical system (Hexadecimal format: 0-9 and
-                A-F), and concatenate them together into a 6-character string.
-              </p>
-              <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-800">
-                <p>
-                  <strong>R, G, B = Integers between 0 and 255</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-zinc-300">
-                  <strong>Hex = RedToHex() + GreenToHex() + BlueToHex()</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-zinc-300">
-                  <strong>rgb(255, 255, 255) = #FFFFFF (Pure White)</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Rgb Hex Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>Let's manually convert a vibrant shade of pure blue.</p>

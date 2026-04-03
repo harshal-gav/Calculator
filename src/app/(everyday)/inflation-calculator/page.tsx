@@ -175,51 +175,16 @@ export default function InflationCalculator() {
           ]
         }}
         formula={
-          <div className="space-y-8">
-            <div>
-              <p className="font-bold text-slate-900 mb-4">I. The Future Cost Formula (Standard Compounding)</p>
-              <div className="bg-slate-900 text-white p-8 rounded-3xl font-mono text-center text-2xl shadow-xl border border-red-500/20">
-                P_future = P_today × (1 + i)ᵗ
-              </div>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Pᵥ = P₀(1 + i)ⁿ
             </div>
-            <div>
-              <p className="font-bold text-slate-900 mb-4">II. The Purchasing Power Formula (Degradation)</p>
-              <div className="bg-slate-950 text-white p-8 rounded-3xl font-mono text-center text-2xl shadow-xl border border-slate-800">
-                Value_real = P_today ÷ (1 + i)ᵗ
-              </div>
-            </div>
-            <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-bold text-slate-500">
-              <li className="p-4 bg-white rounded-xl border border-slate-200">P = Principal Amount</li>
-              <li className="p-4 bg-white rounded-xl border border-slate-200">i = Inflation Rate (decimal)</li>
-              <li className="p-4 bg-white rounded-xl border border-slate-200">t = Time (Years)</li>
-            </ul>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              Projecting future purchasing power over time.
+            </p>
+          </>
         }
-        deepDive={
-          <div className="space-y-12">
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 underline decoration-red-500 decoration-4">The Mechanisms of Price Inflation</h4>
-              <p className="text-slate-600 leading-relaxed text-lg">
-                Inflation is rarely caused by a single factor. Economists generally group inflation into three distinct categories: <strong>Demand-Pull</strong> (when consumers want more than the economy can produce), <strong>Cost-Push</strong> (when the cost of raw materials or labor rises, forcing companies to raise prices), and <strong>Built-In</strong> (when workers expect higher prices and demand higher wages, creating a self-fulfilling loop).
-              </p>
-            </section>
-
-            <section className="bg-red-50 border border-red-100 p-10 rounded-[3rem] shadow-inner">
-               <h4 className="text-2xl font-black text-red-950 mb-4">Why Modern Governments Target 2% Inflation</h4>
-               <p className="text-red-900/80 leading-relaxed">
-                 You might wonder why we want inflation at all. Most central banks, like the Federal Reserve, target a 2% inflation rate because it encourages spending. If consumers believe prices will be slightly higher next year, they are incentivized to buy goods and invest their money today. Conversely, <strong>Deflation</strong> (falling prices) is considered more dangerous, as it leads to consumers delaying purchases, causing businesses to shrink and unemployment to rise.
-               </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6">Inflation as an Asset Class Filter</h4>
-              <p className="text-slate-600 leading-relaxed">
-                When inflation is high, not all assets are created equal. Fixed-income assets like bonds suffer because their "fixed" interest payments become worth less in real terms. <strong>Hard Assets</strong> like real estate, gold, and established commodity-producing companies often perform better, as their intrinsic value tends to rise alongside the general price level. This calculator helps you see why your "Real Return" is the only number that truly matters in wealth building.
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-white p-10 rounded-[3rem] border border-slate-200 shadow-xl">
              <div className="flex items-center space-x-4 mb-8">
                 <div className="w-12 h-12 bg-slate-900 text-white rounded-2xl flex items-center justify-center font-black text-xl">1</div>

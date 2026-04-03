@@ -286,18 +286,15 @@ export default function NetWorthCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The mathematical equation for calculating your Net Worth is
-                elegantly simple and forms the foundation of modern accounting.
-              </p>
-              <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
-                <p>
-                  <strong>Net Worth</strong> = Total Assets - Total Liabilities
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Net Worth Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Net Worth results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

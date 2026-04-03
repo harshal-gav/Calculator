@@ -165,51 +165,15 @@ export default function APRCalculator() {
         }}
         formula={
           <>
-            <p className="mb-4">
-              Unlike the simple interest formula, calculating APR is mathematically complex and usually requires an iterative numerical method (like the binary search used in our tool) to find the <strong>Internal Rate of Return (IRR)</strong>.
-            </p>
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
-              <p className="font-mono text-center text-lg mb-4">
-                ∑[P / (1 + i)^n] = Net Loan Amount
-              </p>
-              <p className="text-sm font-sans text-gray-700">
-                <strong>Where:</strong>
-                <br />P = Monthly Payment amount
-                <br />i = Periodic rate (APR / 12)
-                <br />n = Total number of payments
-                <br />Net Loan Amount = Principal - (Points + Origination Fees + Closing Costs)
-              </p>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              APR = [((Fees + Interest)/Principal) / n] × 365 × 100
             </div>
-            <p>
-              Internally, the calculator looks for the "i" value that makes the present value of all future payments exactly equal to the amount of cash you actually received on day one of the loan.
+            <p className="text-sm text-slate-500 text-center">
+              Annualized cost of credit.
             </p>
           </>
         }
-        deepDive={
-          <>
-            <h3 className="text-xl font-bold mb-4">APR vs. APY: The Lender's Shell Game</h3>
-            <p className="mb-4">
-              It is critical to distinguish between <strong>Annual Percentage Rate (APR)</strong> and <strong>Annual Percentage Yield (APY)</strong>. APR is used for borrowing (mortgages, car loans, credit cards). It does <em>not</em> account for compounding interest within the year—it only accounts for upfront costs.
-            </p>
-            <p className="mb-4">
-              APY, on the other hand, is used for savings and investments. APY <em>does</em> account for compounding. Because compounding adds to the cost, the APY of a loan is always higher than its APR if interest is compounded more than once per year. Lenders quote APR because the number looks smaller, and banks quote APY for savings because the number looks larger.
-            </p>
-            <h3 className="text-xl font-bold mb-4">What Fees Are Included in APR?</h3>
-            <p className="mb-4">
-              Under federal guidelines, certain fees <strong>must</strong> be included in the APR calculation for mortgages:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
-              <li><strong>Points:</strong> Discount points paid to lower the interest rate.</li>
-              <li><strong>Origination Fees:</strong> Charges for processing the loan application.</li>
-              <li><strong>Underwriting Fees:</strong> Costs for evaluating your creditworthiness.</li>
-              <li><strong>Mortgage Insurance (PMI):</strong> Required if your down payment is less than 20%.</li>
-            </ul>
-            <p>
-              Note that "pass-through" costs like title insurance, appraisal fees, and credit report fees are usually <em>excluded</em> from the APR because they are paid to third parties, not kept as profit by the lender.
-            </p>
-          </>
-        }
-        example={
+          example={
           <>
             <p className="mb-4 font-semibold">Scenario: The 3% Loan Trap</p>
             <p className="mb-4">

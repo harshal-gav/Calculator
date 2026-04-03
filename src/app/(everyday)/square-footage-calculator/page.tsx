@@ -171,11 +171,11 @@ export default function SquareFootageCalculator() {
         }
         formula={
           <>
-            <p className="mt-4 font-mono text-xl bg-gray-50 py-3 font-bold text-gray-800 px-6 inline-block rounded-lg shadow-sm">
-               Area (sq ft) = Length (ft) × Width (ft)
-            </p>
-            <p className="mt-4 text-sm text-gray-600">
-               If your room contains alcoves or closets, mentally break the room into distinct rectangles, compute the square footage of each separately, and add them together.
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Square Footage Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Square Footage results.
             </p>
           </>
         }

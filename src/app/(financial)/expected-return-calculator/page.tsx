@@ -245,29 +245,15 @@ export default function ExpectedReturnCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Expected Return is simply the sum of all possible returns, each
-                multiplied by its mathematical probability of occurring.
-              </p>
-              <div className="bg-zinc-100 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-zinc-200 text-zinc-900">
-                <p>
-                  <strong>
-                    Expected Return = (P<sub>1</sub> × R<sub>1</sub>) + (P
-                    <sub>2</sub> × R<sub>2</sub>) + ... + (P<sub>n</sub> × R
-                    <sub>n</sub>)
-                  </strong>
-                </p>
-                <p className="border-t border-zinc-200 pt-3 mt-2 text-sm font-sans text-left text-zinc-700">
-                  <strong>Where:</strong>
-                  <br />P = The Probability of a specific scenario occurring (as
-                  a decimal)
-                  <br />R = The specific Return of that scenario
-                  <br />n = The total number of scenarios
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Expected Return Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Expected Return results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

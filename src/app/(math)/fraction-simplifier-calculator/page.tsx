@@ -230,25 +230,15 @@ export default function FractionSimplifierCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Fractions are simplified using the Greatest Common Factor (GCF)
-                method via the Euclidean Algorithm:
-              </p>
-              <div className="bg-white p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 border border-zinc-200">
-                <strong>Step 1:</strong> Find the GCF of the Numerator and
-                Denominator.
-                <br />
-                <br />
-                <strong>Step 2:</strong> Numerator ÷ GCF = New Simplified
-                Numerator
-                <br />
-                <br />
-                <strong>Step 3:</strong> Denominator ÷ GCF = New Simplified
-                Denominator
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Fraction Simplifier Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Fraction Simplifier results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

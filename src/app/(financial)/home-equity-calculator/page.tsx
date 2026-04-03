@@ -231,22 +231,15 @@ export default function HomeEquityCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Lenders calculate your maximum HELOC limit using this exact
-                formula:
-              </p>
-              <div className="bg-teal-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-teal-900 border border-teal-100">
-                <strong>Max Borrowing Power</strong> = (Home Value × Max LTV%) −
-                Current Mortgage Balance
-              </div>
-              <p className="text-sm mt-2">
-                The industry standard Max LTV is <strong>80%</strong>. This
-                means the bank requires you to leave a 20% equity buffer
-                untouched in the home.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Home Equity Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Home Equity results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

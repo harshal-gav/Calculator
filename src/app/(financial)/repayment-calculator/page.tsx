@@ -178,7 +178,16 @@ export default function RepaymentCalculator() {
       <CalculatorSEO
         title="Loan Repayment Calculator"
         whatIsIt={<p>A <strong>Repayment Calculator</strong> helps you determine your monthly loan payment, total interest paid, and the impact of extra payments on your payoff timeline. It&apos;s essential for managing debt efficiently.</p>}
-        formula={<><p>Uses the standard amortization formula:</p><div className="bg-emerald-50 p-4 rounded-lg font-mono text-center my-4 border border-emerald-100 text-emerald-900"><strong>M = P × [r(1+r)^n] / [(1+r)^n – 1]</strong></div><p className="text-sm text-gray-600">Where P = principal, r = monthly interest rate, n = total number of payments.</p></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Repayment Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Repayment results.
+            </p>
+          </>
+        }
         example={<><p>A $25,000 loan at 6.5% for 5 years:</p><ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700"><li>Monthly Payment: $489.15</li><li>Total Interest: $4,349.09</li><li>Adding $100/month extra saves ~$615 in interest and pays off 10 months early.</li></ul></>}
         useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Debt Management:</strong> Understand exactly how long it takes to pay off a loan.</li><li><strong>Extra Payment Analysis:</strong> See the savings impact of adding extra monthly payments.</li></ul>}
         faqs={[

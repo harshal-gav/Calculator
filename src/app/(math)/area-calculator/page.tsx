@@ -231,40 +231,15 @@ export default function AreaCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The calculation required depends entirely on the specific shape
-                you are measuring. Here are the core formulas this tool
-                automatically applies:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Rectangle:</strong>{" "}
-                  <span className="font-mono bg-purple-50 px-1 rounded">
-                    Area = Length × Width
-                  </span>
-                </li>
-                <li>
-                  <strong>Square:</strong>{" "}
-                  <span className="font-mono bg-purple-50 px-1 rounded">
-                    Area = Side²
-                  </span>
-                </li>
-                <li>
-                  <strong>Triangle:</strong>{" "}
-                  <span className="font-mono bg-purple-50 px-1 rounded">
-                    Area = ½ × Base × Height
-                  </span>
-                </li>
-                <li>
-                  <strong>Circle:</strong>{" "}
-                  <span className="font-mono bg-purple-50 px-1 rounded">
-                    Area = π × Radius²
-                  </span>
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              A = L × W (Rect) | A = πr² (Circle)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Area formulas vary by shape geometry.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

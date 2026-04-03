@@ -195,11 +195,12 @@ export default function PregnancyConceptionCalculator() {
         }
         formula={
           <>
-            <p>Obstetricians mathematically base "Pregnancy Weeks" off the First Day of your Last Menstrual Period (LMP), meaning you mathematically "start" your pregnancy 2 weeks before you actually conceive.</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>If using LMP:</strong> Conception Date = LMP + 14 days (adjusted if cycle length != 28 days).</li>
-              <li><strong>If using Ultrasound EDD:</strong> Conception Date = Estimated Due Date MINUS exactly 266 days (38 weeks).</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Pregnancy Conception Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Pregnancy Conception results.
+            </p>
           </>
         }
         example={

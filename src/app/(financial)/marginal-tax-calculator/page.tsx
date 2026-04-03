@@ -245,18 +245,15 @@ export default function MarginalTaxRateCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Tax is calculated by filling up "buckets" (brackets). Once a
-                bucket is full, any remaining income spills into the next
-                bucket, which is taxed at a slightly higher rate.
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-emerald-900 border border-emerald-100">
-                <strong>Effective Rate (%)</strong> = (Total Tax Owed ÷ Total
-                Taxable Income) × 100
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Marginal Tax results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -187,27 +187,15 @@ export default function RectangleCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                A rectangle is a four-sided polygon (quadrilateral) where all
-                four internal angles are exactly 90 degrees (right angles).
-                Because the opposite sides are always perfectly parallel and
-                equal in length, its geometric formulas are among the most
-                straightforward foundational mathematics.
-              </p>
-              <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-rose-100 text-rose-900">
-                <p>
-                  <strong>Area (A) = Length × Width</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-rose-200">
-                  <strong>Perimeter (P) = 2 × (Length + Width)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-rose-200">
-                  <strong>Diagonal (d) = √(Length² + Width²)</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              A = L × W | P = 2(L + W)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Where L is length and W is width.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -202,33 +202,15 @@ export default function QuadraticFormulaCalculator() {
             </>
           }
           formula={
-            <>
-              <p>The universal quadratic formula used to solve for x is:</p>
-              <div className="bg-white p-4 rounded-lg font-mono text-center text-2xl shadow-sm my-4 overflow-x-auto">
-                x = [ -b ± √(b² - 4ac) ] / 2a
-              </div>
-              <p className="mt-4">
-                The expression inside the square root,{" "}
-                <strong>(b² - 4ac)</strong>, is called the{" "}
-                <strong>Discriminant (Δ)</strong>. It determines the nature of
-                the roots:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4">
-                <li>
-                  <strong>Δ &gt; 0:</strong> Two distinct real roots (parabola
-                  crosses the x-axis twice).
-                </li>
-                <li>
-                  <strong>Δ = 0:</strong> One real root / repeated root
-                  (parabola touches the x-axis exactly once).
-                </li>
-                <li>
-                  <strong>Δ &lt; 0:</strong> Two complex conjugate roots
-                  (parabola never touches the x-axis).
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              x = [-b ± √(b² - 4ac)] / 2a
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Solving for roots of ax² + bx + c = 0.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -200,7 +200,16 @@ export default function PrimeNumberCalculator() {
       <CalculatorSEO
         title="Prime Number Calculator & Test"
         whatIsIt={<p>A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. This calculator helps you determine if any large number is prime, breaks down its prime factorization (e.g., 28 = 2^2 × 7), and generates lists of primes within specified numerical ranges.</p>}
-        formula={<p>The calculator uses an optimized primality test (trial division) which checks for divisibility by 2, 3, and then uses a 6k ± 1 pattern to eliminate most composites quickly, significantly reducing the required calculations compared to basic trial division.</p>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              IsPrime(n)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Checking primality using trial division up to √n.
+            </p>
+          </>
+        }
         example={<p>Testing <strong>101</strong>: The calculator checks divisors and finds none other than 1 and 101. It confirms 101 is prime. Testing <strong>45</strong>: The calculator finds divisors [1, 3, 5, 9, 15, 45] and prime factorization 3^2 × 5, confirming 45 is composite.</p>}
         useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Cryptography:</strong> Modern security relies on the difficulty of factoring extremely large prime numbers.</li><li><strong>Mathematics Homework:</strong> Quickly check work on factor trees and prime factorization.</li><li><strong>Programming:</strong> Benchmarking logical efficiency in software algorithms.</li></ul>}
         faqs={[

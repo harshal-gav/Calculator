@@ -181,30 +181,15 @@ export default function ConeCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                To accurately render the metrics of a cone, the tool utilizes
-                Pythagorean theorems (for the slant) and Pi-based scalar
-                multipliers. True Right Circular Cones rely heavily on the
-                constant <strong>π (Pi ≈ 3.14159)</strong> for all rotational
-                geometry.
-              </p>
-              <div className="bg-emerald-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-emerald-100 text-emerald-900">
-                <p>
-                  <strong>Slant Height (s) = √(r² + h²)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-emerald-200">
-                  <strong>Volume (V) = ⅓ × π × r² × h</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-emerald-200">
-                  <strong>Lateral Area (L) = π × r × s</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-emerald-200">
-                  <strong>Total Area (A) = π × r × (r + s)</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              V = (1/3)πr²h | SA = πr(r + √(h² + r²))
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Where r is radius and h is vertical height.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

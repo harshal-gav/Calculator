@@ -249,31 +249,15 @@ export default function PomodoroTimer() {
             </>
           }
           formula={
-            <>
-              <p>
-                The standard Pomodoro cycle relies on strict chronological
-                intervals and mandatory rest ratios:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Sprint (25 Mins):</strong> Absolute, uninterrupted
-                  focus on a single task. Zero phone checking, no email, no
-                  context switching.
-                </li>
-                <li>
-                  <strong>The Short Break (5 Mins):</strong> A required
-                  micro-rest. You must physically step away from the work
-                  context to reset mental fatigue.
-                </li>
-                <li>
-                  <strong>The Long Break (15-30 Mins):</strong> After completing
-                  exactly four 25-minute sprints (one "Cycle"), an extended
-                  decompression break is authorized before restarting the entire
-                  process.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Pomodoro Timer Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Pomodoro Timer results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

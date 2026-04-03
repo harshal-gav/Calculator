@@ -196,23 +196,15 @@ export default function SalesTaxCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                <strong>Standard Calculation (Adding Tax):</strong>
-              </p>
-              <div className="bg-blue-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-blue-900 border border-blue-100">
-                <strong>Gross Total</strong> = Base Price × (1 + [Tax Rate /
-                100])
-              </div>
-              <p className="mt-4">
-                <strong>Reverse Extraction (Removing Tax):</strong>
-              </p>
-              <div className="bg-blue-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 text-blue-900 border border-blue-100">
-                <strong>Base Price</strong> = Gross Total ÷ (1 + [Tax Rate /
-                100])
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Sales Tax results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

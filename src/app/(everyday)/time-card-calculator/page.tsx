@@ -228,31 +228,15 @@ export default function TimeCardCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                To accurately calculate payroll hours, you must convert all time
-                to a unified format (Total Minutes) before converting back into
-                decimals.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Step 1 (Find Total Initial Minutes):</strong> Subtract
-                  the clock-in time from the clock-out time. E.g. 5:00 PM (1020
-                  mins) - 8:30 AM (510 mins) = 510 total Gross Minutes.
-                </li>
-                <li>
-                  <strong>Step 2 (The Deduction):</strong> Subtract any unpaid
-                  meal or rest breaks. 510 mins - 30 min lunch = 480 Net
-                  Minutes.
-                </li>
-                <li>
-                  <strong>Step 3 (Decimal Conversion):</strong> Divide the Net
-                  Minutes by 60 to find the billing decimal. 480 / 60 ={" "}
-                  <strong>8.00 Net Hours</strong>.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Time Card Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Time Card results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

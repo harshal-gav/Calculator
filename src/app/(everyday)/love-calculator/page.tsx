@@ -233,31 +233,15 @@ export default function LoveCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                While true love can't be measured by math, our calculator uses a
-                seeded algorithmic pseudo-random number generator (PRNG) tied
-                directly to the characters of the names entered. By extracting
-                the ASCII character codes and searching for the presence of
-                specific romantic letters (like T, R, U, E, L, O, V, E), it
-                creates a unique score.
-              </p>
-              <div className="bg-rose-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-rose-100 text-rose-900">
-                <p>
-                  <strong>Name 1 + Name 2 = ASCII Seed</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-rose-200">
-                  <strong>Bonus points for specific vowels and letters</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-rose-200">
-                  <strong>
-                    Final Score = Deterministic Percentage (always the same for
-                    those two names)
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Love Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Love results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>Here is how a calculation might happen behind the scenes:</p>

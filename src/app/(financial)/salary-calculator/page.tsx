@@ -221,55 +221,16 @@ export default function SalaryCalculator() {
           ]
         }}
         formula={
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700">
-            <div className="space-y-4">
-              <h4 className="font-bold text-emerald-900 border-b border-emerald-100 pb-2">1. Annual to Hourly Basis</h4>
-              <p className="text-sm">Standardizing a 40-hour work week (2,080 hours per year):</p>
-              <div className="bg-slate-900 p-6 rounded-xl font-mono text-white text-center text-sm shadow-md">
-                Hourly = Annual / (Hours per Week × 52)
-              </div>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Salary Analysis Model
             </div>
-            <div className="space-y-4">
-              <h4 className="font-bold text-emerald-900 border-b border-emerald-100 pb-2">2. Common Pay Periods</h4>
-              <p className="text-sm">Determining your gross paycheck size:</p>
-              <div className="bg-emerald-900 p-6 rounded-xl font-mono text-white text-center text-sm shadow-md">
-                Bi-Weekly = Annual / 26
-              </div>
-            </div>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Salary results.
+            </p>
+          </>
         }
-        deepDive={
-          <div className="space-y-12 text-gray-700">
-            <section>
-              <h4 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <span className="w-12 h-12 bg-emerald-100 text-emerald-900 rounded-2xl flex items-center justify-center mr-4 shadow-sm font-black italic">$</span>
-                Gross vs. Net Income: The Reality Check
-              </h4>
-              <p className="leading-relaxed">
-                Your <strong>Gross Salary</strong> is the number on your contract, but your <strong>Net Income</strong> (Take-Home Pay) is what pays the rent. In the U.S., a combination of Federal Income Tax, Social Security (6.2%), and Medicare (1.45%) can consume 20% to 35% of your gross earnings before you even see it. When using this calculator, remember that the results are "Gross"—you must still subtract taxes, health insurance premiums, and 401k contributions to find your actual budget.
-              </p>
-            </section>
-
-            <section className="bg-gradient-to-br from-emerald-900 to-slate-800 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-400 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
-               <h4 className="text-xl font-bold mb-4 text-emerald-300 uppercase tracking-widest">The "Real" Hourly Wage Calculation</h4>
-               <p className="leading-relaxed mb-6">
-                 Is a $100k salary in NYC better than a $70k salary in Raleigh? To find your "Real" wage, you must subtract <strong>commute costs, professional attire, and unpaid lunch hours</strong> from your gross pay, then divide by your <em>actual</em> hours away from home. Use this calculator to experiment with "Hours per Week" to see how unpaid overtime or long commutes drastically reduce your hourly value.
-               </p>
-               <div className="p-4 bg-white/10 rounded-xl border border-white/20 text-xs italic">
-                 Career Hack: Negotiating for a 4-day work week (32 hours) at the same annual salary increases your hourly rate by 25%.
-               </div>
-            </section>
-
-            <section>
-              <h4 className="text-2xl font-bold text-gray-900 mb-6">Paid Time Off (PTO) and Holidays</h4>
-              <p className="leading-relaxed">
-                A standard work year has 260 weekdays. However, most professionals receive 10-20 days of PTO plus 10 federal holidays. This means you are actually being paid for roughly 230 to 240 days of work. If you are a freelancer or contractor, you must adjust your hourly rate upward by ~15% to cover these "missing" paid days that salaried employees take for granted.
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-emerald-50 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-2 h-full bg-emerald-500"></div>
             <h5 className="font-black text-gray-900 uppercase tracking-widest text-xs mb-8">Scenario: The Promotion Jump</h5>

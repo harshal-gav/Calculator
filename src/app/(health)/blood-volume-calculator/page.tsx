@@ -233,32 +233,15 @@ export default function BloodVolumeCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                This calculator averages the results of two widely acknowledged
-                medical equations: the <strong>Nadler Formula</strong> (based on
-                height cubed and weight) and the{" "}
-                <strong>Lemmens-Bernstein-Brodsky Formula</strong> (which
-                corrects for Body Mass Index).
-              </p>
-              <div className="bg-red-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-red-100 text-red-900">
-                <p className="text-xs uppercase font-bold text-red-700">
-                  Nadler Formula (Male)
-                </p>
-                <p>
-                  <strong>
-                    BV = (0.3669 × Height³) + (0.03219 × Weight) + 0.6041
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-red-200 text-xs uppercase font-bold text-red-700">
-                  Lemmens Formula (BMI Indexed)
-                </p>
-                <p>
-                  <strong>BV = (Weight × 70) ÷ √ (BMI / 22)</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Blood Volume Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Blood Volume results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

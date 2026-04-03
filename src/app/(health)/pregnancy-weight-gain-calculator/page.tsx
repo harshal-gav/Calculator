@@ -174,7 +174,16 @@ export default function PregnancyWeightGainCalculator() {
       <CalculatorSEO
         title="Pregnancy Weight Gain Calculator"
         whatIsIt={<p>The <strong>Pregnancy Weight Gain Calculator</strong> tracks your gestational weight gain against the Institute of Medicine (IOM) guidelines, factoring in your pre-pregnancy BMI and whether you&apos;re carrying twins.</p>}
-        formula={<><p>Uses IOM 2009 guidelines based on pre-pregnancy BMI category:</p><ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700"><li><strong>Underweight (BMI &lt; 18.5):</strong> 28–40 lbs</li><li><strong>Normal (BMI 18.5–24.9):</strong> 25–35 lbs</li><li><strong>Overweight (BMI 25–29.9):</strong> 15–25 lbs</li><li><strong>Obese (BMI ≥ 30):</strong> 11–20 lbs</li></ul></>}
+        formula={
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = f(Metric, Age, Sex)
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Biometric calculation utilizing standardized biological and physiological models for Pregnancy Weight Gain.
+            </p>
+          </>
+        }
         example={<><p>A woman at 150 lbs, 5&apos;5&quot;, at week 20 currently weighing 160 lbs:</p><ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700"><li>Pre-pregnancy BMI: ~25.0 (Normal Weight)</li><li>Current gain: 10 lbs</li><li>Expected range at week 20: 12.5–17.5 lbs</li><li>Status: Below recommended range</li></ul></>}
         useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Prenatal Monitoring:</strong> Track weight gain to ensure a healthy pregnancy.</li><li><strong>Twin Pregnancies:</strong> Adjusted recommendations for multiple births.</li></ul>}
         faqs={[

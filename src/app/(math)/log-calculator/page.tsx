@@ -239,12 +239,12 @@ export default function LogCalculator() {
         }
         formula={
           <>
-            <p>If b<sup>y</sup> = x, then log<sub>b</sub>(x) = y</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Common Log:</strong> log₁₀(x) = ln(x) / ln(10)</li>
-              <li><strong>Natural Log:</strong> ln(x) = log<sub>e</sub>(x), where e ≈ 2.71828</li>
-              <li><strong>Change of Base:</strong> log<sub>b</sub>(x) = ln(x) / ln(b)</li>
-            </ul>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Log Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Log results.
+            </p>
           </>
         }
         example={

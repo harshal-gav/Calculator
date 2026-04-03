@@ -214,27 +214,15 @@ export default function VolumeConverter() {
             </p>
           }
           formula={
-            <>
-              <p>
-                To ensure perfect mathematical accuracy without continuous
-                rounding errors, this calculator first converts your input into
-                an absolute baseline <strong>Milliliters (mL)</strong>, and then
-                scales that precise volume up or down into your requested target
-                unit.
-              </p>
-              <div className="bg-sky-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-sky-100 text-sky-900">
-                <p>
-                  <strong>1 Liter (L) = 1,000 Milliliters (mL)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-sky-200">
-                  <strong>1 US Gallon = 3,785.41 mL (or ~3.78 Liters)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-sky-200">
-                  <strong>1 US Cup = 236.58 mL</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Volume Converter using industry-standard conversion constants.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

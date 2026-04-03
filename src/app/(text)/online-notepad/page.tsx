@@ -179,27 +179,15 @@ export default function OnlineNotepad() {
             </>
           }
           formula={
-            <>
-              <p>How our browser-based auto-save functions:</p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Local Storage API:</strong> Every 500 milliseconds,
-                  your text is aggressively cached to your specific browser
-                  profile via <code>localStorage.setItem()</code>.
-                </li>
-                <li>
-                  <strong>No Cloud Syncing:</strong> None of your text is ever
-                  sent to our servers. Your notes are 100% private and exist
-                  strictly on the device you are writing on.
-                </li>
-                <li>
-                  <strong>Crash Recovery:</strong> If your browser crashes or
-                  you accidentally close the tab, simply navigating back to this
-                  URL will instantly restore your exact text block.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Online Notepad Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Online Notepad results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

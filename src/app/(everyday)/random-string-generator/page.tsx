@@ -191,28 +191,15 @@ export default function RandomStringGenerator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The system builds strings by executing a recursive loop against
-                a permitted "character pool."
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  First, it checks your checkboxes to build an array of every
-                  allowed character. (e.g., if you only select "Numbers", the
-                  pool is strictly <code>[0,1,2,3,4,5,6,7,8,9]</code>).
-                </li>
-                <li>
-                  It then enters a loop set to your requested "String Length."
-                </li>
-                <li>
-                  During every loop iteration, it uses a random number generator
-                  to pick exactly one index from the permitted pool, appending
-                  that character to the final result.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Random String Generator Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Random String Generator results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

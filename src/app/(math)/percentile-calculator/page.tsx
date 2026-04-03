@@ -233,32 +233,15 @@ export default function PercentileCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Because finding an exact percentile often lands "between" two
-                real data points, mathematicians use algebraic interpolation. We
-                utilize the highly accurate NIST method (similar to Excel's
-                PERCENTILE.INC function):
-              </p>
-              <div className="bg-violet-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-violet-900 border border-violet-100 flex flex-col gap-2 center">
-                Rank (r) = (P / 100) × (N - 1) + 1
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>P:</strong> The Target Percentile you are aiming to
-                  find (e.g., 90 for the 90th percentile).
-                </li>
-                <li>
-                  <strong>N:</strong> The total number of data points provided
-                  in your set.
-                </li>
-                <li>
-                  <strong>Rank:</strong> The exact decimal index position you
-                  must look at after sorting the data from smallest to largest.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Percentile Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Percentile results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

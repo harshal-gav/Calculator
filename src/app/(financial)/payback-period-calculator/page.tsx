@@ -134,13 +134,14 @@ export default function PaybackPeriodCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The Simple Payback formula:</p>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-center text-sm text-indigo-700">
-              Payback Period = Initial Investment ÷ Annual Cash Flow
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Payback Period Analysis Model
             </div>
-            <p className="text-sm text-slate-500 italic">Note: The "Discounted Payback" method is more accurate as it accounts for the time value of money (usually at a 10% discount rate).</p>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Payback Period results.
+            </p>
+          </>
         }
         example={
           <p>

@@ -228,44 +228,15 @@ export default function OctagonCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Because an octagon features eight equal sides and eight
-                135-degree interior angles, calculating its area and radii
-                heavily involves the mathematical constant of the square root of
-                2 (√2).
-              </p>
-              <ul className="list-disc pl-6 space-y-3 mt-4 text-zinc-700">
-                <li>
-                  <strong>Area (A):</strong> <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold">
-                    A = 2 × (1 + √2) × a²
-                  </code>{" "}
-                  (where <em>a</em> is the side length)
-                </li>
-                <li>
-                  <strong>Perimeter (P):</strong> <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold">
-                    P = 8 × a
-                  </code>
-                </li>
-                <li>
-                  <strong>Inradius / Apothem (r):</strong> The distance from the
-                  center to the flat edge. <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold">
-                    r = (a / 2) × (1 + √2)
-                  </code>
-                </li>
-                <li>
-                  <strong>Circumradius (R):</strong> The distance from the
-                  center to any outer corner. <br />{" "}
-                  <code className="bg-zinc-100 p-1 px-2 rounded font-bold">
-                    R = (a / 2) × √(4 + 2√2)
-                  </code>
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              A = 2(1 + √2)s²
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Where s is the length of one side of a regular octagon.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

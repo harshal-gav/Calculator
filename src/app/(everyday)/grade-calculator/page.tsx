@@ -300,26 +300,15 @@ export default function GradeCalculator() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Most high school and college courses use a "Weighted" grading
-                system, meaning a 10-question final exam has a significantly
-                larger impact on your final grade than a 10-question weekly
-                quiz.
-              </p>
-              <div className="bg-indigo-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-indigo-100 text-indigo-900">
-                <p>
-                  <strong>Total Weight = ∑ All Entered Weights</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-indigo-200">
-                  <strong>Raw Points = ∑ (Grade × Weight)</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-indigo-200">
-                  <strong>Current Grade = Raw Points ÷ Total Weight</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Grade Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Grade results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

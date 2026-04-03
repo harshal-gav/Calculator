@@ -311,26 +311,15 @@ export default function ProbabilityCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Classical probability represents the total number of ways a
-                specific target can happen, divided by every possible thing that
-                could happen.
-              </p>
-              <div className="bg-purple-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-purple-100 text-purple-900">
-                <p>
-                  <strong>
-                    Probability (P) = Target Outcomes ÷ Total Possible Outcomes
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-purple-200">
-                  <strong>
-                    Odds = Target Outcomes : Remaining Not-Target Outcomes
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Probability Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Probability results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

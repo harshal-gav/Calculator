@@ -163,33 +163,15 @@ export default function JwtDecoder() {
             </>
           }
           formula={
-            <>
-              <p>
-                A standard JWT is always constructed from exactly three distinct
-                parts, separated by literal periods (<code>.</code>):
-              </p>
-              <div className="bg-purple-50 p-4 rounded-lg font-mono text-[14px] shadow-sm my-4 text-purple-900 border border-purple-100 flex flex-col gap-2 center font-bold text-center">
-                Header.Payload.Signature
-              </div>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong className="text-rose-600">Header:</strong> Identifies
-                  which encryption algorithm was used (e.g., HS256, RS256).
-                </li>
-                <li>
-                  <strong className="text-indigo-600">Payload:</strong> The
-                  actual JSON data (claims) being transmitted, such as user ID,
-                  role (admin/user), and exact expiration time.
-                </li>
-                <li>
-                  <strong className="text-emerald-600">Signature:</strong> A
-                  cryptographic hash combining the Header, Payload, and a secret
-                  server password to guarantee the token hasn't been altered by
-                  hackers.
-                </li>
-              </ul>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Jwt Decoder Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Jwt Decoder results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

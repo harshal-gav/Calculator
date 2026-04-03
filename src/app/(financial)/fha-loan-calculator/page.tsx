@@ -345,32 +345,15 @@ export default function FHALoanCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                FHA loans have two unique layers of mandatory insurance that
-                mathematically stack onto the standard Principal & Interest
-                (P&I) calculations:
-              </p>
-              <div className="grid md:grid-cols-2 gap-4 my-4">
-                <div className="bg-indigo-50 p-4 rounded-lg font-mono text-[14px] text-indigo-900 border border-indigo-100">
-                  <strong>Upfront MIP (UFMIP):</strong>
-                  <br />
-                  1.75% × Base Loan Amount
-                </div>
-                <div className="bg-indigo-50 p-4 rounded-lg font-mono text-[14px] text-indigo-900 border border-indigo-100">
-                  <strong>Annual MIP (Monthly):</strong>
-                  <br />
-                  (0.55% × Base Loan) ÷ 12
-                </div>
-              </div>
-              <p className="text-sm mt-2">
-                <strong>Note on limits:</strong> The UFMIP is rarely paid out of
-                pocket—it is financed directly onto your principal loan balance
-                on day one, meaning you will pay interest on that 1.75% for 30
-                years.
-              </p>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Fha Loan results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

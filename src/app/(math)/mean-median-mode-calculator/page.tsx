@@ -242,32 +242,15 @@ export default function MeanMedianModeCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                The "Central Tendency" of a dataset is measured using three
-                distinct formulas depending on what kind of average you are
-                looking for.
-              </p>
-              <div className="bg-indigo-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-indigo-100 text-indigo-900">
-                <p>
-                  <strong>
-                    Mean (Average) = (Sum of all values) ÷ (Total number of
-                    values)
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-indigo-200">
-                  <strong>
-                    Median = The absolute middle value when sorted sequentially
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-indigo-200">
-                  <strong>
-                    Mode = The specific value that appears most frequently
-                  </strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Mean Median Mode Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Mean Median Mode results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -190,77 +190,16 @@ export default function AutoLeaseCalculator() {
           ]
         }}
         formula={
-          <div className="space-y-8">
-            <p>
-              The math of a lease is unique because it combines two distinct charges:
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Result = Input × Conversion_Factor
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              Precise unit translation for Auto Lease Calculator using industry-standard conversion constants.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                <h6 className="font-black text-indigo-950 text-xs mb-3 uppercase tracking-widest">1. The Depreciation Fee</h6>
-                <div className="font-mono text-xs bg-slate-50 p-3 rounded-lg mb-3">
-                  (Net Cap Cost - Residual Value) / Months
-                </div>
-                <p className="text-[10px] text-slate-500">You pay for the portion of the car's value you "use up" during the term.</p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                <h6 className="font-black text-indigo-950 text-xs mb-3 uppercase tracking-widest">2. The Rent Charge (Interest)</h6>
-                <div className="font-mono text-xs bg-indigo-50 p-3 rounded-lg mb-3 text-indigo-700">
-                  (Net Cap Cost + Residual Value) * Money Factor
-                </div>
-                <p className="text-[10px] text-slate-500">The fee paid to the bank for keeping their capital tied up in the vehicle.</p>
-              </div>
-            </div>
-            <div className="p-6 bg-indigo-950 text-white rounded-3xl text-center">
-              <span className="block text-[10px] font-bold text-indigo-400 uppercase mb-2">The Golden Formula</span>
-              <div className="text-xl font-mono">Monthly Payment = Depreciation Fee + Rent Charge</div>
-            </div>
-          </div>
+          </>
         }
-        deepDive={
-          <div className="space-y-12">
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-indigo-600 pl-6">I. Demystifying the 'Money Factor' (MF)</h4>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Perhaps the most misunderstood term in finance is the <strong>Money Factor</strong>. It is simply the interest rate for a lease, but expressed in a different format. To convert a Money Factor to a standard APR (Annual Percentage Rate), you must multiply it by <strong>2400</strong>. 
-              </p>
-              <div className="my-6 p-6 bg-slate-100 rounded-2xl font-mono text-center flex justify-around">
-                <div>MF: 0.0025</div>
-                <div className="text-slate-400">× 2400 =</div>
-                <div className="font-black text-indigo-600">6.0% APR</div>
-              </div>
-              <p className="text-slate-700">
-                Lenders use this format because it simplifies the calculation of the "Rent Charge" on the average balance of the vehicle over the lease term. Always ask your dealer: "What is the money factor on this tier?" If they won't tell you, use this calculator to solve for it based on the APR they provide.
-              </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-indigo-600 pl-6">II. Residual Value: The Hidden Anchor</h4>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                The <strong>Residual Value</strong> is the bank's guess of what the car will be worth at the end of the lease. This number is set by the manufacturer (captive finance company) and is non-negotiable. 
-              </p>
-              <p className="text-slate-700 mt-4">
-                A high residual value is actually GOOD for a lease, because it means you aren't paying for as much depreciation. This is why vehicles that hold their value well (like SUVs, Trucks, and high-end German sedans) often have lower lease payments than cheaper cars that depreciate rapidly. Focus on vehicles with residuals between 55% and 65% for the best lease efficiency.
-              </p>
-            </section>
-
-            <section className="bg-amber-50 p-10 rounded-[40px] border border-amber-100 shadow-inner">
-               <h4 className="text-2xl font-bold text-amber-900 mb-4 flex items-center">
-                 <span className="mr-3">⚠️</span> Capitalized Cost Reduction: A Leasing Trap
-               </h4>
-               <p className="text-amber-800 leading-relaxed">
-                 Experts strongly advise putting <strong>$0 down</strong> on a lease (no "Cap Cost Reduction"). If you put $5,000 down on a lease and the car is totaled or stolen one week later, that $5,000 is gone forever. Insurance pays the bank the value of the car, but they generally do not reimburse your down payment. In a lease, it is better to keep your cash in a high-yield savings account and pay a slightly higher monthly payment.
-               </p>
-            </section>
-
-            <section>
-              <h4 className="text-3xl font-black text-slate-900 mb-6 border-l-8 border-indigo-600 pl-6">III. The 'One-Pay' Lease Hack</h4>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Some enthusiasts use a "Single Payment Lease" where they pay for the entire 36-month term upfront. In exchange, the bank usually offers a significant reduction in the Money Factor. This can save thousands in rent charges while still giving you the protection of a lease (such as returning a car with unexpected depreciation or accidents on its record).
-              </p>
-            </section>
-          </div>
-        }
-        example={
+          example={
           <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-slate-100">
             <h5 className="text-indigo-600 font-black uppercase tracking-widest text-xs mb-8 flex items-center">
                Scenario Analysis: The 1% Money Factor Shift

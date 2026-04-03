@@ -162,24 +162,15 @@ export default function MarkupCalculator() {
             </>
           }
           formula={
-            <>
-              <p>
-                Markup simply calculates a percentage of the raw cost, and adds
-                that dollar amount back onto the cost to create a final selling
-                price.
-              </p>
-              <div className="bg-cyan-50 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-cyan-100 text-cyan-900">
-                <p>
-                  <strong>
-                    Revenue (Selling Price) = Cost + (Cost × [Markup % ÷ 100])
-                  </strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-cyan-200">
-                  <strong>Gross Profit ($) = Revenue - Cost</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Markup Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Markup results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

@@ -176,17 +176,14 @@ export default function MarriageTaxCalculator() {
           </p>
         }
         formula={
-          <div className="space-y-4">
-            <p>The calculation follows a binary comparison path:</p>
-            <ol className="list-decimal pl-5 space-y-2 text-sm text-slate-600">
-              <li>Calculate single tax for Partner A and Partner B independently using single brackets.</li>
-              <li>Calculate joint tax for the combined household income using married filing jointly brackets.</li>
-              <li>Subtract Joint Tax from (Tax A + Tax B) to find the delta.</li>
-            </ol>
-            <div className="bg-slate-50 p-4 rounded-xl font-mono text-xs text-indigo-700">
-              Tax Impact = (Single Tax A + Single Tax B) - Joint Tax
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
             </div>
-          </div>
+            <p className="text-sm text-slate-500 text-center">
+              Standard financial analysis and amortization model for precise Marriage Tax results.
+            </p>
+          </>
         }
         example={
           <p>

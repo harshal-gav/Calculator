@@ -223,28 +223,15 @@ export default function ShoeSizeConverter() {
             </p>
           }
           formula={
-            <>
-              <p>
-                Shoe sizing is historically chaotic. The US and UK systems are
-                rooted in the medieval "barleycorn" measurement (1/3 of an
-                inch). The European system uses "Paris points" (2/3 of a
-                centimeter). To convert accurately, this tool doesn't rely on
-                simple math; it uses an embedded matrix database mirroring the
-                official ISO international sizing equivalence charts.
-              </p>
-              <div className="bg-neutral-800 p-4 rounded-lg font-mono text-center text-[15px] shadow-sm my-4 flex flex-col gap-2 border border-neutral-700 text-neutral-300">
-                <p>
-                  <strong>US Women = US Men + 1.5 sizes</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-neutral-700">
-                  <strong>UK Size ≈ US Men - 0.5 to 1 full size</strong>
-                </p>
-                <p className="mt-2 pt-2 border-t border-neutral-700">
-                  <strong>EU Size = (CM / 0.667) + Constant</strong>
-                </p>
-              </div>
-            </>
-          }
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Shoe Size Analysis Model
+            </div>
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Shoe Size results.
+            </p>
+          </>
+        }
           example={
             <>
               <p>

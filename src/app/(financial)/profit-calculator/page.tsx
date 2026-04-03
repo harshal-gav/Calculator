@@ -163,16 +163,15 @@ export default function ProfitCalculator() {
             </>
           }
           formula={
-            <div className="space-y-4 text-gray-700">
-              <div className="bg-emerald-50 p-6 rounded-lg font-mono text-center shadow-sm border border-emerald-100">
-                <p className="font-bold text-emerald-900">Gross Profit = Revenue - Cost of Goods Sold</p>
-                <div className="my-3 border-t border-emerald-200"></div>
-                <p className="font-bold text-emerald-900">Gross Margin = (Gross Profit / Revenue) × 100</p>
-                <div className="my-3 border-t border-emerald-200"></div>
-                <p className="font-bold text-emerald-900">Net Profit = Gross Profit - Operating Expenses</p>
-              </div>
+          <>
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
+              Profit Analysis Model
             </div>
-          }
+            <p className="text-sm text-slate-500 text-center">
+              This tool utilize standardized mathematical formulas and logic to calculate precise Profit results.
+            </p>
+          </>
+        }
           example={
             <div className="space-y-4">
               <p>Consider a retail store selling a smartphone:</p>
