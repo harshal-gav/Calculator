@@ -12,7 +12,10 @@ export async function GET(request: Request, { params }: { params: Promise<{ chun
   // Special Case: New Dedicated Keywords Sitemap
   if (chunk.startsWith('keywords')) {
     try {
-      const keywordMapping = require('@/data/keyword-mapping.json');
+      // Logic: keywords.xml -> mapping-0, keywords-1.xml -> mapping-1
+      const mappingIndex = chunk.includes('keywords-1') ? 1 : 0;
+      const keywordMapping = require(`@/data/keyword-mapping-${mappingIndex}.json`);
+      
       if (Array.isArray(keywordMapping)) {
         const keywordUrls = keywordMapping.map((item: any) => `${siteUrl}/programmatic-seo/${item.calculatorId}/${item.slug}`);
         

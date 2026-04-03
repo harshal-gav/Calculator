@@ -32,9 +32,18 @@ export async function generateMetadata({ params }: Props) {
   // Try to find if this is a mapped keyword for better metadata
   let displayKeyword = "";
   try {
-    const keywordMapping = require('@/data/keyword-mapping.json');
-    const match = keywordMapping.find((m: any) => m.calculatorId === calculatorId && m.slug === slug);
-    if (match) displayKeyword = match.keyword;
+    // Check both mapping files
+    const mappings = [
+      require('@/data/keyword-mapping-0.json'),
+      require('@/data/keyword-mapping-1.json')
+    ];
+    for (const mapping of mappings) {
+      const match = mapping.find((m: any) => m.calculatorId === calculatorId && m.slug === slug);
+      if (match) {
+        displayKeyword = match.keyword;
+        break;
+      }
+    }
   } catch (e) {}
 
   const humanReadableSlug = displayKeyword || slug.replace(/-/g, ' ');
@@ -56,9 +65,17 @@ export default async function ProgrammaticUniversalPage({ params }: Props) {
   // 1.5 Try to find if this is a mapped keyword for better display
   let displayKeyword = "";
   try {
-    const keywordMapping = require('@/data/keyword-mapping.json');
-    const match = keywordMapping.find((m: any) => m.calculatorId === calculatorId && m.slug === slug);
-    if (match) displayKeyword = match.keyword;
+    const mappings = [
+      require('@/data/keyword-mapping-0.json'),
+      require('@/data/keyword-mapping-1.json')
+    ];
+    for (const mapping of mappings) {
+      const match = mapping.find((m: any) => m.calculatorId === calculatorId && m.slug === slug);
+      if (match) {
+        displayKeyword = match.keyword;
+        break;
+      }
+    }
   } catch (e) {}
 
   // 2. Specific Implementation Bypass (e.g. SIP has its own math)
