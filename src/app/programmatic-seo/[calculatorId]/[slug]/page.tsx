@@ -29,7 +29,15 @@ export async function generateMetadata({ params }: Props) {
   const config = (programmaticRegistry as any)[calculatorId];
   if (!config) return { title: "Calculator" };
 
-  const humanReadableSlug = slug.replace(/-/g, ' ');
+  // Try to find if this is a mapped keyword for better metadata
+  let displayKeyword = "";
+  try {
+    const keywordMapping = require('@/data/keyword-mapping.json');
+    const match = keywordMapping.find((m: any) => m.calculatorId === calculatorId && m.slug === slug);
+    if (match) displayKeyword = match.keyword;
+  } catch (e) {}
+
+  const humanReadableSlug = displayKeyword || slug.replace(/-/g, ' ');
   return {
     title: `${config.title} for ${humanReadableSlug} | Compute Instantly`,
     description: `Use our programmatic ${config.title} to calculate results for ${humanReadableSlug}. Instant calculation and accurate output.`,
@@ -44,6 +52,14 @@ export default async function ProgrammaticUniversalPage({ params }: Props) {
   if (!config) {
     notFound(); 
   }
+
+  // 1.5 Try to find if this is a mapped keyword for better display
+  let displayKeyword = "";
+  try {
+    const keywordMapping = require('@/data/keyword-mapping.json');
+    const match = keywordMapping.find((m: any) => m.calculatorId === calculatorId && m.slug === slug);
+    if (match) displayKeyword = match.keyword;
+  } catch (e) {}
 
   // 2. Specific Implementation Bypass (e.g. SIP has its own math)
   if (calculatorId === 'sip-calculator') {
@@ -92,7 +108,7 @@ export default async function ProgrammaticUniversalPage({ params }: Props) {
   // We parse generic numbers out of the slug string blindly e.g "5000-10"
   const numbers = slug.match(/\d+/g)?.map(Number) || [1000];
   const primaryVal = numbers[0];
-  const humanSlug = slug.replace(/-/g, ' ');
+  const humanSlug = displayKeyword || slug.replace(/-/g, ' ');
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-6">

@@ -16,23 +16,32 @@ export async function GET(request: Request, { params }: { params: Promise<{ chun
   const siteUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.calculator-all.com';
   const urls: string[] = [];
 
-  // Iterate over 266 calculators to build universal SEO links
+  // 1. Base Parameter-driven URLs (from existing registry)
   const calculators = Object.keys(registry);
 
   for (const calcId of calculators) {
     const config = (registry as any)[calcId];
-    
-    // Using generative parameters established during scripts/generate-programmatic-registry.ts
     const v1 = config.parameters.val1;
     const v2 = config.parameters.val2;
 
     for (const amt of v1) {
       for (const dur of v2) {
-        // Universal Slug Formatter
         const slug = `${amt}-${dur}-units`;
         urls.push(`${siteUrl}/programmatic-seo/${calcId}/${slug}`);
       }
     }
+  }
+
+  // 2. Keyword-driven URLs (Mapped from CSV)
+  try {
+    const keywordMapping = require('@/data/keyword-mapping.json');
+    if (Array.isArray(keywordMapping)) {
+      keywordMapping.forEach((item: any) => {
+        urls.push(`${siteUrl}/programmatic-seo/${item.calculatorId}/${item.slug}`);
+      });
+    }
+  } catch (e) {
+    console.error("Keyword mapping not found or invalid", e);
   }
 
   // Segment the 532,000 URLs into their respective 10,000 chunk slice
