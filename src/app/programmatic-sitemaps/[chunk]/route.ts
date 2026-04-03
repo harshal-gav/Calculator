@@ -6,15 +6,46 @@ const BATCH_SIZE = 10000;
 
 export async function GET(request: Request, { params }: { params: Promise<{ chunk: string }> }) {
   const { chunk } = await params;
+  const siteUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.calculator-all.com';
+  const urls: string[] = [];
+
+  // Special Case: New Dedicated Keywords Sitemap
+  if (chunk.startsWith('keywords')) {
+    try {
+      const keywordMapping = require('@/data/keyword-mapping.json');
+      if (Array.isArray(keywordMapping)) {
+        const keywordUrls = keywordMapping.map((item: any) => `${siteUrl}/programmatic-seo/${item.calculatorId}/${item.slug}`);
+        
+        const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            ${keywordUrls.map((url) => `
+              <url>
+                <loc>${url}</loc>
+                <changefreq>weekly</changefreq>
+                <priority>0.8</priority>
+              </url>
+            `).join('')}
+          </urlset>
+        `;
+        return new NextResponse(sitemap, {
+          status: 200,
+          headers: { 
+            'Cache-Control': 's-maxage=86400, stale-while-revalidate',
+            'Content-Type': 'text/xml' 
+          },
+        });
+      }
+    } catch (e) {
+      return new NextResponse('Keywords Mapping not found', { status: 404 });
+    }
+  }
+
   // Extract chunk sequence out of filenames like "sitemap-1.xml" or "1"
   const chunkId = parseInt(chunk.replace(/\D/g, ''), 10);
 
   if (isNaN(chunkId) || chunkId <= 0) {
     return new NextResponse('Invalid sitemap chunk', { status: 400 });
   }
-
-  const siteUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.calculator-all.com';
-  const urls: string[] = [];
 
   // 1. Base Parameter-driven URLs (from existing registry)
   const calculators = Object.keys(registry);
@@ -30,18 +61,6 @@ export async function GET(request: Request, { params }: { params: Promise<{ chun
         urls.push(`${siteUrl}/programmatic-seo/${calcId}/${slug}`);
       }
     }
-  }
-
-  // 2. Keyword-driven URLs (Mapped from CSV)
-  try {
-    const keywordMapping = require('@/data/keyword-mapping.json');
-    if (Array.isArray(keywordMapping)) {
-      keywordMapping.forEach((item: any) => {
-        urls.push(`${siteUrl}/programmatic-seo/${item.calculatorId}/${item.slug}`);
-      });
-    }
-  } catch (e) {
-    console.error("Keyword mapping not found or invalid", e);
   }
 
   // Segment the 532,000 URLs into their respective 10,000 chunk slice
