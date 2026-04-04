@@ -9,11 +9,46 @@ import { CrossCalculatorLinks } from '@/components/seo/CrossCalculatorLinks';
 import { SipWidget } from '@/components/calculators/SipWidget';
 import programmaticRegistry from '@/data/programmable-registry.json';
 
-export const revalidate = 86400; // ISR cache set to 1 day
+// Performance: Transition to Full Static Generation (SSG)
+export const revalidate = 86400; // Keep ISR for any new keywords added after build
 
 type Props = {
   params: Promise<{ calculatorId: string; slug: string }>;
 };
+
+/**
+ * [CRITICAL] FIX FOR USA PERFORMANCE
+ * Pre-renders all 1,800+ mapped SEO pages at build time.
+ * This ensures sub-100ms TTFB globally via Vercel Edge.
+ */
+export async function generateStaticParams() {
+  try {
+    const mapping0 = require('@/data/keyword-mapping-0.json');
+    const mapping1 = require('@/data/keyword-mapping-1.json');
+    
+    const combined = [...mapping0, ...mapping1];
+    
+    return combined.map((m: any) => ({
+      calculatorId: m.calculatorId,
+      slug: m.slug,
+    }));
+  } catch (error) {
+    console.error("Failed to generate static params:", error);
+    return [];
+  }
+}
+
+// Helper to find mapping (Avoids redundant require in render loop)
+async function getMapping(calculatorId: string, slug: string) {
+  try {
+    const mapping0 = require('@/data/keyword-mapping-0.json');
+    const mapping1 = require('@/data/keyword-mapping-1.json');
+    return mapping0.find((m: any) => m.calculatorId === calculatorId && m.slug === slug) ||
+           mapping1.find((m: any) => m.calculatorId === calculatorId && m.slug === slug);
+  } catch (e) {
+    return null;
+  }
+}
 
 // Generate dynamic Metadata
 export async function generateMetadata({ params }: Props) {
@@ -29,22 +64,8 @@ export async function generateMetadata({ params }: Props) {
   const config = (programmaticRegistry as any)[calculatorId];
   if (!config) return { title: "Calculator" };
 
-  // Try to find if this is a mapped keyword for better metadata
-  let displayKeyword = "";
-  try {
-    // Check both mapping files
-    const mappings = [
-      require('@/data/keyword-mapping-0.json'),
-      require('@/data/keyword-mapping-1.json')
-    ];
-    for (const mapping of mappings) {
-      const match = mapping.find((m: any) => m.calculatorId === calculatorId && m.slug === slug);
-      if (match) {
-        displayKeyword = match.keyword;
-        break;
-      }
-    }
-  } catch (e) {}
+  const match = await getMapping(calculatorId, slug);
+  const displayKeyword = match?.keyword || "";
 
   const humanReadableSlug = displayKeyword || slug.replace(/-/g, ' ');
   return {
@@ -62,21 +83,9 @@ export default async function ProgrammaticUniversalPage({ params }: Props) {
     notFound(); 
   }
 
-  // 1.5 Try to find if this is a mapped keyword for better display
-  let displayKeyword = "";
-  try {
-    const mappings = [
-      require('@/data/keyword-mapping-0.json'),
-      require('@/data/keyword-mapping-1.json')
-    ];
-    for (const mapping of mappings) {
-      const match = mapping.find((m: any) => m.calculatorId === calculatorId && m.slug === slug);
-      if (match) {
-        displayKeyword = match.keyword;
-        break;
-      }
-    }
-  } catch (e) {}
+  // 1.5 Find mapping info
+  const match = await getMapping(calculatorId, slug);
+  const displayKeyword = match?.keyword || "";
 
   // 2. Specific Implementation Bypass (e.g. SIP has its own math)
   if (calculatorId === 'sip-calculator') {
@@ -86,7 +95,7 @@ export default async function ProgrammaticUniversalPage({ params }: Props) {
 
     return (
       <div className="max-w-4xl mx-auto py-12 px-6">
-        <header className="mb-10 text-center">
+        <header className="mb-10 text-center text-justify">
           <h1 className="text-4xl font-extrabold text-blue-900 mb-4">
             SIP Calculator for ₹{parsed.amount.toLocaleString('en-IN')}/mo in {parsed.duration} {parsed.duration > 1 ? 'years' : 'year'}
           </h1>
@@ -103,8 +112,8 @@ export default async function ProgrammaticUniversalPage({ params }: Props) {
           />
         </section>
 
-        <section className="bg-blue-50 rounded-xl p-8 mb-12">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Your Investment Journey</h2>
+        <section className="bg-blue-50 rounded-xl p-8 mb-12 text-justify">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 text-left">Your Investment Journey</h2>
           <p className="text-lg text-gray-700 leading-relaxed">
             {content.resultContent}
           </p>
@@ -133,7 +142,7 @@ export default async function ProgrammaticUniversalPage({ params }: Props) {
         <h1 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight capitalize">
           {config.title} specific to {humanSlug}
         </h1>
-        <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
+        <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6 text-justify">
           Welcome to the ultimate programmatic intelligence engine for the {config.title}. 
           Our tool calculates comprehensive outcomes specifically tailored for parameters involving {humanSlug}. 
           Whether you are adjusting inputs dynamically or planning for the future, getting precise 
@@ -155,8 +164,8 @@ export default async function ProgrammaticUniversalPage({ params }: Props) {
       </section>
 
       {/* SEO Deep Dive Content Block */}
-      <section className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 mb-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Why Compute {config.title} for {humanSlug}?</h2>
+      <section className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 mb-12 text-justify">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6 text-left">Why Compute {config.title} for {humanSlug}?</h2>
         <div className="space-y-4 text-gray-700 leading-relaxed">
           <p>
             When utilizing financial, scientific, or mathematical tools such as the {config.title}, accuracy is 
