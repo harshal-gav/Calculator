@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,12 +13,20 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
+});
+
+const roboto = Roboto({
+  weight: ["300", "400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -58,6 +66,8 @@ export const metadata: Metadata = {
   },
 };
 
+import AdsManager from "@/components/AdsManager";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -66,10 +76,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-gray-50`}
+        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} antialiased flex flex-col min-h-screen bg-gray-50`}
       >
         <FirebaseAnalytics />
         <Analytics />
@@ -79,11 +88,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <Script
-          id="adsterra-social-bar"
-          src="https://pl29042747.profitablecpmratenetwork.com/7a/47/fd/7a47fd360cce722626d103ccace5d6f5.js"
-          strategy="lazyOnload"
-        />
+        <AdsManager />
         <StickyAd />
       </body>
     </html>

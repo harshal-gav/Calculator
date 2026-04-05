@@ -1,4 +1,18 @@
+# robots.txt for calculator-all.com
+# Updated: 2026-04-05
+
+# Allow all well-behaved crawlers
 User-agent: *
 Allow: /
 
+# Disallow private/admin routes
+Disallow: /api/cron/
+Disallow: /_next/
+Disallow: /api/auth/
+
+# Sitemap references
 Sitemap: https://www.calculator-all.com/sitemap.xml
+Sitemap: https://www.calculator-all.com/sitemap-0.xml
+
+# Crawl-delay hint for polite bots
+Crawl-delay: 1
