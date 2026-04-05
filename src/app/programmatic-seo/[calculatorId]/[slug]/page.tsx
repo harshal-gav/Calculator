@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { parseSipSlug } from '@/lib/utils/slugParser';
 import { generateSipContent } from '@/lib/seo/contentGenerator';
 import { generateSipMetadata } from '@/lib/seo/metadata';
+import fs from 'fs';
+import path from 'path';
 
 import { ContextualFAQ } from '@/components/seo/ContextualFAQ';
 import { InternalLinksGraph } from '@/components/seo/InternalLinksGraph';
@@ -12,6 +14,24 @@ import programmaticRegistry from '@/data/programmable-registry.json';
 // Performance: Transition to Full Static Generation (SSG)
 export const revalidate = 86400; // Keep ISR for any new keywords added after build
 
+/** Loads and merges ALL keyword-mapping-*.json files from the data directory */
+function loadAllKeywordMappings(): any[] {
+  try {
+    const dataDir = path.join(process.cwd(), 'src', 'data');
+    const files = fs.readdirSync(dataDir).filter(f => f.startsWith('keyword-mapping-') && f.endsWith('.json'));
+    const combined: any[] = [];
+    for (const file of files) {
+      try {
+        const content = JSON.parse(fs.readFileSync(path.join(dataDir, file), 'utf-8'));
+        if (Array.isArray(content)) combined.push(...content);
+      } catch { /* skip malformed files */ }
+    }
+    return combined;
+  } catch {
+    return [];
+  }
+}
+
 type Props = {
   params: Promise<{ calculatorId: string; slug: string }>;
 };
@@ -21,33 +41,23 @@ type Props = {
  * Pre-renders all 1,800+ mapped SEO pages at build time.
  * This ensures sub-100ms TTFB globally via Vercel Edge.
  */
+/**
+ * Pre-renders keyword PSEO pages. 
+ * We return an empty array here because generating 250,000+ paths at build time 
+ * exceeds the call stack limit in Next.js's internal path matching logic.
+ * Pages will be generated on-demand (ISR) and cached.
+ */
 export async function generateStaticParams() {
-  try {
-    const mapping0 = require('@/data/keyword-mapping-0.json');
-    const mapping1 = require('@/data/keyword-mapping-1.json');
-    
-    const combined = [...mapping0, ...mapping1];
-    
-    return combined.map((m: any) => ({
-      calculatorId: m.calculatorId,
-      slug: m.slug,
-    }));
-  } catch (error) {
-    console.error("Failed to generate static params:", error);
-    return [];
-  }
+  return [];
 }
 
-// Helper to find mapping (Avoids redundant require in render loop)
+// Cache of all mappings, built once per server instance
+let _mappingCache: any[] | null = null;
+
+/** Finds a keyword mapping entry by calculatorId + slug */
 async function getMapping(calculatorId: string, slug: string) {
-  try {
-    const mapping0 = require('@/data/keyword-mapping-0.json');
-    const mapping1 = require('@/data/keyword-mapping-1.json');
-    return mapping0.find((m: any) => m.calculatorId === calculatorId && m.slug === slug) ||
-           mapping1.find((m: any) => m.calculatorId === calculatorId && m.slug === slug);
-  } catch (e) {
-    return null;
-  }
+  if (!_mappingCache) _mappingCache = loadAllKeywordMappings();
+  return _mappingCache.find((m: any) => m.calculatorId === calculatorId && m.slug === slug) ?? null;
 }
 
 // Generate dynamic Metadata
@@ -77,14 +87,23 @@ export async function generateMetadata({ params }: Props) {
 export default async function ProgrammaticUniversalPage({ params }: Props) {
   const { calculatorId, slug } = await params;
 
-  // 1. Verify if this calculator actually exists in user's root 
-  const config = (programmaticRegistry as any)[calculatorId];
+  // 1. Get config or provide a fallback if not in registry
+  let config = (programmaticRegistry as any)[calculatorId];
+  const match = await getMapping(calculatorId, slug);
+
   if (!config) {
-    notFound(); 
+    // If not in registry, but we have a mapping match, we can still serve the page
+    if (match) {
+      config = {
+        title: (match.keyword || calculatorId).replace(/-/g, ' '),
+        category: 'calculator',
+        parameters: { val1: [1000], val2: [10] }
+      };
+    } else {
+      notFound();
+    }
   }
 
-  // 1.5 Find mapping info
-  const match = await getMapping(calculatorId, slug);
   const displayKeyword = match?.keyword || "";
 
   // 2. Specific Implementation Bypass (e.g. SIP has its own math)

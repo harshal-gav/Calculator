@@ -1,0 +1,27 @@
+[
+  {
+    "keyword": "px to rem converter",
+    "calculatorId": "px-to-rem-converter",
+    "slug": "px-to-rem-converter"
+  },
+  {
+    "keyword": "1 rem to px",
+    "calculatorId": "px-to-rem-converter",
+    "slug": "1-rem-to-px"
+  },
+  {
+    "keyword": "3rem to px",
+    "calculatorId": "px-to-rem-converter",
+    "slug": "3rem-to-px"
+  },
+  {
+    "keyword": "px to rem",
+    "calculatorId": "px-to-rem-converter",
+    "slug": "px-to-rem"
+  },
+  {
+    "keyword": "rem to px converter",
+    "calculatorId": "px-to-rem-converter",
+    "slug": "rem-to-px-converter"
+  }
+]

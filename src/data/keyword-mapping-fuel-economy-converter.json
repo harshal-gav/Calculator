@@ -1,0 +1,47 @@
+[
+  {
+    "keyword": "fuel economy converter",
+    "calculatorId": "fuel-economy-converter",
+    "slug": "fuel-economy-converter"
+  },
+  {
+    "keyword": "fuel consumption conversion",
+    "calculatorId": "fuel-economy-converter",
+    "slug": "fuel-consumption-conversion"
+  },
+  {
+    "keyword": "fuel economy conversion l 100km to mpg",
+    "calculatorId": "fuel-economy-converter",
+    "slug": "fuel-economy-conversion-l-100km-to-mpg"
+  },
+  {
+    "keyword": "fuel efficiency converter",
+    "calculatorId": "fuel-economy-converter",
+    "slug": "fuel-efficiency-converter"
+  },
+  {
+    "keyword": "fuel mileage conversion",
+    "calculatorId": "fuel-economy-converter",
+    "slug": "fuel-mileage-conversion"
+  },
+  {
+    "keyword": "gas mileage converter",
+    "calculatorId": "fuel-economy-converter",
+    "slug": "gas-mileage-converter"
+  },
+  {
+    "keyword": "liters per 100 to mpg",
+    "calculatorId": "fuel-economy-converter",
+    "slug": "liters-per-100-to-mpg"
+  },
+  {
+    "keyword": "litres to gallons mpg",
+    "calculatorId": "fuel-economy-converter",
+    "slug": "litres-to-gallons-mpg"
+  },
+  {
+    "keyword": "mpg to l 100km calculator",
+    "calculatorId": "fuel-economy-converter",
+    "slug": "mpg-to-l-100km-calculator"
+  }
+]

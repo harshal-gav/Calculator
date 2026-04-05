@@ -1,0 +1,5587 @@
+[
+  {
+    "keyword": "speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator"
+  },
+  {
+    "keyword": "transfer speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "transfer-speed-calculator"
+  },
+  {
+    "keyword": "data transfer time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "data-transfer-time-calculator"
+  },
+  {
+    "keyword": "data transfer speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "data-transfer-speed-calculator"
+  },
+  {
+    "keyword": "internet speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-speed-calculator"
+  },
+  {
+    "keyword": "data transfer rate calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "data-transfer-rate-calculator"
+  },
+  {
+    "keyword": "data speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "data-speed-calculator"
+  },
+  {
+    "keyword": "download speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "download-speed-calculator"
+  },
+  {
+    "keyword": "boat propeller calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "boat-propeller-calculator"
+  },
+  {
+    "keyword": "chip load calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "chip-load-calculator"
+  },
+  {
+    "keyword": "network transfer speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "network-transfer-speed-calculator"
+  },
+  {
+    "keyword": "data transfer time",
+    "calculatorId": "speed-calculator",
+    "slug": "data-transfer-time"
+  },
+  {
+    "keyword": "internet speed calculator mbps",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-speed-calculator-mbps"
+  },
+  {
+    "keyword": "feeds and speeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "feeds-and-speeds-calculator"
+  },
+  {
+    "keyword": "rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-calculator"
+  },
+  {
+    "keyword": "end mill speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "end-mill-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "broadband speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "broadband-speed-calculator"
+  },
+  {
+    "keyword": "tire size speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-size-speed-calculator"
+  },
+  {
+    "keyword": "laser cutting time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "laser-cutting-time-calculator"
+  },
+  {
+    "keyword": "internet download speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-download-speed-calculator"
+  },
+  {
+    "keyword": "solid carbide drill speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "solid-carbide-drill-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "cnc feed rate calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-feed-rate-calculator"
+  },
+  {
+    "keyword": "internet bandwidth calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-bandwidth-calculator"
+  },
+  {
+    "keyword": "cnc feeds and speeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-feeds-and-speeds-calculator"
+  },
+  {
+    "keyword": "calculate my speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-my-speed"
+  },
+  {
+    "keyword": "cnc router feeds and speeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-router-feeds-and-speeds-calculator"
+  },
+  {
+    "keyword": "data copy speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "data-copy-speed-calculator"
+  },
+  {
+    "keyword": "10gb transfer speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "10gb-transfer-speed-calculator"
+  },
+  {
+    "keyword": "tire speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-speed-calculator"
+  },
+  {
+    "keyword": "car speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "car-speed-calculator"
+  },
+  {
+    "keyword": "miles per hour calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "miles-per-hour-calculator"
+  },
+  {
+    "keyword": "conveyor belt speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "conveyor-belt-speed-calculator"
+  },
+  {
+    "keyword": "transfer speed time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "transfer-speed-time-calculator"
+  },
+  {
+    "keyword": "conveyor speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "conveyor-speed-calculator"
+  },
+  {
+    "keyword": "speed measurer",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-measurer"
+  },
+  {
+    "keyword": "flow speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "flow-speed-calculator"
+  },
+  {
+    "keyword": "calculate gas flow rate from pressure",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-gas-flow-rate-from-pressure"
+  },
+  {
+    "keyword": "internet transfer speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-transfer-speed-calculator"
+  },
+  {
+    "keyword": "cnc chip load calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-chip-load-calculator"
+  },
+  {
+    "keyword": "disk transfer calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "disk-transfer-calculator"
+  },
+  {
+    "keyword": "mbps transfer calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mbps-transfer-calculator"
+  },
+  {
+    "keyword": "walking speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "walking-speed-calculator"
+  },
+  {
+    "keyword": "milling speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "milling-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "pneumatic cylinder speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pneumatic-cylinder-speed-calculator"
+  },
+  {
+    "keyword": "transfer speed calc",
+    "calculatorId": "speed-calculator",
+    "slug": "transfer-speed-calc"
+  },
+  {
+    "keyword": "gigabit download speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gigabit-download-speed-calculator"
+  },
+  {
+    "keyword": "network speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "network-speed-calculator"
+  },
+  {
+    "keyword": "calculate velocity from flow rate and pipe diameter",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-velocity-from-flow-rate-and-pipe-diameter"
+  },
+  {
+    "keyword": "download speed estimator",
+    "calculatorId": "speed-calculator",
+    "slug": "download-speed-estimator"
+  },
+  {
+    "keyword": "internet bandwidth calculator per user",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-bandwidth-calculator-per-user"
+  },
+  {
+    "keyword": "cnc router speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-router-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "internet calculator speed",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-calculator-speed"
+  },
+  {
+    "keyword": "carbide drill speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "carbide-drill-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "bike speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-speed-calculator"
+  },
+  {
+    "keyword": "internet speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-speed-calculator-online"
+  },
+  {
+    "keyword": "gear reducer calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-reducer-calculator"
+  },
+  {
+    "keyword": "mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-calculator"
+  },
+  {
+    "keyword": "cnc milling speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-milling-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "running speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "running-speed-calculator"
+  },
+  {
+    "keyword": "rotational speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rotational-speed-calculator"
+  },
+  {
+    "keyword": "lightspeed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "lightspeed-calculator"
+  },
+  {
+    "keyword": "1 2 mile speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "1-2-mile-speed-calculator"
+  },
+  {
+    "keyword": "1 4 mile speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "1-4-mile-speed-calculator"
+  },
+  {
+    "keyword": "1 8 mile mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "1-8-mile-mph-calculator"
+  },
+  {
+    "keyword": "1 8 mile speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "1-8-mile-speed-calculator"
+  },
+  {
+    "keyword": "1 mile speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "1-mile-speed-calculator"
+  },
+  {
+    "keyword": "1.25 speed converter",
+    "calculatorId": "speed-calculator",
+    "slug": "1-25-speed-converter"
+  },
+  {
+    "keyword": "1.25 speed video calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "1-25-speed-video-calculator"
+  },
+  {
+    "keyword": "100mbps download speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "100mbps-download-speed-calculator"
+  },
+  {
+    "keyword": "10k pace calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "10k-pace-calculator"
+  },
+  {
+    "keyword": "2 stroke porting calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "2-stroke-porting-calculator"
+  },
+  {
+    "keyword": "20 mbps download speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "20-mbps-download-speed-calculator"
+  },
+  {
+    "keyword": "3 gear ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "3-gear-ratio-calculator"
+  },
+  {
+    "keyword": "3 phase ac to dc calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "3-phase-ac-to-dc-calculator"
+  },
+  {
+    "keyword": "3 phase motor speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "3-phase-motor-speed-calculator"
+  },
+  {
+    "keyword": "50 mbps download speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "50-mbps-download-speed-calculator"
+  },
+  {
+    "keyword": "5k speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "5k-speed-calculator"
+  },
+  {
+    "keyword": "8 hour clock calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "8-hour-clock-calculator"
+  },
+  {
+    "keyword": "ac motor rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "ac-motor-rpm-calculator"
+  },
+  {
+    "keyword": "air cylinder speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "air-cylinder-speed-calculator"
+  },
+  {
+    "keyword": "air velocity formula",
+    "calculatorId": "speed-calculator",
+    "slug": "air-velocity-formula"
+  },
+  {
+    "keyword": "air velocity in duct calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "air-velocity-in-duct-calculator"
+  },
+  {
+    "keyword": "amp to kva calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "amp-to-kva-calculator"
+  },
+  {
+    "keyword": "angular and linear speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "angular-and-linear-speed-calculator"
+  },
+  {
+    "keyword": "angular momentum calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "angular-momentum-calculator"
+  },
+  {
+    "keyword": "angular speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "angular-speed-calculator"
+  },
+  {
+    "keyword": "apparent wind calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "apparent-wind-calculator"
+  },
+  {
+    "keyword": "apparent wind to true wind calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "apparent-wind-to-true-wind-calculator"
+  },
+  {
+    "keyword": "arrow speed calculator gold tip",
+    "calculatorId": "speed-calculator",
+    "slug": "arrow-speed-calculator-gold-tip"
+  },
+  {
+    "keyword": "average bike speed km h calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "average-bike-speed-km-h-calculator"
+  },
+  {
+    "keyword": "average running speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "average-running-speed-calculator"
+  },
+  {
+    "keyword": "average speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "average-speed-calculator"
+  },
+  {
+    "keyword": "average speed calculator cycling",
+    "calculatorId": "speed-calculator",
+    "slug": "average-speed-calculator-cycling"
+  },
+  {
+    "keyword": "average speed calculator with solution",
+    "calculatorId": "speed-calculator",
+    "slug": "average-speed-calculator-with-solution"
+  },
+  {
+    "keyword": "average speed camera calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "average-speed-camera-calculator"
+  },
+  {
+    "keyword": "average speed finder",
+    "calculatorId": "speed-calculator",
+    "slug": "average-speed-finder"
+  },
+  {
+    "keyword": "average speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "average-speed-formula"
+  },
+  {
+    "keyword": "band saw blade speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "band-saw-blade-speed-calculator"
+  },
+  {
+    "keyword": "band saw speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "band-saw-speed-calculator"
+  },
+  {
+    "keyword": "bandsaw fpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bandsaw-fpm-calculator"
+  },
+  {
+    "keyword": "bandsaw mill blade speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bandsaw-mill-blade-speed-calculator"
+  },
+  {
+    "keyword": "bandsaw pulley calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bandsaw-pulley-calculator"
+  },
+  {
+    "keyword": "bandwidth calculator mbps",
+    "calculatorId": "speed-calculator",
+    "slug": "bandwidth-calculator-mbps"
+  },
+  {
+    "keyword": "bandwidth calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "bandwidth-calculator-online"
+  },
+  {
+    "keyword": "bandwidth need calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bandwidth-need-calculator"
+  },
+  {
+    "keyword": "bandwidth speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bandwidth-speed-calculator"
+  },
+  {
+    "keyword": "bandwidth throughput calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bandwidth-throughput-calculator"
+  },
+  {
+    "keyword": "bandwidth to download speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bandwidth-to-download-speed-calculator"
+  },
+  {
+    "keyword": "bandwidth upload calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bandwidth-upload-calculator"
+  },
+  {
+    "keyword": "belt drive rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "belt-drive-rpm-calculator"
+  },
+  {
+    "keyword": "belt drive speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "belt-drive-speed-calculator"
+  },
+  {
+    "keyword": "belt pulley speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "belt-pulley-speed-calculator"
+  },
+  {
+    "keyword": "belt pulley speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "belt-pulley-speed-formula"
+  },
+  {
+    "keyword": "belt speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "belt-speed-calculator"
+  },
+  {
+    "keyword": "belt speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "belt-speed-formula"
+  },
+  {
+    "keyword": "belt velocity formula",
+    "calculatorId": "speed-calculator",
+    "slug": "belt-velocity-formula"
+  },
+  {
+    "keyword": "best cnc speed and feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "best-cnc-speed-and-feed-calculator"
+  },
+  {
+    "keyword": "best feeds and speeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "best-feeds-and-speeds-calculator"
+  },
+  {
+    "keyword": "best speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "best-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "bicycle average speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bicycle-average-speed-calculator"
+  },
+  {
+    "keyword": "bicycle calculator speed",
+    "calculatorId": "speed-calculator",
+    "slug": "bicycle-calculator-speed"
+  },
+  {
+    "keyword": "bicycle gear calculator speed",
+    "calculatorId": "speed-calculator",
+    "slug": "bicycle-gear-calculator-speed"
+  },
+  {
+    "keyword": "bicycle gear ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bicycle-gear-ratio-calculator"
+  },
+  {
+    "keyword": "bicycle gear ratio calculator speed",
+    "calculatorId": "speed-calculator",
+    "slug": "bicycle-gear-ratio-calculator-speed"
+  },
+  {
+    "keyword": "bicycle gear speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bicycle-gear-speed-calculator"
+  },
+  {
+    "keyword": "bicycle mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bicycle-mph-calculator"
+  },
+  {
+    "keyword": "bicycle power speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bicycle-power-speed-calculator"
+  },
+  {
+    "keyword": "bicycle speed and power calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bicycle-speed-and-power-calculator"
+  },
+  {
+    "keyword": "big rig road speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "big-rig-road-speed-calculator"
+  },
+  {
+    "keyword": "bike average speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-average-speed-calculator"
+  },
+  {
+    "keyword": "bike cadence speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-cadence-speed-calculator"
+  },
+  {
+    "keyword": "bike gear calculator speed",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-gear-calculator-speed"
+  },
+  {
+    "keyword": "bike max speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-max-speed-calculator"
+  },
+  {
+    "keyword": "bike miles per hour calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-miles-per-hour-calculator"
+  },
+  {
+    "keyword": "bike mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-mph-calculator"
+  },
+  {
+    "keyword": "bike power speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-power-speed-calculator"
+  },
+  {
+    "keyword": "bike power to speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-power-to-speed-calculator"
+  },
+  {
+    "keyword": "bike speed and distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-speed-and-distance-calculator"
+  },
+  {
+    "keyword": "bike speed cadence calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-speed-cadence-calculator"
+  },
+  {
+    "keyword": "bike speed calculator watts",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-speed-calculator-watts"
+  },
+  {
+    "keyword": "bike speed converter",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-speed-converter"
+  },
+  {
+    "keyword": "bike speed distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-speed-distance-calculator"
+  },
+  {
+    "keyword": "bike speed time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-speed-time-calculator"
+  },
+  {
+    "keyword": "bike speed watts calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-speed-watts-calculator"
+  },
+  {
+    "keyword": "bike watt speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bike-watt-speed-calculator"
+  },
+  {
+    "keyword": "bikecalc speed at cadence",
+    "calculatorId": "speed-calculator",
+    "slug": "bikecalc-speed-at-cadence"
+  },
+  {
+    "keyword": "biking mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "biking-mph-calculator"
+  },
+  {
+    "keyword": "blade tip speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "blade-tip-speed-calculator"
+  },
+  {
+    "keyword": "blower speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "blower-speed-calculator"
+  },
+  {
+    "keyword": "boat prop pitch speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "boat-prop-pitch-speed-calculator"
+  },
+  {
+    "keyword": "boat propeller speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "boat-propeller-speed-calculator"
+  },
+  {
+    "keyword": "boat speed distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "boat-speed-distance-calculator"
+  },
+  {
+    "keyword": "boat speed prop calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "boat-speed-prop-calculator"
+  },
+  {
+    "keyword": "bore stroke calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bore-stroke-calculator"
+  },
+  {
+    "keyword": "boring bar speed and feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "boring-bar-speed-and-feed-calculator"
+  },
+  {
+    "keyword": "boring bar speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "boring-bar-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "boring feeds and speeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "boring-feeds-and-speeds-calculator"
+  },
+  {
+    "keyword": "boring speed and feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "boring-speed-and-feed-calculator"
+  },
+  {
+    "keyword": "bowling ball speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bowling-ball-speed-calculator"
+  },
+  {
+    "keyword": "bowling pace calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bowling-pace-calculator"
+  },
+  {
+    "keyword": "bowling speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bowling-speed-calculator"
+  },
+  {
+    "keyword": "bowling speed calculator machine",
+    "calculatorId": "speed-calculator",
+    "slug": "bowling-speed-calculator-machine"
+  },
+  {
+    "keyword": "broadband bandwidth calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "broadband-bandwidth-calculator"
+  },
+  {
+    "keyword": "broadband download calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "broadband-download-calculator"
+  },
+  {
+    "keyword": "broadband download speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "broadband-download-speed-calculator"
+  },
+  {
+    "keyword": "broadband speed converter",
+    "calculatorId": "speed-calculator",
+    "slug": "broadband-speed-converter"
+  },
+  {
+    "keyword": "bus speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "bus-speed-calculator"
+  },
+  {
+    "keyword": "bus speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "bus-speed-calculator-online"
+  },
+  {
+    "keyword": "cadence calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cadence-calculator"
+  },
+  {
+    "keyword": "cadence speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cadence-speed-calculator"
+  },
+  {
+    "keyword": "calculate acceleration from velocity",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-acceleration-from-velocity"
+  },
+  {
+    "keyword": "calculate average speed of car",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-average-speed-of-car"
+  },
+  {
+    "keyword": "calculate boat speed prop pitch",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-boat-speed-prop-pitch"
+  },
+  {
+    "keyword": "calculate bowling speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-bowling-speed"
+  },
+  {
+    "keyword": "calculate chip load per tooth",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-chip-load-per-tooth"
+  },
+  {
+    "keyword": "calculate copy speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-copy-speed"
+  },
+  {
+    "keyword": "calculate cutting speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-cutting-speed"
+  },
+  {
+    "keyword": "calculate cycling speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-cycling-speed"
+  },
+  {
+    "keyword": "calculate distance and speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-distance-and-speed"
+  },
+  {
+    "keyword": "calculate distance by speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-distance-by-speed"
+  },
+  {
+    "keyword": "calculate distance by speed and time",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-distance-by-speed-and-time"
+  },
+  {
+    "keyword": "calculate distance from speed and time",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-distance-from-speed-and-time"
+  },
+  {
+    "keyword": "calculate distance speed and time",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-distance-speed-and-time"
+  },
+  {
+    "keyword": "calculate distance time speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-distance-time-speed"
+  },
+  {
+    "keyword": "calculate distance traveled with speed and time",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-distance-traveled-with-speed-and-time"
+  },
+  {
+    "keyword": "calculate distance with speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-distance-with-speed"
+  },
+  {
+    "keyword": "calculate distance with speed and time",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-distance-with-speed-and-time"
+  },
+  {
+    "keyword": "calculate distance with time and speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-distance-with-time-and-speed"
+  },
+  {
+    "keyword": "calculate download speed from bandwidth",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-download-speed-from-bandwidth"
+  },
+  {
+    "keyword": "calculate drill speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-drill-speed"
+  },
+  {
+    "keyword": "calculate driving time based on speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-driving-time-based-on-speed"
+  },
+  {
+    "keyword": "calculate duct velocity",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-duct-velocity"
+  },
+  {
+    "keyword": "calculate feed and speed for cnc",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-feed-and-speed-for-cnc"
+  },
+  {
+    "keyword": "calculate gear ratio from rpm",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-gear-ratio-from-rpm"
+  },
+  {
+    "keyword": "calculate gear ratio from rpm and speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-gear-ratio-from-rpm-and-speed"
+  },
+  {
+    "keyword": "calculate gear speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-gear-speed"
+  },
+  {
+    "keyword": "calculate how fast i ran",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-how-fast-i-ran"
+  },
+  {
+    "keyword": "calculate how fast i walked",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-how-fast-i-walked"
+  },
+  {
+    "keyword": "calculate internet speed in mbps",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-internet-speed-in-mbps"
+  },
+  {
+    "keyword": "calculate kilometers per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-kilometers-per-hour"
+  },
+  {
+    "keyword": "calculate km per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-km-per-hour"
+  },
+  {
+    "keyword": "calculate km per minute",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-km-per-minute"
+  },
+  {
+    "keyword": "calculate kmph",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-kmph"
+  },
+  {
+    "keyword": "calculate mass flow rate from velocity",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-mass-flow-rate-from-velocity"
+  },
+  {
+    "keyword": "calculate mbps speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-mbps-speed"
+  },
+  {
+    "keyword": "calculate miles per hour running",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-miles-per-hour-running"
+  },
+  {
+    "keyword": "calculate minutes per mile",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-minutes-per-mile"
+  },
+  {
+    "keyword": "calculate motor speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-motor-speed"
+  },
+  {
+    "keyword": "calculate moving speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-moving-speed"
+  },
+  {
+    "keyword": "calculate my mph",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-my-mph"
+  },
+  {
+    "keyword": "calculate my pace",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-my-pace"
+  },
+  {
+    "keyword": "calculate my running speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-my-running-speed"
+  },
+  {
+    "keyword": "calculate my speed km h",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-my-speed-km-h"
+  },
+  {
+    "keyword": "calculate my train speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-my-train-speed"
+  },
+  {
+    "keyword": "calculate my vehicle speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-my-vehicle-speed"
+  },
+  {
+    "keyword": "calculate my walking pace",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-my-walking-pace"
+  },
+  {
+    "keyword": "calculate my walking speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-my-walking-speed"
+  },
+  {
+    "keyword": "calculate pace from speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-pace-from-speed"
+  },
+  {
+    "keyword": "calculate pace in km per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-pace-in-km-per-hour"
+  },
+  {
+    "keyword": "calculate pulley speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-pulley-speed"
+  },
+  {
+    "keyword": "calculate pump flow rate from rpm",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-pump-flow-rate-from-rpm"
+  },
+  {
+    "keyword": "calculate rpm from sfm",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-rpm-from-sfm"
+  },
+  {
+    "keyword": "calculate rpm from speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-rpm-from-speed"
+  },
+  {
+    "keyword": "calculate rpm from speed and diameter",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-rpm-from-speed-and-diameter"
+  },
+  {
+    "keyword": "calculate rpm of pulley",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-rpm-of-pulley"
+  },
+  {
+    "keyword": "calculate running speed from distance and time",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-running-speed-from-distance-and-time"
+  },
+  {
+    "keyword": "calculate running speed km h",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-running-speed-km-h"
+  },
+  {
+    "keyword": "calculate speed by distance and time",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-by-distance-and-time"
+  },
+  {
+    "keyword": "calculate speed from accelerometer",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-from-accelerometer"
+  },
+  {
+    "keyword": "calculate speed from gear ratio and rpm",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-from-gear-ratio-and-rpm"
+  },
+  {
+    "keyword": "calculate speed from video",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-from-video"
+  },
+  {
+    "keyword": "calculate speed gear ratio rpm",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-gear-ratio-rpm"
+  },
+  {
+    "keyword": "calculate speed in km per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-in-km-per-hour"
+  },
+  {
+    "keyword": "calculate speed in kmph",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-in-kmph"
+  },
+  {
+    "keyword": "calculate speed in miles per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-in-miles-per-hour"
+  },
+  {
+    "keyword": "calculate speed km h",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-km-h"
+  },
+  {
+    "keyword": "calculate speed km per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-km-per-hour"
+  },
+  {
+    "keyword": "calculate speed of conveyor belt",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-of-conveyor-belt"
+  },
+  {
+    "keyword": "calculate speed of my vehicle",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-of-my-vehicle"
+  },
+  {
+    "keyword": "calculate speed of train",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-of-train"
+  },
+  {
+    "keyword": "calculate speed of train online",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-of-train-online"
+  },
+  {
+    "keyword": "calculate speed of vehicle",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-of-vehicle"
+  },
+  {
+    "keyword": "calculate speed online",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-online"
+  },
+  {
+    "keyword": "calculate speed per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-per-hour"
+  },
+  {
+    "keyword": "calculate speed rpm gear ratio",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-rpm-gear-ratio"
+  },
+  {
+    "keyword": "calculate speed using accelerometer arduino",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-using-accelerometer-arduino"
+  },
+  {
+    "keyword": "calculate speed using distance and time",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-using-distance-and-time"
+  },
+  {
+    "keyword": "calculate speed with rpm and gear ratio",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-speed-with-rpm-and-gear-ratio"
+  },
+  {
+    "keyword": "calculate spindle speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-spindle-speed"
+  },
+  {
+    "keyword": "calculate the speed of the car",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-the-speed-of-the-car"
+  },
+  {
+    "keyword": "calculate time by distance and speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-time-by-distance-and-speed"
+  },
+  {
+    "keyword": "calculate time by speed and distance",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-time-by-speed-and-distance"
+  },
+  {
+    "keyword": "calculate time from distance and speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-time-from-distance-and-speed"
+  },
+  {
+    "keyword": "calculate time in compound interest",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-time-in-compound-interest"
+  },
+  {
+    "keyword": "calculate time of flight",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-time-of-flight"
+  },
+  {
+    "keyword": "calculate time per km",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-time-per-km"
+  },
+  {
+    "keyword": "calculate time using distance and speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-time-using-distance-and-speed"
+  },
+  {
+    "keyword": "calculate time using speed and distance",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-time-using-speed-and-distance"
+  },
+  {
+    "keyword": "calculate time with distance and speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-time-with-distance-and-speed"
+  },
+  {
+    "keyword": "calculate time with speed and distance",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-time-with-speed-and-distance"
+  },
+  {
+    "keyword": "calculate train speed online",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-train-speed-online"
+  },
+  {
+    "keyword": "calculate transfer speed mbps",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-transfer-speed-mbps"
+  },
+  {
+    "keyword": "calculate travel speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-travel-speed"
+  },
+  {
+    "keyword": "calculate vehicle speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-vehicle-speed"
+  },
+  {
+    "keyword": "calculate vehicle speed from gear ratio",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-vehicle-speed-from-gear-ratio"
+  },
+  {
+    "keyword": "calculate walking miles per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-walking-miles-per-hour"
+  },
+  {
+    "keyword": "calculate walking pace",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-walking-pace"
+  },
+  {
+    "keyword": "calculate wind force",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-wind-force"
+  },
+  {
+    "keyword": "calculate wind load from wind speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-wind-load-from-wind-speed"
+  },
+  {
+    "keyword": "calculate wind pressure from wind speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-wind-pressure-from-wind-speed"
+  },
+  {
+    "keyword": "calculate wind velocity",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-wind-velocity"
+  },
+  {
+    "keyword": "calculate your speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculate-your-speed"
+  },
+  {
+    "keyword": "calculating drill speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculating-drill-speed"
+  },
+  {
+    "keyword": "calculating latency",
+    "calculatorId": "speed-calculator",
+    "slug": "calculating-latency"
+  },
+  {
+    "keyword": "calculating speed from gear ratios",
+    "calculatorId": "speed-calculator",
+    "slug": "calculating-speed-from-gear-ratios"
+  },
+  {
+    "keyword": "calculating speeds and feeds lathes",
+    "calculatorId": "speed-calculator",
+    "slug": "calculating-speeds-and-feeds-lathes"
+  },
+  {
+    "keyword": "calculating time with distance and speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculating-time-with-distance-and-speed"
+  },
+  {
+    "keyword": "calculating wave speed frequency and wavelength",
+    "calculatorId": "speed-calculator",
+    "slug": "calculating-wave-speed-frequency-and-wavelength"
+  },
+  {
+    "keyword": "calculator for average speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculator-for-average-speed"
+  },
+  {
+    "keyword": "calculator for speed distance and time",
+    "calculatorId": "speed-calculator",
+    "slug": "calculator-for-speed-distance-and-time"
+  },
+  {
+    "keyword": "calculator for speed of sound",
+    "calculatorId": "speed-calculator",
+    "slug": "calculator-for-speed-of-sound"
+  },
+  {
+    "keyword": "calculator of speed",
+    "calculatorId": "speed-calculator",
+    "slug": "calculator-of-speed"
+  },
+  {
+    "keyword": "calculator speed internet",
+    "calculatorId": "speed-calculator",
+    "slug": "calculator-speed-internet"
+  },
+  {
+    "keyword": "calculator speed test",
+    "calculatorId": "speed-calculator",
+    "slug": "calculator-speed-test"
+  },
+  {
+    "keyword": "calculus velocity and acceleration",
+    "calculatorId": "speed-calculator",
+    "slug": "calculus-velocity-and-acceleration"
+  },
+  {
+    "keyword": "car mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "car-mph-calculator"
+  },
+  {
+    "keyword": "car speed and distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "car-speed-and-distance-calculator"
+  },
+  {
+    "keyword": "car speed calculator gear ratio",
+    "calculatorId": "speed-calculator",
+    "slug": "car-speed-calculator-gear-ratio"
+  },
+  {
+    "keyword": "car speed calculator km",
+    "calculatorId": "speed-calculator",
+    "slug": "car-speed-calculator-km"
+  },
+  {
+    "keyword": "car speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "car-speed-calculator-online"
+  },
+  {
+    "keyword": "car top speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "car-top-speed-calculator"
+  },
+  {
+    "keyword": "carbide reamer speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "carbide-reamer-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "carbide speed and feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "carbide-speed-and-feed-calculator"
+  },
+  {
+    "keyword": "cfm to miles per hour calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cfm-to-miles-per-hour-calculator"
+  },
+  {
+    "keyword": "cfm to mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cfm-to-mph-calculator"
+  },
+  {
+    "keyword": "chain and sprocket speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "chain-and-sprocket-speed-calculator"
+  },
+  {
+    "keyword": "chain drive speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "chain-drive-speed-calculator"
+  },
+  {
+    "keyword": "chain speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "chain-speed-calculator"
+  },
+  {
+    "keyword": "chain sprocket speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "chain-sprocket-speed-calculator"
+  },
+  {
+    "keyword": "chainsaw chain speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "chainsaw-chain-speed-calculator"
+  },
+  {
+    "keyword": "chemical feed rate calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "chemical-feed-rate-calculator"
+  },
+  {
+    "keyword": "chia plotting speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "chia-plotting-speed-calculator"
+  },
+  {
+    "keyword": "chip load calculator aluminum",
+    "calculatorId": "speed-calculator",
+    "slug": "chip-load-calculator-aluminum"
+  },
+  {
+    "keyword": "chip load calculator cnc",
+    "calculatorId": "speed-calculator",
+    "slug": "chip-load-calculator-cnc"
+  },
+  {
+    "keyword": "chip load calculator for steel",
+    "calculatorId": "speed-calculator",
+    "slug": "chip-load-calculator-for-steel"
+  },
+  {
+    "keyword": "chip load calculator for wood",
+    "calculatorId": "speed-calculator",
+    "slug": "chip-load-calculator-for-wood"
+  },
+  {
+    "keyword": "chip load calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "chip-load-calculator-metric"
+  },
+  {
+    "keyword": "chip load calculator wood",
+    "calculatorId": "speed-calculator",
+    "slug": "chip-load-calculator-wood"
+  },
+  {
+    "keyword": "chip load formula",
+    "calculatorId": "speed-calculator",
+    "slug": "chip-load-formula"
+  },
+  {
+    "keyword": "chip load per tooth calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "chip-load-per-tooth-calculator"
+  },
+  {
+    "keyword": "cimco speed and feed calculator download",
+    "calculatorId": "speed-calculator",
+    "slug": "cimco-speed-and-feed-calculator-download"
+  },
+  {
+    "keyword": "circular saw blade speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "circular-saw-blade-speed-calculator"
+  },
+  {
+    "keyword": "circular saw feeds and speeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "circular-saw-feeds-and-speeds-calculator"
+  },
+  {
+    "keyword": "cnc calculate feed rate",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-calculate-feed-rate"
+  },
+  {
+    "keyword": "cnc cutting speed and feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-cutting-speed-and-feed-calculator"
+  },
+  {
+    "keyword": "cnc cutting speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-cutting-speed-calculator"
+  },
+  {
+    "keyword": "cnc drill speed and feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-drill-speed-and-feed-calculator"
+  },
+  {
+    "keyword": "cnc feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-feed-calculator"
+  },
+  {
+    "keyword": "cnc feed rate calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-feed-rate-calculator-metric"
+  },
+  {
+    "keyword": "cnc feed speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-feed-speed-calculator"
+  },
+  {
+    "keyword": "cnc feed speed calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-feed-speed-calculator-metric"
+  },
+  {
+    "keyword": "cnc lathe speed and feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-lathe-speed-and-feed-calculator"
+  },
+  {
+    "keyword": "cnc lathe speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-lathe-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "cnc machine feed and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-machine-feed-and-speed-calculator"
+  },
+  {
+    "keyword": "cnc mill feed rate calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-mill-feed-rate-calculator"
+  },
+  {
+    "keyword": "cnc milling feeds and speeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-milling-feeds-and-speeds-calculator"
+  },
+  {
+    "keyword": "cnc router chip load calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-router-chip-load-calculator"
+  },
+  {
+    "keyword": "cnc router feed rate calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-router-feed-rate-calculator"
+  },
+  {
+    "keyword": "cnc rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-rpm-calculator"
+  },
+  {
+    "keyword": "cnc speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-speed-calculator"
+  },
+  {
+    "keyword": "cnc spindle speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-spindle-speed-calculator"
+  },
+  {
+    "keyword": "cnc tapping speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-tapping-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "cnc vc calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-vc-calculator"
+  },
+  {
+    "keyword": "cnc wood router feed and speeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cnc-wood-router-feed-and-speeds-calculator"
+  },
+  {
+    "keyword": "cobalt drill speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cobalt-drill-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "computer speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "computer-speed-calculator"
+  },
+  {
+    "keyword": "connection speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "connection-speed-calculator"
+  },
+  {
+    "keyword": "constant rate of change calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "constant-rate-of-change-calculator"
+  },
+  {
+    "keyword": "conversion calculator speed",
+    "calculatorId": "speed-calculator",
+    "slug": "conversion-calculator-speed"
+  },
+  {
+    "keyword": "conveyor belt speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "conveyor-belt-speed-formula"
+  },
+  {
+    "keyword": "conveyor rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "conveyor-rpm-calculator"
+  },
+  {
+    "keyword": "conveyor speed calculator m min",
+    "calculatorId": "speed-calculator",
+    "slug": "conveyor-speed-calculator-m-min"
+  },
+  {
+    "keyword": "conveyor speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "conveyor-speed-formula"
+  },
+  {
+    "keyword": "cricket ball speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cricket-ball-speed-calculator"
+  },
+  {
+    "keyword": "cricket bowling speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cricket-bowling-speed-calculator"
+  },
+  {
+    "keyword": "cricket speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cricket-speed-calculator"
+  },
+  {
+    "keyword": "cubic feet per second calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cubic-feet-per-second-calculator"
+  },
+  {
+    "keyword": "current speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "current-speed-calculator"
+  },
+  {
+    "keyword": "cutting feed and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cutting-feed-and-speed-calculator"
+  },
+  {
+    "keyword": "cutting speed calculator lathe",
+    "calculatorId": "speed-calculator",
+    "slug": "cutting-speed-calculator-lathe"
+  },
+  {
+    "keyword": "cutting speed calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "cutting-speed-calculator-metric"
+  },
+  {
+    "keyword": "cutting speed calculator milling",
+    "calculatorId": "speed-calculator",
+    "slug": "cutting-speed-calculator-milling"
+  },
+  {
+    "keyword": "cutting speed to rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cutting-speed-to-rpm-calculator"
+  },
+  {
+    "keyword": "cutting time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cutting-time-calculator"
+  },
+  {
+    "keyword": "cycling calculator speed",
+    "calculatorId": "speed-calculator",
+    "slug": "cycling-calculator-speed"
+  },
+  {
+    "keyword": "cycling gear ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cycling-gear-ratio-speed-calculator"
+  },
+  {
+    "keyword": "cycling gear speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cycling-gear-speed-calculator"
+  },
+  {
+    "keyword": "cycling mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cycling-mph-calculator"
+  },
+  {
+    "keyword": "cycling rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cycling-rpm-calculator"
+  },
+  {
+    "keyword": "cycling speed calculator watts",
+    "calculatorId": "speed-calculator",
+    "slug": "cycling-speed-calculator-watts"
+  },
+  {
+    "keyword": "cycling speed distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cycling-speed-distance-calculator"
+  },
+  {
+    "keyword": "cycling watts speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cycling-watts-speed-calculator"
+  },
+  {
+    "keyword": "cylinder speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cylinder-speed-calculator"
+  },
+  {
+    "keyword": "cylinder speed calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "cylinder-speed-calculator-metric"
+  },
+  {
+    "keyword": "cylinder speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "cylinder-speed-formula"
+  },
+  {
+    "keyword": "cylindrical grinding speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "cylindrical-grinding-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "data download speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "data-download-speed-calculator"
+  },
+  {
+    "keyword": "data speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "data-speed-calculator-online"
+  },
+  {
+    "keyword": "data speed converter",
+    "calculatorId": "speed-calculator",
+    "slug": "data-speed-converter"
+  },
+  {
+    "keyword": "data speed time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "data-speed-time-calculator"
+  },
+  {
+    "keyword": "data transfer rate conversion",
+    "calculatorId": "speed-calculator",
+    "slug": "data-transfer-rate-conversion"
+  },
+  {
+    "keyword": "data transfer speed converter",
+    "calculatorId": "speed-calculator",
+    "slug": "data-transfer-speed-converter"
+  },
+  {
+    "keyword": "data transmission speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "data-transmission-speed-calculator"
+  },
+  {
+    "keyword": "dc motor speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "dc-motor-speed-calculator"
+  },
+  {
+    "keyword": "determine mph",
+    "calculatorId": "speed-calculator",
+    "slug": "determine-mph"
+  },
+  {
+    "keyword": "diameter of pipe and flow rate",
+    "calculatorId": "speed-calculator",
+    "slug": "diameter-of-pipe-and-flow-rate"
+  },
+  {
+    "keyword": "diff ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "diff-ratio-speed-calculator"
+  },
+  {
+    "keyword": "differential ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "differential-ratio-speed-calculator"
+  },
+  {
+    "keyword": "dirt bike speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "dirt-bike-speed-calculator"
+  },
+  {
+    "keyword": "discount tire speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "discount-tire-speed-calculator"
+  },
+  {
+    "keyword": "disk transfer rate calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "disk-transfer-rate-calculator"
+  },
+  {
+    "keyword": "disk transfer speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "disk-transfer-speed-calculator"
+  },
+  {
+    "keyword": "distance and speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-and-speed-formula"
+  },
+  {
+    "keyword": "distance by speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-by-speed-calculator"
+  },
+  {
+    "keyword": "distance calculator by speed",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-calculator-by-speed"
+  },
+  {
+    "keyword": "distance calculator by speed and time",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-calculator-by-speed-and-time"
+  },
+  {
+    "keyword": "distance calculator from speed and time",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-calculator-from-speed-and-time"
+  },
+  {
+    "keyword": "distance calculator miles per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-calculator-miles-per-hour"
+  },
+  {
+    "keyword": "distance calculator speed and time",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-calculator-speed-and-time"
+  },
+  {
+    "keyword": "distance calculator time and speed",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-calculator-time-and-speed"
+  },
+  {
+    "keyword": "distance calculator using speed and time",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-calculator-using-speed-and-time"
+  },
+  {
+    "keyword": "distance calculator with speed and time",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-calculator-with-speed-and-time"
+  },
+  {
+    "keyword": "distance calculator with time and speed",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-calculator-with-time-and-speed"
+  },
+  {
+    "keyword": "distance formula speed time",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-formula-speed-time"
+  },
+  {
+    "keyword": "distance rate and time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-rate-and-time-calculator"
+  },
+  {
+    "keyword": "distance speed and time formula",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-speed-and-time-formula"
+  },
+  {
+    "keyword": "distance speed calculator running",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-speed-calculator-running"
+  },
+  {
+    "keyword": "distance speed time calculator with solution",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-speed-time-calculator-with-solution"
+  },
+  {
+    "keyword": "distance speed x time",
+    "calculatorId": "speed-calculator",
+    "slug": "distance-speed-x-time"
+  },
+  {
+    "keyword": "download bandwidth calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "download-bandwidth-calculator"
+  },
+  {
+    "keyword": "download calculator mbps",
+    "calculatorId": "speed-calculator",
+    "slug": "download-calculator-mbps"
+  },
+  {
+    "keyword": "download internet speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "download-internet-speed-calculator"
+  },
+  {
+    "keyword": "download rate calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "download-rate-calculator"
+  },
+  {
+    "keyword": "download speed calculate",
+    "calculatorId": "speed-calculator",
+    "slug": "download-speed-calculate"
+  },
+  {
+    "keyword": "download speed calculator mb s",
+    "calculatorId": "speed-calculator",
+    "slug": "download-speed-calculator-mb-s"
+  },
+  {
+    "keyword": "download speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "download-speed-calculator-online"
+  },
+  {
+    "keyword": "download speed time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "download-speed-time-calculator"
+  },
+  {
+    "keyword": "download time calculator mb s",
+    "calculatorId": "speed-calculator",
+    "slug": "download-time-calculator-mb-s"
+  },
+  {
+    "keyword": "download time calculator mbps",
+    "calculatorId": "speed-calculator",
+    "slug": "download-time-calculator-mbps"
+  },
+  {
+    "keyword": "download upload time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "download-upload-time-calculator"
+  },
+  {
+    "keyword": "drill bit speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-bit-speed-calculator"
+  },
+  {
+    "keyword": "drill chip load calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-chip-load-calculator"
+  },
+  {
+    "keyword": "drill cutting speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-cutting-speed-calculator"
+  },
+  {
+    "keyword": "drill feed and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-feed-and-speed-calculator"
+  },
+  {
+    "keyword": "drill feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-feed-calculator"
+  },
+  {
+    "keyword": "drill feed rate calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-feed-rate-calculator"
+  },
+  {
+    "keyword": "drill feed speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-feed-speed-calculator"
+  },
+  {
+    "keyword": "drill feeds and speeds calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-feeds-and-speeds-calculator-metric"
+  },
+  {
+    "keyword": "drill press speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-press-speed-calculator"
+  },
+  {
+    "keyword": "drill rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-rpm-calculator"
+  },
+  {
+    "keyword": "drill sfm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-sfm-calculator"
+  },
+  {
+    "keyword": "drill speed calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-speed-calculator-metric"
+  },
+  {
+    "keyword": "drill speed calculator steel",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-speed-calculator-steel"
+  },
+  {
+    "keyword": "drill spindle speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "drill-spindle-speed-calculator"
+  },
+  {
+    "keyword": "drilling speeds and feeds calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "drilling-speeds-and-feeds-calculator-metric"
+  },
+  {
+    "keyword": "drive speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "drive-speed-calculator"
+  },
+  {
+    "keyword": "drive time calculator mph",
+    "calculatorId": "speed-calculator",
+    "slug": "drive-time-calculator-mph"
+  },
+  {
+    "keyword": "driving speed distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "driving-speed-distance-calculator"
+  },
+  {
+    "keyword": "driving time calculator speed",
+    "calculatorId": "speed-calculator",
+    "slug": "driving-time-calculator-speed"
+  },
+  {
+    "keyword": "eaton fuller road speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "eaton-fuller-road-speed-calculator"
+  },
+  {
+    "keyword": "eaton road speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "eaton-road-speed-calculator"
+  },
+  {
+    "keyword": "eaton speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "eaton-speed-calculator"
+  },
+  {
+    "keyword": "effective gear ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "effective-gear-ratio-calculator"
+  },
+  {
+    "keyword": "electric bike speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "electric-bike-speed-calculator"
+  },
+  {
+    "keyword": "electric motor speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "electric-motor-speed-calculator"
+  },
+  {
+    "keyword": "electric scooter speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "electric-scooter-speed-calculator"
+  },
+  {
+    "keyword": "electric skateboard speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "electric-skateboard-speed-calculator"
+  },
+  {
+    "keyword": "electric vehicle speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "electric-vehicle-speed-calculator"
+  },
+  {
+    "keyword": "end mill cutting speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "end-mill-cutting-speed-calculator"
+  },
+  {
+    "keyword": "engine rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "engine-rpm-calculator"
+  },
+  {
+    "keyword": "engine rpm speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "engine-rpm-speed-calculator"
+  },
+  {
+    "keyword": "engine speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "engine-speed-calculator"
+  },
+  {
+    "keyword": "escape speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "escape-speed-formula"
+  },
+  {
+    "keyword": "evony speedup calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "evony-speedup-calculator"
+  },
+  {
+    "keyword": "feed and rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "feed-and-rpm-calculator"
+  },
+  {
+    "keyword": "feed and speed calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "feed-and-speed-calculator-metric"
+  },
+  {
+    "keyword": "feed and speed calculator milling",
+    "calculatorId": "speed-calculator",
+    "slug": "feed-and-speed-calculator-milling"
+  },
+  {
+    "keyword": "feed calculator milling",
+    "calculatorId": "speed-calculator",
+    "slug": "feed-calculator-milling"
+  },
+  {
+    "keyword": "feed per tooth calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "feed-per-tooth-calculator"
+  },
+  {
+    "keyword": "feed rate and spindle speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "feed-rate-and-spindle-speed-calculator"
+  },
+  {
+    "keyword": "feed rate calculator lathe",
+    "calculatorId": "speed-calculator",
+    "slug": "feed-rate-calculator-lathe"
+  },
+  {
+    "keyword": "feed rate for tapping cnc",
+    "calculatorId": "speed-calculator",
+    "slug": "feed-rate-for-tapping-cnc"
+  },
+  {
+    "keyword": "feed rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "feed-rpm-calculator"
+  },
+  {
+    "keyword": "feed speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "feed-speed-calculator"
+  },
+  {
+    "keyword": "feed speed calculator cnc",
+    "calculatorId": "speed-calculator",
+    "slug": "feed-speed-calculator-cnc"
+  },
+  {
+    "keyword": "figure mph",
+    "calculatorId": "speed-calculator",
+    "slug": "figure-mph"
+  },
+  {
+    "keyword": "figure out miles per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "figure-out-miles-per-hour"
+  },
+  {
+    "keyword": "figure out mph",
+    "calculatorId": "speed-calculator",
+    "slug": "figure-out-mph"
+  },
+  {
+    "keyword": "figuring mph",
+    "calculatorId": "speed-calculator",
+    "slug": "figuring-mph"
+  },
+  {
+    "keyword": "final drive speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "final-drive-speed-calculator"
+  },
+  {
+    "keyword": "final gear ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "final-gear-ratio-speed-calculator"
+  },
+  {
+    "keyword": "find distance with speed and time",
+    "calculatorId": "speed-calculator",
+    "slug": "find-distance-with-speed-and-time"
+  },
+  {
+    "keyword": "find miles per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "find-miles-per-hour"
+  },
+  {
+    "keyword": "find roof pitch with speed square",
+    "calculatorId": "speed-calculator",
+    "slug": "find-roof-pitch-with-speed-square"
+  },
+  {
+    "keyword": "find speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "find-speed-calculator"
+  },
+  {
+    "keyword": "find the speed of a car",
+    "calculatorId": "speed-calculator",
+    "slug": "find-the-speed-of-a-car"
+  },
+  {
+    "keyword": "find your speed",
+    "calculatorId": "speed-calculator",
+    "slug": "find-your-speed"
+  },
+  {
+    "keyword": "flight speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "flight-speed-calculator"
+  },
+  {
+    "keyword": "flow rate in a pipe calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "flow-rate-in-a-pipe-calculator"
+  },
+  {
+    "keyword": "flow rate of gas formula",
+    "calculatorId": "speed-calculator",
+    "slug": "flow-rate-of-gas-formula"
+  },
+  {
+    "keyword": "flow rate q formula",
+    "calculatorId": "speed-calculator",
+    "slug": "flow-rate-q-formula"
+  },
+  {
+    "keyword": "flow speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "flow-speed-formula"
+  },
+  {
+    "keyword": "flow speed in pipe calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "flow-speed-in-pipe-calculator"
+  },
+  {
+    "keyword": "flow speed through pipe",
+    "calculatorId": "speed-calculator",
+    "slug": "flow-speed-through-pipe"
+  },
+  {
+    "keyword": "flow velocity calculator pipe",
+    "calculatorId": "speed-calculator",
+    "slug": "flow-velocity-calculator-pipe"
+  },
+  {
+    "keyword": "fluid speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "fluid-speed-calculator"
+  },
+  {
+    "keyword": "fluid velocity in pipe",
+    "calculatorId": "speed-calculator",
+    "slug": "fluid-velocity-in-pipe"
+  },
+  {
+    "keyword": "force calculator with velocity",
+    "calculatorId": "speed-calculator",
+    "slug": "force-calculator-with-velocity"
+  },
+  {
+    "keyword": "formula for acceleration in physics",
+    "calculatorId": "speed-calculator",
+    "slug": "formula-for-acceleration-in-physics"
+  },
+  {
+    "keyword": "formula for calculating speed",
+    "calculatorId": "speed-calculator",
+    "slug": "formula-for-calculating-speed"
+  },
+  {
+    "keyword": "formula for conveyor belt speed",
+    "calculatorId": "speed-calculator",
+    "slug": "formula-for-conveyor-belt-speed"
+  },
+  {
+    "keyword": "formula for engine speed",
+    "calculatorId": "speed-calculator",
+    "slug": "formula-for-engine-speed"
+  },
+  {
+    "keyword": "formula for speed",
+    "calculatorId": "speed-calculator",
+    "slug": "formula-for-speed"
+  },
+  {
+    "keyword": "formula for spindle speed",
+    "calculatorId": "speed-calculator",
+    "slug": "formula-for-spindle-speed"
+  },
+  {
+    "keyword": "free cnc feeds and speeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "free-cnc-feeds-and-speeds-calculator"
+  },
+  {
+    "keyword": "free feeds and speeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "free-feeds-and-speeds-calculator"
+  },
+  {
+    "keyword": "free machinist calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "free-machinist-calculator"
+  },
+  {
+    "keyword": "free online machinist calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "free-online-machinist-calculator"
+  },
+  {
+    "keyword": "free speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "free-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "frequency calculator with speed and wavelength",
+    "calculatorId": "speed-calculator",
+    "slug": "frequency-calculator-with-speed-and-wavelength"
+  },
+  {
+    "keyword": "ftp speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "ftp-speed-calculator"
+  },
+  {
+    "keyword": "gait speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gait-speed-calculator"
+  },
+  {
+    "keyword": "gallons per acre formula",
+    "calculatorId": "speed-calculator",
+    "slug": "gallons-per-acre-formula"
+  },
+  {
+    "keyword": "gbps calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gbps-calculator"
+  },
+  {
+    "keyword": "gear and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-and-speed-calculator"
+  },
+  {
+    "keyword": "gear box ratio formula",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-box-ratio-formula"
+  },
+  {
+    "keyword": "gear calculator bicycle",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-calculator-bicycle"
+  },
+  {
+    "keyword": "gear mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-mph-calculator"
+  },
+  {
+    "keyword": "gear range calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-range-calculator"
+  },
+  {
+    "keyword": "gear ratio and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-and-speed-calculator"
+  },
+  {
+    "keyword": "gear ratio calculator bike speed",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-calculator-bike-speed"
+  },
+  {
+    "keyword": "gear ratio calculator mph",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-calculator-mph"
+  },
+  {
+    "keyword": "gear ratio calculator semi truck",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-calculator-semi-truck"
+  },
+  {
+    "keyword": "gear ratio formula in terms of speed",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-formula-in-terms-of-speed"
+  },
+  {
+    "keyword": "gear ratio mph rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-mph-rpm-calculator"
+  },
+  {
+    "keyword": "gear ratio speed calculator bike",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-speed-calculator-bike"
+  },
+  {
+    "keyword": "gear ratio speed calculator formula",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-speed-calculator-formula"
+  },
+  {
+    "keyword": "gear ratio speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-speed-formula"
+  },
+  {
+    "keyword": "gear ratio tire size rpm mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-tire-size-rpm-mph-calculator"
+  },
+  {
+    "keyword": "gear ratio tire size speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-tire-size-speed-calculator"
+  },
+  {
+    "keyword": "gear ratio top speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-top-speed-calculator"
+  },
+  {
+    "keyword": "gear ratio wheel speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-ratio-wheel-speed-calculator"
+  },
+  {
+    "keyword": "gear reducer ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-reducer-ratio-calculator"
+  },
+  {
+    "keyword": "gear reducer torque calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-reducer-torque-calculator"
+  },
+  {
+    "keyword": "gear reduction torque calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-reduction-torque-calculator"
+  },
+  {
+    "keyword": "gear rpm speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-rpm-speed-calculator"
+  },
+  {
+    "keyword": "gear speed calculator car",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-speed-calculator-car"
+  },
+  {
+    "keyword": "gear speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-speed-formula"
+  },
+  {
+    "keyword": "gear teeth and rpm formula",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-teeth-and-rpm-formula"
+  },
+  {
+    "keyword": "gear train ratio formula",
+    "calculatorId": "speed-calculator",
+    "slug": "gear-train-ratio-formula"
+  },
+  {
+    "keyword": "gearbox output speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gearbox-output-speed-calculator"
+  },
+  {
+    "keyword": "gearbox ratio calculator rpm",
+    "calculatorId": "speed-calculator",
+    "slug": "gearbox-ratio-calculator-rpm"
+  },
+  {
+    "keyword": "gearbox rpm formula",
+    "calculatorId": "speed-calculator",
+    "slug": "gearbox-rpm-formula"
+  },
+  {
+    "keyword": "gearing bike calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "gearing-bike-calculator"
+  },
+  {
+    "keyword": "generator torque calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "generator-torque-calculator"
+  },
+  {
+    "keyword": "go kart mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "go-kart-mph-calculator"
+  },
+  {
+    "keyword": "golf cart speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "golf-cart-speed-calculator"
+  },
+  {
+    "keyword": "golf cart tire size speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "golf-cart-tire-size-speed-calculator"
+  },
+  {
+    "keyword": "half marathon speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "half-marathon-speed-calculator"
+  },
+  {
+    "keyword": "head speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "head-speed-calculator"
+  },
+  {
+    "keyword": "headspeed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "headspeed-calculator"
+  },
+  {
+    "keyword": "heavy truck road speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "heavy-truck-road-speed-calculator"
+  },
+  {
+    "keyword": "high efficiency milling calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "high-efficiency-milling-calculator"
+  },
+  {
+    "keyword": "high speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "high-speed-calculator"
+  },
+  {
+    "keyword": "high speed machining calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "high-speed-machining-calculator"
+  },
+  {
+    "keyword": "high speed machining speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "high-speed-machining-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "high speed milling calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "high-speed-milling-calculator"
+  },
+  {
+    "keyword": "horse racing speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "horse-racing-speed-calculator"
+  },
+  {
+    "keyword": "horse speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "horse-speed-calculator"
+  },
+  {
+    "keyword": "horsepower to speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "horsepower-to-speed-calculator"
+  },
+  {
+    "keyword": "hours to kilometers calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hours-to-kilometers-calculator"
+  },
+  {
+    "keyword": "hp mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hp-mph-calculator"
+  },
+  {
+    "keyword": "hp to nm torque calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hp-to-nm-torque-calculator"
+  },
+  {
+    "keyword": "hp top speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hp-top-speed-calculator"
+  },
+  {
+    "keyword": "hss drill feeds and speeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hss-drill-feeds-and-speeds-calculator"
+  },
+  {
+    "keyword": "hss drill speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hss-drill-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "hss drill speeds and feeds metric calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hss-drill-speeds-and-feeds-metric-calculator"
+  },
+  {
+    "keyword": "hss reamer speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hss-reamer-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "hub motor speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hub-motor-speed-calculator"
+  },
+  {
+    "keyword": "hyd cylinder speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hyd-cylinder-speed-calculator"
+  },
+  {
+    "keyword": "hydraulic cylinder speed calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "hydraulic-cylinder-speed-calculator-metric"
+  },
+  {
+    "keyword": "hydraulic cylinder speed formula metric",
+    "calculatorId": "speed-calculator",
+    "slug": "hydraulic-cylinder-speed-formula-metric"
+  },
+  {
+    "keyword": "hydraulic motor speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hydraulic-motor-speed-calculator"
+  },
+  {
+    "keyword": "hydraulic motor speed calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "hydraulic-motor-speed-calculator-metric"
+  },
+  {
+    "keyword": "hydraulic motor speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "hydraulic-motor-speed-formula"
+  },
+  {
+    "keyword": "hydraulic ram speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hydraulic-ram-speed-calculator"
+  },
+  {
+    "keyword": "hydraulic speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "hydraulic-speed-calculator"
+  },
+  {
+    "keyword": "hz to rpm conversion",
+    "calculatorId": "speed-calculator",
+    "slug": "hz-to-rpm-conversion"
+  },
+  {
+    "keyword": "instantaneous speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "instantaneous-speed-calculator"
+  },
+  {
+    "keyword": "internet connection calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-connection-calculator"
+  },
+  {
+    "keyword": "internet download time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-download-time-calculator"
+  },
+  {
+    "keyword": "internet speed conversion calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-speed-conversion-calculator"
+  },
+  {
+    "keyword": "internet speed test calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-speed-test-calculator"
+  },
+  {
+    "keyword": "internet speed time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-speed-time-calculator"
+  },
+  {
+    "keyword": "internet speed to download speed conversion",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-speed-to-download-speed-conversion"
+  },
+  {
+    "keyword": "internet speed transfer calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "internet-speed-transfer-calculator"
+  },
+  {
+    "keyword": "jackshaft pulley calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "jackshaft-pulley-calculator"
+  },
+  {
+    "keyword": "jogging speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "jogging-speed-calculator"
+  },
+  {
+    "keyword": "kilometer speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "kilometer-speed-calculator"
+  },
+  {
+    "keyword": "kilometer to miles per hour calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "kilometer-to-miles-per-hour-calculator"
+  },
+  {
+    "keyword": "kilometers to speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "kilometers-to-speed-calculator"
+  },
+  {
+    "keyword": "kilometres to miles per hour calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "kilometres-to-miles-per-hour-calculator"
+  },
+  {
+    "keyword": "km and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-and-speed-calculator"
+  },
+  {
+    "keyword": "km calculator by speed",
+    "calculatorId": "speed-calculator",
+    "slug": "km-calculator-by-speed"
+  },
+  {
+    "keyword": "km h speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-h-speed-calculator"
+  },
+  {
+    "keyword": "km h time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-h-time-calculator"
+  },
+  {
+    "keyword": "km hour calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-hour-calculator"
+  },
+  {
+    "keyword": "km hr calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-hr-calculator"
+  },
+  {
+    "keyword": "km minutes calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-minutes-calculator"
+  },
+  {
+    "keyword": "km mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-mph-calculator"
+  },
+  {
+    "keyword": "km per hour calculator running",
+    "calculatorId": "speed-calculator",
+    "slug": "km-per-hour-calculator-running"
+  },
+  {
+    "keyword": "km per hour distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-per-hour-distance-calculator"
+  },
+  {
+    "keyword": "km per hour speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-per-hour-speed-calculator"
+  },
+  {
+    "keyword": "km speed distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-speed-distance-calculator"
+  },
+  {
+    "keyword": "km speed time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-speed-time-calculator"
+  },
+  {
+    "keyword": "km time speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-time-speed-calculator"
+  },
+  {
+    "keyword": "km to knots wind speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-to-knots-wind-speed-calculator"
+  },
+  {
+    "keyword": "km to miles per hour calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "km-to-miles-per-hour-calculator"
+  },
+  {
+    "keyword": "km to mph converter",
+    "calculatorId": "speed-calculator",
+    "slug": "km-to-mph-converter"
+  },
+  {
+    "keyword": "kmh mph converter",
+    "calculatorId": "speed-calculator",
+    "slug": "kmh-mph-converter"
+  },
+  {
+    "keyword": "kmph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "kmph-calculator"
+  },
+  {
+    "keyword": "kph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "kph-calculator"
+  },
+  {
+    "keyword": "kph mph speed converter",
+    "calculatorId": "speed-calculator",
+    "slug": "kph-mph-speed-converter"
+  },
+  {
+    "keyword": "kph to kmh calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "kph-to-kmh-calculator"
+  },
+  {
+    "keyword": "kv to kva calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "kv-to-kva-calculator"
+  },
+  {
+    "keyword": "kw to nm torque calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "kw-to-nm-torque-calculator"
+  },
+  {
+    "keyword": "kw to torque calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "kw-to-torque-calculator"
+  },
+  {
+    "keyword": "lathe cutting speed calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "lathe-cutting-speed-calculator-metric"
+  },
+  {
+    "keyword": "lathe cutting speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "lathe-cutting-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "lathe rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "lathe-rpm-calculator"
+  },
+  {
+    "keyword": "lathe rpm calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "lathe-rpm-calculator-metric"
+  },
+  {
+    "keyword": "lathe sfm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "lathe-sfm-calculator"
+  },
+  {
+    "keyword": "lathe speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "lathe-speed-calculator"
+  },
+  {
+    "keyword": "lathe spindle speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "lathe-spindle-speed-calculator"
+  },
+  {
+    "keyword": "lathe spindle speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "lathe-spindle-speed-formula"
+  },
+  {
+    "keyword": "lathe surface speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "lathe-surface-speed-calculator"
+  },
+  {
+    "keyword": "lathe turning calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "lathe-turning-calculator"
+  },
+  {
+    "keyword": "lathe turning speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "lathe-turning-speed-calculator"
+  },
+  {
+    "keyword": "leased line speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "leased-line-speed-calculator"
+  },
+  {
+    "keyword": "linear speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "linear-speed-calculator"
+  },
+  {
+    "keyword": "linear speed to angular speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "linear-speed-to-angular-speed-calculator"
+  },
+  {
+    "keyword": "linear speed to rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "linear-speed-to-rpm-calculator"
+  },
+  {
+    "keyword": "linear velocity to angular velocity calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "linear-velocity-to-angular-velocity-calculator"
+  },
+  {
+    "keyword": "linear velocity to rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "linear-velocity-to-rpm-calculator"
+  },
+  {
+    "keyword": "mach number calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mach-number-calculator"
+  },
+  {
+    "keyword": "machine speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "machine-speed-calculator"
+  },
+  {
+    "keyword": "machining feed and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "machining-feed-and-speed-calculator"
+  },
+  {
+    "keyword": "machining rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "machining-rpm-calculator"
+  },
+  {
+    "keyword": "machining speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "machining-speed-calculator"
+  },
+  {
+    "keyword": "machinist speed and feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "machinist-speed-and-feed-calculator"
+  },
+  {
+    "keyword": "marathon speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "marathon-speed-calculator"
+  },
+  {
+    "keyword": "material removal rate calculator milling",
+    "calculatorId": "speed-calculator",
+    "slug": "material-removal-rate-calculator-milling"
+  },
+  {
+    "keyword": "material removal rate formula for milling",
+    "calculatorId": "speed-calculator",
+    "slug": "material-removal-rate-formula-for-milling"
+  },
+  {
+    "keyword": "math formula for speed",
+    "calculatorId": "speed-calculator",
+    "slug": "math-formula-for-speed"
+  },
+  {
+    "keyword": "math speed distance time",
+    "calculatorId": "speed-calculator",
+    "slug": "math-speed-distance-time"
+  },
+  {
+    "keyword": "maximal aerobic speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "maximal-aerobic-speed-calculator"
+  },
+  {
+    "keyword": "maximum aerobic speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "maximum-aerobic-speed-calculator"
+  },
+  {
+    "keyword": "maximum piston speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "maximum-piston-speed-calculator"
+  },
+  {
+    "keyword": "maximum speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "maximum-speed-calculator"
+  },
+  {
+    "keyword": "mb per second calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mb-per-second-calculator"
+  },
+  {
+    "keyword": "mb speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mb-speed-calculator"
+  },
+  {
+    "keyword": "mbps calculator time",
+    "calculatorId": "speed-calculator",
+    "slug": "mbps-calculator-time"
+  },
+  {
+    "keyword": "mbps download calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mbps-download-calculator"
+  },
+  {
+    "keyword": "measure roof pitch with speed square",
+    "calculatorId": "speed-calculator",
+    "slug": "measure-roof-pitch-with-speed-square"
+  },
+  {
+    "keyword": "measuring speed and distance",
+    "calculatorId": "speed-calculator",
+    "slug": "measuring-speed-and-distance"
+  },
+  {
+    "keyword": "megabits per second calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "megabits-per-second-calculator"
+  },
+  {
+    "keyword": "meter per second calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "meter-per-second-calculator"
+  },
+  {
+    "keyword": "meter to seconds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "meter-to-seconds-calculator"
+  },
+  {
+    "keyword": "meters per minute to rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "meters-per-minute-to-rpm-calculator"
+  },
+  {
+    "keyword": "metric speed and feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "metric-speed-and-feed-calculator"
+  },
+  {
+    "keyword": "mile per hour running calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mile-per-hour-running-calculator"
+  },
+  {
+    "keyword": "mile speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mile-speed-calculator"
+  },
+  {
+    "keyword": "mile speed calculator running",
+    "calculatorId": "speed-calculator",
+    "slug": "mile-speed-calculator-running"
+  },
+  {
+    "keyword": "mileage and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mileage-and-speed-calculator"
+  },
+  {
+    "keyword": "mileage and time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mileage-and-time-calculator"
+  },
+  {
+    "keyword": "mileage per hour calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mileage-per-hour-calculator"
+  },
+  {
+    "keyword": "miles and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "miles-and-speed-calculator"
+  },
+  {
+    "keyword": "miles km h converter",
+    "calculatorId": "speed-calculator",
+    "slug": "miles-km-h-converter"
+  },
+  {
+    "keyword": "miles per hour calculator driving",
+    "calculatorId": "speed-calculator",
+    "slug": "miles-per-hour-calculator-driving"
+  },
+  {
+    "keyword": "miles per hour calculator to kilometers",
+    "calculatorId": "speed-calculator",
+    "slug": "miles-per-hour-calculator-to-kilometers"
+  },
+  {
+    "keyword": "miles per hour converter",
+    "calculatorId": "speed-calculator",
+    "slug": "miles-per-hour-converter"
+  },
+  {
+    "keyword": "miles per hour to minutes per mile calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "miles-per-hour-to-minutes-per-mile-calculator"
+  },
+  {
+    "keyword": "miles to hours formula",
+    "calculatorId": "speed-calculator",
+    "slug": "miles-to-hours-formula"
+  },
+  {
+    "keyword": "mill cutting speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mill-cutting-speed-calculator"
+  },
+  {
+    "keyword": "mill feed rate calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mill-feed-rate-calculator"
+  },
+  {
+    "keyword": "mill feed speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mill-feed-speed-calculator"
+  },
+  {
+    "keyword": "mill rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mill-rpm-calculator"
+  },
+  {
+    "keyword": "mill spindle speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mill-spindle-speed-calculator"
+  },
+  {
+    "keyword": "milling cutter rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "milling-cutter-rpm-calculator"
+  },
+  {
+    "keyword": "milling cutter speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "milling-cutter-speed-calculator"
+  },
+  {
+    "keyword": "milling feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "milling-feed-calculator"
+  },
+  {
+    "keyword": "milling feeds and speeds calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "milling-feeds-and-speeds-calculator-metric"
+  },
+  {
+    "keyword": "milling machine speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "milling-machine-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "milling material removal rate calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "milling-material-removal-rate-calculator"
+  },
+  {
+    "keyword": "milling sfm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "milling-sfm-calculator"
+  },
+  {
+    "keyword": "milling speed and feed calculator free download",
+    "calculatorId": "speed-calculator",
+    "slug": "milling-speed-and-feed-calculator-free-download"
+  },
+  {
+    "keyword": "milling speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "milling-speed-calculator"
+  },
+  {
+    "keyword": "milling time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "milling-time-calculator"
+  },
+  {
+    "keyword": "mini bike gearing calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mini-bike-gearing-calculator"
+  },
+  {
+    "keyword": "mini bike speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mini-bike-speed-calculator"
+  },
+  {
+    "keyword": "mini bike top speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mini-bike-top-speed-calculator"
+  },
+  {
+    "keyword": "minutes per mile to mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "minutes-per-mile-to-mph-calculator"
+  },
+  {
+    "keyword": "mm min to mm rev calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mm-min-to-mm-rev-calculator"
+  },
+  {
+    "keyword": "mm rev to mm min calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mm-rev-to-mm-min-calculator"
+  },
+  {
+    "keyword": "moroso 1 4 mile calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "moroso-1-4-mile-calculator"
+  },
+  {
+    "keyword": "moroso calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "moroso-calculator"
+  },
+  {
+    "keyword": "moroso et calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "moroso-et-calculator"
+  },
+  {
+    "keyword": "moroso power speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "moroso-power-speed-calculator-online"
+  },
+  {
+    "keyword": "moroso speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "moroso-speed-calculator"
+  },
+  {
+    "keyword": "motor gear ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "motor-gear-ratio-calculator"
+  },
+  {
+    "keyword": "motor gearbox ratio rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "motor-gearbox-ratio-rpm-calculator"
+  },
+  {
+    "keyword": "motor hz to rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "motor-hz-to-rpm-calculator"
+  },
+  {
+    "keyword": "motor power torque speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "motor-power-torque-speed-formula"
+  },
+  {
+    "keyword": "motor pulley speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "motor-pulley-speed-calculator"
+  },
+  {
+    "keyword": "motor rpm gear ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "motor-rpm-gear-ratio-calculator"
+  },
+  {
+    "keyword": "motor rpm to speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "motor-rpm-to-speed-calculator"
+  },
+  {
+    "keyword": "motor speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "motor-speed-calculator-online"
+  },
+  {
+    "keyword": "motorcycle km to mph converter",
+    "calculatorId": "speed-calculator",
+    "slug": "motorcycle-km-to-mph-converter"
+  },
+  {
+    "keyword": "moving speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "moving-speed-calculator"
+  },
+  {
+    "keyword": "mph calculator driving",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-calculator-driving"
+  },
+  {
+    "keyword": "mph calculator rpm",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-calculator-rpm"
+  },
+  {
+    "keyword": "mph calculator tire size",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-calculator-tire-size"
+  },
+  {
+    "keyword": "mph calculator walking",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-calculator-walking"
+  },
+  {
+    "keyword": "mph converter",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-converter"
+  },
+  {
+    "keyword": "mph difference calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-difference-calculator"
+  },
+  {
+    "keyword": "mph formula",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-formula"
+  },
+  {
+    "keyword": "mph hp calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-hp-calculator"
+  },
+  {
+    "keyword": "mph km calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-km-calculator"
+  },
+  {
+    "keyword": "mph kmh calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-kmh-calculator"
+  },
+  {
+    "keyword": "mph miles calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-miles-calculator"
+  },
+  {
+    "keyword": "mph speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-speed-calculator"
+  },
+  {
+    "keyword": "mph to cfm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-to-cfm-calculator"
+  },
+  {
+    "keyword": "mph to km calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-to-km-calculator"
+  },
+  {
+    "keyword": "mph to kmh calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-to-kmh-calculator"
+  },
+  {
+    "keyword": "mph to minutes per mile calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-to-minutes-per-mile-calculator"
+  },
+  {
+    "keyword": "mph to rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-to-rpm-calculator"
+  },
+  {
+    "keyword": "mph to rpm converter",
+    "calculatorId": "speed-calculator",
+    "slug": "mph-to-rpm-converter"
+  },
+  {
+    "keyword": "mtb speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "mtb-speed-calculator"
+  },
+  {
+    "keyword": "multiple gear reduction calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "multiple-gear-reduction-calculator"
+  },
+  {
+    "keyword": "my speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "my-speed-calculator"
+  },
+  {
+    "keyword": "nautical speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "nautical-speed-calculator"
+  },
+  {
+    "keyword": "nautical time speed distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "nautical-time-speed-distance-calculator"
+  },
+  {
+    "keyword": "net connection speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "net-connection-speed-calculator"
+  },
+  {
+    "keyword": "net speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "net-speed-calculator"
+  },
+  {
+    "keyword": "network copy speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "network-copy-speed-calculator"
+  },
+  {
+    "keyword": "network mbps calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "network-mbps-calculator"
+  },
+  {
+    "keyword": "network speed conversion calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "network-speed-conversion-calculator"
+  },
+  {
+    "keyword": "network speed transfer calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "network-speed-transfer-calculator"
+  },
+  {
+    "keyword": "omni speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "omni-speed-calculator"
+  },
+  {
+    "keyword": "online car speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "online-car-speed-calculator"
+  },
+  {
+    "keyword": "online gear ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "online-gear-ratio-calculator"
+  },
+  {
+    "keyword": "online machinist calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "online-machinist-calculator"
+  },
+  {
+    "keyword": "online network speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "online-network-speed-calculator"
+  },
+  {
+    "keyword": "online running speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "online-running-speed-calculator"
+  },
+  {
+    "keyword": "online speed calculator gps",
+    "calculatorId": "speed-calculator",
+    "slug": "online-speed-calculator-gps"
+  },
+  {
+    "keyword": "online torque calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "online-torque-calculator"
+  },
+  {
+    "keyword": "online vehicle speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "online-vehicle-speed-calculator"
+  },
+  {
+    "keyword": "online wind speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "online-wind-speed-calculator"
+  },
+  {
+    "keyword": "output shaft speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "output-shaft-speed-calculator"
+  },
+  {
+    "keyword": "output speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "output-speed-calculator"
+  },
+  {
+    "keyword": "output torque calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "output-torque-calculator"
+  },
+  {
+    "keyword": "pace and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pace-and-speed-calculator"
+  },
+  {
+    "keyword": "pace calculator bike",
+    "calculatorId": "speed-calculator",
+    "slug": "pace-calculator-bike"
+  },
+  {
+    "keyword": "pace calculator km hr",
+    "calculatorId": "speed-calculator",
+    "slug": "pace-calculator-km-hr"
+  },
+  {
+    "keyword": "pace distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pace-distance-calculator"
+  },
+  {
+    "keyword": "pace mile calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pace-mile-calculator"
+  },
+  {
+    "keyword": "pace per km",
+    "calculatorId": "speed-calculator",
+    "slug": "pace-per-km"
+  },
+  {
+    "keyword": "pace speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pace-speed-calculator"
+  },
+  {
+    "keyword": "pace speed converter",
+    "calculatorId": "speed-calculator",
+    "slug": "pace-speed-converter"
+  },
+  {
+    "keyword": "parting off speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "parting-off-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "pcie speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pcie-speed-calculator"
+  },
+  {
+    "keyword": "pipe flow rate formula",
+    "calculatorId": "speed-calculator",
+    "slug": "pipe-flow-rate-formula"
+  },
+  {
+    "keyword": "pipe flow speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pipe-flow-speed-calculator"
+  },
+  {
+    "keyword": "pipe speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pipe-speed-calculator"
+  },
+  {
+    "keyword": "piston speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "piston-speed-calculator"
+  },
+  {
+    "keyword": "piston speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "piston-speed-formula"
+  },
+  {
+    "keyword": "playback speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "playback-speed-calculator"
+  },
+  {
+    "keyword": "pneumatic cylinder velocity calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pneumatic-cylinder-velocity-calculator"
+  },
+  {
+    "keyword": "pontiac compression calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pontiac-compression-calculator"
+  },
+  {
+    "keyword": "pontoon boat speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pontoon-boat-speed-calculator"
+  },
+  {
+    "keyword": "potential speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "potential-speed-calculator"
+  },
+  {
+    "keyword": "power speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "power-speed-calculator"
+  },
+  {
+    "keyword": "power speed calculator cycling",
+    "calculatorId": "speed-calculator",
+    "slug": "power-speed-calculator-cycling"
+  },
+  {
+    "keyword": "power to speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "power-to-speed-calculator"
+  },
+  {
+    "keyword": "propeller pitch speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "propeller-pitch-speed-calculator"
+  },
+  {
+    "keyword": "pto speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pto-speed-calculator"
+  },
+  {
+    "keyword": "pulley and rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pulley-and-rpm-calculator"
+  },
+  {
+    "keyword": "pulley motor calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pulley-motor-calculator"
+  },
+  {
+    "keyword": "pulley rpm and belt speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pulley-rpm-and-belt-speed-calculator"
+  },
+  {
+    "keyword": "pulley rpm calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "pulley-rpm-calculator-metric"
+  },
+  {
+    "keyword": "pulley shaft speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pulley-shaft-speed-calculator"
+  },
+  {
+    "keyword": "pulley size speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pulley-size-speed-calculator"
+  },
+  {
+    "keyword": "pulley speed calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "pulley-speed-calculator-metric"
+  },
+  {
+    "keyword": "pulley speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "pulley-speed-formula"
+  },
+  {
+    "keyword": "pulley speed ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pulley-speed-ratio-calculator"
+  },
+  {
+    "keyword": "pulley speed reduction calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pulley-speed-reduction-calculator"
+  },
+  {
+    "keyword": "pulley to pulley rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "pulley-to-pulley-rpm-calculator"
+  },
+  {
+    "keyword": "punch speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "punch-speed-calculator"
+  },
+  {
+    "keyword": "race speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "race-speed-calculator"
+  },
+  {
+    "keyword": "ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "ratio-speed-calculator"
+  },
+  {
+    "keyword": "rc calculator speed",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-calculator-speed"
+  },
+  {
+    "keyword": "rc car gear ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-car-gear-ratio-speed-calculator"
+  },
+  {
+    "keyword": "rc car scale speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-car-scale-speed-calculator"
+  },
+  {
+    "keyword": "rc car speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-car-speed-calculator"
+  },
+  {
+    "keyword": "rc car top speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-car-top-speed-calculator"
+  },
+  {
+    "keyword": "rc final drive ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-final-drive-ratio-calculator"
+  },
+  {
+    "keyword": "rc gear ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-gear-ratio-speed-calculator"
+  },
+  {
+    "keyword": "rc gear ratio top speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-gear-ratio-top-speed-calculator"
+  },
+  {
+    "keyword": "rc gearing speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-gearing-speed-calculator"
+  },
+  {
+    "keyword": "rc heli head speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-heli-head-speed-calculator"
+  },
+  {
+    "keyword": "rc scale speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-scale-speed-calculator"
+  },
+  {
+    "keyword": "rc speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-speed-calculator"
+  },
+  {
+    "keyword": "rc top speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-top-speed-calculator"
+  },
+  {
+    "keyword": "rc vehicle speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rc-vehicle-speed-calculator"
+  },
+  {
+    "keyword": "reamer feed and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "reamer-feed-and-speed-calculator"
+  },
+  {
+    "keyword": "redshift velocity calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "redshift-velocity-calculator"
+  },
+  {
+    "keyword": "relative speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "relative-speed-calculator"
+  },
+  {
+    "keyword": "rigid tapping speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rigid-tapping-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "rmp calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rmp-calculator"
+  },
+  {
+    "keyword": "road bike speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "road-bike-speed-calculator"
+  },
+  {
+    "keyword": "road speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "road-speed-calculator"
+  },
+  {
+    "keyword": "road speed calculator eaton",
+    "calculatorId": "speed-calculator",
+    "slug": "road-speed-calculator-eaton"
+  },
+  {
+    "keyword": "road speed calculator formula",
+    "calculatorId": "speed-calculator",
+    "slug": "road-speed-calculator-formula"
+  },
+  {
+    "keyword": "roadranger road speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "roadranger-road-speed-calculator"
+  },
+  {
+    "keyword": "roadranger speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "roadranger-speed-calculator"
+  },
+  {
+    "keyword": "rotational speed to linear speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rotational-speed-to-linear-speed-calculator"
+  },
+  {
+    "keyword": "router bit speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "router-bit-speed-calculator"
+  },
+  {
+    "keyword": "router feeds and speeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "router-feeds-and-speeds-calculator"
+  },
+  {
+    "keyword": "rpm and feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-and-feed-calculator"
+  },
+  {
+    "keyword": "rpm and gear ratio",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-and-gear-ratio"
+  },
+  {
+    "keyword": "rpm and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-and-speed-calculator"
+  },
+  {
+    "keyword": "rpm at 60 mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-at-60-mph-calculator"
+  },
+  {
+    "keyword": "rpm at 70 mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-at-70-mph-calculator"
+  },
+  {
+    "keyword": "rpm calculator cnc",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-calculator-cnc"
+  },
+  {
+    "keyword": "rpm calculator lathe",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-calculator-lathe"
+  },
+  {
+    "keyword": "rpm cutting speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-cutting-speed-formula"
+  },
+  {
+    "keyword": "rpm feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-feed-calculator"
+  },
+  {
+    "keyword": "rpm formula calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-formula-calculator"
+  },
+  {
+    "keyword": "rpm formula cutting speed",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-formula-cutting-speed"
+  },
+  {
+    "keyword": "rpm formula for lathe",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-formula-for-lathe"
+  },
+  {
+    "keyword": "rpm formula for lathe machine",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-formula-for-lathe-machine"
+  },
+  {
+    "keyword": "rpm formula lathe",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-formula-lathe"
+  },
+  {
+    "keyword": "rpm lathe calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-lathe-calculator"
+  },
+  {
+    "keyword": "rpm pulley formula",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-pulley-formula"
+  },
+  {
+    "keyword": "rpm reducer calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-reducer-calculator"
+  },
+  {
+    "keyword": "rpm reduction calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-reduction-calculator"
+  },
+  {
+    "keyword": "rpm speed calculator bike",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-speed-calculator-bike"
+  },
+  {
+    "keyword": "rpm to linear speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-to-linear-speed-calculator"
+  },
+  {
+    "keyword": "rpm to linear velocity calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-to-linear-velocity-calculator"
+  },
+  {
+    "keyword": "rpm to miles per hour calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-to-miles-per-hour-calculator"
+  },
+  {
+    "keyword": "rpm to mph calculator bike",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-to-mph-calculator-bike"
+  },
+  {
+    "keyword": "rpm to mph converter",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-to-mph-converter"
+  },
+  {
+    "keyword": "rpm to speed conversion",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-to-speed-conversion"
+  },
+  {
+    "keyword": "rpm to surface speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-to-surface-speed-calculator"
+  },
+  {
+    "keyword": "rpm to tip speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "rpm-to-tip-speed-calculator"
+  },
+  {
+    "keyword": "running bus speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "running-bus-speed-calculator"
+  },
+  {
+    "keyword": "running distance speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "running-distance-speed-calculator"
+  },
+  {
+    "keyword": "running speed and distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "running-speed-and-distance-calculator"
+  },
+  {
+    "keyword": "running speed calculator km hr",
+    "calculatorId": "speed-calculator",
+    "slug": "running-speed-calculator-km-hr"
+  },
+  {
+    "keyword": "running speed calculator mph",
+    "calculatorId": "speed-calculator",
+    "slug": "running-speed-calculator-mph"
+  },
+  {
+    "keyword": "running speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "running-speed-calculator-online"
+  },
+  {
+    "keyword": "running speed converter",
+    "calculatorId": "speed-calculator",
+    "slug": "running-speed-converter"
+  },
+  {
+    "keyword": "running speed distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "running-speed-distance-calculator"
+  },
+  {
+    "keyword": "running speed pace calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "running-speed-pace-calculator"
+  },
+  {
+    "keyword": "running vehicle speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "running-vehicle-speed-calculator"
+  },
+  {
+    "keyword": "sandvik cutting speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "sandvik-cutting-speed-calculator"
+  },
+  {
+    "keyword": "sandvik speed and feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "sandvik-speed-and-feed-calculator"
+  },
+  {
+    "keyword": "scale speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "scale-speed-calculator"
+  },
+  {
+    "keyword": "scooter speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "scooter-speed-calculator"
+  },
+  {
+    "keyword": "sfm drill calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "sfm-drill-calculator"
+  },
+  {
+    "keyword": "sfpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "sfpm-calculator"
+  },
+  {
+    "keyword": "sfpm to rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "sfpm-to-rpm-calculator"
+  },
+  {
+    "keyword": "sheave rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "sheave-rpm-calculator"
+  },
+  {
+    "keyword": "sheave speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "sheave-speed-calculator"
+  },
+  {
+    "keyword": "skid mark speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "skid-mark-speed-calculator"
+  },
+  {
+    "keyword": "snowmobile gear calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "snowmobile-gear-calculator"
+  },
+  {
+    "keyword": "snowmobile gear ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "snowmobile-gear-ratio-calculator"
+  },
+  {
+    "keyword": "snowmobile speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "snowmobile-speed-calculator"
+  },
+  {
+    "keyword": "spade drill speeds and feeds calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "spade-drill-speeds-and-feeds-calculator"
+  },
+  {
+    "keyword": "speed and feed calc",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-and-feed-calc"
+  },
+  {
+    "keyword": "speed and feed calculator for drilling",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-and-feed-calculator-for-drilling"
+  },
+  {
+    "keyword": "speed and feed calculator for tapping",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-and-feed-calculator-for-tapping"
+  },
+  {
+    "keyword": "speed and feed drill calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-and-feed-drill-calculator"
+  },
+  {
+    "keyword": "speed and kilometer calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-and-kilometer-calculator"
+  },
+  {
+    "keyword": "speed and miles calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-and-miles-calculator"
+  },
+  {
+    "keyword": "speed and time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-and-time-calculator"
+  },
+  {
+    "keyword": "speed and time formula",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-and-time-formula"
+  },
+  {
+    "keyword": "speed at rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-at-rpm-calculator"
+  },
+  {
+    "keyword": "speed bike calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-bike-calculator"
+  },
+  {
+    "keyword": "speed by gear calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-by-gear-calculator"
+  },
+  {
+    "keyword": "speed calculator bus",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-bus"
+  },
+  {
+    "keyword": "speed calculator by gear ratio",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-by-gear-ratio"
+  },
+  {
+    "keyword": "speed calculator for tire size",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-for-tire-size"
+  },
+  {
+    "keyword": "speed calculator in train",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-in-train"
+  },
+  {
+    "keyword": "speed calculator internet connection",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-internet-connection"
+  },
+  {
+    "keyword": "speed calculator km h",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-km-h"
+  },
+  {
+    "keyword": "speed calculator km per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-km-per-hour"
+  },
+  {
+    "keyword": "speed calculator kmph",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-kmph"
+  },
+  {
+    "keyword": "speed calculator meters per second",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-meters-per-second"
+  },
+  {
+    "keyword": "speed calculator mph gear ratio",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-mph-gear-ratio"
+  },
+  {
+    "keyword": "speed calculator network",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-network"
+  },
+  {
+    "keyword": "speed calculator of train",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-of-train"
+  },
+  {
+    "keyword": "speed calculator rc car",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-rc-car"
+  },
+  {
+    "keyword": "speed calculator running km",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-running-km"
+  },
+  {
+    "keyword": "speed calculator train",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-train"
+  },
+  {
+    "keyword": "speed calculator transmission",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-transmission"
+  },
+  {
+    "keyword": "speed calculator wheel size",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-wheel-size"
+  },
+  {
+    "keyword": "speed calculator with acceleration",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-with-acceleration"
+  },
+  {
+    "keyword": "speed calculator with gear ratio",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-with-gear-ratio"
+  },
+  {
+    "keyword": "speed calculator with solution",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-with-solution"
+  },
+  {
+    "keyword": "speed calculator with wavelength and frequency",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-calculator-with-wavelength-and-frequency"
+  },
+  {
+    "keyword": "speed conversion formula",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-conversion-formula"
+  },
+  {
+    "keyword": "speed converter",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-converter"
+  },
+  {
+    "keyword": "speed data calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-data-calculator"
+  },
+  {
+    "keyword": "speed destination calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-destination-calculator"
+  },
+  {
+    "keyword": "speed difference between tyre sizes",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-difference-between-tyre-sizes"
+  },
+  {
+    "keyword": "speed difference calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-difference-calculator"
+  },
+  {
+    "keyword": "speed distance calculator knots",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-distance-calculator-knots"
+  },
+  {
+    "keyword": "speed distance formula",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-distance-formula"
+  },
+  {
+    "keyword": "speed distance time calculator with solution",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-distance-time-calculator-with-solution"
+  },
+  {
+    "keyword": "speed distance time calculator with steps",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-distance-time-calculator-with-steps"
+  },
+  {
+    "keyword": "speed estimate",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-estimate"
+  },
+  {
+    "keyword": "speed feed calculator milling",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-feed-calculator-milling"
+  },
+  {
+    "keyword": "speed finder",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-finder"
+  },
+  {
+    "keyword": "speed finder calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-finder-calculator"
+  },
+  {
+    "keyword": "speed finder online",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-finder-online"
+  },
+  {
+    "keyword": "speed for distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-for-distance-calculator"
+  },
+  {
+    "keyword": "speed formula physics",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-formula-physics"
+  },
+  {
+    "keyword": "speed frequency and wavelength calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-frequency-and-wavelength-calculator"
+  },
+  {
+    "keyword": "speed kilometer time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-kilometer-time-calculator"
+  },
+  {
+    "keyword": "speed km per hour calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-km-per-hour-calculator"
+  },
+  {
+    "keyword": "speed limit calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-limit-calculator"
+  },
+  {
+    "keyword": "speed mbps calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-mbps-calculator"
+  },
+  {
+    "keyword": "speed measurement calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-measurement-calculator"
+  },
+  {
+    "keyword": "speed measurement formula",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-measurement-formula"
+  },
+  {
+    "keyword": "speed miles per hour",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-miles-per-hour"
+  },
+  {
+    "keyword": "speed of flow formula",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-of-flow-formula"
+  },
+  {
+    "keyword": "speed of gear formula",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-of-gear-formula"
+  },
+  {
+    "keyword": "speed of light converter",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-of-light-converter"
+  },
+  {
+    "keyword": "speed of sound calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-of-sound-calculator"
+  },
+  {
+    "keyword": "speed of sound calculator with solution",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-of-sound-calculator-with-solution"
+  },
+  {
+    "keyword": "speed of sound formula",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-of-sound-formula"
+  },
+  {
+    "keyword": "speed of sound in air calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-of-sound-in-air-calculator"
+  },
+  {
+    "keyword": "speed of sound in air calculator with solution",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-of-sound-in-air-calculator-with-solution"
+  },
+  {
+    "keyword": "speed of sound in natural gas calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-of-sound-in-natural-gas-calculator"
+  },
+  {
+    "keyword": "speed of the sound calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-of-the-sound-calculator"
+  },
+  {
+    "keyword": "speed of train calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-of-train-calculator"
+  },
+  {
+    "keyword": "speed per gear calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-per-gear-calculator"
+  },
+  {
+    "keyword": "speed per km calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-per-km-calculator"
+  },
+  {
+    "keyword": "speed per mile calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-per-mile-calculator"
+  },
+  {
+    "keyword": "speed per minute calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-per-minute-calculator"
+  },
+  {
+    "keyword": "speed points calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-points-calculator"
+  },
+  {
+    "keyword": "speed predictor",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-predictor"
+  },
+  {
+    "keyword": "speed rating calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-rating-calculator"
+  },
+  {
+    "keyword": "speed ratio formula",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-ratio-formula"
+  },
+  {
+    "keyword": "speed reducer calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-reducer-calculator"
+  },
+  {
+    "keyword": "speed reducer gearbox calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-reducer-gearbox-calculator"
+  },
+  {
+    "keyword": "speed reduction calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-reduction-calculator"
+  },
+  {
+    "keyword": "speed reduction ratio formula",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-reduction-ratio-formula"
+  },
+  {
+    "keyword": "speed rpm tire size calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-rpm-tire-size-calculator"
+  },
+  {
+    "keyword": "speed solver",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-solver"
+  },
+  {
+    "keyword": "speed sprocket calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-sprocket-calculator"
+  },
+  {
+    "keyword": "speed test calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-test-calculator"
+  },
+  {
+    "keyword": "speed time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-time-calculator"
+  },
+  {
+    "keyword": "speed time calculator running",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-time-calculator-running"
+  },
+  {
+    "keyword": "speed travel calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-travel-calculator"
+  },
+  {
+    "keyword": "speed unit conversion",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-unit-conversion"
+  },
+  {
+    "keyword": "speed up video calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-up-video-calculator"
+  },
+  {
+    "keyword": "speed video calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speed-video-calculator"
+  },
+  {
+    "keyword": "speedo calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speedo-calculator"
+  },
+  {
+    "keyword": "speedometer calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "speedometer-calculator"
+  },
+  {
+    "keyword": "speedometer formula",
+    "calculatorId": "speed-calculator",
+    "slug": "speedometer-formula"
+  },
+  {
+    "keyword": "speeds and feeds calculator cnc",
+    "calculatorId": "speed-calculator",
+    "slug": "speeds-and-feeds-calculator-cnc"
+  },
+  {
+    "keyword": "speeds and feeds calculator mill",
+    "calculatorId": "speed-calculator",
+    "slug": "speeds-and-feeds-calculator-mill"
+  },
+  {
+    "keyword": "spicer speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "spicer-speed-calculator"
+  },
+  {
+    "keyword": "spindle rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "spindle-rpm-calculator"
+  },
+  {
+    "keyword": "spindle speed and feed rate calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "spindle-speed-and-feed-rate-calculator"
+  },
+  {
+    "keyword": "spindle speed calculator lathe",
+    "calculatorId": "speed-calculator",
+    "slug": "spindle-speed-calculator-lathe"
+  },
+  {
+    "keyword": "spindle speed calculator milling",
+    "calculatorId": "speed-calculator",
+    "slug": "spindle-speed-calculator-milling"
+  },
+  {
+    "keyword": "spindle speed formula for milling",
+    "calculatorId": "speed-calculator",
+    "slug": "spindle-speed-formula-for-milling"
+  },
+  {
+    "keyword": "spindle speed formula for turning",
+    "calculatorId": "speed-calculator",
+    "slug": "spindle-speed-formula-for-turning"
+  },
+  {
+    "keyword": "spindle speed rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "spindle-speed-rpm-calculator"
+  },
+  {
+    "keyword": "sprocket gear ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "sprocket-gear-ratio-speed-calculator"
+  },
+  {
+    "keyword": "sprocket rpm formula",
+    "calculatorId": "speed-calculator",
+    "slug": "sprocket-rpm-formula"
+  },
+  {
+    "keyword": "sprocket size and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "sprocket-size-and-speed-calculator"
+  },
+  {
+    "keyword": "sprocket size speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "sprocket-size-speed-calculator"
+  },
+  {
+    "keyword": "sprocket speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "sprocket-speed-formula"
+  },
+  {
+    "keyword": "sprocket speed ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "sprocket-speed-ratio-calculator"
+  },
+  {
+    "keyword": "stall speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "stall-speed-calculator"
+  },
+  {
+    "keyword": "stall torque calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "stall-torque-calculator"
+  },
+  {
+    "keyword": "stationary bike speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "stationary-bike-speed-calculator"
+  },
+  {
+    "keyword": "stepper motor max speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "stepper-motor-max-speed-calculator"
+  },
+  {
+    "keyword": "stepper speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "stepper-speed-calculator"
+  },
+  {
+    "keyword": "stimpmeter calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "stimpmeter-calculator"
+  },
+  {
+    "keyword": "surface speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "surface-speed-calculator"
+  },
+  {
+    "keyword": "surface speed calculator lathe",
+    "calculatorId": "speed-calculator",
+    "slug": "surface-speed-calculator-lathe"
+  },
+  {
+    "keyword": "surface speed calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "surface-speed-calculator-metric"
+  },
+  {
+    "keyword": "surface speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "surface-speed-formula"
+  },
+  {
+    "keyword": "surface speed to rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "surface-speed-to-rpm-calculator"
+  },
+  {
+    "keyword": "tangential speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tangential-speed-calculator"
+  },
+  {
+    "keyword": "tapping rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tapping-rpm-calculator"
+  },
+  {
+    "keyword": "tapping speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tapping-speed-calculator"
+  },
+  {
+    "keyword": "terminal velocity calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "terminal-velocity-calculator"
+  },
+  {
+    "keyword": "terminal velocity formula",
+    "calculatorId": "speed-calculator",
+    "slug": "terminal-velocity-formula"
+  },
+  {
+    "keyword": "threading feed rate calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "threading-feed-rate-calculator"
+  },
+  {
+    "keyword": "threading speed and feed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "threading-speed-and-feed-calculator"
+  },
+  {
+    "keyword": "thunderbolt 3 transfer speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "thunderbolt-3-transfer-speed-calculator"
+  },
+  {
+    "keyword": "ti 33 calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "ti-33-calculator"
+  },
+  {
+    "keyword": "time and distance speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "time-and-distance-speed-calculator"
+  },
+  {
+    "keyword": "time calculator by speed and distance",
+    "calculatorId": "speed-calculator",
+    "slug": "time-calculator-by-speed-and-distance"
+  },
+  {
+    "keyword": "time calculator distance speed",
+    "calculatorId": "speed-calculator",
+    "slug": "time-calculator-distance-speed"
+  },
+  {
+    "keyword": "time calculator for running",
+    "calculatorId": "speed-calculator",
+    "slug": "time-calculator-for-running"
+  },
+  {
+    "keyword": "time calculator km h",
+    "calculatorId": "speed-calculator",
+    "slug": "time-calculator-km-h"
+  },
+  {
+    "keyword": "time calculator speed distance",
+    "calculatorId": "speed-calculator",
+    "slug": "time-calculator-speed-distance"
+  },
+  {
+    "keyword": "time calculator using speed and distance",
+    "calculatorId": "speed-calculator",
+    "slug": "time-calculator-using-speed-and-distance"
+  },
+  {
+    "keyword": "time calculator with speed and distance",
+    "calculatorId": "speed-calculator",
+    "slug": "time-calculator-with-speed-and-distance"
+  },
+  {
+    "keyword": "time distance formula",
+    "calculatorId": "speed-calculator",
+    "slug": "time-distance-formula"
+  },
+  {
+    "keyword": "time of flight calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "time-of-flight-calculator"
+  },
+  {
+    "keyword": "tip speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tip-speed-calculator"
+  },
+  {
+    "keyword": "tip speed to rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tip-speed-to-rpm-calculator"
+  },
+  {
+    "keyword": "tire and gear ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-and-gear-ratio-calculator"
+  },
+  {
+    "keyword": "tire diameter mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-diameter-mph-calculator"
+  },
+  {
+    "keyword": "tire diameter rpm speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-diameter-rpm-speed-calculator"
+  },
+  {
+    "keyword": "tire diameter speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-diameter-speed-calculator"
+  },
+  {
+    "keyword": "tire gear ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-gear-ratio-speed-calculator"
+  },
+  {
+    "keyword": "tire gear rpm speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-gear-rpm-speed-calculator"
+  },
+  {
+    "keyword": "tire height speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-height-speed-calculator"
+  },
+  {
+    "keyword": "tire mph calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-mph-calculator"
+  },
+  {
+    "keyword": "tire ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-ratio-speed-calculator"
+  },
+  {
+    "keyword": "tire rev per mile calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-rev-per-mile-calculator"
+  },
+  {
+    "keyword": "tire revolutions per minute calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-revolutions-per-minute-calculator"
+  },
+  {
+    "keyword": "tire rotation speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-rotation-speed-calculator"
+  },
+  {
+    "keyword": "tire rpm speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-rpm-speed-calculator"
+  },
+  {
+    "keyword": "tire size and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-size-and-speed-calculator"
+  },
+  {
+    "keyword": "tire size difference speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-size-difference-speed-calculator"
+  },
+  {
+    "keyword": "tire size gear ratio rpm speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-size-gear-ratio-rpm-speed-calculator"
+  },
+  {
+    "keyword": "tire size gear ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-size-gear-ratio-speed-calculator"
+  },
+  {
+    "keyword": "tire size speed calculator km h",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-size-speed-calculator-km-h"
+  },
+  {
+    "keyword": "tire size speed ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tire-size-speed-ratio-calculator"
+  },
+  {
+    "keyword": "to calculate speed",
+    "calculatorId": "speed-calculator",
+    "slug": "to-calculate-speed"
+  },
+  {
+    "keyword": "top speed and gear ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "top-speed-and-gear-ratio-calculator"
+  },
+  {
+    "keyword": "top speed by gear ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "top-speed-by-gear-ratio-calculator"
+  },
+  {
+    "keyword": "top speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "top-speed-calculator"
+  },
+  {
+    "keyword": "top speed calculator hp",
+    "calculatorId": "speed-calculator",
+    "slug": "top-speed-calculator-hp"
+  },
+  {
+    "keyword": "top speed in each gear calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "top-speed-in-each-gear-calculator"
+  },
+  {
+    "keyword": "torque formula electrical",
+    "calculatorId": "speed-calculator",
+    "slug": "torque-formula-electrical"
+  },
+  {
+    "keyword": "torque formula for gear",
+    "calculatorId": "speed-calculator",
+    "slug": "torque-formula-for-gear"
+  },
+  {
+    "keyword": "torque gear ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "torque-gear-ratio-calculator"
+  },
+  {
+    "keyword": "torque ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "torque-ratio-calculator"
+  },
+  {
+    "keyword": "torque to rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "torque-to-rpm-calculator"
+  },
+  {
+    "keyword": "torque to speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "torque-to-speed-calculator"
+  },
+  {
+    "keyword": "track speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "track-speed-calculator"
+  },
+  {
+    "keyword": "train braking distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "train-braking-distance-calculator"
+  },
+  {
+    "keyword": "train running speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "train-running-speed-calculator"
+  },
+  {
+    "keyword": "train speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "train-speed-calculator-online"
+  },
+  {
+    "keyword": "transfer data speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "transfer-data-speed-calculator"
+  },
+  {
+    "keyword": "transfer speed calculator mbps",
+    "calculatorId": "speed-calculator",
+    "slug": "transfer-speed-calculator-mbps"
+  },
+  {
+    "keyword": "transfer speed converter",
+    "calculatorId": "speed-calculator",
+    "slug": "transfer-speed-converter"
+  },
+  {
+    "keyword": "transmission gear ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "transmission-gear-ratio-speed-calculator"
+  },
+  {
+    "keyword": "transmission gear ratios calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "transmission-gear-ratios-calculator"
+  },
+  {
+    "keyword": "transmission gear speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "transmission-gear-speed-calculator"
+  },
+  {
+    "keyword": "transmission ratio speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "transmission-ratio-speed-calculator"
+  },
+  {
+    "keyword": "transmission speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "transmission-speed-calculator"
+  },
+  {
+    "keyword": "trap speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "trap-speed-calculator"
+  },
+  {
+    "keyword": "travel speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "travel-speed-calculator-online"
+  },
+  {
+    "keyword": "travel time calculator distance and speed",
+    "calculatorId": "speed-calculator",
+    "slug": "travel-time-calculator-distance-and-speed"
+  },
+  {
+    "keyword": "travel time calculator mph",
+    "calculatorId": "speed-calculator",
+    "slug": "travel-time-calculator-mph"
+  },
+  {
+    "keyword": "tremec calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tremec-calculator"
+  },
+  {
+    "keyword": "tremec gear calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tremec-gear-calculator"
+  },
+  {
+    "keyword": "tremec gear ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tremec-gear-ratio-calculator"
+  },
+  {
+    "keyword": "tremec ratio calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tremec-ratio-calculator"
+  },
+  {
+    "keyword": "tremec speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tremec-speed-calculator"
+  },
+  {
+    "keyword": "triathlon time calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "triathlon-time-calculator"
+  },
+  {
+    "keyword": "trip speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "trip-speed-calculator"
+  },
+  {
+    "keyword": "trip time calculator with speed",
+    "calculatorId": "speed-calculator",
+    "slug": "trip-time-calculator-with-speed"
+  },
+  {
+    "keyword": "truck road speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "truck-road-speed-calculator"
+  },
+  {
+    "keyword": "truck speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "truck-speed-calculator"
+  },
+  {
+    "keyword": "true speed and direction calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "true-speed-and-direction-calculator"
+  },
+  {
+    "keyword": "true wind direction calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "true-wind-direction-calculator"
+  },
+  {
+    "keyword": "true wind speed and direction calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "true-wind-speed-and-direction-calculator"
+  },
+  {
+    "keyword": "true wind speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "true-wind-speed-calculator"
+  },
+  {
+    "keyword": "turning feed and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "turning-feed-and-speed-calculator"
+  },
+  {
+    "keyword": "turning sfm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "turning-sfm-calculator"
+  },
+  {
+    "keyword": "turning speed and feed calculator metric",
+    "calculatorId": "speed-calculator",
+    "slug": "turning-speed-and-feed-calculator-metric"
+  },
+  {
+    "keyword": "turning speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "turning-speed-calculator"
+  },
+  {
+    "keyword": "tyre calculator speed",
+    "calculatorId": "speed-calculator",
+    "slug": "tyre-calculator-speed"
+  },
+  {
+    "keyword": "tyre size and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tyre-size-and-speed-calculator"
+  },
+  {
+    "keyword": "tyre size speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tyre-size-speed-calculator"
+  },
+  {
+    "keyword": "tyre speed difference calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "tyre-speed-difference-calculator"
+  },
+  {
+    "keyword": "upload and download speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "upload-and-download-speed-calculator"
+  },
+  {
+    "keyword": "upload calculator bandwidth",
+    "calculatorId": "speed-calculator",
+    "slug": "upload-calculator-bandwidth"
+  },
+  {
+    "keyword": "upload download speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "upload-download-speed-calculator"
+  },
+  {
+    "keyword": "usb 2.0 transfer speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "usb-2-0-transfer-speed-calculator"
+  },
+  {
+    "keyword": "usb transfer speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "usb-transfer-speed-calculator"
+  },
+  {
+    "keyword": "v belt pulley speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "v-belt-pulley-speed-calculator"
+  },
+  {
+    "keyword": "v belt speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "v-belt-speed-calculator"
+  },
+  {
+    "keyword": "v belt speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "v-belt-speed-formula"
+  },
+  {
+    "keyword": "vascar calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "vascar-calculator"
+  },
+  {
+    "keyword": "vc to rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "vc-to-rpm-calculator"
+  },
+  {
+    "keyword": "vehicle speed calculator gear ratio",
+    "calculatorId": "speed-calculator",
+    "slug": "vehicle-speed-calculator-gear-ratio"
+  },
+  {
+    "keyword": "vehicle speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "vehicle-speed-calculator-online"
+  },
+  {
+    "keyword": "vehicle top speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "vehicle-top-speed-calculator"
+  },
+  {
+    "keyword": "velocity ca",
+    "calculatorId": "speed-calculator",
+    "slug": "velocity-ca"
+  },
+  {
+    "keyword": "velocity head calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "velocity-head-calculator"
+  },
+  {
+    "keyword": "velocity solver",
+    "calculatorId": "speed-calculator",
+    "slug": "velocity-solver"
+  },
+  {
+    "keyword": "velocity to acceleration calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "velocity-to-acceleration-calculator"
+  },
+  {
+    "keyword": "video playback speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "video-playback-speed-calculator"
+  },
+  {
+    "keyword": "video speed up calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "video-speed-up-calculator"
+  },
+  {
+    "keyword": "walking pace per mile calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "walking-pace-per-mile-calculator"
+  },
+  {
+    "keyword": "walking speed and distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "walking-speed-and-distance-calculator"
+  },
+  {
+    "keyword": "walking speed calculator mph",
+    "calculatorId": "speed-calculator",
+    "slug": "walking-speed-calculator-mph"
+  },
+  {
+    "keyword": "walking speed distance calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "walking-speed-distance-calculator"
+  },
+  {
+    "keyword": "walking speed km h calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "walking-speed-km-h-calculator"
+  },
+  {
+    "keyword": "water velocity in pipe formula",
+    "calculatorId": "speed-calculator",
+    "slug": "water-velocity-in-pipe-formula"
+  },
+  {
+    "keyword": "watt to speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "watt-to-speed-calculator"
+  },
+  {
+    "keyword": "watts to speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "watts-to-speed-calculator"
+  },
+  {
+    "keyword": "wave speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wave-speed-calculator"
+  },
+  {
+    "keyword": "wave speed formula",
+    "calculatorId": "speed-calculator",
+    "slug": "wave-speed-formula"
+  },
+  {
+    "keyword": "wavelength speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wavelength-speed-calculator"
+  },
+  {
+    "keyword": "wheel circumference speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wheel-circumference-speed-calculator"
+  },
+  {
+    "keyword": "wheel diameter speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wheel-diameter-speed-calculator"
+  },
+  {
+    "keyword": "wheel rpm to speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wheel-rpm-to-speed-calculator"
+  },
+  {
+    "keyword": "wheel size and speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wheel-size-and-speed-calculator"
+  },
+  {
+    "keyword": "wheel size rpm speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wheel-size-rpm-speed-calculator"
+  },
+  {
+    "keyword": "wheel size speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wheel-size-speed-calculator"
+  },
+  {
+    "keyword": "wheel speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wheel-speed-calculator"
+  },
+  {
+    "keyword": "wheel speed calculator tire size",
+    "calculatorId": "speed-calculator",
+    "slug": "wheel-speed-calculator-tire-size"
+  },
+  {
+    "keyword": "wifi bandwidth calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wifi-bandwidth-calculator"
+  },
+  {
+    "keyword": "wifi mbps calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wifi-mbps-calculator"
+  },
+  {
+    "keyword": "wifi speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "wifi-speed-calculator-online"
+  },
+  {
+    "keyword": "wind force formula",
+    "calculatorId": "speed-calculator",
+    "slug": "wind-force-formula"
+  },
+  {
+    "keyword": "wind pressure to wind speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wind-pressure-to-wind-speed-calculator"
+  },
+  {
+    "keyword": "wind speed calculator online",
+    "calculatorId": "speed-calculator",
+    "slug": "wind-speed-calculator-online"
+  },
+  {
+    "keyword": "wind speed force calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wind-speed-force-calculator"
+  },
+  {
+    "keyword": "wind speed pressure calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wind-speed-pressure-calculator"
+  },
+  {
+    "keyword": "wind speed to psi calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wind-speed-to-psi-calculator"
+  },
+  {
+    "keyword": "wind speed to wave height calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wind-speed-to-wave-height-calculator"
+  },
+  {
+    "keyword": "wind speed to wind load calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wind-speed-to-wind-load-calculator"
+  },
+  {
+    "keyword": "wind speed to wind pressure calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wind-speed-to-wind-pressure-calculator"
+  },
+  {
+    "keyword": "wind velocity formula",
+    "calculatorId": "speed-calculator",
+    "slug": "wind-velocity-formula"
+  },
+  {
+    "keyword": "wood lathe speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "wood-lathe-speed-calculator"
+  },
+  {
+    "keyword": "worm gear rpm calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "worm-gear-rpm-calculator"
+  },
+  {
+    "keyword": "worm gear torque calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "worm-gear-torque-calculator"
+  },
+  {
+    "keyword": "www omnicalculator com other speed",
+    "calculatorId": "speed-calculator",
+    "slug": "www-omnicalculator-com-other-speed"
+  },
+  {
+    "keyword": "youtube 1.5 x speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "youtube-1-5-x-speed-calculator"
+  },
+  {
+    "keyword": "youtube playback speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "youtube-playback-speed-calculator"
+  },
+  {
+    "keyword": "youtube speed calculator",
+    "calculatorId": "speed-calculator",
+    "slug": "youtube-speed-calculator"
+  }
+]

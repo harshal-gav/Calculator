@@ -1,5 +1,6 @@
 # robots.txt for calculator-all.com
 # Updated: 2026-04-05
+# Indexing-Optimized: Single entry for keyword SEO sitemaps, keeping legacy chunks intact
 
 # Allow all well-behaved crawlers
 User-agent: *
@@ -12,68 +13,68 @@ Disallow: /api/auth/
 
 # ── Sitemaps ──────────────────────────────────────────────────────────────────
 
-# Main static sitemap (all core calculator pages)
+# Core Static Sitemap
 Sitemap: https://www.calculator-all.com/sitemap.xml
 
-# Programmatic SEO sitemaps (chunks 1–54, 10,000 URLs each)
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/1
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/2
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/3
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/4
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/5
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/6
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/7
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/8
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/9
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/10
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/11
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/12
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/13
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/14
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/15
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/16
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/17
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/18
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/19
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/20
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/21
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/22
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/23
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/24
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/25
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/26
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/27
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/28
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/29
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/30
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/31
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/32
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/33
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/34
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/35
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/36
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/37
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/38
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/39
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/40
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/41
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/42
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/43
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/44
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/45
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/46
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/47
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/48
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/49
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/50
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/51
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/52
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/53
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/54
+# Programmatic Parameter Sitemaps (1-54 chunks - Legacy intact)
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/1.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/2.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/3.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/4.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/5.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/6.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/7.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/8.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/9.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/10.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/11.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/12.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/13.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/14.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/15.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/16.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/17.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/18.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/19.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/20.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/21.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/22.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/23.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/24.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/25.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/26.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/27.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/28.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/29.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/30.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/31.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/32.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/33.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/34.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/35.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/36.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/37.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/38.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/39.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/40.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/41.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/42.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/43.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/44.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/45.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/46.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/47.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/48.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/49.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/50.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/51.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/52.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/53.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/54.xml
 
-# Keyword SEO sitemaps
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-1
+# SINGLE MASTER INDEX FOR ALL NEW KEYWORD-BASED SITES (FROM CSVs)
+# Submit this to Google Search Console to cover all 250+ new calculators
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-index.xml
 
 # Crawl-delay hint for polite bots
 Crawl-delay: 1
