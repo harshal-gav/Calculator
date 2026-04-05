@@ -1,6 +1,6 @@
 # robots.txt for calculator-all.com
 # Updated: 2026-04-05
-# Fixed naming consistency with Google Search Console (sitemap-X.xml)
+# Optimized: Replaced Sitemap Index with 16 direct 10k-batch keyword sitemaps
 
 # Allow all well-behaved crawlers
 User-agent: *
@@ -16,7 +16,7 @@ Disallow: /api/auth/
 # Core Static Sitemap
 Sitemap: https://www.calculator-all.com/sitemap.xml
 
-# Programmatic Parameter Sitemaps (1-54 chunks - naming restored to 'sitemap-X.xml')
+# Programmatic Parameter Sitemaps (1-54 chunks)
 Sitemap: https://www.calculator-all.com/programmatic-sitemaps/sitemap-1.xml
 Sitemap: https://www.calculator-all.com/programmatic-sitemaps/sitemap-2.xml
 Sitemap: https://www.calculator-all.com/programmatic-sitemaps/sitemap-3.xml
@@ -72,9 +72,23 @@ Sitemap: https://www.calculator-all.com/programmatic-sitemaps/sitemap-52.xml
 Sitemap: https://www.calculator-all.com/programmatic-sitemaps/sitemap-53.xml
 Sitemap: https://www.calculator-all.com/programmatic-sitemaps/sitemap-54.xml
 
-# SINGLE MASTER INDEX FOR ALL NEW KEYWORD-BASED SITES (FROM CSVs)
-# Submit this to Google Search Console to cover all 250+ new calculators
-Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-index.xml
+# Programmatic Keyword Sitemaps (16 chunks @ 10k URLs each)
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-1.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-2.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-3.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-4.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-5.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-6.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-7.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-8.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-9.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-10.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-11.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-12.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-13.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-14.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-15.xml
+Sitemap: https://www.calculator-all.com/programmatic-sitemaps/keywords-16.xml
 
 # Crawl-delay hint for polite bots
 Crawl-delay: 1
