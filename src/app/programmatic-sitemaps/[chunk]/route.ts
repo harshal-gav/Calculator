@@ -61,7 +61,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ chu
     }
 
     const keywordUrls = mapping.map(
-      (item: any) => `${SITE_URL}/programmatic-seo/${item.calculatorId}/${item.slug}`
+      (item: any) => `${SITE_URL}/programmatic-seo/${item.calculatorId}/${item.slug}/`
     );
 
     return new NextResponse(buildXmlSitemap(keywordUrls, '0.8'), {
@@ -92,7 +92,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ chu
     for (const amt of v1) {
       for (const dur of v2) {
         const slug = `${amt}-${dur}-units`;
-        urls.push(`${SITE_URL}/programmatic-seo/${calcId}/${slug}`);
+        urls.push(`${SITE_URL}/programmatic-seo/${calcId}/${slug}/`);
       }
     }
   }
