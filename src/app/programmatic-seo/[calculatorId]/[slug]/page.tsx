@@ -12,7 +12,7 @@ import { SipWidget } from '@/components/calculators/SipWidget';
 import programmaticRegistry from '@/data/programmable-registry.json';
 
 // Performance: Transition to Full Static Generation (SSG)
-export const revalidate = 86400; // Keep ISR for any new keywords added after build
+export const revalidate = false; // Cache indefinitely (until next build) to stay within Hobby limits
 
 /** Loads and merges ALL keyword-mapping-*.json files from the data directory */
 function loadAllKeywordMappings(): any[] {

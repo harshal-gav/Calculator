@@ -22,6 +22,10 @@ const nextConfig: NextConfig = {
         source: "/(.*)",
         headers: [
           {
+            key: "Cache-Control",
+            value: "public, s-maxage=86400, stale-while-revalidate=31536000",
+          },
+          {
             key: "X-DNS-Prefetch-Control",
             value: "on",
           },
@@ -53,26 +57,17 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https: http:",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com http://fonts.googleapis.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https: http: https://*.googletagmanager.com https://*.profitablecpmratenetwork.com https://*.highperformanceformat.com",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: blob: https: http:",
-              "font-src 'self' https://fonts.gstatic.com http://fonts.gstatic.com",
-              "connect-src 'self' https: http: wss:",
-              "frame-src 'self' https: http: https://*.profitablecpmratenetwork.com https://www.youtube.com https://youtube.com",
+              "font-src 'self' https://fonts.gstatic.com",
+              "connect-src 'self' https: http: wss: https://*.vitals.vercel-insights.com https://*.profitablecpmratenetwork.com",
+              "frame-src 'self' https: http: https://*.profitablecpmratenetwork.com https://*.highperformanceformat.com https://www.youtube.com",
               "frame-ancestors 'self'",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",
             ].join("; "),
-          },
-        ],
-      },
-      {
-        source: "/programmatic-seo/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, s-maxage=86400, stale-while-revalidate=31536000",
           },
         ],
       },

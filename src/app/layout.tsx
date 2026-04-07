@@ -80,9 +80,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} antialiased flex flex-col min-h-screen bg-gray-50`}
       >
-        <FirebaseAnalytics />
-        <Analytics />
-        <SpeedInsights />
         <Navbar />
         <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full bg-white shadow-sm rounded-lg my-4 mb-24">
           {children}
@@ -90,6 +87,9 @@ export default function RootLayout({
         <Footer />
         <AdsManager />
         <StickyAd />
+        <FirebaseAnalytics />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
