@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import quadraticSeoData from "@/data/seo-content/official/quadratic-formula-calculator.json";
+
 export default function QuadraticFormulaCalculator() {
   const [a, setA] = useState("1");
   const [b, setB] = useState("5");
@@ -84,7 +86,7 @@ export default function QuadraticFormulaCalculator() {
         <p className="text-emerald-700 text-lg max-w-2xl mx-auto mt-6">
           Solve quadratic equations in the form{" "}
           <strong>ax² + bx + c = 0</strong> to find real and complex roots
-          completely instantly.
+          instantly.
         </p>
       </div>
 
@@ -166,115 +168,16 @@ export default function QuadraticFormulaCalculator() {
         </div>
       )}
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Quadratic Formula Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-          }),
-        }}
-      />
-
-      <div className="mt-8">
+      <div className="mt-12">
         <CalculatorSEO
-          title="Quadratic Formula Calculator"
-          whatIsIt={
-            <>
-              <p>
-                A <strong>Quadratic Formula Calculator</strong> is a specialized
-                algebraic tool designed to solve second-degree polynomial
-                equations of the form <strong>ax² + bx + c = 0</strong>.
-              </p>
-              <p>
-                By inputting the coefficients (a, b, and c), the calculator
-                instantly applies the quadratic equation to determine the exact
-                roots (x-intercepts) of the parabola. It intelligently detects
-                and calculates both real roots and complex (imaginary) roots.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Quadratic Formula Calculator
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              x = [-b ± √(b² - 4ac)] / 2a
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Solving for roots of ax² + bx + c = 0.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's solve the equation: <strong>2x² - 4x - 6 = 0</strong>
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 font-mono text-sm border-l-2 border-emerald-500 pl-4 py-2 bg-emerald-50/50">
-                <li>
-                  Here, <strong>a = 2</strong>, <strong>b = -4</strong>, and{" "}
-                  <strong>c = -6</strong>.
-                </li>
-                <li className="pt-2 text-zinc-600 border-t border-emerald-200 mt-2">
-                  Calculate Discriminant: (-4)² - 4(2)(-6) = 16 + 48 ={" "}
-                  <strong>64</strong>
-                </li>
-                <li>x = [ -(-4) ± √64 ] / 2(2)</li>
-                <li>x = [ 4 ± 8 ] / 4</li>
-                <li className="pt-2 text-zinc-600 border-t border-emerald-200 mt-2">
-                  <strong>Root 1:</strong> (4 + 8) / 4 = 12 / 4 ={" "}
-                  <strong>3</strong>
-                </li>
-                <li>
-                  <strong>Root 2:</strong> (4 - 8) / 4 = -4 / 4 ={" "}
-                  <strong>-1</strong>
-                </li>
-              </ul>
-              <p className="mt-4 text-emerald-700 font-bold border-t border-emerald-100 pt-4 text-center text-lg">
-                The roots are x = 3 and x = -1.
-              </p>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4">
-              <li>
-                <strong>Algebra & Calculus Homework:</strong> Instantly check
-                answers to complex quadratic equations without manual
-                calculation.
-              </li>
-              <li>
-                <strong>Physics Calculations:</strong> Highly useful in
-                kinematics to calculate exactly when a projectile will hit the
-                ground (where height = 0).
-              </li>
-              <li>
-                <strong>Engineering Optimization:</strong> Finding maximum or
-                minimum values (optimization) in systems described by parabolic
-                curves.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What happens if variable 'a' is zero?",
-              answer:
-                "If 'a' is zero, the equation is no longer quadratic; it becomes a linear equation (bx + c = 0). Our calculator will detect this and solve the linear equation for you (x = -c/b).",
-            },
-            {
-              question: "Why do some equations output an 'i'?",
-              answer:
-                "The 'i' represents an imaginary number (the square root of -1). This occurs when the discriminant (b² - 4ac) is negative. Because you cannot take the square root of a negative number in real mathematics, the result consists of two complex conjugate roots.",
-            },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
+          title={quadraticSeoData.title}
+          whatIsIt={quadraticSeoData.whatIsIt}
+          formula={quadraticSeoData.formula}
+          example={quadraticSeoData.example}
+          useCases={quadraticSeoData.useCases}
+          faqs={quadraticSeoData.faqs}
+          deepDive={quadraticSeoData.deepDive}
+          glossary={quadraticSeoData.glossary}
           relatedCalculators={[
             {
               name: "Order of Operations Calculator",

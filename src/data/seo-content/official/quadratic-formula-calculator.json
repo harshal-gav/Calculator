@@ -1,0 +1,38 @@
+{
+  "calculatorId": "quadratic-formula-calculator",
+  "title": "Quadratic Formula Calculator: Find Roots & Discriminant Analysis",
+  "whatIsIt": "A Quadratic Formula Calculator is a high-level algebraic solver designed to find the roots (x-intercepts) of any quadratic equation in the form $ax^2 + bx + c = 0$. This tool eliminates the need for complex manual factoring or completing the square, providing instant solutions for 'Real' and 'Complex' roots while detailing the step-by-step logic used to resolve the discriminant and find the vertex of the parabola.\n\nFrom physics models of projectile motion to financial break-even analyses, quadratic equations are the mathematical language of parabolas. This calculator ensures precision in finding where these curves intersect the X-axis, which often represents critical data points like time-to-impact or zero-profit thresholds.",
+  "formula": "The solution to any quadratic equation is given by the universal quadratic formula:\n\n$$x = \\\\frac{-b \\\\pm \\\\sqrt{b^2 - 4ac}}{2a}$$\n\n**Components of the Solution:**\n1. **The Discriminant ($\\\\Delta$):** $D = b^2 - 4ac$. This determines the nature of the roots.\n2. **Nature of Roots:**\n   - If $D > 0$: Two distinct real roots.\n   - If $D = 0$: One repeated real root (vertex on X-axis).\n   - If $D < 0$: Two complex (imaginary) roots.",
+  "example": "Solve for **$x^2 - 5x + 6 = 0$**:\n\n1. **Identify Coefficients**: $a = 1, b = -5, c = 6$.\n2. **Calculate Discriminant**: $D = (-5)^2 - 4(1)(6) = 25 - 24 = 1$.\n3. **Apply Formula**: $x = \\frac{-(-5) \\pm \\sqrt{1}}{2(1)} = \\frac{5 \\pm 1}{2}$.\n4. **Solve for $x_1$**: $(5 + 1) / 2 = 3$.\n5. **Solve for $x_2$**: $(5 - 1) / 2 = 2$.\n6. **Result**: The roots are **$x = 3$** and **$x = 2$**.",
+  "useCases": "Quadratic equations model physical and economic systems with a curvature:\n\n1. **Physics & Ballistics**: Predicting the trajectory, flight time, and landing spot of a projectile (like a ball or rocket) under the influence of gravity.\n2. **Business & Economics**: Finding the 'Break-Even Point' where total revenue equals total cost in problems involving curved cost/revenue functions.\n3. **Optics & Engineering**: Designing parabolic surfaces for satellite dishes, reflectors, and telescope mirrors to focus light or signals to a single point.\n4. **Sports Performance**: Optimizing the angle of launch for shot putters, archers, and basketball players to maximize distance or accuracy.\n5. **Structural Integrity**: Calculating the arch and load-bearing capacity of bridges and tunnels that utilize parabolic shapes for strength.",
+  "faqs": [
+    {
+      "question": "What is the discriminant?",
+      "answer": "The discriminant is the part under the square root ($b^2 - 4ac$). It 'discriminates' or distinguishes between having real solutions vs. complex/imaginary solutions."
+    },
+    {
+      "question": "What if $a$ is zero?",
+      "answer": "If $a = 0$, the equation is no longer quadratic; it becomes a **linear equation** ($bx + c = 0$). You cannot use the quadratic formula in this case."
+    },
+    {
+      "question": "What does a negative discriminant mean?",
+      "answer": "It means the parabola does not cross the X-axis. The solution involves 'i' (the imaginary unit), resulting in complex roots."
+    },
+    {
+      "question": "How do you find the vertex?",
+      "answer": "The X-coordinate of the vertex is given by $x = -b / (2a)$. This is the axis of symmetry of the parabola."
+    },
+    {
+      "question": "Is there a cubic formula?",
+      "answer": "Yes, but it is significantly more complex than the quadratic formula. For equations of degree 3 or higher, numerical methods or specialized solvers are typically used."
+    }
+  ],
+  "deepDive": "**The Symmetry of Calculus: From Al-Khwarizmi to Modern Engineering**\n\nThe origins of the quadratic formula trace back to 1100 BC with Babylonian mathematicians, but it was Persian polymath Al-Khwarizmi in the 9th century who provided the systematic 'completing the square' methods that led to our modern notation. This formula is more than a homework requirement—it is the bridge to **Calculus**.\n\n**The Parabolic World**: Our physical reality is governed by squared variables. Gravitational force, electrical intensity, and even the surface area of a cell follow 'Inverse Square Laws' or quadratic growth patterns. In modern data science, 'Quadratic Regression' is used to model data that doesn't fit a straight line, such as the relationship between speed and fuel consumption in a car. Our calculator serves as the high-speed gateway to this world, allowing you to bypass the manual arithmetic and focus on the high-level analysis of the parabolic systems you are designing or studying.",
+  "glossary": [
+    { "term": "Coefficient", "definition": "The numbers ($a, b, c$) that multiply the variables in the equation." },
+    { "term": "Roots", "definition": "The values of $x$ that make the equation equal to zero." },
+    { "term": "Discriminant", "definition": "The value $b^2 - 4ac$ that determines the number and type of roots." },
+    { "term": "Parabola", "definition": "The U-shaped curve that represents a quadratic function." },
+    { "term": "Vertex", "definition": "The highest or lowest point (turning point) of a parabola." }
+  ]
+}
