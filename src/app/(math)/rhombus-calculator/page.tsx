@@ -3,6 +3,8 @@
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
+import rhombusSeoData from "@/data/seo-content/official/rhombus-calculator.json";
+
 export default function RhombusCalculator() {
   const [d1, setD1] = useState("10");
   const [d2, setD2] = useState("8");
@@ -177,93 +179,14 @@ export default function RhombusCalculator() {
 
       <div className="mt-8 text-left">
         <CalculatorSEO
-          title="Geometric Rhombus Properties Calculator"
-          whatIsIt={
-            <p>
-              The <strong>Rhombus Calculator</strong> is a specialized geometric
-              tool that computes the total inner Area, linear Perimeter, and
-              individual Side Length of a rhombus using only the measurements of
-              its two intersecting diagonals (p and q).
-            </p>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Rhombus Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Rhombus results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's calculate the size of a diamond-shaped kite being built
-                for a hobbyist.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-fuchsia-800">
-                <li>
-                  <strong>The Input:</strong> The two wooden dowel rods forming
-                  the cross-frame (the diagonals) are 40 inches and 30 inches
-                  long.
-                </li>
-                <li>
-                  <strong>The Fabric (Area):</strong> A = (40 × 30) ÷ 2 = 1200 ÷
-                  2. You need exactly <strong>600 square inches</strong> of
-                  nylon fabric.
-                </li>
-                <li>
-                  <strong>The Edging (Side Length):</strong> √((20)² + (15)²) =
-                  √(400 + 225) = √625. Each outer side of the kite is exactly{" "}
-                  <strong>25 inches</strong> long.
-                </li>
-                <li>
-                  <strong>The Perimeter:</strong> 4 × 25 inches. You need{" "}
-                  <strong>100 inches</strong> of edge-binding ribbon.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-fuchsia-800">
-              <li>
-                <strong>Jewelry Design:</strong> Gemologists and structural
-                cutters calculating the top-face facet Area of "marquise" or
-                diamond-shaped gemstone cuts simply by measuring the two
-                cross-points under a microscope.
-              </li>
-              <li>
-                <strong>Tile & Mosaic Layout:</strong> Interior designers
-                ordering custom diamond-patterned bathroom floor tiles need to
-                calculate the exact Square Footage each individual rhombus tile
-                covers to order the correct bulk quantity.
-              </li>
-              <li>
-                <strong>Kite Manufacturing:</strong> As shown in the example,
-                aerofoil engineers calculate the fabric area bounds strictly by
-                utilizing the fixed lengths of the internal spar structural
-                cross-rods.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Are a Rhombus and a Parallelogram the same thing?",
-              answer:
-                "Every Rhombus is technically a Parallelogram (because opposite sides are parallel), but not every Parallelogram is a Rhombus. To be classified as a true Rhombus, all four outer sides MUST be exactly the same length.",
-            },
-            {
-              question: "Is a Square a Rhombus?",
-              answer:
-                "Yes, a Square is a special mathematical subset of a Rhombus where the angles are all exactly 90 degrees. Because a square is a rhombus, the rhombus formula (p × q)/2 will correctly find the area of a square if you only know its diagonal lengths!",
-            },
-            {
-              question: "Why does the Area formula divide by 2?",
-              answer:
-                "If you multiply the two diagonals (p × q), you actually calculate the area of the large bounding rectangle that perfectly boxes the rhombus in. Because the rhombus exactly fills half of that bounding box's space, you must divide the result by 2.",
-            },
-          ]}
+          title={rhombusSeoData.title}
+          whatIsIt={rhombusSeoData.whatIsIt}
+          formula={rhombusSeoData.formula}
+          example={rhombusSeoData.example}
+          useCases={rhombusSeoData.useCases}
+          faqs={rhombusSeoData.faqs}
+          deepDive={rhombusSeoData.deepDive}
+          glossary={rhombusSeoData.glossary}
           relatedCalculators={[
             {
               name: "Rectangle Calculator",

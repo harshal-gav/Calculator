@@ -1,0 +1,38 @@
+{
+  "calculatorId": "midpoint-calculator",
+  "title": "Midpoint Calculator: Geometry, Coordinate Geometry & midpoint Formula",
+  "whatIsIt": "A Midpoint Calculator is an essential coordinate geometry tool designed to find the exact center point between two sets of coordinates in a 2D or 3D Cartesian plane. Whether you are dividing a property line, centering a design element in a CAD environment, or calculating the average vector in physical space, this tool provides the precise (x, y) or (x, y, z) coordinates that split a line segment into two perfectly equal parts.\n\nour digital midpoint calculator handles both integral and fractional inputs, ensuring that researchers, architects, and students can resolve spatial alignments without decimal errors. It is the mathematical bridge for finding 'Equidistance' in any multi-dimensional grid system.",
+  "formula": "The midpoint is found by taking the arithmetic mean of the respective coordinates of the two endpoints:\n\n**2D Midpoint Formula:**\n$$M = \\\\left( \\\\frac{x_1 + x_2}{2}, \\\\frac{y_1 + y_2}{2} \\\\right)$$\n\n**3D Midpoint Formula:**\n$$M = \\\\left( \\\\frac{x_1 + x_2}{2}, \\\\frac{y_1 + y_2}{2}, \\\\frac{z_1 + z_2}{2} \\\\right)$$\n\n**Where:**\n- $(x_1, y_1)$: Coordinates of the first point.\n- $(x_2, y_2)$: Coordinates of the second point.\n- $M$: The resultant midpoint coordinates.",
+  "example": "Find the midpoint between Point A **(4, 10)** and Point B **(12, 18)**:\n\n1. **Identify Coordinates**: $x_1 = 4, y_1 = 10, x_2 = 12, y_2 = 18$.\n2. **Sum X-Coordinates**: $x_1 + x_2 = 4 + 12 = 16$.\n3. **Sum Y-Coordinates**: $y_1 + y_2 = 10 + 18 = 28$.\n4. **Divide by 2**: $16 / 2 = 8$, and $28 / 2 = 14$.\n5. **Result**: The midpoint is **(8, 14)**.",
+  "useCases": "Midpoint calculations are fundamental to spatial logic and design:\n\n1. **Industrial Design & CAD**: Centering components within a chassis or placing aesthetic elements like buttons or logos perfectly between two reference points.\n2. **Architecture & Surveying**: Dividing parcels of land or finding the exact center of a foundation for structural support placement.\n3. **Computer Graphics & Game Dev**: Calculating the pivot point of a transitioning object or determining where a collision occurred between two moving vectors.\n4. **General Navigation**: Finding the half-way point for travel between two GPS coordinates to determine where a meetup or refueling should occur.\n5. **Carpentry & Woodworking**: Centering hinges, handles, or decorative inlays on furniture by finding the exact middle of a panel.",
+  "faqs": [
+    {
+      "question": "Is the midpoint the same as the center of a line?",
+      "answer": "Yes, geometrically, the midpoint is the exact mathematical center of a line segment connecting two points."
+    },
+    {
+      "question": "Does order matter when inputting points?",
+      "answer": "No. Because the formula uses addition ($x_1 + x_2$), the result is the same regardless of which point you designate as 'Point 1' or 'Point 2'."
+    },
+    {
+      "question": "Can I find the midpoint in 3D space?",
+      "answer": "Yes, our calculator supports 3D coordinates by adding the same averaging logic to the Z-axis: $(z_1 + z_2) / 2$."
+    },
+    {
+      "question": "What if my coordinates are negative?",
+      "answer": "The formula handles negative numbers correctly. For example, the midpoint of $(-4)$ and $(4)$ is $(-4 + 4) / 2 = 0$."
+    },
+    {
+      "question": "How is the midpoint different from the distance?",
+      "answer": "The **Distance** is a single scalar value representing length, while the **Midpoint** is a set of coordinates representing a location."
+    }
+  ],
+  "deepDive": "**The Geometry of Balance: From Euclid to GPS Triangulation**\n\nThe midpoint is the simplest instance of a 'Weighted Average' where each point has a weight of 50%. This concept forms the basis for more complex interpolations, such as finding the 'Centroid' of a triangle (the average of three points) or the 'Center of Mass' in physics. \n\n**The Rule of Equidistance**: In Euclidean geometry, the midpoint is unique. There is only one point that is exactly halfway between any two distinct points in space. This property is exploited in GPS technology; while a phone might receive signals from multiple satellites, calculating the midpoints and intersection points of signal spheres is how your device pinpoints its location with sub-meter accuracy. Our calculator provides the raw mathematical infrastructure for these calculations, making it a reliable tool for both simple geometry homework and professional spatial analysis.",
+  "glossary": [
+    { "term": "Coordinate", "definition": "A set of values that show an exact position on a map or graph." },
+    { "term": "Cartesian Plane", "definition": "A two-dimensional coordinate system defined by an X and Y axis." },
+    { "term": "Line Segment", "definition": "A part of a line that is bounded by two distinct end points." },
+    { "term": "Abscissa", "definition": "The formal name for the X-coordinate in a coordinate pair." },
+    { "term": "Ordinate", "definition": "The formal name for the Y-coordinate in a coordinate pair." }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "calculatorId": "rectangle-calculator",
+  "title": "Rectangle Calculator: Area, Perimeter & Diagonal Calculation",
+  "whatIsIt": "A Rectangle Calculator is a fundamental geometry tool designed to solve for all properties of a four-sided polygon with four right angles. Given any two parameters (such as length and width, or area and length), this tool instantly calculates the remaining dimensions, including the perimeter, total surface area, and the length of the diagonal.\n\nRectangles are the most common shape in human-made environments, from smartphone screens to architectural plots. Our calculator provides high-precision results for students mastering basic geometry and professionals in construction or design who need to verify structural boundaries and material requirements.",
+  "formula": "The properties of a rectangle are derived from its two primary dimensions:\n\n1. **Area (A)**: The total space inside the boundary.\n$$A = l \\\\times w$$\n\n2. **Perimeter (P)**: The total distance around the boundary.\n$$P = 2(l + w)$$\n\n3. **Diagonal (d)**: Based on the Pythagorean Theorem.\n$$d = \\\\sqrt{l^2 + w^2}$$\n\n**Where:**\n- $l$: Length of the rectangle.\n- $w$: Width of the rectangle.",
+  "example": "Calculate the properties of a rectangle with a **length of 10m** and a **width of 6m**:\n\n1. **Find Area**: $10 \\\\times 6 = 60$. (Result: **60 m²**).\n2. **Find Perimeter**: $2 \\\\times (10 + 6) = 2 \\\\times 16 = 32$. (Result: **32 m**).\n3. **Find Diagonal**: $\\\\sqrt{10^2 + 6^2} = \\\\sqrt{100 + 36} = \\\\sqrt{136} \\\\approx 11.66$. (Result: **11.66 m**).",
+  "useCases": "Rectangular calculations are the standard for spatial management:\n\n1. **Interior Design & Flooring**: Calculating the exact number of square feet needed for carpet, hardwood, or tile in a room.\n2. **Structural Engineering**: Determining the surface area of load-bearing walls or the cross-sectional area of support beams.\n3. **Urban Planning**: Measuring parcel sizes and building footprints within city grids.\n4. **Display Technology**: Calculating the diagonal of a TV or monitor and its corresponding area relative to aspect ratios.\n5. **Logistics & Packaging**: Finding the surface area of boxes to determine the amount of cardboard or plastic wrap required for shipping.",
+  "faqs": [
+    {
+      "question": "Is a square a rectangle?",
+      "answer": "Yes. A square is a 'special rectangle' where the length and width are equal ($l = w$)."
+    },
+    {
+      "question": "How do you find width if you only have Area and Length?",
+      "answer": "Divide the Area by the Length ($w = A / l$)."
+    },
+    {
+      "question": "What is the 'Aspect Ratio' of a rectangle?",
+      "answer": "It is the ratio of the length to the width ($l:w$), often used in video and photography (e.g., 16:9)."
+    },
+    {
+      "question": "Can I calculate the diagonal with only the Area?",
+      "answer": "No. You need at least two pieces of information (like both side lengths, or one side and the area) to solve for the diagonal."
+    },
+    {
+      "question": "Does the perimeter increase if I double the area?",
+      "answer": "Not necessarily in a linear way. If you double the area by doubling one side, the perimeter increases, but not by double."
+    }
+  ],
+  "deepDive": "**The Master Shape: Why Rectangles Define the Modern World**\n\nThe rectangle is the dominant shape of the Industrial Age. Unlike circles or irregular polygons, rectangles 'Tessellate'—they can be packed together with zero wasted space. This makes them the perfect unit for bricks, shipping containers, and pixels on a screen.\n\n**The 'Golden Rectangle'**: Throughout history, artists and architects have utilized the 'Golden Rectangle,' where the ratio of the sides is approximately 1.618. This specific proportion is found in the Parthenon in Athens and is often used in modern credit cards and web layouts because it is believed to be the most visually pleasing rectangle. Our calculator provides the mathematical bedrock for understanding these shapes, ensuring your designs and measurements are accurate down to the last decimal place.",
+  "glossary": [
+    { "term": "Polygon", "definition": "A plane figure with at least three straight sides and angles." },
+    { "term": "Diagonal", "definition": "A straight line joining two opposite corners of a square, rectangle, or other straight-sided shape." },
+    { "term": "Dimension", "definition": "A measurable extent of a particular kind, such as length, breadth, depth, or height." },
+    { "term": "Quadrant", "definition": "Each of four quarters of a circle or other geometric shape." },
+    { "term": "Vertex", "definition": "A point where two sides of a rectangle meet (each rectangle has four vertices)." }
+  ]
+}

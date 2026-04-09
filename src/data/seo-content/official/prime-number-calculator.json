@@ -1,0 +1,38 @@
+{
+  "calculatorId": "prime-number-calculator",
+  "title": "Prime Number Calculator: Primality Testing & Number Theory Insight",
+  "whatIsIt": "A Prime Number Calculator is a specialized mathematical engine designed to determine if a specific integer is 'Prime' (divisible only by 1 and itself) or 'Composite' (having multiple divisors). It utilizes rigorous primality testing algorithms to eliminate guesswork, providing instant results for both small classroom integers and significantly larger values used in technical simulations.\n\nPrime numbers are the 'unbreakable' numbers of the mathematical world. Understanding them is critical for students of algebra and professionals in data science and computer security. This tool not only tests for primality but also identifies the next prime number, the previous prime number, and provides context on the number's place within the infinite sequence of primes.",
+  "formula": "Primality testing for smaller numbers typically uses 'Trial Division' up to the square root of the number:\n\n**The Logic:**\n1. If $n \\\\leq 1$, it is NOT prime.\n2. If $n = 2$ or $n = 3$, it IS prime.\n3. If $n$ is divisible by 2 or 3, it is NOT prime.\n4. For $i$ starting at 5 and incrementing by 6:\n   - If $n$ is divisible by $i$ or $i+2$, it is NOT prime.\n   - Continue until $i \\\\times i > n$.\n\n**Alternative Notation:**\nA prime $p$ must satisfy $(p - 1)! \\\\equiv -1 \\\\pmod{p}$ (Wilson's Theorem).",
+  "example": "Test if **97** is a prime number:\n\n1. **Square Root**: $\\\\sqrt{97} \\\\approx 9.85$. We only need to check primes up to 9.\n2. **Check 2**: 97 is odd (No).\n3. **Check 3**: $9+7=16$, not divisible by 3 (No).\n4. **Check 5**: Ends in 7, not 0 or 5 (No).\n5. **Check 7**: $97 / 7 = 13.85$ (No).\n6. **Conclusion**: Since no primes up to 9 divide 97, **97 is a prime number**.",
+  "useCases": "Primes form the backbone of modern algorithmic design and cryptography:\n\n1. **Secure Communication**: Generating the public and private keys used in HTTPS, SSL/TLS, and messaging encryption.\n2. **Hash Tables**: Choosing prime numbers for the size of hash tables in computer science to minimize 'Collisions' and optimize data retrieval.\n3. **Cyclic Redundancy Checks (CRC)**: Using prime-based polynomials to detect errors in digital data transmission.\n4. **Musical Acoustics**: Designing gear ratios and harmonic series based on prime relationships to avoid unwanted resonance.\n5. **Biological Cycles**: Understanding 'Periodical Cicadas' that emerge every 13 or 17 years (both primes) to avoid synchronization with predator life cycles.",
+  "faqs": [
+    {
+      "question": "What is the only even prime number?",
+      "answer": "The number **2** is the only even prime number. Every other even number is divisible by 2 and is therefore composite."
+    },
+    {
+      "question": "How many prime numbers are there?",
+      "answer": "There are infinitely many prime numbers, a fact proven by the Greek mathematician Euclid over 2,000 years ago."
+    },
+    {
+      "question": "What is a 'Mersenne Prime'?",
+      "answer": "A prime number of the form $2^p - 1$, where $p$ is also a prime. These are used in the search for the world's largest known primes."
+    },
+    {
+      "question": "Is 1 a prime number?",
+      "answer": "No. By international mathematical convention, 1 is excluded from the primes to ensure the uniqueness of prime factorization."
+    },
+    {
+      "question": "What are 'Twin Primes'?",
+      "answer": "Primes that differ by exactly 2, such as (3, 5), (11, 13), and (17, 19)."
+    }
+  ],
+  "deepDive": "**The Guardians of the Digital Frontier: Primes and the RSA Algorithm**\n\nWhile primes seem like a purely academic pursuit, they are actually the guardians of your privacy. When you send an encrypted message, your computer selects two massive prime numbers and multiplies them. The resulting number is your 'Public Key.' Because there is no known fast way to determine those two original primes without a 'Trapdoor' key, your data remains secure.\n\n**The Distribution of Primes**: Primes do not appear in a regular interval, yet they follow a broad density pattern described by the 'Prime Number Theorem.' As numbers get larger, primes become less frequent, but they never stop. The search for the largest prime is a global effort (GIMPS), currently identifying primes with tens of millions of digits. Our calculator provides a localized port into this infinite landscape, offering high-speed calculation for the mathematical pillars that support the entire internet.",
+  "glossary": [
+    { "term": "Primality", "definition": "The state or property of being a prime number." },
+    { "term": "Sieve of Eratosthenes", "definition": "An ancient algorithm for finding all prime numbers up to a specified limit." },
+    { "term": "Coprime", "definition": "Two integers are coprime if the only positive integer that divides both of them is 1." },
+    { "term": "Modulo", "definition": "The remainder of a division operation." },
+    { "term": "Algorithm", "definition": "A process or set of rules to be followed in calculations or other problem-solving operations." }
+  ]
+}

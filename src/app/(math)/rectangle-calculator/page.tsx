@@ -3,6 +3,8 @@
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
+import rectangleSeoData from "@/data/seo-content/official/rectangle-calculator.json";
+
 export default function RectangleCalculator() {
   const [length, setLength] = useState("10");
   const [width, setWidth] = useState("5");
@@ -175,95 +177,14 @@ export default function RectangleCalculator() {
 
       <div className="mt-8 text-left">
         <CalculatorSEO
-          title="Rectangle Geometry & Area Calculator"
-          whatIsIt={
-            <p>
-              The <strong>Rectangle Calculator</strong> is an essential
-              geometric planning tool. By inputting the primary two lateral
-              dimensions (Length and Width) of any rectangular shape, it
-              instantly outputs the total squared Area, the linear bounding
-              Perimeter, and calculates the internal corner-to-corner Diagonal
-              length.
-            </p>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              A = L × W | P = 2(L + W)
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Where L is length and W is width.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's calculate the material needed to build a rectangular
-                backyard fence and plant grass seed inside it.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-rose-800">
-                <li>
-                  <strong>The Input:</strong> Your yard has a Length of 40 feet
-                  and a Width of 30 feet.
-                </li>
-                <li>
-                  <strong>The Fence (Perimeter):</strong> P = 2 × (40 + 30) = 2
-                  × 70. You need exactly <strong>140 feet</strong> of wooden
-                  fencing.
-                </li>
-                <li>
-                  <strong>The Grass (Area):</strong> A = 40 × 30. You must buy
-                  enough grass seed to cover <strong>1,200 square feet</strong>.
-                </li>
-                <li>
-                  <strong>Crossing It (Diagonal):</strong> d = √(40² + 30²) =
-                  √(1600 + 900) = √2500. Walking directly across the yard
-                  corner-to-corner is <strong>50 feet</strong>.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-rose-800">
-              <li>
-                <strong>Home Renovation & Flooring:</strong> Calculating the
-                exact Square Footage of a room (Area) to determine how many
-                boxes of laminate flooring or square yards of carpet to
-                purchase.
-              </li>
-              <li>
-                <strong>Real Estate & Land Surveying:</strong> Instantly
-                translating the bounding property lines (Width and Length) of an
-                empty city lot to determine the exact acreage footprint the plot
-                contains.
-              </li>
-              <li>
-                <strong>Screen Sizing (TV & Monitors):</strong> TV screens are
-                sold by their Diagonal measurement. If a custom cabinet has a
-                maximum physical Width and Length opening, you use the Diagonal
-                formula to find the largest TV that will fit.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Is a square a rectangle?",
-              answer:
-                "Yes, mathematically a Square is a highly specialized type of Rectangle where both the Length and the Width happen to be the exact same number.",
-            },
-            {
-              question:
-                "Does it matter which number is Length and which is Width?",
-              answer:
-                "No. Because multiplication and addition are commutative (A×B is the same as B×A), swapping the length and width numbers will provide the exact same Area, Perimeter, and Diagonal results.",
-            },
-            {
-              question: "How is the diagonal calculated?",
-              answer:
-                "The diagonal line essentially cuts the rectangle in half, creating two identical right-angled triangles. Therefore, the diagonal is calculated using the Pythagorean Theorem (a² + b² = c²).",
-            },
-          ]}
+          title={rectangleSeoData.title}
+          whatIsIt={rectangleSeoData.whatIsIt}
+          formula={rectangleSeoData.formula}
+          example={rectangleSeoData.example}
+          useCases={rectangleSeoData.useCases}
+          faqs={rectangleSeoData.faqs}
+          deepDive={rectangleSeoData.deepDive}
+          glossary={rectangleSeoData.glossary}
           relatedCalculators={[
             {
               name: "Area Calculator",

@@ -1,0 +1,38 @@
+{
+  "calculatorId": "prime-factorization-calculator",
+  "title": "Prime Factorization Calculator: Fundamental Theorem of Arithmetic Solver",
+  "whatIsIt": "A Prime Factorization Calculator is a powerful number theory tool designed to break down any composite integer into its most basic building blocks: prime numbers. According to the Fundamental Theorem of Arithmetic, every integer greater than 1 is either a prime number itself or can be represented as a unique product of prime numbers. This tool automates the recursive division process required to find these 'Atomic' numerical components.\n\nFrom academic cryptography to finding lowest common denominators in algebra, prime factorization is the hidden engine of mathematics. Our calculator provides the prime factors, prime exponent form, and a full list of all factors, ensuring a comprehensive understanding of the number's mathematical DNA.",
+  "formula": "The process uses recursive trial division or more advanced algorithms like 'Pollard's Rho' for massive numbers:\n\n**The Basic Logic:**\n1. Divide the number by the smallest prime (**2**) until it is no longer divisible.\n2. Move to the next prime (**3, 5, 7, ...**) and repeat.\n3. Continue until the remaining quotient is **1**.\n\n**Exponent Form:**\n$$n = p_1^{a_1} \\\\times p_2^{a_2} \\\\times \\\\dots \\\\times p_k^{a_k}$$\n\n**Where:**\n- $n$: The original number.\n- $p$: The prime factors.\n- $a$: The number of times each prime appears.",
+  "example": "Find the prime factorization of **120**:\n\n1. **Divide by 2**: $120 / 2 = 60$. (Factor: 2)\n2. **Divide by 2**: $60 / 2 = 30$. (Factor: 2)\n3. **Divide by 2**: $30 / 2 = 15$. (Factor: 2)\n4. **Divide by 3**: $15 / 3 = 5$. (Factor: 3)\n5. **Divide by 5**: $5 / 5 = 1$. (Factor: 5)\n6. **Result**: $2 \\\\times 2 \\\\times 2 \\\\times 3 \\\\times 5$ or **$2^3 \\\\times 3 \\\\times 5$**.",
+  "useCases": "Factorization is the bridge between simple arithmetic and advanced structural math:\n\n1. **Cryptography & Cybersecurity**: RSA encryption relies on the fact that multiplying two large primes is easy, but factoring their product is computationally impossible for traditional computers.\n2. **Algebraic Simplification**: Reducing complex fractions and finding the Least Common Multiple (LCM) or Greatest Common Factor (GCF) by comparing prime signatures.\n3. **Computer Science**: Optimizing algorithms that rely on modular arithmetic and cyclic groups.\n4. **Advanced Chemistry**: Calculating molar ratios and analyzing spectral patterns where integer relationships determine molecular geometry.\n5. **Financial Engineering**: Analyzing periodic cycles in market data using Fourier transforms, which often require factoring sample sizes for efficiency.",
+  "faqs": [
+    {
+      "question": "What is the 'Fundamental Theorem of Arithmetic'?",
+      "answer": "It states that every whole number greater than 1 has exactly one unique prime factorization, regardless of the order in which factors are written."
+    },
+    {
+      "question": "Why is '1' not included in prime factorization?",
+      "answer": "By definition, a prime number must have exactly two distinct factors: 1 and itself. Since 1 only has one factor, it is neither prime nor composite."
+    },
+    {
+      "question": "How do you factor extremely large numbers?",
+      "answer": "While small numbers are factored using trial division, supercomputers use the 'General Number Field Sieve' (GNFS) for 100+ digit numbers."
+    },
+    {
+      "question": "Is prime factorization used in school algebra?",
+      "answer": "Yes, it is the standard method for simplifying radicals (square roots) and adding fractions with different denominators."
+    },
+    {
+      "question": "What are 'Coprime' numbers?",
+      "answer": "Two numbers are coprime if they share no common prime factors (their GCF is 1)."
+    }
+  ],
+  "deepDive": "**The Atomic Theory of Math: Why Prime Factors are the DNA of Integers**\n\nPrimes are often called the 'Atoms' of mathematics because they cannot be split further. Just as every molecule is made of atoms, every integer is made of primes. The search for a fast factoring algorithm is one of the greatest challenges in computer science (the P vs NP problem). \n\n**The Quantum Threat**: Current encryption (RSA) depends on factorization being slow. However, Peter Shor developed a quantum algorithm (Shor's Algorithm) that could theoretically factor massive numbers in seconds. This has led to the development of 'Post-Quantum Cryptography.' Our calculator brings this foundational logic to your browser, allowing you to instantly witness the structural components of any number up to the system's precision limit.",
+  "glossary": [
+    { "term": "Prime Number", "definition": "A number greater than 1 that has no positive divisors other than 1 and itself." },
+    { "term": "Composite", "definition": "A positive integer greater than 1 that has at least one divisor other than 1 and itself." },
+    { "term": "Exponent", "definition": "The power to which a number is raised, indicating repeated multiplication." },
+    { "term": "Recursion", "definition": "A method of solving a problem where the solution depends on solutions to smaller instances of the same problem." },
+    { "term": "Morphism", "definition": "In group theory, an structure-preserving map between two mathematical structures." }
+  ]
+}

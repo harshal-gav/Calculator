@@ -1,0 +1,38 @@
+{
+  "calculatorId": "probability-calculator",
+  "title": "Probability Calculator: Odds, Risk Analysis & Statistical Chance",
+  "whatIsIt": "A Probability Calculator is a statistical foresight tool used to determine the likelihood of a specific event occurring within a set of possible outcomes. In a world of uncertainty, probability provides a numerical framework for risk assessment, ranging from simple coin flips and card games to complex financial modeling and medical diagnostic accuracy.\n\nOur calculator supports foundational probability concepts (P(A)), joint probability (A and B), and disjoint probability (A or B). It serves as the mathematical engine for students of statistics and professionals who must make data-driven decisions based on the 'Weights' of different future scenarios.",
+  "formula": "Probability is expressed as a ratio of favorable outcomes to the total number of possibilities:\n\n**Single Event Probability:**\n$$P(A) = \\\\frac{n(A)}{n(S)}$$\n\n**The 'OR' Rule (Union):**\n$$P(A \\\\cup B) = P(A) + P(B) - P(A \\\\cap B)$$\n\n**The 'AND' Rule (Intersection - Independent):**\n$$P(A \\\\cap B) = P(A) \\\\times P(B)$$\n\n**Where:**\n- $n(A)$: Number of ways event A can occur.\n- $n(S)$: Total number of outcomes in the sample space.",
+  "example": "What is the probability of rolling a **4** on a standard 6-sided die OR drawing an **Ace** from a deck of 52 cards?\n\n1. **Event A (Die)**: $P(4) = 1/6 \\\\approx 0.1667$.\n2. **Event B (Cards)**: $P(Ace) = 4/52 = 1/13 \\\\approx 0.0769$.\n3. **Calculation**: Since the events are independent, the chance of both happening (A AND B) is $(1/6) \\\\times (1/13) = 1/78$.\n4. **Result**: The probability of at least one occurring (A OR B) is $(1/6) + (1/13) - (1/78) \\\\approx 0.2307$ or **23.07%**.",
+  "useCases": "Probability is the language of risk and reward in every industry:\n\n1. **Insurance & Actuarial Science**: Calculating the 'Odds' of a claim based on demographic data to determine policy premiums.\n2. **Financial Markets**: Evaluating the 'Value at Risk' (VaR) in investment portfolios based on historical price distribution.\n3. **Medical Research**: Determining the probability that a positive test result correctly indicates a disease (Bayes' Theorem applications).\n4. **Sports Betting & Gaming**: Analyzing the house edge and player advantage in games of chance to ensure long-term profitability.\n5. **AI & Machine Learning**: Building classification models where the algorithm predicts the 'Probability' of a label being correct based on training data.",
+  "faqs": [
+    {
+      "question": "Can probability be greater than 1?",
+      "answer": "No. Probability always exists between **0** (impossible) and **1** (certain). It is often expressed as a percentage from 0% to 100%."
+    },
+    {
+      "question": "What is 'Conditional Probability'?",
+      "answer": "It is the probability of an event occurring **given** that another event has already occurred ($P(A|B)$)."
+    },
+    {
+      "question": "What is the 'Law of Large Numbers'?",
+      "answer": "As you repeat an experiment more times, the actual observed frequency will get closer and closer to the theoretical probability."
+    },
+    {
+      "question": "What are 'Mutually Exclusive' events?",
+      "answer": "Events that cannot happen at the same time (e.g., a person being both 5 feet and 6 feet tall simultaneously)."
+    },
+    {
+      "question": "How do odds differ from probability?",
+      "answer": "Probability is the ratio of success to total outcomes ($S / T$), while Odds is the ratio of success to failure ($S / F$)."
+    }
+  ],
+  "deepDive": "**The Master Strategy: Navigating the 'Gaussian' World of Uncertainty**\n\nThe formal study of probability began in the 17th century through correspondence between Blaise Pascal and Pierre de Fermat over a gambling dispute. This 'low-stakes' start birthed the most powerful predictive frameworks in human history. \n\n**The 'Normal Distribution'**: In many real-world systems, outcomes cluster around a mean in what is known as a Bell Curve (Gaussian Distribution). This allows us to calculate not just the probability of a single point, but the probability of an outcome falling within a certain distance from the average. This is how scientists determine the 'Statistical Significance' of a discovery. If there is less than a 5% ($P < 0.05$) probability that the result happened by chance, it is considered a valid discovery. Our calculator provides the arithmetic core for these high-level assessments, turning raw uncertainty into actionable numeric insight.",
+  "glossary": [
+    { "term": "Sample Space", "definition": "The set of all possible outcomes of a probability experiment." },
+    { "term": "Event", "definition": "A subset of the sample space consisting of one or more outcomes." },
+    { "term": "Independent", "definition": "Events where the occurrence of one does not affect the probability of the other." },
+    { "term": "Complement", "definition": "The probability that an event does NOT occur ($1 - P(A)$)." },
+    { "term": "Stochastic", "definition": "A process that is randomly determined and cannot be predicted precisely." }
+  ]
+}

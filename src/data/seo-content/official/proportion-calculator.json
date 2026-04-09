@@ -1,0 +1,38 @@
+{
+  "calculatorId": "proportion-calculator",
+  "title": "Proportion Calculator: Ratio Scaling, Cross-Multiplication & Solving for X",
+  "whatIsIt": "A Proportion Calculator is a fundamental algebraic tool used to solve for an unknown value when two ratios are set as equal. Proportion is the mathematical expression of 'Scale' and 'Consistency,' allowing you to find the missing link in equivalent fractions ($a/b = c/d$). Whether you are scaling a recipe, adjusting blueprint dimensions, or calculating currency exchanges, this tool provides an instant solution for the unknown variable.\n\nOur proportion solver handles all four possible positions of the unknown variable ($x$), ensuring that regardless of how your problem is structured, you can resolve the ratio with high-precision decimal or fractional results.",
+  "formula": "The calculation relies on the principle of **Cross-Multiplication** (The Means-Extremes Property):\n\n**The Basic Equation:**\n$$\\\\frac{a}{b} = \\\\frac{c}{d}$$\n\n**The Solution Method:**\n$$a \\\\times d = b \\\\times c$$\n\nTo solve for any individual variable (e.g., **A**):\n$$a = \\\\frac{b \\\\times c}{d}$$\n\n**Where:**\n- $a, c$: The numerators of the coupled ratios.\n- $b, d$: The denominators of the coupled ratios.",
+  "example": "If a car travels **150 miles** on **5 gallons** of gas, how many miles can it travel on **12 gallons**?\n\n1. **Setup Proportion**: $150 / 5 = x / 12$.\n2. **Cross-Multiply**: $150 \\\\times 12 = 5 \\\\times x$.\n3. **Result of Multiplication**: $1,800 = 5x$.\n4. **Divide by 5**: $1,800 / 5 = 360$.\n5. **Result**: The car can travel **360 miles**.",
+  "useCases": "Proportions are the universal tool for scaling and comparison across disciplines:\n\n1. **Culinary Arts & Baking**: Scaling ingredients from a recipe for 4 people to a banquet for 200 while maintaining the correct flavor profile.\n2. **Engineering & Architecture**: Translating measurements from a 1:50 scale model to the full-size physical structure.\n3. **Finance & Commerce**: Converting prices between different currencies based on a fixed exchange rate ratio.\n4. **Medical Dosages**: Calculating the required quantity of a liquid medication based on a patient's weight relative to the standard dose ratio.\n5. **Graphic Design & Video**: Maintaining the aspect ratio (scale) of an image when resizing it for different screen resolutions ($16:9$ proportions).",
+  "faqs": [
+    {
+      "question": "What is a 'Direct' proportion?",
+      "answer": "A relationship where as one value increases, the other increases at the same rate ($y = kx$)."
+    },
+    {
+      "question": "What is an 'Inverse' proportion?",
+      "answer": "A relationship where as one value increases, the other decreases ($y = k/x$), such as speed vs. travel time."
+    },
+    {
+      "question": "Can a proportion have a value of zero?",
+      "answer": "The denominators ($b$ and $d$) cannot be zero, as division by zero is undefined in mathematics."
+    },
+    {
+      "question": "Is a ratio the same as a proportion?",
+      "answer": "A ratio is a comparison of two numbers ($a:b$). A proportion is an equation stating that two ratios are equal ($a/b = c/d$)."
+    },
+    {
+      "question": "What is the 'Golden Ratio'?",
+      "answer": "A specific proportion ($\\\\approx 1.618$) considered aesthetically pleasing in art, nature, and architecture."
+    }
+  ],
+  "deepDive": "**The Geometry of Similarity: Why Proportions Rule the Physical World**\n\nThe concept of proportion is the foundation of 'Similarity' in geometry. Two triangles are similar if their corresponding sides are in proportion. This simple rule allowed ancient mathematicians like Thales of Miletus to calculate the height of the Great Pyramid by measuring the length of its shadow relative to the length of his own shadow.\n\n**The constant of Proportionality ($k$)**: In any proportional relationship, there is a hidden constant ($k$) that defines the scaling factor. If $y = kx$, then $k$ is the unchanging ratio between the two variables. Understanding this constant is what allows scientists to create universal formulas, like Hooke's Law for springs or Newton's Law of Universal Gravitation. Our calculator handles the cross-multiplication for you, allowing you to instantly find the missing pieces in any proportional system.",
+  "glossary": [
+    { "term": "Ratio", "definition": "A relationship between two quantities showing the number of times one value contains or is contained within the other." },
+    { "term": "Cross-Product", "definition": "The result of multiplying the numerator of one ratio by the denominator of another." },
+    { "term": "Variable", "definition": "A symbol (like $x$) representing an unknown numerical value." },
+    { "term": "Extremes", "definition": "In the proportion $a/b = c/d$, the values $a$ and $d$ are called the extremes." },
+    { "term": "Means", "definition": "In the proportion $a/b = c/d$, the values $b$ and $c$ are called the means." }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "calculatorId": "rhombus-calculator",
+  "title": "Rhombus Calculator: Area, Perimeters & Diagonal properties of Diamonds",
+  "whatIsIt": "A Rhombus Calculator is a specialized geometry tool designed to solve for the properties of a four-sided polygon where all sides have equal length. Often referred to as a 'Diamond' shape, a rhombus is a type of parallelogram whose diagonals bisect each other at right angles. This calculator allows you to find the area, perimeter, and missing diagonal lengths by providing any two core dimensions.\n\nFrom kite design and crystal lattice structures in chemistry to decorative floor patterns, the rhombus is a vital shape in both aesthetic and structural applications. Our tool provides high-precision results that help students and designers handle the unique trigonometric and algebraic relationships found in equilateral quadrilaterals.",
+  "formula": "The properties of a rhombus can be calculated using sides or diagonals:\n\n1. **Area (A) via Diagonals**:\n$$A = \\\\frac{p \\\\times q}{2}$$\n\n2. **Area (A) via Side and Height**:\n$$A = s \\\\times h$$\n\n3. **Perimeter (P)**:\n$$P = 4s$$\n\n4. **Side Length (s) via Diagonals** (Pythagorean Theorem):\n$$s = \\\\sqrt{\\\\left(\\\\frac{p}{2}\\\\right)^2 + \\\\left(\\\\frac{q}{2}\\\\right)^2}$$\n\n**Where:**\n- $p, q$: The lengths of the two diagonals.\n- $s$: The length of one side.\n- $h$: The vertical height (altitude).",
+  "example": "Find the area of a rhombus where the diagonals are **10cm** and **8cm**:\n\n1. **Identify Diagonals**: $p = 10, q = 8$.\n2. **Multiply Diagonals**: $10 \\\\times 8 = 80$.\n3. **Divide by 2**: $80 / 2 = 40$.\n4. **Result**: The area is **40 cm²**.\n5. **Find Side Length**: $\\\\sqrt{(5^2) + (4^2)} = \\\\sqrt{25 + 16} = \\\\sqrt{41} \\\\approx 6.40$. The perimeter is **$4 \\\\times 6.40 = 25.60$ cm**.",
+  "useCases": "Rhombic calculations are essential in scientific and decorative fields:\n\n1. **Chemistry & Mineralogy**: Analyzing the atomic arrangement in 'Rhombic' crystal systems, such as sulfur or specific gemstones.\n2. **Kite Design & Engineering**: Calculating the surface area and frame length for diamond-shaped aerial vehicles to ensure correct lift-to-weight ratios.\n3. **Decorative Tiling & Mosaics**: Planning floor layouts using 'Lozenges' (rhombus shapes) to ensure a perfect fit without gaps.\n4. **Aviation & Aerodynamics**: Designing rudders and stabilizers that utilize slanted aerodynamic surfaces for increased maneuverability.\n5. **Textile Design**: Creating 'Argyle' patterns where the diagonal intersections must be mathematically precise for visual symmetry.",
+  "faqs": [
+    {
+      "question": "Is a square a rhombus?",
+      "answer": "Yes. A square is a special rhombus that also has four right angles (90 degrees)."
+    },
+    {
+      "question": "Do the diagonals of a rhombus have equal length?",
+      "answer": "Not usually. If they are equal, the rhombus is a square. In a standard rhombus, one diagonal is longer than the other."
+    },
+    {
+      "question": "What is the 'Altitude' of a rhombus?",
+      "answer": "It is the perpendicular distance between two opposite sides, also known as the height ($h$)."
+    },
+    {
+      "question": "What are the internal angles of a rhombus?",
+      "answer": "Opposite angles are equal, and adjacent angles are 'Supplementary' (they add up to 180 degrees)."
+    },
+    {
+      "question": "Can I calculate area with only the side length?",
+      "answer": "No. You need either the height, one of the internal angles, or both diagonals to solve for the area."
+    }
+  ],
+  "deepDive": "**The Mathematical Beauty of the Diamond: Symmetry and Perpendicularity**\n\nThe rhombus is unique because its diagonals are always 'Perpendicular Bisectors' of each other. This means they divide the shape into four identical right-angled triangles. This property is what makes the rhombus a favorite in 'Stained Glass' and 'Fractal Geometry'—it allows for complex patterns to be built from simple, repeating symmetries.\n\n**The 'Rhombic Dodecahedron'**: In 3D geometry, the rhombus is the face of one of the most efficient space-filling solids. This shape is often found in the architecture of honeycombs, where bees use a rhombic pattern at the base of cells to minimize wax consumption while maximizing storage volume. Our calculator provides the technical bridge to these complex geometric relationships, ensuring your calculations maintain the strict symmetry required by the laws of geometry.",
+  "glossary": [
+    { "term": "Quadrilateral", "definition": "A four-sided polygon." },
+    { "term": "Bisect", "definition": "To divide into two equal parts." },
+    { "term": "Perpendicular", "definition": "At an angle of 90° to a given line, plane, or surface." },
+    { "term": "Equilateral", "definition": "Having all sides of equal length." },
+    { "term": "Supplementary Angles", "definition": "Two angles whose sum is exactly 180 degrees." }
+  ]
+}

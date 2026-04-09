@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import proportionSeoData from "@/data/seo-content/official/proportion-calculator.json";
 
 export default function ProportionCalculator() {
   const [a, setA] = useState("2");
@@ -276,74 +277,14 @@ export default function ProportionCalculator() {
       />
 
       <CalculatorSEO
-        title="Proportion Calculator"
-        whatIsIt={
-          <p>
-            The <strong>Proportion Calculator</strong> (often called the rule of
-            three calculator) solves for an unknown value in a mathematical
-            proportion equation. By giving the calculator any three known
-            values, it uses cross-multiplication to instantly find the missing
-            fourth variable.
-          </p>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              a / b = c / d
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Solving for a missing value in equal ratios.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>
-              Let's solve for <strong>D</strong> if A = 2, B = 4, and C = 3:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-2">
-              <li>Set up the ratio: 2 / 4 = 3 / D</li>
-              <li>Cross multiply: 2 × D = 4 × 3</li>
-              <li>Simplify: 2D = 12</li>
-              <li>
-                Solve for D: D = 12 / 2 = <strong>6</strong>
-              </li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Dosing & Chemistry:</strong> Very common in nursing to
-              calculate correct medication doses based on patient weight and
-              known drug concentrations.
-            </li>
-            <li>
-              <strong>Baking & Cooking:</strong> Scaling a recipe up or down. If
-              a recipe for 4 people requires 3 cups of flour, how much flour is
-              needed for 10 people?
-            </li>
-            <li>
-              <strong>Currency & Exchange:</strong> Converting money when you
-              know the exchange rate between two specific currencies.
-            </li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "What is the 'Rule of Three'?",
-            answer:
-              "The 'Rule of Three' is a widely used short-hand name for solving direct proportions. If you know three numbers that are proportional to each other, you can always find the fourth using this exact mathematical rule.",
-          },
-          {
-            question: "Can this solve inverse proportions?",
-            answer:
-              "No, this specific calculator formula (A/B = C/D) only solves for direct proportions (when one side increases, the other increases). Inverse proportions require a different formula (A × B = C × D).",
-          },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
+        title={proportionSeoData.title}
+        whatIsIt={proportionSeoData.whatIsIt}
+        formula={proportionSeoData.formula}
+        example={proportionSeoData.example}
+        useCases={proportionSeoData.useCases}
+        faqs={proportionSeoData.faqs}
+        deepDive={proportionSeoData.deepDive}
+        glossary={proportionSeoData.glossary}
         relatedCalculators={[
           {
             name: "Percentage Calculator",

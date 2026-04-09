@@ -3,6 +3,8 @@
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
+import midpointSeoData from "@/data/seo-content/official/midpoint-calculator.json";
+
 export default function MidpointCalculator() {
   const [x1, setX1] = useState("0");
   const [y1, setY1] = useState("0");
@@ -170,99 +172,14 @@ M = ( ${mx}, ${my} )`;
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Coordinate Midpoint Calculator"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Midpoint Calculator</strong> instantly finds the
-                exact center coordinate located perfectly halfway between any
-                two given points on a Cartesian plane.
-              </p>
-              <p>
-                Whether you are splitting an area for architectural design,
-                calculating physics pivot points, or completing geometry
-                homework, this tool provides the absolute center point in both X
-                and Y dimensions, backed by a step-by-step proof.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Midpoint Calculator
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Midpoint Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Midpoint results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's map the halfway point between{" "}
-                <strong>Point A (-4, 2)</strong> and{" "}
-                <strong>Point B (6, -8)</strong>.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Find the X Average:</strong> Add -4 + 6, which equals
-                  2. Divide by 2, yielding an X-coordinate of <strong>1</strong>
-                  .
-                </li>
-                <li>
-                  <strong>Find the Y Average:</strong> Add 2 + -8, which equals
-                  -6. Divide by 2, yielding a Y-coordinate of{" "}
-                  <strong>-3</strong>.
-                </li>
-                <li>
-                  <strong>The Result:</strong> The exact mathematical midpoint
-                  sitting halfway between them is <strong>(1, -3)</strong>.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Graphics & UI Design:</strong> Programmatically
-                centering an element (like modal boxes, text, or aiming
-                reticles) perfectly within the boundaries of a given viewport or
-                canvas.
-              </li>
-              <li>
-                <strong>Construction & Physics:</strong> Finding the absolute
-                center of mass between two evenly weighted objects to determine
-                where a structural fulcrum or pivot should be placed.
-              </li>
-              <li>
-                <strong>Navigation & Logistics:</strong> Locating the "meet in
-                the middle" rendezvous point resting perfectly equidistant
-                between two grid-based GPS locations.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Does the order I input the points matter?",
-              answer:
-                "No. Because addition is commutative, adding x₁ + x₂ is identical to adding x₂ + x₁. You will receive the exact same center midpoint regardless of which point you designate as Point 1.",
-            },
-            {
-              question: "Can a midpoint be a decimal or fraction?",
-              answer:
-                "Yes, quite frequently. If the distance between the two points is an odd number, halving that distance will inevitably result in a coordinate ending in .5.",
-            },
-            {
-              question:
-                "Is the midpoint formula related to the distance formula?",
-              answer:
-                "They are related concepts used on coordinate planes, but they serve opposite purposes. The distance formula calculates the sheer length of the line between points, while the midpoint formula pinpoints the coordinate directly in the middle of that line.",
-            },
-          ]}
+          title={midpointSeoData.title}
+          whatIsIt={midpointSeoData.whatIsIt}
+          formula={midpointSeoData.formula}
+          example={midpointSeoData.example}
+          useCases={midpointSeoData.useCases}
+          faqs={midpointSeoData.faqs}
+          deepDive={midpointSeoData.deepDive}
+          glossary={midpointSeoData.glossary}
           relatedCalculators={[
             {
               name: "Distance Calculator",
