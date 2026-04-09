@@ -1,38 +1,34 @@
 {
-  "calculatorId": "percentage-calculator",
-  "title": "The Master Guide to Percentages: A 5,000-Word Analysis of Ratios, Relative Growth, and Mathematical Proportions",
-  "whatIsIt": "A percentage is a way of expressing a number as a fraction of 100. It is the most common mathematical language used in commerce, statistics, and daily life. Whether you are calculating a 20% tip, a 15% discount, or a 5% increase in your annual salary, you are utilizing the power of 'Base-100 Scaling.' Percentages allow us to compare proportions across different scales, making it possible to see that a $10 gain on a $100 investment (10%) is significantly better than a $1,000 gain on a $1,000,000 investment (0.1%).\n\nOur Percentage Calculator is the 'Universal Ratio Engine' for students, shoppers, and professionals. It handles all three primary types of percentage questions: 'What is X% of Y?', 'X is what % of Y?', and 'Percentage Increase/Decrease.' By calculating your exact results, this tool provides the high-fidelity data needed to make informed decisions in the market or the classroom. Whether you are splitting a bill or analyzing a scientific data set, this calculator offers the precision needed to turn 'Ratios' into 'Reality.' \n\nIn an age of 'Dynamic Pricing' and 'Compound Ratios,' percentages are the ultimate 'Comparison Tool.' This tool serves as your 'Proportional Command,' helping you see the relative value behind the absolute numbers.",
-  "formula": "Percentage math is based on 'Rational Scaling.' Our engine provides results based on three primary mathematical frameworks:\n\n1.  **Finding the Percentage**: \n    $Value = (Percentage / 100) \\times Total$.\n\n2.  **Finding the Ratio**: \n    $Percentage = (Part / Total) \\times 100$.\n\n3.  **Percentage Change**: \n    $Change (%) = [(New Value - Old Value) / Old Value] \\times 100$.",
-  "example": "Let's examine a **$50.00 restaurant bill with an 18% tip**:\n\n1.  **The Formula**: $(18 / 100) \\times 50 = 0.18 \\times 50$.\n2.  **The Result**: **$9.00** tip.\n\n**The Strategy**: By using this calculator, the user can see that a 'Sales Tax' of 8.25% on a **$1,200 laptop** adds exactly **$99.00** to the cost. This is the difference between 'Guessing your Budget' and 'Gaging your Budget.' This tool is your 'Mathematical Integrity Shield,' ensuring you never overpay or under-calculate. If you are a business owner, you can use this tool to calculate your **Markup** vs. your **Margin**, ensuring your pricing is actually profitable after costs. You aren't just 'Doing Math'; you are 'Defining Value'.",
-  "useCases": "The Percentage Calculator is an essential utility for several daily and professional tasks:\n\n1.  **Retail Discount Management**: Calculating the 'Final Sale Price' by subtracting a percentage from the original tag.\n2.  **Hospitality and Gratuity**: Determining the exact tip based on the subtotal or including tax for service-based industries.\n3.  **Educational Grade Tracking**: Converting raw test scores (e.g., 42/55) into a standardized 100-point percentage grade.\n4.  **Financial Portfolio Analysis**: Tracking the 'Weighting' of each stock in your portfolio relative to the total value.\n5.  **Scientific Data Variance**: Measuring the 'Percentage Error' in a laboratory experiment to determine the accuracy of results.\n6.  **Nutritional Tracking**: Calculating the 'Percentage of Daily Value' for macronutrients based on your caloric intake goals.",
+  "title": "Percentage Calculator: Fractions, Increases & Decimals",
+  "whatIsIt": "A Percentage Calculator is a versatile mathematical tool used to find values, proportions, and percentage changes across finance, business, and everyday life. Whether you are calculating the tip at a restaurant, a sales tax on a purchase, or a significant discount on a high-ticket item, this utility provides the rapid mental shortcuts and exact algebraic results needed for precise numerical decision-making.",
+  "formula": "The logic depends on the question being asked: \\n\\n1. **Basic Percentage**: $X\\% \\text{ of } Y = \\frac{X}{100} \\times Y$. \\n2. **Percentage Value**: What percent is $X$ of $Y$? Result = $(\\frac{X}{Y}) \\times 100$. \\n3. **Percent Change**: $\\frac{\\text{New} - \\text{Old}}{\\text{Old}} \\times 100$. \\n4. **Inverse Percent**: Find the total if $X$ is $Y\\%$. Total = $\\frac{X}{Y} \\times 100$.",
+  "example": "Suppose you want to find **15% of $80**. \\n\\n1. **Convert to decimal**: $15 \\div 100 = 0.15$. \\n2. **Multiply**: $0.15 \\times 80 = 12$. \\n3. **Result**: 15% of $80 is **$12**.",
+  "useCases": [
+    "Shopping and Retail: Instantly calculating the final price of an item after a 25% or 40% 'Season Sale' discount is applied.",
+    "Investment Analysis: Measuring the annual percentage yield (APY) on a savings account or the return on investment (ROI) for a stock portfolio.",
+    "Taxes and Surcharges: Determining the exact dollar amount of Value Added Tax (VAT), Goods and Services Tax (GST), or property taxes based on fractional rates.",
+    "Baking and Nutrition: Calculating the percentage of Daily Value (DV) for nutrients or scaling ingredient ratios in professional large-scale recipes."
+  ],
   "faqs": [
     {
-      "question": "What does 'Percent' actually mean?",
-      "answer": "It comes from the Latin **'Per Centum,'** meaning **'By the Hundred.'** It is a shorthand for a fraction with a denominator of 100."
+      "question": "How do you calculate a 20% tip quickly?",
+      "answer": "Divide the total bill by 10 to get 10%, then double that number. For instance, if the bill is $45, 10% is $4.50, and 20% is exactly **$9.00**."
     },
     {
-      "question": "How do I calculate a 20% increase?",
-      "answer": "Multiply the original number by **1.20**. For a decrease, multiply by **0.80** (which is 1 - 0.20)."
+      "question": "What is the difference between a percentage point and a percent?",
+      "answer": "A **percentage point** is the arithmetic difference between two percentages (e.g., a move from 1% to 2% is a 1-point increase). A **percent** change is the relative change (movng from 1% to 2% is a 100% increase)."
     },
     {
-      "question": "What is 'Basis Points' (bps)?",
-      "answer": "A basis point is **1/100th of 1%**. If an interest rate goes from 5% to 5.25%, it has increased by **25 basis points**."
-    },
-    {
-      "question": "Is 100% the maximum?",
-      "answer": "No. In contexts of growth (e.g., business revenue), a value can increase by **200%**, meaning it has tripled in size."
-    },
-    {
-      "question": "How do I convert a percentage to a decimal?",
-      "answer": "Divide by 100. Simply move the decimal point two places to the **Left**. For example, 7% becomes **0.07**."
+      "question": "How do you turn a decimal into a percentage?",
+      "answer": "Simply multiply the decimal by 100 and add the '%' symbol. For example, $0.75$ becomes **75%**."
     }
   ],
-  "deepDive": "**The Psychology of 1%: Why Small Numbers Compound into Big Results**\n\nOne of the most powerful concepts in this tool is the **'Inverse Percentage Trap'**. If you lose 50% of your money, you don't need a 50% gain to get back to even—you need a **100% gain**. This is the **'Mathematical Friction'** of investing. This calculator helps you see the **'Real Recovery'** needed after a loss. \n\nAnother profound concept is the **'Base Effect'**. A 10% increase for a company with $1M in revenue is the same as a 1% increase for a company with $10M. This is why 'Percentage Growth' often slows down as a company matures. This tool is your **'Proportional Integrity Shield,'** helping you resist the urge to compare absolute numbers without context. \n\n**The 'Probabilistic' Advantage**: In decision-making, we often assign percentages to outcomes (e.g., '60% chance of success'). This 'Master Guide' is your first step toward that realization. Use this tool as your **'Logic Command Center'** and build the life you've always envisioned. Math is the language of truth.",
+  "deepDive": "The concept of 'Percent' (literally 'per hundred' from the Latin 'per centum') is the universal language of comparison across disparate scales. By mapping everything to a standardized base of 100, we can compare the growth of a small local business to that of a global conglomerate on a level playing field. Historically, percentages were used by the Roman Empire to levy auction taxes before the decimal system was even fully established. In modern finance, they are the fundamental unit of most economic indicators, from inflation rates to unemployment figures. Mathematically, percentages are just specialized fractions where the denominator is always forced to be 100, which greatly simplifies linear comparison for the human brain. Whether you are analyzing high-frequency trading algorithm deltas or just splitting a dinner bill, the ability to rapidly convert ratios into percentages is a hallmark of numerical literacy in the 21st century.",
   "glossary": [
-    { "term": "Percentage", "definition": "A number or ratio expressed as a fraction of 100." },
-    { "term": "Percentage Increase", "definition": "The difference between a final value and a starting value, expressed as a positive percentage of the starting value." },
-    { "term": "Ratio", "definition": "The quantitative relation between two amounts showing the number of times one value contains or is contained within the other." },
-    { "term": "Decimal", "definition": "A fraction whose denominator is a power of ten and whose numerator is expressed by figures placed to the right of a decimal point." },
-    { "term": "Base Value", "definition": "The starting amount used as the reference point for a percentage calculation." }
+    { "term": "Base", "definition": "The 'Whole' number (the 100%) that you are calculating a part of." },
+    { "term": "Rate", "definition": "The percentage value (e.g., 5%, 50%) applied to the base." },
+    { "term": "Yield", "definition": "The numerical result obtained after applying the percentage rate." },
+    { "term": "Markup", "definition": "The percentage added to the cost price of a product to determine sell price." },
+    { "term": "Margin", "definition": "The percentage of the sale price that represents profit." }
   ]
 }

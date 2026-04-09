@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import percentErrorSeoData from "@/data/seo-content/official/percent-error-calculator.json";
 
 export default function PercentErrorCalculator() {
   const [acceptedValue, setAcceptedValue] = useState("100");
@@ -19,7 +20,6 @@ export default function PercentErrorCalculator() {
 
     if (accepted !== 0 && !isNaN(accepted) && !isNaN(experimental)) {
       // Absolute Error: | Experimental - Accepted |
-      // (Though pure absolute error sometimes doesn't use absolute value to show direction, standard percent error does)
       const rawError = experimental - accepted;
       const absoluteError = Math.abs(rawError);
       
@@ -117,50 +117,17 @@ export default function PercentErrorCalculator() {
         </div>
       </div>
 
-      <CalculatorSEO
-        title="Percent Error Calculator"
-        whatIsIt={
-          <>
-            <p>
-              A <strong>Percent Error Calculator</strong> computes the relative difference between an exact accepted value and an observed/experimental value, expressing the inaccuracy as a percentage.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              % Error = [|Actual - Ideal| / Ideal] × 100
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Measuring experimental accuracy.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>If a chemistry student boils water and measures its boiling point at <strong>98°C</strong>, but we know the true accepted boiling point of water is <strong>100°C</strong>:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Raw Error: |98 - 100| = |-2| = 2°C error</li>
-              <li>Ratio: 2 / 100 = 0.02</li>
-              <li>Percent Error: 0.02 × 100 = <strong>2.0% Percent Error</strong></li>
-            </ul>
-          </>
-        }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Financial Estimates:</strong> Seeing how far off your projected Q3 Sales were from the actual audited Q3 revenue.</li></ul>}
-        faqs={[
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            },
-            {
-              question: "Can I use this on my mobile device?",
-              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
-            }]}
-        relatedCalculators={[
+      <div className="mt-12">
+        <CalculatorSEO
+          title={percentErrorSeoData.title}
+          whatIsIt={percentErrorSeoData.whatIsIt}
+          formula={percentErrorSeoData.formula}
+          example={percentErrorSeoData.example}
+          useCases={percentErrorSeoData.useCases}
+          faqs={percentErrorSeoData.faqs}
+          deepDive={percentErrorSeoData.deepDive}
+          glossary={percentErrorSeoData.glossary}
+          relatedCalculators={[
             {
               name: "Percentage Calculator",
               path: "/percentage-calculator/",
@@ -181,7 +148,8 @@ export default function PercentErrorCalculator() {
               path: "/matrix-calculator/",
               desc: "Perform addition, subtraction, and multiplication on matrices.",
             }]}
-      />
+        />
+      </div>
     </div>
   );
 }

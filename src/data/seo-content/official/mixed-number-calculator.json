@@ -1,0 +1,34 @@
+{
+  "title": "Mixed Number Calculator: Improper Fractions & Decimals",
+  "whatIsIt": "A Mixed Number Calculator is a specialized arithmetic tool designed to simplify the conversion and manipulation of mixed fractions—numbers consisting of a whole part and a proper fractional part. This utility provides instant transformations into improper fractions (where the numerator is greater than the denominator) and their corresponding decimal equivalents, facilitating easier computations in algebra, carpentry, and professional science.",
+  "formula": "To convert a mixed number $W \\frac{N}{D}$ to an improper fraction, use the following logic: \\n\\n1. Multiply the Whole Number ($W$) by the Denominator ($D$): $W \\times D$. \\n2. Add the Numerator ($N$) to the result: $(W \\times D) + N$. \\n3. Place the final sum over the original Denominator: $\\frac{(W \\times D) + N}{D}$. \\n\\nFor decimal conversion: divide the resulting improper numerator by the denominator.",
+  "example": "Suppose you have the mixed number $5 \\frac{3}{8}$. \\n\\n1. **Whole to Denominator**: $5 \\times 8 = 40$. \\n2. **Add Numerator**: $40 + 3 = 43$. \\n3. **Improper Fraction**: $\\frac{43}{8}$. \\n4. **Decimal Equivalent**: $43 \\div 8 = 5.375$.",
+  "useCases": [
+    "Algebraic Simplification: Converting mixed numbers to improper fractions is an essential first step before performing multiplication or division of fractions in high-level math.",
+    "Carpentry and Construction: Translating standard tape measure readings (like $12 \\frac{5}{8}$ inches) into decimals for precise digital cutting and CNC machining.",
+    "Baking and Culinary Arts: Scaling recipes that use mixed quantities (e.g., $2 \\frac{1}{2}$ cups of flour) by converting them to decimals for easy proportional multiplication.",
+    "Financial Reporting: Expressing stock price movements or interest rate adjustments that are historically quoted in fractional increments as modern decimal percentages."
+  ],
+  "faqs": [
+    {
+      "question": "What is the difference between a proper and improper fraction?",
+      "answer": "A proper fraction has a numerator smaller than its denominator (e.g., $\\frac{2}{3}$), representing a value less than 1. An improper fraction has a numerator equal to or larger than the denominator (e.g., $\\frac{7}{4}$), representing a value of 1 or more."
+    },
+    {
+      "question": "How do you handle negative mixed numbers?",
+      "answer": "For a negative mixed number like $-3 \\frac{1}{2}$, treat the entire value as negative. Convert the positive portion ($3 \\times 2 + 1 = 7$) to get $\\frac{7}{2}$, then re-apply the negative sign: $-\\frac{7}{2}$."
+    },
+    {
+      "question": "Why are mixed numbers used instead of decimals?",
+      "answer": "Mixed numbers are often more intuitive in physical measurements (like weight or length) and provide exact values without the rounding errors associated with repeating decimals (e.g., $1 \\frac{1}{3}$ is exact, whereas $1.333...$ is an approximation)."
+    }
+  ],
+  "deepDive": "Mixed numbers represent the bridge between elementary counting and complex rational number theory. Historically, fractions were the primary method for expressing parts of a whole across ancient civilizations, from the Egyptian Rhind Papyrus to Babylonian sexagesimal systems. In modern mathematics, mixed numbers are characterized as the sum of an integer and a proper fraction, such that $x = n + f$ where $n \\in \\mathbb{Z}$ and $0 \\leq f < 1$. The conversion process effectively 'unpacks' the whole number back into fractional units of a specific size (the denominator) to create a uniform ratio. This uniformity is mathematically critical because arithmetic operations like multiplication $(a/b \\times c/d)$ and division are defined for simple ratios, not additive mixed structures. Furthermore, the transition to decimal form involves the base-10 positional system, which allows for rapid comparison and calculation using digital hardware. Understanding this relationship is foundational for students mastering the transition from arithmetic to pre-algebra and beyond.",
+  "glossary": [
+    { "term": "Whole Number", "definition": "The integer component of a mixed number that represents full units." },
+    { "term": "Numerator", "definition": "The top number in a fraction indicating how many parts are being considered." },
+    { "term": "Denominator", "definition": "The bottom number in a fraction representing the total number of parts in one whole." },
+    { "term": "Improper Fraction", "definition": "A fraction where the numerator is greater than or equal to the denominator." },
+    { "term": "Rational Number", "definition": "Any number that can be expressed as a ratio of two integers." }
+  ]
+}

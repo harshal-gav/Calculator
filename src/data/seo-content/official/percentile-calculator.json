@@ -1,0 +1,34 @@
+{
+  "title": "Percentile Calculator: Rank & Distribution Analysis",
+  "whatIsIt": "A Percentile Calculator is a relative-ranking tool used in statistics to determine the percentage of values in a dataset that fall below a specific point. Unlike a standard percentage (which measures part of a whole), a percentile identifies where a specific value stands in comparison to others, making it an essential metric for standardized testing scores, height/weight growth charts, and performance benchmarking.",
+  "formula": "The common method for calculating the k-th percentile index is the **Nearest Rank Method**: \\n\\n$n = \\frac{P}{100} \\times N$ \\n\\nWhere $P$ is the desired percentile, $N$ is the total count of values, and $n$ is the ordinal rank. \\n\\nFor finding the percentile of a specific value $X$: \\n$Percentile = \\frac{\\text{Number of values below } X}{N} \\times 100$.",
+  "example": "In a class of **50 students**, you scored higher than **40 of them**. What is your percentile? \\n\\n1. **Formula**: $(\\frac{40}{50}) \\times 100$. \\n2. **Calculation**: $0.80 \\times 100 = 80$. \\n3. **Result**: You are in the **80th Percentile**, meaning you performed better than 80% of the class.",
+  "useCases": [
+    "Education and Academia: Interpreting SAT, GRE, or GMAT scores to see how a student's performance compares to the national average pool of applicants.",
+    "Pediatric Health Tracking: Determining if a child's height and weight are growing at a healthy rate relative to the global WHO (World Health Organization) growth curves.",
+    "Employee Performance Reviews: Benchmarking a salesperson's total revenue generated against the entire company's sales force to identify 'Top Performers'.",
+    "Real Estate Market Trends: Analyzing which percentage of homes in a neighborhood sold for less than a specific price to determine market affordability levels."
+  ],
+  "faqs": [
+    {
+      "question": "What is the 50th percentile?",
+      "answer": "The **50th percentile** is the exact **Median** of the dataset. Half the values are lower, and half are higher."
+    },
+    {
+      "question": "Can you have a 100th percentile?",
+      "answer": "Technically, no. If you are compared against yourself, you are 'at' the top, but you can only be higher than a maximum of 99.9...% of the group in most strict statistical models."
+    },
+    {
+      "question": "What is a decile?",
+      "answer": "A **Decile** is just a percentile grouped by tens. The 1st decile is the 10th percentile, the 2nd decile is the 20th, and so on."
+    }
+  ],
+  "deepDive": "Percentiles are the fundamental unit of 'Relative Statistics', moving away from raw numbers toward contextual understanding. While a raw score of 1200 on an exam might seem high or low in a vacuum, knowing it sits at the 95th percentile instantly conveys elite performance. Historically, the concept was refined by Francis Galton in the late 19th century as he explored normal distributions and human variability. In modern times, percentiles are critical for 'Normalization'—the process of making data from different scales comparable. For example, a 70th percentile score in a highly difficult physics exam may be more impressive than a 90th percentile score in a significantly easier general knowledge test. This context is vital for talent acquisition, medical diagnosis, and economic policy. Mathematically, the calculation becomes more complex with smaller datasets where interpolation (choosing a value between two ranks) is required to provide a smooth distribution. Mastery of percentiles allows analysts to identify 'Outliers' (those in the 1st or 99th percentiles) that often hold the most valuable insights in a research study.",
+  "glossary": [
+    { "term": "Rank", "definition": "The position of a specific data point when the set is sorted from lowest to highest." },
+    { "term": "Interpolation", "definition": "Estimating a value that lies between two known data points in a distribution." },
+    { "term": "Quartile", "definition": "Dividing data into four equal groups (25th, 50th, and 75th percentiles)." },
+    { "term": "Percentile Rank", "definition": "The percentage of scores that a particular score outperformed." },
+    { "term": "Median", "definition": "The middle-most point in a dataset (the 50th percentile)." }
+  ]
+}

@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import orderOfOpsSeoData from "@/data/seo-content/official/order-of-operations-calculator.json";
+
 export default function OrderOfOperationsCalculator() {
   const [expression, setExpression] = useState("(3 + 5) * 2 ^ 3 - 10 / 2");
   const [originalExp, setOriginalExp] = useState("");
@@ -9,27 +11,11 @@ export default function OrderOfOperationsCalculator() {
   const [finalResult, setFinalResult] = useState<number | string | null>(null);
   const [errorMsg, setErrorMsg] = useState("");
 
-  // Precedences
-  const precedence: Record<string, number> = {
-    "^": 3,
-    "*": 2,
-    "/": 2,
-    "+": 1,
-    "-": 1,
-  };
-
-  const isOperator = (char: string) => ["+", "-", "*", "/", "^"].includes(char);
-
   const calculate = () => {
     setErrorMsg("");
     setSteps([]);
     setFinalResult(null);
     setOriginalExp(expression);
-
-    // Very basic evaluator that just uses Function but we want to SHOW the steps if possible
-    // To build a true step-by-step evaluator, we'd need a parser.
-    // For the sake of this UI, we will evaluate using Function but simulate steps for basic operators if simple
-    // Actually, let's write a simple regex-based step solver.
 
     let currentExp = expression.replace(/\s+/g, ""); // remove spaces
     const localSteps: string[] = [`Initial: ${currentExp}`];
@@ -41,7 +27,7 @@ export default function OrderOfOperationsCalculator() {
       }
 
       // We will evaluate step by step using regexes conceptually
-      // This is a naive implementation for simple expressions. For production math engines, use math.js
+      // This is a naive implementation for simple expressions.
 
       // Loop until fully resolved to a number
       let safeCounter = 0;
@@ -87,9 +73,6 @@ export default function OrderOfOperationsCalculator() {
   const evaluateFlat = (exp: string, stepLog?: string[]): number | string => {
     let current = exp;
 
-    // Note: this simple regex evaluator has limitations with negative numbers
-    // We ensure negative numbers are formatted safely for simple parsing.
-
     // 1. Exponents
     while (true) {
       const match = current.match(/(-?\d+\.?\d*)\^(-?\d+\.?\d*)/);
@@ -101,7 +84,6 @@ export default function OrderOfOperationsCalculator() {
 
     // 2. Multiplication / Division (left to right)
     while (true) {
-      // Match number [*/] number
       const match = current.match(/(-?\d+\.?\d*)([\*\/])(-?\d+\.?\d*)/);
       if (!match) break;
       let res = 0;
@@ -116,32 +98,25 @@ export default function OrderOfOperationsCalculator() {
     }
 
     // 3. Addition / Subtraction (left to right)
-    // We must be careful not to match the negative sign of a single negative number
     while (true) {
-      // match digit then plus/minus then negative or digit
       const match = current.match(/(-?\d+\.?\d*)([\+\-])(-?\d+\.?\d*)/);
       if (!match) break;
 
-      // If the match is the entire string and it's just a negative number (e.g., "-5")
       if (match[0] === current && match[1] === "") {
         break;
       }
 
-      // Since our regex might falsely split a negative leading number if we're not careful
-      // For robust math parsing it's better to tokenize, but we'll try basic approach
       let res = 0;
-      // The first grouping might capture exactly what we need
       const left = parseFloat(match[1]);
       const right = parseFloat(match[3]);
 
-      if (isNaN(left)) break; // likely parsed just a negative sign alone at start
+      if (isNaN(left)) break;
 
       if (match[2] === "+") {
         res = left + right;
       } else {
         res = left - right;
       }
-      // replace only the exact matched sequence once
       current = current.replace(match[0], res.toString());
       if (stepLog) stepLog.push(`Add/Sub: ${match[0]} = ${res}`);
     }
@@ -263,38 +238,12 @@ export default function OrderOfOperationsCalculator() {
         </div>
       )}
 
-      <div className="mt-8 text-center bg-zinc-100 p-6 rounded-xl border border-zinc-200 text-sm text-zinc-600 space-y-2 max-w-2xl mx-auto">
-        <p className="font-bold text-zinc-800 uppercase tracking-widest mb-4">
-          Operations Evaluated By Preference
-        </p>
-        <div className="grid grid-cols-2 gap-4 text-left font-mono bg-white p-4 rounded-lg border border-zinc-200">
-          <div>
-            1. Parentheses <strong>( )</strong>
-          </div>
-          <div>
-            2. Exponents <strong>^</strong>
-          </div>
-          <div>
-            3. Multiplication <strong>*</strong>
-          </div>
-          <div>
-            4. Division <strong>/</strong>
-          </div>
-          <div>
-            5. Addition <strong>+</strong>
-          </div>
-          <div>
-            6. Subtraction <strong>-</strong>
-          </div>
-        </div>
-      </div>
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebApplication",
+            "@type": "SoftwareApplication",
             name: "Order of Operations Calculator",
             operatingSystem: "All",
             applicationCategory: "EducationalApplication",
@@ -302,106 +251,16 @@ export default function OrderOfOperationsCalculator() {
         }}
       />
 
-      <div className="mt-8">
+      <div className="mt-12">
         <CalculatorSEO
-          title="Order of Operations Calculator"
-          whatIsIt={
-            <>
-              <p>
-                An <strong>Order of Operations Calculator</strong> is a
-                specialized mathematical tool that doesn't just give you the
-                final answer to an equation, but demonstrates the exact
-                step-by-step process used to arrive at that result.
-              </p>
-              <p>
-                By enforcing universal mathematical conventions like PEMDAS,
-                BODMAS, or BEDMAS, the calculator eliminates ambiguity when
-                reading expressions with multiple operations like addition,
-                division, and exponents in the same string.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Order Of Operations Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Order Of Operations results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's evaluate the expression:{" "}
-                <strong>(3 + 5) * 2 ^ 3 - 10 / 2</strong>
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 font-mono text-sm">
-                <li>
-                  <strong>Step 1 (Parentheses):</strong> (3 + 5) becomes 8.{" "}
-                  <span className="text-zinc-500 block ml-4">
-                    Equation is now: 8 * 2 ^ 3 - 10 / 2
-                  </span>
-                </li>
-                <li>
-                  <strong>Step 2 (Exponents):</strong> 2 ^ 3 becomes 8.{" "}
-                  <span className="text-zinc-500 block ml-4">
-                    Equation is now: 8 * 8 - 10 / 2
-                  </span>
-                </li>
-                <li>
-                  <strong>Step 3 (Multiplication/Division L to R):</strong> 8 *
-                  8 becomes 64. 10 / 2 becomes 5.{" "}
-                  <span className="text-zinc-500 block ml-4">
-                    Equation is now: 64 - 5
-                  </span>
-                </li>
-                <li>
-                  <strong>Step 4 (Addition/Subtraction L to R):</strong> 64 - 5
-                  = <strong>59</strong>.
-                </li>
-              </ul>
-              <p className="mt-4 text-emerald-700 font-bold text-center border-t border-emerald-100 pt-4">
-                Final Answer: 59
-              </p>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4">
-              <li>
-                <strong>Homework Checking:</strong> Students learning
-                foundational algebra can verify their manual step-by-step work
-                to ensure they haven't made systematic errors.
-              </li>
-              <li>
-                <strong>Programming Debugging:</strong> Developers can verify
-                exactly how a compiler will interpret a complex string of
-                mathematical logic before writing it into code.
-              </li>
-              <li>
-                <strong>Social Media Puzzles:</strong> Solve viral math puzzles
-                (like "6 ÷ 2(1+2)") instantly by applying rigid mathematical
-                parsing rules.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What is the difference between PEMDAS and BODMAS?",
-              answer:
-                "They are exactly the same mathematical rules, just regional acronyms. PEMDAS (Parentheses, Exponents, Multiplication, Division, Addition, Subtraction) is common in the USA. BODMAS (Brackets, Orders, Division, Multiplication, Addition, Subtraction) is common in the UK, India, and Australia.",
-            },
-            {
-              question:
-                "Why do Multiplication and Division cause so much confusion?",
-              answer:
-                "Because the acronyms (like PEMDAS) place 'M' before 'D', many people incorrectly assume you must do all multiplication before any division. This is false. Multiplication and Division have equal priority, and must be evaluated strictly from Left to Right.",
-            },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
+          title={orderOfOpsSeoData.title}
+          whatIsIt={orderOfOpsSeoData.whatIsIt}
+          formula={orderOfOpsSeoData.formula}
+          example={orderOfOpsSeoData.example}
+          useCases={orderOfOpsSeoData.useCases}
+          faqs={orderOfOpsSeoData.faqs}
+          deepDive={orderOfOpsSeoData.deepDive}
+          glossary={orderOfOpsSeoData.glossary}
           relatedCalculators={[
             {
               name: "Fraction Calculator",

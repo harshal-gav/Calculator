@@ -1,0 +1,34 @@
+{
+  "title": "P-Value Calculator: Statistical Significance & Hypothesis Testing",
+  "whatIsIt": "A P-Value Calculator is an essential statistical tool used to determine the probability that an observed result occurred by random chance under the null hypothesis. It is the gold standard for 'Hypothesis Testing' across medicine, psychology, and data science, helping researchers decide if their data provides enough evidence to reject the null hypothesis in favor of a significant discovery.",
+  "formula": "The P-value depends on the test statistic (like Z, T, or Chi-Square) and the distribution: \\n\\n1. **Z-Test (Normal Distribution)**: $P = P(Z > z)$ (for one-tailed) or $P = 2 \\times P(Z > |z|)$ (for two-tailed). \\n2. **T-Test (t-Distribution)**: Requires 'Degrees of Freedom' ($df$). $P$ is found using the cumulative distribution function of the $t$-distribution. \\n3. **Comparison**: If $P \\leq \\alpha$ (usually 0.05), the result is statistically significant.",
+  "example": "In a clinical trial, you calculate a **Z-Score of 2.10** for a new treatment. \\n\\n1. **Reference Table**: Check the standard normal distribution area for $Z = 2.10$. \\n2. **Area Calculation**: The area to the right (one-tailed) is approximately 0.0179. \\n3. **Result**: Your P-value is **0.0179**. \\n4. **Conclusion**: Since $0.0179 < 0.05$, the treatment result is statistically significant.",
+  "useCases": [
+    "Medical Research: Testing the efficacy of a new drug against a placebo to ensure health improvements are not due to random luck.",
+    "A/B Testing in Marketing: Comparing the click-through rates (CTR) of two different website designs to find which one truly increases conversion.",
+    "Quality Control in Manufacturing: Verifying that a batch of products meets weight or safety standards within a specific tolerance interval.",
+    "Social Science Experiments: Analyzing survey data to find correlation between educational backgrounds and career success with mathematical certainty."
+  ],
+  "faqs": [
+    {
+      "question": "What is the common Alpha (α) level?",
+      "answer": "Most researchers use an Alpha ($ \\alpha $) level of **0.05** (5%), meaning there is a 5% risk of concluding a difference exists when it actually doesn't (Type I Error)."
+    },
+    {
+      "question": "Does a low P-value prove my hypothesis is correct?",
+      "answer": "No. A low P-value only means the data is **unlikely** under the null hypothesis. It does not provide absolute proof of an alternative theory."
+    },
+    {
+      "question": "What is the difference between one-tailed and two-tailed tests?",
+      "answer": "A **one-tailed test** looks for a change in one specific direction (e.g., 'Is it better?'). A **two-tailed test** looks for any change regardless of direction (e.g., 'Is it different?')."
+    }
+  ],
+  "deepDive": "The P-value concept was popularized by Ronald Fisher in the 1920s and has since become the most debated yet indispensable metric in modern science. It represents the conditional probability $P(Data | H_{0})$, which measures how 'extreme' your data is if the baseline assumption (the Null Hypothesis) were true. A common misconception is that the P-value is the probability that the hypothesis is true—it is actually a measure of how well the data 'fits' the current theory. In recent years, the 'Reproducibility Crisis' has led many statisticians to call for lower $ \\alpha $ thresholds (like 0.005) or the use of Bayesian analysis to complement P-value findings. Despite these debates, the P-value remains the primary mechanism for peer-reviewed validation in global academia. It forces researchers to quantify uncertainty, moving science away from anecdotal evidence toward reproducible, mathematically grounded proofs.",
+  "glossary": [
+    { "term": "Null Hypothesis ($H_{0}$)", "definition": "The default assumption that there is no relationship or effect." },
+    { "term": "Alpha ($\\alpha$)", "definition": "The significance threshold (e.g., 0.05) chosen before the experiment." },
+    { "term": "Statistically Significant", "definition": "A result unlikely to have occurred by chance ($P < \\alpha$)." },
+    { "term": "Type I Error", "definition": "A 'False Positive'—rejecting a true null hypothesis." },
+    { "term": "Degrees of Freedom", "definition": "The number of values in a final calculation that are free to vary." }
+  ]
+}

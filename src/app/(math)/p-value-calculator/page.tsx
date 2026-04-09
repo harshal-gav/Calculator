@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import pValueSeoData from "@/data/seo-content/official/p-value-calculator.json";
 
 // Approximation of the error function
 function erf(x: number): number {
-  // Using the approximation formula for erf(x)
   const a1 =  0.254829592;
   const a2 = -0.284496736;
   const a3 =  1.421413741;
@@ -22,37 +22,17 @@ function erf(x: number): number {
   return sign * y;
 }
 
-// Approximation of chi-square CDF using series expansion
+// Approximation of chi-square CDF
 function chiSquareCDF(x: number, df: number): number {
   if (x < 0) return 0;
   if (x === 0) return 0;
 
-  // Using gamma function approximation
-  // For reasonable values, we can use an approximation
   const k = df / 2;
-
-  // Series approximation for chi-square CDF
-  let sum = 0;
-  let term = Math.exp(-x / 2) * Math.pow(x / 2, 0) / 1;
-
-  for (let i = 1; i < k; i++) {
-    term *= x / (2 * i);
-    sum += term;
-  }
-
-  // More accurate approximation using regularized gamma function
-  // This is a simplified version - for production use numerical methods library
-  if (df === 1) return 2 * (Math.sqrt(x / (2 * Math.PI))) * Math.exp(-x / 2) - 1 +
-                           (2 / Math.sqrt(2 * Math.PI)) *
-                           Math.sqrt(x) * Math.exp(-x / 2);
-
-  // Approximate using normal distribution for larger df
   if (df > 30) {
     const z = Math.sqrt(2 * x) - Math.sqrt(2 * df - 1);
     return (1 + erf(z / Math.sqrt(2))) / 2;
   }
 
-  // For small df, use numerical approximation
   let P = 0;
   const lam = x / 2;
   let term2 = Math.exp(-lam);
@@ -62,7 +42,6 @@ function chiSquareCDF(x: number, df: number): number {
     term2 *= lam / i;
   }
 
-  // Incomplete gamma function approximation
   const a = df / 2;
   term2 = 1;
   let sum2 = 1;
@@ -107,19 +86,15 @@ export default function PValueCalculator() {
       const cdf = chiSquareCDF(stat, df);
       pValue = 1 - cdf;
     } else if (testType === "t-test") {
-      // For t-test, use normal approximation for large df
       const absT = Math.abs(stat);
       if (df > 30) {
-        // Use normal approximation
         const z = absT;
         pValue = 2 * (1 - (1 + erf(z / Math.sqrt(2))) / 2);
       } else {
-        // Simplified t-distribution approximation
         pValue = Math.exp(-0.5 * stat * stat) / Math.sqrt(Math.PI * df);
         pValue = Math.min(1, pValue * 2);
       }
     } else {
-      // Z-test
       const absZ = Math.abs(stat);
       pValue = 2 * (1 - (1 + erf(absZ / Math.sqrt(2))) / 2);
     }
@@ -317,65 +292,24 @@ export default function PValueCalculator() {
         </div>
       </div>
 
-      <CalculatorSEO
-        title="P-value Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>P-value Calculator</strong> computes the p-value from test statistics in hypothesis testing. The p-value represents the probability of obtaining test results as extreme as observed, assuming the null hypothesis is true. Lower p-values indicate stronger evidence against the null hypothesis.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              P Value Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise P Value results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>For a chi-square test with χ² = 5.5 and 5 degrees of freedom:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Use chi-square distribution table or calculator</li>
-              <li>Find the tail probability beyond 5.5 with df=5</li>
-              <li>Result: p ≈ 0.36</li>
-              <li>Interpretation: Not statistically significant (p &gt; 0.05)</li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li><strong>Hypothesis Testing:</strong> Determine if study results are statistically significant.</li>
-            <li><strong>Research Analysis:</strong> Support scientific claims with statistical evidence.</li>
-            <li><strong>Quality Control:</strong> Test whether manufacturing processes meet standards.</li>
-            <li><strong>Medical Studies:</strong> Evaluate drug effectiveness and safety trials.</li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "What does a p-value of 0.05 mean?",
-            answer: "A p-value of 0.05 means there's a 5% probability of observing results as extreme as or more extreme than what you got, assuming the null hypothesis is true. It's a common threshold for statistical significance, though this choice is somewhat arbitrary.",
-          },
-          {
-            question: "Is a smaller p-value always better?",
-            answer: "A smaller p-value indicates stronger evidence against the null hypothesis. However, very small p-values can indicate either genuine effects or that you're testing too many hypotheses (multiple comparisons problem).",
-          },
-          {
-            question: "What's the difference between one-tailed and two-tailed tests?",
-            answer: "A two-tailed test checks for differences in both directions (more extreme in either tail). A one-tailed test checks for differences in only one direction. Two-tailed tests are more conservative and generally preferred unless you have strong theoretical reasons for a one-tailed test.",
-          },
-        ]}
-        relatedCalculators={[
-          { name: "T-Test Calculator", path: "/t-test-calculator/", desc: "Perform independent and paired t-tests" },
-          { name: "Chi-Square Test", path: "/chi-square-calculator/", desc: "Calculate chi-square statistics" },
-          { name: "Z-Score Calculator", path: "/z-score-calculator/", desc: "Calculate standard normal values" },
-          { name: "Standard Deviation", path: "/standard-deviation-calculator/", desc: "Calculate statistical measures" },
-        ]}
-      />
+      <div className="mt-12">
+        <CalculatorSEO
+          title={pValueSeoData.title}
+          whatIsIt={pValueSeoData.whatIsIt}
+          formula={pValueSeoData.formula}
+          example={pValueSeoData.example}
+          useCases={pValueSeoData.useCases}
+          faqs={pValueSeoData.faqs}
+          deepDive={pValueSeoData.deepDive}
+          glossary={pValueSeoData.glossary}
+          relatedCalculators={[
+            { name: "T-Test Calculator", path: "/t-test-calculator/", desc: "Perform independent and paired t-tests" },
+            { name: "Chi-Square Test", path: "/chi-square-calculator/", desc: "Calculate chi-square statistics" },
+            { name: "Z-Score Calculator", path: "/z-score-calculator/", desc: "Calculate standard normal values" },
+            { name: "Standard Deviation", path: "/standard-deviation-calculator/", desc: "Calculate statistical measures" },
+          ]}
+        />
+      </div>
     </div>
   );
 }

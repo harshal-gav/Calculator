@@ -1,0 +1,34 @@
+{
+  "title": "Order of Operations Calculator: PEMDAS, BODMAS & BEDMAS",
+  "whatIsIt": "An Order of Operations Calculator is a fundamental mathematical utility that correctly evaluates complex arithmetic expressions based on established precedence rules. It eliminates ambiguity in calculations involving multi-step operations—such as combining powers, roots, parentheses, and standard arithmetic—ensuring that every user arrives at the mathematically objective 'true' result following standard protocols like PEMDAS or BODMAS.",
+  "formula": "The calculator follows a strict hierarchy of precedence: \\n\\n1. **Parentheses / Brackets** ()$, $[]$: Evaluate anything inside groupings first. \\n2. **Exponents / Orders** $x^n, \\sqrt{x}$: Resolve powers and roots. \\n3. **Multiplication and Division** $\\times, \\div$: Solve from left to right. \\n4. **Addition and Subtraction** $+, -$: Solve from left to right.",
+  "example": "Calculate $10 - (2^3 \\div 4) \\times 3$. \\n\\n1. **Parentheses**: Analyze $2^3 \\div 4$. \\n2. **Exponents**: $2^3 = 8$. Now we have $8 \\div 4 = 2$. \\n3. **Back to Expression**: $10 - (2) \\times 3$. \\n4. **Multiplication**: $2 \\times 3 = 6$. \\n5. **Subtraction**: $10 - 6 = 4$. \\n6. **Final Result**: **4**.",
+  "useCases": [
+    "Student Education: Learning the critical differences between acronyms like PEMDAS (US) and BODMAS (UK/India) to solve middle-school and high-school math problems.",
+    "Computer Programming: Understanding how compilers and interpreters (like Python or JavaScript) handle operator precedence in complex code logic.",
+    "Financial Auditing: Ensuring that tax calculations, interest compounding, and discount applications are calculated in the correct sequence to prevent accounting errors.",
+    "Engineering Design: Validating structural stress and load formulas where the order of squared variables and coefficients drastically changes the physical outcome."
+  ],
+  "faqs": [
+    {
+      "question": "What does PEMDAS stand for?",
+      "answer": "P: Parentheses, E: Exponents, M: Multiplication, D: Division, A: Addition, S: Subtraction."
+    },
+    {
+      "question": "Does Multiplication always come before Division?",
+      "answer": "No. Multiplication and Division have **equal precedence**. You must solve them in the order they appear from **left to right**."
+    },
+    {
+      "question": "What happens if there are nested parentheses?",
+      "answer": "Always start with the 'innermost' set of parentheses first and work your way outward, following the full order of operations at each level."
+    }
+  ],
+  "deepDive": "The Order of Operations is not an arbitrary set of rules, but a logical framework required for universal mathematical consistency. Without these conventions, the expression $4 + 2 \\times 3$ could be interpreted as 18 (if adding first) or 10 (if multiplying first). Historically, these rules evolved through centuries of algebraic notation, becoming standardized in the early 20th century as textbook publishing and formal education systems expanded globally. The hierarchy reflects the operational relationship between numbers: multiplication is defined as repeated addition, and exponentiation is defined as repeated multiplication. Therefore, solving 'higher' operations first naturally simplifies the expression into its more basic constituent parts. In computational math, this is represented by the 'Abstract Syntax Tree' (AST), where operations with higher precedence are placed deeper in the tree structure to be processed before those higher up. Mastery of these rules is the thin line between mathematical literacy and total calculation failure.",
+  "glossary": [
+    { "term": "Precedence", "definition": "The priority level assigned to a mathematical operation." },
+    { "term": "Parentheses", "definition": "Symbols used to group terms and force them to be evaluated first." },
+    { "term": "Operand", "definition": "The actual numbers or variables being acted upon by an operator." },
+    { "term": "Operator", "definition": "The symbol (+, -, *, /) indicating the type of mathematical action to take." },
+    { "term": "Acronym", "definition": "A mnemonic device (like PEMDAS) used to remember a sequence of steps." }
+  ]
+}

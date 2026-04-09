@@ -1,0 +1,34 @@
+{
+  "title": "Percent Error Calculator: Experimental Accuracy & Precision",
+  "whatIsIt": "A Percent Error Calculator is a quantitative analysis tool used to measure the accuracy of an experimental or estimated value compared to a known, theoretical, or 'accepted' value. It expresses the discrepancy between the two as a percentage of the true value, allowing scientists, students, and engineers to evaluate the precision of their measurements and the reliability of their scientific experiments.",
+  "formula": "The formula for calculating the relative discrepancy is: \\n\\n$$Percent \\, Error = \\left| \\frac{Experimental \\, Value - Theoretical \\, Value}{Theoretical \\, Value} \\right| \\times 100\\%$$ \\n\\nWhere the numerator is the absolute error, and the results are always expressed as a positive percentage to indicate the magnitude of the deviation.",
+  "example": "In a physics lab, you measure the boiling point of water as **98.2°C**, whereas the standard theoretical value is **100°C**. \\n\\n1. **Find Absolute Difference**: $|98.2 - 100| = 1.8$. \\n2. **Divide by Theoretical**: $1.8 \\div 100 = 0.018$. \\n3. **Convert to Percent**: $0.018 \\times 100 = 1.8\\%$. \\n4. **Result**: Your experiment had a **1.8%** percent error.",
+  "useCases": [
+    "Physics and Chemistry Labs: Comparing raw experimental data (like density or gravity) against verified constants to validate laboratory procedures.",
+    "Engineering Quality Control: Measuring the deviation in industrial dimensions or material strengths against the CAD design specifications.",
+    "Economic Forecasting: Analyzing the gap between 'Actual GDP growth' and 'Projected growth' to refine future fiscal prediction models.",
+    "Calibrating Scientific Equipment: Determining the bias in sensors, thermometers, or digital scales by comparing their readings to certified reference weights and measures."
+  ],
+  "faqs": [
+    {
+      "question": "Can Percent Error be negative?",
+      "answer": "No. In standard scientific reporting, we use the absolute value of the difference, meaning the result is always a **positive number** representing the distance from the truth, regardless of whether the estimate was over or under."
+    },
+    {
+      "question": "What is considered a 'good' percent error?",
+      "answer": "In student laboratories, an error under **5%** is typically considered excellent. In high-precision engineering, error margins might be required to stay under **0.01%** or lower."
+    },
+    {
+      "question": "What is the difference between Percent Error and Percent Difference?",
+      "answer": "Percent **Error** is used when you have one value known to be the absolute truth. Percent **Difference** is used when comparing two experimental values when neither is known to be technically 'more' correct than the other."
+    }
+  ],
+  "deepDive": "Accuracy and Precision are the twin pillars of scientific validation. Percent error provides a mathematical standardized metric for 'Accuracy'—how close a measurement is to the true physical reality. Historically, this concept evolved alongside the development of error theory by luminaries like Carl Friedrich Gauss, who realized that all human measurements contain inherent 'noise' or 'experimental bias'. By quantifying this bias into a percentage, researchers can determine if their findings fall within the threshold of 'acceptable error' or if they indicate a fundamental flaw in the experimental design. This is critical in fields like aerospace engineering or pharmacological manufacturing, where a 1% error can be the difference between a successful mission and a catastrophic failure. Modern data science also uses this concept in 'Mean Absolute Percentage Error' (MAPE) to evaluate the performance of machine learning algorithms. Understanding percent error is not just about identifying mistakes; it's about defining the limits of human measurement in an imperfect world.",
+  "glossary": [
+    { "term": "Theoretical Value", "definition": "The 'true' or accepted value based on scientific constants or proven laws." },
+    { "term": "Experimental Value", "definition": "the measurement actually observed or calculated during a test." },
+    { "term": "Absolute Error", "definition": "The raw numerical difference between the estimated and true values." },
+    { "term": "Precision", "definition": "The consistency of multiple measurements when taken under the same conditions." },
+    { "term": "Accuracy", "definition": "How close a specific measurement is to the true theoretical value." }
+  ]
+}

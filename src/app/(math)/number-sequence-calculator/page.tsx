@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import sequenceSeoData from "@/data/seo-content/official/number-sequence-calculator.json";
 
 export default function NumberSequenceCalculator() {
   const [sequence, setSequence] = useState("2, 4, 6, 8");
@@ -268,65 +269,24 @@ export default function NumberSequenceCalculator() {
         </div>
       </div>
 
-      <CalculatorSEO
-        title="Number Sequence Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>Number Sequence Calculator</strong> analyzes a series of numbers to identify mathematical patterns and predict the next terms in the sequence. This tool recognizes arithmetic, geometric, Fibonacci-like, and quadratic sequences.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Number Sequence Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Number Sequence results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>For the arithmetic sequence 2, 4, 6, 8:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Common difference (d) = 2</li>
-              <li>Next term: 8 + 2 = <strong>10</strong></li>
-              <li>Following term: 10 + 2 = <strong>12</strong></li>
-              <li>And so on...</li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li><strong>Math Education:</strong> Help students understand sequence patterns and predict future terms.</li>
-            <li><strong>Financial Modeling:</strong> Project growth in investments or savings with constant rates.</li>
-            <li><strong>Data Analysis:</strong> Identify trends in time-series data.</li>
-            <li><strong>Puzzle Solving:</strong> Solve sequence-based puzzles and brain teasers.</li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "What if my sequence doesn't match any standard pattern?",
-            answer: "The calculator identifies the most common sequence types (arithmetic, geometric, Fibonacci, quadratic). More complex patterns like cubic sequences or custom rules may not be recognized. In these cases, you can analyze the differences manually to identify the pattern.",
-          },
-          {
-            question: "How many terms do I need to provide?",
-            answer: "At least 2-3 terms are recommended to identify a pattern reliably. More terms (4-5+) help confirm the pattern with greater accuracy.",
-          },
-          {
-            question: "Can the calculator handle decimal or negative numbers?",
-            answer: "Yes! The calculator works with any real numbers, including negative numbers and decimals. Just enter them as comma-separated values.",
-          },
-        ]}
-        relatedCalculators={[
-          { name: "Fibonacci Calculator", path: "/fibonacci-calculator/", desc: "Generate Fibonacci sequence up to any term" },
-          { name: "Sum Calculator", path: "/sum-calculator/", desc: "Calculate sum of number series" },
-          { name: "Average Calculator", path: "/average-calculator/", desc: "Find mean, median, and mode" },
-          { name: "Permutation Calculator", path: "/permutation-calculator/", desc: "Calculate permutations and combinations" },
-        ]}
-      />
+      <div className="mt-12">
+        <CalculatorSEO
+          title={sequenceSeoData.title}
+          whatIsIt={sequenceSeoData.whatIsIt}
+          formula={sequenceSeoData.formula}
+          example={sequenceSeoData.example}
+          useCases={sequenceSeoData.useCases}
+          faqs={sequenceSeoData.faqs}
+          deepDive={sequenceSeoData.deepDive}
+          glossary={sequenceSeoData.glossary}
+          relatedCalculators={[
+            { name: "Fibonacci Calculator", path: "/fibonacci-calculator/", desc: "Generate Fibonacci sequence up to any term" },
+            { name: "Sum Calculator", path: "/sum-calculator/", desc: "Calculate sum of number series" },
+            { name: "Average Calculator", path: "/average-calculator/", desc: "Find mean, median, and mode" },
+            { name: "Permutation Calculator", path: "/permutation-calculator/", desc: "Calculate permutations and combinations" },
+          ]}
+        />
+      </div>
     </div>
   );
 }

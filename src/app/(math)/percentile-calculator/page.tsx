@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import percentileSeoData from "@/data/seo-content/official/percentile-calculator.json";
 
 export default function PercentileCalculator() {
   const [dataInput, setDataInput] = useState(
@@ -56,8 +57,7 @@ export default function PercentileCalculator() {
       value = sorted[0];
       indexDesc = "Only 1 value";
     } else {
-      // Using the NIST method (also used closely by Excel's PERCENTILE.INC)
-      // Rank r = (P / 100) * (N - 1) + 1
+      // Using the NIST method
       const rank = (p / 100) * (n - 1);
       const lowerIndex = Math.floor(rank);
       const upperIndex = Math.ceil(rank);
@@ -130,9 +130,6 @@ export default function PercentileCalculator() {
                 %
               </span>
             </div>
-            <p className="text-xs text-zinc-500 mt-2 font-medium">
-              0 is the minimum, 100 is the maximum, 50 is the median.
-            </p>
           </div>
         </div>
 
@@ -181,9 +178,6 @@ export default function PercentileCalculator() {
               <div className="text-violet-200 text-sm font-medium">
                 {result.indexDesc}
               </div>
-              <div className="text-xs text-white/30 mt-1">
-                Based on {result.sortedData.length} total data points
-              </div>
             </div>
 
             <div className="bg-black/20 p-5 rounded-xl border border-white/5">
@@ -203,7 +197,7 @@ export default function PercentileCalculator() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebApplication",
+            "@type": "SoftwareApplication",
             name: "Percentile Calculator",
             operatingSystem: "All",
             applicationCategory: "EducationalApplication",
@@ -211,102 +205,16 @@ export default function PercentileCalculator() {
         }}
       />
 
-      <div className="mt-8">
+      <div className="mt-12">
         <CalculatorSEO
-          title="Exact Percentile Data Calculator"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Percentile Calculator</strong> analyzes a raw list
-                of numbers to determine the exact value that sits at a specific
-                percentage threshold (from 0 to 100).
-              </p>
-              <p>
-                For example, if a student scored in the 90th percentile on a
-                test, it means they scored <em>higher</em> than 90% of all the
-                other students who took that exact same test.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Percentile Calculator
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Percentile Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Percentile results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Imagine an office of 6 employees making the following hourly
-                wages: <strong>$15, $18, $20, $22, $28, $35</strong>. What exact
-                hourly wage represents the mathematically true{" "}
-                <strong>80th Percentile</strong>?
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>1. Find the Rank:</strong> r = (80 / 100) × (6 - 1) +
-                  1 = 0.8 × 5 + 1 = <strong>5.0</strong>.
-                </li>
-                <li>
-                  <strong>2. Match the Rank:</strong> Because the rank
-                  mathematically landed on a perfect whole number (the 5th
-                  index), we simply look at the 5th number in the sorted list.
-                </li>
-                <li>
-                  <strong>The Result:</strong> The 5th number is $28. Therefore,{" "}
-                  <strong>$28/hour</strong> is the exact 80th Percentile wage.
-                  If the rank was a decimal like 5.5, we would interpolate
-                  halfway between the 5th ($28) and 6th ($35) numbers ($31.50).
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>HR & Salary Negotiation:</strong> Companies use
-                percentiles to ensure fair compensation. Refusing to pay below
-                the "25th percentile" of the industry standard ensures
-                competitive hiring.
-              </li>
-              <li>
-                <strong>Cloud Computing & Web Dev:</strong> Monitoring server
-                latency using "P99" (The 99th Percentile). If the P99 load time
-                is 2 seconds, it guarantees that 99% of all users load the
-                website in 2 seconds or faster.
-              </li>
-              <li>
-                <strong>Sports Analytics:</strong> Comparing athletes against
-                historical databases. Reaching the "95th percentile" in sprint
-                speed definitively proves elite performance relative to peers.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "How does this differ from the Mean (Average)?",
-              answer:
-                "The Mean simply adds everything up and divides by the count. It is heavily skewed by massive numbers. For example, if Bill Gates walks into an average bar, the 'mean' wealth of that room instantly spikes to a billion dollars. But the '50th percentile' wealth remains exactly the same—a much more accurate metric of reality.",
-            },
-            {
-              question: "What is the 50th Percentile technically called?",
-              answer:
-                "The Median. By definition, the Median is the exact middle point of your sorted data, splitting the dataset 50/50. The 25th percentile is called the lower 'Quartile', and the 75th is the upper 'Quartile'.",
-            },
-            {
-              question: "Why do you need to interpolate?",
-              answer:
-                "If you have 10 data points and want the 77th percentile, there is no physical 7.7th number in the list. The calculator must mathematically construct a phantom number suspended 70% of the way between the 7th and 8th numbers.",
-            },
-          ]}
+          title={percentileSeoData.title}
+          whatIsIt={percentileSeoData.whatIsIt}
+          formula={percentileSeoData.formula}
+          example={percentileSeoData.example}
+          useCases={percentileSeoData.useCases}
+          faqs={percentileSeoData.faqs}
+          deepDive={percentileSeoData.deepDive}
+          glossary={percentileSeoData.glossary}
           relatedCalculators={[
             {
               name: "Mean, Median, Mode",
