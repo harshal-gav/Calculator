@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import dogAgeSeoData from "@/data/seo-content/official/dog-age-calculator.json";
 
 export default function DogAgeCalculator() {
   const [dogYears, setDogYears] = useState("3");
@@ -152,7 +153,7 @@ export default function DogAgeCalculator() {
               Human Years Old
             </div>
 
-            <div className="mt-8 bg-black/20 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-sm">
+            <div className="mt-8 bg-black/20 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-sm leading-relaxed">
               {result.explanation}
             </div>
           </div>
@@ -174,88 +175,14 @@ export default function DogAgeCalculator() {
 
       <div className="mt-8 text-left">
         <CalculatorSEO
-          title="Dog Age to Human Years Calculator"
-          whatIsIt={
-            <p>
-              The <strong>Dog Age Calculator</strong> translates your dog's
-              chronological age into 'human years' using modern veterinary
-              science. The old myth that one dog year equals seven human years
-              is outdated; a dog's lifespan and aging process depend heavily on
-              their breed size and weight.
-            </p>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Dog Age Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Dog Age results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's calculate the human age of a 5-year-old Golden Retriever
-                (Large Breed).
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>First Two Years:</strong> The first two years
-                  calculate out to 24 human years.
-                </li>
-                <li>
-                  <strong>Remaining Years:</strong> The remaining 3 years (Years
-                  3, 4, and 5) age at a rate of 6 human years per calendar year
-                  because it's a large breed. (3 × 6 = 18).
-                </li>
-                <li>
-                  <strong>Result:</strong> 24 + 18 ={" "}
-                  <strong>42 Human Years Old</strong>. Your 5-year-old Golden is
-                  middle-aged!
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Health Monitoring:</strong> Understanding your dog's
-                "human age" helps owners realize when their pet is entering
-                their senior years, prompting changes to diet, exercise, and
-                frequency of vet visits.
-              </li>
-              <li>
-                <strong>Dietary Adjustments:</strong> A giant breed may be
-                considered a "senior" at just 5 years old, requiring immediate
-                switching to senior-formulated dog kibble to protect their
-                joints.
-              </li>
-              <li>
-                <strong>Behavioral Expectations:</strong> A one-year-old puppy
-                acting wild makes sense when you realize they are the equivalent
-                of a 15-year-old human teenager.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Why do small dogs live longer than large dogs?",
-              answer:
-                "In the animal kingdom, larger animals usually live longer. Dogs are the rare exception! Scientists believe that because large dogs grow so rapidly, their cells age faster and they are more susceptible to age-related diseases earlier in life.",
-            },
-            {
-              question: "Is the 'multiply by 7' rule completely wrong?",
-              answer:
-                "Yes! A 1-year-old dog has already reached sexual maturity and full adult height—they are not functionally equivalent to a 7-year-old human child.",
-            },
-            {
-              question: "What categorizes a 'Giant' breed?",
-              answer:
-                "Giant breeds are typically dogs that weigh over 100 pounds as adults, such as Great Danes, Mastiffs, and Saint Bernards. Sadly, they have the shortest lifespans, often aging 7 or more 'human years' for every chronological calendar year.",
-            },
-          ]}
+          title={dogAgeSeoData.title}
+          whatIsIt={dogAgeSeoData.whatIsIt}
+          formula={dogAgeSeoData.formula}
+          example={dogAgeSeoData.example}
+          useCases={dogAgeSeoData.useCases}
+          faqs={dogAgeSeoData.faqs}
+          deepDive={dogAgeSeoData.deepDive}
+          glossary={dogAgeSeoData.glossary}
           relatedCalculators={[
             {
               name: "Cat Age Calculator",
@@ -273,10 +200,11 @@ export default function DogAgeCalculator() {
               desc: "Easily convert your pet's weight between pounds and kilograms.",
             },
             {
-              name: "Temperature Converter",
-              path: "/temperature-converter/",
-              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
-            }]}
+              name: "Activity Calculator",
+              path: "/calorie-calculator/",
+              desc: "Estimate daily energy needs based on exercise intensity.",
+            }
+          ]}
         />
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import logSeoData from "@/data/seo-content/official/log-calculator.json";
 
 export default function LogCalculator() {
   const [number, setNumber] = useState("100");
@@ -54,9 +55,9 @@ export default function LogCalculator() {
     }
 
     let custom = 0;
-    const custBase = parseFloat(customBase) || 2;
-    if (custBase > 0 && custBase !== 1) {
-      custom = Math.log(num) / Math.log(custBase);
+    const custBaseVal = parseFloat(customBase) || 2;
+    if (custBaseVal > 0 && custBaseVal !== 1) {
+      custom = Math.log(num) / Math.log(custBaseVal);
     }
 
     setResult({
@@ -229,56 +230,14 @@ export default function LogCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Logarithm Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>Logarithm Calculator</strong> computes logarithms for any number with any base. Logarithms are the inverse of exponential functions and are used extensively in science, engineering, mathematics, and finance.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Log Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Log results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>Find log₁₀(100):</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>We need: 10<sup>y</sup> = 100</li>
-              <li>Since 10² = 100, then y = <strong>2</strong></li>
-              <li>Therefore, log₁₀(100) = <strong>2</strong></li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li><strong>Science & Engineering:</strong> Solve exponential equations, measure decibels, pH levels, and seismic activity.</li>
-            <li><strong>Finance:</strong> Calculate compound growth, interest rates, and investment returns.</li>
-            <li><strong>Computer Science:</strong> Analyze algorithm complexity and computational efficiency.</li>
-            <li><strong>Biology:</strong> Model population growth and bacterial cultures.</li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "Why can't I calculate the log of 0 or negative numbers?",
-            answer: "Logarithms are undefined for zero and negative numbers because there is no real number y where b^y equals a non-positive number (for positive base b). You can only take logarithms of positive numbers.",
-          },
-          {
-            question: "What's the difference between log and ln?",
-            answer: "log usually refers to log₁₀ (common logarithm) while ln refers to the natural logarithm (base e). In computer science, log often means log₂. Both are logarithms, just with different bases.",
-          },
-          {
-            question: "How are logarithms used in real life?",
-            answer: "Logarithms model real-world phenomena like exponential growth (populations, investments), decay (radioactivity), and intensity scales (earthquakes - Richter scale, sound - decibels).",
-          },
-        ]}
+        title={logSeoData.title}
+        whatIsIt={logSeoData.whatIsIt}
+        formula={logSeoData.formula}
+        example={logSeoData.example}
+        useCases={logSeoData.useCases}
+        faqs={logSeoData.faqs}
+        deepDive={logSeoData.deepDive}
+        glossary={logSeoData.glossary}
         relatedCalculators={[
           { name: "Exponential Calculator", path: "/exponential-calculator/", desc: "Calculate exponents and powers" },
           { name: "Scientific Calculator", path: "/scientific-calculator/", desc: "Advanced mathematical calculations" },

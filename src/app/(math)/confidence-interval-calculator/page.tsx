@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import confidenceSeoData from "@/data/seo-content/official/confidence-interval-calculator.json";
 
 export default function ConfidenceIntervalCalculator() {
   const [sampleMean, setSampleMean] = useState("100");
@@ -44,7 +45,7 @@ export default function ConfidenceIntervalCalculator() {
       return;
     }
 
-    // Z-scores for standard confidence levels (assuming normal distribution, n>30 typically, but we simplify)
+    // Z-scores for standard confidence levels
     let z = 1.96;
     if (conf === 99) z = 2.576;
     else if (conf === 90) z = 1.645;
@@ -53,9 +54,7 @@ export default function ConfidenceIntervalCalculator() {
     else if (conf === 80) z = 1.282;
     else if (conf === 85) z = 1.44;
     else {
-      setError(
-        "Please use a standard confidence level: 80, 85, 90, 95, 98, or 99.",
-      );
+      setError("Please use a standard confidence level: 80, 85, 90, 95, 98, or 99.");
       setResult(null);
       return;
     }
@@ -72,273 +71,148 @@ export default function ConfidenceIntervalCalculator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-2xl shadow-xl border border-zinc-200">
-      <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-teal-900 flex items-center justify-center font-serif">
-          <span className="mr-3">⚖️</span> Confidence Interval
-        </h1>
-        <p className="text-teal-700 text-lg max-w-2xl mx-auto">
-          Calculate the confidence interval for a sample mean using standard
-          deviation and sample size.
-        </p>
+    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-3xl shadow-xl border border-teal-50">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-teal-100 pb-6 mb-8 gap-4">
+        <div>
+          <h1 className="text-4xl font-black text-slate-900 tracking-tight">Confidence Interval Calculator</h1>
+          <p className="text-slate-600 font-medium mt-1 text-lg">Estimate the range of a population parameter with statistical certainty.</p>
+        </div>
+        <div className="bg-teal-50 px-4 py-2 rounded-full border border-teal-100 shrink-0">
+          <span className="text-teal-600 font-bold text-sm uppercase tracking-wider font-mono">Statistical Inference</span>
+        </div>
       </div>
 
-      <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-zinc-200 mb-8 max-w-2xl mx-auto">
-        <div className="space-y-6 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">
-                Sample Mean (x̄)
-              </label>
-              <input
-                type="number"
-                step="any"
-                value={sampleMean}
-                onChange={(e) => setSampleMean(e.target.value)}
-                className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-teal-500 font-bold font-mono text-xl transition-all outline-none"
-              />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div className="lg:col-span-12 xl:col-span-5 space-y-4">
+          <div className="bg-white p-8 rounded-3xl border border-teal-100 shadow-sm space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-[10px] font-bold text-zinc-400 mb-2 uppercase tracking-widest">Sample Mean (x̄)</label>
+                <input
+                  type="number"
+                  value={sampleMean}
+                  onChange={(e) => setSampleMean(e.target.value)}
+                  className="w-full rounded-2xl border-zinc-200 p-4 shadow-sm focus:border-teal-500 bg-zinc-50 font-black text-xl text-center outline-none transition-all"
+                />
+              </div>
+              <div>
+                <label className="block text-[10px] font-bold text-zinc-400 mb-2 uppercase tracking-widest">Sample Size (n)</label>
+                <input
+                  type="number"
+                  value={sampleSize}
+                  onChange={(e) => setSampleSize(e.target.value)}
+                  className="w-full rounded-2xl border-zinc-200 p-4 shadow-sm focus:border-teal-500 bg-zinc-50 font-black text-xl text-center outline-none transition-all"
+                />
+              </div>
             </div>
-            <div>
-              <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">
-                Sample Size (n)
-              </label>
-              <input
-                type="number"
-                step="1"
-                min="2"
-                value={sampleSize}
-                onChange={(e) => setSampleSize(e.target.value)}
-                className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-teal-500 font-bold font-mono text-xl transition-all outline-none"
-              />
-            </div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">
-                Standard Dev (s)
-              </label>
-              <input
-                type="number"
-                step="any"
-                min="0"
-                value={stdDev}
-                onChange={(e) => setStdDev(e.target.value)}
-                className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-teal-500 font-bold font-mono text-xl transition-all outline-none"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-[10px] font-bold text-zinc-400 mb-2 uppercase tracking-widest">Standard Dev (s)</label>
+                <input
+                  type="number"
+                  value={stdDev}
+                  onChange={(e) => setStdDev(e.target.value)}
+                  className="w-full rounded-2xl border-zinc-200 p-4 shadow-sm focus:border-teal-500 bg-zinc-50 font-black text-xl text-center outline-none transition-all"
+                />
+              </div>
+              <div>
+                <label className="block text-[10px] font-bold text-zinc-400 mb-2 uppercase tracking-widest">Confidence (%)</label>
+                <select
+                  value={confidenceLevel}
+                  onChange={(e) => setConfidenceLevel(e.target.value)}
+                  className="w-full rounded-2xl border-zinc-200 p-4 shadow-sm focus:border-teal-500 bg-zinc-50 font-black text-xl text-center outline-none transition-all cursor-pointer"
+                >
+                  <option value="80">80%</option>
+                  <option value="90">90%</option>
+                  <option value="95">95%</option>
+                  <option value="98">98%</option>
+                  <option value="99">99%</option>
+                </select>
+              </div>
             </div>
-            <div>
-              <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">
-                Confidence Level (%)
-              </label>
-              <select
-                value={confidenceLevel}
-                onChange={(e) => setConfidenceLevel(e.target.value)}
-                className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-teal-500 font-bold font-mono text-xl transition-all outline-none bg-white"
-                onKeyDown={(e) => e.key === "Enter" && calculate()}
-              >
-                <option value="80">80%</option>
-                <option value="85">85%</option>
-                <option value="90">90%</option>
-                <option value="95">95% (Standard)</option>
-                <option value="98">98%</option>
-                <option value="99">99%</option>
-              </select>
-            </div>
+
+            {error && (
+              <div className="p-4 bg-red-50 text-red-600 border border-red-100 rounded-xl font-bold text-center text-sm">
+                {error}
+              </div>
+            )}
+
+            <button
+              onClick={calculate}
+              className="w-full bg-teal-600 text-white font-black py-5 px-4 rounded-2xl hover:bg-teal-700 transition shadow-xl shadow-teal-200 text-xl uppercase tracking-widest active:scale-[0.98]"
+            >
+              Estimate Interval
+            </button>
           </div>
         </div>
 
-        {error && (
-          <div className="mb-6 p-4 bg-red-50 text-red-700 border border-red-200 rounded-xl font-bold text-center text-sm">
-            {error}
-          </div>
-        )}
+        <div className="lg:col-span-12 xl:col-span-7 bg-slate-900 rounded-3xl p-8 border border-white/5 shadow-2xl flex flex-col justify-center relative overflow-hidden min-h-[400px]">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none"></div>
+          
+          {result !== null ? (
+            <div className="relative z-10 w-full space-y-8">
+              <div className="text-center">
+                <h2 className="text-xs font-bold text-teal-400 mb-4 uppercase tracking-widest opacity-60">Estimated Population Mean</h2>
+                <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-4xl md:text-6xl font-black text-white font-mono break-all">
+                  <span className="text-teal-300 drop-shadow-[0_0_15px_rgba(20,184,166,0.4)]">{result.lowerBounds.toLocaleString(undefined, { maximumFractionDigits: 4 })}</span>
+                  <span className="text-zinc-600 text-2xl font-serif italic">to</span>
+                  <span className="text-teal-300 drop-shadow-[0_0_15px_rgba(20,184,166,0.4)]">{result.upperBounds.toLocaleString(undefined, { maximumFractionDigits: 4 })}</span>
+                </div>
+              </div>
 
-        <button
-          onClick={calculate}
-          className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-6 rounded-xl transition-colors shadow-lg shadow-teal-600/30 uppercase tracking-widest text-lg"
-        >
-          Calculate Interval
-        </button>
-      </div>
-
-      {result !== null && (
-        <div className="bg-slate-900 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden flex flex-col items-center">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-teal-600 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none"></div>
-
-          <h2 className="text-teal-400 font-bold uppercase tracking-widest text-xs mb-8 z-10 text-center">
-            {result.confidenceVal}% Confidence Interval
-          </h2>
-
-          <div className="z-10 relative mb-8 w-full max-w-xl">
-            <div className="p-8 rounded-3xl border-4 bg-teal-900/40 border-teal-500/30 shadow-inner flex flex-col items-center justify-center">
-              <span className="text-teal-300 text-[10px] font-bold uppercase tracking-widest mb-3 block border-b border-teal-500/50 pb-2 w-full text-center">
-                Interval Bounds
-              </span>
-              <div className="font-mono font-black text-3xl md:text-5xl text-white tracking-tight drop-shadow-lg p-2 text-center break-all flex flex-col items-center gap-3">
-                <span className="text-teal-200">
-                  {result.lowerBounds.toLocaleString("en-US", {
-                    maximumFractionDigits: 4,
-                  })}
-                </span>
-                <span className="text-xl text-teal-500/50 block">to</span>
-                <span className="text-teal-200">
-                  {result.upperBounds.toLocaleString("en-US", {
-                    maximumFractionDigits: 4,
-                  })}
+              <div className="max-w-xs mx-auto bg-white/5 p-6 rounded-2xl border border-white/5 text-center">
+                <span className="block text-[10px] font-bold text-teal-300 uppercase tracking-widest mb-2">Margin of Error (±)</span>
+                <span className="text-3xl font-black text-white font-mono">
+                  {result.marginOfError.toLocaleString(undefined, { maximumFractionDigits: 4 })}
                 </span>
               </div>
             </div>
-          </div>
-
-          <div className="bg-black/30 px-6 py-4 rounded-xl border border-white/5 text-center flex flex-col items-center z-10 text-sm">
-            <span className="text-white/40 font-bold uppercase tracking-widest text-[10px] mb-2 block">
-              Margin of Error
-            </span>
-            <span className="font-mono text-xl font-bold text-teal-300">
-              ±{" "},
-              {result.marginOfError.toLocaleString("en-US", {
-                maximumFractionDigits: 4,
-              })}
-            </span>
-          </div>
-        </div>
-      )}
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Confidence Interval Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-          }),
-        }}
-      />
-
-      <div className="mt-8">
-        <CalculatorSEO
-          title="Confidence Interval Calculator"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Confidence Interval Calculator</strong> calculates
-                an exact upper and lower numerical boundary where a true
-                population parameter (like an average) is mathematically
-                guaranteed to exist, based on a specific level of certainty.
-              </p>
-              <p>
-                Instead of guessing a single, highly flawed average number (a
-                "point estimate"), a confidence interval gives you a safe
-                "range" (an "interval estimate"). It admits that surveys aren't
-                perfect, but strictly defines exactly how imperfect they might
-                be.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Confidence Interval Analysis Model
+          ) : (
+            <div className="text-center py-10">
+              <div className="w-24 h-24 bg-teal-500/10 rounded-full flex items-center justify-center mx-auto mb-8 text-teal-400 text-5xl font-serif border border-teal-500/20">
+                CI
+              </div>
+              <div className="text-teal-100 opacity-60 font-bold text-lg px-8 max-w-sm mx-auto tracking-tight leading-relaxed font-serif italic">
+                "Precision without confidence is a guess; confidence without precision is an interval."
+              </div>
             </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Confidence Interval results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                You test the battery life of{" "}
-                <strong>50 new smartphones (n)</strong>. The average battery
-                life is <strong>24 hours (x̄)</strong>, with a standard deviation
-                of <strong>2 hours (s)</strong>. What is the{" "}
-                <strong>95% Confidence Interval (z = 1.96)</strong> for all
-                phones of this model?
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Margin:</strong> 1.96 * (2 / √50)
-                </li>
-                <li>
-                  <strong>The Math:</strong> 1.96 * (2 / 7.07) = 1.96 * 0.282 ={" "}
-                  <strong>0.55 hours</strong>.
-                </li>
-                <li>
-                  <strong>The Interval:</strong> 24 ± 0.55.
-                </li>
-                <li>
-                  <strong>The Result:</strong> You are 95% confident that the
-                  true average battery life for EVERY phone manufactured on this
-                  line is exactly between{" "}
-                  <strong>23.45 hours and 24.55 hours</strong>.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Medical Research:</strong> Determining if a new blood
-                pressure medication truly lowers BPM across millions of humans
-                based solely on a clinical trial of 500 patients.
-              </li>
-              <li>
-                <strong>Manufacturing QA:</strong> Ensure a factory producing
-                10,000 car parts a day is outputting parts of the correct
-                weight, by only halting the line to weigh a random sample of 30
-                parts.
-              </li>
-              <li>
-                <strong>A/B Testing (SaaS):</strong> Proving that "Design A"
-                actually generates more revenue than "Design B" for all future
-                website visitors, rather than just being a short-term
-                statistical fluke.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What does '95% Confidence' actually mean?",
-              answer:
-                "It does NOT mean there is a 95% chance the true average is in your specific interval. It means that if you repeated this exact same survey 100 times, 95 of the 100 generated intervals would successfully contain the true, real-world average.",
-            },
-            {
-              question: "Why not always use 99% Confidence?",
-              answer:
-                "Because higher confidence forces a wider, sometimes useless interval. It is the equivalent of predicting the weather: You can be 50% confident the high will be exactly 72 degrees. Or you can be 99% confident the high will be between -40 and 150 degrees. At 99%, you are 'correct', but the insight is useless.",
-            },
-            {
-              question: "What makes the interval narrower (more precise)?",
-              answer:
-                "The easiest way to narrow an interval is to dramatically increase your Sample Size (n). Because 'n' is in the denominator of the formula, a larger 'n' mathematically shrinks the margin of error.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Margin of Error Calculator",
-              path: "/margin-of-error-calculator/",
-              desc: "Isolate and purely calculate the ± padding used in this interval.",
-            },
-            {
-              name: "Variance Calculator",
-              path: "/variance-calculator/",
-              desc: "Quickly calculate the base Standard Deviation (s) required for this formula.",
-            },
-            {
-              name: "Empirical Rule Calculator",
-              path: "/empirical-rule-calculator/",
-              desc: "Visualize how standard deviations physically map onto the bell curve.",
-            },
-            {
-              name: "Percentage Calculator",
-              path: "/percentage-calculator/",
-              desc: "Easily calculate percentages, increases, and decreases.",
-            }]}
-        />
+          )}
+        </div>
       </div>
+
+      <CalculatorSEO
+        title={confidenceSeoData.title}
+        whatIsIt={confidenceSeoData.whatIsIt}
+        formula={confidenceSeoData.formula}
+        example={confidenceSeoData.example}
+        useCases={confidenceSeoData.useCases}
+        faqs={confidenceSeoData.faqs}
+        deepDive={confidenceSeoData.deepDive}
+        glossary={confidenceSeoData.glossary}
+        relatedCalculators={[
+          {
+            name: "Z-Score Calculator",
+            path: "/z-score-calculator/",
+            desc: "Standardize your data points to find their relative position in any distribution.",
+          },
+          {
+            name: "Margin of Error Calculator",
+            path: "/margin-of-error-calculator/",
+            desc: "Isolate and calculate the specific padding required for your survey accuracy.",
+          },
+          {
+            name: "Standard Deviation Calculator",
+            path: "/standard-deviation-calculator/",
+            desc: "Measure the dispersion and volatility of your dataset relative to the mean.",
+          },
+          {
+            name: "Average Calculator",
+            path: "/average-calculator/",
+            desc: "Find the base mathematical mean required for interval estimation.",
+          }
+        ]}
+      />
     </div>
   );
 }

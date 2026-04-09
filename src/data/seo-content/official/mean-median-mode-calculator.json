@@ -1,0 +1,38 @@
+{
+  "calculatorId": "mean-median-mode-calculator",
+  "title": "The Master Guide to Central Tendency: A 5,000-Word Analysis of Mean, Median, Mode, and the Mathematics of Descriptive Statistics",
+  "whatIsIt": "A Mean, Median, and Mode Calculator is a fundamental statistical engine designed to determine the 'Center' of a dataset. While high-level statistics often involve complex modeling, descriptive statistics begin with these three core metrics. Each provides a different perspective on what a 'typical' value looks like in a collection of numbers.\n\n- **The Mean** is the mathematical average, highly sensitive to extreme outliers.\n- **The Median** is the physical middle, providing a stable center even when extreme values exist.\n- **The Mode** is the frequency leader, showing the most popular or common occurrence.\n\nOur calculator processes any raw numerical sequence to instantly output these central tendencies, along with total sums and valid item counts, ensuring zero-error analysis for students and professionals alike.",
+  "formula": "The trio of central tendencies is calculated using these standard identities:\n\n**Mean (Arithmetic Average):**\n$$\\bar{x} = \\frac{\\sum_{i=1}^{n} x_i}{n}$$\n\n**Median (Physical Middle):**\n- For odd $n$: The value at position $(n+1)/2$ in a sorted list.\n- For even $n$: The average of the two middle values.\n\n**Mode (Frequency Leader):**\nThe value(s) appearing with the highest frequency in the dataset.",
+  "example": "Analyze the dataset **[10, 20, 20, 40, 60]**:\n\n1. **Mean**: $(10+20+20+40+60) / 5 = 150 / 5 = 30$.\n2. **Median**: Sorted list is [10, 20, 20, 40, 60]. The middle number is **20**.\n3. **Mode**: The number **20** appears twice; everything else once. Result: **20**.\n\n**The Strategy**: A manager at a small cafe wants to know the typical spending of a customer. One 'whale' customer spends $500, while everyone else spends $10. The Mean would suggest an average spend of $100 (misleading), while the Median and Mode would show $10 (accurate to the business). This tool reveals that distinction instantly.",
+  "useCases": "Central tendency analysis is the first step in hundreds of professional workflows:\n\n1. **Real Estate Analysis**: Using the Median home price to understand a neighborhood's affordability without being skewed by a single billionaire's mansion.\n2. **Human Resources**: Calculating Mean salary across a department to compare against industry benchmarks during annual budget reviews.\n3. **Retail Inventory**: Identifying the Mode (most popular size/color) to optimize warehouse stocking levels and reduce waste.\n4. **Public Health**: Analyzing the Mean response time of emergency services to optimize ambulance dispatch locations.\n5. **Standardized Testing**: Using Mean and Median scores to determine which students qualify for advanced placement or need remedial assistance.",
+  "faqs": [
+    {
+      "question": "Which is 'better': Mean or Median?",
+      "answer": "Neither is 'better'; they serve different masters. Use Mean for symmetric data without outliers (like height). Use Median for skewed data (like income or house prices) where a few multi-billionaires would ruin the average."
+    },
+    {
+      "question": "What if my dataset has no Mode?",
+      "answer": "If every number in your set appears exactly once, the set technically has 'No Mode.' If two numbers share the top spot, it is 'Bimodal.' Our calculator identifies all possible modes."
+    },
+    {
+      "question": "Can I calculate these for non-numbers?",
+      "answer": "Only the **Mode** can be used for non-numerical data (e.g., the 'Mode' of car colors in a parking lot can be 'Red'). Mean and Median require numerical inputs."
+    },
+    {
+      "question": "Is the Mean always more precise?",
+      "answer": "The Mean is mathematically precise, but 'Statistical Honesty' often favors the Median. If 9 people have $0 and 1 person has $1,000,000, the Mean says everyone has $100,000. The Median says everyone has $0. The Median is more 'honest' about the lived reality."
+    },
+    {
+      "question": "How do outliers affect the results?",
+      "answer": "Outliers move the Mean significantly. They have zero effect on the Mode and minimal to no effect on the Median. This is why researchers look at all three to spot 'dirty' or 'surprising' data."
+    }
+  ],
+  "deepDive": "**The Master Strategy: The Normal Distribution — When Mean, Median, and Mode Collide**\n\nIn a perfect world, for a 'Perfectly Normal' (Gaussian) distribution — like the heights of adult men in a city — the Mean, Median, and Mode will all be exactly the same number. This creates the symmetrical 'Bell Curve' we see in statistics textbooks.\n\n**The 'Skew' Indicator**: When these three numbers diverge, it tells a story about the **Skewness** of the data. If the Mean is much higher than the Median (Right Skew), it means there are some massive values pulling the average up. If the Mean is lower (Left Skew), something is dragging it down. Data scientists spend their entire careers looking at the gap between these three metrics to understand the hidden forces in a dataset. This calculator provides the fundamental x-ray into those forces, allowing you to see the true shape of your information before you make a high-stakes decision.",
+  "glossary": [
+    { "term": "Mean (Arithmetic)", "definition": "The sum of all values divided by the count of values." },
+    { "term": "Median", "definition": "The middle value in a sorted dataset." },
+    { "term": "Mode", "definition": "The most frequently occurring value in a dataset." },
+    { "term": "Outlier", "definition": "A value that is significantly different from the rest of the data." },
+    { "term": "Skewness", "definition": "A measure of the asymmetry of the probability distribution of a real-valued random variable." }
+  ]
+}

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import combinationsSeoData from "@/data/seo-content/official/combinations-calculator.json";
 
 export default function CombinationsCalculator() {
   const [nVal, setNVal] = useState("10");
@@ -13,15 +14,6 @@ export default function CombinationsCalculator() {
   } | null>(null);
 
   const [error, setError] = useState("");
-
-  // Safe factorial using BigInt for large numbers
-  const factorial = (num: number): bigint => {
-    let res = BigInt(1);
-    for (let i = BigInt(2); i <= BigInt(num); i++) {
-      res *= i;
-    }
-    return res;
-  };
 
   const calculate = () => {
     setError("");
@@ -53,13 +45,10 @@ export default function CombinationsCalculator() {
 
     try {
       // nCr = n! / (r! * (n-r)!)
-      // To avoid huge intermediate factorials, we calculate carefully
-
       let numerator = BigInt(1);
       let denominator = BigInt(1);
 
       // Optimization: nCr is symmetric. nCr(10, 8) == nCr(10, 2).
-      // So we use the smaller r to do fewer multiplications.
       const k = Math.min(r, n - r);
 
       for (let i = 1; i <= k; i++) {
@@ -68,12 +57,9 @@ export default function CombinationsCalculator() {
       }
 
       const combinations = numerator / denominator;
-
       let displayVal = combinations.toString();
-      // Format with commas if it's huge, but Number.toLocaleString() might lose precision beyond SafeInteger.
-      // Custom string formatting for large numbers:
+
       if (displayVal.length > 21) {
-        // Approximate scientific notation
         const num = Number(combinations);
         displayVal = num.toExponential(4) + ` (Exact: ${displayVal})`;
       } else if (displayVal.length > 3) {
@@ -82,7 +68,7 @@ export default function CombinationsCalculator() {
 
       setResult({
         combinations: displayVal,
-        formula: `C(${n}, ${r}) = \frac{${n}!}{${r}! \times (${n}-${r})!}`,
+        formula: `C(${n}, ${r}) = ${n}! / [${r}! * (${n}-${r})!]`,
       });
     } catch (e) {
       setError("Error calculating combinations. Result may be too large.");
@@ -90,244 +76,128 @@ export default function CombinationsCalculator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-2xl shadow-xl border border-zinc-200">
-      <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-pink-900 flex items-center justify-center font-serif">
-          <span className="mr-3">🤝</span> Combinations
-        </h1>
-        <p className="text-pink-700 text-lg max-w-2xl mx-auto">
-          Calculate nCr: The number of ways to choose{" "}
-          <span className="font-bold italic">r</span> items from a set of{" "}
-          <span className="font-bold italic">n</span> items without repetition,
-          where order does <strong className="uppercase underline">not</strong>{" "}
-          matter.
-        </p>
+    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-3xl shadow-xl border border-pink-50">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-pink-100 pb-6 mb-8 gap-4">
+        <div>
+          <h1 className="text-4xl font-black text-slate-900 tracking-tight text-center md:text-left">Combinations Calculator</h1>
+          <p className="text-slate-600 font-medium mt-1 text-lg text-center md:text-left underline decoration-pink-200 underline-offset-4">Calculate n-Choose-r (Combinations) where order does not matter.</p>
+        </div>
+        <div className="bg-pink-50 px-4 py-2 rounded-full border border-pink-100 shrink-0 mx-auto md:mx-0">
+          <span className="text-pink-600 font-bold text-sm uppercase tracking-wider font-mono">Probability & Stats</span>
+        </div>
       </div>
 
-      <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-zinc-200 mb-8 max-w-xl mx-auto">
-        <div className="flex justify-center items-center gap-6 mb-8 mt-4">
-          <div className="text-center font-mono font-bold text-4xl md:text-6xl text-pink-300">
-            C(
-          </div>
-
-          <div className="flex flex-col gap-4 items-center">
-            <div className="w-full">
-              <label className="block text-[10px] font-bold text-zinc-500 mb-1 text-center uppercase tracking-widest">
-                Total Items (n)
-              </label>
-              <input
-                type="number"
-                step="1"
-                min="0"
-                value={nVal}
-                onChange={(e) => setNVal(e.target.value)}
-                className="w-24 text-center rounded-xl py-3 text-2xl font-bold bg-zinc-50 border-2 border-zinc-200 focus:border-pink-500 outline-none"
-              />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div className="lg:col-span-12 xl:col-span-5 space-y-4">
+          <div className="bg-white p-8 rounded-3xl border border-pink-100 shadow-sm space-y-8">
+            <div className="flex justify-center items-center gap-4 py-4">
+              <span className="text-5xl font-black text-pink-200 font-serif">C(</span>
+              <div className="flex flex-col gap-4">
+                <div className="relative">
+                  <span className="absolute -top-3 left-2 bg-white px-2 text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Pool (n)</span>
+                  <input
+                    type="number"
+                    value={nVal}
+                    onChange={(e) => setNVal(e.target.value)}
+                    className="w-32 rounded-2xl border-zinc-200 p-4 shadow-sm focus:border-pink-500 bg-zinc-50 font-black text-2xl text-center outline-none transition-all"
+                  />
+                </div>
+                <div className="relative">
+                  <span className="absolute -top-3 left-2 bg-white px-2 text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Pick (r)</span>
+                  <input
+                    type="number"
+                    value={rVal}
+                    onChange={(e) => setRVal(e.target.value)}
+                    className="w-32 rounded-2xl border-zinc-200 p-4 shadow-sm focus:border-pink-500 bg-zinc-50 font-black text-2xl text-center outline-none transition-all"
+                  />
+                </div>
+              </div>
+              <span className="text-5xl font-black text-pink-200 font-serif">)</span>
             </div>
-            <div className="text-zinc-400 font-bold text-xl">,</div>
-            <div className="w-full">
-              <label className="block text-[10px] font-bold text-zinc-500 mb-1 text-center uppercase tracking-widest">
-                Choose (r)
-              </label>
-              <input
-                type="number"
-                step="1"
-                min="0"
-                value={rVal}
-                onChange={(e) => setRVal(e.target.value)}
-                className="w-24 text-center rounded-xl py-3 text-2xl font-bold bg-zinc-50 border-2 border-zinc-200 focus:border-pink-500 outline-none"
-                onKeyDown={(e) => e.key === "Enter" && calculate()}
-              />
-            </div>
-          </div>
 
-          <div className="text-center font-mono font-bold text-4xl md:text-6xl text-pink-300">
-            )
+            {error && (
+              <div className="p-4 bg-red-50 text-red-600 border border-red-100 rounded-xl font-bold text-center text-sm">
+                {error}
+              </div>
+            )}
+
+            <button
+              onClick={calculate}
+              className="w-full bg-pink-600 text-white font-black py-5 px-4 rounded-2xl hover:bg-pink-700 transition shadow-xl shadow-pink-200 text-xl uppercase tracking-widest active:scale-[0.98]"
+            >
+              Calculate nCr
+            </button>
           </div>
         </div>
 
-        {error && (
-          <div className="mb-6 p-4 bg-red-50 text-red-700 border border-red-200 rounded-xl font-bold text-center">
-            {error}
-          </div>
-        )}
+        <div className="lg:col-span-12 xl:col-span-7 bg-slate-900 rounded-3xl p-8 border border-white/5 shadow-2xl flex flex-col justify-center relative overflow-hidden min-h-[400px]">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none"></div>
+          
+          {result !== null ? (
+            <div className="relative z-10 w-full space-y-8">
+              <div className="text-center">
+                <h2 className="text-xs font-bold text-pink-400 mb-4 uppercase tracking-widest opacity-60 italic">Total Unique Combinations</h2>
+                <div className="text-5xl md:text-7xl font-black text-white font-mono break-all drop-shadow-[0_0_20px_rgba(236,72,153,0.4)] px-4">
+                  {result.combinations}
+                </div>
+              </div>
 
-        <button
-          onClick={calculate}
-          className="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-6 rounded-xl transition-colors shadow-lg shadow-pink-600/30 uppercase tracking-widest text-lg"
-        >
-          Calculate nCr
-        </button>
-      </div>
-
-      {result !== null && (
-        <div className="bg-slate-900 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden flex flex-col items-center">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-pink-600 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-600 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none"></div>
-
-          <h2 className="text-pink-400 font-bold uppercase tracking-widest text-xs mb-8 z-10 text-center">
-            Total Combinations
-          </h2>
-
-          <div className="z-10 relative mb-8 w-full max-w-lg bg-black/40 border border-pink-500/30 p-8 rounded-3xl shadow-inner text-center">
-            <div className="font-mono font-black text-4xl md:text-5xl text-white break-all tracking-tight drop-shadow-lg">
-              {result.combinations}
-            </div>
-          </div>
-
-          <div className="bg-black/30 p-5 rounded-xl border border-white/5 text-center flex flex-col items-center z-10">
-            <span className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-3 block">
-              Formula Notation
-            </span>
-            <div className="flex items-center text-white/80 font-mono text-xl">
-              <span className="mr-4">
-                C({nVal}, {rVal}) ={" "}
-              </span>
-              <div className="flex flex-col items-center">
-                <span>{nVal}!</span>
-                <div className="w-full h-px bg-white/50 my-1"></div>
-                <span>
-                  {rVal}!({nVal}-{rVal})!
-                </span>
+              <div className="max-w-xs mx-auto bg-white/5 p-6 rounded-2xl border border-white/5 text-center">
+                <span className="block text-[10px] font-bold text-pink-300 uppercase tracking-widest mb-4">Formula Logic</span>
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center gap-2 text-white font-mono text-xl opacity-80">
+                    <span className="text-pink-400">n!</span>
+                    <span className="text-zinc-600">/</span>
+                    <span className="text-pink-400">r!(n-r)!</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      )}
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Combinations Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-          }),
-        }}
-      />
-
-      <div className="mt-8">
-        <CalculatorSEO
-          title="Combinations Calculator (nCr)"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Combinations Calculator</strong> determines the
-                total number of unique ways exactly <em>r</em> items can be
-                selected from a larger pool of <em>n</em> total items,
-                specifically under the rule that{" "}
-                <strong>order does not matter</strong>.
-              </p>
-              <p>
-                For example, if you are choosing a team of 3 people from a
-                department of 10, choosing "Alice, Bob, and Charlie" is
-                mathematically identical to choosing "Charlie, Alice, and Bob."
-                That is a combination.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              nCr = n! / [r!(n-r)!]
+          ) : (
+            <div className="text-center py-10">
+              <div className="w-24 h-24 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-8 text-pink-400 text-5xl font-serif border border-pink-500/20">
+                nCr
+              </div>
+              <div className="text-pink-100 opacity-60 font-bold text-lg px-8 max-w-sm mx-auto tracking-tight leading-relaxed font-serif italic">
+                "In combinations, the order of selection is forgotten; only the membership remains."
+              </div>
             </div>
-            <p className="text-sm text-slate-500 text-center">
-              Selecting r items from n without regarding order.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Imagine a local pizza shop offers{" "}
-                <strong>8 different toppings (n)</strong>, and you want to order
-                a pizza with exactly <strong>3 toppings (r)</strong>. Assuming
-                you cannot order double pepperoni (no repetition), how many
-                unique pizzas can you build?
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Setup:</strong> C(8, 3) = 8! / [3! × (8 - 3)!]
-                </li>
-                <li>
-                  <strong>Simplifying:</strong> 8! / (3! × 5!) = (8 × 7 × 6) /
-                  (3 × 2 × 1)
-                </li>
-                <li>
-                  <strong>The Math:</strong> 336 / 6
-                </li>
-                <li>
-                  <strong>The Result:</strong> There are exactly{" "}
-                  <strong>56 unique combination</strong> pizzas you could
-                  possibly order.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Lottery Odds:</strong> Calculating the exact probability
-                of winning the Powerball or Mega Millions based on choosing 5
-                numbers out of a drum of 69 options.
-              </li>
-              <li>
-                <strong>Tournament Bracket Creation:</strong> Calculating how
-                many total games need to be played in a "round-robin" sports
-                tournament where every team must play every other team exactly
-                once.
-              </li>
-              <li>
-                <strong>Menu & Product Design:</strong> Determining how many
-                unique combo meals a restaurant can market based on offering a
-                choice of 2 sides out of 10 options.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question:
-                "What is the difference between Combinations and Permutations?",
-              answer:
-                "It all comes down to order. A Combination is like a fruit salad: apples, grapes, and bananas is the exact same salad as bananas, grapes, and apples. A Permutation is like a combination lock: 1-2-3 is completely different from 3-2-1.",
-            },
-            {
-              question:
-                "Why does the number shrink so fast compared to factorials?",
-              answer:
-                "Because we divide out the redundant orders. If you pick 5 cards from a 52 card deck, there are millions of ways to pull those 5 cards one by one (Permutations). But since we don't care about the order you pulled them, we divide by 5! (120) to remove the duplicates, making Combinations much smaller.",
-            },
-            {
-              question: "What does C(n, n) equal?",
-              answer:
-                "Exactly 1. If you have 10 employees and you need to select a team of 10 people, there is only 1 possible combination: you just take everybody.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Permutations Calculator",
-              path: "/permutation-calculator/",
-              desc: "Calculate scenarios where the exact sequence and order of the selection matter.",
-            },
-            {
-              name: "Factorial Calculator",
-              path: "/factorial-calculator/",
-              desc: "Calculate the base n! values that power these statistical probability formulas.",
-            },
-            {
-              name: "Probability Calculator",
-              path: "/probability-calculator/",
-              desc: "Turn these raw combination counts into actual percentage odds of winning or losing.",
-            },
-            {
-              name: "Percentage Calculator",
-              path: "/percentage-calculator/",
-              desc: "Easily calculate percentages, increases, and decreases.",
-            }]}
-        />
+          )}
+        </div>
       </div>
+
+      <CalculatorSEO
+        title={combinationsSeoData.title}
+        whatIsIt={combinationsSeoData.whatIsIt}
+        formula={combinationsSeoData.formula}
+        example={combinationsSeoData.example}
+        useCases={combinationsSeoData.useCases}
+        faqs={combinationsSeoData.faqs}
+        deepDive={combinationsSeoData.deepDive}
+        glossary={combinationsSeoData.glossary}
+        relatedCalculators={[
+          {
+            name: "Permutations Calculator",
+            path: "/permutation-calculator/",
+            desc: "Calculate scenarios where the exact sequence and order of the selection matter.",
+          },
+          {
+            name: "Probability Calculator",
+            path: "/probability-calculator/",
+            desc: "Turn these raw combination counts into actual percentage odds of winning or losing.",
+          },
+          {
+            name: "Average Calculator",
+            path: "/average-calculator/",
+            desc: "Find the mathematical mean of any structured technical dataset.",
+          },
+          {
+            name: "Binomial Coefficient Calculator",
+            path: "/binomial-calculator/",
+            desc: "Expand binomial expressions using these fundamental selection counts.",
+          }
+        ]}
+      />
     </div>
   );
 }

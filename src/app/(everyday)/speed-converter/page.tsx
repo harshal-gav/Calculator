@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import speedSeoData from "@/data/seo-content/official/speed-converter.json";
 
 const rates: Record<string, number> = {
   meters_per_second: 1,
@@ -175,131 +176,36 @@ export default function SpeedConverter() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Speed & Velocity Converter"
-          whatIsIt={
-            <>
-              <p>
-                Our <strong>Speed Converter</strong> is a fast, accurate utility
-                designed to seamlessly convert velocity measurements across
-                various systems, including Metric (km/h, m/s), Imperial (mph,
-                ft/s), Nautical (knots), and Aeronautical (Mach) scales.
-              </p>
-              <p>
-                Speed is essentially a measure of distance traveled over a
-                specific amount of time. Because different industries and
-                nations measure both distance and time differently, translating
-                "how fast something is moving" requires real-time algebraic
-                conversion to ensure safety and precision.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Marathon Pace Calculator, Half
-                Marathon Pace Calculator, Running Pace Calculator, Speed
-                Calculator, Mph Calculator, Distance Formula Speed Time, Formula
-                For Speed, Race Pace Calculator, Speed Converter, Speed Distance
-                Time Calculator, Speed Equation
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Result = Input × Conversion_Factor
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Precise unit translation for Speed Converter using industry-standard conversion constants.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's look at a common scenario in international aviation and
-                maritime navigation.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Setup:</strong> You are tracking a massive cargo
-                  ship on a radar application, and it displays its speed as{" "}
-                  <strong>25 Knots</strong>. You want to know how fast that
-                  actually is in standard miles per hour (mph).
-                </li>
-                <li>
-                  <strong>The Math:</strong> The exact conversion factor to go
-                  from Knots to mph is <strong>1.15078</strong>.
-                </li>
-                <li>
-                  <strong>The Calculation:</strong> 25 knots × 1.15078 = 28.769
-                </li>
-                <li>
-                  <strong>Result:</strong> The cargo ship is traveling at
-                  roughly <strong>28.8 mph</strong> across the ocean.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Automotive Travel:</strong> When crossing borders (like
-                driving from the US into Canada, or the UK into France), your
-                speedometer natively displays mph but the local legal signs
-                demand km/h. Knowing the rough conversion prevents dangerous
-                speeding tickets.
-              </li>
-              <li>
-                <strong>Athletics and Sports:</strong> Track and field sprinters
-                often have their speed measured scientifically in "Meters per
-                Second" (m/s). A baseball pitcher's throw is measured in mph.
-                Converting these to a uniform metric helps visualize human
-                athletic limits.
-              </li>
-              <li>
-                <strong>Meteorology & Storm Tracking:</strong> Weather channels
-                report hurricane wind speeds differently depending on the
-                region. A Cat 5 hurricane might be reported as 157 mph in
-                Florida, but European disaster agencies will log it as 252 km/h.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What actually is a 'Knot'?",
-              answer:
-                "A Knot is a unit of speed equating exactly to one nautical mile per hour (1.852 km/h). It originated centuries ago when sailors threw a rope with evenly spaced 'knots' tied in it off the back of a ship and counted how many knots slipped through their hands in a set time to gauge their speed.",
-            },
-            {
-              question: "How fast is 'Mach 1'?",
-              answer:
-                "Mach 1 refers to exactly the speed of sound. However, the speed of sound changes heavily depending on air temperature and altitude. At standard sea-level pressure and 20°C (68°F), Mach 1 is roughly 343 meters per second, or 767 mph. An aircraft flying at 'Mach 2' is flying exactly twice the speed of sound.",
-            },
-            {
-              question: "What is the difference between Speed and Velocity?",
-              answer:
-                "In basic math they are often used interchangeably, but in physics, Speed is 'Scalar' (it only has a magnitude, e.g., '60 mph'). Velocity is a 'Vector' (it has magnitude AND direction, e.g., '60 mph due North'). Our converter strictly handles the math for Speed/Magnitude.",
-            },
-          ]}
+          title={speedSeoData.title}
+          whatIsIt={speedSeoData.whatIsIt}
+          formula={speedSeoData.formula}
+          example={speedSeoData.example}
+          useCases={speedSeoData.useCases}
+          faqs={speedSeoData.faqs}
+          deepDive={speedSeoData.deepDive}
+          glossary={speedSeoData.glossary}
           relatedCalculators={[
             {
               name: "Length Converter",
               path: "/length-converter/",
-              desc: "Translate the distance variables used in speed calculations.",
+              desc: "Instantly translate miles, kilometers, feet, and meters.",
             },
             {
-              name: "Time Zone Converter",
-              path: "/time-zone-converter/",
-              desc: "Calculate the exact time difference of a fast international flight.",
+              name: "Weight Converter",
+              path: "/weight-converter/",
+              desc: "Instantly translate pounds to kilograms and grams.",
             },
             {
-              name: "Volume Converter",
-              path: "/volume-converter/",
-              desc: "Convert fuel capacity metrics for long-distance travel.",
+              name: "Temperature Converter",
+              path: "/temperature-converter/",
+              desc: "Toggle between Fahrenheit, Celsius, and Kelvin scales.",
             },
             {
-              name: "Age Calculator",
-              path: "/age-calculator/",
-              desc: "Calculate your exact age in years, months, and days.",
-            }]}
+              name: "Time Calculator",
+              path: "/time-calculator/",
+              desc: "Add, subtract, and convert durations of time.",
+            }
+          ]}
         />
       </div>
     </div>

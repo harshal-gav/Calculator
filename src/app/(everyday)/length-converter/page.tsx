@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import lengthSeoData from "@/data/seo-content/official/length-converter.json";
 
 const rates: Record<string, number> = {
   meter: 1,
@@ -183,114 +184,15 @@ export default function LengthConverter() {
         }}
       />
 
-      <div className="mt-8">
-        <CalculatorSEO
-          title="Length Converter"
-          whatIsIt={
-            <>
-              <p>
-                Our <strong>Length Converter</strong> is a fast, highly accurate
-                digital tool designed to instantly translate distances and
-                lengths across different measurement systems. Whether you are
-                dealing with the Metric system (meters, kilometers), the
-                Imperial system (feet, miles, inches), or even astronomical
-                units (lightyears), this tool handles the complex conversion
-                mathematics behind the scenes.
-              </p>
-              <p>
-                Length conversion is one of the most common daily mathematical
-                tasks. From interpreting foreign road signs in kilometers to
-                understanding building schematics drawn in millimeters, having a
-                reliable conversion tool prevents dangerous calculation errors
-                and saves time.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Bra Size Calculator In Inches,
-                Wavelength Calculator, Length Converter, Steps To Miles
-                Calculator, Kilometer Distance Map, Length Calculator, Arc
-                Length Calculator, Arc Length Formula, Circumference To Diameter
-                Calculator, Diameter Calculator, Miles To Km Converter
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Result = Input × Conversion_Factor
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Precise unit translation for Length Converter using industry-standard conversion constants.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's look at a very common everyday occurrence: running a "5K".
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Setup:</strong> You signed up for a 5-kilometer
-                  (5K) charity run, but you only know how to pace yourself in
-                  miles.
-                </li>
-                <li>
-                  <strong>The Math:</strong> The conversion factor to go from
-                  Kilometers to Miles is exactly <strong>0.621371</strong>.
-                </li>
-                <li>
-                  <strong>The Calculation:</strong> 5 km × 0.621371 = 3.106855
-                </li>
-                <li>
-                  <strong>Result:</strong> A "5K" race is exactly{" "}
-                  <strong>3.1 miles</strong> long. Now you can set your
-                  treadmill or running watch accordingly.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>International Travel:</strong> If you are driving an
-                American car in Canada or Europe, the speed limits and distance
-                signs will instantly change from Miles to Kilometers. Knowing
-                exactly how far "100 km" is prevents you from panicking on the
-                highway.
-              </li>
-              <li>
-                <strong>Construction & Engineering:</strong> Precision is
-                everything. Many international building materials, screws, and
-                tools are measured in millimeters (mm), while American plans
-                might be written in fractions of an inch. A tiny fractional
-                error can completely ruin a project.
-              </li>
-              <li>
-                <strong>Science & Academics:</strong> In chemistry and physics,
-                scientists constantly convert between microscopic units like
-                micrometers (µm) and nanometers (nm) to measure wavelengths of
-                light or the size of bacteria.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Is the Metric system better than the Imperial system?",
-              answer:
-                "Scientifically, yes. The Metric system is universally considered superior because it is a 'Base-10' system. Every unit scales perfectly by multiplying or dividing by 10, 100, or 1000 (e.g., 1000 millimeters in a meter). The Imperial system is famously chaotic (12 inches in a foot, 3 feet in a yard, 5280 feet in a mile).",
-            },
-            {
-              question: "What exactly is a Light Year?",
-              answer:
-                "A light year is strictly a measurement of extremely vast distances, not time. It is exactly the distance that light (traveling at 299,792,458 meters per second in a vacuum) can travel in one Earth year. It equates to roughly 5.88 trillion miles.",
-            },
-            {
-              question: "Why does the US still use feet and miles?",
-              answer:
-                "Historical inertia. The US government actually passed the 'Metric Conversion Act' in 1975 to switch the country to the metric system, but made it completely voluntary. Because changing billions of road signs, textbooks, and factory machines was incredibly expensive and unpopular, the transition was quietly abandoned.",
-            },
-          ]}
+      <div className="mt-8">        <CalculatorSEO
+          title={lengthSeoData.title}
+          whatIsIt={lengthSeoData.whatIsIt}
+          formula={lengthSeoData.formula}
+          example={lengthSeoData.example}
+          useCases={lengthSeoData.useCases}
+          faqs={lengthSeoData.faqs}
+          deepDive={lengthSeoData.deepDive}
+          glossary={lengthSeoData.glossary}
           relatedCalculators={[
             {
               name: "Weight Converter",
@@ -303,15 +205,16 @@ export default function LengthConverter() {
               desc: "Toggle between Fahrenheit, Celsius, and Kelvin scales.",
             },
             {
-              name: "Volume Converter",
-              path: "/volume-converter/",
-              desc: "Convert liquid measurements like Gallons, Liters, and Ounces.",
+              name: "Speed Converter",
+              path: "/speed-converter/",
+              desc: "Convert between MPH, KPH, and Knots.",
             },
             {
-              name: "Age Calculator",
-              path: "/age-calculator/",
-              desc: "Calculate your exact age in years, months, and days.",
-            }]}
+              name: "Time Calculator",
+              path: "/time-calculator/",
+              desc: "Add, subtract, and convert durations of time.",
+            }
+          ]}
         />
       </div>
     </div>

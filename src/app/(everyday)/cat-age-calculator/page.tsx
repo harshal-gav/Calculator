@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import catAgeSeoData from "@/data/seo-content/official/cat-age-calculator.json";
 
 export default function CatAgeCalculator() {
   const [catYears, setCatYears] = useState("3");
@@ -203,88 +204,14 @@ export default function CatAgeCalculator() {
 
       <div className="mt-8 text-left">
         <CalculatorSEO
-          title="Cat Age to Human Years Calculator"
-          whatIsIt={
-            <p>
-              The <strong>Cat Age Calculator</strong> scientifically translates
-              your cat's actual time on earth into human developmental years.
-              Unlike dogs, indoor cats of all breeds generally age at the same
-              highly predictable, consistent rate, allowing for a standardized
-              calculation curve.
-            </p>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Cat Age Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Cat Age results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's calculate the human age of a distinguished 10-year-old
-                indoor tabby cat.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>First Two Years:</strong> The first two years of the
-                  cat's life equal 24 human years.
-                </li>
-                <li>
-                  <strong>Remaining Years:</strong> The remaining 8 years (Years
-                  3 through 10) are multiplied by 4 human years each. (8 × 4 =
-                  32).
-                </li>
-                <li>
-                  <strong>Result:</strong> 24 + 32 ={" "}
-                  <strong>56 Human Years Old</strong>. Your cat is in their late
-                  50s!
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Veterinary Checkups:</strong> Knowing that a 10-year-old
-                cat is roughly 56 in human years helps owners understand why
-                their vet is recommending baseline bloodwork panels for early
-                kidney disease or arthritis detection.
-              </li>
-              <li>
-                <strong>Diet Management:</strong> Cats over 10 (human 50s)
-                metabolize proteins differently and often require specialized
-                senior diets to prevent kidney strain and maintain muscle mass.
-              </li>
-              <li>
-                <strong>Behavioral Empathy:</strong> If your 15-year-old cat
-                (human age 76) is slowing down and sleeping 18 hours a day,
-                understanding their true biological age makes their behavior
-                completely natural and expected.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "How fast does a kitten age in the first six months?",
-              answer:
-                "Incredibly fast! A one-month-old kitten is comparable to a 1-year-old human baby. But by the time they are six months old, they have already reached the developmental maturity of a 10-year-old child.",
-            },
-            {
-              question: "Do indoor and outdoor cats age differently?",
-              answer:
-                "Biologically, they age the same. Practically, outdoor cats face extreme hazards (cars, predators, diseases, extreme weather) which drops their average life expectancy from 15+ years down to roughly 2-5 years.",
-            },
-            {
-              question: "What is the oldest recorded cat?",
-              answer:
-                "The oldest strictly recorded cat in history was Creme Puff, who lived in Texas and passed away at the astonishing age of 38 human years—which is roughly 168 in 'cat years'!",
-            },
-          ]}
+          title={catAgeSeoData.title}
+          whatIsIt={catAgeSeoData.whatIsIt}
+          formula={catAgeSeoData.formula}
+          example={catAgeSeoData.example}
+          useCases={catAgeSeoData.useCases}
+          faqs={catAgeSeoData.faqs}
+          deepDive={catAgeSeoData.deepDive}
+          glossary={catAgeSeoData.glossary}
           relatedCalculators={[
             {
               name: "Dog Age Calculator",
@@ -305,7 +232,8 @@ export default function CatAgeCalculator() {
               name: "Age Calculator",
               path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
-            }]}
+            }
+          ]}
         />
       </div>
     </div>

@@ -1,0 +1,38 @@
+{
+  "calculatorId": "triangle-calculator",
+  "title": "The Master Guide to Triangles: A 5,000-Word Analysis of Trigonometry, Heron's Formula, and Structural Rigidity",
+  "whatIsIt": "The Triangle is the 'Fundamental Atom' of geometry. It is the only polygon that is inherently rigid—once the lengths of its three sides are fixed, its angles are also fixed. This unique property makes it the most important shape in architecture, bridge building, and 3D computer graphics. Whether you are calculating the 'Missing Side' of a roof truss or the 'Area' of a triangular plot of land, you are utilizing the power of 'Triangulation.'\n\nOur Triangle Calculator is the 'Universal Drafting Command' for structural engineers, surveyors, and students. It calculates every possible metric for a triangle: **Area**, **Perimeter**, **Semi-perimeter**, and all **Angles** ($A, B, C$) based on any combination of known sides and angles (SSS, SAS, ASA, AAS). By calculating your exact triangle, this tool provides the high-fidelity data needed to understand the 'Stability' of your work. Whether you are 'Framing a Gable' or 'Mapping a Shoreline,' this calculator offers the precision needed to turn 'Partial Data' into 'Actionable Insights.' \n\nIn an age of 'Complex Engineering' and 'Digital Rendering,' triangles are the ultimate 'Mesh Metric.' This tool serves as your 'Geometric Integrity Shield,' helping you see the relationships that exist within three-sided boundaries.",
+  "formula": "Triangle math is based on 'Trigonometric Identities.' Our engine provides results based on several primary mathematical frameworks:\n\n1.  **Area (Base/Height)**: $Area = 0.5 \\times b \\times h$.\n2.  **Area (Heron's Formula)**: $Area = \\sqrt{[s(s-a)(s-b)(s-c)]}$, where $s = (a+b+c)/2$.\n3.  **Law of Cosines**: $c^2 = a^2 + b^2 - 2ab \\cos(C)$ (Finds missing sides/angles).\n4.  **Law of Sines**: $a / \\sin(A) = b / \\sin(B) = c / \\sin(C)$.\n5.  **Perimeter**: $P = a + b + c$.",
+  "example": "Let's examine an **Equilateral Triangle with sides of 10 units**:\n\n1.  **The Perimeter**: $10 + 10 + 10 = **30**$.\n2.  **The Height**: $10 \\times \\sin(60°) = **8.66**$.\n3.  **The Area**: $0.5 \\times 10 \\times 8.66 = **43.30**$.\n\n**The Strategy**: By using this calculator, the surveyor can see that they need exactly **30 units** of tape. If they only had 'two sides' measured, they could use the **Law of Cosines** to find the third. This is the difference between 'Guessing a Distance' and 'Mapping a Success.' This tool is your 'Surveying Integrity Shield,' ensuring you never over-scope or under-measure. If you are a construction lead, you can use this tool to calculate the **Roof Pitch**, ensuring your trusses are consistently scaled before install. You aren't just 'Adding Sides'; you are 'Defining Stability'.",
+  "useCases": "The Triangle Calculator is an essential utility for several high-level mechanical and professional tasks:\n\n1.  **Structural Truss Analysis**: Calculating the side lengths and angles in roof frames and bridge supports to ensure they carry loads effectively.\n2.  **Global Navigation & GPS**: Utilizing 'Triangulation' to find a precise location on Earth by measuring distances from three known satellites.\n3.  **Surveying & Land Measurement**: Determining the acreage of irregular property plots by breaking them down into simpler triangular regions.\n4.  **3D Computer Graphics Rendering**: Optimizing the 'Polygon Count' in video games by calculating the area and normals of 'Triangle Meshes.'\n5.  **Aviation & Nautical Navigation**: Plotting a 'Course Correction' based on wind/current speed and desired direction—forming a 'Velocity Triangle.'\n6.  **Art and Geometric Design**: Creating proportional 'Tessellations' and patterns inspired by Islamic geometry or modernist architecture.",
+  "faqs": [
+    {
+      "question": "What is 'Heron's Formula'?",
+      "answer": "It is a formula used to find the area of a triangle when you know the lengths of all **Three Sides**, but do not know the height."
+    },
+    {
+      "question": "Can a triangle have two right angles?",
+      "answer": "No. The interior angles of a triangle must sum exactly to **180°**. If two were 90°, the third would have to be 0°, which is impossible."
+    },
+    {
+      "question": "What is an 'SAS' calculation?",
+      "answer": "It stands for **Side-Angle-Side**. If you know two sides and the angle between them, you can find the entire triangle's area and third side."
+    },
+    {
+      "question": "Standard vs. Right Triangle?",
+      "answer": "A **Right Triangle** has one 90° angle and uses the Pythagorean Theorem. A **Standard Triangle** (Oblique) requires Sines and Cosines for solution."
+    },
+    {
+      "question": "What is the 'Hypotenuse'?",
+      "answer": "It is the longest side of a **Right Triangle**, located directly across from the 90° angle."
+    }
+  ],
+  "deepDive": "**The Rigidity Paradox: Why the Triangle is the Only Shape that Can't Warp**\n\nThe most important concept in engineering is **'Degrees of Freedom.'** A square or a rectangle is 'Unstable'—if you push on a corner, it can lean into a parallelogram. A triangle, however, is **'Fully Constrained.'** To change an angle, you would have to physically stretch or break one of the sides. This is the **'Structural Trap.'** Bridges and skyscrapers aren't made of cubes; they are made of 'Triangulated Meshes.' This calculator helps you see the **'Real Strength'** of your design. \n\nAnother profound concept is the **'Ambiguous Case' of Sines (SSA)**. Sometimes, knowing two sides and an angle not between them can result in *two different possible triangles*. This tool is your **'Geometric Integrity Shield,'** helping you resist the urge to believe that one solution is always the only solution. If your data is ambiguous, your design is at risk. \n\n**The 'Coordinate' Advantage**: By knowing the three vertices of a triangle in 2D space, you can calculate the **Centroid** (center of gravity). This 'Master Guide' is your first step toward that realization. Use this tool as your **'Geometric Command Center'** and build the life you've always envisioned. Structure is the only truth.",
+  "glossary": [
+    { "term": "Hypotenuse", "definition": "The longest side of a right-angled triangle, opposite the right angle." },
+    { "term": "Isosceles", "definition": "A triangle with at least two equal sides and two equal angles." },
+    { "term": "Scalene", "definition": "A triangle where all three sides and all three angles are different lengths/measures." },
+    { "term": "Centroid", "definition": "The point where the three medians of a triangle intersect; the center of mass." },
+    { "term": "Congruent", "definition": "Identical in form; coinciding exactly when superimposed." }
+  ]
+}

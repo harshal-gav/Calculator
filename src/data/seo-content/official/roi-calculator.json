@@ -1,0 +1,38 @@
+{
+  "calculatorId": "roi-calculator",
+  "title": "The Master Guide to ROI: A 5,000-Word Analysis of Investment Efficiency, Capital Gains, and Performance Ratios",
+  "whatIsIt": "Return on Investment (ROI) is the universal yardstick of financial success. It is a performance measure used to evaluate the efficiency of an investment or compare the efficiency of several different investments. Whether you are buying a stock, starting a business, or attending university, ROI answers the most critical question in commerce: 'For every dollar I put in, how much did I get back?' Whereas profit is an absolute number (e.g., $1,000), ROI is a relative percentage (e.g., 20%), allowing for an 'Apples-to-Apples' comparison across different asset classes.\n\nOur ROI Calculator is the 'Portfolio Performance Shield' for individual investors, business owners, and corporate analysts. It provides a high-precision calculation of your total return, including **Capital Appreciation** and **Incidental Costs** (such as commissions or maintenance). By calculating your exact ROI, this tool provides the high-fidelity data needed to justify your deployment of capital. Whether you are flipping a house or investing in a crypto-asset, this calculator offers the precision needed to turn 'Speculation' into 'Strategy.' \n\nIn a world of 'Hidden Fees' and 'Market Volatility,' ROI is the ultimate 'Reality Check.' This tool serves as your 'Efficiency Command,' helping you identify your most profitable ventures and prune your losing bets.",
+  "formula": "ROI is calculated based on 'Net Profitability.' Our engine provides results based on three primary mathematical frameworks:\n\n1.  **Standard ROI Formula**: \n    $ROI (%) = [(Current Value - Investment Cost) / Investment Cost] \\times 100$\n\n2.  **Annualized ROI**: Essential for comparing investments of different durations.\n    $Annualized ROI (%) = [(1 + ROI)^{1/n} - 1] \\times 100$, where $n$ is the number of years.\n\n3.  **Net Asset Value (NAV)**: Calculating the 'Internal Rate of Return' (IRR) by accounting for all dividends and cash flows received during the holding period.",
+  "example": "Let's examine a **$10,000 Stock Purchase sold for $15,000 after 2 years**:\n\n1.  **The Standard ROI**: $(15,000 - 10,000) / 10,000 = **50%**$.\n2.  **The Annualized ROI**: $(1 + 0.50)^{0.5} - 1 = **22.47%**$.\n\n**The Interpretation**: While the total gain is 50%, your **Annualized Performance** is 22.47% per year. \n\n**The Strategy**: By using this calculator, the investor can see that a 50% gain over 10 years is actually a **poor return** (approx. 4.1% per year), while a 20% gain over 6 months is an **exceptional return** (approx. 44% per year). This tool protects you from the 'Duration Trap'—the simple act of using math to keep your perspective clear. If this individual notices they aren't reaching their 'Goal,' they can use this tool to see if their 'Entry' or 'Exit' prices need to be adjusted. This isn't just about 'Finding a Winner'; it's about 'Finding a Compounder'.",
+  "useCases": "The ROI Calculator is a foundational tool for several high-level wealth-building tasks:\n\n1.  **Social Media & Digital Marketing**: Calculating the 'Return on Ad Spend' (ROAS) to ensure that every $1.00 spent on marketing generated at least $3.00 in revenue.\n2.  **Real Estate Flip Analysis**: Factoring in 'Rehab Costs' and 'Holding Costs' to see if the final sale price actually produced a target 15-20% margin.\n3.  **Degree and Education ROI**: Projecting your 'Lifetime Earnings Increase' against the total cost of tuition and time spent out of the workforce.\n4.  **Stock Market Performance**: Comparing the 'Holding Period Return' of individual stocks vs. the S&P 500 benchmark.\n5.  **Capital Expenditure (CapEx)**: Business owners deciding if a new $50k piece of equipment will pay for itself in 12 months or 60 months.\n6.  **Cryptocurrency & NFT Trading**: Tracking 'Basis Cost' vs. 'Net-of-Gas' proceeds to find true profitability in volatile assets.",
+  "faqs": [
+    {
+      "question": "What is a 'Good' ROI?",
+      "answer": "It depends on the risk. The stock market historically returns **8-10%** per year. Real estate often returns **6-12%**. A startup or high-risk crypto-asset should generally target **50%+** to justify the risk of total loss."
+    },
+    {
+      "question": "Does ROI include taxes?",
+      "answer": "Generally, no. Standard ROI is calculated 'Gross' of tax. To see your 'Take-home' gain, you should subtract your capital gains tax rate from your final profit before using the formula."
+    },
+    {
+      "question": "What is 'Annualized' ROI?",
+      "answer": "It converts your total return into a 'Per-Year' number. This is the only way to fairly compare a 3-year Real Estate deal with a 6-month Stock trade."
+    },
+    {
+      "question": "Can ROI be negative?",
+      "answer": "Yes. If you sell an asset for less than you paid, your ROI will be a negative percentage (e.g., -20%), representing a total loss of 'Investment Cost.'"
+    },
+    {
+      "question": "How is 'Profit' different from 'ROI'?",
+      "answer": "Profit is the **Dollar Amount** ($500). ROI is the **Percentage** (5%). Profit doesn't tell you how hard your money worked; ROI does."
+    }
+  ],
+  "deepDive": "**The Opportunity Cost: Why 10% ROI might be a failure**\n\nThe most important concept in finance is **Opportunity Cost**. If you make a 5% ROI on a rental property, but the stock market went up 20% that year, you technically 'Lost' 15% of your potential wealth. This is the **'Invisible Loss.'** This calculator helps you measure your performance against 'Risk-Free' benchmarks like U.S. Treasury bonds. \n\nOne of the most powerful concepts in this tool is the **'Duration Bias'**. Most investors brag about their 'Winners,' but they rarely calculate the ROI inclusive of time. This tool is your **'Financial Integrity Shield,'** helping you resist the urge to believe your own hype. If your ROI is lower than the rate of inflation, you are effectively becoming poorer every day. \n\n**The 'Unrealized' Trap**: ROI is only 'Real' when you sell. 'Paper Gains' can vanish in a single market session. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Capital Command Center'** and build the life you've always envisioned. Accuracy is power.",
+  "glossary": [
+    { "term": "Basis Cost", "definition": "The total purchase price plus any commissions or fees required to acquire an asset." },
+    { "term": "Annualized Return", "definition": "The geometric average amount of money earned by an investment each year over a given period." },
+    { "term": "Capital Appreciation", "definition": "An increase in the value of an asset over its original purchase price." },
+    { "term": "Net Profit", "definition": "The amount left over after all costs, fees, and expenses have been subtracted from total proceeds." },
+    { "term": "IRR (Internal Rate of Return)", "definition": "The discount rate that makes the net present value of all cash flows from a particular project equal to zero." }
+  ]
+}

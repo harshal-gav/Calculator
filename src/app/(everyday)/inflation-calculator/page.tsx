@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import inflationSeoData from "@/data/seo-content/official/inflation-calculator.json";
 
 export default function InflationCalculator() {
   const [amount, setAmount] = useState("100");
@@ -149,127 +150,35 @@ export default function InflationCalculator() {
       </div>
 
       <CalculatorSEO
-        title="The Ultimate Guide to Inflation & Purchasing Power Economics"
-        whatIsIt={
-          <>
-            <p className="text-lg leading-relaxed mb-6">
-              The <strong>Inflation Calculator</strong> is a specialized macroeconomic auditing tool designed to quantify the rate at which fiat currency loses its exchange value relative to goods and services. Commonly referred to as the "silent thief" of the financial world, inflation is the process where the general level of prices rises, and consequently, the purchasing power of your money falls.
-            </p>
-            <p className="leading-relaxed mb-6">
-              In an environment of positive inflation, a dollar today is objectively more valuable than a dollar tomorrow. This calculator models that decay across any time horizon, allowing you to project what the "real" value of your savings will be in 10, 20, or 30 years. It serves as a stark reminder that simply "saving" money in cash is often a mathematically losing strategy if those savings are not earning a return that exceeds the Consumer Price Index (CPI).
-            </p>
-            <p className="leading-relaxed">
-              Understanding inflation is paramount for retirement planning, as it dictates the "real wealth" you will possess when you stop earning an active income. This tool provides the clarity needed to adjust your investment targets and lifestyle expectations for the economic realities of the future.
-            </p>
-          </>
-        }
-        comparisonTable={{
-          title: "Historical Impact of Inflation (The 100-Year Perspective)",
-          headers: ["Decade Group", "Avg. Inflation Rate", "Purchasing Power Loss ($10k)", "Economic Context"],
-          rows: [
-            ["1920s - 1930s", "-1.5% (Deflation)", "+$15,000", "Post-WWI boom followed by Great Depression."],
-            ["1940s - 1950s", "4.0%", "-$4,500", "Post-WWII reconstruction and industrial surge."],
-            ["1970s - 1980s", "7.1%", "-$1,200", "Stagflation, oil shocks, and high interest rates."],
-            ["1990s - 2010s", "2.1%", "-$8,100", "The 'Great Moderation' and tech expansion."],
-            ["2020s - Present", "4.5% - 8.0%", "-$6,500", "Supply chain shocks and monetary expansion."],
-          ]
-        }}
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Pᵥ = P₀(1 + i)ⁿ
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Projecting future purchasing power over time.
-            </p>
-          </>
-        }
-          example={
-          <div className="bg-white p-10 rounded-[3rem] border border-slate-200 shadow-xl">
-             <div className="flex items-center space-x-4 mb-8">
-                <div className="w-12 h-12 bg-slate-900 text-white rounded-2xl flex items-center justify-center font-black text-xl">1</div>
-                <h5 className="font-black text-slate-900 uppercase tracking-widest text-sm">Scenario: The $100 Grocery Habit</h5>
-             </div>
-             <p className="text-slate-600 mb-8 leading-relaxed">
-               If your weekly grocery bill is <strong>$100</strong> today, and we experience a period of <strong>4.5% annual inflation</strong> (similar to the 2021-2023 surge), here is what that exact same basket of milk, bread, and meat will cost you:
-             </p>
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                    <span className="block text-[10px] font-black text-slate-400 mb-2 uppercase">In 5 Years</span>
-                    <div className="text-3xl font-black text-slate-900">$124.62</div>
-                </div>
-                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                    <span className="block text-[10px] font-black text-slate-400 mb-2 uppercase">In 10 Years</span>
-                    <div className="text-3xl font-black text-slate-900">$155.30</div>
-                </div>
-                <div className="p-6 bg-red-600 text-white rounded-2xl shadow-lg">
-                    <span className="block text-[10px] font-black text-red-200 mb-2 uppercase">In 20 Years</span>
-                    <div className="text-3xl font-black">$241.17</div>
-                </div>
-             </div>
-             <p className="mt-8 text-sm text-slate-400 font-medium italic">
-                Insight: In 20 years, you will need to spend $2.41 for every $1.00 you spend today just to maintain your current diet.
-             </p>
-          </div>
-        }
-        useCases={
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-             <div className="p-8 group hover:bg-white hover:shadow-xl transition-all rounded-[2rem]">
-                <div className="text-4xl mb-6 grayscale group-hover:grayscale-0 transition">💰</div>
-                <h6 className="font-black text-slate-900 mb-4 uppercase text-xs">Retirement Planning</h6>
-                <p className="text-sm text-slate-500 leading-relaxed font-medium">Estimate what your current 'dream lifestyle' cost will actually be by the time you stop working.</p>
-             </div>
-             <div className="p-8 group hover:bg-white hover:shadow-xl transition-all rounded-[2rem]">
-                <div className="text-4xl mb-6 grayscale group-hover:grayscale-0 transition">📈</div>
-                <h6 className="font-black text-slate-900 mb-4 uppercase text-xs">Salary Benchmarking</h6>
-                <p className="text-sm text-slate-500 leading-relaxed font-medium">Verify if your cost-of-living adjustments (COLA) are keeping pace with your regional inflation.</p>
-             </div>
-             <div className="p-8 group hover:bg-white hover:shadow-xl transition-all rounded-[2rem]">
-                <div className="text-4xl mb-6 grayscale group-hover:grayscale-0 transition">🏦</div>
-                <h6 className="font-black text-slate-900 mb-4 uppercase text-xs">Debt Evaluation</h6>
-                <p className="text-sm text-slate-500 leading-relaxed font-medium">Understand why inflation benefits debtors (like mortgage holders) as they pay back loans with cheaper dollars.</p>
-             </div>
-          </div>
-        }
-        glossary={[
-          { term: "CPI (Consumer Price Index)", definition: "The official measure of the average change over time in the prices paid by urban consumers for a market basket of goods and services." },
-          { term: "Purchasing Power", definition: "The amount of goods or services that one unit of currency can buy." },
-          { term: "Real Interest Rate", definition: "The nominal interest rate minus the rate of inflation." },
-          { term: "Nominal Value", definition: "The value of an asset or income in current dollars, without adjusting for price changes." },
-          { term: "Hyperinflation", definition: "An extremely rapid and out-of-control inflation, usually exceeding 50% per month." },
-          { term: "Deflation", definition: "A general decline in prices across an economy, often associated with severe economic contraction." },
-          { term: "Stagflation", definition: "A rare and difficult economic period characterized by both high inflation and stagnant economic growth/high unemployment." },
-          { term: "Personal Inflation Rate", definition: "The specific rate of inflation an individual experiences based on their unique spending habits (e.g., high gas usage vs. high healthcare usage)." },
-          { term: "Fixed Income", definition: "An investment that yields regular, fixed payments, such as a traditional pension or a corporate bond." },
-          { term: "Fiat Currency", definition: "Money that has value because a government maintains its value, rather than being backed by a physical commodity like gold." },
-        ]}
-        faqs={[
-          {
-            question: "Is inflation always a bad thing?",
-            answer: "For savers holding cash, yes. However, for the economy as a whole, moderate inflation (2%) is considered healthy because it encourages investment and keeps the credit market functioning. It also benefits borrowers (like people with fixed-rate mortgages) because the real value of their debt shrinks over time."
-          },
-          {
-            question: "How can I protect my savings from inflation?",
-            answer: "The primary protection is investing in assets that historically appreciate faster than the CPI. This includes broadly diversified stock market index funds, real estate (which allows for rental increases), and TIPS (Treasury Inflation-Protected Securities), which are specifically indexed to inflation."
-          },
-          {
-            question: "What is 'Lifestyle Creep' vs Inflation?",
-            answer: "Inflation is the increase in the price of the same goods. Lifestyle Creep is when you choose to buy more expensive goods because your income increased. If your bills went up 10%, but your grocery items are the same, that's inflation. If you started buying organic steak instead of ground beef, that's lifestyle creep."
-          },
-          {
-            question: "Why does the government print money if it causes inflation?",
-            answer: "Governments often expand the money supply to stimulate economic growth, provide liquidity during crises, or fund government spending. While this can cause inflation, central banks attempt to balance this against the risk of high unemployment or a deflationary spiral."
-          },
-          {
-            question: "How long does it take for money to lose half its value?",
-            answer: "Using the 'Rule of 70', you can estimate this by dividing 70 by the inflation rate. At a 3% inflation rate, your money will lose half its purchasing power in approximately 23.3 years (70 / 3 = 23.3)."
-          }
-        ]}
+        title={inflationSeoData.title}
+        whatIsIt={inflationSeoData.whatIsIt}
+        formula={inflationSeoData.formula}
+        example={inflationSeoData.example}
+        useCases={inflationSeoData.useCases}
+        faqs={inflationSeoData.faqs}
+        deepDive={inflationSeoData.deepDive}
+        glossary={inflationSeoData.glossary}
         relatedCalculators={[
-          { name: "Salary Calculator", path: "/salary-calculator/", desc: "Compare your take-home pay across different years to see your real income growth." },
-          { name: "Retirement Calculator", path: "/retirement-calculator/", desc: "Model your full retirement nest egg with inflation-adjusted withdrawal rates." },
-          { name: "Compound Interest Calculator", path: "/compound-interest-calculator/", desc: "See how investing your cash can help you stay ahead of the inflation curve." },
-          { name: "Mortgage Calculator", path: "/mortgage-calculator/", desc: "Understand how fixed-rate debt acts as a hedge against rising prices." }
+          {
+            name: "Salary Calculator",
+            path: "/salary-calculator/",
+            desc: "Compare your take-home pay across different years to see your real income growth.",
+          },
+          {
+            name: "Retirement Calculator",
+            path: "/retirement-calculator/",
+            desc: "Model your full retirement nest egg with inflation-adjusted withdrawal rates.",
+          },
+          {
+            name: "Compound Interest Calculator",
+            path: "/compound-interest-calculator/",
+            desc: "See how investing your cash can help you stay ahead of the inflation curve.",
+          },
+          {
+            name: "Mortgage Calculator",
+            path: "/mortgage-calculator/",
+            desc: "Understand how fixed-rate debt acts as a hedge against rising prices.",
+          }
         ]}
       />
     </div>

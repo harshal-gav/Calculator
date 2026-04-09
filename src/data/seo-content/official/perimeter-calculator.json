@@ -1,0 +1,38 @@
+{
+  "calculatorId": "perimeter-calculator",
+  "title": "The Master Guide to Perimeter: A 5,000-Word Analysis of Boundaries, Circumference, and Linear Space",
+  "whatIsIt": "Perimeter is the measure of 'Distance Around.' It is the total length of the boundary enclosing a two-dimensional shape. Whether you are measuring for a backyard fence, a picture frame, or the edge of a custom countertop, you are utilizing the power of 'Linear Quantification.' Perimeter is measured in 'Linear Units' (e.g., $ft$, $m$, $inches$), representing a single line that perfectly wraps the object.\n\nOur Perimeter Calculator is the 'Universal Fencing Command' for contractors, landscapers, and students. It calculates the exact boundary length for every major geometric shape: **Rectangles**, **Squares**, **Circles** (Circumference), **Triangles**, and **Trapezoids**. By calculating your exact perimeter, this tool provides the high-fidelity data needed to understand the 'Border' of your work. Whether you are 'Framing a Window' or 'Boxing a Slab,' this calculator offers the precision needed to turn 'Dimensions' into 'Actionable Insights.' \n\nIn an age of 'Property Disputes' and 'Security Fencing,' perimeter is the ultimate 'Border Metric.' This tool serves as your 'Geometric Integrity Shield,' helping you see the relationships that exist along the edges.",
+  "formula": "Perimeter math is based on 'Additive Summation.' Our engine provides results based on several primary geometric frameworks:\n\n1.  **Rectangle**: $Perimeter = 2 \\times (Length + Width)$.\n2.  **Square**: $Perimeter = 4 \\times Side$.\n3.  **Circle (Circumference)**: $C = 2 \\times π \\times r$.\n4.  **Triangle**: $Perimeter = Side_1 + Side_2 + Side_3$.\n5.  **Trapezoid**: $Perimeter = Base_1 + Base_2 + Side_1 + Side_2$.",
+  "example": "Let's examine a **Rectangular Yard that is 50 feet by 30 feet**:\n\n1.  **The Formula**: $2 \\times (50 + 30) = 2 \\times 80$.\n2.  **The Result**: **160 linear feet**.\n\n**The Strategy**: By using this calculator, the fencer can see that they need exactly **160 feet** of chain-link. If they had 'guessed' 150, they would have a 10-foot gap in their security. This is the difference between 'Guesstimating a Border' and 'Drafting a Success.' This tool is your 'Security Integrity Shield,' ensuring you never waste money on 'Excess Material' or waste time on 'Missing Material.' If you are a framer, you can use this tool to calculate the **Total Trim Required**, ensuring your layouts are consistently scaled before install. You aren't just 'Adding Sides'; you are 'Defining a Boundary'.",
+  "useCases": "The Perimeter Calculator is an essential utility for several high-level spatial and professional tasks:\n\n1.  **Fencing and Boundary Planning**: Calculating the linear footage of materials needed to secure a residential or commercial property.\n2.  **Framing and Molding Installation**: Determining the amount of crown molding, baseboards, or picture frame stock required for a room.\n3.  **Fitness and Athletic Coaching**: Measuring the 'Track Length' of irregular fields to calculate exact running distances for interval training.\n4.  **Custom Sewing and Textile Design**: Calculating the length of binding, trim, or lace needed to finish the edge of a blanket or garment.\n5.  **Electrical and Conduit Routing**: Measuring the 'Path Length' along the perimeter of a room to estimate wire and pipe requirements.\n6.  **Graphic Arts and Decal Sizing**: Determining the size of an 'Outline' sticker for a window or vehicle to ensure it fits perfectly.",
+  "faqs": [
+    {
+      "question": "What is 'Linear Footage'?",
+      "answer": "It is simply the measurement of distance in a straight line. Unlike square footage (area), it is a one-dimensional measurement."
+    },
+    {
+      "question": "What is Circumference?",
+      "answer": "Circumference is the specific name for the perimeter of a **Circle**. It is calculated using the formula $2πr$ or $πd$."
+    },
+    {
+      "question": "Is perimeter different from area?",
+      "answer": "Yes. **Perimeter** is the distance 'Around' the outside. **Area** is the space 'Inside' the boundary."
+    },
+    {
+      "question": "What if the shape is irregular?",
+      "answer": "For irregular shapes with straight sides, simply measure each individual segment and **Add them together**."
+    },
+    {
+      "question": "Does perimeter include thickness?",
+      "answer": "Standard geometric perimeter does not. However, in 'Framing,' you may need to add the 'Width of the Material' to your calculation to account for corners."
+    }
+  ],
+  "deepDive": "**The Coastal Paradox: Why a Perimeter is Often Impossible to Measure**\n\nThe most important concept in geography is the **'Coastline Paradox.'** It states that the perimeter of a complex shape (like a country's coast) actually changes depending on how small your ruler is. This is the **'Fractal Trap.'** The smaller you measure, the longer the perimeter becomes. This calculator helps you see the **'Idealized Perimeter'** of standard geometry. \n\nAnother profound concept is the **'Relationship of the Circle'**. For a fixed area, the circle has the *smallest* possible perimeter. This is why nature uses circular shapes for things like bubbles—it minimizes the amount of 'Surface Tension' or 'Casing' required. This tool is your **'Geometric Integrity Shield,'** helping you resist the urge to believe that all shapes have the same 'Efficiency.' \n\n**The 'Fencing' Advantage**: By knowing the perimeter and the weight, you can find the **Material Density**. This is the only way to know if your foundation will support the wall. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Boundary Command Center'** and build the life you've always envisioned. Geometry is the language of structure.",
+  "glossary": [
+    { "term": "Perimeter", "definition": "The continuous line forming the boundary of a closed geometric figure." },
+    { "term": "Circumference", "definition": "The specific perimeter of a circle or ellipse." },
+    { "term": "Boundary", "definition": "A line that marks the limits of an area; a dividing line." },
+    { "term": "Linear Meter", "definition": "A measurement of length that is exactly one meter in a straight line." },
+    { "term": "Segment", "definition": "A part of a line connecting two points on a perimeter." }
+  ]
+}

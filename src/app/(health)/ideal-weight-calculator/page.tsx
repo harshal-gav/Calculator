@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import idealWeightSeoData from "@/data/seo-content/official/ideal-weight-calculator.json";
 
 export default function IdealWeightCalculator() {
   const [height, setHeight] = useState("175"); // cm

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import moeSeoData from "@/data/seo-content/official/margin-of-error-calculator.json";
 
 export default function MarginOfErrorCalculator() {
   const [sampleSize, setSampleSize] = useState("1000");
@@ -242,99 +243,14 @@ export default function MarginOfErrorCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Margin of Error Calculator & Polling Precision"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Margin of Error Calculator</strong> determines the
-                statistical "wiggle room" or exact range of uncertainty
-                surrounding a survey, poll, or sample dataset.
-              </p>
-              <p>
-                Because it is almost impossible to survey every single person in
-                a population, researchers survey a smaller "sample." The Margin
-                of Error tells you precisely how many percentage points your
-                sample's result might differ from the true, real-world
-                population's result.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Margin Of Error Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Margin Of Error results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Imagine you poll <strong>1,000 voters (n)</strong>, and 60% say
-                they will vote for Candidate A. You want a{" "}
-                <strong>95% Confidence Level (z = 1.96)</strong>.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Setup:</strong> MoE = 1.96 * √ [ (0.50 * 0.50) /
-                  1000 ]
-                </li>
-                <li>
-                  <strong>The Math:</strong> MoE = 1.96 * √ [ 0.25 / 1000 ] =
-                  1.96 * √0.00025 = 1.96 * 0.0158
-                </li>
-                <li>
-                  <strong>The Result:</strong> MoE ={" "}
-                  <strong>0.031 (or ±3.1%)</strong>.
-                </li>
-                <li>
-                  <strong>Conclusion:</strong> You are 95% confident that the
-                  true number of voters who support Candidate A sits exactly
-                  between 56.9% and 63.1%.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Political Polling:</strong> News networks use MoE to
-                declare if an election race is a "statistical tie." If Candidate
-                A is winning by 2%, but the MoE is ±4%, the race is officially
-                too close to call.
-              </li>
-              <li>
-                <strong>Market Research:</strong> Companies launching a new
-                product survey 500 potential customers to estimate total market
-                demand before spending millions on manufacturing.
-              </li>
-              <li>
-                <strong>Medical Trials:</strong> Researchers testing the
-                efficacy of a new drug must define the margin of error to prove
-                the drug's success rate is mathematically legitimate, not a
-                random fluke.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "How do I make my Margin of Error smaller?",
-              answer:
-                "The absolute best mathematical way to shrink your Margin of Error is to increase your Sample Size (survey more people). A secondary way is to tolerate a lower Confidence Level (e.g., dropping from 99% to 90%), but this makes your study less reliable.",
-            },
-            {
-              question: "Why do we default the proportion to 50%?",
-              answer:
-                "Statistically, 50% (0.50) creates the maximum possible uncertainty equation: 0.50 × 0.50 = 0.25. If you use 0.90 × 0.10, the result is only 0.09. Using 50% guarantees the calculator generates the safest, most conservative 'worst-case scenario' margin.",
-            },
-            {
-              question: "Does the size of the total Population matter?",
-              answer:
-                "Surprisingly, almost never. Surveying 1,000 random people yields practically the exact same Margin of Error whether your total population is 100,000 citizens or 330 million citizens. The math relies almost entirely on the absolute sample size, not the fraction.",
-            },
-          ]}
+          title={moeSeoData.title}
+          whatIsIt={moeSeoData.whatIsIt}
+          formula={moeSeoData.formula}
+          example={moeSeoData.example}
+          useCases={moeSeoData.useCases}
+          faqs={moeSeoData.faqs}
+          deepDive={moeSeoData.deepDive}
+          glossary={moeSeoData.glossary}
           relatedCalculators={[
             {
               name: "Confidence Interval Calculator",

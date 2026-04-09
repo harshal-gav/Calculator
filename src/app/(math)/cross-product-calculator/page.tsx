@@ -1,18 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import crossSeoData from "@/data/seo-content/official/cross-product-calculator.json";
 
 export default function CrossProductCalculator() {
-  // Vector 1: u = (u1, u2, u3)
   const [u1, setU1] = useState("1");
-  const [u2, setU2] = useState("-7");
-  const [u3, setU3] = useState("1");
+  const [u2, setU2] = useState("2");
+  const [u3, setU3] = useState("3");
 
-  // Vector 2: v = (v1, v2, v3)
-  const [v1, setV1] = useState("5");
-  const [v2, setV2] = useState("2");
-  const [v3, setV3] = useState("4");
+  const [v1, setV1] = useState("4");
+  const [v2, setV2] = useState("5");
+  const [v3, setV3] = useState("6");
 
   const [result, setResult] = useState<{
     i: number;
@@ -29,327 +28,133 @@ export default function CrossProductCalculator() {
     const numV2 = parseFloat(v2);
     const numV3 = parseFloat(v3);
 
-    if (
-      isNaN(numU1) ||
-      isNaN(numU2) ||
-      isNaN(numU3) ||
-      isNaN(numV1) ||
-      isNaN(numV2) ||
-      isNaN(numV3)
-    ) {
+    if (isNaN(numU1) || isNaN(numU2) || isNaN(numU3) || isNaN(numV1) || isNaN(numV2) || isNaN(numV3)) {
       setResult(null);
       return;
     }
 
-    // Cross Product: u x v = (u2v3 - u3v2)i - (u1v3 - u3v1)j + (u1v2 - u2v1)k
     const cx = numU2 * numV3 - numU3 * numV2;
-    const cy = numU3 * numV1 - numU1 * numV3; // Note: standard is -(u1v3 - u3v1)
+    const cy = numU3 * numV1 - numU1 * numV3;
     const cz = numU1 * numV2 - numU2 * numV1;
-
     const magnitude = Math.sqrt(cx * cx + cy * cy + cz * cz);
 
-    setResult({
-      i: cx,
-      j: cy,
-      k: cz,
-      magnitude: magnitude,
-    });
+    setResult({ i: cx, j: cy, k: cz, magnitude });
   };
 
+  useEffect(() => {
+    calculate();
+  }, []);
+
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-2xl shadow-xl border border-zinc-200">
-      <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-violet-900 flex items-center justify-center font-serif">
-          <span className="mr-3">✖️</span> Cross Product
-        </h1>
-        <p className="text-violet-700 text-lg max-w-2xl mx-auto">
-          Calculate the cross product (vector product) of two 3D vectors.
-        </p>
-      </div>
-
-      <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-zinc-200 mb-8 max-w-2xl mx-auto">
-        <div className="space-y-8 mb-8">
-          {/* Vector u */}
-          <div className="p-5 rounded-xl border border-violet-100 bg-violet-50/50">
-            <div className="font-bold text-violet-900 border-b border-violet-200 pb-2 mb-4 flex items-center">
-              <span className="bg-violet-600 text-white rounded w-6 h-6 flex items-center justify-center text-sm mr-2 italic">
-                u
-              </span>
-              Vector 1
-            </div>
-            <div className="flex justify-between items-center gap-4">
-              <div className="w-1/3">
-                <label className="block text-xs font-bold text-zinc-500 mb-1 text-center font-mono">
-                  x (i)
-                </label>
-                <input
-                  type="number"
-                  step="any"
-                  value={u1}
-                  onChange={(e) => setU1(e.target.value)}
-                  className="w-full rounded-xl border-zinc-300 shadow-sm p-3 border focus:border-violet-500 font-bold bg-white text-center font-mono"
-                />
-              </div>
-              <div className="w-1/3">
-                <label className="block text-xs font-bold text-zinc-500 mb-1 text-center font-mono">
-                  y (j)
-                </label>
-                <input
-                  type="number"
-                  step="any"
-                  value={u2}
-                  onChange={(e) => setU2(e.target.value)}
-                  className="w-full rounded-xl border-zinc-300 shadow-sm p-3 border focus:border-violet-500 font-bold bg-white text-center font-mono"
-                />
-              </div>
-              <div className="w-1/3">
-                <label className="block text-xs font-bold text-zinc-500 mb-1 text-center font-mono">
-                  z (k)
-                </label>
-                <input
-                  type="number"
-                  step="any"
-                  value={u3}
-                  onChange={(e) => setU3(e.target.value)}
-                  className="w-full rounded-xl border-zinc-300 shadow-sm p-3 border focus:border-violet-500 font-bold bg-white text-center font-mono"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Vector v */}
-          <div className="p-5 rounded-xl border border-fuchsia-100 bg-fuchsia-50/50">
-            <div className="font-bold text-fuchsia-900 border-b border-fuchsia-200 pb-2 mb-4 flex items-center">
-              <span className="bg-fuchsia-600 text-white rounded w-6 h-6 flex items-center justify-center text-sm mr-2 italic">
-                v
-              </span>
-              Vector 2
-            </div>
-            <div className="flex justify-between items-center gap-4">
-              <div className="w-1/3">
-                <label className="block text-xs font-bold text-zinc-500 mb-1 text-center font-mono">
-                  x (i)
-                </label>
-                <input
-                  type="number"
-                  step="any"
-                  value={v1}
-                  onChange={(e) => setV1(e.target.value)}
-                  className="w-full rounded-xl border-zinc-300 shadow-sm p-3 border focus:border-fuchsia-500 font-bold bg-white text-center font-mono"
-                />
-              </div>
-              <div className="w-1/3">
-                <label className="block text-xs font-bold text-zinc-500 mb-1 text-center font-mono">
-                  y (j)
-                </label>
-                <input
-                  type="number"
-                  step="any"
-                  value={v2}
-                  onChange={(e) => setV2(e.target.value)}
-                  className="w-full rounded-xl border-zinc-300 shadow-sm p-3 border focus:border-fuchsia-500 font-bold bg-white text-center font-mono"
-                />
-              </div>
-              <div className="w-1/3">
-                <label className="block text-xs font-bold text-zinc-500 mb-1 text-center font-mono">
-                  z (k)
-                </label>
-                <input
-                  type="number"
-                  step="any"
-                  value={v3}
-                  onChange={(e) => setV3(e.target.value)}
-                  className="w-full rounded-xl border-zinc-300 shadow-sm p-3 border focus:border-fuchsia-500 font-bold bg-white text-center font-mono"
-                  onKeyDown={(e) => e.key === "Enter" && calculate()}
-                />
-              </div>
-            </div>
-          </div>
+    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-3xl shadow-xl border border-violet-50">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-violet-100 pb-6 mb-8 gap-4">
+        <div>
+          <h1 className="text-4xl font-black text-slate-900 tracking-tight">Cross Product Calculator</h1>
+          <p className="text-slate-600 font-medium mt-1 text-lg">Calculate the orthogonal vector product of two 3D vectors.</p>
         </div>
-
-        <div className="flex justify-center">
-          <button
-            onClick={calculate}
-            className="w-full bg-violet-600 hover:bg-violet-700 text-white font-bold py-4 px-6 rounded-xl transition-colors shadow-lg shadow-violet-600/30 uppercase tracking-widest text-lg"
-          >
-            Calculate (u × v)
-          </button>
+        <div className="bg-violet-50 px-4 py-2 rounded-full border border-violet-100 shrink-0">
+          <span className="text-violet-600 font-bold text-sm uppercase tracking-wider font-mono">Vector Algebra</span>
         </div>
       </div>
 
-      {result !== null && (
-        <div className="bg-slate-900 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden flex flex-col items-center">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-fuchsia-600 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none"></div>
-
-          <h2 className="text-white/60 font-bold uppercase tracking-widest text-xs mb-8 z-10 text-center">
-            Cross Product Result (w)
-          </h2>
-
-          <div className="z-10 relative mb-8 w-full max-w-lg bg-black/40 border border-violet-500/30 p-8 rounded-3xl shadow-inner text-center">
-            <div className="text-violet-300 text-[10px] font-bold uppercase tracking-widest mb-3">
-              Cartesian Vector Format
-            </div>
-            <div className="font-mono font-black text-3xl md:text-5xl text-white break-all tracking-tight drop-shadow-lg">
-              ({" "}
-              <span className="text-violet-400">
-                {result.i.toLocaleString()}
-              </span>
-              ,{" "}
-              <span className="text-fuchsia-400">
-                {result.j.toLocaleString()}
-              </span>
-              ,{" "}
-              <span className="text-sky-400">{result.k.toLocaleString()}</span>{" "}
-              )
-            </div>
-          </div>
-
-          <div className="w-full max-w-2xl z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-black/30 p-5 rounded-2xl border border-white/5 text-center">
-              <span className="text-white/50 text-[10px] font-bold uppercase tracking-widest mb-2 block">
-                Standard Unit Vector Notation
-              </span>
-              <div className="font-mono text-white text-xl">
-                {result.i}i {result.j >= 0 ? "+" : ""} {result.j}j{" "},
-                {result.k >= 0 ? "+" : ""} {result.k}k
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div className="lg:col-span-12 xl:col-span-5 space-y-4">
+          <div className="bg-white p-8 rounded-3xl border border-violet-100 shadow-sm space-y-8">
+            <div className="space-y-4">
+              <span className="block text-[10px] font-bold text-violet-400 uppercase tracking-widest border-l-2 border-violet-400 pl-2">Vector A (u)</span>
+              <div className="grid grid-cols-3 gap-3">
+                <input type="number" value={u1} onChange={(e) => setU1(e.target.value)} className="rounded-xl border-zinc-200 p-3 shadow-sm focus:border-violet-500 bg-zinc-50 font-black text-center" placeholder="x" />
+                <input type="number" value={u2} onChange={(e) => setU2(e.target.value)} className="rounded-xl border-zinc-200 p-3 shadow-sm focus:border-violet-500 bg-zinc-50 font-black text-center" placeholder="y" />
+                <input type="number" value={u3} onChange={(e) => setU3(e.target.value)} className="rounded-xl border-zinc-200 p-3 shadow-sm focus:border-violet-500 bg-zinc-50 font-black text-center" placeholder="z" />
               </div>
             </div>
-            <div className="bg-black/30 p-5 rounded-2xl border border-white/5 text-center">
-              <span className="text-white/50 text-[10px] font-bold uppercase tracking-widest mb-2 block">
-                Magnitude |w|
-              </span>
-              <div className="font-mono text-violet-300 font-bold text-2xl">
-                {result.magnitude.toLocaleString("en-US", {
-                  maximumFractionDigits: 6,
-                })}
+
+            <div className="space-y-4">
+              <span className="block text-[10px] font-bold text-fuchsia-400 uppercase tracking-widest border-l-2 border-fuchsia-400 pl-2">Vector B (v)</span>
+              <div className="grid grid-cols-3 gap-3">
+                <input type="number" value={v1} onChange={(e) => setV1(e.target.value)} className="rounded-xl border-zinc-200 p-3 shadow-sm focus:border-fuchsia-500 bg-zinc-50 font-black text-center" placeholder="x" />
+                <input type="number" value={v2} onChange={(e) => setV2(e.target.value)} className="rounded-xl border-zinc-200 p-3 shadow-sm focus:border-fuchsia-500 bg-zinc-50 font-black text-center" placeholder="y" />
+                <input type="number" value={v3} onChange={(e) => setV3(e.target.value)} className="rounded-xl border-zinc-200 p-3 shadow-sm focus:border-fuchsia-500 bg-zinc-50 font-black text-center" placeholder="z" />
               </div>
             </div>
+
+            <button
+              onClick={calculate}
+              className="w-full bg-violet-600 text-white font-black py-5 px-4 rounded-2xl hover:bg-violet-700 transition shadow-xl shadow-violet-200 text-xl uppercase tracking-widest active:scale-[0.98]"
+            >
+              Solve Cross Product
+            </button>
           </div>
         </div>
-      )}
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Cross Product Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-          }),
-        }}
-      />
+        <div className="lg:col-span-12 xl:col-span-7 bg-slate-900 rounded-3xl p-8 border border-white/5 shadow-2xl flex flex-col justify-center relative overflow-hidden min-h-[400px]">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-violet-500 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none"></div>
+          
+          {result !== null ? (
+            <div className="relative z-10 w-full space-y-8">
+              <div className="text-center">
+                <h2 className="text-xs font-bold text-violet-400 mb-4 uppercase tracking-widest opacity-60">Resulting Orthogonal Vector (A × B)</h2>
+                <div className="flex items-center justify-center gap-4 text-4xl md:text-6xl font-black text-white font-mono">
+                  <span className="text-violet-300 drop-shadow-[0_0_15px_rgba(139,92,246,0.4)]">({result.i}, {result.j}, {result.k})</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-white/5 p-6 rounded-2xl border border-white/5 text-center">
+                  <span className="block text-[10px] font-bold text-violet-300 uppercase tracking-widest mb-2">Vector Magnitude</span>
+                  <span className="text-3xl font-black text-white font-mono">{result.magnitude.toLocaleString(undefined, { maximumFractionDigits: 4 })}</span>
+                </div>
+                <div className="bg-white/5 p-6 rounded-2xl border border-white/5 text-center flex flex-col justify-center">
+                  <span className="block text-[10px] font-bold text-violet-300 uppercase tracking-widest mb-1">Notation</span>
+                  <span className="text-xl font-bold text-white/80 font-mono">
+                    {result.i}i + {result.j}j + {result.k}k
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-4 rounded-xl border border-violet-500/30 bg-violet-500/10 text-center text-xs font-bold text-violet-300 uppercase tracking-widest">
+                This vector is perpendicular to both Vector A and Vector B.
+              </div>
+            </div>
+          ) : (
+            <div className="text-center py-10 opacity-40 uppercase italic font-black text-4xl text-violet-400 tracking-tighter">
+              Solve the Vector
+            </div>
+          )}
+        </div>
+      </div>
 
       <CalculatorSEO
-        title="Cross Product Calculator"
-        whatIsIt={
-          <p>
-            The <strong>Cross Product Calculator</strong> computes the exact
-            orthogonal vector produced when two 3D vectors are multiplied
-            together. Unlike the dot product (which returns a simple scalar
-            number), the cross product fundamentally creates a brand new third
-            vector that is perfectly perpendicular (at a 90-degree angle) to
-            both original input vectors.
-          </p>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Cross Product Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Cross Product results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>
-              Let's cross Vector <strong>u (1, -7, 1)</strong> with Vector{" "}
-              <strong>v (5, 2, 4)</strong>:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-2">
-              <li>
-                <strong>i component (x):</strong> (-7 × 4) - (1 × 2) = -28 - 2 ={" "}
-                <strong>-30</strong>
-              </li>
-              <li>
-                <strong>j component (y):</strong> (1 × 4) - (1 × 5) = 4 - 5 =
-                -1. Because of the formula's strictly alternating signs, we flip
-                it: <strong>1</strong>
-              </li>
-              <li>
-                <strong>k component (z):</strong> (1 × 2) - (-7 × 5) = 2 - (-35)
-                = <strong>37</strong>
-              </li>
-              <li>
-                <strong>Resultant Vector (w):</strong>{" "}
-                <strong>(-30, 1, 37)</strong>
-              </li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Classical Mechanics (Torque):</strong> Calculating
-              rotational force (torque). Torque is the cross product of the
-              lever arm vector (distance from pivot) and the applied force
-              vector.
-            </li>
-            <li>
-              <strong>Electromagnetism:</strong> Determining the magnetic force
-              exerted on a highly charged particle rapidly moving through a
-              magnetic field (the Lorentz force).
-            </li>
-            <li>
-              <strong>Computer Graphics:</strong> Finding the "normal vector" of
-              a 3D polygon/triangle. This is absolutely critical for calculating
-              how light realistically bounces off a 3D model during rendering.
-            </li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "Is u × v the exact same as v × u?",
-            answer:
-              "No, absolutely not. The cross product is strictly 'anti-commutative'. u × v = -(v × u). Swapping the strict order of the vectors will produce a result with the exact same magnitude, but pointing in the exact opposite mathematical direction.",
-          },
-          {
-            question:
-              "What does it mean if the cross product is strictly (0,0,0)?",
-            answer:
-              "If the cross product is a perfect zero vector, it mathematically proves that your two original vectors are either perfectly parallel to each other, perfectly anti-parallel, or at least one of them is the zero vector.",
-          },
-          {
-            question: "How do I calculate the cross product of 2D vectors?",
-            answer:
-              "You technically cannot. The cross product is a strictly 3D mathematical operation. To 'cross' 2D vectors, you must artificially add a '0' as their third (z/k) component, which will always result in a vector pointing straight up or straight down perfectly along the z-axis.",
-          },
-        ]}
+        title={crossSeoData.title}
+        whatIsIt={crossSeoData.whatIsIt}
+        formula={crossSeoData.formula}
+        example={crossSeoData.example}
+        useCases={crossSeoData.useCases}
+        faqs={crossSeoData.faqs}
+        deepDive={crossSeoData.deepDive}
+        glossary={crossSeoData.glossary}
         relatedCalculators={[
           {
-            name: "Dot Product",
+            name: "Dot Product Calculator",
             path: "/dot-product-calculator/",
-            desc: "Calculate the scalar dot product of two vectors.",
+            desc: "Calculate the scalar product of two vectors for projection analysis.",
           },
           {
-            name: "Vector Addition",
+            name: "Vector Addition Calculator",
             path: "/vector-addition-calculator/",
-            desc: "Add two vectors together to find the resultant.",
+            desc: "Find the resultant vector from multiple directional forces.",
           },
           {
-            name: "Projectile Motion",
-            path: "/projectile-motion-calculator/",
-            desc: "Calculate physical trajectories using vectors.",
+            name: "Unit Vector Calculator",
+            path: "/unit-vector-calculator/",
+            desc: "Normalize your vectors to a magnitude of one for direction-only analysis.",
           },
-            {
-              name: "Percentage Calculator",
-              path: "/percentage-calculator/",
-              desc: "Easily calculate percentages, increases, and decreases.",
-            }]}
+          {
+            name: "Triangle Calculator",
+            path: "/triangle-calculator/",
+            desc: "Solve geometric properties of cross-sectional triangle surfaces.",
+          }
+        ]}
       />
     </div>
   );

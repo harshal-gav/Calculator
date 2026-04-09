@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import bodyFatSeoData from "@/data/seo-content/official/body-fat-calculator.json";
 
 export default function BodyFatCalculator() {
   const [gender, setGender] = useState("male");
@@ -167,65 +168,36 @@ export default function BodyFatCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Body Fat Calculator"
-        whatIsIt={
-          <>
-            <p className="text-zinc-400">
-              The <strong>Body Fat Calculator</strong> estimates the percentage of your total body mass that is composed of fat versus lean tissue (muscles, bones, organs). Unlike BMI, which only looks at weight and height, body fat percentage reveals the quality of your weight.
-            </p>
-            <p className="text-zinc-400 mt-4">
-               This tool uses the <strong>U.S. Navy Fitness Equation</strong>, which is widely cited for its high correlation with more expensive laboratory methods like DEXA scans, while requiring only a tape measure.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              BF% = 495 / (1.032 - 0.19log(W-N) + 0.15log(H)) - 450
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              U.S. Navy Method for body fat estimation.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p className="text-zinc-400">For a <strong>Male</strong> measuring <strong>70" height</strong>, <strong>36" waist</strong>, and <strong>16" neck</strong>:</p>
-            <div className="mt-4 p-4 border border-zinc-800 rounded-xl bg-zinc-900/40 text-sm">
-               The formula would likely yield approx <strong>20.5% Body Fat</strong>, placing him in the "Average" category for fitness.
-            </div>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4 text-zinc-400 text-sm">
-            <li><strong>Tracking Body Recomposition:</strong> Useful for those who are gaining muscle while losing fat, situations where scale weight may not change.</li>
-            <li><strong>Fine-tuning Performance:</strong> Athletes use body fat data to optimize their power-to-weight ratio.</li>
-            <li><strong>Health Assessment:</strong> Identifying high visceral fat levels which are closely linked to cardiovascular disease and metabolic syndromes.</li>
-          </ul>
-        }
-        faqs={[
+        title={bodyFatSeoData.title}
+        whatIsIt={bodyFatSeoData.whatIsIt}
+        formula={bodyFatSeoData.formula}
+        example={bodyFatSeoData.example}
+        useCases={bodyFatSeoData.useCases}
+        faqs={bodyFatSeoData.faqs}
+        deepDive={bodyFatSeoData.deepDive}
+        glossary={bodyFatSeoData.glossary}
+        relatedCalculators={[
           {
-            question: "How accurate is the tape measure method?",
-            answer: "While not as precise as a DEXA scan, the Navy method is generally accurate within 3-4% for most populations. Using it consistently (same time of day, same tension) makes it an excellent tool for tracking progress over time."
+            name: "Calorie Calculator",
+            path: "/calorie-calculator/",
+            desc: "Energy intake based on activity metrics.",
           },
           {
-            question: "When should I measure myself?",
-            answer: "Ideally in the morning before eating, when you are not bloated and your muscles are not 'pumped' from exercise. Ensure the tape is level and tight against the skin but not compressing the tissue."
+            name: "BMR Calculator",
+            path: "/bmr-calculator/",
+            desc: "Find your metabolic floor.",
           },
           {
-            question: "Why do women have higher body fat?",
-            answer: "Women require higher 'essential' body fat levels (typically 10-13%) for reproductive health and hormonal regulation, whereas men can safely reach levels as low as 2-5%."
+            name: "BMI Calculator",
+            path: "/bmi-calculator/",
+            desc: "The standard health proxy.",
+          },
+          {
+            name: "Ideal Weight Calculator",
+            path: "/ideal-weight-calculator/",
+            desc: "Targets for your height.",
           }
         ]}
-        relatedCalculators={[
-          { name: "Ideal Weight Calculator", path: "/ideal-weight-calculator/", desc: "Check your weight range." },
-          { name: "Macro Calculator", path: "/macro-calculator/", desc: "Define your diet by your goals." },
-          { name: "Calorie Calculator", path: "/calorie-calculator/", desc: "Energy intake based on activity." },
-            {
-              name: "BMI Calculator",
-              path: "/bmi-calculator/",
-              desc: "Calculate your Body Mass Index for a quick health assessment.",
-            }]}
       />
     </div>
   );

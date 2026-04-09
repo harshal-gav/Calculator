@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import dateSeoData from "@/data/seo-content/official/date-calculator.json";
 
 export default function DateCalculator() {
   // Get today's date adjusted for local timezone before stringifying to YYYY-MM-DD
@@ -210,135 +211,40 @@ export default function DateCalculator() {
         }}
       />
 
-      <CalculatorSEO
-        title="Date Calculator"
-        whatIsIt={
-          <>
-            <p>
-              Our <strong>Date Calculator</strong> is a specialized calendar
-              tool that calculates the exact amount of time that has passed (or
-              will pass) between two distinct dates. It instantly outputs the
-              total combined days, as well as a clean breakdown in Years,
-              Months, and Days.
-            </p>
-            <p>
-              This tool is essential because standard subtraction fails when
-              applied to dates. The Gregorian calendar is highly irregular,
-              containing months of varying lengths (28 to 31 days) and Leap
-              Years that insert an extra day every four years. This calculator
-              automatically accounts for all historical and future calendar
-              anomalies.
-            </p>
-
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related Terms:</strong> Time Clock Calculator, Work Time
-              Calculator, Date Calculator, Overtime Calculator, Day Counter,
-              Time Value Of Money Calculator, Time Calculator Minutes, Time
-              Difference Calculator, Time And A Half Calculator, Time Zone
-              Calculator, Business Day Calculator, Year Calculator, Month
-              Calculator, Working Days Calculator, 90 Day Calculator
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Date Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Date results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>
-              Let's find out how much time passed between the signing of the
-              Declaration of Independence (<strong>July 4, 1776</strong>) and
-              the moon landing (<strong>July 20, 1969</strong>).
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>Step 1 (Days):</strong> 20 - 4 ={" "}
-                <strong>16 Days</strong>.
-              </li>
-              <li>
-                <strong>Step 2 (Months):</strong> 7 (July) - 7 (July) ={" "}
-                <strong>0 Months</strong>.
-              </li>
-              <li>
-                <strong>Step 3 (Years):</strong> 1969 - 1776 ={" "}
-                <strong>193 Years</strong>.
-              </li>
-              <li>
-                <strong>Result:</strong> 193 Years, 0 Months, and 16 Days.
-              </li>
-              <li>
-                <strong>Total Days:</strong> Because the algorithm accounts for
-                the 46 Leap Years that occurred during that timespan, it
-                calculates exactly <strong>70,508 Total Days</strong>.
-              </li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Legal and Contracts:</strong> Determining the absolute
-              expiration date of a contract, warranty, or statute of limitations
-              (e.g., "90 days from the date of signing").
-            </li>
-            <li>
-              <strong>Event Planning:</strong> Calculating exactly how many days
-              are left until a wedding, concert, or major holiday to organize
-              vendor timelines and invitations.
-            </li>
-            <li>
-              <strong>Finance:</strong> Calculating the exact number of days a
-              loan was held so that daily compound interest can be accurately
-              charged or paid out.
-            </li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "What does 'Include end date in calculation' mean?",
-            answer:
-              "By default, calculating from Jan 1st to Jan 2nd returns '1 Day' (measuring the midnight-to-midnight span). If you click 'Include End Date', it adds +1 day to the final result, changing it to '2 Days'. This is crucial for payroll or hotel bookings where you need to count both the starting day and ending day as full calendar items.",
-          },
-          {
-            question: "Does it account for Leap Years?",
-            answer:
-              "Yes, perfectly. If your date range crosses February 29th during a leap year (which occurs every 4 years, except for years divisible by 100 but not 400), the calculator automatically adds the requisite extra day into your total.",
-          },
-          {
-            question: "Why might a month show as '0' when calculating?",
-            answer:
-              "If you calculate from March 15 to April 10, the result will be 0 Months and 26 Days. Because a full calendar month (passing the 15th of the next month) hasn't technically elapsed yet, the calculator accurately categorizes the remaining time purely into days.",
-          },
-        ]}
-        relatedCalculators={[
-          {
-            name: "Age Calculator",
-            path: "/age-calculator/",
-            desc: "Calculate your chronological age in exact days and weeks.",
-          },
-          {
-            name: "Time Calculator",
-            path: "/time-calculator/",
-            desc: "Add or subtract exact hours and minutes to find time durations.",
-          },
-          {
-            name: "Time Zone Converter",
-            path: "/time-zone-converter/",
-            desc: "Convert times across hundreds of global time zones instantly.",
-          },
+      <div className="mt-8">
+        <CalculatorSEO
+          title={dateSeoData.title}
+          whatIsIt={dateSeoData.whatIsIt}
+          formula={dateSeoData.formula}
+          example={dateSeoData.example}
+          useCases={dateSeoData.useCases}
+          faqs={dateSeoData.faqs}
+          deepDive={dateSeoData.deepDive}
+          glossary={dateSeoData.glossary}
+          relatedCalculators={[
             {
-              name: "Temperature Converter",
-              path: "/temperature-converter/",
-              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
-            }]}
-      />
+              name: "Age Calculator",
+              path: "/age-calculator/",
+              desc: "Calculate your chronological age in exact days and weeks.",
+            },
+            {
+              name: "Time Calculator",
+              path: "/time-calculator/",
+              desc: "Add or subtract exact hours and minutes to find time durations.",
+            },
+            {
+              name: "Time Zone Converter",
+              path: "/time-zone-converter/",
+              desc: "Convert times across hundreds of global time zones instantly.",
+            },
+            {
+              name: "Business Days Calculator",
+              path: "/business-days-calculator/",
+              desc: "Calculate work days excluding weekends and bank holidays.",
+            }
+          ]}
+        />
+      </div>
     </div>
   );
 }

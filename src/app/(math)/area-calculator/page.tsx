@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import areaSeoData from "@/data/seo-content/official/area-calculator.json";
 
 export default function AreaCalculator() {
   const [shape, setShape] = useState("rectangle");
@@ -204,99 +205,14 @@ export default function AreaCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="2D Surface Area Calculator"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Area Calculator</strong> instantly determines the
-                total 2-dimensional surface area enclosed within common
-                geometric shapes. It currently supports rectangles, squares,
-                triangles, and circles.
-              </p>
-              <p>
-                Surface area is universally measured in "square units" (such as
-                square feet or square meters) and represents the exact amount of
-                flat 2D space that a shape physically covers.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Square Root Calculator,
-                Microsoft Math Solver, Concrete Yard Calculator, Cubic Yard
-                Calculator, Cubic Feet Calculator, Square Feet Calculator, After
-                Tax Calculator, Sq Ft Calculator, Shift Calculator, Rafter
-                Calculator, Land Area Calculator, Area Calculator, Square Meter
-                Calculator, Surface Area Calculator, Completing The Square
-                Calculator
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              A = L × W (Rect) | A = πr² (Circle)
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Area formulas vary by shape geometry.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Suppose you are buying carpet for a rectangular bedroom that
-                measures exactly <strong>12 feet long and 10 feet wide</strong>.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Formula:</strong> Area = Length × Width
-                </li>
-                <li>
-                  <strong>The Math:</strong> 12 × 10
-                </li>
-                <li>
-                  <strong>The Result:</strong> The room has a total surface area
-                  of exactly <strong>120 square feet</strong>. You must purchase
-                  at least 120 sq ft of carpet to cover the floor.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Home Renovation:</strong> Calculating the square footage
-                of walls to determine exactly how many gallons of paint are
-                required for a room.
-              </li>
-              <li>
-                <strong>Landscaping:</strong> Measuring the area of a circular
-                garden or rectangular lawn to determine how many bags of
-                fertilizer or cubic yards of mulch to order.
-              </li>
-              <li>
-                <strong>Real Estate:</strong> Quickly calculating the total
-                gross floor area of a property by mentally breaking the floor
-                plan down into simple rectangles and adding them up.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What is the difference between area and perimeter?",
-              answer:
-                "Area measures the actual space INSIDE the boundaries of the shape (like predicting how much carpet covers a floor). Perimeter measures the length of the OUTSIDE boundary itself (like calculating how much wooden fencing is needed to surround a yard).",
-            },
-            {
-              question: "Why is a triangle's area cut in half (½ × b × h)?",
-              answer:
-                "Because every single triangle is mathematically just exactly half of a corresponding rectangle or parallelogram. If you didn't multiply by ½, you would technically be calculating the area of a rectangle.",
-            },
-            {
-              question: "Does this tool work for 3D objects?",
-              answer:
-                "No. This tool only calculates 2-dimensional flat surface area. To calculate the 3-dimensional space inside an object (like a box, cylinder, or sphere), you need a Volume Calculator.",
-            },
-          ]}
+          title={areaSeoData.title}
+          whatIsIt={areaSeoData.whatIsIt}
+          formula={areaSeoData.formula}
+          example={areaSeoData.example}
+          useCases={areaSeoData.useCases}
+          faqs={areaSeoData.faqs}
+          deepDive={areaSeoData.deepDive}
+          glossary={areaSeoData.glossary}
           relatedCalculators={[
             {
               name: "Perimeter Calculator",
@@ -305,19 +221,20 @@ export default function AreaCalculator() {
             },
             {
               name: "Volume Calculator",
-              path: "/volume-converter/",
+              path: "/volume-calculator/",
               desc: "Translate 3D spatial units if you are moving beyond 2D area.",
             },
             {
-              name: "Area Converter",
-              path: "/area-converter/",
-              desc: "Easily convert your final answer from square feet to square meters, acres, or hectares.",
+              name: "Triangle Calculator",
+              path: "/triangle-calculator/",
+              desc: "Advanced tool for solving for missing sides and angles of any triangle.",
             },
             {
               name: "Percentage Calculator",
               path: "/percentage-calculator/",
               desc: "Easily calculate percentages, increases, and decreases.",
-            }]}
+            }
+          ]}
         />
       </div>
     </div>

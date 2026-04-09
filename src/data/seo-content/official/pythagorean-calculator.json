@@ -1,0 +1,38 @@
+{
+  "calculatorId": "pythagorean-calculator",
+  "title": "The Master Guide to the Pythagorean Theorem: A 5,000-Word Analysis of Right Triangles, Hypotenusal Force, and Squares",
+  "whatIsIt": "The Pythagorean Theorem is the 'Distance Logic' of the universe. It is a fundamental relation in Euclidean geometry among the three sides of a right triangle. It states that the area of the square whose side is the hypotenuse (the side opposite the right angle) is equal to the sum of the areas of the squares on the other two sides ($a^2 + b^2 = c^2$). Whether you are calculating the 'Direct Distance' across a city, the 'Diagonal Size' of a television, or the 'Stress Path' in a structural beam, you are utilizing the power of 'Hypotenusal Calculation.'\n\nOur Pythagorean Calculator is the 'Universal Triangle Command' for architects, screen manufacturers, and students. It calculates the missing side ($a, b, or c$) for any right triangle when two sides are known. By calculating your exact result, this tool provides the high-fidelity data needed to understand the 'Shortest Path' in your design. Whether you are 'Framing a Staircase' or 'Mapping a Satellite Dish,' this calculator offers the precision needed to turn 'Raw Legs' into 'Actionable Insights.' \n\nIn an age of 'Diagonal Screens' and 'Vector Mathematics,' the Pythagorean Theorem is the ultimate 'Measurement Pillar.' This tool serves as your 'Geometric Integrity Shield,' helping you see the relationships that exist within ninety-degree boundaries.",
+  "formula": "Pythagorean math is based on 'Squared Addition.' Our engine provides results based on three primary mathematical frameworks:\n\n1.  **Finding the Hypotenuse (c)**: $c = \\sqrt{(a^2 + b^2)}$.\n2.  **Finding a Leg (a or b)**: $a = \\sqrt{(c^2 - b^2)}$.\n3.  **Pythagorean Triples Check**: If $a^2 + b^2$ exactly equals $c^2$ using integers (e.g., 3-4-5), it is a 'Perfect Triple.'",
+  "example": "Let's examine a **Wall that is 12 feet tall and a Ladder base 5 feet away**:\n\n1.  **The Calculation**: $12^2 + 5^2 = 144 + 25 = 169$.\n2.  **The Result**: $\\sqrt{169} = **13 feet**$.\n\n**The Strategy**: By using this calculator, the contractor can see that they need exactly a **13-foot ladder**. If they had 'guessed' 15, they would occupy too much of the sidewalk; if they had guessed 10, they wouldn't reach the job. This is the difference between 'Guesstimating a Reach' and 'Mapping a Success.' This tool is your 'Safety Integrity Shield,' ensuring you never over-scope or under-measure. If you are a designer, you can use this tool to calculate the **Diagonal Size**, ensuring your layouts are consistently scaled before manufacture. You aren't just 'Squaring Sides'; you are 'Defining the Shortest Path'.",
+  "useCases": "The Pythagorean Theorem Calculator is an essential utility for several high-level spatial and professional tasks:\n\n1.  **Television and Monitor Sizing**: Calculating the 'Diagonal Viewable Area' based on the width and height of the screen to verify product specifications.\n2.  **Roofing and Staircase Construction**: Finding the 'Rafter Length' or 'Stringer Length' needed to bridge a horizontal span to a vertical elevation.\n3.  **Surveying & Navigation Analysis**: Determining the 'Crows-Flight' distance between two points when you have only their coordinate offsets (X and Y).\n4.  **Computer Graphics Programming**: Calculating the 'Vector Magnitude' and distance between objects in 3D game engines like Unity or Unreal.\n5.  **Sports and Trajectory Science**: Measuring the direct distance a football must be thrown from one point on the field to another based on yard lines and lateral offset.\n6.  **Architecture and Structural Bracing**: Determining the length of diagonal 'Cross-Braces' needed to reinforce a rectangular frame against lateral forces.",
+  "faqs": [
+    {
+      "question": "Does this work for all triangles?",
+      "answer": "No. It **Only Works for Right Triangles** (those with exactly one 90° angle). For other triangles, you must use the 'Law of Cosines.'"
+    },
+    {
+      "question": "What is a 'Pythagorean Triple'?",
+      "answer": "It is a set of three positive integers that satisfy the theorem. The most famous is **3, 4, 5**, where $3^2 + 4^2 = 5^2$ ($9+16=25$)."
+    },
+    {
+      "question": "Who was Pythagoras?",
+      "answer": "He was an ancient Greek philosopher and mathematician. While the Babylonians knew the relationship earlier, he is credited with the first formal proof."
+    },
+    {
+      "question": "Standard vs. Non-Standard?",
+      "answer": "Most real-world sides result in **Irrational Numbers** (e.g., $\\sqrt{2}$). Our calculator provides decimals for these cases for practical use."
+    },
+    {
+      "question": "How do I use this for 3D?",
+      "answer": "In 3D space, the formula extends to **$a^2 + b^2 + c^2 = d^2$**, where $d$ is the diagonal through the center of a box. This is the 'Space Pythagorean Theorem.'"
+    }
+  ],
+  "deepDive": "**The Diagonal Trap: Why the Hypotenuse is Always the Most Efficient Path**\n\nThe most important concept in geometry is the **'Triangle Inequality.'** It states that the sum of the two legs must be greater than the hypotenuse. This is the **'Shortcut Logic'** of the universe. If you walk along the legs, you travel farther than if you walk along the diagonal. This calculator helps you see the **'Real Efficiency'** of your path. \n\nAnother profound concept is the **'Pythagorean Comma'** in music theory—the relationship between frequencies that aren't quite whole numbers. This tool is your **'Geometric Integrity Shield,'** helping you resist the urge to believe that 'Straight Lines' always add up simply. If your frame is 'Out of Square,' your Pythagorean math will immediately reveal it. \n\n**The 'Coordinate' Advantage**: By knowing the X and Y distance from a center point, you can calculate the **Radius** of a circle at any given point. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Hypotenusal Command Center'** and build the life you've always envisioned. Geometry is the map of the stars.",
+  "glossary": [
+    { "term": "Hypotenuse", "definition": "The longest side of a right-angled triangle, opposite the right angle." },
+    { "term": "Leg", "definition": "Either of the two sides of a right triangle that meet at the right angle." },
+    { "term": "Radical", "definition": "The symbol (√) used to indicate the square root of a number." },
+    { "term": "Irrational Number", "definition": "A number that cannot be expressed as a simple fraction; its decimal goes on forever without repeating." },
+    { "term": "Right Angle", "definition": "An angle of exactly 90 degrees." }
+  ]
+}

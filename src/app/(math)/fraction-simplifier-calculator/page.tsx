@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import fractionSimplifierSeoData from "@/data/seo-content/official/fraction-simplifier-calculator.json";
 
 export default function FractionSimplifierCalculator() {
   const [numerator, setNumerator] = useState("24");
@@ -185,7 +186,7 @@ export default function FractionSimplifierCalculator() {
                 Decimal Value
               </span>
               <div className="font-mono text-white text-2xl font-bold">
-                ≈{" "},
+                ≈{" "}
                 {result.decimal.toLocaleString("en-US", {
                   maximumFractionDigits: 6,
                 })}
@@ -210,99 +211,14 @@ export default function FractionSimplifierCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Fraction Simplifier & Reducer"
-          whatIsIt={
-            <>
-              <p>
-                Our <strong>Fraction Simplifier</strong> takes any complex
-                mathematical fraction and instantly reduces it to its lowest,
-                simplest possible terms. It automatically identifies the
-                Greatest Common Factor (GCF) between the top number (numerator)
-                and bottom number (denominator) to perfectly scale down the
-                fraction without changing its absolute mathematical value.
-              </p>
-              <p>
-                Additionally, if the top number is larger than the bottom number
-                (meaning it is an "improper fraction"), this tool will
-                automatically convert it into a clean, easy-to-read "Mixed
-                Number" (a whole number combined with a remainder fraction).
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Fraction Simplifier Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Fraction Simplifier results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's simplify a heavy fraction like <strong>24 / 36</strong>:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-2">
-                <li>
-                  The absolute largest number that divides evenly into both 24
-                  and 36 is <strong>12</strong> (This is the GCF).
-                </li>
-                <li>
-                  <strong>Numerator Math:</strong> 24 ÷ 12 = 2.
-                </li>
-                <li>
-                  <strong>Denominator Math:</strong> 36 ÷ 12 = 3.
-                </li>
-                <li>
-                  <strong>Result:</strong> 24 / 36 perfectly simplifies down to
-                  exactly <strong>2 / 3</strong>.
-                </li>
-                <li>
-                  The fraction is now in lowest terms because 2 and 3 share no
-                  common factors other than 1.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4">
-              <li>
-                <strong>Middle School Math Homework:</strong> Teachers
-                universally deduct points if a final test answer is left as
-                50/100 instead of being properly reduced down to 1/2.
-              </li>
-              <li>
-                <strong>Baking and Cooking Measurements:</strong> Scaling
-                recipes up or down. If a recipe calls for 6/8 of a cup of flour,
-                it is vastly easier to simply use a standard 3/4 measuring cup
-                from your drawer.
-              </li>
-              <li>
-                <strong>Carpentry and Woodworking:</strong> Converting strange
-                fractional tape measure readings (like 12/16 of an inch) down
-                into standard shop terminology (3/4 of an inch).
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What is an 'Improper' Fraction?",
-              answer:
-                "An improper fraction is simply a fraction where the top number is mathematically larger than the bottom number (e.g., 5/4 or 11/3). It means the overall value of the fraction is strictly greater than 1 whole.",
-            },
-            {
-              question: "What is a 'Mixed Number'?",
-              answer:
-                "A mixed number is an improper fraction rewritten as a whole integer plus a smaller, proper fraction. For example, the improper fraction 5/4 is rewritten as the mixed number '1 and 1/4'.",
-            },
-            {
-              question: "Can a fraction be simplified if the GCF is 1?",
-              answer:
-                "No. If the Greatest Common Factor between the top and bottom number is exactly 1 (e.g., 7/9), the fraction is already completely simplified to its absolute lowest terms. It cannot be reduced any further.",
-            },
-          ]}
+          title={fractionSimplifierSeoData.title}
+          whatIsIt={fractionSimplifierSeoData.whatIsIt}
+          formula={fractionSimplifierSeoData.formula}
+          example={fractionSimplifierSeoData.example}
+          useCases={fractionSimplifierSeoData.useCases}
+          faqs={fractionSimplifierSeoData.faqs}
+          deepDive={fractionSimplifierSeoData.deepDive}
+          glossary={fractionSimplifierSeoData.glossary}
           relatedCalculators={[
             {
               name: "Fraction to Decimal",

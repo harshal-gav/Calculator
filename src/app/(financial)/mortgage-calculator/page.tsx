@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import mortgageSeoData from "@/data/seo-content/official/mortgage-calculator.json";
 
 export default function MortgageCalculator() {
   const [homePrice, setHomePrice] = useState("400000");
@@ -253,125 +254,35 @@ export default function MortgageCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Comprehensive Mortgage Financing & Homeownership Economics"
-        whatIsIt={
-          <>
-            <p className="text-lg leading-relaxed mb-6">
-              A <strong>Mortgage Calculator</strong> is more than just a payment estimator; it is a vital architectural tool for modern financial planning. Navigating the real estate market requires an objective understanding of how <strong>interest rates</strong>, <strong>down payments</strong>, and <strong>loan terms</strong> interact to create your monthly budget. This calculator provides a granular deconstruction of your potential "PITI" payment—Principal, Interest, Taxes, and Insurance.
-            </p>
-            <p className="leading-relaxed mb-6">
-              The goal of this tool is to provide <strong>mathematical transparency</strong> in a process that is often clouded by emotion and sales tactics. Whether you are a first-time homebuyer testing "affordability zones" or a seasoned homeowner considering a strategic refinance, the data provided here serves as the bedrock for your decision-making process. By projecting not just the monthly commitment, but the <strong>total interest lifecycle</strong>, you can truly see the cost of borrowing over 10, 15, or 30 years.
-            </p>
-            <p className="leading-relaxed">
-              In a volatile market, knowing your exact numbers is your greatest hedge against over-leveraging. Use this tool to stress-test your household cash flow against various interest rate scenarios and localized tax property rates.
-            </p>
-          </>
-        }
-        comparisonTable={{
-          title: "Structural Impact of Loan Duration: 15-Year vs. 30-Year Mortgage",
-          headers: ["Financial Metric", "15-Year Fixed", "30-Year Fixed", "Long-Term Strategy"],
-          rows: [
-            ["Monthly Obligation", "High (~30-40% more)", "Low / Flexible", "30-year is standard for cash-flow protection."],
-            ["Total Interest Cost", "Minimal", "Extremely High", "15-year loans typically save 60% in total interest."],
-            ["Base Interest Rate", "Lower (0.50% - 1.0% diff)", "Standard Market Rate", "Shorter durations represent lower risk for banks."],
-            ["Equity Formation", "Aggressive", "Back-loaded (Slow)", "15-year builds wealth through home value faster."],
-            ["Ideal Scenario", "Wealth Acceleration", "Budget Maxing", "Depends on your 'Real' net income availability."],
-          ]
-        }}
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              M = P [ r(1 + r)^n ] / [ (1 + r)^n - 1 ]
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Total monthly mortgage payment calculation.
-            </p>
-          </>
-        }
-          example={
-          <div className="bg-emerald-950 text-white p-12 rounded-[4rem] shadow-2xl relative overflow-hidden group">
-             <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500 rounded-full filter blur-[120px] opacity-10 group-hover:opacity-20 transition duration-700"></div>
-             <div className="relative z-10">
-                <h5 className="font-black text-emerald-400 uppercase tracking-widest text-xs mb-10">Case Study: The $500,000 Portfolio Addition</h5>
-                <p className="text-xl font-medium leading-relaxed mb-12 text-slate-300">
-                  Imagine purchasing a home for <strong>$500,000</strong> with a 10% <strong>($50,000)</strong> down payment on a <strong>30-year term at 7.00%</strong>:
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                   <div className="p-8 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-md">
-                      <span className="block text-[10px] font-black text-slate-500 uppercase mb-2">Loan Amount</span>
-                      <div className="text-4xl font-black text-white">$450,000</div>
-                   </div>
-                   <div className="p-8 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-md">
-                      <span className="block text-[10px] font-black text-slate-500 uppercase mb-2">P&I Payment</span>
-                      <div className="text-4xl font-black text-emerald-400">$2,993.86</div>
-                   </div>
-                   <div className="p-8 bg-emerald-600 shadow-xl rounded-3xl">
-                      <span className="block text-[10px] font-black text-emerald-100 uppercase mb-2">Total (with Escrow)</span>
-                      <div className="text-4xl font-black text-white">$3,500+</div>
-                   </div>
-                </div>
-                <div className="border-t border-white/10 pt-8">
-                   <p className="text-slate-400 text-sm leading-relaxed max-w-2xl italic font-medium">
-                      Outcome: In this scenario, you will pay <strong>$627,789 in total interest</strong> over 30 years—significantly more than the actual price of the house. This demonstrates why the "True Cost" of homeownership is vastly different from the purchase price.
-                   </p>
-                </div>
-             </div>
-          </div>
-        }
-        useCases={
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-             {[
-               { icon: "📉", title: "Refinance Analysis", text: "Compare your current rate vs. new terms. Calculate exactly when your monthly savings will exceed the closing costs of the new loan." },
-               { icon: "🚜", title: "Equity Projection", text: "Estimate how making an extra $500/month payment reduces your term and saves years of interest." },
-               { icon: "🏛️", title: "Investment Flipping", text: "Quickly gauge the carriage costs (holding costs) of a property to ensure your project ROI remains positive." }
-             ].map((card, i) => (
-                <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group">
-                   <div className="text-4xl mb-6 group-hover:scale-125 transition duration-500">{card.icon}</div>
-                   <h6 className="font-black text-slate-900 mb-4 uppercase text-xs tracking-widest">{card.title}</h6>
-                   <p className="text-sm text-slate-500 leading-relaxed font-medium">{card.text}</p>
-                </div>
-             ))}
-          </div>
-        }
-        glossary={[
-          { term: "Amortization Schedule", definition: "A table detailing each periodic payment on an amortizing loan (typically a mortgage), showing principal and interest." },
-          { term: "LTV (Loan-to-Value)", definition: "The ratio of a loan to the value of an asset purchased, often used to determine PMI status." },
-          { term: "Fixed-Rate Mortgage", definition: "A loan where the interest rate remains the same for the entire term of the loan." },
-          { term: "ARM (Adjustable-Rate Mortgage)", definition: "A mortgage with an interest rate that is linked to an economic index and adjusts periodically." },
-          { term: "Escrow Account", definition: "A separate account held by the lender to pay property taxes and insurance on behalf of the homeowner." },
-          { term: "Closing Costs", definition: "Fees associated with the finalization of a real estate transaction, usually 2-5% of the purchase price." },
-          { term: "DTI (Debt-to-Income)", definition: "The percentage of gross monthly income used to pay all monthly debt obligations." },
-          { term: "Points (Discount Points)", definition: "Fees paid directly to the lender at closing in exchange for a reduced interest rate." },
-          { term: "Principal", definition: "The original amount of money borrowed on a loan, separate from interest." },
-          { term: "Equity", definition: "The difference between the market value of a property and the outstanding mortgage balance." },
-        ]}
-        faqs={[
-          {
-            question: "How do I avoid paying PMI?",
-            answer: "The most direct way is to provide a down payment of at least 20% of the home's purchase price. If you already have a mortgage with PMI, you can request its removal once your loan balance reaches 80% of the home's original value (or current appraised value)."
-          },
-          {
-            question: "Does a 15-year mortgage always make sense?",
-            answer: "While it saves massive amounts in interest, the much higher monthly payment can be risky if your income is volatile. Many experts suggest taking a 30-year mortgage for safety but paying it as if it were a 15-year loan when cash flow allows."
-          },
-          {
-            question: "What is an 'Escrow Shortage'?",
-            answer: "This occurs when your property tax or insurance increases beyond what the lender expected. To compensate, the lender will usually increase your monthly payment to cover the new higher rate AND catch up on the previous underpayment."
-          },
-          {
-            question: "Should I pay 'Points' to lower my rate?",
-            answer: "This is a 'break-even' calculation. If the points cost $5,000 but save you $100/month, you must stay in the home for at least 50 months to break even. If you plan to sell in 3 years, points are a waste of money."
-          },
-          {
-            question: "How does a Cash-Out Refinance work?",
-            answer: "You take out a new mortgage for more than you owe on your current house and keep the difference in cash. This is essentially 'withdrawing' your home equity, but it increases your total debt and monthly payment."
-          }
-        ]}
+        title={mortgageSeoData.title}
+        whatIsIt={mortgageSeoData.whatIsIt}
+        formula={mortgageSeoData.formula}
+        example={mortgageSeoData.example}
+        useCases={mortgageSeoData.useCases}
+        faqs={mortgageSeoData.faqs}
+        deepDive={mortgageSeoData.deepDive}
+        glossary={mortgageSeoData.glossary}
         relatedCalculators={[
-          { name: "Rent vs Buy Calculator", path: "/rent-vs-buy/", desc: "The definitive analysis to see if owning actually beats renting in your market." },
-          { name: "Amortization Schedule", path: "/amortization-calculator/", desc: "View the granular month-by-month breakdown of every payment over 30 years." },
-          { name: "ROI Calculator", path: "/roi-calculator/", desc: "Measure the investment performance of your property after upgrades and repairs." },
-          { name: "Income Tax Calculator", path: "/income-tax-calculator/", desc: "Estimate how mortgage interest deductions might impact your annual tax liability." }
+          {
+            name: "Rent vs Buy Calculator",
+            path: "/rent-vs-buy-calculator/",
+            desc: "The definitive analysis to see if owning actually beats renting in your market.",
+          },
+          {
+            name: "Amortization Schedule",
+            path: "/amortization-calculator/",
+            desc: "View the granular month-by-month breakdown of every payment over 30 years.",
+          },
+          {
+            name: "ROI Calculator",
+            path: "/roi-calculator/",
+            desc: "Measure the investment performance of your property after upgrades and repairs.",
+          },
+          {
+            name: "Income Tax Calculator",
+            path: "/income-tax-calculator/",
+            desc: "Estimate how mortgage interest deductions might impact your annual tax liability.",
+          }
         ]}
       />
     </div>

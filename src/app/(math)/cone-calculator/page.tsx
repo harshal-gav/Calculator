@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import coneSeoData from "@/data/seo-content/official/cone-calculator.json";
 
 export default function ConeCalculator() {
   const [radius, setRadius] = useState("5");
@@ -27,131 +28,113 @@ export default function ConeCalculator() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-      <h1 className="text-4xl font-extrabold mb-4 text-emerald-700 border-b pb-4 flex items-center">
-        <span className="mr-3">📐</span> Cone Calculator
-      </h1>
-      <p className="mb-8 text-gray-600 text-lg">
-        Enter the radius and height of a right circular cone to instantly find
-        its volume, surface area, and slant height.
-      </p>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-        {/* Inputs */}
-        <div className="bg-emerald-50 p-6 rounded-xl border border-emerald-100 space-y-6">
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Radius (r)
-            </label>
-            <input
-              type="number"
-              min="0"
-              step="any"
-              value={radius}
-              onChange={(e) => setRadius(e.target.value)}
-              className="w-full rounded-xl border-gray-300 p-3 shadow-sm focus:border-emerald-500 font-bold text-xl text-gray-800"
-              placeholder="e.g. 5"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Height (h)
-            </label>
-            <input
-              type="number"
-              min="0"
-              step="any"
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-              className="w-full rounded-xl border-gray-300 p-3 shadow-sm focus:border-emerald-500 font-bold text-xl text-gray-800"
-              placeholder="e.g. 10"
-            />
-          </div>
-        </div>
-
-        {/* Visualization / Diagram placeholder */}
-        <div className="bg-white border-2 border-dashed border-emerald-200 rounded-xl p-6 flex items-center justify-center min-h-[250px] relative overflow-hidden">
-          <div className="opacity-10 absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-400 to-transparent"></div>
-          <svg
-            viewBox="0 0 100 100"
-            className="w-48 h-48 drop-shadow-xl text-emerald-600 z-10"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            {/* Base ellipse */}
-            <ellipse cx="50" cy="80" rx="30" ry="10" strokeDasharray="2,2" />
-            <path d="M20 80 C20 85.5 33.4 90 50 90 C66.6 90 80 85.5 80 80" />
-            {/* Sides */}
-            <path d="M20 80 L50 20 L80 80" />
-            {/* Height line */}
-            <line
-              x1="50"
-              y1="20"
-              x2="50"
-              y2="80"
-              strokeDasharray="4,4"
-              className="text-emerald-400"
-            />
-            {/* Radius line */}
-            <line
-              x1="50"
-              y1="80"
-              x2="80"
-              y2="80"
-              strokeDasharray="4,4"
-              className="text-emerald-400"
-            />
-          </svg>
-        </div>
+    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-2xl shadow-xl border border-zinc-200">
+      <div className="text-center mb-10">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-emerald-900 flex items-center justify-center font-serif">
+          <span className="mr-3">▲</span> Cone Calculator
+        </h1>
+        <p className="text-emerald-700 text-lg max-w-2xl mx-auto">
+          Calculate the volume, total surface area, and slant height of a right circular cone instantly.
+        </p>
       </div>
 
-      {/* Results */}
-      {isValid ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-emerald-600 text-white p-5 rounded-xl shadow-md transform transition hover:-translate-y-1">
-            <div className="text-xs font-bold uppercase tracking-wider mb-1 text-emerald-200">
-              Volume
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+        {/* Inputs */}
+        <div className="md:col-span-12 lg:col-span-5 space-y-6">
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-zinc-200 space-y-6">
+            <div>
+              <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
+                Base Radius (r)
+              </label>
+              <input
+                type="number"
+                min="0"
+                step="any"
+                value={radius}
+                onChange={(e) => setRadius(e.target.value)}
+                className="w-full rounded-xl border-zinc-300 p-4 shadow-sm focus:border-emerald-500 font-black text-2xl text-gray-800 bg-zinc-50 outline-none transition-all"
+                placeholder="e.g. 5"
+              />
             </div>
-            <div className="text-2xl font-black">{volume.toFixed(2)}</div>
-            <div className="text-xs mt-1 text-emerald-200 font-mono">
-              V = ⅓πr²h
+            <div>
+              <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
+                Vertical Height (h)
+              </label>
+              <input
+                type="number"
+                min="0"
+                step="any"
+                value={height}
+                onChange={(e) => setHeight(e.target.value)}
+                className="w-full rounded-xl border-zinc-300 p-4 shadow-sm focus:border-emerald-500 font-black text-2xl text-gray-800 bg-zinc-50 outline-none transition-all"
+                placeholder="e.g. 10"
+              />
             </div>
           </div>
-          <div className="bg-emerald-700 text-white p-5 rounded-xl shadow-md transform transition hover:-translate-y-1">
-            <div className="text-xs font-bold uppercase tracking-wider mb-1 text-emerald-200">
-              Total Surface Area
-            </div>
-            <div className="text-2xl font-black">{surfaceArea.toFixed(2)}</div>
-            <div className="text-xs mt-1 text-emerald-200 font-mono">
-              A = πr(r + s)
-            </div>
-          </div>
-          <div className="bg-emerald-800 text-white p-5 rounded-xl shadow-md transform transition hover:-translate-y-1">
-            <div className="text-xs font-bold uppercase tracking-wider mb-1 text-emerald-200">
-              Lateral Surface Area
-            </div>
-            <div className="text-2xl font-black">{lateralArea.toFixed(2)}</div>
-            <div className="text-xs mt-1 text-emerald-200 font-mono">
-              L = πrs
-            </div>
-          </div>
-          <div className="bg-emerald-900 text-white p-5 rounded-xl shadow-md transform transition hover:-translate-y-1">
-            <div className="text-xs font-bold uppercase tracking-wider mb-1 text-emerald-200">
-              Slant Height (s)
-            </div>
-            <div className="text-2xl font-black">{slantHeight.toFixed(2)}</div>
-            <div className="text-xs mt-1 text-emerald-200 font-mono">
-              s = √(r² + h²)
-            </div>
+
+          <div className="bg-white border-2 border-emerald-100 rounded-2xl p-6 flex items-center justify-center min-h-[200px] relative overflow-hidden shadow-inner">
+            <svg
+              viewBox="0 0 100 100"
+              className="w-40 h-40 drop-shadow-xl text-emerald-600 z-10"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <ellipse cx="50" cy="80" rx="30" ry="10" strokeDasharray="2,2" />
+              <path d="M20 80 C20 85.5 33.4 90 50 90 C66.6 90 80 85.5 80 80" />
+              <path d="M20 80 L50 20 L80 80" />
+              <line x1="50" y1="20" x2="50" y2="80" strokeDasharray="4,4" className="text-emerald-400" />
+              <line x1="50" y1="80" x2="80" y2="80" strokeDasharray="4,4" className="text-emerald-400" />
+            </svg>
           </div>
         </div>
-      ) : (
-        <div className="text-center p-8 bg-gray-50 rounded-xl text-gray-500 font-medium border border-gray-200">
-          Please enter positive numbers for both radius and height to see
-          results.
+
+        {/* Results */}
+        <div className="md:col-span-12 lg:col-span-7 bg-slate-900 border border-white/5 rounded-3xl shadow-2xl p-8 flex flex-col justify-center relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500 rounded-full mix-blend-screen filter blur-[80px] opacity-10 pointer-events-none"></div>
+          
+          {isValid ? (
+            <div className="z-10 space-y-6">
+              <div className="bg-emerald-600 p-8 rounded-2xl shadow-xl text-center relative overflow-hidden group">
+                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="text-[10px] font-bold uppercase tracking-widest mb-2 text-emerald-200">
+                  Total Capacity (Volume)
+                </div>
+                <div className="text-6xl font-black text-white font-mono">
+                  {volume.toLocaleString(undefined, { maximumFractionDigits: 3 })}
+                </div>
+                <div className="text-[10px] mt-2 text-emerald-200 font-bold uppercase tracking-tighter">
+                  Cubic Units³ (V = ⅓πr²h)
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-white/5 p-6 rounded-xl border border-white/5 text-center">
+                  <div className="text-[10px] font-bold uppercase tracking-widest mb-1 text-zinc-500">Total Surface Area</div>
+                  <div className="text-2xl font-black text-white">{surfaceArea.toLocaleString(undefined, { maximumFractionDigits: 2 })}</div>
+                </div>
+                <div className="bg-white/5 p-6 rounded-xl border border-white/5 text-center">
+                  <div className="text-[10px] font-bold uppercase tracking-widest mb-1 text-zinc-500">Slant Height (s)</div>
+                  <div className="text-2xl font-black text-white">{slantHeight.toLocaleString(undefined, { maximumFractionDigits: 2 })}</div>
+                </div>
+                <div className="bg-white/5 p-6 rounded-xl border border-white/5 text-center">
+                  <div className="text-[10px] font-bold uppercase tracking-widest mb-1 text-zinc-500">Lateral Area (L)</div>
+                  <div className="text-2xl font-black text-white">{lateralArea.toLocaleString(undefined, { maximumFractionDigits: 2 })}</div>
+                </div>
+                <div className="bg-white/5 p-6 rounded-xl border border-white/5 text-center">
+                  <div className="text-[10px] font-bold uppercase tracking-widest mb-1 text-zinc-500">Base Area (B)</div>
+                  <div className="text-2xl font-black text-white">{baseArea.toLocaleString(undefined, { maximumFractionDigits: 2 })}</div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="text-center p-10 py-20 border border-white/5 bg-black/20 rounded-2xl">
+              <div className="text-emerald-500/50 font-black text-7xl mb-6 font-serif">V?</div>
+              <div className="text-emerald-200/40 font-bold text-lg tracking-widest uppercase">Input dimensions to solve the cone.</div>
+            </div>
+          )}
         </div>
-      )}
+      </div>
 
       <script
         type="application/ld+json"
@@ -161,122 +144,43 @@ export default function ConeCalculator() {
             "@type": "WebApplication",
             name: "Cone Calculator",
             operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
+            applicationCategory: "CalculationApplication",
           }),
         }}
       />
 
-      <div className="mt-8 text-left">
+      <div className="mt-8">
         <CalculatorSEO
-          title="Geometric Cone Properties Calculator"
-          whatIsIt={
-            <p>
-              The <strong>Cone Calculator</strong> is a specialized geometry
-              tool designed to compute the three-dimensional properties of a
-              right circular cone. By simply defining the radius of its circular
-              base and its perpendicular altitude (height), the calculator
-              instantaneously derives the total internal volume, the curved
-              lateral surface area, the flat base area, the total surface area,
-              and the diagonal slant height.
-            </p>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              V = (1/3)πr²h | SA = πr(r + √(h² + r²))
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Where r is radius and h is vertical height.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's map out the properties of a physical traffic cone to find
-                out how much plastic is needed to manufacture the outer layer.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-emerald-800">
-                <li>
-                  <strong>The Input:</strong> The traffic cone has a base radius
-                  of 5 inches and a height of 10 inches.
-                </li>
-                <li>
-                  <strong>Calculating Slant (s):</strong> √(5² + 10²) = √(25 +
-                  100) = √125 ≈ 11.18 inches.
-                </li>
-                <li>
-                  <strong>Lateral Area (L):</strong> We use the slant height to
-                  find the curved area (the orange plastic part): π × 5 × 11.18.
-                </li>
-                <li>
-                  <strong>Result:</strong> It requires approximately{" "}
-                  <strong>175.6 square inches</strong> of orange plastic to mold
-                  the visible cone section.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-emerald-800">
-              <li>
-                <strong>Industrial Manufacturing:</strong> Calculating the exact
-                square footage of sheet metal required to fabricate conical
-                hoppers, funnels, or exhaust caps for factory machinery.
-              </li>
-              <li>
-                <strong>Culinary Arts:</strong> Determining the absolute
-                capacity (Volume) in fluid ounces for custom-made waffle
-                ice-cream cones or fancy pastry molding cups to standardize
-                dessert portion sizes.
-              </li>
-              <li>
-                <strong>Architectural Engineering:</strong> Designing church
-                steeples or modern conical roof structures, requiring precise
-                calculation of the Lateral Surface Area to purchase the exact
-                amount of roofing shingles.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Is this for 'Right' cones or 'Oblique' cones?",
-              answer:
-                "This calculator specifically requires a 'Right Circular Cone'—where the apex (the top point) sits perfectly centered above the circular base. Oblique cones (where the top is skewed to the side) share the same Volume formula but have incredibly complex Surface Area integrations.",
-            },
-            {
-              question: "Why is the volume always divided by 3?",
-              answer:
-                "Geometrically, any cone takes up exactly one-third (1/3) of the volume of a cylinder that shares the exact same base radius and height. This was famously discovered by the ancient Greek mathematician Archimedes.",
-            },
-            {
-              question:
-                "What is the difference between Lateral Area and Total Area?",
-              answer:
-                "Lateral area is only the curved, slanting 'side' of the cone (like an open ice cream cone or a party hat). Total Area also includes the flat circular bottom (the 'cap' sealing it shut).",
-            },
-          ]}
+          title={coneSeoData.title}
+          whatIsIt={coneSeoData.whatIsIt}
+          formula={coneSeoData.formula}
+          example={coneSeoData.example}
+          useCases={coneSeoData.useCases}
+          faqs={coneSeoData.faqs}
+          deepDive={coneSeoData.deepDive}
+          glossary={coneSeoData.glossary}
           relatedCalculators={[
             {
               name: "Cylinder Calculator",
               path: "/cylinder-calculator/",
-              desc: "Calculate the geometric metrics of a perfect cylindrical tube.",
+              desc: "Compare the volume of a cone with its surrounding cylindrical bounds.",
             },
             {
               name: "Sphere Calculator",
               path: "/sphere-calculator/",
-              desc: "Calculate the volume and surface metrics of a round ball.",
+              desc: "Calculate the surface and volumetric properties of a perfect round ball.",
             },
             {
-              name: "Triangle Calculator",
-              path: "/triangle-calculator/",
-              desc: "Calculate 2D cross-sections utilizing Pythagorean theorems.",
+              name: "Average Calculator",
+              path: "/average-calculator/",
+              desc: "Find the mean of your industrial measurements for quality control verification.",
             },
             {
-              name: "Percentage Calculator",
-              path: "/percentage-calculator/",
-              desc: "Easily calculate percentages, increases, and decreases.",
-            }]}
+              name: "Circle Calculator",
+              path: "/circle-calculator/",
+              desc: "Focus strictly on the 2D cross-section and base geometry of your conical structure.",
+            }
+          ]}
         />
       </div>
     </div>

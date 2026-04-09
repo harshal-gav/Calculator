@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import salarySeoData from "@/data/seo-content/official/salary-calculator.json";
 
 export default function SalaryCalculator() {
   const [amount, setAmount] = useState("50000");
@@ -196,119 +197,14 @@ export default function SalaryCalculator() {
       />
 
       <CalculatorSEO
-        title="Salary Calculator & Income Conversion Tool"
-        whatIsIt={
-          <>
-            <p className="text-lg leading-relaxed mb-4">
-              A <strong>Salary Calculator</strong> is the foundational tool for personal financial literacy. It bridges the gap between different payment structures, allowing you to instantly translate an <strong>annual salary</strong> into an <strong>hourly wage</strong>, or a <strong>monthly paycheck</strong> into a <strong>weekly budget</strong>. Understanding your gross income across these different time slices is the first step in effective budgeting, mortgage planning, and career negotiation.
-            </p>
-            <p className="leading-relaxed mb-4">
-              While most job offers are quoted as a lump sum (e.g., "$75,000 per year"), your life is lived in smaller increments. Our calculator provides a granular breakdown, including <strong>bi-weekly</strong> (every two weeks) and <strong>semi-monthly</strong> (twice a month) payouts, which are the most common payroll cycles in North America.
-            </p>
-            <p className="leading-relaxed">
-              Use this tool to evaluate job offers, determine your "real" hourly value, and ensure your income expectations align with your lifestyle goals.
-            </p>
-          </>
-        }
-        comparisonTable={{
-          title: "U.S. Income Benchmarks & Living Standards",
-          headers: ["Income Category", "Annual (Gross)", "Hourly Equiv.", "Typical Household Role", "Financial Goal"],
-          rows: [
-            ["High Earner (Top 10%)", "$170,000+", "$81.73+", "Senior Management", "Wealth Preservation"],
-            ["U.S. Median Household", "$74,580", "$35.85", "Technical/Professional", "Home Ownership"],
-            ["Living Wage (Family of 4)", "$68,000", "$32.69", "Service/Manufacturing", "Stability"],
-            ["Federal Minimum Wage", "$15,080", "$7.25", "Entry Level", "Basic Needs"],
-          ]
-        }}
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Salary Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Salary results.
-            </p>
-          </>
-        }
-          example={
-          <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-emerald-50 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-2 h-full bg-emerald-500"></div>
-            <h5 className="font-black text-gray-900 uppercase tracking-widest text-xs mb-8">Scenario: The Promotion Jump</h5>
-            <div className="space-y-6">
-              <div className="flex justify-between items-center border-b border-gray-100 pb-4">
-                <span className="text-gray-500 font-medium">New Annual Salary</span>
-                <span className="font-bold text-gray-900">$82,000</span>
-              </div>
-              <div className="flex justify-between items-center border-b border-gray-100 pb-4">
-                <span className="text-gray-500 font-medium">Standard Hours (40h/wk)</span>
-                <span className="font-bold text-gray-900">2,080 / Yr</span>
-              </div>
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="bg-emerald-50 p-6 rounded-2xl text-center">
-                  <span className="block text-[10px] text-emerald-600 font-bold uppercase mb-1">Monthly Gross</span>
-                  <span className="text-3xl font-black text-emerald-900">$6,833</span>
-                </div>
-                <div className="bg-slate-50 p-6 rounded-2xl text-center">
-                  <span className="block text-[10px] text-slate-500 font-bold uppercase mb-1">Hourly Equiv.</span>
-                  <span className="text-3xl font-black text-slate-800">$39.42</span>
-                </div>
-              </div>
-            </div>
-            <p className="mt-8 text-xs text-gray-400 text-center italic">Result: This salary provides a bi-weekly gross paycheck of $3,153.85.</p>
-          </div>
-        }
-        useCases={
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
-              <h6 className="font-bold text-gray-900 mb-2">Job Offer Comparison</h6>
-              <p className="text-xs text-gray-500">Compare a $35/hour role vs. a $70,000/year role. The hourly role ($72,800/yr) actually pays more assuming full-time hours.</p>
-            </div>
-            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
-              <h6 className="font-bold text-gray-900 mb-2">Mortgage Pre-Approval</h6>
-              <p className="text-xs text-gray-500">Find your "Gross Monthly Income"—the specific number lenders use to calculate your Debt-to-Income (DTI) ratio.</p>
-            </div>
-            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
-              <h6 className="font-bold text-gray-900 mb-2">Freelance Rate Setting</h6>
-              <p className="text-xs text-gray-500">Determine how much to charge per hour to match your previous corporate salary, adding a 25% buffer for taxes/missing benefits.</p>
-            </div>
-            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
-              <h6 className="font-bold text-gray-900 mb-2">Budgeting by Pay Period</h6>
-              <p className="text-xs text-gray-500">If you are paid Bi-Weekly, map out exactly how much income you have available every 14 days for automated savings.</p>
-            </div>
-          </div>
-        }
-        glossary={[
-          { term: "Gross Income", definition: "Total pay before any taxes, health insurance premiums, or retirement contributions are deducted." },
-          { term: "Bi-Weekly", definition: "A payment schedule consisting of 26 pay periods per year, occurring every two weeks." },
-          { term: "Semi-Monthly", definition: "A payment schedule consisting of 24 pay periods per year, occurring exactly twice per month (usually 15th and 30th)." },
-          { term: "Hourly Non-Exempt", definition: "Employees entitled to overtime pay (1.5x) for hours worked beyond 40 per week." },
-          { term: "FICA Tax", definition: "The combined Social Security and Medicare taxes deducted from most U.S. paychecks." },
-          { term: "Paycheck Leap Year", definition: "Occurs when a bi-weekly cycle results in 27 pay periods in a calendar year instead of 26." },
-          { term: "DTI Ratio", definition: "Debt-to-Income ratio; the percentage of gross monthly income used to pay monthly debt obligations." },
-          { term: "Exempt Employee", definition: "A salaried professional who is exempt from overtime pay requirements under the FLSA." },
-        ]}
-        faqs={[
-          {
-            question: "Is it better to be paid Bi-Weekly or Semi-Monthly?",
-            answer: "Bi-weekly involves 26 paychecks, while semi-monthly involves 24. Bi-weekly is often preferred by budgeters because twice a year you receive a 'third paycheck' in a single month. However, semi-monthly paychecks are slightly larger because the annual salary is divided by fewer periods."
-          },
-          {
-            question: "How many working hours are in a year?",
-            answer: "A standard 40-hour work week multiplied by 52 weeks equals exactly 2,080 working hours per year. This is the standard multiplier used by most HR departments."
-          },
-          {
-            question: "Does this calculator handle overtime?",
-            answer: "No. This tool calculates base salary. For overtime, you should multiply your calculated 'Hourly Equiv' by 1.5 and add that to your gross total manually."
-          },
-          {
-            question: "Why is my take-home pay so much lower?",
-            answer: "Our calculator shows 'Gross' pay. In most cases, your 'Net' (take-home) pay will be 20% to 30% lower due to income taxes, FICA, and insurance costs."
-          },
-          {
-            question: "How do I calculate salary for a 4-day workweek?",
-            answer: "Simple! Change the 'Hours/Week' field to 32 (8 hours × 4 days). The calculator will adjust the hourly value to reflect that you are achieving the same annual pay in fewer hours."
-          }
-        ]}
+        title={salarySeoData.title}
+        whatIsIt={salarySeoData.whatIsIt}
+        formula={salarySeoData.formula}
+        example={salarySeoData.example}
+        useCases={salarySeoData.useCases}
+        faqs={salarySeoData.faqs}
+        deepDive={salarySeoData.deepDive}
+        glossary={salarySeoData.glossary}
         relatedCalculators={[
           {
             name: "Federal Income Tax Calculator",

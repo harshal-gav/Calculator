@@ -1,0 +1,38 @@
+{
+  "calculatorId": "basic-calculator",
+  "title": "The Master Guide to Standard Arithmetic & Computational Logic: A 5,000-Word Analysis of The Four Operations, Numerical Order, and the Geometry of Calculation",
+  "whatIsIt": "A Basic Calculator is a fundamental mathematical utility designed to perform standard arithmetic operations including addition, subtraction, multiplication, and division. In the context of daily household management, retail transactions, and primary education, the calculator is the foundation of 'Numerical Literacy.' Whether you are computing the **Total of a Grocery Bill**, the **Difference Between Two Dates**, or the **Quotient of a Shared Payment**, understanding how 'Basic Operators' interact with 'Whole Numbers and Decimals' is critical for financial planning, operational accuracy, and classroom learning.\n\nOur Basic Calculator is the 'Numeric Command Center' for everyone from elementary students to professional accountants. It provides high-fidelity, real-time results for any simple or nested operation. Whether you are 'Balancing a Checkbook' or 'Dividing a Recipe for fewer people,' this tool provides the mathematical certainty needed to understand the 'Volume' of your digits. By calculating your exact sum (to multiple decimal places), this tool provides the precision needed to understand the 'Equality' of your math.\n\nIn an age of 'Complex Algorithmic Finance' and 'AI Modeling,' the basic calculator is the ultimate 'Logical Baseline.' This tool serves as your 'Mathematical Integrity Shield,' helping you bridge the gap between abstract 'Number Sense' and physical 'Operational Accuracy'.",
+  "formula": "Standard arithmetic is based on the 'Operator-Precedence' factor. Our engine handles the following standard constants:\n\n1.  **PEMDAS**: Parentheses, Exponents, Multiplication, Division, Addition, Subtraction.\n2.  **The 'Zero' Rule**: Correctly preventing 'Division by Zero' errors ($1/0$).\n3.  **Floating-Point Accuracy**: Ensuring that $0.1 + 0.2$ results in $0.3$ and not $0.30000000000000004$ via high-precision rounding.",
+  "example": "Let's examine **Calculating a combined bill with a shared discount: (50 + 20) * 0.9**:\n\n1.  **The Sum**: $50 + 20 = 70$.\n2.  **The Discount**: $70 \\cdot 0.9$.\n3.  **The Math**: $70 \\cdot 0.9 = 63$.\n4.  **The Result**: **Total Bill = 63**. \n\n**The Strategy**: By using this calculator, the user can see that 'Value' isn't just about the numbers; it is about the order in which you apply your logic. If they had 'guessed' (applying the discount first), they might have confused their accounting. This is the difference between 'Guesstimately Budgeting' and 'Defining Integrity.' This tool is your 'Administrative Compliance Shield,' ensuring you never over-charge your clients or under-calculate your savings. If you are a parent, you can use this tool to calculate your **Child's Allowance**, ensuring your household is consistently merit-neutral. You aren't just 'Swapping Units'; you are 'Defining Value'.",
+  "useCases": "The Basic Calculator is an essential utility for several high-level everyday and educational tasks:\n\n1.  **Daily Household Budgeting**: Adding up utilities, rent, and groceries to determine monthly spend against a fixed salary or income stream.\n2.  **Retail Sales and Point-of-Purchase**: Shop owners and customers quickly calculating change-due or verifying total discounts on multiple items.\n3.  **Recipe Scaling and Culinary Math**: Chefs and bakers doubling or halving ingredient measurements (grams, ounces) to accommodate different party sizes.\n4.  **Primary Mathematics Education**: Students and parents using the tool to check multi-step homework problems involving long-division and large-sum addition.\n5.  **Crafting and Construction Measurements**: DIY enthusiasts adding or subtracting inches and centimeters to determine the total length of materials needed for a project.\n6.  **Time Management and Logistical Planning**: Calculating the total hours worked in a week or the mileage traveled between multiple stops based on raw speedometer readings.",
+  "faqs": [
+    {
+      "question": "What is PEMDAS?",
+      "answer": "It is the acronym for 'Order of Operations': Parentheses, Exponents, Multiplication, Division, Addition, Subtraction. It ensures that everyone gets the same answer for the same equation."
+    },
+    {
+      "question": "How many digits does this tool support?",
+      "answer": "Our engine can handle calculations up to 15 significant figures, providing scientific-grade accuracy for even the most complex household or retail tasks."
+    },
+    {
+      "question": "Can I use it on my phone?",
+      "answer": "Yes! Our calculator is fully responsive and touch-optimized, behaving like a physical handheld calculator on any mobile device."
+    },
+    {
+      "question": "Why can't I divide by zero?",
+      "answer": "Mathematically, division is the inverse of multiplication. Because no number multiplied by zero equals anything other than zero, division by zero has no logical definition."
+    },
+    {
+      "question": "Is it better than a physical calculator?",
+      "answer": "Our tool is more accessible, never needs batteries, and allows you to see your 'History' of inputs so you can catch mistakes in long addition strings."
+    }
+  ],
+  "deepDive": "**The Master Strategy: Why Your Arithmetic is actually a Universal Language**\n\nThe most important concept in science history is **'Equivalence.'** Calculation isn't just 'Math'; it is the manipulation of your 'Value Perception.' This is the **'Abacus Origin.'** Modern logic is moving away from 'Manual Counting' and toward 'Automated Verification' and 'Blockchain-Anchored Ledgering.' \n\nAnother profound concept is the **'Computational Precision Offset'**. In large financial systems, 'Decimal Drift' over billions of transactions can bankrupt a firm. As our ability to calculate grows more 'Atomic,' our numbers grow more 'Absolute.' This tool is your **'Mathematical Integrity Shield,'** helping you resist the urge to believe that your total is just 'roughly' a certain amount. \n\n**The 'Precision' Advantage**: In high-end orbital physics or semiconductor fabrication, a single 'Digit' of 'Arithmetic discrepancy' can trigger a change in a million-dollar project validation. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Numeric Command Center'** and build the accurate world you've always envisioned. Precision is the language of progress.",
+  "glossary": [
+    { "term": "Operator", "definition": "A character that represents a mathematical action, such as + for addition or / for division." },
+    { "term": "Operand", "definition": "A quantity or number on which an operation is to be performed." },
+    { "term": "Quotient", "definition": "The result obtained by dividing one quantity by another." },
+    { "term": "Integer", "definition": "A whole number; a number that is not a fraction." },
+    { "term": "Floating-Point", "definition": "A formulaic representation that approximates real numbers as a way to support a trade-off between range and precision." }
+  ]
+}

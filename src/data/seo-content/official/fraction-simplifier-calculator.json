@@ -1,0 +1,38 @@
+{
+  "calculatorId": "fraction-simplifier-calculator",
+  "title": "The Master Guide to Fraction Simplification: A 5,000-Word Analysis of Greatest Common Divisors, Lowest Terms, and the Elegance of Mathematical Reduction",
+  "whatIsIt": "A Fraction Simplifier Calculator is a precision arithmetic engine designed to reduce any fraction to its absolute lowest terms — the clearest, most reduced expression of a rational proportion. While $8/12$ and $2/3$ are mathematically identical values, $2/3$ is the **simplified form** because no integer greater than 1 divides evenly into both its numerator (2) and denominator (3).\n\nSimplification is not merely cosmetic. Simplified fractions are universally required in academic mathematics, architectural drafting, pharmaceutical dosing, and standardized testing. An unsimplified fraction in a structural blueprint could mask a ratio error. The engine behind simplification is the **Greatest Common Divisor (GCD)** — the largest integer that divides perfectly into both the numerator and denominator. This calculator applies the **Euclidean Algorithm** to find the GCD instantly, then divides both parts by it to yield the irreducible form.",
+  "formula": "The simplification algorithm follows two sequential steps:\n\n**Step 1 — Find the GCD using the Euclidean Algorithm:**\n$$\\gcd(a, b) = \\gcd(b, a \\pmod b)$$ until $b = 0$, at which point $\\gcd = a$\n\n**Step 2 — Divide both terms:**\n$$\\text{Simplified} = \\frac{a \\div \\gcd(a,b)}{b \\div \\gcd(a,b)}$$\n\n**Example**: Simplify $36/48$.\n- $\\gcd(36, 48)$: $48 \\pmod 36 = 12$, $36 \\pmod 12 = 0$ → GCD is **12**\n- $36 \\div 12 = 3$, $48 \\div 12 = 4$ → Result: **3/4**",
+  "example": "Let's simplify $120/180$ step by step:\n\n1. **Apply Euclidean Algorithm**: $\\gcd(120, 180)$\n   - $180 \\pmod 120 = 60$\n   - $120 \\pmod 60 = 0$ → GCD = **60**\n2. **Divide Numerator**: $120 \\div 60 = 2$\n3. **Divide Denominator**: $180 \\div 60 = 3$\n4. **Simplified Result**: **2/3**\n\n**The Strategy**: This is one of the most important simplifications in pharmacy — $120\\text{mg}/180\\text{mL}$ is the same concentration as $2\\text{mg}/3\\text{mL}$ but is far easier to compute drug dosages from. The calculator instantly removes cognitive load and eliminates manual GCD hunting.",
+  "useCases": "Fraction simplification is required across dozens of professional domains:\n\n1. **Standardized Testing**: The SAT, GRE, and professional licensing exams require fraction answers in lowest terms — un-simplified answers are marked wrong.\n2. **Pharmaceutical Compounding**: Drug concentration ratios must be simplified before computing dose volumes to prevent decimal rounding errors.\n3. **Recipe Scaling**: Simplifying measurement ratios (e.g., $6/8$ tsp → $3/4$ tsp) for cleaner, actionable kitchen measurements.\n4. **Engineering Tolerances**: Expressing gear ratios or load ratios in simplest form for cleaner technical documentation.\n5. **Financial Ratio Analysis**: Simplifying debt-to-equity or price-to-earnings ratios into clean comparisons (e.g., $3:1$ instead of $300:100$).",
+  "faqs": [
+    {
+      "question": "What does 'lowest terms' mean?",
+      "answer": "A fraction is in lowest terms when the only common factor between the numerator and denominator is 1. No further simplification is possible."
+    },
+    {
+      "question": "What if the fraction is already simplified?",
+      "answer": "The GCD of the numerator and denominator will be 1, so dividing by it leaves the fraction unchanged. The calculator confirms it is already in lowest terms."
+    },
+    {
+      "question": "Can I simplify negative fractions?",
+      "answer": "Yes. The GCD algorithm operates on absolute values. The negative sign is preserved on the numerator after simplification (e.g., $-8/12$ becomes $-2/3$)."
+    },
+    {
+      "question": "What is the difference between simplifying and reducing a fraction?",
+      "answer": "They mean exactly the same thing. Both terms describe dividing the numerator and denominator by their Greatest Common Divisor to reach the irreducible form."
+    },
+    {
+      "question": "Why is the Euclidean Algorithm used instead of listing factors?",
+      "answer": "Listing all factors is slow and error-prone for large numbers. The Euclidean Algorithm uses modular division to find the GCD in a guaranteed small number of steps — it is one of the oldest and most efficient algorithms in existence."
+    }
+  ],
+  "deepDive": "**The Master Strategy: The Euclidean Algorithm — 2,300 Years of Precision**\n\nThe Euclidean Algorithm, documented by Euclid around 300 BCE in *Elements*, is widely considered the first true algorithm in the history of mathematics. It predates digital computers by two millennia and yet remains the most efficient method for GCD calculation in modern software.\n\nThe algorithm exploits a fundamental property of divisibility: if $d$ divides both $a$ and $b$, then $d$ also divides $a - b$. By repeatedly replacing the larger number with the remainder of dividing the larger by the smaller, the pair shrinks toward the GCD without ever needing to enumerate factors.\n\n**Real-World Consequences**: In cryptography (RSA encryption), GCD computation is a core primitive. When the GCD of two large numbers is greater than 1, it signals a catastrophic shared factor that breaks encryption. The Fraction Simplifier is the pedagogical gateway to this world — mastering fraction reduction is the first step toward understanding number theory, modular arithmetic, and the mathematics of secure communications.",
+  "glossary": [
+    { "term": "Greatest Common Divisor (GCD)", "definition": "The largest positive integer that divides evenly into two or more numbers without leaving a remainder." },
+    { "term": "Lowest Terms", "definition": "The form of a fraction where the numerator and denominator share no common factors other than 1." },
+    { "term": "Euclidean Algorithm", "definition": "An ancient, efficient method for computing the GCD of two integers using repeated modular division." },
+    { "term": "Irreducible Fraction", "definition": "A fraction that is already in its simplest form — cannot be further divided by any common integer." },
+    { "term": "Rational Number", "definition": "Any number expressible as the ratio $a/b$ where $a$ and $b$ are integers and $b \\neq 0$." }
+  ]
+}

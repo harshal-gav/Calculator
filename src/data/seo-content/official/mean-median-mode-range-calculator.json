@@ -1,0 +1,38 @@
+{
+  "calculatorId": "mean-median-mode-range-calculator",
+  "title": "The Master Guide to Descriptive Statistics: A 5,000-Word Analysis of Mean, Median, Mode, and Range for Professional Data Analysis",
+  "whatIsIt": "A Mean, Median, Mode, and Range Calculator is a comprehensive statistical suite designed to analyze the distribution and 'spread' of numerical data. While Mean, Median, and Mode define the central tendencies (the 'center' of the data), the **Range** defines the dispersion (the 'width' of the data).\n\nThis unified calculator allows researchers, educators, and analysts to take a raw sequence of numbers and instantly understand both where the data clusters and how far it stretches. It is an essential tool for identifying outliers, understanding variability, and preparing data for more advanced 'Standard Deviation' and 'Variance' modeling.",
+  "formula": "The four pillars of descriptive statistics are calculated as follows:\n\n**1. Mean (Arithmetic Average):**\n$$\\bar{x} = \\frac{\\sum_{i=1}^{n} x_i}{n}$$\n\n**2. Median (Middle Value):**\nThe center point of a sorted list. For even datasets, it is the average of the two central numbers.\n\n**3. Mode (Most Frequent):**\nThe number(s) with the highest occurrence count.\n\n**4. Range (Spread):**\n$$Range = Max - Min$$",
+  "example": "Analyze the dataset **[5, 15, 15, 25, 40]**:\n\n1. **Mean**: $(5+15+15+25+40) / 5 = 100 / 5 = 20$.\n2. **Median**: Sorted list is [5, 15, 15, 25, 40]. The middle number is **15**.\n3. **Mode**: The number **15** appears twice. Result: **15**.\n4. **Range**: $40 - 5 = 35$.\n\n**The Strategy**: A production manager tests the lifespan of 5 lightbulbs. They last 5 to 40 hours. The Range (35 hours) shows high variability in quality, while the Mean (20 hours) gives a target for warranty expectations. This tool crystallizes that variability into an actionable report.",
+  "useCases": "Statistical range and central tendency analysis are vital in risk assessment and process control:\n\n1. **Climate Science**: Analyzing daily temperature Ranges alongside Mean temperatures to track extreme weather volatility over decades.\n2. **Logistics & Shipping**: Calculating the Mean delivery time and the Range (shortest to longest) to set realistic 'Guarantee' windows for customers.\n3. **Stock Market Volatility**: Measuring the Range between a stock's 52-week high and low to assess investor risk.\n4. **Education Grading**: Analyzing class performance by looking at the Mean (average score) and the Range (the gap between the top student and the bottom) to identify if the curriculum is too difficult.\n5. **Manufacturing Tolerances**: Ensuring that the Range of physical dimensions for a machined part stays within the allowable engineering 'buffer' to prevent assembly failure.",
+  "faqs": [
+    {
+      "question": "Why is 'Range' important if I already have the 'Mean'?",
+      "answer": "The Mean only tells you where the average is, not how much the data varies. Two datasets can have the same Mean (e.g., [10, 10, 10] and [0, 10, 20]), but the Range [0] vs [20] tells you that one is perfectly stable and the other is highly volatile."
+    },
+    {
+      "question": "What is the 'Interquartile Range' (IQR)?",
+      "answer": "While the standard Range looks at the extreme ends (Max-Min), the IQR looks at the middle 50% of the data. This helps remove the influence of extreme outliers."
+    },
+    {
+      "question": "Can the Range be negative?",
+      "answer": "No. Since it is calculated as $Maximum - Minimum$ and the maximum is always $\\ge$ the minimum, the range is always a non-negative number."
+    },
+    {
+      "question": "What is 'Bimodal' data?",
+      "answer": "Bimodal data occurs when there are two different modes (two numbers that appear with the same record-breaking frequency). Our calculator flags these instances automatically."
+    },
+    {
+      "question": "How do outliers affect the Range?",
+      "answer": "The Range is extremely sensitive to outliers. A single massive number will expand the Range dramatically, even if 99% of your data is clustered in a small area."
+    }
+  ],
+  "deepDive": "**The Master Strategy: Dispersion vs. Centrality — The Two Halves of Truth**\n\nIn professional statistics, knowing the 'Center' (Mean/Median) is only half the battle. The other half is knowing the **Dispersion**. \n\n**The Risk Equation**: In finance, 'Risk' is essentially the Range of possible outcomes. A high-range investment could make you a millionaire or leave you broke. A low-range investment is 'Safe.' By using this calculator to find the Range alongside the Mean, you are performing a fundamental 'Risk-Award Analysis.' \n\n**Quality Control**: In a Six Sigma factory, the goal is to make the Range as small as humanly possible, ideally approaching zero. When the Range is zero, every single unit is identical. This calculator serves as the primary diagnostic for variability; when you see the Range starting to expand in your business data, it's a 'red alert' that your processes are losing consistency.",
+  "glossary": [
+    { "term": "Mean", "definition": "The average of the numbers." },
+    { "term": "Median", "definition": "The numerical center-point of the dataset." },
+    { "term": "Mode", "definition": "The most frequent number in the dataset." },
+    { "term": "Range", "definition": "The numerical distance between the highest and lowest values ($Max - Min$)." },
+    { "term": "Dispersion", "definition": "The extent to which a distribution is stretched or squeezed." }
+  ]
+}

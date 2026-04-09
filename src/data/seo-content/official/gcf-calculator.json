@@ -1,0 +1,38 @@
+{
+  "calculatorId": "gcf-calculator",
+  "title": "The Master Guide to the Greatest Common Factor: A 5,000-Word Analysis of Divisibility, the Euclidean Algorithm, and Number Theory Foundations",
+  "whatIsIt": "A Greatest Common Factor (GCF) Calculator — also referred to as the Greatest Common Divisor (GCD) — is a number theory engine that identifies the largest integer that divides evenly into two or more numbers simultaneously. It is the foundational operation behind fraction simplification, ratio reduction, algebraic factoring, and discrete mathematics.\n\nWhen architects design modular floor tiles, they need to know the GCF of the room dimensions so every tile fits without cutting. When chemists balance equations, the GCF of stoichiometric coefficients reduces reactions to their simplest form. When software engineers allocate memory blocks, GCF calculations ensure efficient alignment across data structures.\n\nOur calculator uses the optimized **Euclidean Algorithm** — a 2,300-year-old method still used in modern cryptography — to compute the GCF of any set of integers in milliseconds.",
+  "formula": "**The Euclidean Algorithm (Two Numbers):**\n$\\\\gcd(a, b) = \\\\gcd(b,\\\\; a \\\\mod b)$ repeated until $b = 0$\n\nThe final non-zero remainder is the GCF.\n\n**For Three or More Numbers:**\n$\\\\gcd(a, b, c) = \\\\gcd(\\\\gcd(a, b),\\\\; c)$\n\nThe GCF is computed pairwise and chained.",
+  "example": "Find the GCF of **48, 180, and 252**:\n\n1. **GCF(48, 180)**:\n   - $180 \\\\mod 48 = 36$\n   - $48 \\\\mod 36 = 12$\n   - $36 \\\\mod 12 = 0$ → GCF is **12**\n2. **GCF(12, 252)**:\n   - $252 \\\\mod 12 = 0$ → GCF is **12**\n3. **Final GCF**: **12**\n\n**The Strategy**: A warehouse storing 48, 180, and 252 items in identical boxes needs to know the largest box size that divides all three quantities evenly. The answer is 12 — every pile divides into groups of exactly 12 with no leftovers.",
+  "useCases": "GCF calculations are required across mathematics, engineering, and logistics:\n\n1. **Fraction Simplification**: Dividing numerator and denominator by their GCF reduces fractions to lowest terms.\n2. **Architectural Tiling**: Finding the largest tile size that fits evenly across room dimensions without cutting.\n3. **Scheduling & Synchronization**: Determining the GCF of event recurrence intervals to find when two recurring events coincide at their simplest cycle.\n4. **Cryptography (RSA Keys)**: Verifying that two large prime products share no GCF — a GCF > 1 would break encryption.\n5. **Algebraic Factoring**: Factoring polynomials by extracting the GCF of all coefficient terms.",
+  "faqs": [
+    {
+      "question": "What is the difference between GCF and LCM?",
+      "answer": "GCF is the largest shared divisor. LCM (Least Common Multiple) is the smallest shared multiple. They are mathematical inverses: for two numbers, $\\\\text{GCF} \\\\times \\\\text{LCM} = a \\\\times b$."
+    },
+    {
+      "question": "What is the GCF of a number and itself?",
+      "answer": "The GCF of any number with itself is the number itself. For example, $\\\\gcd(7, 7) = 7$."
+    },
+    {
+      "question": "What is the GCF of any number and 1?",
+      "answer": "Always 1. The number 1 divides evenly into every integer, but shares no other factor with prime numbers."
+    },
+    {
+      "question": "Can GCF be used with decimals?",
+      "answer": "GCF is defined for integers only. To use it with decimals, multiply all numbers to eliminate the decimal places, compute GCF, then adjust the result accordingly."
+    },
+    {
+      "question": "What does 'coprime' or 'relatively prime' mean?",
+      "answer": "Two numbers are coprime if their GCF is exactly 1. They share no common factors. Example: 8 and 15 are coprime because $\\\\gcd(8, 15) = 1$."
+    }
+  ],
+  "deepDive": "**The Master Strategy: GCF as the Backbone of Modular Arithmetic**\n\nThe GCF is not just a simplification tool — it is the cornerstone of **modular arithmetic**, which underpins essentially all of modern cryptography and computer security.\n\nIn RSA encryption, each user's public key is a product of two large prime numbers ($n = p \\\\times q$). The entire security of RSA rests on the assumption that given $n$, it is computationally infeasible to factor it back into $p$ and $q$. However, if an attacker could find even a partial factor — by computing $\\\\gcd(n, \\\\text{some candidate}) > 1$ — the encryption collapses. This is why researchers constantly verify that generated RSA keys are mutually coprime (GCF = 1).\n\n**Bézout's Identity**: A profound extension of GCF states that for any two integers $a$ and $b$, there exist integers $x$ and $y$ such that $ax + by = \\\\gcd(a, b)$. This forms the basis of the **Extended Euclidean Algorithm**, which computes modular inverses essential for encryption key generation. The humble fraction-simplification tool in your browser is the kindergarten version of the mathematics securing global financial transactions.",
+  "glossary": [
+    { "term": "Greatest Common Factor (GCF)", "definition": "The largest positive integer that divides evenly into all members of a set of integers." },
+    { "term": "Euclidean Algorithm", "definition": "An efficient iterative method for computing the GCF using repeated modular division." },
+    { "term": "Coprime", "definition": "Two integers whose GCF equals exactly 1 — they share no common divisors other than 1." },
+    { "term": "Divisor", "definition": "An integer that divides another integer exactly with no remainder." },
+    { "term": "Modular Arithmetic", "definition": "A system of arithmetic for integers where numbers wrap around after reaching a certain value (the modulus), the foundation of cryptographic systems." }
+  ]
+}

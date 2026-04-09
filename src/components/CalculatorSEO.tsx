@@ -36,6 +36,29 @@ interface CalculatorSEOProps {
     comparisonTable?: ComparisonTable; // New: For data comparison
 }
 
+const renderStringOrNode = (content: React.ReactNode) => {
+    if (typeof content === 'string') {
+        return content.split('\n\n').map((para, i) => {
+            // Very basic markdown bold (**) and italic (*) parsing
+            const parts = para.split(/(\*\*.*?\*\*|\*.*?\*)/g);
+            return (
+                <p key={i} className="mb-4">
+                    {parts.map((part, index) => {
+                        if (part.startsWith('**') && part.endsWith('**')) {
+                            return <strong key={index} className="text-slate-900 font-black">{part.slice(2, -2)}</strong>;
+                        }
+                        if (part.startsWith('*') && part.endsWith('*')) {
+                            return <em key={index} className="text-slate-800 font-bold italic">{part.slice(1, -1)}</em>;
+                        }
+                        return part;
+                    })}
+                </p>
+            );
+        });
+    }
+    return content;
+};
+
 export default function CalculatorSEO({ 
     title, 
     whatIsIt, 
@@ -80,7 +103,7 @@ export default function CalculatorSEO({
                             What is a {title}?
                         </h3>
                         <div className="space-y-4 md:space-y-6 text-lg md:text-xl leading-relaxed text-slate-700">
-                            {whatIsIt}
+                            {renderStringOrNode(whatIsIt)}
                         </div>
                     </section>
 
@@ -123,7 +146,7 @@ export default function CalculatorSEO({
                             The Mathematical Formula
                         </h3>
                         <div className="text-lg md:text-xl leading-relaxed text-slate-700 relative z-10 prose-strong:text-slate-900 prose-p:text-slate-700">
-                            {formula}
+                            {renderStringOrNode(formula)}
                         </div>
                     </section>
 
@@ -131,7 +154,7 @@ export default function CalculatorSEO({
                         <section className="mb-16 md:mb-20 space-y-8 bg-indigo-50/30 border-l-4 border-indigo-600 px-6 md:px-12 py-8 rounded-r-3xl">
                             <h3 className="text-2xl md:text-3xl font-black mb-6 tracking-tight text-slate-900">Expert Analysis & Deep Dive</h3>
                             <div className="space-y-4 md:space-y-6 text-lg md:text-xl leading-relaxed text-slate-700">
-                                {deepDive}
+                                {renderStringOrNode(deepDive)}
                             </div>
                         </section>
                     )}
@@ -142,7 +165,7 @@ export default function CalculatorSEO({
                             Calculation Example
                         </h3>
                         <div className="space-y-4 md:space-y-6 text-lg md:text-xl bg-amber-50/50 p-6 md:p-12 rounded-2xl md:rounded-3xl border border-amber-100 leading-relaxed text-slate-700">
-                            {example}
+                            {renderStringOrNode(example)}
                         </div>
                     </section>
 
@@ -152,9 +175,10 @@ export default function CalculatorSEO({
                             Strategic Use Cases
                         </h3>
                         <div className="space-y-4 md:space-y-6 text-lg md:text-xl leading-relaxed text-slate-700">
-                            {useCases}
+                            {renderStringOrNode(useCases)}
                         </div>
                     </section>
+
 
                     {glossary && (
                         <section className="mb-16 md:mb-20 bg-slate-50 p-6 md:p-12 rounded-2xl md:rounded-[2.5rem] border border-slate-200">

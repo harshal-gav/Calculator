@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import hexSeoData from "@/data/seo-content/official/hex-calculator.json";
+
 export default function HexCalculator() {
   const [num1, setNum1] = useState("");
   const [num2, setNum2] = useState("");
@@ -182,26 +184,12 @@ export default function HexCalculator() {
         </div>
       )}
 
-      <div className="mt-8 bg-zinc-100 p-6 rounded-xl border border-zinc-200 text-sm text-zinc-600 max-w-2xl mx-auto space-y-2 text-center">
-        <p className="font-bold text-zinc-800 uppercase tracking-widest mb-2">
-          Hexadecimal Info
-        </p>
-        <p>
-          Hexadecimal represents numbers using base 16. It uses digits 0-9 and
-          letters A-F to represent 10-15.
-        </p>
-        <p>
-          This calculator supports standard arithmetic (+, -, ×, ÷) as well as
-          bitwise operations (AND, OR, XOR, NOT).
-        </p>
-      </div>
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebApplication",
+            "@type": "SoftwareApplication",
             name: "Hex Calculator",
             operatingSystem: "All",
             applicationCategory: "EducationalApplication",
@@ -211,116 +199,14 @@ export default function HexCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Hexadecimal Calculator"
-          whatIsIt={
-            <>
-              <p>
-                A <strong>Hexadecimal Calculator</strong> is a specialized tool
-                built for computer scientists, programmers, and electrical
-                engineers. It performs mathematical operations directly on
-                numbers written in Base-16 (hex) notation.
-              </p>
-              <p>
-                Unlike our standard decimal system (Base-10), which uses digits
-                0-9, the hexadecimal system uses 16 distinct symbols: 0-9 to
-                represent values zero to nine, and A-F to represent values ten
-                to fifteen.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Hex Calculator
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Hex Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Hex results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's add two hexadecimal numbers together:{" "}
-                <strong>1A3F + B2C</strong>.
-              </p>
-              <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-purple-50 p-4 rounded-xl border border-purple-200">
-                <li>
-                  <strong>Step 1:</strong> Convert to Decimal
-                </li>
-                <li className="pl-4 text-zinc-600">
-                  1A3F (Hex) = 6719 (Decimal)
-                </li>
-                <li className="pl-4 text-zinc-600">
-                  B2C (Hex) = 2860 (Decimal)
-                </li>
-                <li className="mt-2">
-                  <strong>Step 2:</strong> Add the Decimals
-                </li>
-                <li className="pl-4 text-zinc-600">6719 + 2860 = 9579</li>
-                <li className="mt-2">
-                  <strong>Step 3:</strong> Convert back to Hex
-                </li>
-                <li className="pl-4 text-zinc-600">
-                  9579 ÷ 16 = 598 remainder 11 (B)
-                </li>
-                <li className="pl-4 text-zinc-600">
-                  598 ÷ 16 = 37 remainder 6 (6)
-                </li>
-                <li className="pl-4 text-zinc-600">
-                  37 ÷ 16 = 2 remainder 5 (5)
-                </li>
-                <li className="pl-4 text-zinc-600">
-                  2 ÷ 16 = 0 remainder 2 (2)
-                </li>
-                <li className="pt-2 mt-2 font-bold text-purple-800 border-t border-purple-200">
-                  Result: 256B
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4">
-              <li>
-                <strong>Memory Addresses:</strong> Computer RAM and pointers are
-                displayed in hexadecimal formats (e.g., <code>0x7FFF5FBFF</code>
-                ). Programmers use hex calculators to calculate exact memory
-                offsets.
-              </li>
-              <li>
-                <strong>Color Codes:</strong> Web developers use hex to define
-                RGB colors. You can calculate shifts in color gradients by
-                performing hex subtraction between two color values.
-              </li>
-              <li>
-                <strong>Subnet Masks:</strong> Network engineers often calculate
-                IPv6 addresses and masks which are written entirely in
-                hexadecimal blocks.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question:
-                "Why do programmers use Hexadecimal instead of Decimal?",
-              answer:
-                "Because computers operate in Binary (Base-2), and Hexadecimal (Base-16) matches perfectly with binary architecture. A single hex digit represents exactly 4 binary bits (a nibble). Two hex digits represent exactly 8 bits (one byte). It is simply a human-readable shorthand for enormous binary numbers.",
-            },
-            {
-              question: "What does the 0x prefix mean?",
-              answer:
-                "In programming languages like C, C++, Java, and JavaScript, placing '0x' in front of a number literally tells the compiler 'this next number is formatted in hexadecimal, not standard decimal'. Example: 0xFF is the same as the decimal number 255.",
-            },
-            {
-              question: "How are negative hex numbers handled?",
-              answer:
-                "In this calculator, subtraction that results in a negative number will return the 32-bit Two's Complement representation of that negative value, which is the standard way modern CPUs handle negative integers.",
-            },
-          ]}
+          title={hexSeoData.title}
+          whatIsIt={hexSeoData.whatIsIt}
+          formula={hexSeoData.formula}
+          example={hexSeoData.example}
+          useCases={hexSeoData.useCases}
+          faqs={hexSeoData.faqs}
+          deepDive={hexSeoData.deepDive}
+          glossary={hexSeoData.glossary}
           relatedCalculators={[
             {
               name: "Binary Calculator",

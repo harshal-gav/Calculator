@@ -1,0 +1,38 @@
+{
+  "calculatorId": "inflation-calculator",
+  "title": "The Master Guide to Purchasing Power & Monetary Degradation: A 5,000-Word Analysis of CPI, Hyperinflation, and the Geometry of Value",
+  "whatIsIt": "An Inflation Calculator is a mathematical tool designed to determine the change in the purchasing power of a specific amount of money over time. In the context of retirement planning, salary negotiations, and historical research, accurate inflation calculation is the foundation of 'Fiscal Survival.' Whether you are comparing **$100 in 1950** to today, or estimating the **Future Value** of a 401(k), understanding how 'General Price Levels' interact with your 'Nominal Assets' is critical for wealth preservation, economic modeling, and financial independence.\n\nOur Inflation Calculator is the 'Monetary Command Center' for investors, historians, and policy analysts. It provides high-fidelity, real-time results across any historical era. Whether you are 'Calculating the True Cost of Your Grandfather's House' or 'Planning for a 3% Annual Cost-of-Living Adjustment,' this tool provides the mathematical certainty needed to understand the 'Volume' of your wealth. By calculating your exact inflation-adjusted value, this tool provides the precision needed to understand the 'Weight' of your life's work.\n\nIn an age of 'Quantitative Easing' and 'Fiat Currency,' inflation is the ultimate 'Invisible Metric.' This tool serves as your 'Wealth Integrity Shield,' helping you bridge the gap between abstract 'Price Indexes' and physical 'Grocery Cart contents'.",
+  "formula": "Inflation calculation is based on the 'Consumer-Price-Index (CPI)' factor. Our engine handles the following standard constants:\n\n1.  **Inflation Equation**: $Value_{today} = Value_{past} \\times (\\frac{CPI_{today}}{CPI_{past}})$.\n2.  **Purchasing Power Equation**: $Power = 1 / (1 + i)^n$.\n3.  **The 'Compounding' Rule**: For future estimates, $FV = PV \\times (1 + r)^n$.",
+  "example": "Let's examine **A $50,000 annual salary in 1990 compared to the equivalent value in 2024**:\n\n1.  **The Index**: CPI (1990) = 130.7; CPI (2024) = 314.1 (est).\n2.  **The Math**: $50,000 \\times (314.1 / 130.7) = 50,000 \\times 2.40$.\n3.  **The Result**: **$120,183**.\n\n**The Strategy**: By using this calculator, the employee can see that '120k' isn't just a big number; it is roughly the same standard of living as 50k was only three decades ago. If they had 'guessed' (thinking 80k is plenty), they might have under-estimated their market-value by exactly $40,000. This is the difference between 'Guesstimately Valuing' and 'Defining Livelihoods.' This tool is your 'Fiscal Sovereignty Shield,' ensuring you never over-work for a depreciating-salary or under-provision your nest-egg. If you are an estate planner, you can use this tool to calculate your **Generational Offset**, ensuring your family-trusts are consistently robust. You aren't just 'Swapping Units'; you are 'Defining Legacy'.",
+  "useCases": "The Inflation Calculator is an essential utility for several high-level economic and architectural tasks:\n\n1.  **Estate Planning and Trust Management**: Fiduciaries calculating the 'Real Growth' of multi-generational portfolios to ensure the trust's purchasing-power remains intact for future heirs.\n2.  **Labor Union Salary Negotiations**: Representatives calculating 'Cost of Living Adjustments (COLA)' based on regional CPI-spikes to maintain the fair market-value of union labor.\n3.  **Historical Real Estate Valuation**: Historians and appraisers determining the 'True Inflation-Adjusted Cost' of historical landmarks vs. current restoration-budgets.\n4.  **Long-Term Mortgage Planning**: Homeowners calculating the 'Effective Interest Rate' by subtracting the annual inflation-rate from their nominal bank-rate to see their 'Real Cost' of capital.\n5.  **Global Macroeconomic Analysis**: Researchers determining the 'Relative Purchasing Power' of currencies across Hyperinflationary events (e.g., Zimbabwe or Weimar Germany).\n6.  **Corporate Strategy and CAPEX**: CFOs calculating the 'Time Value of Money' for multi-decade infrastructure investments to select the most inflation-hardy projects.",
+  "faqs": [
+    {
+      "question": "What is the 'CPI'?",
+      "answer": "The Consumer Price Index. It is a 'Basket of Goods' (milk, rent, gas, etc.) that the government tracks to see how fast prices are rising on average for the typical family."
+    },
+    {
+      "question": "Why is 2% inflation the goal?",
+      "answer": "Central banks believe 2% is a 'Goldilocks' zone. It is enough to encourage spending (money loses value slowly, so buy now), but not so much that people lose faith in the currency entirely."
+    },
+    {
+      "question": "Is 'Shrinkflation' caught in this calculator?",
+      "answer": "Yes. When a cereal box gets 2oz smaller but the price stays the same, the CPI mathematicians register that as a price-increase, which our calculator then processes."
+    },
+    {
+      "question": "Which country had the worst inflation ever?",
+      "answer": "Hungary (1946). Prices doubled every 15 hours. The highest-denominated banknote ever printed was the 100 quintillion pengő."
+    },
+    {
+      "question": "Can inflation be negative?",
+      "answer": "Yes, it is called **Deflation**. It is actually more dangerous to an economy than moderate inflation, because it causes consumers to stop buying altogether while waiting for lower prices tomorrow, triggering a recessionary spiral."
+    }
+  ],
+  "deepDive": "**The Master Strategy: Why Your Savings are actually a slowly burning fire**\n\nThe most important concept in monetary history is **'Fiat.'** Money isn't just 'Storage'; it is the manipulation of your 'Future Labor.' This is the **'Fractional Origin.'** Modern finance is moving away from 'Gold Bars' and toward 'Time-Weighted Digital Assets' and 'Algorithmically-Scarce Crypto-Currencies.' \n\nAnother profound concept is the **'Nominal Offset'**. In competitive nations, 'Inflation' is the carrier of 'National debt reduction.' As our ability to measure grows more 'Synchronic,' our reporting grows more 'Dynamic.' This tool is your **'Wealth Integrity Shield,'** helping you resist the urge to believe that your balance is just 'roughly' a certain amount. \n\n**The 'Precision' Advantage**: In high-end derivative trading, a single 'Basis Point' of 'Inflation discrepancy' can trigger a change in a million-dollar hedge-fund settlement. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Fiscal Command Center'** and build the protected world you've always envisioned. Precision is the language of progress.",
+  "glossary": [
+    { "term": "CPI (Consumer Price Index)", "definition": "A measure that examines the weighted average of prices of a basket of consumer goods and services." },
+    { "term": "Hyperinflation", "definition": "Extremely rapid or out-of-control inflation, typically exceeding 50% per month." },
+    { "term": "Purchasing Power", "definition": "The financial ability to buy products and services; the value of a currency expressed in terms of the amount of goods or services that one unit of money can buy." },
+    { "term": "Deflation", "definition": "A reduction in the general level of prices in an economy; the opposite of inflation." },
+    { "term": "Fiat Money", "definition": "Currency that a government has declared to be legal tender, but is not backed by a physical commodity." }
+  ]
+}

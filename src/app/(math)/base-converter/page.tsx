@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import baseSeoData from "@/data/seo-content/official/base-converter.json";
 
 export default function BaseConverter() {
   const [inputValue, setInputValue] = useState("42");
@@ -69,7 +70,7 @@ export default function BaseConverter() {
         </h1>
         <p className="text-sky-700 text-lg max-w-2xl mx-auto">
           Convert numbers instantly between Decimal, Binary, Octal, and
-          Hexadecimal.
+          Hexadecimal formats.
         </p>
       </div>
 
@@ -83,13 +84,13 @@ export default function BaseConverter() {
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-sky-500 font-bold font-mono text-2xl text-center uppercase transition-all outline-none"
+              className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-sky-500 font-bold font-mono text-2xl text-center uppercase transition-all outline-none bg-zinc-50"
               onKeyDown={(e) => e.key === "Enter" && calculate()}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">
+            <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide text-center">
               Current Base
             </label>
             <div className="grid grid-cols-2 gap-3 md:flex md:gap-4 justify-center">
@@ -105,7 +106,7 @@ export default function BaseConverter() {
                     setInputBase(base.val);
                     setResult(null);
                   }}
-                  className={`flex-1 py-3 px-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-colors border ${inputBase === base.val ? "bg-sky-100 border-sky-300 text-sky-800 shadow-sm" : "bg-white border-zinc-200 text-zinc-500 hover:bg-zinc-50"}`}
+                  className={`flex-1 py-3 px-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-colors border ${inputBase === base.val ? "bg-sky-100 border-sky-300 text-sky-800 shadow-sm" : "bg-zinc-50 border-zinc-200 text-zinc-500 hover:bg-zinc-100"}`}
                 >
                   {base.label}
                 </button>
@@ -200,113 +201,36 @@ export default function BaseConverter() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Base Number System Converter"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Base Converter</strong> instantly translates numbers
-                between the four most common mathematical base systems used in
-                computer science and mathematics: Decimal (Base 10), Binary
-                (Base 2), Octal (Base 8), and Hexadecimal (Base 16).
-              </p>
-              <p>
-                While humans naturally count in Base 10 (using 0-9), computers
-                process data exclusively in Base 2 (0 and 1). Base 8 and Base 16
-                are incredibly useful shorthand representations that allow
-                programmers to compact long binary strings into readable
-                formats.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Result = Input × Conversion_Factor
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Precise unit translation for Base Converter using industry-standard conversion constants.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's convert the Decimal number <strong>255</strong> into the
-                other base formats.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
-                <li>
-                  <strong>Binary (Base-2):</strong> 11111111
-                </li>
-                <li>
-                  <strong>Octal (Base-8):</strong> 377
-                </li>
-                <li>
-                  <strong>Hexadecimal (Base-16):</strong> FF
-                </li>
-                <li>
-                  Notice how Hexadecimal condenses an 8-digit binary string into
-                  just 2 characters. This is why Hex is ubiquitous in color
-                  codes (e.g., #FFFFFF) and memory addresses.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-zinc-700">
-              <li>
-                <strong>Networking and Subnetting:</strong> IT professionals
-                constantly flip between binary and decimal when calculating IPv4
-                network masks and broadcast addresses.
-              </li>
-              <li>
-                <strong>Web Development:</strong> Converting familiar RGB
-                decimal color values (rgb(255, 0, 128)) into compact Hexadecimal
-                strings (#FF0080) for CSS stylesheets.
-              </li>
-              <li>
-                <strong>Assembly / Low-Level Programming:</strong> Interfacing
-                directly with hardware registers or reading memory dumps, which
-                are almost entirely displayed in compact Hex or raw Binary.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Why does Hexadecimal use letters?",
-              answer:
-                "Base-10 only has ten unique digits (0-9). Hexadecimal is Base-16, meaning it needs 16 unique single-digit symbols. We run out of numbers at 9, so we borrow the first six letters of the alphabet: A=10, B=11, C=12, D=13, E=14, F=15.",
-            },
-            {
-              question: "Why do computers use binary?",
-              answer:
-                "Hardware fundamentally consists of billions of microscopic transistors. A transistor essentially only has two states: ON (conducting current / 1) or OFF (blocking current / 0). Digital binary perfectly maps to this physical hardware reality.",
-            },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
+          title={baseSeoData.title}
+          whatIsIt={baseSeoData.whatIsIt}
+          formula={baseSeoData.formula}
+          example={baseSeoData.example}
+          useCases={baseSeoData.useCases}
+          faqs={baseSeoData.faqs}
+          deepDive={baseSeoData.deepDive}
+          glossary={baseSeoData.glossary}
           relatedCalculators={[
             {
-              name: "Unit Converter",
-              path: "/unit-converter/",
-              desc: "For converting between real-world measurement systems instead of number systems.",
+              name: "Average Calculator",
+              path: "/average-calculator/",
+              desc: "Find the mathematical mean of any structured dataset.",
             },
             {
-              name: "Decimal to Fraction",
-              path: "/fraction-simplifier-calculator/",
-              desc: "Convert standard decimals into exact simplified fractions.",
+              name: "Antilog Calculator",
+              path: "/antilog-calculator/",
+              desc: "Perform inverse logarithmic scaling across any numeric base.",
             },
             {
-              name: "Hash Generator",
-              path: "/hash-generator/",
-              desc: "Generate cryptographic hashes which are represented in hexadecimal strings.",
+              name: "Scientific Calculator",
+              path: "/scientific-calculator/",
+              desc: "Access advanced transcendental functions and constants.",
             },
             {
-              name: "Percentage Calculator",
-              path: "/percentage-calculator/",
-              desc: "Easily calculate percentages, increases, and decreases.",
-            }]}
+              name: "Binary Calculator",
+              path: "/binary-calculator/",
+              desc: "Perform arithmetic operations directly in the binary base system.",
+            }
+          ]}
         />
       </div>
     </div>

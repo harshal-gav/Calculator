@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import timeSeoData from "@/data/seo-content/official/time-calculator.json";
 
 export default function TimeCalculator() {
   const [h1, setH1] = useState("0");
@@ -229,133 +230,40 @@ export default function TimeCalculator() {
         }}
       />
 
-      <CalculatorSEO
-        title="Time Calculator"
-        whatIsIt={
-          <>
-            <p>
-              Our <strong>Time Calculator</strong> is a specialized utility
-              designed to instantly add or subtract two distinct blocks of time.
-              While standard calculators struggle with the sexagesimal (base-60)
-              number system used for modern clocks, our tool processes hours,
-              minutes, and seconds natively.
-            </p>
-            <p>
-              Whether you need to calculate total hours worked on a timesheet,
-              subtract splits during a marathon, or determine the total runtime
-              of a video playlist, this calculator instantly outputs the exact
-              duration in a standard HH:MM:SS format.
-            </p>
-
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related Terms:</strong> Time Calculator
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Time Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Time results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>
-              Let's find the total time of an audio project by adding{" "}
-              <strong>2 hours, 45 minutes, and 30 seconds</strong> to{" "}
-              <strong>1 hour, 30 minutes, and 45 seconds</strong>.
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>Step 1 (Combine Seconds):</strong> 30 + 45 = 75 seconds.
-                Because this is over 60, we keep <strong>15 seconds</strong> and
-                carry 1 minute over.
-              </li>
-              <li>
-                <strong>Step 2 (Combine Minutes):</strong> 45 + 30 + 1 (carried)
-                = 76 minutes. We keep <strong>16 minutes</strong> and carry 1
-                hour over.
-              </li>
-              <li>
-                <strong>Step 3 (Combine Hours):</strong> 2 + 1 + 1 (carried) ={" "}
-                <strong>4 hours</strong>.
-              </li>
-              <li>
-                <strong>Result:</strong> Exactly 4 hours, 16 minutes, and 15
-                seconds (04:16:15).
-              </li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Payroll and Hourly Billing:</strong> Accurately summing up
-              timestamps across a two-week period to invoice clients or process
-              employee timesheets without losing money to rounding errors.
-            </li>
-            <li>
-              <strong>Media Editing:</strong> Video editors determining exact
-              frame cut-points or calculating the total runtime of a multi-scene
-              film sequence.
-            </li>
-            <li>
-              <strong>Aviation Logbooks:</strong> Pilots logging flight time
-              natively in hours and minutes to meet strict FAA regulatory hours
-              requirements.
-            </li>
-            <li>
-              <strong>Athletic Training:</strong> Runners and cyclists adding
-              interval laps together to determine their total active workout
-              duration.
-            </li>
-          </ul>
-        }
-        faqs={[
-          {
-            question:
-              "Can I enter more than 60 minutes or 60 seconds into the inputs?",
-            answer:
-              "Yes! If you enter '0 Hours, 90 Minutes', our calculator will automatically interpret and reformat it as 1 Hour and 30 Minutes behind the scenes before performing the requested calculation.",
-          },
-          {
-            question:
-              "What happens if I subtract a larger time from a smaller time?",
-            answer:
-              "The calculator natively handles negative time outcomes. For example, subtracting 2 hours from 1 hour will mathematically result in '-1 Hours'. This mathematical flexibility is crucial for calculating complex offset differences and countdown timers.",
-          },
-          {
-            question: "Why do standard calculators fail at time math?",
-            answer:
-              "Standard calculators use a base-10 (decimal) system, meaning they roll over every 10, 100, or 1000. Time uses a base-60 system (60 seconds, 60 minutes). If you try to add 1.30 + 1.45 on a normal calculator, it gives you 2.75, rather than the correct time of 3 hours and 15 minutes.",
-          },
-        ]}
-        relatedCalculators={[
-          {
-            name: "Date Calculator",
-            path: "/date-calculator/",
-            desc: "Add or subtract exact days, weeks, or months from any given date.",
-          },
-          {
-            name: "Age Calculator",
-            path: "/age-calculator/",
-            desc: "Calculate your chronological age in exact days and weeks.",
-          },
-          {
-            name: "Time Zone Converter",
-            path: "/time-zone-converter/",
-            desc: "Convert times across hundreds of global time zones instantly.",
-          },
+      <div className="mt-8">
+        <CalculatorSEO
+          title={timeSeoData.title}
+          whatIsIt={timeSeoData.whatIsIt}
+          formula={timeSeoData.formula}
+          example={timeSeoData.example}
+          useCases={timeSeoData.useCases}
+          faqs={timeSeoData.faqs}
+          deepDive={timeSeoData.deepDive}
+          glossary={timeSeoData.glossary}
+          relatedCalculators={[
             {
-              name: "Temperature Converter",
-              path: "/temperature-converter/",
-              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
-            }]}
-      />
+              name: "Date Calculator",
+              path: "/date-calculator/",
+              desc: "Add or subtract exact days, weeks, or months from any given date.",
+            },
+            {
+              name: "Age Calculator",
+              path: "/age-calculator/",
+              desc: "Calculate your chronological age in exact days and weeks.",
+            },
+            {
+              name: "Time Zone Converter",
+              path: "/time-zone-converter/",
+              desc: "Convert times across hundreds of global time zones instantly.",
+            },
+            {
+              name: "Stopwatch",
+              path: "/stopwatch/",
+              desc: "Measure exact elapsed time in real-time.",
+            }
+          ]}
+        />
+      </div>
     </div>
   );
 }

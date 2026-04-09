@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import perimeterSeoData from "@/data/seo-content/official/perimeter-calculator.json";
 
 export default function PerimeterCalculator() {
   const [shape, setShape] = useState("rectangle");
@@ -261,97 +262,14 @@ export default function PerimeterCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Perimeter & Circumference Calculator"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Perimeter Calculator</strong> traces and calculates
-                the exact outer boundary length of standard 2D geometric shapes.
-                It currently supports rectangles, squares, triangles, circles,
-                and regular n-sided polygons.
-              </p>
-              <p>
-                Unlike area (which measures the 2D space inside), perimeter
-                simply measures a 1D straight line wrapped around the outside
-                edge of an object.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Perimeter Calculator
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              P = 2(L + W) | C = 2πr
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Perimeter is the total length of the boundary.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Suppose you are building a wooden fence around a rectangular
-                backyard that measures{" "}
-                <strong>40 feet wide by 60 feet long</strong>.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Formula:</strong> Perimeter = 2 × (Length + Width)
-                </li>
-                <li>
-                  <strong>The Math:</strong> 40 + 60 = 100. Then multiply by 2
-                  to account for all 4 sides.
-                </li>
-                <li>
-                  <strong>The Result:</strong> The total perimeter is exactly{" "}
-                  <strong>200 linear feet</strong>. You must purchase 200 feet
-                  of wooden fencing to enclose the yard.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Home Improvement:</strong> Calculating exactly how many
-                linear feet of baseboard trim, crown molding, or weather
-                stripping are required for a room.
-              </li>
-              <li>
-                <strong>Landscaping & Farming:</strong> Measuring property lines
-                to buy the correct amount of wire fencing, stone retaining
-                walls, or garden bed edging.
-              </li>
-              <li>
-                <strong>Arts & Crafts:</strong> Figuring out exactly how much
-                ribbon or string is required to wrap around the physical outer
-                edge of a circular jar or rectangular picture frame.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question:
-                "Why does the circle say 'Circumference' instead of perimeter?",
-              answer:
-                "It is the exact same concept—measuring the outer boundary. However, in mathematics, the word 'Perimeter' refers exclusively to shapes with straight lines and corners. Because a circle is entirely curved, its outer edge has a special dedicated name: Circumference.",
-            },
-            {
-              question: "What is a 'Regular' Polygon?",
-              answer:
-                "A regular polygon is a multi-sided shape where every single side is the exact same length, and every internal angle is the exact same degree. (e.g., a perfect Stop Sign is a regular octagon).",
-            },
-            {
-              question:
-                "Does calculating perimeter help me figure out the area inside?",
-              answer:
-                "Usually, no. Two shapes can have the exact same 100-foot perimeter, but completely different internal areas. (A 25x25 square has an area of 625 sq ft. A 40x10 rectangle also has a 100ft perimeter, but an area of only 400 sq ft).",
-            },
-          ]}
+          title={perimeterSeoData.title}
+          whatIsIt={perimeterSeoData.whatIsIt}
+          formula={perimeterSeoData.formula}
+          example={perimeterSeoData.example}
+          useCases={perimeterSeoData.useCases}
+          faqs={perimeterSeoData.faqs}
+          deepDive={perimeterSeoData.deepDive}
+          glossary={perimeterSeoData.glossary}
           relatedCalculators={[
             {
               name: "Area Calculator",
@@ -359,20 +277,21 @@ export default function PerimeterCalculator() {
               desc: "Calculate the internal 2-dimensional space enclosed by your perimeter fence.",
             },
             {
-              name: "Circle Calculator",
-              path: "/circle-calculator/",
-              desc: "Instantly link your calculated circumference to the circle's radius and area.",
+              name: "Volume Calculator",
+              path: "/volume-calculator/",
+              desc: "Measure three-dimensional capacity and displacement.",
             },
             {
               name: "Triangle Calculator",
               path: "/triangle-calculator/",
-              desc: "A deeper dive that links a triangle's three sides to its internal angles.",
+              desc: "Advanced tool for solving for missing sides and angles of any triangle.",
             },
             {
-              name: "Percentage Calculator",
-              path: "/percentage-calculator/",
-              desc: "Easily calculate percentages, increases, and decreases.",
-            }]}
+              name: "Pythagorean Theorem Calculator",
+              path: "/pythagorean-calculator/",
+              desc: "Calculate the hypotenuse or legs of a right triangle.",
+            }
+          ]}
         />
       </div>
     </div>

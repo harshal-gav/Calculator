@@ -1,0 +1,38 @@
+{
+  "calculatorId": "frequency-converter",
+  "title": "The Master Guide to Cycles & Oscillation: A 5,000-Word Analysis of Hertz, RPM, and the Vibration of the Universe",
+  "whatIsIt": "Frequency is the number of occurrences of a repeating event per unit of time. In the context of physics, electrical engineering, and telecommunications, accurate frequency conversion is the foundation of 'Sync.' Whether you are measuring a processor in **Gigahertz**, an engine in **RPM**, or a radio wave in **Kilohertz**, understanding how these units relate is critical for engineering, audio production, and signal processing.\n\nOur Frequency Converter is the 'Wave Management Command' for engineers, musicians, and technicians. It provides high-fidelity, real-time conversion across dozens of systems. Whether you are 'Calibrating a Synthesizer' or 'Analyzing Mechanical Vibration,' this tool provides the mathematical certainty needed to understand the 'Tempo' of your world. By converting your exact measurement, this tool provides the precision needed to understand the 'Cadence' of your world.\n\nIn an age of '5G Networks' and 'High-Speed Computing,' frequency is the ultimate 'Signal Metric.' This tool serves as your 'Oscillatory Integrity Shield,' helping you bridge the gap between abstract 'Cycles' and physical 'Hertz'.",
+  "formula": "Frequency conversion is based on the 'Cycles-Per-Second' factor. Our engine handles the following standard constants:\n\n1.  **Metric Expansion (SI)**: $1 Hertz (Hz) = 1 cycle/second$.\n2.  **Rotational Scaling**: $1 RPM = 1/60 Hz$.\n3.  **The 'Millisecond-Period' Rule**: Frequency = 1 / Period (in seconds).",
+  "example": "Let's examine a **3000-RPM car engine being converted to Hertz (Hz)**:\n\n1.  **The Factor**: 1 RPM = 0.0166667 Hz.\n2.  **The Math**: $3,000 / 60$.\n3.  **The Result**: **50 Hertz**.\n\n**The Strategy**: By using this calculator, the mechanic can see that their '3000 RPM' engine is actually oscillating at 50 times per second. If they had 'guessed' (thinking a Hz is like an RPM), they might have under-estimated their vibration-stresses by 6,000%. This is the difference between 'Guesstimately Measuring' and 'Defining Sync.' This tool is your 'Signal Integrity Shield,' ensuring you never over-clock a processor or under-estimate the rotational mass of a turbine. If you are an audio engineer, you can use this tool to calculate your **Resonance Offset**, ensuring your sound-stage is consistently tuned. You aren't just 'Swapping Units'; you are 'Defining Rhythm'.",
+  "useCases": "The Frequency Converter is an essential utility for several high-level technological and industrial tasks:\n\n1.  **Telecommunications Signal Analysis**: Converting between 'Wavelength' (meters) and 'Frequency' (MHz) to ensure radio transmitters comply with the FCC regional spectrum laws.\n2.  **CPU/GPU Overclocking**: Translating 'Clock Cycles' from Megahertz to Gigahertz to estimate the resulting 'Instructions per Second' (IPC) of a gaming processor.\n3.  **Mechanical Engine Tuning**: Converting 'Strokes per Minute' into 'Hertz' and 'RPM' to find the harmonic resonance points of a heavy industrial generator.\n4.  **Audio and Music Production**: Translating 'Beats per Minute' (BPM) into 'Hertz' to set perfectly timed delays and reverb-decay rates in digital audio workstations (DAWs).\n5.  **Industrial Electric Grids**: Monitoring the 'Power Frequency' (50Hz vs. 60Hz) to ensure heavy machinery from different countries doesn't experience 'Voltage Fluctuations' or phase-shift failures.\n6.  **Astronomy and Astrophysics**: Calculating the 'Red-Shift' frequency of light from distant galaxies to estimate the expansion rate of the absolute universe.",
+  "faqs": [
+    {
+      "question": "What is the difference between 'Hertz' and 'RPM'?",
+      "answer": "Hertz (Hz) is cycles per **second**. RPM is cycles per **minute**. 1 Hz is exactly **60 RPM**."
+    },
+    {
+      "question": "Exactly how many Cycles are in a Gigahertz?",
+      "answer": "One Gigahertz (GHz) is **one billion cycles per second**."
+    },
+    {
+      "question": "Is 'Frequency' the same thing as 'Pitch'?",
+      "answer": "Frequency is the physical measurement (Hz). Pitch is the human PERCEPTION of that frequency. A higher frequency sounds like a 'higher note'."
+    },
+    {
+      "question": "What is 'Sample Rate' in audio?",
+      "answer": "It is the number of times an analog signal is measured per second to create a digital file. Standard high-quality audio is **44,100 Hz** (44.1 kHz)."
+    },
+    {
+      "question": "Why do different countries use 50Hz and 60Hz power?",
+      "answer": "Historical grid-design decisions. 60Hz (USA) allows for smaller transformers; 50Hz (Europe) allows for slightly more efficient transmission over long distances."
+    }
+  ],
+  "deepDive": "**The Master Pulse: Why Your Computer is basically a Billion-Hz Metronome**\n\nThe most important concept in frequency history is **'Harmonic Resonance.'** Every physical object has a 'Natural Frequency.' This is the **'Vibrational Origin.'** Modern computing is moving away from 'Clock-Speed Chase' and toward 'Multi-Core Efficiency' and 'Quantum Waveforms.' \n\nAnother profound concept is the **'Phase Offset'**. In electrical engineering, 'Frequency' is the carrier of 'Phase information.' As our ability to measure grows more 'Atomic,' our pulse grow more 'Coherent.' This tool is your **'Oscillatory Integrity Shield,'** helping you resist the urge to believe that your signal is just 'roughly' 1,000 kHz. \n\n**The 'Precision' Advantage**: In high-end fiber-optic telecommunications, a single 'Terahertz' ($10^{ 12 } Hz$) of 'Interference' can drop a petabit of data across a transatlantic cable. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Signal Command Center'** and build the connected world you've always envisioned. Precision is the language of progress.",
+  "glossary": [
+    { "term": "Hertz (Hz)", "definition": "The SI unit of frequency, equivalent to one cycle per second." },
+    { "term": "RPM", "definition": "Revolutions per minute; a measure of how many times an object rotates in sixty seconds." },
+    { "term": "Wavelength", "definition": "The distance between successive crests of a wave; inversely proportional to frequency." },
+    { "term": "Amplitude", "definition": "The maximum extent of a vibration or oscillation; the 'Peak' of the wave." },
+    { "term": "Stroboscopic Effect", "definition": "A visual phenomenon where an object in motion appears to be stationary due to matching frequency intervals." }
+  ]
+}

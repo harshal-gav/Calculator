@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import fractionSeoData from "@/data/seo-content/official/fraction-calculator.json";
 
 export default function FractionCalculator() {
   const [num1, setNum1] = useState("");
@@ -24,12 +25,16 @@ export default function FractionCalculator() {
   };
 
   const calculateFraction = () => {
-    const n1 = parseInt(num1) || 0;
-    const d1 = parseInt(den1) || 1;
-    const n2 = parseInt(num2) || 0;
-    const d2 = parseInt(den2) || 1;
+    const n1 = parseInt(num1);
+    const d1 = parseInt(den1);
+    const n2 = parseInt(num2);
+    const d2 = parseInt(den2);
 
-    if (d1 === 0 || d2 === 0) return; // Prevent division by zero
+    // Require valid numbers and non-zero denominators
+    if (isNaN(n1) || isNaN(d1) || isNaN(n2) || isNaN(d2) || d1 === 0 || d2 === 0) {
+      setResult(null);
+      return;
+    }
 
     let rn = 0;
     let rd = 0;
@@ -48,12 +53,19 @@ export default function FractionCalculator() {
         rd = d1 * d2;
         break;
       case "÷":
+        if (n2 === 0) {
+           setResult(null);
+           return;
+        }
         rn = n1 * d2;
         rd = d1 * n2;
         break;
     }
 
-    if (rd === 0) return;
+    if (rd === 0) {
+        setResult(null);
+        return;
+    }
 
     // Simplify
     const divisor = Math.abs(gcd(rn, rd));
@@ -85,271 +97,184 @@ export default function FractionCalculator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-      <h1 className="text-4xl font-extrabold mb-4 text-orange-900 border-b pb-4">
-        Fraction Calculator
-      </h1>
-      <p className="mb-8 text-gray-600 text-lg">
-        Add, subtract, multiply, and divide fractions. Results are provided in
-        simplified, mixed, and decimal forms.
-      </p>
+    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-3xl shadow-xl border border-orange-50">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-orange-100 pb-6 mb-8 gap-4">
+        <div>
+          <h1 className="text-4xl font-black text-slate-900 tracking-tight">Fraction Calculator</h1>
+          <p className="text-slate-600 font-medium mt-1 text-lg">Perform arithmetic operations and simplify rational numbers perfectly.</p>
+        </div>
+        <div className="bg-orange-50 px-4 py-2 rounded-full border border-orange-100 shrink-0">
+          <span className="text-orange-600 font-bold text-sm uppercase tracking-wider font-mono">Arithmetic</span>
+        </div>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Inputs */}
-        <div className="bg-orange-50 p-6 rounded-xl border border-orange-100 flex flex-col items-center justify-center">
-          <div className="flex items-center gap-4 text-2xl font-bold">
-            {/* Fraction 1 */}
-            <div className="flex flex-col items-center gap-2">
-              <input
-                type="number"
-                value={num1}
-                onChange={(e) => setNum1(e.target.value)}
-                className="w-20 text-center rounded-lg border-gray-300 p-2 shadow-sm focus:border-orange-500 focus:ring-orange-500"
-                placeholder="0"
-              />
-              <div className="w-full h-1 bg-gray-400 rounded-full"></div>
-              <input
-                type="number"
-                value={den1}
-                onChange={(e) => setDen1(e.target.value)}
-                className="w-20 text-center rounded-lg border-gray-300 p-2 shadow-sm focus:border-orange-500 focus:ring-orange-500"
-                placeholder="1"
-              />
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 mb-12">
+        <div className="xl:col-span-6 space-y-6">
+          <div className="bg-white p-6 md:p-8 rounded-3xl border border-orange-100 shadow-sm space-y-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              {/* Fraction 1 */}
+              <div className="flex flex-col items-center flex-1 w-full bg-zinc-50 border border-zinc-200 p-4 rounded-2xl">
+                 <span className="text-[10px] uppercase font-bold text-zinc-400 tracking-widest mb-3">Fraction A</span>
+                 <input
+                   type="number"
+                   value={num1}
+                   onChange={(e) => setNum1(e.target.value)}
+                   className="w-24 text-center bg-white rounded-xl border border-zinc-200 p-3 shadow-sm focus:border-orange-500 font-black text-2xl outline-none"
+                   placeholder="1"
+                 />
+                 <div className="w-full max-w-[6rem] h-1 bg-zinc-300 rounded-full my-3"></div>
+                 <input
+                   type="number"
+                   value={den1}
+                   onChange={(e) => setDen1(e.target.value)}
+                   className="w-24 text-center bg-white rounded-xl border border-zinc-200 p-3 shadow-sm focus:border-orange-500 font-black text-2xl outline-none"
+                   placeholder="2"
+                 />
+              </div>
+
+              {/* Operator */}
+              <div className="bg-orange-100 rounded-xl p-2 shrink-0 shadow-sm">
+                <select
+                  value={operation}
+                  onChange={(e) => {
+                     setOperation(e.target.value);
+                     // Auto calc if inputs exist
+                     if (num1 && den1 && num2 && den2) {
+                         setTimeout(calculateFraction, 50);
+                     }
+                  }}
+                  className="bg-transparent text-4xl font-black text-orange-600 cursor-pointer outline-none border-none py-2 px-3 text-center appearance-none"
+                  style={{ textAlignLast: "center" }}
+                >
+                  <option value="+">+</option>
+                  <option value="-">-</option>
+                  <option value="×">×</option>
+                  <option value="÷">÷</option>
+                </select>
+              </div>
+
+              {/* Fraction 2 */}
+              <div className="flex flex-col items-center flex-1 w-full bg-zinc-50 border border-zinc-200 p-4 rounded-2xl">
+                 <span className="text-[10px] uppercase font-bold text-zinc-400 tracking-widest mb-3">Fraction B</span>
+                 <input
+                   type="number"
+                   value={num2}
+                   onChange={(e) => setNum2(e.target.value)}
+                   className="w-24 text-center bg-white rounded-xl border border-zinc-200 p-3 shadow-sm focus:border-orange-500 font-black text-2xl outline-none"
+                   placeholder="3"
+                 />
+                 <div className="w-full max-w-[6rem] h-1 bg-zinc-300 rounded-full my-3"></div>
+                 <input
+                   type="number"
+                   value={den2}
+                   onChange={(e) => setDen2(e.target.value)}
+                   onKeyDown={(e) => e.key === "Enter" && calculateFraction()}
+                   className="w-24 text-center bg-white rounded-xl border border-zinc-200 p-3 shadow-sm focus:border-orange-500 font-black text-2xl outline-none"
+                   placeholder="8"
+                 />
+              </div>
             </div>
 
-            {/* Operation */}
-            <select
-              value={operation}
-              onChange={(e) => setOperation(e.target.value)}
-              className="text-3xl bg-transparent border-none focus:ring-0 cursor-pointer text-orange-600 px-2 outline-none"
+            <button
+              onClick={calculateFraction}
+              className="w-full bg-orange-600 text-white font-black py-5 px-4 rounded-2xl hover:bg-orange-700 transition shadow-xl shadow-orange-200 text-xl uppercase tracking-widest active:scale-[0.98]"
             >
-              <option value="+">+</option>
-              <option value="-">-</option>
-              <option value="×">×</option>
-              <option value="÷">÷</option>
-            </select>
-
-            {/* Fraction 2 */}
-            <div className="flex flex-col items-center gap-2">
-              <input
-                type="number"
-                value={num2}
-                onChange={(e) => setNum2(e.target.value)}
-                className="w-20 text-center rounded-lg border-gray-300 p-2 shadow-sm focus:border-orange-500 focus:ring-orange-500"
-                placeholder="0"
-              />
-              <div className="w-full h-1 bg-gray-400 rounded-full"></div>
-              <input
-                type="number"
-                value={den2}
-                onChange={(e) => setDen2(e.target.value)}
-                className="w-20 text-center rounded-lg border-gray-300 p-2 shadow-sm focus:border-orange-500 focus:ring-orange-500"
-                placeholder="1"
-              />
-            </div>
+              Evaluate Fractions
+            </button>
           </div>
-
-          <button
-            onClick={calculateFraction}
-            className="mt-8 w-full bg-orange-600 text-white font-bold py-4 rounded-xl hover:bg-orange-700 transition shadow-lg uppercase tracking-wide"
-          >
-            Calculate Fraction
-          </button>
         </div>
 
-        {/* Results Screen */}
-        <div className="bg-white border-2 border-orange-100 rounded-xl p-8 flex flex-col justify-center items-center shadow-sm">
+        <div className="xl:col-span-6 bg-slate-900 rounded-3xl p-8 border border-white/5 shadow-2xl flex flex-col justify-center relative overflow-hidden min-h-[400px]">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500 rounded-full mix-blend-screen filter blur-[80px] opacity-10 pointer-events-none"></div>
+          
           {result !== null ? (
-            <div className="w-full text-center space-y-8 text-orange-900">
-              <div>
-                <h3 className="text-gray-400 font-semibold uppercase tracking-wider text-xs mb-4">
-                  Simplified Result
-                </h3>
-                <div className="text-5xl font-black flex items-center justify-center gap-4">
-                  {result.denominator === 1 ? (
-                    <span>{result.numerator}</span>
-                  ) : (
-                    <div className="flex flex-col items-center">
-                      <span>{result.numerator}</span>
-                      <div className="w-16 h-1 bg-orange-900 rounded-full my-1"></div>
-                      <span>{result.denominator}</span>
-                    </div>
-                  )}
+            <div className="relative z-10 w-full flex flex-col items-center space-y-6">
+                
+                <div className="flex flex-col items-center bg-black/40 p-6 rounded-2xl border border-white/5 w-full">
+                   <h3 className="text-orange-400/80 font-bold uppercase tracking-widest text-[10px] mb-4">Simplified Result</h3>
+                   
+                   <div className="text-6xl font-black text-white font-mono flex items-center justify-center">
+                     {result.denominator === 1 ? (
+                       <span>{result.numerator}</span>
+                     ) : (
+                       <div className="flex flex-col items-center">
+                         <span>{result.numerator}</span>
+                         <div className="w-24 h-1 bg-orange-500 rounded-full my-2"></div>
+                         <span>{result.denominator}</span>
+                       </div>
+                     )}
+                   </div>
                 </div>
-              </div>
 
-              {result.mixedWhole !== undefined &&
-                result.mixedNumerator !== undefined && (
-                  <div className="pt-6 border-t border-orange-100">
-                    <h3 className="text-gray-400 font-semibold uppercase tracking-wider text-xs mb-2">
-                      Mixed Number
-                    </h3>
-                    <div className="text-3xl font-bold flex items-center justify-center gap-2">
-                      <span>{result.mixedWhole}</span>
-                      <div className="flex flex-col items-center text-xl">
-                        <span>{result.mixedNumerator}</span>
-                        <div className="w-8 h-px bg-orange-900 my-1"></div>
-                        <span>{result.denominator}</span>
-                      </div>
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {result.mixedWhole !== undefined && result.mixedNumerator !== undefined ? (
+                        <div className="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center">
+                           <span className="text-zinc-500 font-bold uppercase tracking-widest text-[10px] mb-2">Mixed Number</span>
+                           
+                           <div className="text-3xl font-bold font-mono text-white flex items-center gap-3">
+                              <span>{result.mixedWhole}</span>
+                              <div className="flex flex-col items-center text-2xl">
+                                 <span>{result.mixedNumerator}</span>
+                                 <div className="w-8 h-px bg-orange-400 my-1"></div>
+                                 <span>{result.denominator}</span>
+                              </div>
+                           </div>
+                        </div>
+                    ) : (
+                         <div className="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center opacity-50">
+                           <span className="text-zinc-500 font-bold uppercase tracking-widest text-[10px] mb-2">Mixed Number</span>
+                           <span className="text-xs font-bold text-zinc-400 uppercase">N/A</span>
+                        </div>
+                    )}
+                    
+                    <div className="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center">
+                       <span className="text-zinc-500 font-bold uppercase tracking-widest text-[10px] mb-2">Decimal Form</span>
+                       <span className="font-mono text-white font-bold text-2xl">
+                          {parseFloat(result.decimal.toFixed(6))}
+                       </span>
                     </div>
-                  </div>
-                )}
-
-              <div className="pt-6 border-t border-orange-100">
-                <h3 className="text-gray-400 font-semibold uppercase tracking-wider text-xs mb-1">
-                  Decimal Form
-                </h3>
-                <div className="text-2xl font-bold text-gray-700">
-                  {parseFloat(result.decimal.toFixed(6))}
                 </div>
-              </div>
+                
             </div>
           ) : (
-            <div className="text-orange-300 font-medium text-center">
-              Enter your fractions to see the step-by-step simplification.
+            <div className="text-center py-10 opacity-40 uppercase italic font-black text-4xl text-orange-400 tracking-tighter">
+              Awaiting Math
             </div>
           )}
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Fraction Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-          }),
-        }}
-      />
-
       <CalculatorSEO
-        title="Fraction Calculator"
-        whatIsIt={
-          <>
-            <p>
-              Our <strong>Fraction Calculator</strong> is an advanced
-              mathematical tool that handles the complex arithmetic of adding,
-              subtracting, multiplying, and dividing standard fractions. Instead
-              of manually finding lowest common denominators or struggling with
-              improper fractions, this tool solves the equation and
-              automatically reduces the final answer to its simplest form.
-            </p>
-            <p>
-              In addition to the core fraction result, it automatically
-              generates the equivalent Mixed Number (if the fraction is
-              improper) and the exact Decimal Form.
-            </p>
-
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related Terms:</strong> Fraction Calculator, Mixed
-              Fraction Calculator, Scientific Calculator With Fraction, Adding
-              Fractions Calculator, Multiplying Fractions Calculator, Decimal To
-              Fraction Calculator, Dividing Fractions Calculator, Equivalent
-              Fractions Calculator, Partial Fraction Calculator, Fraction To
-              Percent Calculator, Partial Fraction Decomposition Calculator
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              (a/b) [+,-,×,÷] (c/d)
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Arithmetic operations involving rational numbers.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>
-              Let's perform a classic fraction division:{" "}
-              <strong>2/3 ÷ 4/5</strong>.
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>Step 1 (Keep, Change, Flip):</strong> To divide
-                fractions, you multiply the first fraction by the reciprocal of
-                the second. This changes the equation to 2/3 × 5/4.
-              </li>
-              <li>
-                <strong>Step 2 (Multiply straight across):</strong> 2 × 5 = 10
-                (Numerator). 3 × 4 = 12 (Denominator). The raw result is 10/12.
-              </li>
-              <li>
-                <strong>Step 3 (Simplify):</strong> Find the greatest common
-                divisor of 10 and 12, which is 2. Divide both by 2 to get the
-                final simplified result of <strong>5/6</strong>.
-              </li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Carpentry & Construction:</strong> Adding fractional
-              lengths of lumber like 3/8" and 5/16" to get perfectly precise
-              measurements.
-            </li>
-            <li>
-              <strong>Baking & Cooking Recipes:</strong> Scaling up a recipe
-              that calls for 3/4 cup of sugar so it serves exactly 1.5 times as
-              many people, requiring fraction multiplication.
-            </li>
-            <li>
-              <strong>School Homework:</strong> Verifying middle school math
-              homework and learning the correct step-by-step simplification
-              logic.
-            </li>
-            <li>
-              <strong>Stock Market Historical Data:</strong> Analyzing
-              historical stock prices which used to be quoted in fractions like
-              1/8 instead of decimals.
-            </li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "What is an improper fraction?",
-            answer:
-              "An improper fraction is any fraction where the top number (numerator) is equal to or greater than the bottom number (denominator). For example, 5/3 or 8/8. These can be converted into mixed numbers.",
-          },
-          {
-            question: "What is a mixed number?",
-            answer:
-              "A mixed number combines a whole number and a proper fraction. For example, the improper fraction 5/3 is exactly equal to the mixed number 1 2/3.",
-          },
-          {
-            question: "How do I find a common denominator?",
-            answer:
-              "The easiest way to find a common denominator is to simply multiply the two denominators together. However, to find the 'Lowest Common Denominator' (LCD), you look for the smallest multiple that both individual denominators share.",
-          },
-        ]}
+        title={fractionSeoData.title}
+        whatIsIt={fractionSeoData.whatIsIt}
+        formula={fractionSeoData.formula}
+        example={fractionSeoData.example}
+        useCases={fractionSeoData.useCases}
+        faqs={fractionSeoData.faqs}
+        deepDive={fractionSeoData.deepDive}
+        glossary={fractionSeoData.glossary}
         relatedCalculators={[
           {
-            name: "Percentage Calculator",
-            path: "/percentage-calculator/",
-            desc: "Easily compute advanced percentage problems in one click.",
+            name: "Fraction Simplifier",
+            path: "/fraction-simplifier-calculator/",
+            desc: "Instantly reduce massive fractions down to their lowest common integer terms.",
           },
           {
-            name: "Volume Calculator",
-            path: "/volume-calculator/",
-            desc: "Calculate the geometric volume of 3D shapes.",
+            name: "Mixed Number Calculator",
+            path: "/mixed-number-calculator/",
+            desc: "Perform arithmetic operations strictly utilizing complex mixed fractions.",
           },
           {
-            name: "Standard Deviation Calculator",
-            path: "/standard-deviation-calculator/",
-            desc: "Compute population and sample standard deviation.",
+            name: "Fraction to Decimal Converter",
+            path: "/fraction-to-decimal-calculator/",
+            desc: "Convert rational proportions into standardized decimal values.",
           },
-            {
-              name: "Scientific Calculator",
-              path: "/scientific-calculator/",
-              desc: "Perform advanced mathematical operations and functions.",
-            }]}
+          {
+            name: "Decimal to Fraction Converter",
+            path: "/decimal-to-fraction-calculator/",
+            desc: "Map ugly, repeating decimals back into perfect, integer-based whole parts.",
+          }
+        ]}
       />
     </div>
   );

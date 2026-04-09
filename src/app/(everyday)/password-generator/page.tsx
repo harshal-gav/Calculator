@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import passwordSeoData from "@/data/seo-content/official/password-generator.json";
 
 export default function PasswordGenerator() {
   const [length, setLength] = useState(16);
@@ -125,7 +126,7 @@ export default function PasswordGenerator() {
             onClick={copyToClipboard}
             className={`absolute right-3 top-1/2 -translate-y-1/2 px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2 ${copied ? "bg-green-500 text-white" : "bg-emerald-600 hover:bg-emerald-500 text-white"}`}
           >
-            {copied ? "Copied!" : "Copy"},
+            {copied ? "Copied!" : "Copy"}
             {!copied && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -323,92 +324,14 @@ export default function PasswordGenerator() {
 
       <div className="mt-8 text-left">
         <CalculatorSEO
-          title="Cryptographically Secure Password Generator"
-          whatIsIt={
-            <p>
-              Our <strong>Random Password Generator</strong> is a client-side
-              security tool designed to instantly create mathematically complex,
-              uncrackable passwords. Instead of reusing the same weak password
-              across multiple websites, this tool allows you to generate highly
-              randomized alphanumeric strings tailored to strict corporate or
-              server requirements.
-            </p>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Password Generator Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Password Generator results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's create a highly secure password for a new banking
-                application.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-400">
-                <li>
-                  <strong>The Requirements:</strong> The bank requires a minimum
-                  of 12 characters, including uppercase, lowercase, numbers, and
-                  symbols.
-                </li>
-                <li>
-                  <strong>The Configuration:</strong> You set the slider to `16`
-                  (exceeding minimums is safest), and check all four character
-                  type boxes.
-                </li>
-                <li>
-                  <strong>Result:</strong> The tool generates a string like{" "}
-                  <code>k#9P@mQ$2vL!x8Yc</code>, which has so much entropy the
-                  known universe would end before a hacker could brute-force
-                  guess it.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-zinc-400">
-              <li>
-                <strong>Securing Financial Accounts:</strong> Banking, crypto
-                wallets, and investment portfolios are prime targets for
-                automated credential stuffing attacks. You must use a unique,
-                generated password for each one.
-              </li>
-              <li>
-                <strong>Wi-Fi Network Setup:</strong> Securing a home or
-                business router strictly requires a highly complex WPA2/WPA3
-                password to prevent neighbors or malicious actors from sniffing
-                your unencrypted local traffic.
-              </li>
-              <li>
-                <strong>Software Development:</strong> Backend developers
-                constantly need to quickly generate massive 32-character or
-                64-character root master passwords for secure database clusters
-                and AWS IAM user accounts.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Is this password saved or sent to a server?",
-              answer:
-                "Absolutely not. This entire calculator runs 100% locally on your specific device inside your browser using client-side JavaScript. No data is ever transmitted, logged, or saved to any database anywhere in the world.",
-            },
-            {
-              question: "What does 'Avoid Ambiguous Characters' mean?",
-              answer:
-                "Certain characters look identical depending on the font used (like a lowercase 'l', an uppercase 'I', and the number '1'). If you physically have to write the password down on a sticky note, avoiding these characters prevents you from getting permanently locked out from misreading your own handwriting.",
-            },
-            {
-              question: "How long should my password actually be?",
-              answer:
-                "Currently, cybersecurity experts mandate an absolute minimum of 12 characters, though 16 is heavily preferred. Length is exponentially more important than complexity. A 16-character password of pure random lowercase letters is vastly harder to crack than an 8-character password packed with symbols.",
-            },
-          ]}
+          title={passwordSeoData.title}
+          whatIsIt={passwordSeoData.whatIsIt}
+          formula={passwordSeoData.formula}
+          example={passwordSeoData.example}
+          useCases={passwordSeoData.useCases}
+          faqs={passwordSeoData.faqs}
+          deepDive={passwordSeoData.deepDive}
+          glossary={passwordSeoData.glossary}
           relatedCalculators={[
             {
               name: "UUID Generator",
@@ -416,20 +339,21 @@ export default function PasswordGenerator() {
               desc: "Generate standardized unique identifier strings for database keys.",
             },
             {
-              name: "QR Code Generator",
-              path: "/qr-code-generator/",
-              desc: "Turn complex secure passwords into scannable QR images for mobile login.",
-            },
-            {
               name: "Random String Generator",
               path: "/random-string-generator/",
               desc: "Generate plain text randomized data for testing purposes.",
             },
             {
+              name: "Random Number Generator",
+              path: "/random-number-generator/",
+              desc: "Quickly produce highly unpredictable numeric sequences.",
+            },
+            {
               name: "Age Calculator",
               path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
-            }]}
+            }
+          ]}
         />
       </div>
     </div>

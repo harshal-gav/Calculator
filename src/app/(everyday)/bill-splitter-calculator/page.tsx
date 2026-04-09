@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import billSplitterSeoData from "@/data/seo-content/official/bill-splitter-calculator.json";
 
 export default function BillSplitterCalculator() {
   const [totalBill, setTotalBill] = useState("120.00");
@@ -210,98 +211,14 @@ export default function BillSplitterCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Bill Splitter & Tip Calculator"
-          whatIsIt={
-            <>
-              <p>
-                Our <strong>Bill Splitter Calculator</strong> completely
-                eliminates the awkward math at the end of a group dinner. It
-                instantly calculates the exact gratuity (tip) based on a
-                percentage of the total bill, adds it to the principal amount,
-                and mathematically divides the grand total equally among
-                everyone at the table.
-              </p>
-              <p>
-                Whether you are splitting a quick pizza with one roommate or
-                managing a massive $500 dinner tab for a bachelorette party of
-                10, this tool ensures everyone pays their fair, exact share down
-                to the penny.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Bill Splitter Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Bill Splitter results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>Imagine 4 friends go out for expensive sushi:</p>
-              <ul className="list-disc pl-6 space-y-2 mt-2">
-                <li>
-                  The raw restaurant bill arrives at exactly{" "}
-                  <strong>$120.00</strong>.
-                </li>
-                <li>
-                  The group agrees the service was great and decides to leave an{" "}
-                  <strong>18% tip</strong>.
-                </li>
-                <li>
-                  <strong>The Tip Math:</strong> $120.00 × 0.18 = $21.60 tip.
-                </li>
-                <li>
-                  <strong>The Grand Total:</strong> $120.00 + $21.60 = $141.60
-                  given to the restaurant.
-                </li>
-                <li>
-                  <strong>The Split Math:</strong> $141.60 ÷ 4 people ={" "}
-                  <strong>$35.40</strong> per person.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4">
-              <li>
-                <strong>Group Dining:</strong> Instantly determining exactly how
-                much each friend needs to Venmo, CashApp, or Zelle the person
-                who physically handed their credit card to the waiter.
-              </li>
-              <li>
-                <strong>Traveling Abroad & Vacations:</strong> Quickly splitting
-                shared expenses like massive AirBnB rentals, group Uber rides,
-                or shared grocery hauls among multiple couples.
-              </li>
-              <li>
-                <strong>Roommate Expenses:</strong> Splitting the total monthly
-                utility bills (electricity, water, internet) evenly among all
-                tenants living in an apartment.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Should I calculate the tip before or after tax?",
-              answer:
-                "This is a hotly debated topic of tipping etiquette. Traditionally, strict etiquette says you only tip on the pre-tax subtotal. However, modern point-of-sale (POS) systems (like iPads at coffee shops) automatically calculate their suggested tips based on the post-tax grand total, which artificially inflates the tip amount.",
-            },
-            {
-              question: "What is a standard tip in the United States?",
-              answer:
-                "For full-service sit-down restaurants, 15% is traditionally the absolute minimum for acceptable service, 18% is the modern standard for good service, and 20% or more is reserved for excellent service. For food delivery apps, $5 or 20% (whichever is higher) is customary.",
-            },
-            {
-              question:
-                "What if someone ordered a $50 steak and I only got a $10 salad?",
-              answer:
-                "This calculator assumes an 'even split', meaning everyone pays the exact same flat rate regardless of what they ate. If dining disparities are massive, an even split is unfair. In those cases, you must ask the waiter for 'separate checks' or manually itemize the receipt.",
-            },
-          ]}
+          title={billSplitterSeoData.title}
+          whatIsIt={billSplitterSeoData.whatIsIt}
+          formula={billSplitterSeoData.formula}
+          example={billSplitterSeoData.example}
+          useCases={billSplitterSeoData.useCases}
+          faqs={billSplitterSeoData.faqs}
+          deepDive={billSplitterSeoData.deepDive}
+          glossary={billSplitterSeoData.glossary}
           relatedCalculators={[
             {
               name: "Sales Tax Calculator",
@@ -314,15 +231,16 @@ export default function BillSplitterCalculator() {
               desc: "Calculate final prices after coupons or sales.",
             },
             {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator/",
+              desc: "Quickly determine portions and shares.",
+            },
+            {
               name: "ROI Calculator",
               path: "/roi-calculator/",
               desc: "Analyze financial returns on investments.",
-            },
-            {
-              name: "Age Calculator",
-              path: "/age-calculator/",
-              desc: "Calculate your exact age in years, months, and days.",
-            }]}
+            }
+          ]}
         />
       </div>
     </div>

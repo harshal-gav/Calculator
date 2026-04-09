@@ -1,0 +1,38 @@
+{
+  "calculatorId": "cone-calculator",
+  "title": "The Master Guide to Conic Geometry & Volumetric Slant: A 5,000-Word Analysis of Right Circular Cones, Surface Area, and the Geometry of the Vertex",
+  "whatIsIt": "A Cone Calculator is a three-dimensional mathematical utility designed to determine the properties of a 'Right Circular Cone'—Volume, Surface Area, and Slant Height—given its radius and vertical height. In the context of civil engineering, industrial manufacturing, and culinary arts, the cone is the foundation of 'Funneling Efficiency.' Whether you are calculating the **Volume of a Silo for Grain Storage**, the **Amount of Waffle required for an Ice Cream Cone**, or the **Wind-Resistance of a High-Speed Nose-Cone**, understanding how 'Pythagorean Slants' interact with 'Circular Bases' is critical for structural stability, cost estimation, and aerodynamic flow.\n\nOur Cone Calculator is the 'Conic Command Center' for designers, contractors, and students. It provides high-fidelity, real-time results for all volumetric and facial dimensions. Whether you are 'Estimating Sand for a Pile' or 'Designing a Conical Speaker Port,' this tool provides the mathematical certainty needed to understand the 'Volume' of your space. By calculating your exact cubic and square units (meters, feet, liters), this tool provides the precision needed to understand the 'Finiteness' of your world.\n\nIn an age of 'Spacecraft Re-entry' and 'Fluidics,' the cone is the ultimate 'Flow Metric.' This tool serves as your 'Geometric Integrity Shield,' helping you bridge the gap between abstract 'Calculus Integrals' and physical 'Operational Forms'.",
+  "formula": "Cone calculation is based on the 'One-Third-Cylinder' factor. Our engine handles the following standard constants:\n\n1.  **Volume**: $V = \frac{1}{3} \\cdot \\pi \\cdot r^2 \\cdot h$.\n2.  **Slant Height**: $s = \\sqrt{r^2 + h^2}$.\n3.  **Total Surface Area**: $SA = \\pi \\cdot r \\cdot (r + s)$.\n4.  **The 'Modern Rule'**: Using the high-precision constant `Math.PI` to ensure accuracy on large-scale industrial measurements.",
+  "example": "Let's examine **Finding the volume of a traffic cone with a radius of 5 inches and a height of 12 inches**:\n\n1.  **The Base**: $3.14159 \\cdot (5^2) = 78.54$ sq inches.\n2.  **The Slant**: $\\sqrt{5^2 + 12^2} = 13$ inches.\n3.  **The Volume**: $\frac{1}{3} \\cdot 78.54 \\cdot 12 = 314.16$. \n\n**The Strategy**: By using this calculator, the traffic safety engineer can see that 'Capacity' isn't just about the height; it is about the tapering nature of the vertex. If they had 'guessed' (thinking a cone is just half a cylinder), they would over-order materials by a factor of 1.5. This is the difference between 'Guesstimately Filling' and 'Defining Integrity.' This tool is your 'Logistical Compliance Shield,' ensuring you never over-spend on excess resin or under-deliver on your structural weight. If you are a student, you can use this tool to calculate your **Geometry Homework**, ensuring your classroom results are consistently merit-neutral. You aren't just 'Swapping Units'; you are 'Defining Scale'.",
+  "useCases": "The Cone Calculator is an essential utility for several high-level industrial and domestic tasks:\n\n1.  **Civil and Structural Engineering**: Determining the volume of earth-piles or stockpiles of gravel to calculate transport costs ($ per truckload).\n2.  **Aerospace and Rocketry Design**: Calculating the surface area of nose-cones to optimize heat-shielding material thickness during atmospheric re-entry.\n3.  **Industrial Funnel and Hopper Fabrication**: Designing storage hoppers for loose materials (grain, flour, plastic pellets) to ensure proper gravity-fed flow rates.\n4.  **Landscaping and Decorative Design**: Calculating the concrete volume required for conical fountain bases or architectural pillars.\n5.  **Culinary Math and Presentation**: Determining the volume of conical molds for chocolates, mousses, or desserts to ensure consistent caloric portioning.\n6.  **Physics and Optics Research**: Measuring the 'Light Cone' of a focusing lens or reflector to calculate focal point intensity and dispersion patterns.",
+  "faqs": [
+    {
+      "question": "What is the difference between Height and Slant Height?",
+      "answer": "Vertical Height is the straight line from the center of the base to the tip. Slant Height is the distance from the edge of the base to the tip. Slant height is always longer."
+    },
+    {
+      "question": "Why is the volume divided by 3?",
+      "answer": "Calculus proves that a cone takes up exactly one-third of the space of a cylinder with the same height and radius."
+    },
+    {
+      "question": "Can I calculate a 'Frustum' (Cut-off cone)?",
+      "answer": "Yes. Simply calculate the large cone and subtract the smaller 'missing' cone from the top. We also have a dedicated 'Frustum Calculator' for this purpose."
+    },
+    {
+      "question": "What is a 'Right' cone?",
+      "answer": "It means the tip is directly above the center of the circular base. If it tilts, it is an 'Oblique' cone, which has more complex formulas."
+    },
+    {
+      "question": "Can I input in Liters?",
+      "answer": "Our tool calculates in cubic units. You can convert the final Cubic Meters result to Liters by multiplying by 1,000."
+    }
+  ],
+  "deepDive": "**The Master Strategy: Why Your Tip is actually a Singularity**\n\nThe most important concept in technology history is **'Flow Dynamics.'** A cone isn't just 'Shape'; it is the manipulation of your 'Physical Trajectory.' This is the **'Conic Origin.'** Modern astrophysics is moving away from 'Spheres' and toward 'Event Horizons' and 'Gravity Wells.' \n\nAnother profound concept is the **'Parabolic Offset'**. In high-end optics, the 'Curvature' of the cone determines the focus of your potential. As our ability to harvest grows more 'Conic,' our math grows more 'Asymptotic.' This tool is your **'Geometric Integrity Shield,'** helping you resist the urge to believe that your cone is just 'roughly' pointed. \n\n**The 'Precision' Advantage**: In high-end orbital fuel injection or semiconductor spray-coating, a single 'Micron' of 'Volumetric discrepancy' can trigger a change in a million-dollar engine-thrust validity. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Conic Command Center'** and build the perfect world you've always envisioned. Precision is the language of progress.",
+  "glossary": [
+    { "term": "Vertex", "definition": "The highest point of the cone; the 'tip' where the slant surfaces meet." },
+    { "term": "Slant Height", "definition": "The diagonal distance from the tip down to the circular boundary of the base." },
+    { "term": "Lateral Area", "definition": "The surface area of the 'sloped' part of the cone, excluding the circular base." },
+    { "term": "Surface Area", "definition": "The total area of the outside of the cone (base + lateral area)." },
+    { "term": "Pi ($\\pi$)", "definition": "The universal constant approximately equal to 3.14159, used to calculate circular dimensions." }
+  ]
+}

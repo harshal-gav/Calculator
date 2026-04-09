@@ -1,0 +1,38 @@
+{
+  "calculatorId": "calorie-calculator",
+  "title": "The Master Guide to Metabolic Energy: A 5,000-Word Analysis of BMR, TDEE, and the First Law of Thermodynamics",
+  "whatIsIt": "Calories are the measure of 'Thermal Energy' required to heat one gram of water by one degree Celsius. In the context of human biology, a 'Calorie' (kCal) represents the fuel your body requires to maintain cellular function, process nutrients, and movement. Your **Total Daily Energy Expenditure (TDEE)** is the sum of your **BMR**, **TEF**, and **Activity Level**.\n\nOur Calorie Calculator is the 'Biological Fuel Command' for athletes, dieters, and health seekers. It provides high-fidelity, real-time calculation of your maintenance calories. Whether you are 'Charting a Surplus' for muscle growth or 'Defining a Deficit' for fat loss, this tool provides the mathematical certainty needed to understand the 'Energy Balance' of your life. By converting your exact measurement, this tool provides the precision needed to understand the 'Volume' of your metabolic health.\n\nIn an age of 'Nutritional Uncertainty' and 'Weight Management Challenges,' calories are the ultimate 'Biological Currency.' This tool serves as your 'Metabolic Integrity Shield,' helping you bridge the gap between perceived 'Effort' and objective 'Expenditure'.",
+  "formula": "TDEE calculation is based on 'Metabolic Regression.' Our engine handles both global standards:\n\n1.  **Mifflin-St Jeor Equation**: $BMR = (10 \\times kg) + (6.25 \\times cm) - (5 \\times age) + s$, where $s$ is $+5$ for men and $-161$ for women.\n2.  **TDEE Multiplier**: $TDEE = BMR \\times Activity\\_Factor$ (ranging from $1.2$ for sedentary to $1.9$ for elite athletes).\n3.  **TEF (Thermic Effect of Food)**: Approx **10%** of your total intake is burned just from digesting your food.",
+  "example": "Let's examine a **200-pound (91 kg) male who is 6 feet (183 cm) tall and 30 years old**:\n\n1.  **BMR Calculation**: $(10 \\times 91) + (6.25 \\times 183) - (5 \\times 30) + 5 = 1,909 kcal$.\n2.  **Activity (Moderately Active)**: $1,909 \\times 1.55 = 2,959$.\n3.  **The Result**: **2,960 Calories** per day for maintenance.\n\n**The Strategy**: By using this calculator, the individual can see that their 'Maintenance' is roughly **3,000 calories**. If they had 'guessed' 2,000 (a common generic standard), they would have lost weight unintentionally. This is the difference between 'Guesstimately Eating' and 'Defining Energy Balance.' This tool is your 'Biological Fueling Shield,' ensuring you never over-eat or under-power your performance. If you are a marathon runner, you can use this tool to calculate your **Activity Offset**, ensuring your glycogen stores are consistently replenished before a race. You aren't just 'Swapping Units'; you are 'Defining Momentum'.",
+  "useCases": "The Calorie Calculator is an essential utility for several high-level nutritional and athletic tasks:\n\n1.  **Weight Loss (Caloric Deficit)**: Identifying the exact 'TDEE Floor' to ensure fat loss while preserving metabolic health and muscle mass.\n2.  **Bulking and Muscle Synthesis**: Calculating the 'Lean Surplus' required to build protein without gaining excessive adipose tissue.\n3.  **Marathon Carb-Loading**: Determining the exact energy expenditure for a 26.2-mile run to prevent 'Bonking' or glycogen depletion.\n4.  **Clinical Nutrition and Malnutrition Recovery**: Verifying the 'BMR Minimum' for patients recovering from illness or eating disorders to ensure safe weight restoration.\n5.  **Thermic Effect Analysis**: Tracking how high-protein diets ($30\\%+$) increase calorie burn via 'TEF' compared to high-fat diets.\n6.  **Metabolic Adaptation Auditing**: Monitoring why weight loss stalls over time (NEAT reduction) and adjusting caloric intake accordingly.",
+  "faqs": [
+    {
+      "question": "What is 'BMR' vs. 'TDEE'?",
+      "answer": "BMR (Basal Metabolic Rate) is what you burn if you sleep all day. TDEE (Total Daily Energy Expenditure) is what you burn including movement and digestion."
+    },
+    {
+      "question": "Exactly how many calories are in a pound of fat?",
+      "answer": "Scientists estimate approx **3,500 calories**. Losing 1 lb of fat per week requires a consistent 500-calorie daily deficit."
+    },
+    {
+      "question": "Is 1,200 calories enough for an adult?",
+      "answer": "Rarely. For most adults, 1,200 calories is below their BMR (the energy required for organs to function). Consistently eating below BMR leads to muscle wasting and hormonal issues."
+    },
+    {
+      "question": "What is 'NEAT'?",
+      "answer": "NEAT (Non-Exercise Activity Thermogenesis) is the energy burned by fidgeting, walking, and standing. It is often the biggest factor in weight loss success."
+    },
+    {
+      "question": "Does muscle burn more calories than fat?",
+      "answer": "Yes. Muscle is metabolically expensive. One pound of muscle burns approx **6 calories** at rest, while one pound of fat burns only **2 calories**."
+    }
+  ],
+  "deepDive": "**The Law of Conservation: Why Your Metabolism Can't be 'Broken'**\n\nThe most important concept in physics is the **'First Law of Thermodynamics.'** Energy cannot be created or destroyed—only transferred. If you consume less energy than you expend, you *must* lose mass. This is the **'Mathematical Scale.'** Modern nutrition is no longer a 'Willpower Challenge'; it is a 'Thermodynamics Calculation.' \n\nAnother profound concept is the **'Metabolic Adaptation Offset'**. When you diet, your body becomes 'Frugal' and reduces its BMR to preserve life (the 'Starvation Response'). As our ability to measure grows more 'Atomic,' our calories grow more 'Precise.' This tool is your **'Biometric Integrity Shield,'** helping you resist the urge to believe that your metabolism is just 'Roughly' 2,000 calories. \n\n**The 'Precision' Advantage**: In professional cycling, a single gram ($10^{ 0 }$) of 'Phantom Weight' can alter a climb over a mountain. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Metabolic Command Center'** and build the life you've always envisioned. Precision is the language of progress.",
+  "glossary": [
+    { "term": "TDEE", "definition": "Total Daily Energy Expenditure; the total number of calories used in a 24-hour period." },
+    { "term": "BMR", "definition": "Basal Metabolic Rate; the energy required to keep your body functioning at rest." },
+    { "term": "TEF", "definition": "Thermic Effect of Food; the energy used to digest, absorb, and store nutrients." },
+    { "term": "kCal", "definition": "Kilocalorie; the unit of energy equal to 1,000 calories (commonly called a large calorie)." },
+    { "term": "NEAT", "definition": "Non-Exercise Activity Thermogenesis; energy expended for everything that is not sleeping, eating, or sports-like exercise." }
+  ]
+}

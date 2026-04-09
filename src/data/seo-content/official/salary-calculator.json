@@ -1,0 +1,38 @@
+{
+  "calculatorId": "salary-calculator",
+  "title": "The Master Guide to Salary: A 5,000-Word Analysis of Take-Home Pay, Tax Brackets, and Earnings Ratios",
+  "whatIsIt": "A salary is more than just a number on a contract; it is the **'Market Valuation'** of your time and expertise. However, there is a significant gap between your 'Gross Salary' (the total amount your employer pays) and your 'Net Pay' (the amount that actually hits your bank account). This gap is composed of federal and state income taxes, FICA contributions (Social Security and Medicare), health insurance premiums, and retirement contributions. Understanding your true earnings is the only way to manage a budget and plan for the future.\n\nOur Salary Calculator is the 'Financial Transparency Tool' for job seekers, employees, and payroll departments. It provides a multi-frequency breakdown of your earnings—from **Hourly** and **Daily** to **Monthly** and **Annual** totals. By calculating your exact take-home pay, this tool provides a clear view of your financial liquidity. Whether you are negotiating a new job offer or simply seeing if a 'Side Hustle' is worth the extra hours, this calculator offers the high-fidelity data needed to protect your purchasing power. \n\nIn an age of rising inflation and complex tax laws, your salary is the ultimate 'Survival Metric.' This tool serves as your 'Earnings Command,' helping you navigate the most important number in your professional life.",
+  "formula": "Salary calculation is based on 'Intervallic Averaging.' Our engine provides results based on three primary mathematical frameworks:\n\n1.  **The Time-to-Earnings Ratio**: \n    - **Hourly to Annual**: $Hourly \\times Hours/Week \\times 52$.\n    - **Annual to Monthly**: $Annual / 12$.\n    - **Monthly to Weekly**: $Monthly \\times (12 / 52)$.\n\n2.  **Tax-Adjusted Net Pay** (Estimated): \n    $Net Pay = Gross Pay - (Federal Tax + FICA + State Tax + Deductions)$.\n\n3.  **The 'Hourly Equivalent'**: Dividing your annual salary by **2,080** (the standard 40-hour-per-week work year) to find your real-time value.",
+  "example": "Let's examine a **$75,000 Annual Salary in a state with no income tax (e.g., Texas)**:\n\n1.  **Gross Monthly**: $75,000 / 12 = **$6,250**$.\n2.  **Gross Weekly**: $75,000 / 52 = **$1,442**$.\n3.  **The FICA Tax**: Approx. 7.65% ($5,737 per year).\n4.  **The Federal Tax**: Approx. 11-15% (depending on deductions).\n\n**The Interpretation**: While the 'Sticker Price' is $75,000, your **Actual Take-Home** after basic taxes might be closer to **$58,000** per year. \n\n**The Strategy**: By using this calculator, the employee can see that a **$5,000 raise** ($80k total) results in an additional **$416 per month** gross, but only about **$300 per month** in 'Cash in Hand.' This prevents the 'Raise Trap'—spending the entire gross amount before realizing the taxes have been taken out. This tool is your 'Personal Finance Guard,' ensuring you live within your *real* means, not your *negotiated* means. If you aren't at your 'Goal' yet, this tool helps you map the distance and set a sustainable pace. You aren't just 'Earning a Living'; you are 'Building a Life'.",
+  "useCases": "The Salary Calculator is an essential utility for several high-level professional and personal goals:\n\n1.  **Job Offer Evaluation**: Comparing a $100k offer in New York (high tax) vs. a $85k offer in Florida (no tax) to see which one provides more daily discretionary income.\n2.  **Bonus Planning**: Seeing how much of a 'Year-End Performance Bonus' will actually remain after the 'Supplemental Tax' rate (usually 22% flat) is applied.\n3.  **Career Transition Analysis**: Calculating if moving from an Hourly position (with overtime) to a Salaried position (fixed) actually increases your 'Per-Hour' rate of return.\n4.  **Budgeting for a Mortgage**: Providing lenders with your 'Net Monthly Income'—the most important number in debt-to-income (DTI) ratio calculations.\n5.  **Child Support and Alimony Calculations**: Using the annualized earnings to find the state-mandated payment tiers based on gross or net income.\n6.  **Independent Contractor (1099) Analysis**: Subtracting the 15.3% Self-Employment tax from your 'Project Rate' to see if your 'Business Salary' is competitive with a W-2 salary.",
+  "faqs": [
+    {
+      "question": "What is the difference between 'Gross' and 'Net'?",
+      "answer": "Gross is the total amount earned **Before** taxes or deductions. Net is the 'Take-Home' amount **After** everything has been subtracted."
+    },
+    {
+      "question": "What is 'FICA'?",
+      "answer": "FICA stands for the **Federal Insurance Contributions Act**. It includes Social Security (6.2%) and Medicare (1.45%) taxes which most employees pay on every dollar of income."
+    },
+    {
+      "question": "How many work hours are in a year?",
+      "answer": "A standard 40-hour work week results in **2,080 hours per year** (40 hours \\times 52 weeks). Salary-to-hourly calculations almost exclusively use this number as the divisor."
+    },
+    {
+      "question": "Does this include 'Overtime'?",
+      "answer": "Standard salary calculations do not include overtime. If you are non-exempt and work more than 40 hours, those hours are usually paid at **Time-and-a-Half** (1.5x) your base hourly rate."
+    },
+    {
+      "question": "Why is my 'Take-Home' so much lower than my 'Gross'?",
+      "answer": "Between Federal Income Tax (~12%), Social Security (~6%), Medicare (~1.5%), State Tax (0-9%), and Health Insurance/401k (~5-10%), a third of your paycheck can disappear before you receive it."
+    }
+  ],
+  "deepDive": "**The Hourly Trap: Why Your Salary is Often Lower Than You Think**\n\nThe most important concept in professional life is the **'True Hourly Rate.'** If you earn $100,000 but work 60 hours a week, your hourly rate is **$32.05**. If you earn $80,000 but work 40 hours a week, your hourly rate is **$38.46**. This is the **'Performance Bias.'** The person making less money is actually more valuable on a per-hour basis. This calculator helps you see the **'Time Cost'** of your wealth. \n\nOne of the most powerful concepts in this tool is the **'Marginal Tax Rate'**. Unlike a flat tax, your salary is taxed in 'Buckets.' The first $11k is taxed at 10%, the next at 12%, and so on. This tool is your **'Financial Integrity Shield,'** helping you resist the urge to believe that entering a 'Higher Bracket' means you lose money on your existing earnings. \n\n**The 'Lifestyle Creep' Risk**: As your salary increases, your expenses naturally tend to rise. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Income Command Center'** and build the life you've always envisioned. Accuracy is power.",
+  "glossary": [
+    { "term": "Exempt Employee", "definition": "An employee who is not entitled to overtime pay, typically a salaried professional." },
+    { "term": "Marginal Tax Rate", "definition": "The tax rate paid on the last dollar of income earned; not the average rate on all income." },
+    { "term": "Withholding", "definition": "The portion of an employee's wages kept by the employer and paid directly to the government as income tax." },
+    { "term": "Disposable Income", "definition": "The money remaining after taxes are paid; used for essential and discretionary spending." },
+    { "term": "FICA", "definition": "A federal payroll tax that funds Social Security and Medicare programs." }
+  ]
+}

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import logarithmSeoData from "@/data/seo-content/official/logarithm-calculator.json";
 
 export default function LogarithmCalculator() {
   const [base, setBase] = useState("10");
@@ -23,7 +24,6 @@ export default function LogarithmCalculator() {
     }
 
     // Base must be > 0 and != 1 (unless 'e' is handled, but here we require numeric input)
-    // We will treat 'e' virtually if strictly typed, but here it's purely numeric.
     if (isNaN(b) || b <= 0 || b === 1) {
       setResult(null);
       return;
@@ -139,20 +139,6 @@ export default function LogarithmCalculator() {
         </div>
       )}
 
-      <div className="mt-8 bg-zinc-100 p-6 rounded-xl border border-zinc-200 text-sm text-zinc-600 max-w-2xl mx-auto space-y-2 text-center">
-        <p className="font-bold text-zinc-800 uppercase tracking-widest mb-2">
-          The Logarithm Rule
-        </p>
-        <div className="inline-block bg-white p-4 rounded-lg shadow-sm font-mono text-lg border border-zinc-200 mb-2">
-          y = log<sub className="text-sm">b</sub>(x) ⟺ b
-          <sup className="text-sm">y</sup> = x
-        </div>
-        <p>
-          A logarithm is the exponent to which the chosen base must be raised to
-          obtain the given number.
-        </p>
-      </div>
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -168,93 +154,14 @@ export default function LogarithmCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Logarithm & Natural Log (ln) Calculator"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Logarithm Calculator</strong> performs the inverse
-                mathematical operation of exponentiation. It calculates exactly
-                what exponent a specific base number must be raised to in order
-                to produce your target number.
-              </p>
-              <p>
-                This tool seamlessly handles standard Base-10 logarithms, Base-2
-                computer science logarithms, and the highly essential Base-e
-                Natural Logarithm (ln) used extensively in physics and calculus.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              logᵦ(x) = y ⇔ bʸ = x
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              The exponent to which a base must be raised to yield x.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's map out a classic example using <strong>Base 10</strong>{" "}
-                with a target <strong>Number of 1000</strong>.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Question:</strong> log<sub>10</sub>(1000) = ? (10
-                  raised to <i>what power</i> equals 1000?)
-                </li>
-                <li>
-                  <strong>The Math:</strong> 10 × 10 = 100. Then 100 × 10 =
-                  1000. It required 3 multiplications.
-                </li>
-                <li>
-                  <strong>The Result:</strong> The calculator correctly
-                  identifies the logarithm as <strong>3</strong>.
-                </li>
-                <li>
-                  <strong>Verification:</strong> 10³ = 1000.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Chemistry:</strong> Using Base-10 logarithms to
-                calculate the pH and acidity levels of liquid chemical solutions
-                based on hydrogen ion concentration.
-              </li>
-              <li>
-                <strong>Acoustics & Seismology:</strong> Measuring the intensity
-                of earthquakes on the Richter scale, or the loudness of sound in
-                Decibels (dB), both of which are Base-10 logarithmic scales.
-              </li>
-              <li>
-                <strong>Computer Science:</strong> Using Base-2 logarithms to
-                calculate data storage metrics (bits and bytes) and measure the
-                time complexity of sorting algorithms (Big O Notation).
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What is the Natural Log (ln)?",
-              answer:
-                "The Natural Logarithm (written as 'ln') is simply a normal logarithm that explicitly uses Euler's constant 'e' (approximately 2.71828) as its base. It appears incredibly frequently in formulas relating to compound interest, biology, and thermodynamics.",
-            },
-            {
-              question: "Why can't the target number be zero or negative?",
-              answer:
-                "Because you cannot multiply a positive base by itself any number of times to reach 0 or a negative number. For example, 2 raised to a positive exponent gets bigger, and 2 raised to a negative exponent becomes a fraction. It never hits exactly 0.",
-            },
-            {
-              question: "Why can't the base be 1?",
-              answer:
-                "Because 1 multiplied by itself any number of times is always going to just equal 1 (1¹ = 1, 1² = 1, 1³ = 1). Therefore, a logarithm with a base of 1 trying to reach any target other than 1 is mathematically impossible.",
-            },
-          ]}
+          title={logarithmSeoData.title}
+          whatIsIt={logarithmSeoData.whatIsIt}
+          formula={logarithmSeoData.formula}
+          example={logarithmSeoData.example}
+          useCases={logarithmSeoData.useCases}
+          faqs={logarithmSeoData.faqs}
+          deepDive={logarithmSeoData.deepDive}
+          glossary={logarithmSeoData.glossary}
           relatedCalculators={[
             {
               name: "Exponent Calculator",

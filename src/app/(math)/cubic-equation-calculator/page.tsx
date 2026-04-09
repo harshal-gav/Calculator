@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import cubicSeoData from "@/data/seo-content/official/cubic-equation-calculator.json";
 
 export default function CubicEquationCalculator() {
   const [aVal, setAVal] = useState("1");
@@ -25,26 +26,20 @@ export default function CubicEquationCalculator() {
     }
 
     // Cubic formula using Cardano's method
-    // x^3 + cx^2 + dx + e = 0
     const C = b / a;
     const D = c / a;
     const E = d / a;
 
-    // Substitute x = y - C/3 to eliminate x^2 term
-    // y^3 + py + q = 0
     const p = (3 * D - C * C) / 3;
     const q = (2 * C * C * C - 9 * C * D + 27 * E) / 27;
 
-    // Discriminant
     const disc = (q * q) / 4 + (p * p * p) / 27;
 
     let roots = [];
     const C3 = C / 3;
 
     if (Math.abs(disc) < 1e-10) {
-      // disc == 0, real roots, at least two equal
       if (Math.abs(p) < 1e-10) {
-        // p == 0 => y^3 = 0, y = 0
         roots.push((-C3).toString());
         roots.push((-C3).toString());
         roots.push((-C3).toString());
@@ -56,7 +51,6 @@ export default function CubicEquationCalculator() {
         roots.push((y2 - C3).toFixed(4));
       }
     } else if (disc > 0) {
-      // One real root, two complex conjugate roots
       const u = Math.cbrt(-q / 2 + Math.sqrt(disc));
       const v = Math.cbrt(-q / 2 - Math.sqrt(disc));
 
@@ -70,7 +64,6 @@ export default function CubicEquationCalculator() {
       roots.push(`${yReal.toFixed(4)} + ${imagStr}i`);
       roots.push(`${yReal.toFixed(4)} - ${imagStr}i`);
     } else {
-      // Three distinct real roots
       const r = Math.sqrt(-(p * p * p) / 27);
       const phi = Math.acos(-q / (2 * r));
 
@@ -84,252 +77,159 @@ export default function CubicEquationCalculator() {
       roots.push((y3 - C3).toFixed(4));
     }
 
-    setResult({
-      roots: roots,
-    });
+    setResult({ roots: roots });
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-2xl shadow-xl border border-zinc-200">
-      <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-rose-900 flex items-center justify-center font-serif">
-          <span className="mr-3">³</span> Cubic Equation Calculator
-        </h1>
-        <p className="text-rose-700 text-lg max-w-2xl mx-auto border-b border-rose-200 pb-4">
-          Find the real and complex roots of any cubic equation in the form{" "}
-          <span className="font-mono bg-rose-100 px-1 rounded">
-            ax³ + bx² + cx + d = 0
-          </span>
-          .
-        </p>
-      </div>
-
-      <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-zinc-200 mb-8">
-        <div className="flex flex-col md:flex-row gap-4 items-center justify-center mb-8 bg-zinc-50 p-6 rounded-xl border border-zinc-200">
-          <div className="flex items-center gap-2">
-            <input
-              type="number"
-              step="any"
-              value={aVal}
-              onChange={(e) => setAVal(e.target.value)}
-              className="w-20 text-center rounded-lg border-zinc-300 p-2 font-bold text-lg focus:border-rose-500"
-            />
-            <span className="font-bold text-zinc-500 text-xl font-mono">
-              x³ +
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="number"
-              step="any"
-              value={bVal}
-              onChange={(e) => setBVal(e.target.value)}
-              className="w-20 text-center rounded-lg border-zinc-300 p-2 font-bold text-lg focus:border-rose-500"
-            />
-            <span className="font-bold text-zinc-500 text-xl font-mono">
-              x² +
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="number"
-              step="any"
-              value={cVal}
-              onChange={(e) => setCVal(e.target.value)}
-              className="w-20 text-center rounded-lg border-zinc-300 p-2 font-bold text-lg focus:border-rose-500"
-            />
-            <span className="font-bold text-zinc-500 text-xl font-mono">
-              x +
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="number"
-              step="any"
-              value={dVal}
-              onChange={(e) => setDVal(e.target.value)}
-              className="w-20 text-center rounded-lg border-zinc-300 p-2 font-bold text-lg focus:border-rose-500"
-              onKeyDown={(e) => e.key === "Enter" && calculate()}
-            />
-            <span className="font-bold text-zinc-500 text-xl font-mono">
-              = 0
-            </span>
-          </div>
-        </div>
-
+    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-3xl shadow-xl border border-rose-50">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-rose-100 pb-6 mb-8 gap-4">
         <div>
-          <button
-            onClick={calculate}
-            className="w-full bg-rose-600 hover:bg-rose-700 text-white font-bold py-4 px-6 rounded-xl transition-colors shadow-lg shadow-rose-600/30 uppercase tracking-widest text-lg"
-          >
-            Solve for x
-          </button>
+          <h1 className="text-4xl font-black text-slate-900 tracking-tight">Cubic Equation Solver</h1>
+          <p className="text-slate-600 font-medium mt-1 text-lg">Calculate all real and complex roots for 3rd-degree polynomials.</p>
+        </div>
+        <div className="bg-rose-50 px-4 py-2 rounded-full border border-rose-100 shrink-0">
+          <span className="text-rose-600 font-bold text-sm uppercase tracking-wider font-mono">Algebra</span>
         </div>
       </div>
 
-      {result !== null && (
-        <div className="bg-rose-950 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden flex flex-col items-center text-center">
+      <div className="bg-white p-6 md:p-10 rounded-3xl shadow-sm border border-rose-100 mb-12">
+        <div className="flex flex-wrap md:flex-nowrap gap-4 items-center justify-center mb-8 bg-zinc-50 p-6 md:p-8 rounded-2xl border border-zinc-200 shadow-inner">
+          <div className="flex items-center gap-2">
+            <div className="relative">
+              <span className="absolute -top-3 left-2 bg-white px-1 text-[8px] font-bold text-zinc-400 uppercase">a</span>
+              <input
+                type="number"
+                step="any"
+                value={aVal}
+                onChange={(e) => setAVal(e.target.value)}
+                className="w-20 text-center rounded-xl py-3 border-zinc-200 outline-none shadow-sm font-black text-xl focus:border-rose-500 bg-white transition-all"
+              />
+            </div>
+            <span className="font-black text-rose-300 text-2xl font-serif">x³</span>
+            <span className="text-zinc-300 font-black">+</span>
+          </div>
+          
+          <div className="flex items-center gap-2">
+            <div className="relative">
+              <span className="absolute -top-3 left-2 bg-white px-1 text-[8px] font-bold text-zinc-400 uppercase">b</span>
+              <input
+                type="number"
+                step="any"
+                value={bVal}
+                onChange={(e) => setBVal(e.target.value)}
+                className="w-20 text-center rounded-xl py-3 border-zinc-200 outline-none shadow-sm font-black text-xl focus:border-rose-500 bg-white transition-all"
+              />
+            </div>
+            <span className="font-black text-rose-300 text-2xl font-serif">x²</span>
+            <span className="text-zinc-300 font-black">+</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <div className="relative">
+              <span className="absolute -top-3 left-2 bg-white px-1 text-[8px] font-bold text-zinc-400 uppercase">c</span>
+              <input
+                type="number"
+                step="any"
+                value={cVal}
+                onChange={(e) => setCVal(e.target.value)}
+                className="w-20 text-center rounded-xl py-3 border-zinc-200 outline-none shadow-sm font-black text-xl focus:border-rose-500 bg-white transition-all"
+              />
+            </div>
+            <span className="font-black text-rose-300 text-2xl font-serif">x</span>
+            <span className="text-zinc-300 font-black">+</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <div className="relative">
+              <span className="absolute -top-3 left-2 bg-white px-1 text-[8px] font-bold text-zinc-400 uppercase">d</span>
+              <input
+                type="number"
+                step="any"
+                value={dVal}
+                onChange={(e) => setDVal(e.target.value)}
+                className="w-20 text-center rounded-xl py-3 border-zinc-200 outline-none shadow-sm font-black text-xl focus:border-rose-500 bg-white transition-all"
+              />
+            </div>
+            <span className="font-black text-zinc-400 text-2xl ml-2">= 0</span>
+          </div>
+        </div>
+
+        <button
+          onClick={calculate}
+          className="w-full bg-rose-600 text-white font-black py-5 px-4 rounded-2xl hover:bg-rose-700 transition shadow-xl shadow-rose-200 text-xl uppercase tracking-widest active:scale-[0.98] max-w-lg mx-auto block"
+        >
+          Evaluate Roots
+        </button>
+      </div>
+
+      {result !== null ? (
+        <div className="bg-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden flex flex-col items-center text-center border border-white/5 mb-12">
           <div className="absolute top-0 right-0 w-64 h-64 bg-rose-600 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none"></div>
 
-          <h2 className="text-rose-400 font-bold uppercase tracking-widest text-xs mb-6 z-10">
-            Equation Roots (x₁, x₂, x₃)
+          <h2 className="text-rose-400 font-bold uppercase tracking-widest text-xs mb-8 z-10 opacity-60">
+            Polynomial Intercepts (Roots)
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full z-10 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl z-10 relative">
             {result.roots.map((root, i) => (
               <div
                 key={i}
-                className="bg-black/30 p-6 rounded-xl border border-rose-500/20 shadow-inner flex flex-col items-center"
+                className={`bg-white/5 p-8 rounded-2xl text-center group transition-all duration-300 
+                  ${root.includes('i') ? 'border-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.15)]' : 'border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.1)]'}`}
               >
-                <span className="text-zinc-500 text-xs font-bold uppercase tracking-wide mb-2">
-                  <span className="text-rose-400">Root</span> {i + 1}
-                </span>
-                <div className="font-mono text-white tracking-tight font-bold text-2xl md:text-3xl mt-2 break-words text-center">
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full ${root.includes('i') ? 'bg-rose-500/20 text-rose-300' : 'bg-emerald-500/20 text-emerald-300'}`}>
+                    Root {i + 1}
+                  </span>
+                  {root.includes('i') && <span className="bg-rose-500 text-white text-[8px] font-bold px-1.5 rounded uppercase tracking-wider">Complex</span>}
+                </div>
+                <div className="font-mono text-white font-black text-2xl md:text-3xl tracking-tight break-all">
                   {root}
                 </div>
               </div>
             ))}
           </div>
-
-          <p className="text-rose-300/60 text-xs mt-8 z-10 italic">
-            Real and complex roots evaluated automatically via exact Cardano
-            derivation.
-          </p>
+          <div className="text-slate-500 font-bold text-[10px] uppercase tracking-widest mt-8">Evaluated via Cardano Method</div>
         </div>
+      ) : (
+          <div className="bg-slate-900 rounded-3xl p-8 shadow-inner flex flex-col items-center justify-center min-h-[300px] border border-white/5 mb-12 relative overflow-hidden">
+             <div className="text-rose-500/20 font-black text-8xl font-serif">x³</div>
+             <div className="text-rose-200/40 uppercase tracking-widest font-bold text-sm mt-4">Input coefficients to solve intercepts.</div>
+          </div>
       )}
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Cubic Equation Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-          }),
-        }}
+      <CalculatorSEO
+        title={cubicSeoData.title}
+        whatIsIt={cubicSeoData.whatIsIt}
+        formula={cubicSeoData.formula}
+        example={cubicSeoData.example}
+        useCases={cubicSeoData.useCases}
+        faqs={cubicSeoData.faqs}
+        deepDive={cubicSeoData.deepDive}
+        glossary={cubicSeoData.glossary}
+        relatedCalculators={[
+          {
+            name: "Quadratic Formula Calculator",
+            path: "/quadratic-formula-calculator/",
+            desc: "Solve second-degree polynomials (parabolas) using the standard quadratic formula.",
+          },
+          {
+            name: "Order of Operations Calculator",
+            path: "/order-of-operations-calculator/",
+            desc: "Ensure your cubic coefficients were calculated in the correct PEMDAS order.",
+          },
+          {
+            name: "Scientific Calculator",
+            path: "/scientific-calculator/",
+            desc: "For manual verification of your complex and imaginary roots.",
+          },
+          {
+            name: "Log Calculator",
+            path: "/log-calculator/",
+            desc: "Solve logarithmic transformations related to algebra.",
+          }
+        ]}
       />
-
-      <div className="mt-8">
-        <CalculatorSEO
-          title="Cubic Equation Solver & Root Calculator"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Cubic Equation Calculator</strong> is an advanced
-                algebra tool designed to instantly find all three roots
-                (x-intercepts) of any polynomial equation of the third degree.
-              </p>
-              <p>
-                While quadratic equations have a universally memorized formula,
-                cubic equations are significantly harder to solve by hand. This
-                tool relies on Cardano's algebraic method to bypass tedious
-                trial-and-error factoring, guaranteeing the exact identification
-                of all real and complex (imaginary) roots.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Cubic Equation Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Cubic Equation results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's solve the cubic equation:{" "}
-                <strong>x³ - 6x² + 11x - 6 = 0</strong>
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Identify Coefficients:</strong> a = 1, b = -6, c = 11,
-                  d = -6.
-                </li>
-                <li>
-                  <strong>Factor Grouping:</strong> If graphed, the curve
-                  crosses the x-axis exactly three times.
-                </li>
-                <li>
-                  <strong>The Result:</strong> The calculator correctly
-                  identifies the three real roots as <strong>x = 1</strong>,{" "}
-                  <strong>x = 2</strong>, and <strong>x = 3</strong>.
-                </li>
-                <li>
-                  <strong>Verification:</strong> If you substitute any of these
-                  numbers back into the equation (e.g., 3³ - 6(3²) + 11(3) - 6),
-                  the result perfectly evaluates to 0.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Engineering & Architecture:</strong> Solving cubic
-                stress equations to determine at what exact point a physical
-                beam or architectural support structure will buckle under
-                weight.
-              </li>
-              <li>
-                <strong>Fluid Dynamics:</strong> Using cubic equations of state
-                (like the Van der Waals equation) to calculate the precise
-                volume of non-ideal gasses under intense industrial pressures.
-              </li>
-              <li>
-                <strong>Higher Education:</strong> Allowing calculus and linear
-                algebra students to instantly skip the tedious polynomial
-                factoring step so they can focus on the broader calculus problem
-                at hand.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Why do some answers contain an 'i'?",
-              answer:
-                "The letter 'i' represents an imaginary number (the square root of -1). When a cubic equation creates a curve that only crosses the x-axis once, the other two 'missing' intercepts are expressed mathematically as complex conjugate numbers containing 'i'.",
-            },
-            {
-              question: "Can 'a' ever be zero?",
-              answer:
-                "No. If 'a' is zero, the x³ term is entirely eliminated. The equation mathematically ceases to be a cubic equation and downgrades into a standard quadratic equation (bx² + cx + d = 0).",
-            },
-            {
-              question:
-                "Will a cubic equation always have at least one real root?",
-              answer:
-                "Yes. Due to the nature of odd-degree polynomials, the curve will always stretch from negative infinity to positive infinity along the y-axis, meaning it is mathematically guaranteed to cross the x-axis (a real root) at least once.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Quadratic Formula Calculator",
-              path: "/quadratic-formula-calculator/",
-              desc: "Solve second-degree polynomials (parabolas) using the standard quadratic formula.",
-            },
-            {
-              name: "Order of Operations Calculator",
-              path: "/order-of-operations-calculator/",
-              desc: "Ensure your cubic coefficients were calculated in the correct PEMDAS order.",
-            },
-            {
-              name: "Scientific Calculator",
-              path: "/scientific-calculator/",
-              desc: "For manual verification of your complex and imaginary roots.",
-            },
-            {
-              name: "Percentage Calculator",
-              path: "/percentage-calculator/",
-              desc: "Easily calculate percentages, increases, and decreases.",
-            }]}
-        />
-      </div>
     </div>
   );
 }

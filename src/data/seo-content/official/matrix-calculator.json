@@ -1,0 +1,38 @@
+{
+  "calculatorId": "matrix-calculator",
+  "title": "The Master Guide to Matrix Algebra: A 5,000-Word Analysis of Linear Transformations, Determinants, and Multi-Dimensional Vector Logic",
+  "whatIsIt": "A Matrix Calculator is a high-level mathematical engine designed to perform operations on two-dimensional arrays of numbers (matrices). Unlike scalar arithmetic, matrix algebra involves specific rules for addition, subtraction, and multiplication where the orientation, dimensions, and 'Inner Product' of the arrays are critical. \n\nMatrices are the foundational data structure of the modern digital world. Every pixel on your screen is transformed by a matrix; every 'Neural Network' in AI is essentially a series of massive matrix multiplications; and every 3D video game engine uses 4x4 matrices to translate and rotate player views. This calculator provides full support for matrix arithmetic, determinants, and identity operations required for college-level linear algebra and professional engineering.",
+  "formula": "Matrix operations are defined as follows:\n\n**Addition/Subtraction:**\nPerformed element-wise. $(A \\pm B)_{i,j} = A_{i,j} \\pm B_{i,j}$. Requires identical dimensions.\n\n**Multiplication ($C = AB$):**\nThe element $C_{i,j}$ is the dot product of the $i$-th row of $A$ and the $j$-th column of $B$.\n$$C_{i,j} = \\sum_{k=1}^{n} A_{i,k} B_{k,j}$$\n*Requirement: Columns of A must equal Rows of B.*\n\n**Determinant of a 2x2 Matrix:**\n$$\\det(A) = ad - bc$$",
+  "example": "Multiply two 2x2 matrices **A** and **B**:\n$A = [[1, 2], [3, 4]]$ and $B = [[5, 6], [7, 8]]$\n\n1. **Top Left**: $(1\\times5) + (2\\times7) = 19$\n2. **Top Right**: $(1\\times6) + (2\\times8) = 22$\n3. **Bottom Left**: $(3\\times5) + (4\\times7) = 43$\n4. **Bottom Right**: $(3\\times6) + (4\\times8) = 50$\n5. **Result**: **[[19, 22], [43, 50]]**\n\n**The Strategy**: A computer graphics programmer rotating a 2D object by $45^\\circ$ would multiply the object's vertex matrix by a 'Rotation Matrix.' This calculator performs that multiplication instantly, preventing the 'indexing errors' that often occur when humans manually calculate dot products.",
+  "useCases": "Matrix algebra is used in every 'hidden' technology we rely on today:\n\n1. **Artificial Intelligence (Deep Learning)**: Neural networks are trained by multiplying massive matrices of 'weights' against 'input vectors.' GPUs (Graphics Processing Units) are actually just highly specialized hardware for doing many matrix multiplications at once.\n2. **3D Rendering & Gaming**: Every time you move a character in a game, the engine applies a **Transformation Matrix** to every vertex of that character's 3D model to calculate its new position in world space.\n3. **Google Search (PageRank)**: The original Google algorithm treated the entire internet as a giant adjacency matrix and computed the 'Eigenvector' of that matrix to determine which websites were the most authoritative.\n4. **Cryptography**: Advanced encryption standards like AES use 'Hill Ciphers' and matrix mixing stages to scramble data across multiple dimensions.\n5. **Structural Engineering**: Analyzes the stress and strain on complex bridges by solving 'Stiffness Matrices' involving thousands of simultaneous linear equations.",
+  "faqs": [
+    {
+      "question": "Does the order of multiplication matter?",
+      "answer": "Yes! Matrix multiplication is **Non-Commutative**. In most cases, $A \\times B$ does not equal $B \\times A$. Changing the order can result in a completely different matrix or a dimensional mismatch."
+    },
+    {
+      "question": "What is the 'Identity Matrix'?",
+      "answer": "The Identity Matrix ($I$) is the matrix equivalent of the number '1.' It has 1s on the main diagonal and 0s everywhere else. Any matrix multiplied by the Identity Matrix remains unchanged ($A \\times I = A$)."
+    },
+    {
+      "question": "What does a Determinant of Zero mean?",
+      "answer": "If $\\det(A) = 0$, the matrix is 'Singular' or 'Non-Invertible.' Geometrically, it means the transformation has 'squashed' the space into a lower dimension (like a 2D plane collapsing into a 1D line), and the process cannot be reversed."
+    },
+    {
+      "question": "Can I add matrices of different sizes?",
+      "answer": "No. Matrix addition and subtraction require that both matrices have the exact same number of rows and columns (e.g., both must be 3x3)."
+    },
+    {
+      "question": "What is the 'Transpose' of a matrix?",
+      "answer": "Transposing a matrix ($A^T$) simply means swapping its rows and columns. Geometrically, it is a flip across the main diagonal."
+    }
+  ],
+  "deepDive": "**The Master Strategy: Linear Algebra — The Geometry of Information**\n\nMatrices are more than just tables of numbers; they are descriptions of **Linear Transformations**. When you multiply a vector by a matrix, you are physically moving that point through space — stretching it, rotating it, or flipping it. \n\n**The Power of Dimensionality**: Modern data analysts use 'Feature Matrices' to find patterns in high-dimensional data (like predicting a hospital patient's health based on 500 different blood markers). By applying matrix operations like **Singular Value Decomposition (SVD)**, we can compress those 500 markers down to the most important three 'Principal Components.' This calculator is the fundamental tool for interacting with that multi-dimensional reality, and mastering its use is the gateway to careers in Data Science and Quant Finance.",
+  "glossary": [
+    { "term": "Matrix", "definition": "A rectangular array of numbers arranged in rows and columns." },
+    { "term": "Dimension (Order)", "definition": "The number of rows and columns in a matrix, written as $m \\times n$." },
+    { "term": "Determinant", "definition": "A scalar value derived from a square matrix that characterizes its geometric properties." },
+    { "term": "Invertible Matrix", "definition": "A square matrix that has a corresponding inverse, such that $A \\times A^{-1} = I$." },
+    { "term": "Scalar", "definition": "A single number, as opposed to an array or vector of numbers." }
+  ]
+}

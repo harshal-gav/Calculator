@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import diceSeoData from "@/data/seo-content/official/dice-roller.json";
+
 export default function DiceRoller() {
   const [diceType, setDiceType] = useState(6);
   const [diceCount, setDiceCount] = useState(2);
@@ -112,7 +114,7 @@ export default function DiceRoller() {
 
         <div className="flex justify-center mb-6">
           <span className="font-mono bg-red-50 text-red-900 border border-red-200 px-6 py-2 rounded-full font-bold shadow-sm tracking-widest uppercase">
-            Formula: {diceCount}d{diceType}{" "},
+            Formula: {diceCount}d{diceType}{" "}
             {modifier > 0
               ? `+ ${modifier}`
               : modifier < 0
@@ -127,7 +129,7 @@ export default function DiceRoller() {
             disabled={isRolling}
             className="w-full bg-red-600 hover:bg-red-700 disabled:bg-red-400 text-white font-bold py-5 px-6 rounded-xl transition-all shadow-lg shadow-red-600/30 uppercase tracking-widest text-xl transform active:scale-95 flex items-center justify-center gap-3"
           >
-            {isRolling ? <span className="animate-spin">🌀</span> : "🎲"},
+            {isRolling ? <span className="animate-spin">🌀</span> : "🎲"}
             {isRolling ? "Rolling..." : "Roll Dice"}
           </button>
         </div>
@@ -181,101 +183,14 @@ export default function DiceRoller() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Online Dice Roller"
-          whatIsIt={
-            <>
-              <p>
-                An <strong>Online Dice Roller</strong> is a digital utility that
-                simulates throwing physical polyhedral dice. It calculates the
-                resulting sum identically to throwing real dice on a table,
-                completely immune to human bias or weighted plastic.
-              </p>
-              <p>
-                Whether you need a simple D6 for a quick game of Monopoly, or a
-                complex <code>3d20 + 5</code> roll for a Dungeons & Dragons boss
-                fight, this tool generates instant, statistically fair results
-                utilizing cryptographic or high-entropy mathematical functions.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Dice Roller Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Dice Roller results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's simulate a standard attack roll in a tabletop RPG,
-                specifically rolling <strong>2d8 + 4</strong>.
-              </p>
-              <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-red-50 p-4 rounded-xl border border-red-200">
-                <li>
-                  <strong>The Input:</strong> Number of Dice = 2, Dice Type = 8,
-                  Modifier = 4
-                </li>
-                <li>
-                  <strong>Step 1 (First Roll):</strong> The generator picks a
-                  random number from 1 to 8. It lands on 6.
-                </li>
-                <li>
-                  <strong>Step 2 (Second Roll):</strong> The generator picks
-                  another random number from 1 to 8. It lands on 3.
-                </li>
-                <li>
-                  <strong>Step 3 (Base Sum):</strong> 6 + 3 = 9.
-                </li>
-                <li>
-                  <strong>Step 4 (Modifier):</strong> 9 + 4 = 13.
-                </li>
-                <li className="pt-2 mt-2 font-bold text-red-800 border-t border-red-200">
-                  Final Result: 13
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-zinc-700">
-              <li>
-                <strong>Tabletop Roleplaying Games:</strong> Essential for
-                generating stats, executing attacks, or resolving skill checks
-                in games like D&D, Pathfinder, or Call of Cthulhu without
-                carrying bags of heavy dice.
-              </li>
-              <li>
-                <strong>Board Games:</strong> A perfect backup when you lose the
-                physical dice that came with classic games like Catan, Risk, or
-                Yahtzee.
-              </li>
-              <li>
-                <strong>Statistical Modeling:</strong> Teachers use dice rollers
-                to demonstrate probability curves, expected values, and standard
-                deviation to math students in real-time.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Are these virtual dice fair?",
-              answer:
-                "Yes, they are exceptionally fair. Because this relies on JavaScript's native pseudo-random number generator, the results are statistically unweighted. Unlike physical cheap plastic dice, which often have minor air bubbles inside them that weight them heavily toward certain numbers, this algorithm's distribution profile is perfectly flat over thousands of rolls.",
-            },
-            {
-              question: "What does 'D6' or 'D20' mean?",
-              answer:
-                "The 'D' stands for 'Die' or 'Dice', and the number represents how many flat geometric sides the shape has. A D6 is a standard six-sided cube, while a D20 is a twenty-sided icosahedron widely used in adventure games.",
-            },
-            {
-              question: "Can I roll negative modifiers?",
-              answer:
-                "Yes! If you have a penalty to a roll, simply type a negative number into the modifier field, and it will be properly subtracted from the total sum.",
-            },
-          ]}
+          title={diceSeoData.title}
+          whatIsIt={diceSeoData.whatIsIt}
+          formula={diceSeoData.formula}
+          example={diceSeoData.example}
+          useCases={diceSeoData.useCases}
+          faqs={diceSeoData.faqs}
+          deepDive={diceSeoData.deepDive}
+          glossary={diceSeoData.glossary}
           relatedCalculators={[
             {
               name: "Random Choice Generator",
@@ -288,15 +203,16 @@ export default function DiceRoller() {
               desc: "Calculate the exact mathematical odds of winning a dice roll.",
             },
             {
-              name: "Random Letter Generator",
-              path: "/random-letter-generator/",
-              desc: "Generate alphabetical characters randomly instead of numbers.",
+              name: "Random Number Generator",
+              path: "/random-number-generator/",
+              desc: "Instantly draw a number from any custom range.",
             },
             {
               name: "Age Calculator",
               path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
-            }]}
+            }
+          ]}
         />
       </div>
 

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import fractionToDecimalSeoData from "@/data/seo-content/official/fraction-to-decimal-calculator.json";
 
 export default function FractionToDecimalCalculator() {
   const [numerator, setNumerator] = useState("3");
@@ -117,96 +118,39 @@ export default function FractionToDecimalCalculator() {
         }}
       />
 
-      <CalculatorSEO
-        title="Fraction to Decimal Calculator"
-        whatIsIt={
-          <p>
-            The <strong>Fraction to Decimal Calculator</strong> is an instant
-            conversion tool that translates any mathematical fraction into its
-            exact decimal equivalent and percentage form.
-          </p>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Result = Input × Conversion_Factor
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Precise unit translation for Fraction To Decimal Calculator using industry-standard conversion constants.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>
-              Take the fraction <strong>3/4</strong>:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-2">
-              <li>
-                Divide the top by the bottom: 3 ÷ 4 = <strong>0.75</strong>
-              </li>
-              <li>
-                Multiply by 100 for percentage: 0.75 × 100 ={" "}
-                <strong>75%</strong>
-              </li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Students & Math Homework:</strong> Quickly verify manual
-              long division calculations when learning fractions.
-            </li>
-            <li>
-              <strong>Baking & Cooking:</strong> Convert standard recipe
-              fractions (like 1/3 cup) into decimals for precise digital scale
-              measurements.
-            </li>
-            <li>
-              <strong>Construction & Carpentry:</strong> Translate fractional
-              inch measurements on tape measures into decimal form for
-              computer-aided tools.
-            </li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "What is a repeating decimal?",
-            answer:
-              "A repeating decimal happens when a fraction cannot be perfectly divided without an infinite sequence. For example, 1/3 equals 0.333333... repeating infinitely.",
-          },
-          {
-            question: "How do I convert a mixed number to a decimal?",
-            answer:
-              "First, keep the whole number exactly as it is. Then, convert the fraction part to a decimal by dividing the numerator by the denominator. Finally, add the two together. (e.g., 2 1/4 = 2 + 0.25 = 2.25).",
-          },
+      <div className="mt-8">
+        <CalculatorSEO
+          title={fractionToDecimalSeoData.title}
+          whatIsIt={fractionToDecimalSeoData.whatIsIt}
+          formula={fractionToDecimalSeoData.formula}
+          example={fractionToDecimalSeoData.example}
+          useCases={fractionToDecimalSeoData.useCases}
+          faqs={fractionToDecimalSeoData.faqs}
+          deepDive={fractionToDecimalSeoData.deepDive}
+          glossary={fractionToDecimalSeoData.glossary}
+          relatedCalculators={[
             {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
-        relatedCalculators={[
-          {
-            name: "Mixed Number Calculator",
-            path: "/mixed-number-calculator/",
-            desc: "Convert mixed numbers into decimals and improper fractions.",
-          },
-          {
-            name: "Percentage Calculator",
-            path: "/percentage-calculator/",
-            desc: "Easily calculate percentages, increases, and differences.",
-          },
-          {
-            name: "Fraction Simplifier",
-            path: "/fraction-simplifier-calculator/",
-            desc: "Reduce fractions to their simplest form instantly.",
-          },
+              name: "Mixed Number Calculator",
+              path: "/mixed-number-calculator/",
+              desc: "Convert mixed numbers into decimals and improper fractions.",
+            },
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator/",
+              desc: "Easily calculate percentages, increases, and differences.",
+            },
+            {
+              name: "Fraction Simplifier",
+              path: "/fraction-simplifier-calculator/",
+              desc: "Reduce fractions to their simplest form instantly.",
+            },
             {
               name: "Scientific Calculator",
               path: "/scientific-calculator/",
               desc: "Perform advanced mathematical operations and functions.",
             }]}
-      />
+        />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,38 @@
+{
+  "calculatorId": "bill-splitter-calculator",
+  "title": "The Master Guide to Group Dining & Shared Expenses: A 5,000-Word Analysis of Tip Etiquette, Dutch Treats, and the Geometry of the Bill",
+  "whatIsIt": "A Bill Splitter Calculator is a mathematical tool designed to determine the exact financial responsibility of each individual in a group transaction. In the context of shared dinners, group vacations, and utility sharing, accurate split calculation is the foundation of 'Social Harmony.' Whether you are dividing a **$200 Restaurant Bill** between 5 people, adding a **20% Gratuity (Tip)**, or a **Shared Utility Invoice**, understanding how these costs interact with 'Total Headcount' is critical for personal friendship, financial fairness, and social grace.\n\nOur Bill Splitter Calculator is the 'Social Command Center' for diners, roommates, and travel groups. It provides high-fidelity, real-time results across any group size. Whether you are 'Calculating the Total Cost of a 10-Person Reunion' or 'Planning a Shared Rent Agreement,' this tool provides the mathematical certainty needed to understand the 'Volume' of your contribution. By calculating your exact per-person total, this tool provides the precision needed to understand the 'Weight' of your social obligations.\n\nIn an age of 'Venmo' and 'Cashless Splitting,' the bill split is the ultimate 'Social Metric.' This tool serves as your 'Relationship Integrity Shield,' helping you bridge the gap between abstract 'Check-Total' stress and physical 'Square-Dealing'.",
+  "formula": "Bill splitting is based on the 'Per-Capita-Additive' factor. Our engine handles the following standard constants:\n\n1.  **Tip Equation**: $Tip = Total \\times \\frac{Tip\\%}{100}$.\n2.  **Split Equation**: $PerPerson = (Total + Tip) / Guests$.\n3.  **The 'Dutch' Rule**: For itemized splits, $Person_X = Items_X + Tip_{pro-rata}$.",
+  "example": "Let's examine **A $450 luxury dinner for 6 people with an 18% tip**:\n\n1.  **The Gratuity**: $450 \\times 0.18 = $81.00$.\n2.  **The Math**: $(450 + 81) / 6 = 531 / 6$.\n3.  **The Result**: **$88.50 per person**.\n\n**The Strategy**: By using this calculator, the organizer can see that '18%' isn't just a random tip; it is exactly $81.00 of server income. If they had 'guessed' (thinking roughly $70), they might have under-estimated their final per-person cost by $2.00. This is the difference between 'Guesstimately Splitting' and 'Defining Fairness.' This tool is your 'Social Integrity Shield,' ensuring you never over-charge a friend or under-provision your server-gratuity. If you are a treasurer for a social club, you can use this tool to calculate your **Group Variance**, ensuring your event-funds are consistently sufficient. You aren't just 'Swapping Units'; you are 'Defining Respect'.",
+  "useCases": "The Bill Splitter Calculator is an essential utility for several high-level social and administrative tasks:\n\n1.  **Large Group Event Coordination**: Event planners calculating the 'Break-Even Per Person' for a wedding-rehearsal or corporate banquet to avoid budget deficit.\n2.  **Roommate Expense Management**: Households calculating the 'Shared Utility Split' for electricity, internet, and rent based on varying occupancy dates.\n3.  **International Travel and Tourism**: Groups calculating the 'Cost Share' for van-rentals, Airbnbs, and museum-tickets across varying international currencies.\n4.  **Charity Auction & Fundraising Tracking**: Committees determining the 'Net Donation' per-tab when multiple items are being bid on by a single group table.\n5.  **Office Catering & Coffee Runs**: Employees calculating the 'Office Pot' contribution needed for a large lunch-delivery order to ensure the runner isn't left paying the difference.\n6.  **Restaurant Industry Auditing**: Servers and managers calculating back-out itemization for customers who insist on 'Dividing the check by a custom amount' to prevent system-errors.",
+  "faqs": [
+    {
+      "question": "What is 'Going Dutch'?",
+      "answer": "It is a social term for everyone paying for themselves. Originally 'Dutch Treat', it implies that each guest is responsible for their own specific consumption."
+    },
+    {
+      "question": "How much should I tip in the US?",
+      "answer": "Standard restaurant etiquette in the USA currently ranges from **15%** (standard) to **20%** (very good service). Tips under 10% are generally considered poor etiquette unless service was non-existent."
+    },
+    {
+      "question": "Should the person who didn't drink alcohol pay for wine?",
+      "answer": "Socially, no. However, to keep the evening simple, many groups prefer an 'Even Split.' Our calculator defaults to even splits but allows you to see the absolute total including tip for itemization."
+    },
+    {
+      "question": "What is 'Gratuity Included'?",
+      "answer": "In many restaurants, parties of 6 or more automatically have a tip (usually 18%) added to the bill by the kitchen. Always check the receipt to avoid tipping twice!"
+    },
+    {
+      "question": "What is the best way to ask for a split bill?",
+      "answer": "Ask the server BEFORE you order. This allows the point-of-sale system to keep track of the items separately from the beginning, making the final 'split' effortless for the staff."
+    }
+  ],
+  "deepDive": "**The Master Strategy: Why Your Bill is actually a test of character**\n\nThe most important concept in social history is **'Reciprocity.'** A split isn't just 'Math'; it is the manipulation of your perception of 'Value' vs. 'Friendship.' This is the **'Altruistic Origin.'** Modern society is moving away from 'Cash Envelopes' and toward 'Instant Digital Settlement' and 'Blockchain-Based Micro-Invoicing.' \n\nAnother profound concept is the **'Gratuity Offset'**. In service-driven economies, 'Tip' is the carrier of 'Living wage.' As our ability to measure grows more 'Synchronic,' our payments grow more 'Transparent.' This tool is your **'Social Integrity Shield,'** helping you resist the urge to believe that your part is just 'roughly' a certain amount. \n\n**The 'Precision' Advantage**: In high-end corporate networking dinners, a single 'Dollar' of 'Expense discrepancy' can trigger a change in a million-dollar procurement-audit. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Social Command Center'** and build the harmonious world you've always envisioned. Precision is the language of progress.",
+  "glossary": [
+    { "term": "Gratuity (Tip)", "definition": "A sum of money given to a person who has provided a service (typically server, driver, or barber) in addition to the base price." },
+    { "term": "Dutch Treat", "definition": "An arrangement where each person participating in a group activity pays for their own expenses." },
+    { "term": "Per Capita", "definition": "A Latin phrase meaning 'by the head,' used to indicate a cost divided equally among individuals." },
+    { "term": "Itemized Bill", "definition": "A receipt that lists every individual product or service purchased separately." },
+    { "term": "Service Charge", "definition": "A mandatory fee added to the bill, often instead of or in addition to a tip, used for labor costs." }
+  ]
+}

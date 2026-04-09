@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import calorieSeoData from "@/data/seo-content/official/calorie-calculator.json";
 
 export default function CalorieCalculator() {
   const [age, setAge] = useState("25");
@@ -187,67 +188,36 @@ export default function CalorieCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Calorie Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>Calorie Calculator</strong> is a tool used to estimate the number of calories an individual needs to consume daily to maintain, lose, or gain weight. It creates a personalized baseline by factoring in your age, gender, weight, height, and physical activity levels.
-            </p>
-            <p>
-              The calculator utilizes the <strong>Mifflin-St Jeor Equation</strong>, which is currently considered the most accurate method for estimating Basal Metabolic Rate (BMR) for the general population.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Daily Calories = BMR × Activity Multiplier
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Estimating total daily energy expenditure.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>Consider a <strong>25-year-old male</strong> weighing <strong>160 lbs (72.5 kg)</strong> and <strong>5'10" (178 cm)</strong> tall with a <strong>'Lightly Active'</strong> lifestyle:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-orange-900/80">
-              <li>His BMR would be approx <strong>1,718 calories</strong>.</li>
-              <li>With a 1.375 activity factor, his maintenance calories would be approx <strong>2,362 calories/day</strong>.</li>
-              <li>To lose 1 lb per week, he should consume <strong>1,862 calories/day</strong>.</li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4 text-orange-900/80">
-            <li><strong>Healthy Weight Management:</strong> Establish a data-driven baseline for your daily food intake.</li>
-            <li><strong>Fat Loss Scenarios:</strong> Calculate the exact caloric deficit required to hit specific weight milestones.</li>
-            <li><strong>Muscle Building (Bulking):</strong> Determine the 'lean surplus' needed to support muscle growth without excessive fat gain.</li>
-          </ul>
-        }
-        faqs={[
+        title={calorieSeoData.title}
+        whatIsIt={calorieSeoData.whatIsIt}
+        formula={calorieSeoData.formula}
+        example={calorieSeoData.example}
+        useCases={calorieSeoData.useCases}
+        faqs={calorieSeoData.faqs}
+        deepDive={calorieSeoData.deepDive}
+        glossary={calorieSeoData.glossary}
+        relatedCalculators={[
           {
-            question: "How accurate is the Calorie Calculator?",
-            answer: "The Mifflin-St Jeor equation is highly accurate for most people. However, factors like body fat percentage, hormonal health, and medications can impact individual results. View this as a solid starting point for experimentation."
+            name: "BMR Calculator",
+            path: "/bmr-calculator/",
+            desc: "Find your metabolic floor.",
           },
           {
-            question: "What is a safe caloric deficit?",
-            answer: "Generally, a deficit of 500 calories per day (leading to 1 lb of weight loss per week) is considered safe and sustainable for most adults."
+            name: "Body Fat Calculator",
+            path: "/body-fat-calculator/",
+            desc: "Beyond the scale metrics.",
           },
           {
-            question: "Should I eat my 'exercise calories' back?",
-            answer: "If you used an 'Active' or 'Moderate' setting in this calculator, your exercise is already accounted for. If you set it to 'Sedentary' and did extra cardio, you may need a small snack to recover, but be careful not to over-estimate the calories burned during exercise."
+            name: "BMI Calculator",
+            path: "/bmi-calculator/",
+            desc: "The standard health proxy.",
+          },
+          {
+            name: "Ideal Weight Calculator",
+            path: "/ideal-weight-calculator/",
+            desc: "Targets for your height.",
           }
         ]}
-        relatedCalculators={[
-          { name: "TDEE Calculator", path: "/tdee-calculator/", desc: "Deeper dive into your total energy expenditure." },
-          { name: "BMI Calculator", path: "/bmi-calculator/", desc: "Check if your current weight is in a healthy range." },
-          { name: "Macro Calculator", path: "/macro-calculator/", desc: "Break your calories down into Protein, Fats, and Carbs." },
-            {
-              name: "BMR Calculator",
-              path: "/bmr-calculator/",
-              desc: "Find your Basal Metabolic Rate to understand your calorie needs at rest.",
-            }]}
       />
     </div>
   );

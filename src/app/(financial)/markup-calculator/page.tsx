@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import markupSeoData from "@/data/seo-content/official/markup-calculator.json";
 
 export default function MarkupCalculator() {
   const [cost, setCost] = useState("50");
@@ -136,110 +137,16 @@ export default function MarkupCalculator() {
           }),
         }}
       />
-
       <div className="mt-8">
         <CalculatorSEO
-          title="Price Markup Calculator"
-          whatIsIt={
-            <>
-              <p>
-                Our <strong>Markup Calculator</strong> helps businesses
-                determine exactly what their final retail selling price should
-                be by adding a specific percentage of profit on top of the
-                wholesale cost of goods sold (COGS).
-              </p>
-              <p>
-                While "margin" looks backward at revenue to determine
-                profitability, "markup" looks forward, allowing retailers to
-                standardize a pricing strategy (e.g., "we markup all clothing by
-                50% from the factory cost") before the item ever hits the
-                shelves.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Markup Calculator
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Markup Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Markup results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's look at how a boutique sets the price for a new shipment
-                of inventory.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Scenario:</strong> A shoe store buys sneakers from
-                  a manufacturer for <strong>$40.00</strong> (Cost). The store
-                  standardizes a <strong>150%</strong> markup on all branded
-                  footwear.
-                </li>
-                <li>
-                  <strong>The Math:</strong> $40.00 × 1.50 (150%) ={" "}
-                  <strong>$60.00</strong> of straight profit.
-                </li>
-                <li>
-                  <strong>The Final Price:</strong> $40.00 (Cost) + $60.00
-                  (Profit) = <strong>$100.00</strong> final selling price.
-                </li>
-                <li>
-                  <strong>Result:</strong> By applying a 150% markup, the shoes
-                  are priced at $100.00, resulting in exactly a 60% gross profit
-                  margin.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Retail Pricing Models:</strong> The "Keystone Markup" is
-                famously used in retail apparel. It refers to an automatic 100%
-                markup on wholesale cost. If a shirt costs the store $20,
-                "keystoning" it means automatically pricing it at $40.
-              </li>
-              <li>
-                <strong>Contractor Bidding:</strong> Construction contractors
-                calculate the exact cost of raw materials and hourly labor for a
-                job, and then apply a standard 20% markup across the board to
-                generate the final bid presented to the homeowner.
-              </li>
-              <li>
-                <strong>Restaurant Menus:</strong> Restaurants utilize massive
-                markups (often 300% to 500%) on cheap raw ingredients like pasta
-                or beverages to offset the massive overhead costs of kitchen
-                staff, waitstaff, and building leases.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What is the difference between Markup and Margin?",
-              answer:
-                "Markup is a percentage of your COST. Margin is a percentage of your REVENUE. If a widget costs $10 and you sell it for $20, you marked it up 100%, but your profit margin is 50%.",
-            },
-            {
-              question: "Can a markup be over 100%?",
-              answer:
-                "Absolutely, and it frequently is. Standard cosmetics, bottled water, and fountain sodas regularly see retail markups of 500% to 1,000% over their raw manufacturing cost.",
-            },
-            {
-              question:
-                "How do I calculate a markup backwards from a known price?",
-              answer:
-                "If you know the Cost and the final Selling Price, subtract the Cost from the Price to find the profit in dollars. Then divide that profit by the Cost, and multiply by 100 to get your exact markup percentage.",
-            },
-          ]}
+          title={markupSeoData.title}
+          whatIsIt={markupSeoData.whatIsIt}
+          formula={markupSeoData.formula}
+          example={markupSeoData.example}
+          useCases={markupSeoData.useCases}
+          faqs={markupSeoData.faqs}
+          deepDive={markupSeoData.deepDive}
+          glossary={markupSeoData.glossary}
           relatedCalculators={[
             {
               name: "Margin Calculator",

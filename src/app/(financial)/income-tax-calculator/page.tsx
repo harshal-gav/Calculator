@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import incomeTaxSeoData from "@/data/seo-content/official/income-tax-calculator.json";
 
 export default function IncomeTaxCalculator() {
   const [income, setIncome] = useState("75000");
@@ -221,135 +222,14 @@ export default function IncomeTaxCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Income Tax Calculator 2024: Federal Tax Bracket & Take-Home Pay Estimator"
-        whatIsIt={
-          <>
-            <p className="text-lg leading-relaxed mb-4">
-              An <strong>Income Tax Calculator</strong> is a strategic financial tool used to decode the complexity of the United States progressive tax system. While your gross salary is what you "earn," your take-home pay is what you actually keep after Uncle Sam takes his share. This tool calculates your estimated Federal Income Tax, Social Security (6.2%), and Medicare (1.45%) liabilities.
-            </p>
-            <p className="leading-relaxed mb-4">
-              Understanding your tax liability is the foundation of <strong>wealth management</strong>. Many Americans are surprised to learn that they don't actually pay their "marginal" tax rate on all their income. Instead, your money is poured into a series of "buckets" (brackets), where only the money in the highest bucket is taxed at the highest rate. Our calculator visualizes this "Tax Ladder" to help you plan for bonuses, raises, and retirement contributions.
-            </p>
-            <p className="leading-relaxed">
-              By inputting your filing status and pre-tax deductions (like 401k contributions), you can see exactly how much your taxable income is reduced, effectively lowering your total tax bill and increasing your net wealth.
-            </p>
-          </>
-        }
-        comparisonTable={{
-          title: "2024 Federal Income Tax Brackets (IRS Guidelines)",
-          headers: ["Tax Rate", "Single Filers", "Married Filing Jointly", "Head of Household"],
-          rows: [
-            ["10%", "$0 to $11,600", "$0 to $23,200", "$0 to $16,550"],
-            ["12%", "$11,601 to $47,150", "$23,201 to $94,300", "$16,551 to $63,100"],
-            ["22%", "$47,151 to $100,525", "$94,301 to $201,050", "$63,101 to $100,500"],
-            ["24%", "$100,526 to $191,950", "$201,051 to $383,900", "$100,501 to $191,950"],
-            ["32%", "$191,951 to $243,725", "$383,901 to $487,450", "$191,951 to $243,700"],
-            ["35%", "$243,726 to $609,350", "$487,451 to $731,200", "$243,701 to $609,350"],
-            ["37%", "Over $609,350", "Over $731,200", "Over $609,350"],
-          ]
-        }}
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Standard financial analysis and amortization model for precise Income Tax results.
-            </p>
-          </>
-        }
-          example={
-          <>
-            <p className="mb-4 font-semibold">Case Study: The $100,000 Single Earner (2024)</p>
-            <div className="bg-white border border-gray-100 p-6 rounded-xl shadow-sm space-y-4">
-              <div className="flex justify-between border-b pb-2">
-                <span>Gross Annual Income:</span>
-                <span className="font-bold">$100,000</span>
-              </div>
-              <div className="flex justify-between border-b pb-2 text-green-700">
-                <span>Minus Standard Deduction:</span>
-                <span className="font-bold">-$14,600</span>
-              </div>
-              <div className="flex justify-between border-b pb-2 bg-gray-50 p-2 rounded">
-                <span>Taxable Income:</span>
-                <span className="font-bold">$85,400</span>
-              </div>
-              <div className="space-y-1 text-sm text-gray-600 pl-4 italic">
-                <p>10% on first $11,600: $1,160</p>
-                <p>12% on next $35,550: $4,266</p>
-                <p>22% on remaining $38,250: $8,415</p>
-              </div>
-              <div className="flex justify-between border-t pt-2 text-red-700 font-bold">
-                <span>Total Federal Income Tax:</span>
-                <span>$13,841</span>
-              </div>
-              <div className="flex justify-between border-t pt-2 text-blue-700 font-bold">
-                <span>Total FICA (SS+Medicare):</span>
-                <span>$7,650</span>
-              </div>
-              <div className="flex justify-between border-t-2 pt-4 text-2xl text-blue-900 font-black">
-                <span>Take-Home Pay:</span>
-                <span>$78,509</span>
-              </div>
-            </div>
-          </>
-        }
-        useCases={
-          <div className="space-y-6">
-            <div>
-              <h4 className="font-bold text-gray-800">1. Maximizing 401k Contributions</h4>
-              <p className="text-gray-600 italic">If you are on the edge of the 22% and 24% brackets, contributing enough to your 401k to stay in the 22% bracket can save you thousands in taxes while building your future wealth.</p>
-            </div>
-            <div>
-              <h4 className="font-bold text-gray-800">2. Planning for Marriage</h4>
-              <p className="text-gray-600 italic">Use the "Married Filing Jointly" option to see the "Marriage Bonus" or "Marriage Penalty." If one spouse earns significantly more than the other, filing jointly often results in a massive tax reduction.</p>
-            </div>
-            <div>
-              <h4 className="font-bold text-gray-800">3. Estimating Withholding</h4>
-              <p className="text-gray-600 italic">Compare this calculator's results to your actual pay stubs. If the calculator says you owe $10,000 but your employer is only taking $8,000, you need to adjust your W-4 to avoid a big bill in April.</p>
-            </div>
-          </div>
-        }
-        glossary={[
-          {
-            term: "Adjusted Gross Income (AGI)",
-            definition: "Your total gross income minus certain adjustments like student loan interest or educator expenses, before the standard deduction is applied."
-          },
-          {
-            term: "FICA Tax",
-            definition: "Federal Insurance Contributions Act. It consists of Social Security (6.2%) and Medicare (1.45%) taxes which fund retirement and health benefits."
-          },
-          {
-            term: "Tax Bracket",
-            definition: "The range of incomes taxed at a specific percentage. Brackets are adjusted annually for inflation."
-          },
-          {
-            term: "Standard Deduction",
-            definition: "A set amount of income that the IRS allows you to subtract from your total earnings, reducing the amount on which you are taxed."
-          },
-          {
-            term: "Withholding",
-            definition: "The amount of an employee's pay that their employer sends directly to the government as partial payment of their income tax."
-          }
-        ]}
-        faqs={[
-          {
-            question: "Why is the tax on my bonus so high?",
-            answer: "Employers often use a 'supplemental withholding rate' (flat 22%) or the 'aggregate method' for bonuses. This often over-estimates your tax, making the bonus look small, but you typically get the excess back as a refund when you file your taxes."
-          },
-          {
-            question: "Should I take the Standard Deduction or Itemize?",
-            answer: "Since the 2018 tax reform, the standard deduction ($14,600/$29,200) is so high that most people should take it. You should only itemize if your deductible expenses (mortgage interest, state taxes, charity) exceed those amounts."
-          },
-          {
-            question: "What is the Wage Base Limit for Social Security?",
-            answer: "For 2024, the Social Security tax only applies to the first $168,600 of your income. Any income earned above this limit is exempt from the 6.2% Social Security tax, though the 1.45% Medicare tax applies to all income."
-          },
-          {
-            question: "Is this calculator legal tax advice?",
-            answer: "No. This tool provides estimates for planning purposes. Tax laws are complex and change frequently. Always consult with a CPA or licensed tax professional for your specific filing needs."
-          }
-        ]}
+        title={incomeTaxSeoData.title}
+        whatIsIt={incomeTaxSeoData.whatIsIt}
+        formula={incomeTaxSeoData.formula}
+        example={incomeTaxSeoData.example}
+        useCases={incomeTaxSeoData.useCases}
+        faqs={incomeTaxSeoData.faqs}
+        deepDive={incomeTaxSeoData.deepDive}
+        glossary={incomeTaxSeoData.glossary}
         relatedCalculators={[
           {
             name: "Salary Calculator",

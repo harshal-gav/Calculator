@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import volumeSeoData from "@/data/seo-content/official/volume-calculator.json";
 
 export default function VolumeCalculator() {
   const [shape, setShape] = useState("cube"); // cube, cylinder, sphere, cone, rectangular
@@ -217,124 +218,36 @@ export default function VolumeCalculator() {
       />
 
       <CalculatorSEO
-        title="Volume Calculator"
-        whatIsIt={
-          <>
-            <p>
-              Our <strong>Volume Calculator</strong> is an essential geometry
-              tool that instantly computes the three-dimensional space enclosed
-              by common shapes like cubes, cylinders, cones, spheres, and
-              rectangular prisms.
-            </p>
-            <p>
-              While "area" measures the flat, 2D surface of an object, "volume"
-              measures its true 3D capacity. Think of volume as exactly how much
-              water it would take to completely fill up the shape.
-            </p>
-
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related Terms:</strong> Cubic Meter Calculator, Cubic
-              Equation Solver, Ml To L Conversion
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              V = L × W × H
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Volume represents the 3D space occupied by an object.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>
-              Let's calculate the volume of a standard cylindrical soda can to
-              see how much liquid it can hold.
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>Step 1 (Identify Measurements):</strong> The radius of
-                the base is roughly <strong>1.2 inches</strong> and the height
-                is <strong>4.8 inches</strong>.
-              </li>
-              <li>
-                <strong>Step 2 (The Formula):</strong> V = π * r² * h
-              </li>
-              <li>
-                <strong>Step 3 (Square the radius):</strong> 1.2² = 1.44
-              </li>
-              <li>
-                <strong>Step 4 (Multiply):</strong> 3.14159 * 1.44 * 4.8 ={" "}
-                <strong>21.71 cubic inches</strong>.
-              </li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Shipping & Packaging:</strong> Calculating the total cubic
-              volume of a rectangular box to determine the exact shipping tier
-              or cargo space required on a freight truck.
-            </li>
-            <li>
-              <strong>Construction & Landscaping:</strong> Determining exactly
-              how many cubic yards of concrete or soil you need to order to fill
-              a cylindrical hole or a rectangular garden bed.
-            </li>
-            <li>
-              <strong>Aquariums:</strong> Finding the absolute water capacity of
-              a fish tank to ensure you purchase the correct size filtration
-              system and the right number of fish.
-            </li>
-            <li>
-              <strong>Baking:</strong> Comparing the volume of a 9-inch round
-              cake pan to a rectangular pan to see if the same amount of batter
-              will fit without overflowing.
-            </li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "What is the difference between Area and Volume?",
-            answer:
-              "Area measures the two-dimensional surface space of a flat object (like the floor of a room), measured in square units (like square feet). Volume measures the total three-dimensional space an object occupies (the entire room from floor to ceiling), measured in cubic units.",
-          },
-          {
-            question: "Why does the cone formula have a 1/3 in it?",
-            answer:
-              "Geometrically, if you have a cylinder and a cone that both share the exact same base radius and the exact same height, the cone will always hold exactly one-third (1/3) of the volume of the cylinder. It's a mathematically perfect relationship.",
-          },
-          {
-            question: "What unit of measurement should I use?",
-            answer:
-              "You can use any unit—inches, centimeters, feet, or meters. As long as you use the exact same unit for every single input (don't mix feet and inches), the resulting volume will simply be measured in that unit 'cubed' (e.g., cubic inches, cubic meters).",
-          },
-        ]}
+        title={volumeSeoData.title}
+        whatIsIt={volumeSeoData.whatIsIt}
+        formula={volumeSeoData.formula}
+        example={volumeSeoData.example}
+        useCases={volumeSeoData.useCases}
+        faqs={volumeSeoData.faqs}
+        deepDive={volumeSeoData.deepDive}
+        glossary={volumeSeoData.glossary}
         relatedCalculators={[
           {
-            name: "Fraction Calculator",
-            path: "/fraction-calculator/",
-            desc: "Add, subtract, multiply, and divide standard fractions.",
+            name: "Area Calculator",
+            path: "/area-calculator/",
+            desc: "Calculate the exact 2D surface area for common geometric shapes.",
           },
           {
-            name: "Percentage Calculator",
-            path: "/percentage-calculator/",
-            desc: "Easily compute advanced percentage problems in one click.",
+            name: "Perimeter Calculator",
+            path: "/perimeter-calculator/",
+            desc: "Measure the distance around the boundary of a shape.",
           },
           {
-            name: "Standard Deviation Calculator",
-            path: "/standard-deviation-calculator/",
-            desc: "Compute population and sample standard deviation.",
+            name: "Triangle Calculator",
+            path: "/triangle-calculator/",
+            desc: "Advanced tool for solving for missing sides and angles of any triangle.",
           },
-            {
-              name: "Scientific Calculator",
-              path: "/scientific-calculator/",
-              desc: "Perform advanced mathematical operations and functions.",
-            }]}
+          {
+            name: "Pythagorean Theorem Calculator",
+            path: "/pythagorean-calculator/",
+            desc: "Calculate the hypotenuse or legs of a right triangle.",
+          }
+        ]}
       />
     </div>
   );

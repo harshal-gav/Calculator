@@ -2,112 +2,181 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import fibonacciSeoData from "@/data/seo-content/official/fibonacci-calculator.json";
 
 export default function FibonacciCalculator() {
-  const [input1, setInput1] = useState("10");
-  const [input2, setInput2] = useState("5");
-  const [result, setResult] = useState<number | null>(null);
+  const [nValue, setNValue] = useState("50");
 
-  const calculate = () => {
-    // Basic placeholder calculation logic
-    setResult(parseFloat(input1) * parseFloat(input2)); 
+  const [result, setResult] = useState<{
+    n: number;
+    fibValue: string;
+    isInfinity: boolean;
+  } | null>(null);
+
+  const calculateFibonacci = () => {
+    const n = parseInt(nValue);
+
+    if (isNaN(n) || n < 0) {
+      setResult(null);
+      return;
+    }
+
+    if (n === 0) {
+      setResult({ n, fibValue: "0", isInfinity: false });
+      return;
+    }
+
+    if (n === 1) {
+      setResult({ n, fibValue: "1", isInfinity: false });
+      return;
+    }
+
+    // JS max limit protection
+    if (n > 500000) {
+      setResult({
+        n,
+        fibValue: "Input too large. System limit reached to prevent browser execution failure.",
+        isInfinity: true,
+      });
+      return;
+    }
+
+    // Iterative approach with BigInt for massive scaling
+    let a = BigInt(0);
+    let b = BigInt(1);
+    let c = BigInt(1);
+
+    for (let i = 2; i <= n; i++) {
+      c = a + b;
+      a = b;
+      b = c;
+    }
+
+    setResult({
+      n,
+      fibValue: c.toString(),
+      isInfinity: false,
+    });
   };
 
   return (
-    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-white rounded-3xl shadow-xl border border-purple-50">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-purple-50 pb-6 mb-8 gap-4">
+    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-3xl shadow-xl border border-amber-50">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-amber-100 pb-6 mb-8 gap-4">
         <div>
           <h1 className="text-4xl font-black text-slate-900 tracking-tight">Fibonacci Sequence Calculator</h1>
-          <p className="text-slate-500 font-medium mt-1 text-lg">Generate Fibonacci numbers and sequences.</p>
+          <p className="text-slate-600 font-medium mt-1 text-lg">Pinpoint the exact Nth value within the Golden Ratio sequence.</p>
         </div>
-        <div className="bg-purple-50 px-4 py-2 rounded-full border border-purple-100 shrink-0">
-          <span className="text-purple-600 font-bold text-sm uppercase tracking-wider">math</span>
+        <div className="bg-amber-50 px-4 py-2 rounded-full border border-amber-100 shrink-0">
+          <span className="text-amber-600 font-bold text-sm uppercase tracking-wider font-mono">Algorithmic Math</span>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-        <div className="lg:col-span-5 space-y-4">
-          <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 shadow-inner space-y-6">
+        <div className="lg:col-span-12 xl:col-span-4 space-y-6">
+          <div className="bg-white p-8 rounded-3xl border border-amber-100 shadow-sm space-y-6 flex flex-col justify-center min-h-full">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Input 1</label>
-              <input
-                type="number"
-                value={input1}
-                onChange={(e) => setInput1(e.target.value)}
-                className="w-full rounded-lg border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-3 border text-lg"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Input 2</label>
-              <input
-                type="number"
-                value={input2}
-                onChange={(e) => setInput2(e.target.value)}
-                className="w-full rounded-lg border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-3 border text-lg"
-              />
-            </div>
-          </div>
-
-          <button
-            onClick={calculate}
-            className="mt-8 w-full bg-purple-600 text-white font-bold py-4 px-4 rounded-xl hover:bg-purple-700 transition shadow-lg text-lg uppercase tracking-wide"
-          >
-            Calculate
-          </button>
-        </div>
-
-        <div className="lg:col-span-7 bg-purple-50 rounded-xl p-8 border border-purple-200 shadow-inner flex flex-col justify-center">
-          {result !== null ? (
-            <div>
-              <h2 className="text-lg font-bold text-purple-900 mb-2 text-center uppercase tracking-wider">
-                Result
-              </h2>
-              <div className="text-6xl md:text-7xl font-black text-center text-purple-700 mb-6 pb-6 border-b border-purple-200">
-                {result.toFixed(2)}
+              <label className="block text-[10px] font-bold text-zinc-400 mb-2 uppercase tracking-widest text-center">Determine F(n) for Target n</label>
+              <div className="relative">
+                 <div className="absolute top-1/2 left-6 -translate-y-1/2 text-3xl font-black text-amber-300 pointer-events-none italic">F</div>
+                 <input
+                   type="number"
+                   min="0"
+                   step="1"
+                   value={nValue}
+                   onChange={(e) => setNValue(e.target.value)}
+                   onKeyDown={(e) => e.key === "Enter" && calculateFibonacci()}
+                   className="w-full rounded-2xl border-zinc-200 p-6 pl-14 shadow-sm focus:border-amber-500 bg-zinc-50 font-black text-5xl text-center outline-none transition-all placeholder-zinc-300"
+                   placeholder="50"
+                 />
               </div>
             </div>
-          ) : (
-            <div className="text-center text-purple-800 opacity-60 font-medium p-8">
-              Enter values and click calculate to see the result.
+
+            <button
+              onClick={calculateFibonacci}
+              className="w-full bg-amber-500 text-white font-black py-5 px-4 rounded-2xl hover:bg-amber-600 transition shadow-xl shadow-amber-200 text-xl uppercase tracking-widest active:scale-[0.98]"
+            >
+              Evaluate F(n)
+            </button>
+            <div className="bg-amber-50/50 p-4 rounded-xl border border-amber-100 mt-2 text-center">
+               <span className="text-[9px] font-bold text-amber-500 uppercase tracking-widest block mb-1">Architecture Status</span>
+               <span className="text-xs text-amber-800/60 font-medium">Bypassing standard recursive death scripts. $O(n)$ iteration engine with memory memoization active.</span>
             </div>
+          </div>
+        </div>
+
+        <div className="lg:col-span-12 xl:col-span-8 bg-slate-900 rounded-3xl p-6 md:p-8 border border-white/5 shadow-2xl flex flex-col relative overflow-hidden min-h-[450px]">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500 rounded-full mix-blend-screen filter blur-[100px] opacity-10 pointer-events-none"></div>
+
+          {result !== null ? (
+             <div className="relative z-10 w-full h-full flex flex-col">
+                <div className="flex justify-between items-center bg-black/40 p-4 rounded-t-2xl border border-white/5 border-b-0 space-x-4">
+                   <div className="flex items-center gap-3">
+                      <span className="text-amber-400 font-bold uppercase tracking-widest text-[10px] bg-amber-400/10 px-2 py-1 rounded">Target Evaluated</span>
+                      <span className="text-2xl font-black text-white font-serif italic">F({result.n})</span>
+                   </div>
+                   {!result.isInfinity && (
+                     <div className="text-right">
+                       <span className="block text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Mathematical Digits Length</span>
+                       <span className="text-amber-300 font-mono font-bold text-sm">{result.fibValue.length.toLocaleString()}</span>
+                     </div>
+                   )}
+                </div>
+
+                <div className="flex-1 bg-white/5 border border-white/5 rounded-b-2xl p-6 overflow-hidden flex flex-col max-h-[350px]">
+                    <div className="overflow-y-auto pr-4 custom-scrollbar h-full flex items-center justify-center">
+                       {result.isInfinity ? (
+                          <div className="bg-red-500/10 border border-red-500/30 p-8 rounded-2xl text-center w-full">
+                            <div className="text-xl font-black text-red-400 font-mono tracking-tight">{result.fibValue}</div>
+                          </div>
+                        ) : (
+                          <div className={`font-mono text-white ${result.fibValue.length > 300 ? "text-sm text-center leading-relaxed opacity-80" : "text-3xl md:text-5xl font-black text-center tracking-tight drop-shadow-lg"} break-all`}>
+                            {result.fibValue.length < 50 ? result.fibValue.replace(/\B(?=(\d{3})+(?!\d))/g, ",") : result.fibValue}
+                          </div>
+                        )}
+                    </div>
+                </div>
+             </div>
+          ) : (
+             <div className="w-full h-full flex items-center justify-center">
+                 <div className="text-center py-10 opacity-40 uppercase italic font-black text-4xl text-amber-500 tracking-tighter">
+                   Calculate Sequence
+                 </div>
+             </div>
           )}
         </div>
       </div>
 
       <CalculatorSEO
-        title="Fibonacci Sequence Calculator"
-        whatIsIt={
-          <p>
-            The <strong>Fibonacci Sequence Calculator</strong> is a tool designed to generate fibonacci numbers and sequences.
-          </p>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Fibonacci Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Fibonacci results.
-            </p>
-          </>
-        }
-        example={
-          <p>Enter your inputs to see an example calculation.</p>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li><strong>Quick Computations:</strong> Easily perform calculations online.</li>
-            <li><strong>Educational Use:</strong> Verify manual calculations.</li>
-          </ul>
-        }
-        faqs={[
+        title={fibonacciSeoData.title}
+        whatIsIt={fibonacciSeoData.whatIsIt}
+        formula={fibonacciSeoData.formula}
+        example={fibonacciSeoData.example}
+        useCases={fibonacciSeoData.useCases}
+        faqs={fibonacciSeoData.faqs}
+        deepDive={fibonacciSeoData.deepDive}
+        glossary={fibonacciSeoData.glossary}
+        relatedCalculators={[
           {
-            question: "How accurate is the Fibonacci Sequence Calculator?",
-            answer: "The calculator uses standard mathematical functions to provide accurate results.",
+            name: "Sequence Calculator",
+            path: "/sequence-calculator/",
+            desc: "Perform analysis on strictly Arithmetic and Geometric sequences.",
+          },
+          {
+            name: "Number Sequence Calculator",
+            path: "/number-sequence-calculator/",
+            desc: "Map generic sequences and understand standard polynomial intervals.",
+          },
+          {
+            name: "Factorial Calculator",
+            path: "/factorial-calculator/",
+            desc: "Explore recursive probability algorithms similar to Fibonacci logic.",
+          },
+          {
+            name: "Percentage Calculator",
+            path: "/percentage-calculator/",
+            desc: "Easily test geometric convergence by dividing sequential outcomes.",
           }
         ]}
-        relatedCalculators={[]}
       />
     </div>
   );

@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import choiceSeoData from "@/data/seo-content/official/random-choice-generator.json";
+
 export default function RandomChoiceGenerator() {
   const [list, setList] = useState("Apple\nBanana\nOrange\nMango\nPineapple");
   const [count, setCount] = useState("1");
@@ -63,7 +65,7 @@ export default function RandomChoiceGenerator() {
         </p>
       </div>
 
-      <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-zinc-200 mb-8">
+      <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-zinc-200 mb-8 max-w-3xl mx-auto">
         <div className="mb-6">
           <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
             Enter the list of items (one per line)
@@ -91,7 +93,7 @@ export default function RandomChoiceGenerator() {
               className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-violet-500 font-bold bg-zinc-50 text-xl"
             />
           </div>
-          <div className="p-4 border rounded-xl hover:bg-violet-50 transition-colors h-[68px] flex items-center">
+          <div className="p-4 border rounded-xl hover:bg-violet-50 transition-colors h-[68px] flex items-center bg-zinc-50">
             <label className="flex items-center gap-3 cursor-pointer">
               <input
                 type="checkbox"
@@ -100,7 +102,7 @@ export default function RandomChoiceGenerator() {
                 className="w-5 h-5 text-violet-600 rounded"
               />
               <span className="font-bold text-zinc-700">
-                Allow Duplicates (Replacement)
+                Allow Duplicates
               </span>
             </label>
           </div>
@@ -160,113 +162,14 @@ export default function RandomChoiceGenerator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Random Choice Generator"
-          whatIsIt={
-            <>
-              <p>
-                A <strong>Random Choice Generator</strong> is an completely
-                unbiased, algorithmic tool designed to pick one or more random
-                items from a custom list. You simply paste in your options, hit
-                generate, and the computer makes a mathematically randomized
-                decision for you.
-              </p>
-              <p>
-                It utilizes the <code>Math.random()</code> pseudorandom number
-                generator native to JavaScript to ensure every single item on
-                your list has an absolutely equal probability of being selected.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Random Choice Generator Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Random Choice Generator results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Imagine you have <strong>5 names</strong> but only{" "}
-                <strong>2 concert tickets</strong> to give away.
-              </p>
-              <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-violet-50 p-4 rounded-xl border border-violet-200">
-                <li>
-                  <strong>The Input:</strong> Alice, Bob, Charlie, Dave, Eve
-                  (entered one per line)
-                </li>
-                <li>
-                  <strong>The Settings:</strong> Number of picks = 2, Allow
-                  Duplicates = OFF
-                </li>
-                <li>
-                  <strong>Step 1 (First Draw):</strong> The algorithm randomly
-                  lands on index #3.
-                </li>
-                <li className="pl-4 text-zinc-600">
-                  Dave is randomly selected as Winner #1.
-                </li>
-                <li>
-                  <strong>Step 2 (Removal):</strong> Because duplicates are off,
-                  Dave is removed from the internal pool. Only 4 options remain.
-                </li>
-                <li>
-                  <strong>Step 3 (Second Draw):</strong> The algorithm lands on
-                  index #0 of the new, smaller list.
-                </li>
-                <li className="pl-4 text-zinc-600">
-                  Alice is randomly selected as Winner #2.
-                </li>
-                <li className="pt-2 mt-2 font-bold text-violet-800 border-t border-violet-200">
-                  Final Results: Dave, Alice
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-zinc-700">
-              <li>
-                <strong>Social Media Giveaways:</strong> Paste all the usernames
-                of people who commented on your post to randomly and fairly
-                select a prize winner.
-              </li>
-              <li>
-                <strong>Classroom Management:</strong> Teachers can paste their
-                class roster into the tool to randomly call on students, assign
-                group leaders, or distribute chores without any perceived bias.
-              </li>
-              <li>
-                <strong>Decision Fatigue:</strong> Cant decide what to eat for
-                dinner or which movie to watch? Put your top 5 choices into the
-                box and let the algorithm break the tie.
-              </li>
-              <li>
-                <strong>QA Testing:</strong> Software developers often need to
-                pull random elements from a database array to ensure rendering
-                works correctly under stress.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Is this truly a fair, random choice?",
-              answer:
-                "Yes, for any everyday application, this is perfectly fair. It uses a high-entropy pseudorandom number generator (PRNG). While not technically 'true random' (which relies on measuring atomic radioactive decay or atmospheric noise), the mathematical distribution of choices made here is statistically indistinguishable from a perfectly fair dice roll.",
-            },
-            {
-              question: "What does 'Allow Duplicates' mean?",
-              answer:
-                "If 'Allow Duplicates' is turned ON, drawing an item does not remove it from the pool. For example, if you are drawing 5 times from [Apple, Banana], you might get [Apple, Apple, Banana, Apple, Banana]. If it is OFF, once an item is drawn, it cannot be drawn again.",
-            },
-            {
-              question: "Is my list data saved to a server?",
-              answer:
-                "No. This tool runs 100% locally in your web browser. The list you type or paste never leaves your device, making it completely secure for private or sensitive information (like emails or full names).",
-            },
-          ]}
+          title={choiceSeoData.title}
+          whatIsIt={choiceSeoData.whatIsIt}
+          formula={choiceSeoData.formula}
+          example={choiceSeoData.example}
+          useCases={choiceSeoData.useCases}
+          faqs={choiceSeoData.faqs}
+          deepDive={choiceSeoData.deepDive}
+          glossary={choiceSeoData.glossary}
           relatedCalculators={[
             {
               name: "Online Dice Roller",
@@ -279,15 +182,16 @@ export default function RandomChoiceGenerator() {
               desc: "Generate random alphabet letters for word games and categories.",
             },
             {
-              name: "Random String Generator",
-              path: "/random-string-generator/",
-              desc: "Generate secure, completely random alphanumeric passwords.",
+              name: "Random Number Generator",
+              path: "/random-number-generator/",
+              desc: "Instantly draw a number from any custom range.",
             },
             {
               name: "Age Calculator",
               path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
-            }]}
+            }
+          ]}
         />
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import triangleSeoData from "@/data/seo-content/official/triangle-calculator.json";
 
 export default function TriangleCalculator() {
   const [a, setA] = useState("3");
@@ -254,119 +255,36 @@ export default function TriangleCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Complete Triangle Solver (Sides to Angles)"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Triangle Calculator</strong> is a comprehensive
-                geometry solver. Given only the lengths of a triangle's three
-                sides, it automatically derives the area, perimeter, and the
-                exact degrees of all three internal angles.
-              </p>
-              <p>
-                It also universally identifies the triangle's formal
-                classification (Equilateral, Isosceles, Scalene) and instantly
-                flags invalid dimensions that violate the laws of geometric
-                physics.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              A = ½bh
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Where b is base and h is vertical height.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's input the famous standard integer "3-4-5 Triangle" (Sides:{" "}
-                <strong>a=3, b=4, c=5</strong>).
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Perimeter:</strong> 3 + 4 + 5 = 12.
-                </li>
-                <li>
-                  <strong>Area:</strong> The calculator applies Heron's formula
-                  to reveal the exact area is 6.
-                </li>
-                <li>
-                  <strong>Angles:</strong> The Law of Cosines calculates the
-                  angles as 36.87°, 53.13°, and a perfect <strong>90°</strong>.
-                </li>
-                <li>
-                  <strong>Classification:</strong> Because all three sides
-                  differ and one angle is exactly 90 degrees, it is correctly
-                  identified as a <strong>Scalene (Right-Angled)</strong>{" "}
-                  triangle.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Carpentry & Construction:</strong> Ensuring a newly
-                built frame, ramp, or staircase is perfectly "square" (90
-                degrees) by verifying the diagonal cut matches a valid
-                right-triangle hypotenuse.
-              </li>
-              <li>
-                <strong>Land Surveying:</strong> Calculating the exact internal
-                angles of an uneven triangular plot of land when only the outer
-                border lengths are known.
-              </li>
-              <li>
-                <strong>Trigonometry Homework:</strong> Instantly verifying
-                manual, hand-written calculations for the Law of Sines/Cosines
-                and Heron's Formula.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Why does the calculator say my triangle is 'Invalid'?",
-              answer:
-                "Because you violated the Triangle Inequality Theorem. Stated simply: the two shortest sides of a triangle MUST add up to be longer than the longest side. If they don't, the two short sides physically couldn't connect to close the shape. (E.g., sides of 2, 2, and 100 cannot form a triangle).",
-            },
-            {
-              question: "What do Scalene, Isosceles, and Equilateral mean?",
-              answer:
-                "Scalene means all 3 sides are different lengths. Isosceles means exactly 2 sides are the same length. Equilateral means all 3 sides are perfectly equal.",
-            },
-            {
-              question:
-                "Why do the internal angles always add up to 180 degrees?",
-              answer:
-                "According to the fundamental Euclidean laws of geometry, the three interior angles of ANY flat, 2-dimensional triangle will always sum to exactly 180 degrees, without exception.",
-            },
-          ]}
+          title={triangleSeoData.title}
+          whatIsIt={triangleSeoData.whatIsIt}
+          formula={triangleSeoData.formula}
+          example={triangleSeoData.example}
+          useCases={triangleSeoData.useCases}
+          faqs={triangleSeoData.faqs}
+          deepDive={triangleSeoData.deepDive}
+          glossary={triangleSeoData.glossary}
           relatedCalculators={[
             {
-              name: "Pythagorean Calculator",
+              name: "Pythagorean Theorem Calculator",
               path: "/pythagorean-calculator/",
-              desc: "A specialized tool specifically for solving unknown lengths on Right-Angled triangles.",
+              desc: "Calculate the hypotenuse or legs of a right triangle.",
             },
             {
               name: "Area Calculator",
               path: "/area-calculator/",
-              desc: "Calculate basic triangle area the traditional way (using base and height).",
+              desc: "Calculate the exact 2D surface area for common geometric shapes.",
             },
             {
-              name: "Midpoint Calculator",
-              path: "/midpoint-calculator/",
-              desc: "Find the geographic center of a line drawn between any two geometric points.",
+              name: "Perimeter Calculator",
+              path: "/perimeter-calculator/",
+              desc: "Measure the distance around the boundary of a shape.",
             },
             {
-              name: "Percentage Calculator",
-              path: "/percentage-calculator/",
-              desc: "Easily calculate percentages, increases, and decreases.",
-            }]}
+              name: "Volume Calculator",
+              path: "/volume-calculator/",
+              desc: "Measure three-dimensional capacity and displacement.",
+            }
+          ]}
         />
       </div>
     </div>

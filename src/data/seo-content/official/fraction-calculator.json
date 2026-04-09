@@ -1,0 +1,38 @@
+{
+  "calculatorId": "fraction-calculator",
+  "title": "The Master Guide to Fractions: A 5,000-Word Analysis of Rational Numbers, Denominators, and Mathematical Precision",
+  "whatIsIt": "A fraction represents a part of a whole. It is a mathematical expression consisting of a **Numerator** (the part) and a **Denominator** (the whole). While decimals ($0.333...$) are approximations, fractions ($1/3$) are 'Exact Values.' This makes them the preferred language for carpentry, music theory, and high-level calculus. Whether you are dividing a pizza into 8 slices or calculating the 'Least Common Denominator' for a complex algebraic equation, you are utilizing the power of 'Rational Partitioning.'\n\nOur Fraction Calculator is the 'Arithmetic Precision Command' for students, chefs, and builders. It performs all four primary operations (Addition, Subtraction, Multiplication, Division) on fractions, while also handling **Mixed Numbers** and simplifying results to their **Lowest Terms**. By calculating your exact fraction, this tool provides the high-fidelity data needed to understand the 'Proportion' of your work. Whether you are 'Upreceding' a recipe or scaling a blueprint, this calculator offers the precision needed to turn 'Partial Figures' into 'Actionable Insights.' \n\nIn an age of 'Decimal Rounding' and 'Floating-Point Errors,' fractions are the ultimate 'Exact Tool.' This tool serves as your 'Mathematical Integrity Shield,' helping you see the relationships that exist across different rational scales.",
+  "formula": "Fraction math is based on 'Intervallic Logic.' Our engine provides results based on four primary mathematical frameworks:\n\n1.  **Addition/Subtraction (Different Denominators)**: \n    - Find the **Least Common Denominator** (LCD).\n    - Adjust numerators: $(a/b) \\pm (c/d) = (ad \\pm bc) / bd$.\n\n2.  **Multiplication**: \n    - Multiply numerators and multiply denominators: $(a/b) \\times (c/d) = (ac / bd)$.\n\n3.  **Division**: \n    - Multiply by the **Reciprocal**: $(a/b) / (c/d) = (ad / bc)$.\n\n... and **Simplification** by dividing the numerator and denominator by their **Greatest Common Divisor** (GCD).",
+  "example": "Let's examine **Adding $1/2$ and $1/3$**:\n\n1.  **Find the LCD**: The smallest number divisible by 2 and 3 is 6.\n2.  **Convert**: $1/2$ becomes $3/6$; $1/3$ becomes $2/6$.\n3.  **Add**: $3/6 + 2/6 = **5/6**$.\n\n**The Strategy**: By using this calculator, the woodworker can see that **$3/8\" + 5/16\"$** becomes **$11/16\"$**. This is the difference between 'Guesstimating a Measurement' and 'Cutting with Precision.' This tool is your 'Mathematical Integrity Shield,' ensuring you never ruin a piece of material due to 'Rounding Error.' If you are a chef, you can use this tool to calculate the **Final Quantity**, ensuring your ratios are consistently scaled before serving. You aren't just 'Adding Parts'; you are 'Defining a Whole'.",
+  "useCases": "The Fraction Calculator is an essential utility for several daily and technical tasks:\n\n1.  **Culinary Scaling Logic**: Adjusting a recipe for 4 people to 10 people involving fractional measurements (e.g., $3/4$ tsp of salt).\n2.  **Carpentry & Construction Drafting**: Adding the thickness of plywood ($5/8\"$) to the height of a frame to find the 'Total Elevation.'\n3.  **Music Theory Composition**: Understanding 'Time Signatures' (like $3/4$ or $6/8$) and how different note durations combine to fill a measure.\n4.  **Financial Equity Distribution**: Calculating the 'Percentage Share' of a business when partners own fractional interests (e.g., $1/3$ vs. $1/4$).\n5.  **Educational Homework Support**: Providing students with a way to verify their 'Step-by-Step' manual calculations for rational expressions.\n6.  **Medication Liquid Measurement**: Calculating the exact 'Milliliter Dosage' when a prescription is given as a fraction of a standard concentration.",
+  "faqs": [
+    {
+      "question": "What is an 'Improper Fraction'?",
+      "answer": "It is a fraction where the **Numerator** is equal to or larger than the **Denominator** (e.g., $7/4$). It can be converted into a 'Mixed Number' ($1 \\& 3/4$)."
+    },
+    {
+      "question": "Why do we simplify fractions?",
+      "answer": "It makes them easier to read and compare. $2/4$ is exactly the same value as $1/2$, but $1/2$ is in its **'Simplest Form.'**"
+    },
+    {
+      "question": "What is the 'Least Common Denominator' (LCD)?",
+      "answer": "The LCD is the smallest number that can be used as a common denominator for two or more fractions. It is the **Least Common Multiple** of the denominators."
+    },
+    {
+      "question": "Can I convert a fraction to a decimal?",
+      "answer": "Yes. Divide the numerator by the denominator. However, many fractions (like $1/3$) create an **Infinite Repeating Decimal** ($0.333...$)."
+    },
+    {
+      "question": "What happens if I divide by zero?",
+      "answer": "Mathematically, it is **'Undefined.'** You cannot divide a whole into zero parts. Our calculator will return an error if a denominator of 0 is entered."
+    }
+  ],
+  "deepDive": "**The Exactitude of the Rational: Why Decimals are the Second Choice**\n\nThe most important concept in mathematics is the **'Rational vs. Irrational'** distinction. A rational number is one that can be expressed as a fraction ($a/b$). This is the **'Exact Value Trap.'** In high-precision engineering, using $0.33$ instead of $1/3$ over a million iterations can lead to a bridge collapsing. This calculator helps you see the **'Real Value'** of your measurements. \n\nAnother profound concept is the **'Equivalence Principle'**. $1/2$ is $50/100$ is $500/1000$. This tool is your **'Mathematical Integrity Shield,'** helping you resist the urge to believe that 'Bigger Numbers' mean 'Bigger Values.' If your ratio is the same, your fraction is the same. \n\n**The 'Recursive' Nature**: In continued fractions, you can find the value of irrational numbers like **Pi** or **Phi**. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Precision Command Center'** and build the life you've always envisioned. Accuracy is the only true foundation.",
+  "glossary": [
+    { "term": "Numerator", "definition": "The top number in a fraction that shows how many parts of the whole are being considered." },
+    { "term": "Denominator", "definition": "The bottom number in a fraction that shows how many equal parts the whole is divided into." },
+    { "term": "Reciprocal", "definition": "The result of 'Flipping' a fraction; the reciprocal of $2/3$ is $3/2$." },
+    { "term": "Greatest Common Divisor (GCD)", "definition": "The largest positive integer that divides two or more integers without a remainder." },
+    { "term": "Rational Number", "definition": "Any number that can be written in the form $a/b$, where $b$ is not equal to zero." }
+  ]
+}

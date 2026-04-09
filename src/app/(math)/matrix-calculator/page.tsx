@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import matrixSeoData from "@/data/seo-content/official/matrix-calculator.json";
+
 export default function MatrixCalculator() {
   // 2x2 Matrix A
   const [a, setA] = useState([
@@ -253,7 +255,7 @@ export default function MatrixCalculator() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebApplication",
+            "@type": "SoftwareApplication",
             name: "Matrix Calculator",
             operatingSystem: "All",
             applicationCategory: "EducationalApplication",
@@ -263,95 +265,14 @@ export default function MatrixCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="2x2 Matrix Calculator"
-          whatIsIt={
-            <>
-              <p>
-                A <strong>Matrix Calculator</strong> is an advanced linearity
-                tool that performs operations on multi-dimensional grids of
-                numbers (matrices). This specific calculator handles 2x2 square
-                matrices.
-              </p>
-              <p>
-                It supports matrix addition, subtraction, matrix multiplication
-                (dot product), and finding the determinant of either matrix to
-                help students and engineers solve complex systems of linear
-                equations.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Matrix Calculator
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Matrix Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Matrix results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p className="mb-2">
-                <strong>Finding the Determinant of Matrix A:</strong>
-              </p>
-              <div className="flex gap-4 items-center bg-zinc-50 p-4 rounded-xl border border-zinc-200 overflow-x-auto">
-                <div className="font-mono text-center">
-                  <div className="border-l-2 border-r-2 border-zinc-800 px-3 py-1">
-                    5 &nbsp; 2
-                  </div>
-                  <div className="border-l-2 border-r-2 border-zinc-800 px-3 py-1 mt-1">
-                    3 &nbsp; 4
-                  </div>
-                </div>
-                <span className="font-bold text-xl text-emerald-700">→</span>
-                <div className="font-mono bg-white p-3 rounded shadow-sm">
-                  |A| = (5 × 4) - (2 × 3)
-                  <br />
-                  |A| = 20 - 6 = <strong>14</strong>
-                </div>
-              </div>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4">
-              <li>
-                <strong>Computer Graphics:</strong> Matrices are the fundamental
-                math behind rotating, scaling, and translating 2D and 3D objects
-                on a computer screen.
-              </li>
-              <li>
-                <strong>Physics & Engineering:</strong> Used to model electronic
-                circuits, quantum mechanics, and calculating forces in
-                structural design.
-              </li>
-              <li>
-                <strong>Solving Linear Equations:</strong> Cramer's Rule
-                utilizes the determinant of 2x2 matrices to efficiently solve
-                systems of two variables.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question:
-                "Does the order of multiplication matter (A × B vs B × A)?",
-              answer:
-                "Yes, absolutely! Unlike basic multiplication (where 3×4 is exactly the same as 4×3), matrix multiplication is NOT commutative. A × B will almost always yield a completely different matrix result than B × A.",
-            },
-            {
-              question: "What does a determinant of 0 mean?",
-              answer:
-                "If the determinant of a matrix equals 0, the matrix is 'singular'. This means the matrix cannot be inverted (it has no inverse), and if it represents a system of linear equations, those equations have either entirely no solution or infinite solutions.",
-            },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
+          title={matrixSeoData.title}
+          whatIsIt={matrixSeoData.whatIsIt}
+          formula={matrixSeoData.formula}
+          example={matrixSeoData.example}
+          useCases={matrixSeoData.useCases}
+          faqs={matrixSeoData.faqs}
+          deepDive={matrixSeoData.deepDive}
+          glossary={matrixSeoData.glossary}
           relatedCalculators={[
             {
               name: "Order of Operations Calculator",

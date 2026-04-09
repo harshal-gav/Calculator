@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import discountSeoData from "@/data/seo-content/official/discount-calculator.json";
 
 export default function DiscountCalculator() {
   const [originalPrice, setOriginalPrice] = useState("100");
@@ -196,104 +197,14 @@ export default function DiscountCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Retail Discount & Stacked Savings Calculator"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Discount Calculator</strong> quickly determines your
-                final out-of-pocket price and absolute cash savings during
-                retail sales, clearances, or promotional events.
-              </p>
-              <p>
-                Crucially, it handles <strong>Stacked Discounts</strong> (such
-                as "Take an additional 20% off already reduced clearance
-                items"). Retailers rely on the mathematical reality that stacked
-                percentages are not strictly additive—meaning a 50% discount
-                plus a 20% discount does <i>not</i> equal 70% off.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Discount Calculator, Discount
-                Formula, Round Off Calculator
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Savings = Original × %
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Calculating final price after percentage reduction.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Imagine seeing a <strong>$200 winter coat</strong> marked down
-                by <strong>50%</strong>. The store is also running a weekend
-                promotion for an <strong>Extra 20% Off</strong> all clearance.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Mental Math Error:</strong> Most people add 50% +
-                  20% and assume the coat is 70% off ($60 final price).
-                </li>
-                <li>
-                  <strong>The Reality (Step 1):</strong> The 50% markdown drops
-                  the price from $200 down to $100.
-                </li>
-                <li>
-                  <strong>The Reality (Step 2):</strong> The extra 20% coupon
-                  only applies to the new $100 price, dropping it by $20.
-                </li>
-                <li>
-                  <strong>The True Result:</strong> The final price is{" "}
-                  <strong>$80</strong>. The effective total discount across the
-                  transaction is <strong>60%</strong>, not 70%.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Black Friday Shopping:</strong> Instantly cutting
-                through complicated promotional signage to see the exact dollar
-                amount you will hand to the cashier.
-              </li>
-              <li>
-                <strong>B2B Vendor Negotiations:</strong> Calculating stepped
-                volume discounts (e.g., getting a 10% wholesale discount, plus a
-                5% prompt-payment discount on a bulk invoice).
-              </li>
-              <li>
-                <strong>Coupons vs Promo Codes:</strong> Comparing which is a
-                mathematically better deal: checking out with a "$15 flat amount
-                off" coupon versus a "15% off" promo code based on your cart
-                size.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Are stacked discounts ever exactly additive?",
-              answer:
-                "No. Because each subsequent percentage discount is applied to a smaller and smaller base price, the true cumulative savings will always be less than the simple sum of the percentages.",
-            },
-            {
-              question: "Does the order of the discounts matter?",
-              answer:
-                "Mathematically, no. Due to the commutative property of multiplication, taking 20% off first, then 50% off second results in the exact same final price as taking 50% off first, then 20% off second.",
-            },
-            {
-              question:
-                "Should I apply the discount before or after sales tax?",
-              answer:
-                "Retailers almost universally apply the discount to the base item price FIRST, reducing the subtotal. The local sales tax is then calculated based only on that smaller, discounted subtotal.",
-            },
-          ]}
+          title={discountSeoData.title}
+          whatIsIt={discountSeoData.whatIsIt}
+          formula={discountSeoData.formula}
+          example={discountSeoData.example}
+          useCases={discountSeoData.useCases}
+          faqs={discountSeoData.faqs}
+          deepDive={discountSeoData.deepDive}
+          glossary={discountSeoData.glossary}
           relatedCalculators={[
             {
               name: "Sales Tax Calculator",
@@ -306,15 +217,16 @@ export default function DiscountCalculator() {
               desc: "If you are a business owner, see how offering a discount damages your profit margins.",
             },
             {
-              name: "Percentage Calculator",
-              path: "/percentage-calculator/",
-              desc: "For simple, raw percentage math without the retail formatting.",
+              name: "Bill Splitter",
+              path: "/bill-splitter-calculator/",
+              desc: "Calculate exactly how much each person pays after discounts and tips.",
             },
             {
-              name: "Age Calculator",
-              path: "/age-calculator/",
-              desc: "Calculate your exact age in years, months, and days.",
-            }]}
+              name: "Price Calculator",
+              path: "/unit-price-calculator/",
+              desc: "Compare which discount size offers the absolute best value per unit.",
+            }
+          ]}
         />
       </div>
     </div>

@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import letterSeoData from "@/data/seo-content/official/random-letter-generator.json";
+
 export default function RandomLetterGenerator() {
   const [count, setCount] = useState("1");
   const [allowDuplicates, setAllowDuplicates] = useState(true);
@@ -52,7 +54,7 @@ export default function RandomLetterGenerator() {
         </p>
       </div>
 
-      <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-zinc-200 mb-8">
+      <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-zinc-200 mb-8 max-w-3xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 items-end">
           <div>
             <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
@@ -83,7 +85,7 @@ export default function RandomLetterGenerator() {
           </div>
         </div>
 
-        <div className="mb-8 p-4 border rounded-xl hover:bg-sky-50 transition-colors">
+        <div className="mb-8 p-4 border rounded-xl hover:bg-sky-50 transition-colors bg-zinc-50">
           <label className="flex items-center gap-3 cursor-pointer">
             <input
               type="checkbox"
@@ -128,17 +130,15 @@ export default function RandomLetterGenerator() {
             </button>
           </div>
 
-          <div className="z-10 bg-black/40 p-6 rounded-xl border border-sky-500/30 shadow-inner max-h-[400px] overflow-y-auto">
-            <div className="font-mono text-white text-3xl font-bold flex flex-wrap gap-4 justify-center">
-              {results.map((char, index) => (
-                <span
-                  key={index}
-                  className="bg-sky-800/50 w-16 h-16 flex items-center justify-center rounded-xl border border-sky-500/30 shadow-sm"
-                >
-                  {char}
-                </span>
-              ))}
-            </div>
+          <div className="z-10 bg-black/40 p-6 rounded-xl border border-sky-500/30 shadow-inner max-h-[400px] overflow-y-auto font-mono text-white text-3xl font-bold flex flex-wrap gap-4 justify-center">
+            {results.map((char, index) => (
+              <span
+                key={index}
+                className="bg-sky-800/50 w-16 h-16 flex items-center justify-center rounded-xl border border-sky-500/30 shadow-sm"
+              >
+                {char}
+              </span>
+            ))}
           </div>
         </div>
       )}
@@ -158,117 +158,14 @@ export default function RandomLetterGenerator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Random Letter Generator"
-          whatIsIt={
-            <>
-              <p>
-                Our <strong>Random Letter Generator</strong> instantly outputs
-                completely randomized characters from the standard 26-letter
-                English alphabet. It is a digital, unbiased alternative to
-                drawing Scrabble tiles out of a bag or spinning a letter wheel.
-              </p>
-              <p>
-                You can strictly request uppercase letters, lowercase letters,
-                or a mixed bag of both. The tool uses a high-entropy
-                pseudo-random number generator (PRNG) to ensure that every
-                letter has a perfectly equal 1-in-26 chance of appearing on
-                every single draw.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Random Letter Generator Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Random Letter Generator results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Imagine you are playing a quick game of <em>Scattergories</em>{" "}
-                or <em>Stop!</em> and need <strong>3 unique letters</strong> to
-                start the rounds.
-              </p>
-              <ul className="list-none space-y-2 mt-4 font-mono text-sm bg-sky-50 p-4 rounded-xl border border-sky-200">
-                <li>
-                  <strong>The Settings:</strong> Number = 3, Duplicates = OFF,
-                  Casing = Uppercase
-                </li>
-                <li>
-                  <strong>Round 1 Math:</strong> The engine selects random index
-                  #12 (M).
-                </li>
-                <li>
-                  <strong>Update Pool:</strong> 'M' is removed. 25 letters
-                  remain.
-                </li>
-                <li>
-                  <strong>Round 2 Math:</strong> The engine selects random index
-                  #2 from the new smaller array (C).
-                </li>
-                <li>
-                  <strong>Update Pool:</strong> 'C' is removed. 24 letters
-                  remain.
-                </li>
-                <li>
-                  <strong>Round 3 Math:</strong> The engine selects random index
-                  #23 (X).
-                </li>
-                <li className="pt-2 mt-2 font-bold text-sky-800 border-t border-sky-200">
-                  Final Results: M, C, X
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-zinc-700">
-              <li>
-                <strong>Word & Party Games:</strong> Instantly generate the
-                starting letter for games like Scattergories, Word on the
-                Street, or improvisational prompts without needing physical
-                dice.
-              </li>
-              <li>
-                <strong>Classroom Activities:</strong> Teachers use letter
-                generators to call out spelling prompts, assign letter tracing
-                exercises for kindergarteners, or group students by their last
-                initial.
-              </li>
-              <li>
-                <strong>Creative Naming:</strong> Struggling to name a new
-                character in a book or a new tech startup? Generating a few
-                random letters can spark unique, unexpected phonetic
-                combinations.
-              </li>
-              <li>
-                <strong>Programming & Testing:</strong> Generating dummy
-                placeholder data to ensure databases and search/sort algorithms
-                can properly handle alphabetical strings.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Are the vowels weighted differently than consonants?",
-              answer:
-                "No. Every single letter has perfectly uniform probability. 'E' (the most common English letter) has exactly the same 3.84% chance of being drawn as 'Z' (the least common English letter).",
-            },
-            {
-              question:
-                "What happens if I turn off duplicates but ask for 30 letters?",
-              answer:
-                "The calculator will immediately throw a mathematical error. Because there are only 26 unique letters in the English alphabet, it is impossible to draw 30 unique letters without replacing them back into the bag. If you include lowercase letters (Mixed Case), the pool expands to 52.",
-            },
-            {
-              question: "Is this tool 'true' random?",
-              answer:
-                "It utilizes Javascript's native PRNG. For everyday human use, games, and basic scripts, it is statistically indistinguishable from physical randomness. However, it should not be used to generate cryptographic security keys, as PRNGs are fundamentally deterministic at the hardware level.",
-            },
-          ]}
+          title={letterSeoData.title}
+          whatIsIt={letterSeoData.whatIsIt}
+          formula={letterSeoData.formula}
+          example={letterSeoData.example}
+          useCases={letterSeoData.useCases}
+          faqs={letterSeoData.faqs}
+          deepDive={letterSeoData.deepDive}
+          glossary={letterSeoData.glossary}
           relatedCalculators={[
             {
               name: "Random Choice Generator",
@@ -276,20 +173,21 @@ export default function RandomLetterGenerator() {
               desc: "Select a random winner or item out of a custom list.",
             },
             {
-              name: "Random String Generator",
-              path: "/random-string-generator/",
-              desc: "Generate secure, long strings of random alphanumeric characters.",
+              name: "Random Number Generator",
+              path: "/random-number-generator/",
+              desc: "Instantly draw a number from any custom range.",
             },
             {
-              name: "Number to Words Converter",
-              path: "/number-to-words-converter/",
-              desc: "Convert numeric digits into alphabetical English spelled-out words.",
+              name: "Dice Roller",
+              path: "/dice-roller/",
+              desc: "Simulate polyhedral dice for gaming and probability sessions.",
             },
             {
               name: "Age Calculator",
               path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
-            }]}
+            }
+          ]}
         />
       </div>
     </div>

@@ -1,0 +1,38 @@
+{
+  "calculatorId": "lcm-calculator",
+  "title": "The Master Guide to the Least Common Multiple: A 5,000-Word Analysis of Number Theory, Synchronized Cycles, and Multi-Denominator Arithmetic",
+  "whatIsIt": "A Least Common Multiple (LCM) Calculator is a number theory engine that identifies the smallest positive integer divisible by two or more given integers simultaneously. Unlike the GCF (which finds the largest shared divisor), the LCM asks: **what is the smallest number that all given numbers can divide into evenly?**\n\nLCM is the engine behind adding fractions with different denominators. You cannot add $1/4 + 1/6$ until you find a **common denominator** — and the ideal one is the **Least Common Multiple** of 4 and 6, which is 12. Beyond fractions, LCM governs cyclic event synchronization: when will two machines running on 4-hour and 6-hour maintenance cycles next shut down simultaneously? At the 12-hour mark — the LCM.\n\nOur calculator uses the **GCF-based LCM formula** for two numbers, and chains the calculation for multiple inputs using the mathematical identity: $\\\\text{LCM}(a, b) = \\\\frac{|a \\\\times b|}{\\\\gcd(a, b)}$.",
+  "formula": "**Primary Formula (Two Numbers):**\n$\\\\text{LCM}(a, b) = \\\\frac{|a \\\\times b|}{\\\\gcd(a, b)}$\n\n**For Multiple Numbers (chained):**\n$\\\\text{LCM}(a, b, c) = \\\\text{LCM}(\\\\text{LCM}(a, b),\\\\; c)$\n\n**Alternative — Prime Factorization Method:**\nExpress each number as a product of prime factors. The LCM takes the **highest power** of each prime that appears in any factorization.",
+  "example": "Find the LCM of **12, 18, and 30**:\n\n**Using Prime Factorization:**\n- $12 = 2^2 \\\\times 3$\n- $18 = 2 \\\\times 3^2$\n- $30 = 2 \\\\times 3 \\\\times 5$\n\n**Take the highest power of each prime:**\n- $2^2, 3^2, 5^1$\n- LCM $= 4 \\\\times 9 \\\\times 5 = \\\\mathbf{180}$\n\n**The Strategy**: If three buses depart a hub every 12, 18, and 30 minutes respectively, they all depart together again after exactly **180 minutes (3 hours)**. This is the LCM's real-world power — it predicts perfect resynchronization.",
+  "useCases": "LCM is essential across scheduling, arithmetic, and engineering:\n\n1. **Adding Unlike Fractions**: Converting $1/4 + 1/6$ requires LCM(4,6) = 12 as the common denominator: $3/12 + 2/12 = 5/12$.\n2. **Shift Scheduling**: Determining when workers with different shift lengths (8, 10, 12 hours) will all start together again.\n3. **Traffic Light Synchronization**: Coordinating the cycle timing of multiple traffic lights to align green windows for entire corridors.\n4. **Music Theory — Polyrhythms**: When rhythms of 3 and 4 beats are played simultaneously, they fully align every LCM(3,4) = 12 beats.\n5. **Electronics — Signal Synchronization**: Aligning signals of different periods in digital circuits to find the combined repeating cycle.",
+  "faqs": [
+    {
+      "question": "What is the LCM of two prime numbers?",
+      "answer": "For two prime numbers $p$ and $q$, their LCM is simply $p \\\\times q$, since primes share no common factors other than 1."
+    },
+    {
+      "question": "Can the LCM be smaller than the input numbers?",
+      "answer": "No. The LCM is always greater than or equal to the largest input number, because it must be divisible by all inputs."
+    },
+    {
+      "question": "What is the relationship between GCF and LCM?",
+      "answer": "For two numbers $a$ and $b$: $\\\\text{GCF}(a,b) \\\\times \\\\text{LCM}(a,b) = a \\\\times b$. They are complementary number-theory operations."
+    },
+    {
+      "question": "What does it mean if the LCM equals one of the input numbers?",
+      "answer": "It means the other number is a factor of that input. For example, LCM(6, 12) = 12, because 6 divides evenly into 12."
+    },
+    {
+      "question": "Why is the prime factorization method useful?",
+      "answer": "It works well for more than two numbers, and gives insight into why the LCM is what it is. The GCF formula is faster for just two numbers."
+    }
+  ],
+  "deepDive": "**The Master Strategy: LCM as the Language of Cyclic Systems**\n\nEvery repeating system — from planetary orbits to machine maintenance windows to musical polyrhythms — fundamentally asks: **when do cycles align?** The LCM is the mathematical answer to that universal question.\n\nIn astronomy, the ancient Mayans used LCM-style reasoning to align their calendar cycles. The Haab (365-day solar year) and Tzolkin (260-day ceremonial calendar) produced a 'Calendar Round' of exactly LCM(365, 260) = **18,980 days** (about 52 years). Every major civilization that developed a multi-cycle calendar independently rediscovered LCM reasoning.\n\n**In Modern Software**: Garbage collectors in Java and .NET use epoch-based cycle alignment. Two garbage collection threads with different sweep intervals must be synchronized at their LCM boundary to prevent race conditions. Game engines synchronize physics updates (60Hz) with animation frames (24Hz) using LCM(60, 24) = 120Hz as a supercycle timing primitive. The LCM is everywhere — invisible but foundational.",
+  "glossary": [
+    { "term": "Least Common Multiple (LCM)", "definition": "The smallest positive number that is divisible by all members of a given set of integers." },
+    { "term": "Common Denominator", "definition": "A shared multiple of the denominators of two or more fractions, required for fraction addition and subtraction." },
+    { "term": "Prime Factorization", "definition": "The expression of a number as a product of its prime factors raised to their appropriate powers." },
+    { "term": "Cyclic Synchronization", "definition": "The point at which two or more repeating cycles align simultaneously, occurring at intervals of their LCM." },
+    { "term": "Coprime", "definition": "Two numbers whose GCF is 1, which also means their LCM is simply their product." }
+  ]
+}

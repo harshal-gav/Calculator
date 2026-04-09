@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import savingsSeoData from "@/data/seo-content/official/savings-goal-calculator.json";
 
 export default function SavingsGoalCalculator() {
   const [goalAmount, setGoalAmount] = useState("50000");
@@ -144,115 +145,14 @@ export default function SavingsGoalCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Savings Goal Calculator: Reverse-Engineering Your Path to Financial Milestones"
-        whatIsIt={
-          <div className="space-y-6">
-            <p className="text-xl font-medium leading-relaxed">
-              A <strong>Savings Goal Calculator</strong> is a strategic financial modeling tool that performs "Inverse Compound Interest" calculations. While a standard savings calculator tells you how much your money will grow, a goal planner works backward from a desired future sum (e.g., a $50,000 house down payment) to determine precisely how much capital you must deploy today and every month hereafter to hit that target on schedule.
-            </p>
-            <p className="leading-relaxed">
-              This tool is essential for <strong>intentional wealth building</strong>. Most savers fall into the "residual saving" trap—saving only what is left over at the end of the month. Successful financial planning requires a "pay yourself first" mentality, where the savings goal becomes a non-negotiable monthly expense. By quantifying the exact dollar amount needed, you can automate your progress and remove the psychological friction of deciding how much to save.
-            </p>
-            <p className="leading-relaxed">
-              Whether you are planning for a wedding, a child's college tuition, a dream vacation, or a 6-month emergency fund, this calculator provides the mathematical clarity needed to turn a vague desire into a concrete reality. It uniquely accounts for the "Interest Discount"—the portion of your goal that is paid for by the bank through compounding interest rather than your own paycheck.
-            </p>
-          </div>
-        }
-        comparisonTable={{
-          title: "The Impact of Time & Interest on a $100,000 Goal",
-          headers: ["Strategy", "Timeframe", "APY", "Monthly Deposit", "You Contribute", "Market Interest Pays"],
-          rows: [
-            ["Aggressive Early", "5 Years", "5.0%", "$1,470", "$88,200", "$11,800"],
-            ["Standard Pacing", "10 Years", "5.0%", "$644", "$77,280", "$22,720"],
-            ["Long-term Wealth", "20 Years", "5.0%", "$243", "$58,320", "$41,680"],
-            ["Zero-Interest (Cash)", "10 Years", "0.0%", "$833", "$100,000", "$0 (Inflation Loss)"],
-          ]
-        }}
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Savings Goal Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Savings Goal results.
-            </p>
-          </>
-        }
-          example={
-          <div className="bg-slate-900 text-white p-10 md:p-14 rounded-[3rem] shadow-2xl relative overflow-hidden">
-             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
-             <h5 className="font-black text-amber-400 uppercase tracking-widest text-xs mb-10">Case Study: The First-Home Down Payment</h5>
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div className="space-y-4">
-                  <span className="block text-[10px] text-slate-500 font-bold uppercase tracking-widest">The Target</span>
-                  <div className="text-3xl font-black">$40,000 Cash</div>
-                  <p className="text-xs text-slate-400">Timeline: 36 Months <br/> Rate: 4.5% APY</p>
-                </div>
-                <div className="space-y-4">
-                  <span className="block text-[10px] text-slate-500 font-bold uppercase tracking-widest">The Requirement</span>
-                  <div className="text-3xl font-black text-amber-400">$1,040/mo</div>
-                  <p className="text-xs text-slate-400">Total Contribution: $37,440</p>
-                </div>
-                <div className="space-y-4">
-                  <span className="block text-[10px] text-slate-500 font-bold uppercase tracking-widest">The Interest Win</span>
-                  <div className="text-3xl font-black text-emerald-400">$2,560 Saved</div>
-                  <p className="text-xs text-slate-400 italic">"The bank paid for 6% of your house for you."</p>
-                </div>
-             </div>
-          </div>
-        }
-        useCases={
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-8 bg-white border border-neutral-100 rounded-[2rem] shadow-sm hover:translate-y-[-4px] transition-transform">
-               <h5 className="font-black text-slate-900 text-[10px] uppercase mb-3 tracking-widest">House Down Payment</h5>
-               <p className="text-xs text-slate-500 leading-relaxed">Determine how much of your "home fund" can be generated through interest rather than just your salary.</p>
-            </div>
-            <div className="p-8 bg-white border border-neutral-100 rounded-[2rem] shadow-sm hover:translate-y-[-4px] transition-transform">
-               <h5 className="font-black text-slate-900 text-[10px] uppercase mb-3 tracking-widest">Dream Vacation</h5>
-               <p className="text-xs text-slate-500 leading-relaxed">Break a $5,000 anniversary trip into 12 small installments instead of one large credit card bill.</p>
-            </div>
-            <div className="p-8 bg-white border border-neutral-100 rounded-[2rem] shadow-sm hover:translate-y-[-4px] transition-transform">
-               <h5 className="font-black text-slate-900 text-[10px] uppercase mb-3 tracking-widest">Engagement Rings</h5>
-               <p className="text-xs text-slate-500 leading-relaxed">Reverse-engineer the timeline for a luxury purchase to avoid high-interest jewelry store financing.</p>
-            </div>
-            <div className="p-8 bg-white border border-neutral-100 rounded-[2rem] shadow-sm hover:translate-y-[-4px] transition-transform">
-               <h5 className="font-black text-slate-900 text-[10px] uppercase mb-3 tracking-widest">Emergency Resilience</h5>
-               <p className="text-xs text-slate-500 leading-relaxed">See how long it truly takes to hit a "Peace of Mind" number—typically 6 months of expenses.</p>
-            </div>
-          </div>
-        }
-        glossary={[
-          { term: "APY (Annual Percentage Yield)", definition: "The real rate of return earned on a savings deposit, taking into account the effect of compounding interest over a year." },
-          { term: "Sinking Fund", definition: "A strategic fund formed by setting aside money periodically for a specific future purchase or debt repayment." },
-          { term: "Compounding Frequency", definition: "How often interest is added to the principal balance (e.g., daily, monthly) to earn interest on itself." },
-          { term: "Time Horizon", definition: "The total length of time you plan to save before you need to spend the money." },
-          { term: "Principal", definition: "The original sum of money you have saved, separate from any interest earned." },
-          { term: "Market Discount", definition: "A conceptual term for the portion of your goal that is covered by investment or interest growth rather than your contributions." },
-          { term: "Emergency Buffer", definition: "Liquidity held specifically to cover unexpected life events (e.g., car repairs, job loss)." },
-          { term: "FDIC Insurance", definition: "US Government protection for bank deposits up to $250,000 per depositor; essential for goal safety." },
-        ]}
-        faqs={[
-          {
-            question: "Is it better to pay off debt or save for a goal?",
-            answer: "Mathematically, if your debt interest rate (e.g., 20% credit card) is higher than your savings rate (e.g., 4.5% APY), you should pay off the debt first. However, having a $2,000 'starter emergency fund' is often recommended before aggressive debt payoff."
-          },
-          {
-            question: "Where should I keep my goal savings?",
-            answer: "For timelines under 3 years, keep the money in a High-Yield Savings Account (HYSA) or a Certificate of Deposit (CD). For timelines over 5-10 years, you might consider a low-cost index fund, though this introduces risk of losing principal."
-          },
-          {
-            question: "How do I account for taxes on my interest?",
-            answer: "Interest earned in a HYSA is taxed as ordinary income. If you are in a 22% tax bracket, your 'real' APY is 22% lower than the advertised rate. Our calculator shows pre-tax results; adjust your target up by 15-20% if accuracy is critical."
-          },
-          {
-            question: "Can I hit my goal faster with a CD?",
-            answer: "A CD (Certificate of Deposit) often offers a slightly higher rate than a HYSA but locks your money away for a fixed term. Use a CD if you have a very strict deadline and want to lock in a guaranteed interest rate."
-          },
-          {
-            question: "What if I can't afford the required monthly deposit?",
-            answer: "You have three levers: 1) Increase the timeframe (save for longer), 2) Decrease the goal amount (buy something cheaper), or 3) Find a higher yield (though this usually increases risk)."
-          }
-        ]}
+        title={savingsSeoData.title}
+        whatIsIt={savingsSeoData.whatIsIt}
+        formula={savingsSeoData.formula}
+        example={savingsSeoData.example}
+        useCases={savingsSeoData.useCases}
+        faqs={savingsSeoData.faqs}
+        deepDive={savingsSeoData.deepDive}
+        glossary={savingsSeoData.glossary}
         relatedCalculators={[
           {
             name: "Compound Interest Calculator",

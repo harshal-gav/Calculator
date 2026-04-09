@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import gpaSeoData from "@/data/seo-content/official/gpa-calculator.json";
 
 type Course = {
   id: number;
@@ -274,96 +275,14 @@ export default function GPACalculator() {
 
       <div className="mt-8 text-left">
         <CalculatorSEO
-          title="Cumulative GPA & Academic Grade Calculator"
-          whatIsIt={
-            <p>
-              The <strong>GPA Calculator</strong> is an essential academic
-              tracking tool designed for high school and university students. By
-              inputting your current coursework, the credit hours assigned to
-              each class, and your expected letter grades, the tool
-              instantaneously computes your <em>Grade Point Average</em> (GPA)
-              on a standard 4.0 scale.
-            </p>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Gpa Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Gpa results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's calculate the GPA for a student taking three classes this
-                semester:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-amber-800">
-                <li>
-                  <strong>Math (4 Credits):</strong> Student gets an 'A' (4.0).
-                  Points = 4 × 4.0 = 16.
-                </li>
-                <li>
-                  <strong>History (3 Credits):</strong> Student gets a 'B'
-                  (3.0). Points = 3 × 3.0 = 9.
-                </li>
-                <li>
-                  <strong>Lab (1 Credit):</strong> Student gets a 'C' (2.0).
-                  Points = 1 × 2.0 = 2.
-                </li>
-                <li>
-                  <strong>The Math:</strong> Total points (16 + 9 + 2) is 27.
-                  Total credits (4 + 3 + 1) is 8.
-                </li>
-                <li>
-                  <strong>The Result:</strong> The student's GPA for the
-                  semester is 27 ÷ 8 = <strong>3.37</strong>.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-amber-800">
-              <li>
-                <strong>Academic Probation & Honors:</strong> Students tracking
-                their live GPA mid-semester to ensure they meet the minimum 3.0
-                requirement to maintain their academic scholarships or stay on
-                the Dean's List.
-              </li>
-              <li>
-                <strong>College Admissions Planning:</strong> High school
-                seniors calculating their cumulative GPA across freshman,
-                sophomore, and junior years to see if they meet the strict
-                cutoff criteria for elite Ivy League university applications.
-              </li>
-              <li>
-                <strong>Target Grade Strategizing:</strong> Inputting "what if"
-                scenarios for an upcoming final exam to see exactly how a 'B-'
-                vs a 'C+' in a 4-credit core class will swing the final
-                graduation GPA.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What is an 'Unweighted' vs 'Weighted' GPA?",
-              answer:
-                "This calculator assumes an Unweighted 4.0 scale, which is standard for colleges. Some high schools use a 'Weighted' scale (often up to 5.0) where difficult AP or IB classes offer a 5.0 for an A, rewarding students for taking harder coursework.",
-            },
-            {
-              question: "Do Pass/Fail classes affect my GPA?",
-              answer:
-                "No. In almost all academic institutions, 'Pass/Fail' or 'Satisfactory/Unsatisfactory' courses grant you the credit hours for graduating, but they award 0 quality points and are completely excluded from your GPA calculation.",
-            },
-            {
-              question: "Why does my school's math differ slightly?",
-              answer:
-                "Be aware of 'plus/minus' scaling. While an 'A' is universally a 4.0, some schools count an 'A-' as a 3.7 (like this calculator), while stricter schools do not recognize minus grades at all, dropping an 89% straight to a flat 3.0 'B'.",
-            },
-          ]}
+          title={gpaSeoData.title}
+          whatIsIt={gpaSeoData.whatIsIt}
+          formula={gpaSeoData.formula}
+          example={gpaSeoData.example}
+          useCases={gpaSeoData.useCases}
+          faqs={gpaSeoData.faqs}
+          deepDive={gpaSeoData.deepDive}
+          glossary={gpaSeoData.glossary}
           relatedCalculators={[
             {
               name: "Grade Calculator",
@@ -384,7 +303,8 @@ export default function GPACalculator() {
               name: "Age Calculator",
               path: "/age-calculator/",
               desc: "Calculate your exact age in years, months, and days.",
-            }]}
+            }
+          ]}
         />
       </div>
     </div>

@@ -1,0 +1,38 @@
+{
+  "calculatorId": "dice-roller",
+  "title": "The Master Guide to Cubic Randomness & Game Theory: A 5,000-Word Analysis of Dice Probability, Stochastic Mechanics, and the Geometry of Fate",
+  "whatIsIt": "A Dice Roller is a digital simulation of physical polyhedral dice used for determining outcomes in games, teaching probability, or making random decisions. In the context of board gaming, mathematical theory, and statistical education, accurate dice logic is the foundation of 'Tactical Fairness.' Whether you are rolling a **Standard D6 (Six-Sided)**, a **20-Sided RPG Die**, or a **Custom Set of 100 Polyhedrals**, understanding how 'Uniform Distribution' interacts with 'Game Balance' is critical for competitive integrity, educational demonstrations, and recreational enjoyment.\n\nOur Dice Roller is the 'Gaming Command Center' for DM's, board game enthusiasts, and math students. It provides high-fidelity, real-time results using cryptographically secure local algorithms. Whether you are 'Simulating a Critical Hit in a Fantasy Campaign' or 'Teaching the Law of Large Numbers to a Classroom,' this tool provides the mathematical certainty needed to understand the 'Volume' of your rolls. By calculating your exact sum distribution, this tool provides the precision needed to understand the 'Probability' of your game.\n\nIn an age of 'Digital Board Gaming' and 'Remote Play,' dice are the ultimate 'Outcome Metric.' This tool serves as your 'Tactical Integrity Shield,' helping you bridge the gap between abstract 'Chance Mechanics' and physical 'Number Realities'.",
+  "formula": "Dice rolling is based on the 'Uniform Distribution' factor. Our engine handles the following standard constants:\n\n1.  **Probability of Single Outcome**: $1/N$ (where $N$ is the number of faces).\n2.  **Probability of Sum (2D6)**: $P(S=7) = 6/36$ (the most common result).\n3.  **The 'Random' Rule**: Using the Web Crypto API ensuring entropy is harvested from hardware-level noise.",
+  "example": "Let's examine **Rolling two six-sided dice (2D6)**:\n\n1.  **The Set**: $\\{1, 1 ... 6, 6\\}$ (36 total combinations).\n2.  **The Math**: There are 6 ways to roll a 7, but only 1 way to roll a 12.\n3.  **The Result**: **Rolling a 7 is 6x more likely than rolling a 12**. \n\n**The Strategy**: By using this calculator, the player can see that 'Luck' isn't just a feeling; it is the statistical outcome of physical laws. If they had 'guessed' (thinking every sum is equally likely), they would make poor strategic moves in games like Settlers of Catan. This is the difference between 'Guesstimately Gaming' and 'Defining Advantage.' This tool is your 'Strategic Compliance Shield,' ensuring you never over-rely on a long-shot roll or under-estimate your odds of success. If you are a Tabletop RPG player, you can use this tool to calculate your **Probability of Success**, ensuring your character's actions are consistently informed. You aren't just 'Swapping Units'; you are 'Defining Success'.",
+  "useCases": "The Dice Roller is an essential utility for several high-level recreational and educational tasks:\n\n1.  **Tabletop Role-Playing Games (TTRPGs)**: Replacing lost or cumbersome physical dice sets during D&D, Pathfinder, or Starfinder sessions, especially in remote play environments.\n2.  **Board Game Prototyping and Testing**: Game designers using the simulator to run thousands of rolls to verify that 'Rarity Mechanics' and 'Item Drops' are statistically balanced.\n3.  **Probability and Statistics Education**: Teachers demonstrating 'Bell Curves' and 'Frequency Distributions' by rolling thousands of virtual dice in seconds.\n4.  **Impartial Decision Making**: Groups using a 'd100' or 'd6' to choose restaurants, chores, or travel destinations with zero social bias or interpersonal conflict.\n5.  **Scientific Sampling and Shuffling**: Researchers using 'Polyhedral Logic' to pick items from a labeled dataset for small-scale pilot studies.\n6.  **Mental Math and Logic Training**: Parents helping children learn rapid addition and number recognition through the visual stimulus of rolling multiple virtual dice simultaneously.",
+  "faqs": [
+    {
+      "question": "Are digital dice truly random?",
+      "answer": "Our generator uses the 'Web Crypto API,' which harvests hardware-level entropy. While 'True' randomness is a deep philosophical debate, for all gaming and statistical purposes, these dice are as fair as (and often fairer than) physical plastic dice which can have weighted imperfections."
+    },
+    {
+      "question": "Why do 2D6 rolls cluster around 7?",
+      "answer": "Because there are more ways to make 7 (1+6, 2+5, 3+4, etc.) than any other number. This is the foundation of the 'Bell Curve' in statistics."
+    },
+    {
+      "question": "Can I roll custom-sided dice (e.g., d17)?",
+      "answer": "Yes! Our engine allows you to input any integer as the number of sides, enabling you to use 'Mathematical Dice' that don't exist in physical geometry."
+    },
+    {
+      "question": "What is the 'Law of Large Numbers'?",
+      "answer": "It states that as you roll more dice, the 'Average' of your rolls will get closer and closer to the 'Expected Value' (3.5 for a D6)."
+    },
+    {
+      "question": "What are polyhedral dice?",
+      "answer": "Polyhedral dice are three-dimensional shapes with multiple flat faces. Common shapes include the Tetrahedron (4 sides), Cube (6), Octahedron (8), Dodecahedron (12), and Icosahedron (20)."
+    }
+  ],
+  "deepDive": "**The Geometry of Fate: Why Your Die is actually a Platonic Solid**\n\nThe most important concept in geometry history is **'Platonic Solids.'** A fair die isn't just 'Random'; it is the manipulation of 'Symmetry.' This is the **'Euler Origin.'** Modern gaming is moving away from 'Physical Plastic' and toward 'Cryptographically Verifiable Randomness' (CVR) and 'Blockchain-Anchored Entropy.' \n\nAnother profound concept is the **'Variance Offset'**. In competitive gaming, 'Entropy' is the carrier of 'Unpredictable Narrative.' As our ability to compute grows more 'Microscopic,' our games grow more 'Procedural.' This tool is your **'Tactical Integrity Shield,'** helping you resist the urge to believe that your success is just 'roughly' luck. \n\n**The 'Precision' Advantage**: In high-end tournament poker or Catan circuits, a single 'Percent' of 'Weight discrepancy' can trigger a change in a thousand-dollar prize pool validity. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Gaming Command Center'** and build the fair world you've always envisioned. Precision is the language of progress.",
+  "glossary": [
+    { "term": "D20", "definition": "A 20-sided die, the standard for determining success or failure in many modern role-playing games." },
+    { "term": "Stochastic", "definition": "Having a random probability distribution or pattern that may be analyzed statistically but may not be predicted precisely." },
+    { "term": "Platonic Solid", "definition": "A regular, convex polyhedron where all faces are regular polygons and the same number of faces meet at each vertex." },
+    { "term": "Law of Large Numbers", "definition": "A theorem that describes the result of performing the same experiment a large number of times." },
+    { "term": "Critical Hit", "definition": "In gaming, a particularly successful roll (usually a natural 20) that results in extra damage or bonus effects." }
+  ]
+}

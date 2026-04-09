@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import sdSeoData from "@/data/seo-content/official/standard-deviation-calculator.json";
 
 export default function StandardDeviationCalculator() {
   const [dataInput, setDataInput] = useState("12, 15, 18, 20, 25");
@@ -160,67 +161,36 @@ export default function StandardDeviationCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Standard Deviation & Variance Calculator"
-        whatIsIt={
-          <>
-            <p>
-              <strong>Standard Deviation</strong> is the definitive statistical measure of the amount of variation or dispersion within a set of values. 
-            </p>
-            <p className="mt-2">
-              A low standard deviation indicates that the values tend to be tightly clustered very close to the mean (average), while a high standard deviation indicates that the values are spread out over a much wider range (high volatility).
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              σ = √[Σ(x - μ)² / N]
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Measuring the amount of variation or dispersion.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p><strong>Finance & Volatility:</strong> Standard Deviation is completely synonymous with "Volatility" in stock markets. If a mutual fund has an average return of 8% with a Standard Deviation of 15%, you mathematically know there is a ~68% probability (1 standard deviation on a bell curve) that next year's return will swing anywhere between -7% and +23%.</p>
-          </>
-        }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Quality Control:</strong> Manufacturers use standard deviation on assembly lines to ensure screws aren't being cut too thick or too thin compared to the exact target mean.</li></ul>}
-        faqs={[
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            },
-            {
-              question: "Can I use this on my mobile device?",
-              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
-            }]}
+        title={sdSeoData.title}
+        whatIsIt={sdSeoData.whatIsIt}
+        formula={sdSeoData.formula}
+        example={sdSeoData.example}
+        useCases={sdSeoData.useCases}
+        faqs={sdSeoData.faqs}
+        deepDive={sdSeoData.deepDive}
+        glossary={sdSeoData.glossary}
         relatedCalculators={[
-            {
-              name: "Percentage Calculator",
-              path: "/percentage-calculator/",
-              desc: "Easily calculate percentages, increases, and decreases.",
-            },
-            {
-              name: "Scientific Calculator",
-              path: "/scientific-calculator/",
-              desc: "Perform advanced mathematical operations and functions.",
-            },
-            {
-              name: "Quadratic Formula Calculator",
-              path: "/quadratic-formula-calculator/",
-              desc: "Solve quadratic equations instantly.",
-            },
-            {
-              name: "Matrix Calculator",
-              path: "/matrix-calculator/",
-              desc: "Perform addition, subtraction, and multiplication on matrices.",
-            }]}
+          {
+            name: "Average Calculator",
+            path: "/average-calculator/",
+            desc: "Calculate the arithmetic mean, median, and mode for a dataset.",
+          },
+          {
+            name: "Percentage Calculator",
+            path: "/percentage-calculator/",
+            desc: "Easily calculate percentages, increases, and decreases.",
+          },
+          {
+            name: "Scientific Notation Converter",
+            path: "/scientific-notation-converter/",
+            desc: "Convert numbers into exponential scientific representation.",
+          },
+          {
+            name: "Fraction Calculator",
+            path: "/fraction-calculator/",
+            desc: "Add, subtract, multiply, and divide rational fractions.",
+          }
+        ]}
       />
     </div>
   );

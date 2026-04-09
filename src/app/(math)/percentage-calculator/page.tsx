@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import percentageSeoData from "@/data/seo-content/official/percentage-calculator.json";
 
 export default function PercentageCalculator() {
   const [whatIsVal1, setWhatIsVal1] = useState("");
@@ -207,108 +208,15 @@ export default function PercentageCalculator() {
           }),
         }}
       />
-
       <CalculatorSEO
-        title="Percentage Calculator"
-        whatIsIt={
-          <>
-            <p>
-              Our <strong>Percentage Calculator</strong> simplifies the three
-              most common mathematical percentage problems people face every
-              day: finding a percentage of a number, finding what percentage one
-              number is of another, and calculating the percentage increase or
-              decrease between two values.
-            </p>
-            <p>
-              Instead of trying to remember which number to divide and where to
-              move the decimal point, this tool instantly processes your raw
-              numbers and returns mathematically perfect percentages.
-            </p>
-
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related Terms:</strong> Percentage Calculator, Percent Off
-              Calculator, Weight Percentile Calculator, Decimal To Percent
-              Calculator, Height Percentile Calculator, Percent Change, Percent
-              Change Formula, Percent Difference, Percent Difference Formula,
-              Percent Increase
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              P = (V / Total) × 100
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Expressing a number as a fraction of 100.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>
-              Let's calculate a <strong>Percentage Increase</strong>. You bought
-              a stock for <strong>$50</strong>, and it is now worth{" "}
-              <strong>$65</strong>.
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
-              <li>
-                <strong>Formula:</strong> (|New - Old| / |Old|) * 100
-              </li>
-              <li>
-                <strong>Step 1 (Find the difference):</strong> $65 - $50 = $15
-              </li>
-              <li>
-                <strong>Step 2 (Divide by original):</strong> $15 / $50 = 0.30
-              </li>
-              <li>
-                <strong>Step 3 (Multiply by 100):</strong> 0.30 * 100 ={" "}
-                <strong>30% Increase</strong>
-              </li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Retail Discounts:</strong> Quickly figuring out the final
-              price of a $120 jacket when the store advertises "35% off all
-              items".
-            </li>
-            <li>
-              <strong>Test Scores:</strong> A student calculating their final
-              grade by figuring out what percentage 43 correct answers is out of
-              55 total questions.
-            </li>
-            <li>
-              <strong>Business Metrics:</strong> Determining the
-              month-over-month percentage growth in website traffic or gross
-              sales.
-            </li>
-            <li>
-              <strong>Tipping:</strong> Calculating exactly what a 20% gratuity
-              looks like on a $84.50 restaurant bill.
-            </li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "How do I calculate a percentage in my head?",
-            answer:
-              "The easiest trick is finding 10% first. To find 10% of any number, just move the decimal point one place to the left (10% of 450 is 45). Once you have 10%, you can double it to find 20%, or cut it in half to find 5%.",
-          },
-          {
-            question: "Is 'X% of Y' the same as 'Y% of X'?",
-            answer:
-              "Yes! This is a fascinating mathematical property. 8% of 25 is exactly the same as 25% of 8. Since 25% is just one-quarter, and a quarter of 8 is 2, then 8% of 25 must also be 2.",
-          },
-          {
-            question:
-              "Why do I need to divide by the original number for percentage change?",
-            answer:
-              "Percentage change always measures growth or decay relative to your starting point. Going from $10 to $20 is a $10 increase, which is a massive 100% gain. Going from $1000 to $1010 is also a $10 increase, but relative to your starting point, it's only a tiny 1% gain. You must divide by the specific starting value.",
-          },
-        ]}
+        title={percentageSeoData.title}
+        whatIsIt={percentageSeoData.whatIsIt}
+        formula={percentageSeoData.formula}
+        example={percentageSeoData.example}
+        useCases={percentageSeoData.useCases}
+        faqs={percentageSeoData.faqs}
+        deepDive={percentageSeoData.deepDive}
+        glossary={percentageSeoData.glossary}
         relatedCalculators={[
           {
             name: "Fraction Calculator",
@@ -325,12 +233,14 @@ export default function PercentageCalculator() {
             path: "/sales-tax-calculator/",
             desc: "Calculate total costs by adding local percentage sales tax.",
           },
-            {
-              name: "Scientific Calculator",
-              path: "/scientific-calculator/",
-              desc: "Perform advanced mathematical operations and functions.",
-            }]}
+          {
+            name: "Scientific Calculator",
+            path: "/scientific-calculator/",
+            desc: "Perform advanced mathematical operations and functions.",
+          },
+        ]}
       />
+
     </div>
   );
 }

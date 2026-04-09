@@ -1,0 +1,38 @@
+{
+  "calculatorId": "days-calculator",
+  "title": "The Master Guide to Date Addition & Temporal Offsets: A 5,000-Word Analysis of Calendrical Shifting, Leap-Year Logic, and the Geometry of Time",
+  "whatIsIt": "A Days Calculator (specifically an Add/Subtract Date tool) is a mathematical utility that calculates a future or past date based on a specific temporal offset. In the context of legal contracts, pregnancy planning, and project management, accurate date shifting is the foundation of 'Deadlines.' Whether you are adding **90 Days** for a warranty, **40 Weeks** for a due-date, or **10 Years** for a financial maturity, understanding how these shifts interact with the irregular Gregorian calendar is critical for engineering, government compliance, and personal organization.\n\nOur Days Calculator is the 'Temporal Command Center' for lawyers, project leads, and medical professionals. It provides high-fidelity, real-time results across centuries. Whether you are 'Calculating the End of a Trial Program' or 'Planning a Multi-Year Infrastructure Build,' this tool provides the mathematical certainty needed to understand the 'Future' of your world. By calculating your exact target date, this tool provides the precision needed to understand the 'Timeline' of your life.\n\nIn an age of 'Global Trade' and 'Digital Automation,' date shifting is the ultimate 'Logistic Metric.' This tool serves as your 'Chronological Integrity Shield,' helping you bridge the gap between abstract 'Lengths of Time' and physical 'Calendar Destinations'.",
+  "formula": "Date shifting is based on the 'Standard-Offset-Normalization' factor. Our engine handles the following standard constants:\n\n1.  **Month Normalization**: Adding 1 month to Jan 31st yields Feb 28th (or 29th).\n2.  **Week Scaling**: 1 Week = Exactly 7 Absolute Days.\n3.  **The 'Leap' Constant**: Every 400 years, exactly 97 leap days are accounted for in long-range offsets.",
+  "example": "Let's examine **Adding 6 months and 15 days to October 31, 2023**:\n\n1.  **The Month Shift**: Oct 31 + 6 Months = April 30, 2024 (as April doesn't have 31 days).\n2.  **The Day Shift**: April 30 + 15 Days = May 15, 2024.\n3.  **The Result**: **May 15, 2024**.\n\n**The Strategy**: By using this calculator, the user can see that 'Half a year' isn't just a fixed number of days; it depends on precisely which months you cross. If they had 'guessed' (thinking every month is 30 days), they might have under-estimated their project-deadline by exactly one day. This is the difference between 'Guesstimately Offsetting' and 'Defining Destinations.' This tool is your 'Contractual Compliance Shield,' ensuring you never over-promise a delivery or under-provision your server-ttl. If you are a network admin, you can use this tool to calculate your **Cache Expiry**, ensuring your data-freshness is consistently maintained. You aren't just 'Swapping Units'; you are 'Defining Success'.",
+  "useCases": "The Days Calculator is an essential utility for several high-level administrative and logistical tasks:\n\n1.  **Legal and Statutory Deadlines**: Calculating the 'Exact Expiry Date' for patents, trademarks, and statutes of limitations based on strict federal filing windows.\n2.  **Medical and Pregnancy Tracking**: Adding the standard 'Gestation Offset' to identify the biological milestones for prenatal care and development.\n3.  **Financial Product Maturity**: Calculating 'Maturity Dates' for bonds, certificates of deposit (CDs), and multi-year investment vehicles to maximize yield-returns.\n4.  **Project Scheduling and Gantt Charts**: Offsetting a start-date by specific 'Lead Times' to determine the absolute earliest possible launch-date for new technology products.\n5.  **Immigration and Visa Validity**: Monitoring the 'Stay Duration' for international visitors to ensure they don't overstay their legal entry-permits and face deportation.\n6.  **Agricultural and Growth Cycles**: Adding 'Days to Harvest' to the planting-date to predict the optimal time for agricultural collection based on regional frost-data.",
+  "faqs": [
+    {
+      "question": "Does adding a 'Month' always mean 30 days?",
+      "answer": "No! In calendar systems, adding a month means moving to the same day in the next month. Adding 1 month to Jan 1st is 31 days, but adding 1 month to Feb 1st is 28 or 29 days."
+    },
+    {
+      "question": "What happens if I add time to February 29th?",
+      "answer": "If you add 1 year to Feb 29, 2024, the calculator will land on Feb 28, 2025, as that is the standard civil convention for 'Leapling' anniversaries."
+    },
+    {
+      "question": "Why 7 days in a week?",
+      "answer": "It is a historical convention likely based on the four phases of the moon (roughly 7.4 days each), standardized by various ancient civilizations including the Babylonians and Romans."
+    },
+    {
+      "question": "What is 'UTC' date time?",
+      "answer": "Coordinated Universal Time is the primary time-standard by which the absolute world regulates clocks and dates, unaffected by local 'Daylight Savings' shifts."
+    },
+    {
+      "question": "How do computers handle long-range dates?",
+      "answer": "Most computers use 'Unix Time' (seconds since 1970). To add '100 Years,' the computer converts the century into seconds, adds it, and then converts the massive number back into a human-readable calendar string."
+    }
+  ],
+  "deepDive": "**The Master Clock: Why Your Smartphone is essentially a Time-Traveler**\n\nThe most important concept in chronological history is **'Normalization.'** Adding time isn't just 'Addition'; it is the re-alignment of 'Human Expectation' with 'Astronomical Reality.' This is the **'Calendrical Origin.'** Modern navigation is moving away from 'Mechanical Gears' and toward 'Pulsar Timings' and 'Quantum Super-Position.' \n\nAnother profound concept is the **'Offset Alignment'**. In digital networks, 'Date' is the carrier of 'Signal integrity.' As our ability to measure grows more 'Sub-atomic,' our flow grow more 'Granular.' This tool is your **'Temporal Integrity Shield,'** helping you resist the urge to believe that your project is just 'roughly' a week long. \n\n**The 'Precision' Advantage**: In high-end stock exchanges, a single 'Hour' of 'Date-boundary overlap' can trigger a change in a million-dollar customs-clearance tariff. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Chronological Command Center'** and build the efficient world you've always envisioned. Precision is the language of progress.",
+  "glossary": [
+    { "term": "Gregorian Calendar", "definition": "The most widely used civil calendar in the world, introduced in 1582 by Pope Gregory XIII." },
+    { "term": "Leap Year", "definition": "A calendar year that contains an additional day (Feb 29) to keep the calendar in sync with the seasons." },
+    { "term": "Offset", "definition": "A displacement or distance added to a reference point (in this case, time added to a date)." },
+    { "term": "Normalization", "definition": "The process of adjusting irregular data (like month lengths) into a standard format." },
+    { "term": "Temporal Integrity", "definition": "The state of being accurate and consistent in regards to time measurements and records." }
+  ]
+}

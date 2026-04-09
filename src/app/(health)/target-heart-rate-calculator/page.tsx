@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import heartRateSeoData from "@/data/seo-content/official/heart-rate-calculator.json";
 
 export default function TargetHeartRateCalculator() {
   const [age, setAge] = useState("30");
@@ -157,76 +158,36 @@ export default function TargetHeartRateCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Target Heart Rate Calculator"
-        whatIsIt={
-          <>
-            <p>
-              A <strong>Target Heart Rate Calculator</strong> defines specific "zones" your heart should beat at to achieve specific fitness goals, such as burning fat or increasing cardiovascular endurance (VO2 Max).
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              THR = (MHR-RHR) × % + RHR
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Karvonen Formula for optimal workout intensity.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>If you are 30 years old with a resting HR of 70 BPM:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Your Max HR = 190.</li>
-              <li>Your HRR = 190 - 70 = 120.</li>
-              <li>To train in Zone 2 (60% to 70% intensity):</li>
-              <li>Lower Limit = (120 × 0.60) + 70 = <strong>142 BPM</strong>.</li>
-              <li>Upper Limit = (120 × 0.70) + 70 = <strong>154 BPM</strong>.</li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li><strong>Optimizing Fat Loss:</strong> Ensuring you stay securely in "Zone 2" during cardio sessions where the body preferentially burns fat for fuel rather than glycogen.</li>
-            <li><strong>Marathon Training:</strong> Pushing specific interval workouts into Zone 4 to safely expand lactic acid thresholds without overtraining.</li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "Why does Resting Heart Rate matter?",
-            answer: "A blanket '220-Age' formula treats an elite athlete and a sedentary person the exact same. The Karvonen formula raises your target zones based on how low your resting heart rate is, giving a customized target for your exact cardiovascular health."
-          },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            }]}
+        title={heartRateSeoData.title}
+        whatIsIt={heartRateSeoData.whatIsIt}
+        formula={heartRateSeoData.formula}
+        example={heartRateSeoData.example}
+        useCases={heartRateSeoData.useCases}
+        faqs={heartRateSeoData.faqs}
+        deepDive={heartRateSeoData.deepDive}
+        glossary={heartRateSeoData.glossary}
         relatedCalculators={[
-            {
-              name: "BMI Calculator",
-              path: "/bmi-calculator/",
-              desc: "Calculate your Body Mass Index for a quick health assessment.",
-            },
-            {
-              name: "Calorie Calculator",
-              path: "/calorie-calculator/",
-              desc: "Estimate the number of calories you need to maintain or lose weight.",
-            },
-            {
-              name: "BMR Calculator",
-              path: "/bmr-calculator/",
-              desc: "Find your Basal Metabolic Rate to understand your calorie needs at rest.",
-            },
-            {
-              name: "Ideal Weight Calculator",
-              path: "/ideal-weight-calculator/",
-              desc: "Estimate your healthy weight range based on traditional formulas.",
-            }]}
+          {
+            name: "BMI Calculator",
+            path: "/bmi-calculator/",
+            desc: "Calculate your Body Mass Index for a quick health assessment.",
+          },
+          {
+            name: "Calorie Calculator",
+            path: "/calorie-calculator/",
+            desc: "Estimate the number of calories you need to maintain or lose weight.",
+          },
+          {
+            name: "BMR Calculator",
+            path: "/bmr-calculator/",
+            desc: "Find your Basal Metabolic Rate to understand your calorie needs at rest.",
+          },
+          {
+            name: "Body Fat Calculator",
+            path: "/body-fat-calculator/",
+            desc: "Beyond the scale metrics.",
+          }
+        ]}
       />
     </div>
   );

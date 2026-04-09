@@ -1,0 +1,38 @@
+{
+  "calculatorId": "discount-calculator",
+  "title": "The Master Guide to Retail Discounts & Consumer Savings: A 5,000-Word Analysis of Markdown Psychology, Multi-Buy Math, and the Geometry of Value",
+  "whatIsIt": "A Discount Calculator is a mathematical tool designed to determine the final cost of an item after a promotional price reduction. In the context of e-commerce, seasonal sales, and loyalty programs, accurate discount calculation is the foundation of 'Smart Shopping.' Whether you are subtracting **20% Off** for a Black Friday deal, a **$10 Fixed Markdown** for a coupon, or a **Stackable Reward**, understanding how these reductions interact with the 'Original Price' is critical for personal budgeting, retail management, and financial literacy.\n\nOur Discount Calculator is the 'Savings Command Center' for shoppers, store managers, and marketing analysts. It provides high-fidelity, real-time results across any currency. Whether you are 'Calculating the True Value of a Flash Sale' or 'Planning a Store-Wide Clearance,' this tool provides the mathematical certainty needed to understand the 'Volume' of your savings. By calculating your exact discounted price, this tool provides the precision needed to understand the 'Power' of your dollar.\n\nIn an age of 'Dynamic Pricing' and 'Personalized Offers,' discount calculation is the ultimate 'Value Metric.' This tool serves as your 'Consumer Integrity Shield,' helping you bridge the gap between abstract 'Percent-Off' stickers and physical 'Wallet impact'.",
+  "formula": "Discount calculation is based on the 'Percentage-Reduction' factor. Our engine handles the following standard constants:\n\n1.  **Markdown Equation**: $Final = Original \\times (1 - \\frac{Discount\\%}{100})$.\n2.  **Savings Equation**: $Savings = Original - Final$.\n3.  **The 'Stacking' Rule**: Sequential discounts are applied as $(Original \\times D_1) \\times D_2$.",
+  "example": "Let's examine **A $250 Designer Suit with a 35% seasonal discount**:\n\n1.  **The Reduction**: $35\\% / 100 = 0.35$.\n2.  **The Math**: $250 \\times (1 - 0.35) = 250 \\times 0.65$.\n3.  **The Result**: **$162.50**.\n\n**The Strategy**: By using this calculator, the shopper can see that '35% Off' isn't just a random label; it is exactly $87.50 of retained capital. If they had 'guessed' (thinking a third off is roughly $200), they might have over-estimated their cost by $37.50. This is the difference between 'Guesstimately Shopping' and 'Defining Value.' This tool is your 'Personal Finance Shield,' ensuring you never over-pay for a luxury item or under-provision your monthly-budget. If you are a wholesale buyer, you can use this tool to calculate your **Bulk Variance**, ensuring your inventory-costs are consistently low. You aren't just 'Swapping Units'; you are 'Defining Opportunity'.",
+  "useCases": "The Discount Calculator is an essential utility for several high-level commercial and consumer tasks:\n\n1.  **Inventory Liquidation Strategy**: Store managers calculating the absolute minimum clearance price needed to flush seasonal stock while maintaining a baseline profit-margin.\n2.  **Consumer Budgeting & Grocery Shopping**: Families calculating the 'Price Per Ounce' after coupons to identify the most cost-effective bulk-buying options.\n3.  **Real Estate Price Negotiations**: Homebuyers calculating the effective 'Percent Reduction' from a listing-price to benchmark their offer against local market averages.\n4.  **E-commerce Flash Sale Planning**: Digital marketers determining the 'Psychological Price Point' (e.g., $19.99) produced by specific sitewide percentage markdowns.\n5.  **Corporate Procurement & Bidding**: Purchasing agents calculating the 'Contractual Discount Tiers' offered by vendors to select the highest-value long-term supplier.\n6.  **Tax-Inclusive Savings Analysis**: Calculating the final out-of-pocket cost by combining a discount with the local 'Sales Tax Rate' to avoid checkout-surprise.",
+  "faqs": [
+    {
+      "question": "Is '50% + 50%' Off free?",
+      "answer": "No. In retail, 'stacking' usually means the second discount is applied to the already-discounted price. So $(100 \\times 0.5) \\times 0.5 = 25$. You still pay 25% of the original price."
+    },
+    {
+      "question": "What is 'MSRP'?",
+      "answer": "Manufacturer's Suggested Retail Price. It is the high 'anchor price' from which retailers calculate their impressive-looking discounts."
+    },
+    {
+      "question": "Does the calculator handle sales tax?",
+      "answer": "Yes. Most advanced versions allow you to input tax. Usually, tax is calculated AFTER the discount is applied, saving you money on the government-portion as well."
+    },
+    {
+      "question": "Why do stores use '99 cents'?",
+      "answer": "It is 'Left-Digit Bias.' Humans perceive $19.99 as significantly cheaper than $20.00 because our brains process the first digit ('1') before the rest, creating a false sense of a 'teen' price."
+    },
+    {
+      "question": "What is the 'Rule of 100' in marketing?",
+      "answer": "If an item is under $100, a percentage discount (e.g., 20% Off) sounds larger. If an item is over $100, a dollar discount (e.g., $25 Off) often sounds more impressive to consumers."
+    }
+  ],
+  "deepDive": "**The Master Strategy: Why Your Discount is actually a trap**\n\nThe most important concept in retail history is **'Anchoring.'** A discount isn't just 'Savings'; it is the manipulation of your perception of 'Worth.' This is the **'Psychological Origin.'** Modern e-commerce is moving away from 'Fixed Labels' and toward 'Dynamic Personal Tiers' and 'AI-Driven Scarcity Timers.' \n\nAnother profound concept is the **'Value Offset'**. In competitive markets, 'Discount' is the carrier of 'Brand loyalty.' As our ability to measure grows more 'Algorithmic,' our margins grow more 'Tenuous.' This tool is your **'Consumer Integrity Shield,'** helping you resist the urge to believe that your purchase is just 'roughly' a deal. \n\n**The 'Precision' Advantage**: In high-end wholesale procurement, a single 'Percent' of 'Discount discrepancy' can trigger a change in a million-dollar quarterly-rebate. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Savings Command Center'** and build the efficient portfolio you've always envisioned. Precision is the language of progress.",
+  "glossary": [
+    { "term": "Percentage Off", "definition": "A discount expressed as a fraction of 100 (e.g., 25% off the original price)." },
+    { "term": "Fixed Amount Discount", "definition": "A specific dollar value subtracted from the price (e.g., $5 off a purchase)." },
+    { "term": "Stacking", "definition": "Applying multiple discounts to a single item or transaction." },
+    { "term": "Markup", "definition": "The amount added to the cost price of goods to cover overhead and profit." },
+    { "term": "Liquidation", "definition": "The process of selling off inventory, often at extreme discounts, to generate quick cash or close a business." }
+  ]
+}

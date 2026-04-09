@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import bmrSeoData from "@/data/seo-content/official/bmr-calculator.json";
 
 export default function BMRCalculator() {
   const [age, setAge] = useState("25");
@@ -154,66 +155,36 @@ export default function BMRCalculator() {
       </div>
 
       <CalculatorSEO
-        title="BMR Calculator"
-        whatIsIt={
-          <>
-            <p>
-              Your <strong>Basal Metabolic Rate (BMR)</strong> is the number of calories your body burns at rest to maintain basic life-sustaining functions, such as breathing, blood circulation, cell production, and nutrient processing.
-            </p>
-            <p>
-              Essentially, BMR represents the metabolic cost of being alive if you were in a coma and did nothing but stay in bed all day. It accounts for about 60% to 75% of your total daily energy expenditure.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              BMR = 10W + 6.25H - 5A + s
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Mifflin-St Jeor Equation for Basal Metabolic Rate.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>For a <strong>35-year-old female</strong> weighing <strong>65kg</strong> and <strong>165cm</strong> tall:</p>
-            <ul className="list-disc pl-6 mt-4 space-y-2 text-slate-700">
-               <li>The Mifflin-St Jeor equation might estimate <strong>1,354 Kcal/day</strong>.</li>
-               <li>This means even on a day where she is completely inactive, her body requires at least 1,354 calories to function normally.</li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4 text-slate-700">
-             <li><strong>Determining Nutrition 'Floor':</strong> It is generally unsafe to eat fewer calories than your BMR for extended periods without medical supervision.</li>
-             <li><strong>TDEE Calculation:</strong> BMR is the foundation for calculating your total daily maintenance calories.</li>
-             <li><strong>Metabolic Health:</strong> Tracking how BMR changes as you gain muscle (which is more metabolically 'expensive' than fat).</li>
-          </ul>
-        }
-        faqs={[
+        title={bmrSeoData.title}
+        whatIsIt={bmrSeoData.whatIsIt}
+        formula={bmrSeoData.formula}
+        example={bmrSeoData.example}
+        useCases={bmrSeoData.useCases}
+        faqs={bmrSeoData.faqs}
+        deepDive={bmrSeoData.deepDive}
+        glossary={bmrSeoData.glossary}
+        relatedCalculators={[
           {
-            question: "Why does muscle mass increase BMR?",
-            answer: "Muscle is a metabolically active tissue. It requires energy just to be maintained, unlike fat which is primarily stored energy. Thus, individuals with a higher lean body mass generally have a higher BMR."
+            name: "Calorie Calculator",
+            path: "/calorie-calculator/",
+            desc: "Energy intake based on activity metrics.",
           },
           {
-            question: "Can I eat less than my BMR?",
-            answer: "Consistently eating below your BMR can lead to metabolic adaptation, nutrient deficiencies, and muscle loss. It is recommended to use your TDEE as a baseline for weight loss, not your BMR."
+            name: "Body Fat Calculator",
+            path: "/body-fat-calculator/",
+            desc: "Beyond the scale metrics.",
           },
           {
-            question: "Does climate affect BMR?",
-            answer: "Yes, extreme cold or heat can slightly increase your BMR as your body works harder to maintain its internal core temperature."
+            name: "BMI Calculator",
+            path: "/bmi-calculator/",
+            desc: "The standard health proxy.",
+          },
+          {
+            name: "Ideal Weight Calculator",
+            path: "/ideal-weight-calculator/",
+            desc: "Targets for your height.",
           }
         ]}
-        relatedCalculators={[
-          { name: "TDEE Calculator", path: "/tdee-calculator/", desc: "Add your activity to find total daily burn." },
-          { name: "BMI Calculator", path: "/bmi-calculator/", desc: "Quickly assess your weight status." },
-          { name: "Body Fat Calculator", path: "/body-fat-calculator/", desc: "Estimate your body composition." },
-            {
-              name: "Calorie Calculator",
-              path: "/calorie-calculator/",
-              desc: "Estimate the number of calories you need to maintain or lose weight.",
-            }]}
       />
     </div>
   );

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import energySeoData from "@/data/seo-content/official/energy-converter.json";
 
 const units = [
   { id: "joule", name: "Joule (J)", factor: 1 },
@@ -165,116 +166,36 @@ export default function EnergyConverter() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Energy, Heat & Work Converter"
-          whatIsIt={
-            <p>
-              Our <strong>Energy Converter</strong> instantly bridges the
-              mathematical gaps between thermodynamics, electrical engineering,
-              and mechanics. It allows you to convert complex energy values
-              across unified standards, including Joules (the SI metric),
-              Calories (the biological metric), kWh (the electrical grid
-              metric), and BTUs (the HVAC heating metric).
-            </p>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Result = Input × Conversion_Factor
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Precise unit translation for Energy Converter using industry-standard conversion constants.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's understand the amount of biological energy stored in a
-                single apple.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Scenario:</strong> You eat a medium apple, which
-                  contains nearly exactly{" "}
-                  <strong>100 Food Calories (kcal)</strong>.
-                </li>
-                <li>
-                  <strong>Converting to Electrical Energy:</strong> Selecting
-                  "kcal" as From and "Watt-hour" as To, we find that a 100 kcal
-                  apple holds exactly enough pure kinetic energy to power a
-                  100-Watt lightbulb for <strong>1.16 hours</strong>.
-                </li>
-                <li>
-                  <strong>Result:</strong> 100 kcal = 116.22 Watt-hours (Wh).
-                  This perfectly demonstrates how human digestion and raw
-                  electrical grids are governed by the exact same physical laws
-                  of energy retention.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>HVAC & Refrigeration:</strong> Heating engineers rely on
-                BTUs (British Thermal Units). They must calculate exactly how
-                many thousands of BTUs an air conditioning unit must pump to
-                counteract the total thermal energy of the midday summer sun
-                heating the house.
-              </li>
-              <li>
-                <strong>Nutrition & Biology:</strong> Biologists frequently
-                convert between Joules (the international standard) and Calories
-                (the American diet standard) when measuring the metabolic burn
-                rate of athletes.
-              </li>
-              <li>
-                <strong>Solar & Electrical Engineers:</strong> Modern electrical
-                grids charge customers by the Kilowatt-hour (kWh). Engineers
-                must convert the raw Joules trapped in a barrel of coal or oil
-                into the resulting kWh yield.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question:
-                "Is there a difference between a calorie and a Calorie?",
-              answer:
-                "Yes, and it is endlessly confusing. A lowercase standard 'calorie' (chemistry standard) is the tiny amount of energy needed to heat 1 gram of water by 1°C. An uppercase 'Calorie' (food label standard) is actually a 'Kilocalorie'—exactly 1,000 times larger.",
-            },
-            {
-              question: "What exactly is an Electron-Volt (eV)?",
-              answer:
-                "The Electron-Volt is a measurement of energy so unimaginably small that it is used exclusively in quantum physics and atomic particle colliders. It is the kinetic energy gained by a single electron accelerating across one volt of electric potential difference.",
-            },
-            {
-              question: "Is power the same thing as energy?",
-              answer:
-                "No. Energy is the total volume of work that CAN be done. Power (Watts, Horsepower) is the SPEED at which that energy is being burned. Our converter handles 'Energy' via 'Watt-hours' (time-inclusive), which is distinct from raw instantaneous 'Watts' of Power.",
-            },
-          ]}
+          title={energySeoData.title}
+          whatIsIt={energySeoData.whatIsIt}
+          formula={energySeoData.formula}
+          example={energySeoData.example}
+          useCases={energySeoData.useCases}
+          faqs={energySeoData.faqs}
+          deepDive={energySeoData.deepDive}
+          glossary={energySeoData.glossary}
           relatedCalculators={[
             {
-              name: "Power Converter",
-              path: "/power-calculator/",
-              desc: "Convert instantaneous power flow instead of total energy pools.",
+              name: "Length Converter",
+              path: "/length-converter/",
+              desc: "Instantly translate miles, kilometers, feet, and meters.",
             },
             {
-              name: "Work Calculator",
-              path: "/work-calculator/",
-              desc: "Calculate mechanical energy directly generated by force over a physical distance.",
+              name: "Weight Converter",
+              path: "/weight-converter/",
+              desc: "Instantly translate pounds to kilograms and grams.",
             },
             {
-              name: "Kinetic Energy Calculator",
-              path: "/kinetic-energy-calculator/",
-              desc: "Solve for the exact Joule energy of solid objects moving at high velocity.",
+              name: "Volume Converter",
+              path: "/volume-converter/",
+              desc: "Translate 3D capacity measurements like gallons and liters.",
             },
             {
-              name: "Age Calculator",
-              path: "/age-calculator/",
-              desc: "Calculate your exact age in years, months, and days.",
-            }]}
+              name: "Temperature Converter",
+              path: "/temperature-converter/",
+              desc: "Toggle between Fahrenheit, Celsius, and Kelvin scales.",
+            }
+          ]}
         />
       </div>
     </div>

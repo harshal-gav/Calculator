@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import salesTaxSeoData from "@/data/seo-content/official/sales-tax-calculator.json";
 
 export default function SalesTaxCalculator() {
   const [price, setPrice] = useState("100");
@@ -178,99 +179,14 @@ export default function SalesTaxCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Sales Tax Calculator (Forward & Reverse)"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Sales Tax Calculator</strong> allows you to rapidly
-                add local sales tax to a sticker price, or perform a{" "}
-                <i>reverse extraction</i> to find the original pre-tax base cost
-                of an item when you only know the final receipt total.
-              </p>
-              <p>
-                Unlike VAT systems in Europe, retail prices in the United States
-                and Canada are almost always displayed "pre-tax". Calculating
-                the true out-of-pocket cost requires knowing your local
-                municipal tax rate and applying it before reaching the register.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Standard financial analysis and amortization model for precise Sales Tax results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                <strong>
-                  Scenario: Reverse Extraction for Expense Reports
-                </strong>
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  You lost your hotel receipt but your credit card shows a total
-                  charge of <strong>$162.00</strong>.
-                </li>
-                <li>
-                  You know the local city hotel tax rate is <strong>8%</strong>.
-                </li>
-                <li>
-                  You cannot simply subtract 8% from $162 (which is $149.04)
-                  because the tax was calculated on the smaller base number.
-                </li>
-                <li>
-                  By dividing $162.00 by 1.08, the calculator accurately
-                  reverse-engineers the base room rate of{" "}
-                  <strong>$150.00</strong> and reveals the exact tax paid was{" "}
-                  <strong>$12.00</strong>.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Corporate Expense Reporting:</strong> Accounting
-                departments frequently require employees to itemize the tax
-                portion of a meal or flight separately from the base cost.
-              </li>
-              <li>
-                <strong>Large Purchases:</strong> When buying a $40,000 vehicle,
-                calculating the exact burden of a 7.5% state auto tax ($3,000)
-                to ensure you secure a large enough auto loan.
-              </li>
-              <li>
-                <strong>Business Pricing Strategies:</strong> If you run a
-                cash-only food truck and want to charge exactly $10.00 including
-                an 8.25% tax, you must use reverse extraction to set your menu
-                price at $9.24.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Why do some items not have sales tax?",
-              answer:
-                "Tax nexus logic is incredibly complex and localized. Many states exempt basic necessities like unprepared groceries, prescription medications, or certain clothing items below a specific dollar threshold.",
-            },
-            {
-              question:
-                "If I buy online, do I pay my state's tax or the seller's state tax?",
-              answer:
-                "You generally pay the sales tax rate of the state where the item is physically <i>delivered</i> (your home), assuming the online retailer has 'economic nexus' (does enough business) in your state to be legally required to collect it.",
-            },
-            {
-              question: "What is the difference between Sales Tax and VAT?",
-              answer:
-                "A Value-Added Tax (VAT) is collected incrementally at every stage of the supply chain (manufacturer to distributor to retailer) and is baked into the sticker price. US Sales Tax is collected only once, entirely at the final retail point of sale, and is added on top of the sticker price.",
-            },
-          ]}
+          title={salesTaxSeoData.title}
+          whatIsIt={salesTaxSeoData.whatIsIt}
+          formula={salesTaxSeoData.formula}
+          example={salesTaxSeoData.example}
+          useCases={salesTaxSeoData.useCases}
+          faqs={salesTaxSeoData.faqs}
+          deepDive={salesTaxSeoData.deepDive}
+          glossary={salesTaxSeoData.glossary}
           relatedCalculators={[
             {
               name: "VAT Calculator",

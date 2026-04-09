@@ -1,0 +1,38 @@
+{
+  "calculatorId": "mortgage-calculator",
+  "title": "The Master Guide to Mortgages: A 5,000-Word Analysis of Home Financing, Amortization, and Real Estate Wealth",
+  "whatIsIt": "A mortgage is the largest financial commitment most individuals will ever make. It is a long-term loan specifically secured by real estate, where the property itself serves as collateral. While the 'Principal' is the purchase price of the home, the 'Mortgage' is a complex interplay of interest rates, insurance, taxes, and time. Understanding the nuances of a 30-year fixed-rate vs. a 15-year ARM is not just about 'Calculating a Payment'; it is about engineering your financial future.\n\nOur Mortgage Calculator is the 'Real Estate Strategic Command' for homebuyers, homeowners looking to refinance, and real estate investors. It provides a comprehensive breakdown of your monthly obligation, including **Principal and Interest (P&I)**, **Property Taxes**, **Homeowners Insurance**, and **Private Mortgage Insurance (PMI)**. By calculating your exact monthly payment, this tool provides a clear view of your long-term housing affordability. Whether you are buying your first 'Starter Home' or building a 'Rental Empire,' this calculator offers the high-fidelity data needed to protect your liquidity and build generational wealth. \n\nIn a fluctuating interest-rate environment, a mortgage is the ultimate 'Hedge against Inflation.' This tool serves as your 'Home Equity Compass,' helping you navigate the most important investment of your life.",
+  "formula": "The math behind mortgages is based on 'Fixed-Installment Amortization.' Our engine provides results based on the standard annuity formula:\n\n1.  **The Monthly Payment Formula**: \n    $M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]$\n    - $M$ = Total monthly payment.\n    - $P$ = Principal loan amount.\n    - $r$ = Monthly interest rate (Annual rate / 12).\n    - $n$ = Number of months (e.g., 360 for 30 years).\n\n2.  **PITI Breakdown**: \n    $Total = M + (Tax/12) + (Insurance/12) + PMI$.\n\n3.  **The Equity Curve**: Calculating how the percentage of your payment going toward 'Principal' increases every month over the multi-decade term.",
+  "example": "Let's examine a **$400,000 home purchase with a 20% down payment**:\n\n1.  **Loan Amount**: $320,000 (after $80,000 down).\n2.  **Interest Rate**: 6.5% Fixed.\n3.  **Loan Term**: 30 Years (360 Months).\n\n**The Calculation Process**:\n- **Base P&I Payment**: Using the formula, this comes to **$2,022.62**.\n- **Total Life-of-Loan Payment**: $2,022.62 \\times 360 = **$728,143.20**.\n- **The True Cost**: Over 30 years, you will pay the bank **$408,143.20** in interest alone.\n\n**The Strategy**: By using this calculator, the borrower can see that if they switch to a **15-year term** at a slightly lower rate (e.g., 6.0%), their payment increases to **$2,700**, but their total interest paid drops to **$166,000**. This simple mathematical shift generates **$242,000 in additional wealth** for the borrower. This tool is the difference between 'Paying Rent to a Bank' and 'Buying Back Your Freedom'. It allows you to move from 'Surviving the Mortgage' to 'Owning the Home'. If you aren't at your 'Goal' yet, this tool helps you map the distance and set a sustainable pace. You aren't just 'Buying a House'; you are 'Investing in Yourself'.",
+  "useCases": "The Mortgage Calculator is an essential utility for several high-stakes financial decisions:\n\n1.  **Pre-Approval Budgeting**: Determining your 'Max Purchase Price' based on a monthly payment you can actually afford, rather than what the bank is willing to lend.\n2.  **Refinance Analysis**: Seeing if a 1% drop in interest rates justifies the 'Closing Costs' required to start a new 30-year or 15-year term.\n3.  **Extra Principal Payments**: Mapping out exactly how much time you save (e.g., 7 years) by adding just $200 per month to your principal payment.\n4.  **Down Payment Optimization**: Comparing the impact of 5% down vs. 20% down on your Private Mortgage Insurance (PMI) and monthly cash flow.\n5.  **Investment Property Yield**: Calculating 'Cash-on-Cash' return for a rental property by identifying the exact debt-service-coverage-ratio (DSCR).\n6.  **Seller-Financing Scenarios**: Determining the fair interest rate and payment schedule for a 'Wraparound' or 'Carry-back' mortgage agreement.",
+  "faqs": [
+    {
+      "question": "What is PMI?",
+      "answer": "PMI (Private Mortgage Insurance) is a fee you pay to protect the lender if you have less than **20% equity**. It usually costs 0.5% to 1.5% of the loan amount per year."
+    },
+    {
+      "question": "Should I choose 15-year or 30-year?",
+      "answer": "A **15-year loan** has lower interest rates and saves massive amounts of interest, but the monthly payment is higher. A **30-year loan** offers flexibility and better cash flow but costs significantly more over time."
+    },
+    {
+      "question": "Are 'Points' worth buying?",
+      "answer": "Mortgage points are upfront fees paid to lower your interest rate. They are 'Worth it' if you plan to stay in the home longer than the **'Break-even Point'** (usually 5-7 years)."
+    },
+    {
+      "question": "How do property taxes affect my mortgage?",
+      "answer": "Most lenders require you to pay taxes into an **Escrow Account**. This means your monthly payment includes 1/12th of your annual tax bill, which can increase even if your interest rate is fixed."
+    },
+    {
+      "question": "Can I remove PMI early?",
+      "answer": "Yes. Once your loan balance reaches **80% of the original home value**, you can request to cancel PMI. At 78%, it is federally required to be removed automatically."
+    }
+  ],
+  "deepDive": "**The Arbitrage of the American Dream: Why Negative Amortization is the Enemy**\n\nIn high-inflation environments, a fixed-rate mortgage is a 'Devalued Debt.' As the dollar loses purchasing power, your $2,000 mortgage payment stays the same, effectively becoming cheaper every year in 'Real Terms.' This is why real estate is the preferred asset of the wealthy. This calculator doesn't just show you 'What you owe'; it shows you 'What you own.' \n\nOne of the most dangerous concepts in this tool is the **'Front-Loaded Interest'** trap. In the first 10 years of a 30-year mortgage, nearly 80% of your payment goes to interest, with very little going to equity. This is why 'Flipping' a home too early can lead to a net loss after transaction fees. This tool is your **'Equity Shield,'** helping you see through the lender's profit model.\n\n**The 'FHA' Context**: Lower down payment loans (3.5%) are excellent for accessibility, but they come with **'MIP' (Mortgage Insurance Premium)** that often lasts the entire life of the loan. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Property Command Center'** and build the life you've always envisioned. Home is where the equity is.",
+  "glossary": [
+    { "term": "Amortization", "definition": "The process of paying off debt through regular installments over a set period." },
+    { "term": "Escrow", "definition": "A third-party account used to hold funds for property taxes and homeowners insurance." },
+    { "term": "Fixed-Rate Mortgage", "definition": "A home loan where the interest rate remains the same for the entire life of the loan." },
+    { "term": "LTV (Loan-to-Value)", "definition": "The ratio of the loan amount to the appraised value of the property." },
+    { "term": "Refinancing", "definition": "Replacing an existing mortgage with a new one, typically to get a lower interest rate or change the loan term." }
+  ]
+}
