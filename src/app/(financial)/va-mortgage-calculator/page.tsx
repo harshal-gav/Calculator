@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import vaMortgageSeoData from "@/data/seo-content/official/va-mortgage-calculator.json";
 
 export default function VAMortgageCalculator() {
   const [purchasePrice, setPurchasePrice] = useState("450000");
@@ -20,7 +21,7 @@ export default function VAMortgageCalculator() {
 
   const calculateVA = () => {
     const price = parseFloat(purchasePrice);
-    const down = parseFloat(downPayment);
+    const down = parseFloat(downPayment) || 0;
     const rate = parseFloat(interestRate) / 100 / 12;
     const term = parseInt(loanTerm) * 12;
 
@@ -52,8 +53,13 @@ export default function VAMortgageCalculator() {
         monthly = loanAmount / term;
       }
 
+      // Small fix for the 'r' variable in the previous line which was undefined in the original snippet but I'll fix it here
+      const fixedMonthly = rate > 0 
+        ? loanAmount * (rate * Math.pow(1 + rate, term)) / (Math.pow(1 + rate, term) - 1)
+        : loanAmount / term;
+
       setResult({
-        monthlyPayment: monthly,
+        monthlyPayment: fixedMonthly,
         fundingFeeAmount: fundingFee,
         totalLoanAmount: loanAmount,
         fundingFeePct: feePct
@@ -72,30 +78,33 @@ export default function VAMortgageCalculator() {
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-        <div className="lg:col-span-4 bg-slate-50 p-6 rounded-xl border border-slate-200">
+        <div className="lg:col-span-12 xl:col-span-4 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-inner">
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-bold text-slate-700 mb-1">Purchase Price ($):</label>
-              <input type="number" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)} className="w-full rounded border-slate-300 p-2 font-bold" />
+              <input type="number" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)} className="w-full rounded-lg border-slate-300 p-3 font-bold shadow-sm" />
             </div>
             <div>
               <label className="block text-sm font-bold text-slate-700 mb-1">Down Payment ($):</label>
-              <input type="number" value={downPayment} onChange={(e) => setDownPayment(e.target.value)} className="w-full rounded border-slate-300 p-2" />
+              <input type="number" value={downPayment} onChange={(e) => setDownPayment(e.target.value)} className="w-full rounded-lg border-slate-300 p-3 shadow-sm" />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="block text-xs font-semibold text-gray-500 mb-1">Interest (%):</label>
-                <input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} className="w-full rounded border-slate-300 p-2 text-sm" />
+                <input type="number" step="0.1" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} className="w-full rounded-lg border-slate-300 p-3 text-sm shadow-sm" />
               </div>
               <div>
                 <label className="block text-xs font-semibold text-gray-500 mb-1">Years:</label>
-                <input type="number" value={loanTerm} onChange={(e) => setLoanTerm(e.target.value)} className="w-full rounded border-slate-300 p-2 text-sm" />
+                <select value={loanTerm} onChange={(e) => setLoanTerm(e.target.value)} className="w-full rounded-lg border-slate-300 p-3 text-sm shadow-sm">
+                  <option value="15">15 Years</option>
+                  <option value="30">30 Years</option>
+                </select>
               </div>
             </div>
             
             <div className="pt-4 border-t border-slate-200">
                 <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Service History / Status</label>
-                <select value={vaStatus} onChange={(e) => setVaStatus(e.target.value)} className="w-full rounded border-slate-300 p-2 text-sm">
+                <select value={vaStatus} onChange={(e) => setVaStatus(e.target.value)} className="w-full rounded-lg border-slate-300 p-3 text-sm shadow-sm">
                     <option value="first_time">First-Time Use</option>
                     <option value="subsequent">Subsequent Use</option>
                     <option value="disability">Service-Connected Disability (Fee Exempt)</option>
@@ -103,8 +112,8 @@ export default function VAMortgageCalculator() {
             </div>
 
             <div className="flex items-center space-x-2 pt-2">
-                <input type="checkbox" checked={rollFee} onChange={(e) => setRollFee(e.target.checked)} className="rounded text-blue-800" />
-                <label className="text-xs font-medium text-slate-700 font-bold uppercase">Roll Funding Fee into Loan?</label>
+                <input type="checkbox" id="rollFee" checked={rollFee} onChange={(e) => setRollFee(e.target.checked)} className="rounded text-blue-800" />
+                <label htmlFor="rollFee" className="text-xs font-bold text-slate-700 uppercase cursor-pointer">Roll Funding Fee into Loan?</label>
             </div>
           </div>
 
@@ -116,7 +125,7 @@ export default function VAMortgageCalculator() {
           </button>
         </div>
 
-        <div className="lg:col-span-8 flex flex-col">
+        <div className="lg:col-span-12 xl:col-span-8 flex flex-col">
           {result !== null ? (
             <div className="h-full space-y-6">
                 <div className="bg-slate-900 text-white rounded-2xl p-8 text-center shadow-xl border-t-8 border-blue-600">
@@ -127,98 +136,65 @@ export default function VAMortgageCalculator() {
                     <span className="text-blue-200 text-sm italic font-medium">Estimated Monthly Payment</span>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-white border-2 border-slate-100 p-6 rounded-2xl">
-                        <span className="block text-[10px] font-black text-gray-400 uppercase mb-1">VA Funding Fee</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="bg-white border-2 border-slate-100 p-6 rounded-2xl shadow-sm">
+                        <span className="block text-[10px] font-black text-gray-400 uppercase mb-1 tracking-widest">VA Funding Fee</span>
                         <div className="text-2xl font-black text-rose-600">${result.fundingFeeAmount.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
                         <p className="text-[10px] text-gray-500 leading-tight">({result.fundingFeePct}% of loan amount)</p>
                     </div>
-                    <div className="bg-white border-2 border-slate-100 p-6 rounded-2xl">
-                        <span className="block text-[10px] font-black text-gray-400 uppercase mb-1">Total Financed Amount</span>
+                    <div className="bg-white border-2 border-slate-100 p-6 rounded-2xl shadow-sm">
+                        <span className="block text-[10px] font-black text-gray-400 uppercase mb-1 tracking-widest">Total Financed Amount</span>
                         <div className="text-2xl font-black text-slate-900">${result.totalLoanAmount.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
                         <p className="text-[10px] text-gray-500 leading-tight">(Price - Down + {rollFee ? 'Fee' : '0'})</p>
                     </div>
                 </div>
                 
-                <div className="bg-blue-50 p-4 rounded-lg flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-800 font-black">!</div>
-                    <p className="text-xs text-blue-800">VA loans do not require conventional Private Mortgage Insurance (PMI), saving you hundreds per month compared to FHA or conventional 0-down loans.</p>
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-800 font-black shrink-0">!</div>
+                    <p className="text-xs text-blue-800 font-medium italic">VA loans do not require conventional Private Mortgage Insurance (PMI), saving you hundreds per month compared to FHA or conventional 0-down loans.</p>
                 </div>
             </div>
           ) : (
-             <div className="h-full border-4 border-double border-slate-100 rounded-3xl flex flex-col items-center justify-center p-12 text-center text-slate-300">
-                <div className="text-5xl mb-4">🏠</div>
-                <p className="font-bold text-lg uppercase tracking-widest mb-2">Estimate Your Benefit</p>
-                <p className="max-w-xs text-xs">US Veterans pay no PMI and often $0 down. Run the numbers to see your monthly savings.</p>
+             <div className="h-full border-4 border-double border-slate-100 rounded-3xl flex flex-col items-center justify-center p-12 text-center text-slate-300 bg-slate-50/30">
+                <div className="text-5xl mb-4 opacity-50">🏠</div>
+                <p className="font-bold text-lg uppercase tracking-widest mb-2 text-slate-400">Estimate Your Benefit</p>
+                <p className="max-w-xs text-xs text-slate-400 font-medium">US Veterans pay no PMI and often $0 down. Run the numbers to see your monthly savings.</p>
              </div>
           )}
         </div>
       </div>
 
       <CalculatorSEO
-        title="VA Mortgage Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>VA Mortgage Calculator</strong> is a specialized tool for US active-duty service members, veterans, and eligible surviving spouses. Unlike conventional mortgages, VA loans are backed by the Department of Veterans Affairs and do not require a down payment or PMI.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              M = [(P-D)+F] * [r(1+r)^n] / [(1+r)^n - 1]
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Where F is the VA Funding Fee and P is Price.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>If you are a first-time VA user buying a $400,000 home with $0 down:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700 text-sm">
-              <li>VA Funding Fee (2.15%): $8,600</li>
-              <li>Total Loan Amount: $408,600</li>
-              <li>Benefit: You walk into the home with <strong>$0 out of pocket</strong> for the down payment.</li>
-            </ul>
-          </>
-        }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Relocation Analysis:</strong> For service members PCSing to a new Duty Station, use this tool to compare the cost of "On-Base" living versus using your BAH (Basic Allowance for Housing) to buy a home with a VA loan.</li></ul>}
-        faqs={[
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            },
-            {
-              question: "Can I use this on my mobile device?",
-              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
-            }]}
+        title={vaMortgageSeoData.title}
+        whatIsIt={vaMortgageSeoData.whatIsIt}
+        formula={vaMortgageSeoData.formula}
+        example={vaMortgageSeoData.example}
+        useCases={vaMortgageSeoData.useCases}
+        faqs={vaMortgageSeoData.faqs}
+        deepDive={vaMortgageSeoData.deepDive}
+        glossary={vaMortgageSeoData.glossary}
         relatedCalculators={[
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator/",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator/",
-              desc: "Calculate your exact annualized percentage returns.",
-            },
-            {
-              name: "Investment Calculator",
-              path: "/investment-calculator/",
-              desc: "Project your portfolio growth over time with compound interest.",
-            },
-            {
-              name: "Loan Payment Calculator",
-              path: "/loan-payment-calculator/",
-              desc: "Estimate your monthly loan payments and total interest cost.",
-            }]}
+          {
+            name: "Mortgage",
+            path: "/mortgage-calculator/",
+            desc: "Calculate standard monthly payments for a conventional loan side-by-side.",
+          },
+          {
+            name: "Refinance",
+            path: "/refinance-calculator/",
+            desc: "See if a VA IRRRL or Cash-Out refinance makes sense for your current loan.",
+          },
+          {
+            name: "LTV",
+            path: "/ltv-calculator/",
+            desc: "Check your loan-to-value ratio for secondary entitlement scenarios.",
+          },
+          {
+            name: "DTI",
+            path: "/dti-calculator/",
+            desc: "Analyze your debt-to-income ratio to ensure you meet VA guidelines.",
+          },
+        ]}
       />
     </div>
   );

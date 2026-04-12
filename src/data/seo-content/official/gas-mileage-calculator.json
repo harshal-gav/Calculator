@@ -1,0 +1,41 @@
+{
+  "title": "Gas Mileage & Fuel Efficiency Calculator",
+  "whatIsIt": "The Gas Mileage Calculator is a performance monitoring tool that determines your vehicle's actual fuel efficiency (MPG or L/100km). While manufacturers provide estimated ratings, real-world mileage fluctuates based on driving habits, vehicle load, and engine health. This tool allows drivers to track performance over time and detect potential mechanical issues through sudden efficiency drops.",
+  "formula": "To calculate mileage, you use the 'Fill-to-Fill' method: \\n\\n$$\\text{MPG} = \\frac{\\text{Miles Driven}}{\\text{Gallons Consumed}}$$\\n\\nFor metric systems: \\n\\n$$\\text{L/100km} = \\left( \\frac{\\text{Liters Consumed}}{\\text{Kilometers Driven}} \\right) \\times 100$$",
+  "example": "If your odometer read 15,000 miles at your last fill-up and 15,300 miles today, and you pumped exactly 10 gallons: \\n1. Distance: $15,300 - 15,000 = 300$ miles. \\n2. Efficiency: $300 / 10 = 30$ MPG. \\n\\nThis indicates your car is performing within standard efficiency for a compact or mid-sized sedan.",
+  "useCases": [
+    "Vehicle Health Monitoring: Identifying engine or tire pressure issues through a sudden decrease in fuel economy.",
+    "Cost Tracking: Budgeting for monthly fuel costs based on proven real-world efficiency rather than estimates.",
+    "Upgrade Justification: Determing if switching to a hybrid or electric vehicle will provide significant long-term savings.",
+    "Eco-Driving: Measuring the impact of smoother acceleration and reduced idling on your car's range."
+  ],
+  "faqs": [
+    {
+      "question": "Why is my real mileage lower than the EPA sticker?",
+      "answer": "EPA estimates are conducted in controlled laboratory settings. Real-world factors like wind resistance, cold weather, heavy traffic, and AC usage significantly increase fuel consumption."
+    },
+    {
+      "question": "Does tire pressure affect gas mileage?",
+      "answer": "Absolutely. Under-inflated tires increase rolling resistance. For every 1 PSI drop in all four tires, you can lose roughly 0.2% of your fuel economy."
+    },
+    {
+      "question": "Is it and MPG or Kilometers per Liter?",
+      "answer": "The US and UK primarily use MPG. Most of Europe and Canada use L/100km, which measures how much fuel is needed to reach a fixed distance (the inverse of MPG)."
+    }
+  ],
+  "deepDive": "Gas mileage is more than just a number on a dashboard; it's a measure of thermal efficiency. Internal combustion engines typically only convert 20-30% of their fuel's energy into movement. The rest is lost as heat. High-mileage vehicles improve this ratio through direct injection, turbocharging, and weight reduction. By tracking your MPG, you are essentially monitoring the energy-conversion efficiency of your engine.",
+  "glossary": [
+    {
+      "term": "Odometer",
+      "definition": "The instrument on a vehicle that records the total distance traveled."
+    },
+    {
+      "term": "Brake Specific Fuel Consumption (BSFC)",
+      "definition": "A measure of the fuel efficiency of any internal combustion engine that burns fuel and produces shaft power."
+    },
+    {
+      "term": "Rolling Resistance",
+      "definition": "The force resisting the motion when a body (tire) rolls on a surface."
+    }
+  ]
+}

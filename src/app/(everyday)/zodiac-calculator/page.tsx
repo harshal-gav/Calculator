@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
+import zodiacSeoData from "@/data/seo-content/official/zodiac-calculator.json";
+
 const zodiacData = [
   {
     sign: "Capricorn",
@@ -239,110 +241,38 @@ export default function ZodiacCalculator() {
           }),
         }}
       />
-
-      <div className="mt-8 text-left">
-        <CalculatorSEO
-          title="Astrological Zodiac Sign Calculator"
-          whatIsIt={
-            <p>
-              Our <strong>Zodiac Sign Calculator</strong> instantly determines
-              your Western Astrological "Sun Sign" based purely on your birth
-              date. It maps the celestial position of the Sun during the exact
-              time of year you were born, categorized into twelve distinct
-              ancient mythological constellations.
-            </p>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Zodiac Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Zodiac results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>Let's find the sign for someone born on Halloween.</p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-300">
-                <li>
-                  <strong>The Input:</strong> You enter "October 31st".
-                </li>
-                <li>
-                  <strong>The Calculation:</strong> The calculator checks its
-                  internal calendar array. It sees that dates between October
-                  23rd and November 21st fall under the specific celestial
-                  sector ruled by Mars and Pluto.
-                </li>
-                <li>
-                  <strong>Result:</strong> Your sun sign is logically determined
-                  to be <strong>Scorpio ♏</strong>, a Water element sign.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-300">
-              <li>
-                <strong>Self Discovery:</strong> Many people use their sun sign
-                as a tool for introspection, analyzing the traditional
-                personality traits associated with their sign to better
-                understand their own behavioral patterns.
-              </li>
-              <li>
-                <strong>Relationship Compatibility:</strong> Astrological charts
-                are frequently used to gauge compatibility between partners,
-                friends, or coworkers by comparing how different 'Elements'
-                (Fire, Earth, Air, Water) historically interact.
-              </li>
-              <li>
-                <strong>Daily Horoscopes:</strong> Knowing your exact sun sign
-                is the absolute prerequisite for reading and understanding any
-                daily, weekly, or monthly published horoscope predictions.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What is a 'Cusp'?",
-              answer:
-                "A 'cusp' occurs when you are born within a day or two of the exact transition point between two different zodiac signs. For example, if you are born on April 19th, you are technically an Aries, but you are 'on the cusp' of Taurus and may feel you exhibit traits of both.",
-            },
-            {
-              question: "Is my 'Sun' sign the only sign I have?",
-              answer:
-                "No! In advanced astrology, your Sun sign represents your core identity. But you also have a 'Moon Sign' (representing your emotional inner self) and a 'Rising/Ascendant Sign' (the mask you present to the world), which calculated based on the exact minute and location of your birth.",
-            },
-            {
-              question:
-                "Why do the dates sometimes shift slightly from year to year?",
-              answer:
-                "Because a calendar year is exactly 365.24 days long (hence Leap Years), the exact minute the Sun culturally crosses into a new constellation can technically shift back and forth by a few hours depending on the year you were born.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Love Calculator",
-              path: "/love-calculator/",
-              desc: "Test the romantic name compatibility between you and your crush.",
-            },
-            {
-              name: "Age Calculator",
-              path: "/age-calculator/",
-              desc: "Find out exactly how many total days old you are.",
-            },
-            {
-              name: "Random Picker",
-              path: "/random-choice-generator/",
-              desc: "Let the digital universe decide your fate instead of the stars.",
-            },
-            {
-              name: "Temperature Converter",
-              path: "/temperature-converter/",
-              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
-            }]}
-        />
+      <div className="mt-8">
+      <CalculatorSEO
+        title={zodiacSeoData.title}
+        whatIsIt={zodiacSeoData.whatIsIt}
+        formula={zodiacSeoData.formula}
+        example={zodiacSeoData.example}
+        useCases={zodiacSeoData.useCases}
+        faqs={zodiacSeoData.faqs}
+        deepDive={zodiacSeoData.deepDive}
+        glossary={zodiacSeoData.glossary}
+        relatedCalculators={[
+          {
+            name: "Love Calculator",
+            path: "/love-calculator/",
+            desc: "Test romantic name compatibility between you and your crush.",
+          },
+          {
+            name: "Age Calculator",
+            path: "/age-calculator/",
+            desc: "Find out exactly how many total days and weeks old you are.",
+          },
+          {
+            name: "Random Picker",
+            path: "/random-choice-generator/",
+            desc: "Let the digital universe decide your fate instead of the stars.",
+          },
+          {
+            name: "Numerology",
+            path: "/numerology-calculator/",
+            desc: "Discover the hidden meanings of numbers in your life.",
+          }]}
+      />
       </div>
     </div>
   );

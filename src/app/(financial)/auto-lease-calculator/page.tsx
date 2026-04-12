@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import autoLeaseSeoData from "@/data/seo-content/official/auto-lease-calculator.json";
 
 export default function AutoLeaseCalculator() {
   const [negotiatedPrice, setNegotiatedPrice] = useState("35000");
@@ -160,157 +161,36 @@ export default function AutoLeaseCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Mastering the Auto Lease: Why the Money Factor is Your Most Important Number"
-        whatIsIt={
-          <div className="space-y-6">
-            <p className="text-xl font-medium leading-relaxed">
-              An <strong>Auto Lease Calculator</strong> is a specialized financial modeling tool that computes the cost of "renting" a vehicle for a fixed period (typically 24 to 48 months). Unlike a traditional loan, where you pay and ultimately own the asset, a lease represents a contract to pay for the vehicle's <strong>projected depreciation</strong> plus a financing fee known as the "Rent Charge."
-            </p>
-            <p className="leading-relaxed">
-              Leasing is frequently chosen by professionals and luxury vehicle enthusiasts who prioritize driving a new car every few years with minimal maintenance risk. However, it is also one of the most opaque financial transactions in the consumer market. Dealerships often present a single monthly payment while obscuring the three variables that actually dictate that cost: the negotiated price (gross capitalized cost), the residual value, and the money factor.
-            </p>
-            <p className="leading-relaxed">
-              Our calculator empowers you to strip away the marketing jargon and see the mathematical reality. By understanding how these variables interact, you can determine if a $299/month lease is truly a "deal" or if the dealership has inflated the money factor to hide a poor negotiation on the vehicle's selling price. 
-            </p>
-            <p className="leading-relaxed italic">
-              "In leasing, you aren't just paying for a car; you are paying for the time the car spend sitting in your driveway."
-            </p>
-          </div>
-        }
-        comparisonTable={{
-          title: "Lease vs. Buy: The Ultimate Financial Trade-off",
-          headers: ["Feature", "Leasing a Vehicle", "Buying with a Loan"],
-          rows: [
-            ["Monthly Cost", "Typically 30-50% lower than loan payments.", "Higher monthly out-of-pocket required."],
-            ["Asset Ownership", "No equity; vehicle returned at end of term.", "You own the asset once the loan is repaid."],
-            ["Maintenance", "Usually covered under manufacturer warranty.", "Long-term repairs are the owner's responsibility."],
-            ["Mileage Limits", "Strict limits (e.g., 10k-15k miles/year).", "Drive as much as you want without penalty."],
-            ["Customization", "Must return vehicle in original condition.", "Free to modify or upgrade as you see fit."],
-            ["Long-Term Value", "Most expensive way to drive over 10+ years.", "Cheapest way to drive if car is kept 8+ years."],
-          ]
-        }}
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Result = Input × Conversion_Factor
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Precise unit translation for Auto Lease Calculator using industry-standard conversion constants.
-            </p>
-          </>
-        }
-          example={
-          <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-slate-100">
-            <h5 className="text-indigo-600 font-black uppercase tracking-widest text-xs mb-8 flex items-center">
-               Scenario Analysis: The 1% Money Factor Shift
-            </h5>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="p-6 bg-slate-50 rounded-3xl">
-                <p className="text-xs font-bold text-slate-400 mb-2 uppercase">Negotiated Price: $40,000</p>
-                <p className="text-xs font-bold text-slate-400 mb-6 uppercase">Residual: 60% ($24k)</p>
-                <div className="flex justify-between items-end">
-                  <div>
-                    <span className="block text-[10px] text-slate-500 font-bold uppercase">Option A (4% APR)</span>
-                    <span className="text-3xl font-black text-slate-900">$551/mo</span>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6 bg-indigo-50 rounded-3xl border border-indigo-100">
-                <p className="text-xs font-bold text-slate-400 mb-2 uppercase">Negotiated Price: $40,000</p>
-                <p className="text-xs font-bold text-slate-400 mb-6 uppercase">Residual: 60% ($24k)</p>
-                <div className="flex justify-between items-end">
-                  <div>
-                    <span className="block text-[10px] text-indigo-500 font-bold uppercase">Option B (6% APR)</span>
-                    <span className="text-3xl font-black text-indigo-700">$604/mo</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p className="mt-8 text-sm text-slate-500 italic leading-relaxed">
-              Perspective: A seemingly small 2% difference in interest rate (MF of 0.0016 vs 0.0025) results in a $53/month difference. Over a 36-month lease, that's <strong>$1,908 in extra rent charges</strong> for the exact same car.
-            </p>
-          </div>
-        }
-        useCases={
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:translate-y-[-4px] transition-transform">
-              <h5 className="font-black text-slate-900 mb-2 uppercase text-[10px] tracking-widest">Business Write-offs</h5>
-              <p className="text-xs text-slate-600 leading-relaxed">Business owners often lease because their monthly payments can be fully or partially deducted as a business expense, providing a simpler tax benefit than traditional depreciation schedules.</p>
-            </div>
-            <div className="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:translate-y-[-4px] transition-transform">
-              <h5 className="font-black text-slate-900 mb-2 uppercase text-[10px] tracking-widest">Avoiding Luxury Obsolescence</h5>
-              <p className="text-xs text-slate-600 leading-relaxed">Leasing is ideal for high-tech vehicles (like EVs) where the technology advances rapidly. It allows you to "trial" the vehicle and return it before a major tech shift makes the resale value crash.</p>
-            </div>
-            <div className="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:translate-y-[-4px] transition-transform">
-              <h5 className="font-black text-slate-900 mb-2 uppercase text-[10px] tracking-widest">Total Cost Protection</h5>
-              <p className="text-xs text-slate-600 leading-relaxed">If a leased car is in an accident and repaired, the 'diminished value' is the bank's problem, not yours. You simply return the car at the end of the term (assuming it was professionally repaired).</p>
-            </div>
-            <div className="p-8 bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 rounded-3xl shadow-sm hover:translate-y-[-4px] transition-transform">
-              <h5 className="font-black text-indigo-900 mb-2 uppercase text-[10px] tracking-widest">Down Payment Preservation</h5>
-              <p className="text-xs text-slate-600 leading-relaxed">Keep your capital liquid. Our calculator helps you realize that a $0-down lease is often the safest and most efficient way to manage your cash flow.</p>
-            </div>
-          </div>
-        }
-        glossary={[
-          { term: "Money Factor", definition: "A fraction used to calculate the rent charge on a lease, equivalent to the interest rate divided by 2400." },
-          { term: "Gross Capitalized Cost", definition: "The total negotiated price of the vehicle plus any added fees or prior loan balances." },
-          { term: "Residual Value", definition: "The predicted value of the vehicle at the end of the lease term, usually set by the lessor." },
-          { term: "Acquisition Fee", definition: "A fee charged by the leasing company to set up the lease, typically ranging from $500 to $900." },
-          { term: "Disposition Fee", definition: "A fee paid at the end of the lease if you choose to return the car rather than buy it." },
-          { term: "Gap Insurance", definition: "Insurance that covers the shortfall between the car's value and the lease payoff amount in case of a total loss." },
-          { term: "Wear and Tear", definition: "The allowed usage of the vehicle; excessive damage usually results in penalties at the end of the lease." },
-          { term: "Capitalized Cost Reduction", definition: "Essentially a down payment that reduces the amount being financed through the lease." },
-          { term: "Lessor", definition: "The financial institution or dealership that actually owns the vehicle and leases it to you." },
-          { term: "Lessee", definition: "The individual (you) who is using the vehicle under the lease agreement." },
-        ]}
-        faqs={[
-          {
-            question: "What is a good Money Factor for a lease?",
-            answer: "A good money factor should roughly correspond to the best market interest rates. If prime auto rates are 6%, a good money factor would be 0.0025 (6 / 2400). If a dealer offers 0.0040 (9.6% APR), you should negotiate."
-          },
-          {
-            question: "Can I negotiate the residual value?",
-            answer: "No. The residual value is set by the manufacturer's finance arm and is standard across all dealers for that specific car model and term."
-          },
-          {
-            question: "Should I lease if I drive a lot of miles?",
-            answer: "Usually not. Standard leases limit you to 10k, 12k, or 15k miles per year. Over-mileage fees (e.g., $0.25 per mile) can be extremely expensive. If you drive 20k+ miles, buying is almost always better."
-          },
-          {
-            question: "Is Gap Insurance necessary on a lease?",
-            answer: "Yes, but it is often included for free in many standard lease agreements from major manufacturers. Always check your contract; without it, you are liable for thousands if the car is totaled."
-          },
-          {
-            question: "What happens if I want to end my lease early?",
-            answer: "Early termination is typically very difficult and expensive. Options include a 'lease buyout' where you purchase the car from the bank, or using services to 'swap' your lease to another person."
-          },
-          {
-            question: "Can I buy the car at the end of the lease?",
-            answer: "Yes, every standard lease includes a 'Purchase Option Price,' which is exactly equal to the Residual Value plus any small administrative fees."
-          }
-        ]}
+        title={autoLeaseSeoData.title}
+        whatIsIt={autoLeaseSeoData.whatIsIt}
+        formula={autoLeaseSeoData.formula}
+        example={autoLeaseSeoData.example}
+        useCases={autoLeaseSeoData.useCases}
+        faqs={autoLeaseSeoData.faqs}
+        deepDive={autoLeaseSeoData.deepDive}
+        glossary={autoLeaseSeoData.glossary}
+        comparisonTable={autoLeaseSeoData.comparisonTable}
         relatedCalculators={[
           {
-            name: "Auto Loan Calculator",
+            name: "Auto Loan",
             path: "/auto-loan-calculator/",
             desc: "The alternative to leasing: calculate the cost of buying a car with a traditional loan.",
           },
           {
-            name: "Rent vs Buy Calculator",
+            name: "Rent vs Buy",
             path: "/rent-vs-buy-calculator/",
             desc: "Explore the same financial logic applied to your primary residence.",
           },
           {
-            name: "Loan Payoff Calculator",
+            name: "Loan Payoff",
             path: "/loan-payoff-calculator/",
             desc: "Determine how much you save by paying down debt earlier than scheduled.",
           },
           {
-            name: "Gas Mileage Calculator",
+            name: "Gas Mileage",
             path: "/gas-mileage-calculator/",
             desc: "Consider the operational costs (fuel) in tandem with your lease payment.",
-          }
-        ]}
+          }]}
       />
     </div>
   );

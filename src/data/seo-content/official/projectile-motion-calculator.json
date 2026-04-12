@@ -1,0 +1,112 @@
+{
+  "title": "Projectile Motion Calculator: Trajectory & Flight Path Analysis",
+  "whatIsIt": "A **projectile motion calculator** is a sophisticated physics utility used to model the parabolic path of an object thrown or launched into the air. By analyzing the initial velocity and launch angle, this tool predicts the object's maximum height, total distance (range), and the time it remains in flight. \n\nWhether you are a student solving kinematics problems or a sports analyst optimizing a basketball shot, this **trajectory calculator** is essential. It assumes 'free fall' conditions—where gravity is the only force acting on the object—providing the mathematical framework for understanding motion in two dimensions.",
+  "formula": "Projectile motion is calculated by treating the horizontal and vertical components of movement independently. This calculator uses the following kinematic equations:\n\n### 1. Horizontal Distance (Range)\n$R = \\frac{v^2 \\sin(2\\theta)}{g}$\n\n- **R**: Horizontal Range\n- **v**: Initial Velocity\n- **$\\theta$**: Launch Angle\n- **g**: Acceleration due to gravity (9.81 $m/s^2$)\n\n### 2. Maximum Height\n$H = \\frac{v^2 \\sin^2(\\theta)}{2g}$\n\n### 3. Time of Flight\n$T = \\frac{2v \\sin(\\theta)}{g}$\n\n### 4. Vertical Displacement at time $t$\n$y = v t \\sin(\\theta) - \\frac{1}{2}gt^2$",
+  "example": "Let's calculate the trajectory of a football kicked at **20 m/s** at a **45-degree angle**.\n\n### The Calculation Step-by-Step:\n1.  **Find Range**: $R = (20^2 \\times \\sin(90^\\circ)) / 9.81 = 400 / 9.81 = 40.77 \\text{ meters}$.\n2.  **Find Max Height**: $H = (20^2 \\times \\sin^2(45^\\circ)) / (2 \\times 9.81) = (400 \\times 0.5) / 19.62 = 10.19 \\text{ meters}$.\n3.  **Find Time of Flight**: $T = (2 \\times 20 \\times \\sin(45^\\circ)) / 9.81 = 28.28 / 9.81 = 2.88 \\text{ seconds}$.\n\n**The Result**: The ball will travel **40.77 meters** horizontally, reaching a peak height of **10.19 meters** before landing **2.88 seconds** later. Using a **launch angle calculator** like this helps athletes understand how small adjustments in kick angle drastically change the ball's landing point.",
+  "useCases": "### 1. Sports Biomechanics\nAthletes in basketball, golf, and soccer use projectile math to optimize their performance. For example, a basketball 'three-pointer' requires a specific high-arc trajectory to maximize the 'effective size' of the hoop for the ball to enter.\n\n### 2. Ballistics and Military Science\nLong-range artillery and mortar fire rely on precise trajectory projections. Gunners must account for initial muzzle velocity and the 'Elevation' angle to hit targets miles away, often using this **flight time calculator** logic to coordinate simultaneous impacts.\n\n### 3. Pyrotechnics & Firework Design\nFirework displays are choreographed using projectile motion. Designers calculate the 'Break Height' (Max Height) to ensure the burst occurs at the intended altitude, preventing debris from reaching the ground too quickly.\n\n### 4. Civil Engineering & Fountains\nDesigners of decorative fountains or irrigation systems use these calculations to predict exactly where water droplets will land, ensuring aesthetic symmetry and efficient water distribution.",
+  "faqs": [
+    {
+      "question": "What is the best angle for maximum range?",
+      "answer": "In a vacuum (no air resistance), a 45-degree angle provides the maximum horizontal distance. In reality, with air resistance, the optimal angle is usually slightly lower, around 35-40 degrees."
+    },
+    {
+      "question": "Does the mass of the object affect the trajectory?",
+      "answer": "In ideal projectile motion (no air resistance), mass does not affect the path. A bowling ball and a tennis ball launched at the same speed and angle will follow the exact same trajectory."
+    },
+    {
+      "question": "What is 'Initial Velocity'?",
+      "answer": "Initial velocity is the speed and direction of the object at the exact moment it is launched ($t=0$)."
+    },
+    {
+      "question": "Does gravity change at different altitudes?",
+      "answer": "Slightly. While 9.81 m/s² is the standard on Earth's surface, it is lower at the top of Mt. Everest (approx 9.77). This calculator allows for high-precision adjustments to the gravity constant."
+    },
+    {
+      "question": "What happens at a 90-degree launch angle?",
+      "answer": "The object travels straight up and falls straight down. The Range ($R$) is zero, and the Time of Flight and Max Height are at their absolute maximums for that specific initial velocity."
+    }
+  ],
+  "deepDive": "### Independent Horizontal and Vertical Motion\n\nThe 'magic' of projectile motion is that the horizontal velocity ($v_x = v \\cos\\theta$) remains constant throughout the flight, while the vertical velocity ($v_y = v \\sin\\theta$) is constantly changing due to the downward pull of gravity ($g$). \n\n#### The Symmetrical Path\nThe trajectory is a perfect parabola. The time it takes to reach the peak is exactly half the total time of flight. Furthermore, the velocity of the object when it lands is equal in magnitude to the velocity at launch, but with a mirrored vertical direction.\n\n### The Effect of Air Resistance (Drag)\nIn real-world applications, 'Fluid Drag' significantly alters the path. Drag depends on the object's shape, surface texture, and speed. It shortens the range and makes the descent steeper than the ascent. While this **trajectory calculator** models the 'Ideal' scenario, engineers use iterative simulations to account for high-velocity atmospheric drag.\n\n### Orbital Mechanics: The Limit of Range\nAs the horizontal range increases significantly, the curvature of the Earth must be considered. If an object is launched horizontally fast enough (approx 7.9 km/s), it will 'fall' toward the Earth at the same rate the Earth curves away from it. This is how satellites stay in orbit—they are simply projectiles that never hit the ground.\n\n### Zero-Launch (Horizontal Projectiles)\nMany problems involve launching an object horizontally from a height (like a ball rolling off a desk). In this case, the launch angle is 0°. The vertical motion is identical to an object dropped from rest, while the horizontal motion proceeds at a constant speed. This results in a 'half-parabola' path.",
+  "glossary": [
+    {
+      "term": "Projectile",
+      "definition": "An object thrown or launched into the air that is subject only to the force of gravity (and air resistance in reality)."
+    },
+    {
+      "term": "Trajectory",
+      "definition": "The curved path of an object in flight."
+    },
+    {
+      "term": "Parabola",
+      "definition": "A symmetrical open plane curve formed by the intersection of a cone with a plane parallel to its side (the shape of a projectile's flight)."
+    },
+    {
+      "term": "Initial Velocity",
+      "definition": "The speed and direction of the object at the start of its flight."
+    },
+    {
+      "term": "Range",
+      "definition": "The horizontal distance traveled by a projectile before it returns to its initial height."
+    },
+    {
+      "term": "Time of Flight",
+      "definition": "The total time the projectile remains in the air."
+    },
+    {
+      "term": "Apex (Max Height)",
+      "definition": "The highest point reached during the projectile's flight."
+    },
+    {
+      "term": "Launch Angle",
+      "definition": "The angle relative to the horizontal at which the object is launched."
+    },
+    {
+      "term": "Kinematics",
+      "definition": "The study of motion without considering the forces causing it."
+    },
+    {
+      "term": "Gravity (g)",
+      "definition": "The acceleration caused by Earth's gravitational pull (approx 9.81 m/s²)."
+    },
+    {
+      "term": "Vector",
+      "definition": "A quantity that has both magnitude and direction (e.g., velocity)."
+    },
+    {
+      "term": "Magnitude",
+      "definition": "The size or extent of a physical quantity (e.g., speed)."
+    },
+    {
+      "term": "Scalar",
+      "definition": "A physical quantity that has only magnitude (e.g., time, mass)."
+    },
+    {
+      "term": "Free Fall",
+      "definition": "The state of an object that is falling under the sole influence of gravity."
+    },
+    {
+      "term": "Air Resistance (Drag)",
+      "definition": "The force that opposes the motion of an object through the air."
+    },
+    {
+      "term": "Symmetry",
+      "definition": "The quality of being made up of exactly similar parts facing each other."
+    },
+    {
+      "term": "Vacuum",
+      "definition": "A space entirely devoid of matter, including air."
+    },
+    {
+      "term": "Displacement",
+      "definition": "A vector quantity that refers to 'how far out of place an object is'; it is the object's overall change in position."
+    },
+    {
+      "term": "Trigonometry",
+      "definition": "The branch of mathematics dealing with the relations of the sides and angles of triangles; essential for resolving velocity into components."
+    },
+    {
+      "term": "Ordnance",
+      "definition": "Mounted guns, artillery, and ammunition used in military contexts; a primarily application for trajectory math."
+    }
+  ]
+}

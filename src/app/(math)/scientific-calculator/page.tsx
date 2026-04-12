@@ -1,240 +1,241 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
-import scientificSeoData from "@/data/seo-content/official/scientific-calculator.json";
+import sciData from "@/data/seo-content/official/scientific-calculator.json";
 
 export default function ScientificCalculator() {
-  const [display, setDisplay] = useState("");
-  const [history, setHistory] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
+  const [display, setDisplay] = useState("0");
+  const [history, setHistory] = useState<string[]>([]);
+  const [mode, setMode] = useState<"DEG" | "RAD">("DEG");
 
-  const append = (val: string) => {
-    setErrorMsg("");
-    setDisplay((prev) => prev + val);
-  };
-
-  const calculate = () => {
-    if (!display) return;
-    try {
-      // In a production app, use advanced math.js or safe eval.
-      // Since eval is disabled in strict mode often, we replace math symbols.
-      let expression = display
-        .replace(/×/g, "*")
-        .replace(/÷/g, "/")
-        .replace(/sin\(/g, "Math.sin(")
-        .replace(/cos\(/g, "Math.cos(")
-        .replace(/tan\(/g, "Math.tan(")
-        .replace(/log\(/g, "Math.log10(")
-        .replace(/ln\(/g, "Math.log(")
-        .replace(/sqrt\(/g, "Math.sqrt(")
-        .replace(/\^/g, "**")
-        .replace(/π/g, "Math.PI")
-        .replace(/e/g, "Math.E");
-
-      // Auto-close open parens for naive evaluator
-      const openParens = (expression.match(/\(/g) || []).length;
-      const closeParens = (expression.match(/\)/g) || []).length;
-      expression += ")".repeat(openParens - closeParens);
-
-      const result = new Function("return " + expression)();
-      if (!isFinite(result) || isNaN(result)) throw new Error("Invalid Math");
-
-      setHistory(display + " =");
-      setDisplay(String(Number(result.toFixed(10)))); // Fix float inexacts
-      setErrorMsg("");
-    } catch (e) {
-      setErrorMsg("Syntax Error");
-    }
+  const append = (char: string) => {
+    setDisplay(prev => (prev === "0" ? char : prev + char));
   };
 
   const clear = () => {
-    setDisplay("");
-    setHistory("");
-    setErrorMsg("");
+    setDisplay("0");
   };
-  const backspace = () => setDisplay((prev) => prev.slice(0, -1));
+
+  const backspace = () => {
+    setDisplay(prev => (prev.length > 1 ? prev.slice(0, -1) : "0"));
+  };
+
+  const calculate = () => {
+    try {
+      // Basic math handler
+      let expr = display
+        .replace(/π/g, Math.PI.toString())
+        .replace(/e/g, Math.E.toString())
+        .replace(/sin\(/g, mode === "DEG" ? "Math.sin(Math.PI/180*" : "Math.sin(")
+        .replace(/cos\(/g, mode === "DEG" ? "Math.cos(Math.PI/180*" : "Math.cos(")
+        .replace(/tan\(/g, mode === "DEG" ? "Math.tan(Math.PI/180*" : "Math.tan(")
+        .replace(/log\(/g, "Math.log10(")
+        .replace(/ln\(/g, "Math.log(")
+        .replace(/\^/g, "**")
+        .replace(/√\(/g, "Math.sqrt(");
+
+      // Handle missing closing parentheses for the replaces (extremely basic heuristic)
+      const openCount = (expr.match(/\(/g) || []).length;
+      const closeCount = (expr.match(/\)/g) || []).length;
+      for (let i = 0; i < openCount - closeCount; i++) {
+        expr += ")";
+      }
+
+      const res = eval(expr);
+      const roundedRes = Number.isInteger(res) ? res.toString() : parseFloat(res.toFixed(8)).toString();
+      
+      setHistory([`${display} = ${roundedRes}`, ...history.slice(0, 4)]);
+      setDisplay(roundedRes);
+    } catch (e) {
+      setDisplay("Error");
+      setTimeout(() => setDisplay("0"), 1000);
+    }
+  };
+
+  const Btn = ({ label, onClick, className = "", variant = "standard" }: { label: string, onClick: any, className?: string, variant?: "standard" | "op" | "sci" | "accent" }) => {
+    const variants = {
+      standard: "bg-white text-slate-900 border-slate-100 hover:border-indigo-500",
+      op: "bg-slate-900 text-indigo-400 border-slate-800 hover:bg-black",
+      sci: "bg-indigo-50 text-indigo-600 border-indigo-100 hover:bg-indigo-100",
+      accent: "bg-indigo-600 text-white border-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-200"
+    };
+
+    return (
+      <button 
+        onClick={onClick}
+        className={`h-14 md:h-16 flex items-center justify-center rounded-2xl border-2 font-black text-sm md:text-md transition-all active:scale-95 ${variants[variant]} ${className}`}
+      >
+        {label}
+      </button>
+    );
+  };
 
   return (
-    <div className="max-w-xl mx-auto p-4 md:p-6 bg-gray-900 rounded-3xl shadow-2xl border border-gray-700">
-      <h1 className="sr-only">Scientific Calculator</h1>
-
-      {/* Display Screen */}
-      <div className="bg-[#a3b18a] bg-opacity-90 p-6 rounded-xl mb-6 shadow-inner text-right border-4 border-[#828f6f] relative flex flex-col justify-end min-h-[120px]">
-        {errorMsg && (
-          <div className="absolute top-2 left-4 text-red-700 font-bold text-sm uppercase tracking-widest">
-            {errorMsg}
+    <div className="max-w-6xl mx-auto p-4 md:p-8 bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(79,70,229,0.1)] border border-indigo-50 font-sans">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-indigo-50 pb-8 mb-10 gap-6">
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-indigo-200">f(x)</div>
+            <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase italic">
+              Advanced <span className="text-indigo-600 font-black">Analytical Core</span>
+            </h1>
           </div>
-        )}
-        <div className="text-slate-800 h-6 text-sm font-mono tracking-widest opacity-60 mb-1 truncate">
-          {history}
+          <p className="text-slate-400 font-bold mt-1 tracking-tight text-sm uppercase italic">Scientific Transcendental Matrix</p>
         </div>
-        <div className="text-slate-900 text-5xl font-mono tracking-tight font-bold break-all leading-none">
-          {display || "0"}
+        <div className="hidden md:flex flex-col items-end text-right">
+          <div className="bg-indigo-900 px-4 py-2 rounded-xl border border-indigo-700 mb-1 shadow-lg">
+            <span className="text-indigo-300 font-black text-[10px] uppercase tracking-[0.3em]">Module π-99</span>
+          </div>
+          <span className="text-[10px] text-slate-300 font-bold uppercase tracking-tighter italic">Floating-Point Precision Engine</span>
         </div>
       </div>
 
-      <div className="grid grid-cols-5 gap-2 sm:gap-3">
-        {/* Row 1 Scientific + Actions */}
-        <button onClick={() => append("sin(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          sin
-        </button>
-        <button onClick={() => append("cos(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          cos
-        </button>
-        <button onClick={() => append("tan(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          tan
-        </button>
-        <button
-          onClick={backspace}
-          className="bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center text-sm md:text-lg"
-        >
-          ⌫
-        </button>
-        <button
-          onClick={clear}
-          className="bg-red-600 hover:bg-red-500 text-white font-bold font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center text-sm md:text-lg"
-        >
-          AC
-        </button>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
+        {/* Calculator Body */}
+        <div className="lg:col-span-8 flex flex-col">
+           <div className="grow bg-slate-900 rounded-[3rem] p-6 md:p-10 shadow-2xl relative overflow-hidden flex flex-col border border-slate-800">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+              
+              {/* Screen */}
+              <div className="mb-8 rounded-[2rem] bg-[#0c0c0e] p-8 md:p-10 flex flex-col items-end justify-center min-h-[160px] shadow-inner border border-white/5 relative">
+                 <div className="absolute top-6 left-8 flex gap-2">
+                    <button onClick={() => setMode("DEG")} className={`text-[10px] font-black tracking-widest px-2 py-0.5 rounded ${mode === "DEG" ? "bg-indigo-600 text-white" : "text-slate-600"}`}>DEG</button>
+                    <button onClick={() => setMode("RAD")} className={`text-[10px] font-black tracking-widest px-2 py-0.5 rounded ${mode === "RAD" ? "bg-indigo-600 text-white" : "text-slate-600"}`}>RAD</button>
+                 </div>
+                 <div className="text-indigo-400 text-[10px] font-bold mb-2 uppercase tracking-widest h-4 overflow-hidden text-right max-w-full">
+                    {history[0] || "Ready"}
+                 </div>
+                 <div className="text-white text-5xl md:text-7xl font-black tracking-tighter truncate w-full text-right h-[1.1em]">
+                    {display}
+                 </div>
+              </div>
 
-        {/* Row 2 Scientific + Ops */}
-        <button onClick={() => append("log(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          log
-        </button>
-        <button onClick={() => append("ln(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          ln
-        </button>
-        <button onClick={() => append("(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          (
-        </button>
-        <button onClick={() => append(")")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          )
-        </button>
-        <button onClick={() => append("÷")} className="bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          ÷
-        </button>
+              {/* Buttons Grid */}
+              <div className="grid grid-cols-4 md:grid-cols-5 gap-3 md:gap-4">
+                 {/* Row 1 (Sci Functions) */}
+                 <div className="col-span-1 hidden md:block">
+                    <Btn label="sin" onClick={() => append("sin(")} variant="sci" />
+                 </div>
+                 <Btn label="AC" onClick={clear} variant="op" className="text-rose-400" />
+                 <Btn label="(" onClick={() => append("(")} variant="op" />
+                 <Btn label=")" onClick={() => append(")")} variant="op" />
+                 <Btn label="÷" onClick={() => append("/")} variant="op" />
 
-        {/* Row 3 Digits + Ops */}
-        <button onClick={() => append("sqrt(")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          √
-        </button>
-        <button onClick={() => append("7")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          7
-        </button>
-        <button onClick={() => append("8")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          8
-        </button>
-        <button onClick={() => append("9")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          9
-        </button>
-        <button onClick={() => append("×")} className="bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          ×
-        </button>
+                 {/* Row 2 */}
+                 <div className="col-span-1 hidden md:block">
+                    <Btn label="cos" onClick={() => append("cos(")} variant="sci" />
+                 </div>
+                 <Btn label="7" onClick={() => append("7")} />
+                 <Btn label="8" onClick={() => append("8")} />
+                 <Btn label="9" onClick={() => append("9")} />
+                 <Btn label="×" onClick={() => append("*")} variant="op" />
 
-        {/* Row 4 Digits + Ops */}
-        <button onClick={() => append("^")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          xʸ
-        </button>
-        <button onClick={() => append("4")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          4
-        </button>
-        <button onClick={() => append("5")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          5
-        </button>
-        <button onClick={() => append("6")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          6
-        </button>
-        <button onClick={() => append("-")} className="bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          -
-        </button>
+                 {/* Row 3 */}
+                 <div className="col-span-1 hidden md:block">
+                    <Btn label="tan" onClick={() => append("tan(")} variant="sci" />
+                 </div>
+                 <Btn label="4" onClick={() => append("4")} />
+                 <Btn label="5" onClick={() => append("5")} />
+                 <Btn label="6" onClick={() => append("6")} />
+                 <Btn label="-" onClick={() => append("-")} variant="op" />
 
-        {/* Row 5 Digits + Ops */}
-        <button onClick={() => append("π")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          π
-        </button>
-        <button onClick={() => append("1")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          1
-        </button>
-        <button onClick={() => append("2")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          2
-        </button>
-        <button onClick={() => append("3")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          3
-        </button>
-        <button onClick={() => append("+")} className="bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          +
-        </button>
+                 {/* Row 4 */}
+                 <div className="col-span-1 hidden md:block">
+                    <Btn label="log" onClick={() => append("log(")} variant="sci" />
+                 </div>
+                 <Btn label="1" onClick={() => append("1")} />
+                 <Btn label="2" onClick={() => append("2")} />
+                 <Btn label="3" onClick={() => append("3")} />
+                 <Btn label="+" onClick={() => append("+")} variant="op" />
 
-        {/* Row 6 Digits + Ops */}
-        <button onClick={() => append("e")} className="bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 text-xs md:text-sm font-semibold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          e
-        </button>
-        <button onClick={() => append("0")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center col-span-2">
-          0
-        </button>
-        <button onClick={() => append(".")} className="bg-slate-100 hover:bg-white active:bg-slate-300 text-slate-900 text-xl md:text-2xl font-bold py-3 sm:py-4 rounded-lg shadow-sm transition flex justify-center items-center">
-          .
-        </button>
-        <button
-          onClick={calculate}
-          className="col-span-1 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white text-xl md:text-2xl font-bold rounded-lg shadow-sm transition flex justify-center items-center"
-        >
-          =
-        </button>
+                 {/* Row 5 */}
+                 <div className="col-span-1 hidden md:block">
+                    <Btn label="ln" onClick={() => append("ln(")} variant="sci" />
+                 </div>
+                 <Btn label="0" onClick={() => append("0")} />
+                 <Btn label="." onClick={() => append(".")} />
+                 <Btn label="⌫" onClick={backspace} variant="standard" className="text-slate-400" />
+                 <Btn label="=" onClick={calculate} variant="accent" />
+
+                 {/* Mobile Sci Functions Show up in extra rows if needed, or simplified */}
+                 <div className="md:hidden contents">
+                    <Btn label="sin" onClick={() => append("sin(")} variant="sci" className="text-xs" />
+                    <Btn label="cos" onClick={() => append("cos(")} variant="sci" className="text-xs" />
+                    <Btn label="tan" onClick={() => append("tan(")} variant="sci" className="text-xs" />
+                    <Btn label="√" onClick={() => append("√(")} variant="sci" className="text-xs" />
+                 </div>
+              </div>
+
+              {/* Advanced Controls Row */}
+              <div className="hidden md:grid grid-cols-5 gap-4 mt-4">
+                 <Btn label="π" onClick={() => append("π")} variant="standard" />
+                 <Btn label="e" onClick={() => append("e")} variant="standard" />
+                 <Btn label="x^y" onClick={() => append("^")} variant="standard" />
+                 <Btn label="√x" onClick={() => append("√(")} variant="standard" />
+                 <Btn label="FACT" onClick={() => setDisplay(prev => prev + "!")} variant="standard" />
+              </div>
+           </div>
+        </div>
+
+        {/* History / Info Sidebar */}
+        <div className="lg:col-span-4 space-y-6 flex flex-col">
+           <div className="p-8 bg-slate-50 border border-slate-200 rounded-[2.5rem] shadow-inner grow relative overflow-hidden flex flex-col">
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-400 italic block mb-6 leading-none">Calculation History</span>
+              <div className="space-y-4 grow font-mono overflow-y-auto max-h-[300px] pr-2 scrollbar-hide">
+                 {history.length > 0 ? history.map((h, i) => (
+                   <div key={i} className="bg-white p-4 rounded-xl border border-slate-100 text-xs text-slate-500 font-bold italic animate-in slide-in-from-right-2">
+                      {h}
+                   </div>
+                 )) : (
+                   <div className="h-full flex flex-col items-center justify-center text-center opacity-30">
+                      <div className="w-12 h-12 bg-slate-200 rounded-full mb-4"></div>
+                      <p className="text-[10px] uppercase font-black tracking-widest text-slate-400">Memory clear</p>
+                   </div>
+                 )}
+              </div>
+           </div>
+
+           <div className="p-8 bg-indigo-900 rounded-[3rem] text-white space-y-4 shadow-2xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+              <span className="text-[10px] font-black uppercase tracking-widest text-indigo-400 italic leading-none block">System Logic</span>
+              <p className="text-[10px] font-bold leading-relaxed italic text-white/60">PEMDAS validation active. Transcendental inputs are evaluated in {mode} mode. Precision rounded to 8 decimal places.</p>
+           </div>
+        </div>
       </div>
 
-
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Scientific Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-          }),
-        }}
+      <CalculatorSEO
+        title={sciData.title}
+        whatIsIt={sciData.whatIsIt}
+        formula={sciData.formula}
+        example={sciData.example}
+        useCases={sciData.useCases}
+        faqs={sciData.faqs}
+        deepDive={sciData.deepDive}
+        glossary={sciData.glossary}
+        relatedCalculators={[
+          {
+            name: "Binary Calculator",
+            path: "/binary-calculator/",
+            desc: "Understand the base-2 logic underlying digital hardware.",
+          },
+          {
+            name: "Percentage",
+            path: "/percentage-calculator/",
+            desc: "Calculate proportional growth and statistical change metrics.",
+          },
+          {
+            name: "Acceleration",
+            path: "/acceleration-calculator/",
+            desc: "Analyze kinematic change distributions in physics modeling.",
+          },
+          {
+            name: "GPA Calculator",
+            path: "/gpa-calculator/",
+            desc: "Perform weighted academic achievement analysis.",
+          }
+        ]}
       />
-
-      <div className="mt-8">
-        <CalculatorSEO
-          title={scientificSeoData.title}
-          whatIsIt={scientificSeoData.whatIsIt}
-          formula={scientificSeoData.formula}
-          example={scientificSeoData.example}
-          useCases={scientificSeoData.useCases}
-          faqs={scientificSeoData.faqs}
-          deepDive={scientificSeoData.deepDive}
-          glossary={scientificSeoData.glossary}
-          relatedCalculators={[
-            {
-              name: "Order of Operations Calculator",
-              path: "/order-of-operations-calculator/",
-              desc: "A detailed breakdown of how mathematical parsing hierarchy works step-by-step.",
-            },
-            {
-              name: "Fraction Simplifier",
-              path: "/fraction-simplifier-calculator/",
-              desc: "Reduce raw mathematical outputs into clean, simplified rational fractions.",
-            },
-            {
-              name: "Logarithm Calculator",
-              path: "/logarithm-calculator/",
-              desc: "Calculate logs with custom, non-standard bases.",
-            },
-            {
-              name: "Percentage Calculator",
-              path: "/percentage-calculator/",
-              desc: "Easily calculate percentages, increases, and decreases.",
-            },
-          ]}
-        />
-      </div>
-
     </div>
   );
 }

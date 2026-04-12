@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import refinanceSeoData from "@/data/seo-content/official/refinance-calculator.json";
 
 export default function RefinanceCalculator() {
   const [currentLoan, setCurrentLoan] = useState("200000");
@@ -266,149 +267,38 @@ export default function RefinanceCalculator() {
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Refinance Calculator",
-            operatingSystem: "All",
-            applicationCategory: "FinanceApplication",
-            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-          }),
-        }}
+      <CalculatorSEO
+        title={refinanceSeoData.title}
+        whatIsIt={refinanceSeoData.whatIsIt}
+        formula={refinanceSeoData.formula}
+        example={refinanceSeoData.example}
+        useCases={refinanceSeoData.useCases}
+        faqs={refinanceSeoData.faqs}
+        deepDive={refinanceSeoData.deepDive}
+        glossary={refinanceSeoData.glossary}
+        relatedCalculators={[
+          {
+            name: "Mortgage",
+            path: "/mortgage-calculator/",
+            desc: "For calculating initial purchase scenarios, taxes, and PMI.",
+          },
+          {
+            name: "FHA Loan",
+            path: "/fha-loan-calculator/",
+            desc: "Account for FHA-specific Upfront and Annual Mortgage Insurance Premiums.",
+          },
+          {
+            name: "Debt Payoff",
+            path: "/debt-payoff-calculator/",
+            desc: "See what happens if you just pay extra principal instead of refinancing.",
+          },
+          {
+            name: "ROI",
+            path: "/roi-calculator/",
+            desc: "Calculate your exact annualized percentage returns.",
+          },
+        ]}
       />
-
-      <div className="mt-8">
-        <CalculatorSEO
-          title="Mortgage Refinance Break-Even Calculator"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Mortgage Refinance Calculator</strong> analyzes your
-                current loan against a proposed new loan to tell you exactly how
-                much money you will save (or lose) over the lifetime of the
-                debt.
-              </p>
-              <p>
-                Refinancing replaces your existing mortgage with a brand new
-                one. Because banks charge thousands of dollars in closing costs
-                to originate a new loan, a lower interest rate does <em>not</em>{" "}
-                automatically guarantee you are saving money. This tool
-                calculates your exact "Break-Even" timeline to determine if the
-                move is actually profitable.
-              </p>
-
-              <p className="mt-4 text-sm text-gray-500">
-                <strong>Related Terms:</strong> Refinance Calculator
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Standard financial analysis and amortization model for precise Refinance results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Suppose you have <strong>20 years</strong> left on a{" "}
-                <strong>$200,000</strong> loan at <strong>6.5%</strong>. A
-                lender offers to drop your rate to <strong>4.5%</strong> for a
-                new 20-year term, but charges <strong>$3,000</strong> in upfront
-                closing costs.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Monthly Win:</strong> Your payment drops from
-                  $1,491/mo to $1,265/mo (saving $226 every single month).
-                </li>
-                <li>
-                  <strong>The Cost to Play:</strong> You must pay the bank
-                  $3,000 to get that lower rate.
-                </li>
-                <li>
-                  <strong>The Break-Even:</strong> $3,000 ÷ $226 ={" "}
-                  <strong>13.2 months</strong>.
-                </li>
-                <li>
-                  <strong>The Reality Check:</strong> If you stay in the house
-                  for at least 14 months, the refinance pays for itself. If you
-                  stay for the full 20 years, you will save a massive{" "}
-                  <strong>$51k</strong> in total lifetime interest. Refinancing
-                  here is a highly profitable, mathematically sound decision.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Rate Drop Capitalization:</strong> Quickly checking if
-                the Fed dropping interest rates by 1.0% justifies sitting
-                through the paperwork of refinancing your current home.
-              </li>
-              <li>
-                <strong>Term Reduction:</strong> Refinancing from a 30-year to a
-                15-year mortgage. Your monthly payment will likely go{" "}
-                <em>up</em>, but you will shave over a decade off your debt
-                sentence and massively reduce lifetime interest.
-              </li>
-              <li>
-                <strong>Cash-Out Refi Analysis:</strong> Borrowing against your
-                home equity. By increasing the new loan balance, you can see
-                exactly how much extra interest that kitchen remodel is actually
-                going to cost you over 30 years.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question:
-                "What if the calculator says my monthly payment goes UP?",
-              answer:
-                "This happens frequently when you refinance to a shorter term (e.g., going from 30 years to 15 years). Even though your monthly payment increases, your total lifetime savings might still be massive because you are paying the bank for 15 fewer years.",
-            },
-            {
-              question: "Should I roll the closing costs into the new loan?",
-              answer:
-                "Yes, this is called 'financing the fees'. It prevents you from paying out of pocket, but you will pay interest on those fees for 30 years. Note: This calculator automatically accounts for financed fees by adding the closing costs to your proposed loan balance.",
-            },
-            {
-              question: "Does refinancing restart my 30-year clock?",
-              answer:
-                "Yes. This is the biggest trap of refinancing. If you are 10 years into a 30-year mortgage and refinance into a NEW 30-year mortgage, you will now be paying for 40 total years. To do a true 'apples-to-apples' comparison, always match the new term to your CURRENT remaining months.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator/",
-              desc: "For calculating initial purchase scenarios, taxes, and PMI.",
-            },
-            {
-              name: "FHA Loan Calculator",
-              path: "/fha-loan-calculator/",
-              desc: "Account for FHA-specific Upfront and Annual Mortgage Insurance Premiums.",
-            },
-            {
-              name: "Debt Payoff Calculator",
-              path: "/debt-payoff-calculator/",
-              desc: "See what happens if you just pay extra principal instead of refinancing.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator/",
-              desc: "Calculate your exact annualized percentage returns.",
-            }]}
-        />
-      </div>
     </div>
   );
 }

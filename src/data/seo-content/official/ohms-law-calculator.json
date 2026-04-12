@@ -1,0 +1,112 @@
+{
+  "title": "Ohm's Law Calculator: Voltage, Current & Resistance Analysis",
+  "whatIsIt": "An **Ohm's Law calculator** is a fundamental electrical engineering tool used to calculate the relationship between Voltage, Current, and Resistance in an electrical circuit. Stated by Georg Simon Ohm in 1827, Ohm's Law is the most critical principle for designing and troubleshooting electronic devices, from simple flashlights to complex computer processors.\n\nWhether you are an electrician sizing a breaker or a hobbyist choosing the correct resistor for an LED, this **voltage and current calculator** provides the mathematical precision required. By inputting any two of the three variables, this tool reveals the third, along with the total power dissipated by the circuit in Watts.",
+  "formula": "The relationship in a DC circuit is defined by the Ohm's Law triangle. This calculator uses four primary equations to solve for any missing electrical parameter:\n\n### 1. Ohm's Law (Voltage)\n$V = I \\times R$\n\n- **V**: Voltage (Volts, V)\n- **I**: Current (Amperes, A)\n- **R**: Resistance (Ohms, Ω)\n\n### 2. The Power Law (Wattage)\n$P = V \\times I \\implies P = I^2 \\times R$\n\n- **P**: Power (Watts, W)\n\n### 3. Solving for Current\n$I = \\frac{V}{R} \\implies I = \\frac{P}{V}$\n\n### 4. Solving for Resistance\n$R = \\frac{V}{I} \\implies R = \\frac{V^2}{P}$",
+  "example": "Let's calculate the current draw of a **1,200 Watt space heater** plugged into a standard **120 Volt** household outlet.\n\n### The Calculation Step-by-Step:\n1.  **Identify Variables**: $P = 1,200$, $V = 120$\n2.  **Apply Formula**: $I = P / V$\n3.  **Calculate**: $I = 1,200 / 120 = 10 \\text{ Amperes}$\n4.  **Find Resistance**: $R = V / I = 120 / 10 = 12 \\text{ Ohms}$\n\n**The Result**: The heater draws **10 Amps** of current and has an internal resistance of **12 Ohms**. Knowing this ensures that the circuit breaker (typically rated for 15 or 20 Amps) will not trip during normal operation. A **v=ir calculator** is essential for maintaining safety in home and industrial electrical systems.",
+  "useCases": "### 1. Electronics Prototyping\nWhen connecting an LED to a battery, you must use a 'current-limiting resistor.' If you know the battery voltage and the LED's forward voltage and rated current, this **ohms law calculator** helps you pick the exact resistor value to prevent the LED from burning out.\n\n### 2. Automotive Wiring\nCar enthusiasts adding amplifiers or heavy lighting use this tool to determine the 'Ampacity' needed for their wiring. Insufficient wire gauge for a high-current load causes the wire to heat up, potentially leading to a vehicle fire.\n\n### 3. Solar Power System Design\nWhen designing a solar array, you must balance voltage and current. High-voltage strings reduce energy loss over long wire runs. This tool helps calculate the 'Voltage Drop' and system efficiency based on the resistance of the cables used.\n\n### 4. Industrial Maintenance\nElectricians use Ohm's Law to verify if a motor is failing. By measuring the resistance of the motor windings and comparing it to the manufacturer's spec for the rated voltage, they can identify 'short circuits' or 'open circuits' before catastrophic failure.",
+  "faqs": [
+    {
+      "question": "What is the unit of Resistance?",
+      "answer": "Resistance is measured in Ohms (Ω). It represents the opposition to the flow of electric current. A higher resistance means less current will flow for a given voltage."
+    },
+    {
+      "question": "What happens if Resistance is zero?",
+      "answer": "If resistance is zero in a circuit with voltage, it creates a 'Short Circuit.' Mathematically, current becomes infinite ($I = V/0$). In reality, this causes intense heat, sparks, and usually triggers a fuse or breaker."
+    },
+    {
+      "question": "How does AC differ from DC in Ohm's Law?",
+      "answer": "For simple resistive loads (like light bulbs), Ohm's Law works the same for both. However, for AC circuits with 'Inductive' or 'Capacitive' loads, you must use 'Impedance' ($Z$) instead of pure resistance ($R$)."
+    },
+    {
+      "question": "What is Power (Watts)?",
+      "answer": "Power is the rate at which electrical energy is converted into another form of energy (like heat or light). It is the product of voltage and current ($P = V \\times I$)."
+    },
+    {
+      "question": "Can I use this for high-voltage systems?",
+      "answer": "Yes. The math of Ohm's Law is universal. However, high-voltage systems (above 600V) require specialized safety equipment and professional certification for any physical measurements."
+    }
+  ],
+  "deepDive": "### Circuit Topologies: Series vs. Parallel\n\nOhm's Law applies to individual components, but the total 'Equivalent Resistance' of a circuit depends on how those components are connected.\n\n#### 1. Series Circuits\n$R_{total} = R_1 + R_2 + R_3...$\nIn a series circuit, the total resistance increases as you add components. The current remains the same through all components, but the voltage 'drops' across each one.\n\n#### 2. Parallel Circuits\n$1/R_{total} = 1/R_1 + 1/R_2 + 1/R_3...$\nIn a parallel circuit, adding more components actually *decreases* the total resistance. Every component receives the full source voltage, which is why your household outlets are wired in parallel.\n\n### Joule Heating: The Physics of Resistance\nWhen current flows through a resistor, some electrical energy is converted into thermal energy. This is known as Joule Heating ($P = I^2 \\times R$). This principle is why your phone gets warm while charging and how an electric stove works. In high-efficiency systems, engineers use this **v=ir calculator** specifically to *minimize* this heat loss by using larger wires (lower $R$) or higher voltages (lower $I$).\n\n### Conductivity and Material Science\nResistance ($R$) depends on the material's 'Resistivity' ($\\rho$), its cross-sectional area ($A$), and its length ($L$): $R = \\rho \\cdot (L / A)$. Copper is the industry standard because it has very low resistivity. This calculator helps electrical engineers project the resistance of a 100-foot cable before it is even manufactured based on these physical properties.\n\n### The 'Water' Analogy\nTo visualize Ohm's Law, imagine water flowing through a pipe:\n- **Voltage** is the **Pressure** pushing the water.\n- **Current** is the **Flow Rate** (how much water moves per second).\n- **Resistance** is the **Pipe Size** (a narrower pipe makes it harder to flow).",
+  "glossary": [
+    {
+      "term": "Ohm's Law",
+      "definition": "The law stating that the current through a conductor between two points is directly proportional to the voltage across the two points ($V=IR$)."
+    },
+    {
+      "term": "Voltage (V)",
+      "definition": "The difference in electric potential energy per unit charge between two points (Electrical Pressure)."
+    },
+    {
+      "term": "Current (I)",
+      "definition": "The rate of flow of electric charge (Measured in Amperes)."
+    },
+    {
+      "term": "Resistance (R)",
+      "definition": "The opposition that a substance offers to the flow of electric current (Measured in Ohms)."
+    },
+    {
+      "term": "Watt (W)",
+      "definition": "The SI unit of power, equivalent to one joule per second."
+    },
+    {
+      "term": "Ampere (A)",
+      "definition": "The base unit of electric current in the International System of Units."
+    },
+    {
+      "term": "Ohm (Ω)",
+      "definition": "The unit of electrical resistance, named after Georg Simon Ohm."
+    },
+    {
+      "term": "DC (Direct Current)",
+      "definition": "An electric current flowing in one direction only."
+    },
+    {
+      "term": "AC (Alternating Current)",
+      "definition": "An electric current that reverses its direction many times a second at regular intervals."
+    },
+    {
+      "term": "Short Circuit",
+      "definition": "An electrical circuit that allows current to travel along an unintended path with very low electrical impedance."
+    },
+    {
+      "term": "Open Circuit",
+      "definition": "An electrical circuit in which the continuity is broken so that current does not flow."
+    },
+    {
+      "term": "Load",
+      "definition": "An electrical component or portion of a circuit that consumes (dissipates) electric power."
+    },
+    {
+      "term": "Circuit Breaker",
+      "definition": "An automatic device for stopping the flow of current in an electric circuit as a safety measure."
+    },
+    {
+      "term": "Fuse",
+      "definition": "A safety device consisting of a strip of wire that melts and breaks an electric circuit if the current exceeds a safe level."
+    },
+    {
+      "term": "Impedance (Z)",
+      "definition": "The total opposition to alternating current in a circuit, comprising both resistance and reactance."
+    },
+    {
+      "term": "Potentiometer",
+      "definition": "An instrument for measuring electromotive force; often used as a variable resistor."
+    },
+    {
+      "term": "Multimeter",
+      "definition": "A diagnostic tool for measuring voltage, current, and resistance."
+    },
+    {
+      "term": "Resistor",
+      "definition": "A passive two-terminal electrical component that implements electrical resistance as a circuit element."
+    },
+    {
+      "term": "Inductor",
+      "definition": "A passive two-terminal electrical component that stores energy in a magnetic field when electric current flows through it."
+    },
+    {
+      "term": "Capacitor",
+      "definition": "A device used to store an electric charge, consisting of one or more pairs of conductors separated by an insulator."
+    }
+  ]
+}

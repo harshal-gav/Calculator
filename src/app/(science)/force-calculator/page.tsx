@@ -1,456 +1,237 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import forceData from "@/data/seo-content/official/force-calculator.json";
 
 export default function ForceCalculator() {
-  const [calcType, setCalcType] = useState("force"); // force, mass, acceleration
-
-  // Values
-  const [force, setForce] = useState("100"); // Newtons (N)
-  const [mass, setMass] = useState("10"); // kg
-  const [accel, setAccel] = useState("10"); // m/s^2
-
-  // Units
-  const [forceUnit, setForceUnit] = useState("N");
+  const [mass, setMass] = useState("1500");
+  const [acceleration, setAcceleration] = useState("9.81");
   const [massUnit, setMassUnit] = useState("kg");
-  const [accelUnit, setAccelUnit] = useState("m_s2");
+  const [accelUnit, setAccelUnit] = useState("m/s²");
 
-  // Unit conversions to base SI (N, kg, m/s^2)
-  const massToKg: Record<string, number> = {
-    kg: 1,
-    g: 0.001,
-    mg: 0.000001,
-    lb: 0.453592,
-    oz: 0.0283495,
-    ton: 1000,
-  };
+  const [result, setResult] = useState<{
+    forceNewtons: number;
+    forcePounds: number;
+    weightStatus: string;
+  } | null>(null);
 
-  const accelToMS2: Record<string, number> = {
-    m_s2: 1,
-    cm_s2: 0.01,
-    ft_s2: 0.3048,
-    in_s2: 0.0254,
-    g: 9.80665, // standard gravity
-  };
+  useEffect(() => {
+    calculateForce();
+  }, [mass, acceleration, massUnit, accelUnit]);
 
-  const forceToN: Record<string, number> = {
-    N: 1,
-    kN: 1000,
-    MN: 1000000,
-    dyn: 0.00001, // dyne
-    lbf: 4.44822, // pound-force
-    kgf: 9.80665, // kilogram-force
-  };
+  const calculateForce = () => {
+    let m = parseFloat(mass) || 0;
+    let a = parseFloat(acceleration) || 0;
 
-  const computeResult = () => {
-    const f = parseFloat(force);
-    const m = parseFloat(mass);
-    const a = parseFloat(accel);
+    if (m > 0) {
+      // Force (N) = m * a
+      const f = m * a;
+      // lb-force conversion
+      const fLb = f * 0.224809;
 
-    if (calcType === "force") {
-      if (!isNaN(m) && !isNaN(a)) {
-        // F = m*a
-        const m_kg = m * massToKg[massUnit];
-        const a_ms2 = a * accelToMS2[accelUnit];
-        const f_n = m_kg * a_ms2;
-        const result = f_n / forceToN[forceUnit];
-        return {
-          value: result,
-          unitLabel:
-            forceUnit === "lbf"
-              ? "lb-f"
-              : forceUnit === "kgf"
-                ? "kg-f"
-                : forceUnit,
-        };
-      }
-    } else if (calcType === "mass") {
-      if (!isNaN(f) && !isNaN(a) && a !== 0) {
-        // m = F/a
-        const f_n = f * forceToN[forceUnit];
-        const a_ms2 = a * accelToMS2[accelUnit];
-        const m_kg = f_n / a_ms2;
-        const result = m_kg / massToKg[massUnit];
-        return { value: result, unitLabel: massUnit };
-      }
-    } else if (calcType === "acceleration") {
-      if (!isNaN(f) && !isNaN(m) && m !== 0) {
-        // a = F/m
-        const f_n = f * forceToN[forceUnit];
-        const m_kg = m * massToKg[massUnit];
-        const a_ms2 = f_n / m_kg;
-        const result = a_ms2 / accelToMS2[accelUnit];
+      let status = "Moderate Load";
+      if (f > 10000) status = "Heavy Industrial Load";
+      else if (f < 100) status = "Precision Micro-Force";
 
-        let outLabel = accelUnit.replace("_s2", "/s²");
-        if (accelUnit === "g") outLabel = "g (Gravity)";
-
-        return { value: result, unitLabel: outLabel };
-      }
+      setResult({
+        forceNewtons: f,
+        forcePounds: fLb,
+        weightStatus: status
+      });
+    } else {
+      setResult(null);
     }
-    return { value: null, unitLabel: "" };
   };
-
-  const resultData = computeResult();
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-2xl shadow-xl border border-zinc-200">
-      <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-orange-900 flex items-center justify-center">
-          <span className="mr-3">🚀</span> Force Calculator
-        </h1>
-        <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
-          Calculate Force (F), Mass (m), or Acceleration (a) using Newton's
-          Second Law of Motion.
-        </p>
+    <div className="max-w-6xl mx-auto p-4 md:p-8 bg-slate-50 rounded-3xl shadow-xl border border-slate-200 font-sans">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-200 pb-8 mb-10 gap-6">
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="text-3xl">⚙️</span>
+            <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase">
+              Newtonian <span className="text-cyan-600">Force</span>
+            </h1>
+          </div>
+          <p className="text-slate-500 font-bold mt-1 tracking-tight text-sm uppercase">Classical Mechanics Projection Model</p>
+        </div>
+        <div className="hidden md:flex flex-col items-end text-right">
+          <div className="bg-slate-900 px-4 py-2 rounded-xl border border-slate-700 mb-1 shadow-lg">
+            <span className="text-cyan-400 font-black text-[10px] uppercase tracking-[0.3em]">Scientific Protocol 03-C</span>
+          </div>
+          <span className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">F=ma Dynamic Validation</span>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-        {/* Inputs */}
-        <div className="lg:col-span-3 space-y-6 bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm relative">
-          <div className="absolute top-0 left-0 w-2 h-full bg-orange-500 rounded-l-2xl"></div>
-
-          <div>
-            <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">
-              Solve For
-            </label>
-            <select
-              value={calcType}
-              onChange={(e) => setCalcType(e.target.value)}
-              className="w-full rounded-xl border-zinc-300 p-4 shadow-sm focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all font-bold bg-zinc-50 cursor-pointer text-orange-900"
-            >
-              <option value="force">Force (F)</option>
-              <option value="mass">Mass (m)</option>
-              <option value="acceleration">Acceleration (a)</option>
-            </select>
-          </div>
-
-          <div className="space-y-4">
-            {calcType !== "force" && (
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
+        {/* Input Sidebar */}
+        <div className="lg:col-span-12 xl:col-span-4 space-y-6">
+          <div className="p-8 bg-white rounded-[2.5rem] border border-slate-200 space-y-6 shadow-sm relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+            
+            <h2 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mb-4 border-b border-slate-100 pb-3 italic">Kinetic Inputs</h2>
+            
+            <div className="space-y-6">
               <div>
-                <label className="block text-xs font-bold text-zinc-500 mb-1 uppercase tracking-widest">
-                  Force (F)
-                </label>
-                <div className="flex">
+                <label className="block text-[10px] font-black text-slate-500 mb-2 uppercase tracking-widest leading-none">Mass ({massUnit})</label>
+                <div className="flex gap-2">
                   <input
                     type="number"
-                    step="any"
-                    value={force}
-                    onChange={(e) => setForce(e.target.value)}
-                    className="w-full rounded-l-xl border-zinc-200 p-3 shadow-sm focus:border-orange-500 font-mono font-bold"
-                  />
-                  <select
-                    value={forceUnit}
-                    onChange={(e) => setForceUnit(e.target.value)}
-                    className="border-y border-r border-zinc-200 bg-zinc-100 text-zinc-700 font-bold px-3 rounded-r-xl"
-                  >
-                    <option value="N">Newtons (N)</option>
-                    <option value="kN">Kilonewtons (kN)</option>
-                    <option value="lbf">Pounds-force (lbf)</option>
-                    <option value="kgf">Kilograms-force (kgf)</option>
-                    <option value="dyn">Dynes (dyn)</option>
-                  </select>
-                </div>
-              </div>
-            )}
-            {calcType !== "mass" && (
-              <div>
-                <label className="block text-xs font-bold text-zinc-500 mb-1 uppercase tracking-widest">
-                  Mass (m)
-                </label>
-                <div className="flex">
-                  <input
-                    type="number"
-                    step="any"
-                    min="0"
                     value={mass}
                     onChange={(e) => setMass(e.target.value)}
-                    className="w-full rounded-l-xl border-zinc-200 p-3 shadow-sm focus:border-orange-500 font-mono font-bold"
+                    className="flex-1 bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-cyan-500/10 focus:border-cyan-500 transition-all font-black text-2xl text-slate-900 shadow-inner"
                   />
-                  <select
-                    value={massUnit}
+                  <select 
+                    value={massUnit} 
                     onChange={(e) => setMassUnit(e.target.value)}
-                    className="border-y border-r border-zinc-200 bg-zinc-100 text-zinc-700 font-bold px-3 rounded-r-xl"
+                    className="w-20 bg-white border border-slate-200 rounded-2xl px-3 font-bold text-xs"
                   >
-                    <option value="kg">Kilograms (kg)</option>
-                    <option value="g">Grams (g)</option>
-                    <option value="lb">Pounds (lb)</option>
-                    <option value="oz">Ounces (oz)</option>
-                    <option value="ton">Metric Tons (t)</option>
+                    <option value="kg">kg</option>
+                    <option value="g">g</option>
+                    <option value="lb">lb</option>
                   </select>
                 </div>
               </div>
-            )}
-            {calcType !== "acceleration" && (
+
               <div>
-                <label className="block text-xs font-bold text-zinc-500 mb-1 uppercase tracking-widest">
-                  Acceleration (a)
-                </label>
-                <div className="flex">
+                <label className="block text-[10px] font-black text-slate-500 mb-2 uppercase tracking-widest leading-none">Acceleration ({accelUnit})</label>
+                <div className="relative">
                   <input
                     type="number"
-                    step="any"
-                    value={accel}
-                    onChange={(e) => setAccel(e.target.value)}
-                    className="w-full rounded-l-xl border-zinc-200 p-3 shadow-sm focus:border-orange-500 font-mono font-bold"
+                    value={acceleration}
+                    onChange={(e) => setAcceleration(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-cyan-500/10 focus:border-cyan-500 transition-all font-black text-2xl text-slate-900"
                   />
-                  <select
-                    value={accelUnit}
-                    onChange={(e) => setAccelUnit(e.target.value)}
-                    className="border-y border-r border-zinc-200 bg-zinc-100 text-zinc-700 font-bold px-3 rounded-r-xl"
-                  >
-                    <option value="m_s2">m/s²</option>
-                    <option value="ft_s2">ft/s²</option>
-                    <option value="cm_s2">cm/s²</option>
-                    <option value="g">g (Gravity)</option>
-                  </select>
+                  <span className="absolute right-4 top-1/2 -translate-y-1/2 font-black text-slate-300 text-[10px] uppercase">Rate</span>
                 </div>
               </div>
-            )}
+            </div>
+
+            <button
+              onClick={calculateForce}
+              className="w-full bg-slate-900 hover:bg-black text-cyan-400 font-black py-5 rounded-2xl shadow-xl transition-all uppercase tracking-[0.3em] text-[10px] flex items-center justify-center gap-3 border border-slate-700"
+            >
+              <span className="w-2 h-2 rounded-full bg-cyan-500 animate-ping"></span> Calculate Tension
+            </button>
           </div>
 
-          {/* Select Output Unit */}
-          {calcType === "force" && (
-            <div className="pt-4 border-t border-zinc-100">
-              <label className="block text-xs font-bold text-orange-700 mb-2 uppercase tracking-wide">
-                Output Unit (Force)
-              </label>
-              <select
-                value={forceUnit}
-                onChange={(e) => setForceUnit(e.target.value)}
-                className="w-full rounded-xl border-orange-200 p-3 shadow-sm focus:border-orange-500 font-semibold bg-orange-50/50"
-              >
-                <option value="N">Newtons (N)</option>
-                <option value="kN">Kilonewtons (kN)</option>
-                <option value="lbf">Pounds-force (lbf)</option>
-                <option value="kgf">Kilograms-force (kgf)</option>
-                <option value="dyn">Dynes (dyn)</option>
-              </select>
-            </div>
-          )}
-          {calcType === "mass" && (
-            <div className="pt-4 border-t border-zinc-100">
-              <label className="block text-xs font-bold text-orange-700 mb-2 uppercase tracking-wide">
-                Output Unit (Mass)
-              </label>
-              <select
-                value={massUnit}
-                onChange={(e) => setMassUnit(e.target.value)}
-                className="w-full rounded-xl border-orange-200 p-3 shadow-sm focus:border-orange-500 font-semibold bg-orange-50/50"
-              >
-                <option value="kg">Kilograms (kg)</option>
-                <option value="g">Grams (g)</option>
-                <option value="lb">Pounds (lb)</option>
-                <option value="oz">Ounces (oz)</option>
-                <option value="ton">Metric Tons (t)</option>
-              </select>
-            </div>
-          )}
-          {calcType === "acceleration" && (
-            <div className="pt-4 border-t border-zinc-100">
-              <label className="block text-xs font-bold text-orange-700 mb-2 uppercase tracking-wide">
-                Output Unit (Acceleration)
-              </label>
-              <select
-                value={accelUnit}
-                onChange={(e) => setAccelUnit(e.target.value)}
-                className="w-full rounded-xl border-orange-200 p-3 shadow-sm focus:border-orange-500 font-semibold bg-orange-50/50"
-              >
-                <option value="m_s2">m/s²</option>
-                <option value="ft_s2">ft/s²</option>
-                <option value="cm_s2">cm/s²</option>
-                <option value="g">g (Gravity)</option>
-              </select>
-            </div>
-          )}
+          <div className="p-8 bg-cyan-600 rounded-[2.5rem] text-white space-y-4 shadow-xl relative overflow-hidden group">
+             <div className="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+             <div className="relative z-10">
+                <span className="block text-[10px] font-black uppercase tracking-widest mb-1 opacity-60">Physics Shortcut</span>
+                <p className="text-xs font-bold leading-relaxed italic border-l-2 border-white/20 pl-4">To find the weight of an object on Earth, use an acceleration of 9.81 m/s² (Standard Gravity).</p>
+             </div>
+          </div>
         </div>
 
-        {/* Dashboard Output */}
-        <div className="lg:col-span-2">
-          {resultData.value !== null ? (
-            <div className="h-full bg-slate-900 rounded-2xl p-8 shadow-2xl relative overflow-hidden flex flex-col justify-center text-white border border-orange-800">
-              {/* Decorative element map dots */}
-              <div className="absolute top-0 right-0 w-48 h-48 bg-orange-500 rounded-full mix-blend-multiply filter blur-[50px] opacity-30 pointer-events-none"></div>
-
-              <div className="relative z-10 text-center">
-                <h2 className="text-orange-300 font-bold uppercase tracking-widest text-xs mb-8 border-b border-orange-800/50 pb-4">
-                  Calculated{" "},
-                  {calcType === "force"
-                    ? "Force"
-                    : calcType === "mass"
-                      ? "Mass"
-                      : "Acceleration"}
-                </h2>
-
-                <div className="text-5xl lg:text-5xl font-black tracking-tight text-white mb-4 drop-shadow-lg break-all font-mono">
-                  {resultData.value > 1000000 ||
-                  (Math.abs(resultData.value) < 0.0001 &&
-                    resultData.value !== 0)
-                    ? resultData.value.toExponential(4)
-                    : parseFloat(resultData.value.toPrecision(7))}
-                </div>
-                <div className="text-orange-400 font-bold text-xl tracking-wider">
-                  {resultData.unitLabel}
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-orange-800/50">
-                  <div className="text-orange-200 text-[10px] uppercase font-bold tracking-widest text-center">
-                    Newton's Second Law
+        {/* Results Canvas */}
+        <div className="lg:col-span-12 xl:col-span-8 flex flex-col">
+          {result !== null ? (
+            <div className="h-full flex flex-col gap-6">
+              <div className="grow bg-white rounded-[3rem] p-12 md:p-16 text-slate-900 shadow-2xl relative overflow-hidden border border-slate-200 flex flex-col justify-center">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none"></div>
+                
+                <div className="relative z-10 space-y-2">
+                  <span className="inline-block px-4 py-1 bg-slate-100 border border-slate-200 text-slate-500 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mb-4">Net Force Magnitude</span>
+                  <div className="text-8xl md:text-9xl font-black tracking-tighter tabular-nums text-slate-900 flex items-baseline gap-4 leading-none">
+                    {result.forceNewtons.toLocaleString(undefined, { maximumFractionDigits: 1 })}
+                    <span className="text-xl md:text-3xl text-slate-300 font-bold tracking-normal uppercase italic">Newtons (N)</span>
                   </div>
-                  <div className="text-orange-100 font-mono mt-2 bg-black/40 backdrop-blur-sm p-4 rounded-xl text-xl font-bold text-center border border-orange-700/50 italic tracking-wider">
-                    F = m × a
+                  <div className="flex items-center gap-4 pt-6">
+                    <div className="px-5 py-2 rounded-xl bg-slate-900 text-cyan-400 text-[10px] font-black uppercase tracking-widest shadow-lg">
+                      {result.weightStatus}
+                    </div>
+                    <p className="text-slate-400 font-bold uppercase text-[10px] tracking-widest italic opacity-70">Metric Load Assessment</p>
                   </div>
                 </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-slate-900 p-10 rounded-[2.5rem] border border-slate-800 text-white flex flex-col justify-center relative group overflow-hidden shadow-2xl">
+                  <div className="absolute top-0 right-0 h-1 w-full bg-cyan-500"></div>
+                  <div className="text-cyan-500 text-[10px] font-black uppercase mb-4 tracking-[0.3em] leading-none">English Standard Equivalency</div>
+                  <div className="text-5xl font-black tracking-tight tabular-nums">
+                    {result.forcePounds.toLocaleString(undefined, { maximumFractionDigits: 1 })} 
+                    <span className="text-slate-600 text-lg tracking-normal italic ml-2">Lbf</span>
+                  </div>
+                  <p className="text-[10px] text-slate-500 font-bold mt-3 uppercase tracking-widest leading-tight">Total Pounds-Force exerted on mass</p>
+                </div>
+
+                <div className="bg-white border-2 border-slate-100 p-10 rounded-[2.5rem] shadow-sm flex flex-col justify-center">
+                  <div className="text-slate-400 text-[10px] font-black uppercase mb-4 tracking-[0.3em] leading-none">Force Conversion Matrix</div>
+                  <div className="flex flex-col gap-4">
+                    <div className="flex justify-between items-center border-b border-slate-50 pb-3">
+                      <span className="text-slate-700 font-bold text-[10px] uppercase tracking-widest">Kilonewtons (kN)</span>
+                      <span className="text-slate-900 font-black">{(result.forceNewtons / 1000).toLocaleString(undefined, { maximumFractionDigits: 4 })}</span>
+                    </div>
+                    <div className="flex justify-between items-center border-b border-slate-50 pb-3">
+                      <span className="text-slate-700 font-bold text-[10px] uppercase tracking-widest">Dynes (dyn)</span>
+                      <span className="text-slate-900 font-black">{(result.forceNewtons * 100000).toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-700 font-bold text-[10px] uppercase tracking-widest">Kilograms-Force (kgf)</span>
+                      <span className="text-slate-900 font-black">{(result.forceNewtons / 9.80665).toFixed(2)}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-slate-100 p-4 rounded-2xl flex items-center gap-6">
+                 <div className="flex flex-col">
+                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Impact Potential</span>
+                    <span className="text-slate-900 font-black text-xl italic uppercase tracking-tighter">High Integrity</span>
+                 </div>
+                 <div className="h-2 grow bg-slate-200 rounded-full overflow-hidden shadow-inner relative">
+                    <div className="h-full bg-cyan-600 transition-all duration-1000 shadow-[0_0_15px_rgba(8,145,178,0.4)]" style={{ width: `${Math.min(100, result.forceNewtons / 100)}%` }}></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
+                 </div>
               </div>
             </div>
           ) : (
-            <div className="h-full rounded-2xl border-2 border-dashed border-zinc-300 bg-zinc-100 flex flex-col items-center justify-center p-8 text-center text-zinc-500">
-              <span className="text-5xl mb-4 opacity-50 filter grayscale pt-10">
-                🚀
-              </span>
-              <h3 className="text-zinc-700 font-bold text-lg mb-2">
-                Awaiting Variables
-              </h3>
-              <p className="text-sm">
-                Enter the two known parameters to calculate the missing one.
-              </p>
+            <div className="h-full min-h-[500px] border-4 border-dashed border-slate-200 rounded-[3rem] flex flex-col items-center justify-center p-12 text-center bg-white shadow-inner">
+               <div className="w-24 h-24 bg-slate-50 rounded-[2.5rem] flex items-center justify-center mb-8 border border-slate-100 shadow-sm animate-pulse">
+                  <span className="text-4xl text-slate-300">⚖️</span>
+               </div>
+               <h3 className="text-slate-900 text-3xl font-black mb-4 uppercase tracking-tighter italic">Pending Kinetic Analysis</h3>
+               <p className="text-slate-400 max-w-sm font-bold leading-tight text-lg italic uppercase tracking-tighter opacity-70">Initialize mass and acceleration scalars to determine the total physical burden on the system.</p>
             </div>
           )}
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Force Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-          }),
-        }}
+      <CalculatorSEO
+        title={forceData.title}
+        whatIsIt={forceData.whatIsIt}
+        formula={forceData.formula}
+        example={forceData.example}
+        useCases={forceData.useCases}
+        faqs={forceData.faqs}
+        deepDive={forceData.deepDive}
+        glossary={forceData.glossary}
+        relatedCalculators={[
+          {
+            name: "Acceleration",
+            path: "/acceleration-calculator/",
+            desc: "Calculate the rate of change in velocity derived from a known force vector.",
+          },
+          {
+            name: "Density",
+            path: "/density-calculator/",
+            desc: "Determine how concentrated a mass is within a given physical volume.",
+          },
+          {
+            name: "Power",
+            path: "/power-calculator/",
+            desc: "Measure the work performed and the rate of energy transfer in mechanical systems.",
+          },
+          {
+            name: "Kinetic Energy",
+            path: "/kinetic-energy-calculator/",
+            desc: "Calculate the energy an object possesses due to its motion and velocity.",
+          }
+        ]}
       />
-
-      <div className="mt-8">
-        <CalculatorSEO
-          title="Force & Mass Calculator"
-          whatIsIt={
-            <>
-              <p>
-                Our <strong>Force Calculator</strong> brings Sir Isaac Newton's
-                Second Law of Motion to life, allowing you to fluidly calculate
-                the exact relationship between the physical{" "}
-                <strong>Mass (m)</strong> of an object, its{" "}
-                <strong>Acceleration (a)</strong>, and the resulting{" "}
-                <strong>Force (F)</strong> it exerts.
-              </p>
-              <p>
-                Force is an unavoidable physical interaction that changes the
-                motion of an object. Understanding how much force is required to
-                move heavy objects, or how much force is generated when moving
-                objects crash, is the backbone of modern mechanical engineering.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              F = m × a
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Newton's Second Law: Force equals mass times acceleration.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's calculate the physical force required to push a stalled
-                car across a parking lot.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Scenario:</strong> You and your friends need to
-                  push a broken-down sedan. The vehicle has a mass of exactly{" "}
-                  <strong>1,500 kg</strong>. You want to push it so its speed
-                  increases (accelerates) at a rate of <strong>0.5 m/s²</strong>
-                  .
-                </li>
-                <li>
-                  <strong>The Math:</strong> 1,500 kg × 0.5 m/s² ={" "}
-                  <strong>750</strong>.
-                </li>
-                <li>
-                  <strong>Result:</strong> It will require exactly{" "}
-                  <strong>750 Newtons (N)</strong> of sustained physical force
-                  to move the vehicle at that specific rate of acceleration.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Automotive Safety:</strong> Automobile engineers use
-                force calculations to design airbag deployment systems. They
-                must calculate the exact force with which a 180-pound body will
-                be thrown forward during a 60 mph rapid deceleration (crash).
-              </li>
-              <li>
-                <strong>Rocket Trajectory:</strong> Space agencies must
-                calculate exact payload mass. The heavier the satellite (m), the
-                exponentially more thrust force (F) the rocket engines must
-                generate to achieve orbital acceleration (a).
-              </li>
-              <li>
-                <strong>Elevator Limits:</strong> Architects calculate the
-                maximum safe mass threshold (passenger weight limit) of an
-                elevator cab based on the maximum upward tension force the steel
-                cables are rated to handle.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What is a Newton?",
-              answer:
-                "A Newton (N) is the standard metric unit of force. By explicit definition, 1 Newton is the exact amount of force required to accelerate a 1-kilogram mass at a rate of 1 meter-per-second-squared.",
-            },
-            {
-              question: "What is the difference between mass and weight?",
-              answer:
-                "Mass is how much physical 'stuff' an object is made of; it never changes. Weight is actually a measurement of FORCE. Your weight is your mass multiplied by Earth's gravity (9.8 m/s²). If you stand on the Moon, your mass remains identical, but your physical weight drops by 80% because the downward acceleration is weaker.",
-            },
-            {
-              question: "Does this calculator account for friction?",
-              answer:
-                "No. This tool calculates net theoretical force in a perfect vacuum. In the real world, if you push a heavy box across carpet, you must calculate and subtract opposing friction forces to discover your true net acceleration.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Acceleration Calculator",
-              path: "/acceleration-calculator/",
-              desc: "Calculate your acceleration first before plugging it into the Force equation.",
-            },
-            {
-              name: "Work Calculator",
-              path: "/work-calculator/",
-              desc: "Calculate how much energy is expended when a force moves an object across a distance.",
-            },
-            {
-              name: "Density Calculator",
-              path: "/density-calculator/",
-              desc: "Calculate the exact physical mass of large raw materials based on their volume.",
-            },
-            {
-              name: "Kinetic Energy Calculator",
-              path: "/kinetic-energy-calculator/",
-              desc: "Find the energy of a moving object based on mass and velocity.",
-            }]}
-        />
-      </div>
     </div>
   );
 }

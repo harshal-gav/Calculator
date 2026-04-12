@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import houseAffordabilitySeoData from "@/data/seo-content/official/house-affordability-calculator.json";
 
 export default function HouseAffordabilityCalculator() {
   const [annualIncome, setAnnualIncome] = useState("100000");
@@ -94,7 +95,7 @@ export default function HouseAffordabilityCalculator() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
         {/* Input Form */}
-        <div className="lg:col-span-7 bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <div className="lg:col-span-12 xl:col-span-7 bg-gray-50 p-6 rounded-xl border border-gray-200">
           <h2 className="text-xl font-bold mb-6 text-gray-800">Financial Details</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -190,21 +191,6 @@ export default function HouseAffordabilityCalculator() {
                 <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500">%</span>
               </div>
             </div>
-            
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Home Insurance ($ / year)
-              </label>
-              <div className="relative">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 font-bold">$</span>
-                <input
-                  type="number"
-                  value={homeInsurance}
-                  onChange={(e) => setHomeInsurance(e.target.value)}
-                  className="pl-8 w-full rounded-lg border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 p-3 border text-lg font-medium"
-                />
-              </div>
-            </div>
           </div>
 
           <button
@@ -216,7 +202,7 @@ export default function HouseAffordabilityCalculator() {
         </div>
 
         {/* Results Sidebar */}
-        <div className="lg:col-span-5 bg-green-50 rounded-xl p-8 border border-green-200 shadow-inner flex flex-col justify-center">
+        <div className="lg:col-span-12 xl:col-span-5 bg-green-50 rounded-xl p-8 border border-green-200 shadow-inner flex flex-col justify-center">
           {result !== null ? (
             <div>
               <h2 className="text-xl font-bold text-green-900 mb-2 text-center">
@@ -234,7 +220,9 @@ export default function HouseAffordabilityCalculator() {
                   </span>
                 </div>
                 
-                <h3 className="font-bold text-green-800 mt-6 mb-2 border-b border-green-200 pb-2">Target Monthly Payment: ${result.maxMonthlyPayment.toLocaleString(undefined, { maximumFractionDigits: 2 })}</h3>
+                <h3 className="font-bold text-green-800 mt-6 mb-2 border-b border-green-200 pb-2">
+                  Target Monthly Payment: ${result.maxMonthlyPayment.toLocaleString(undefined, { maximumFractionDigits: 2 })}
+                </h3>
                 
                 <div className="flex justify-between items-center text-base">
                   <span className="flex items-center gap-2 text-gray-600">Principal & Interest</span>
@@ -265,83 +253,36 @@ export default function HouseAffordabilityCalculator() {
       </div>
 
       <CalculatorSEO
-        title="House Affordability Calculator"
-        whatIsIt={
-          <>
-            <p>
-              When considering buying a home, the first vital question is usually, "<strong>How much house can I afford?</strong>". A <strong>House Affordability Calculator</strong> answers this precisely by analyzing your current annual salary, existing monthly debt obligations, and down payment savings.
-            </p>
-            <p>
-              Instead of guessing a house price, our home affordability tool reverse-engineers the mortgage equation to find your maximum allowable purchasing power without breaking the bank or being denied by lenders.
-            </p>
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related terms:</strong> home affordability calculator, mortgage affordability calculator, income vs home price, 28/36 rule calculator, debt to income ratio calculator.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              House Affordability Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise House Affordability results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>If you earn a gross salary of <strong>$100,000 per year</strong> (~$8,333/month) and have <strong>$500 in monthly auto and student loan debts</strong>:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Your front-end limit allows: $8,333 * 0.28 = <strong>$2,333/month</strong> for housing.</li>
-              <li>Your back-end limit allows: ($8,333 * 0.36) - $500 = <strong>$2,500/month</strong> for housing.</li>
-              <li>Your effective maximum housing payment is the lesser of the two: <strong>$2,333/month</strong>.</li>
-            </ul>
-            <p className="mt-4 text-gray-700">Assuming current interest rates and local property taxes, that $2,333 monthly payment could translate to an affordable home price of roughly <strong>$320,000 to $350,000</strong> depending on your down payment size.</p>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li><strong>Pre-Approval Confidence:</strong> Understanding your real buying power before submitting to a hard credit pull for a mortgage pre-approval.</li>
-            <li><strong>Budgeting:</strong> Determining if you need to pay off existing credit card debt before applying for a loan to increase your back-end DTI.</li>
-            <li><strong>Saving:</strong> Seeing exactly how increasing your liquid down payment directly raises the ceiling on your total home price.</li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "What is DTI (Debt-to-Income Ratio)?",
-            answer: "Debt-to-Income (DTI) is the percentage of your gross monthly income that goes toward paying your monthly debt obligations. Lenders use this ratio as the main measuring stick for loan approval."
-          },
-          {
-            question: "Does this affordability calculator guarantee loan approval?",
-            answer: "No. Affordability strictly estimates your borrowing limit based on income and debts (DTI). Lenders also require a healthy credit score (FICO), a history of employment, and adequate cash reserves."
-          },
-          {
-            question: "Why does the interest rate affect affordability?",
-            answer: "A higher interest rate exponentially increases the monthly cost to borrow money. If interest rates rise, your $2,000 monthly allowance pays for a much smaller principal mortgage amount, shrinking your affordability."
-          }
-        ]}
+        title={houseAffordabilitySeoData.title}
+        whatIsIt={houseAffordabilitySeoData.whatIsIt}
+        formula={houseAffordabilitySeoData.formula}
+        example={houseAffordabilitySeoData.example}
+        useCases={houseAffordabilitySeoData.useCases}
+        faqs={houseAffordabilitySeoData.faqs}
+        deepDive={houseAffordabilitySeoData.deepDive}
+        glossary={houseAffordabilitySeoData.glossary}
         relatedCalculators={[
           {
-            name: "Mortgage Calculator",
+            name: "Mortgage",
             path: "/mortgage-calculator/",
-            desc: "Estimate your monthly mortgage payments including taxes and insurance."
+            desc: "Calculate exact monthly payments for your dream home.",
           },
           {
-            name: "Debt Payoff Calculator",
-            path: "/debt-payoff-calculator/",
-            desc: "Discover how long it will take to become debt-free."
+            name: "Rent vs Buy",
+            path: "/rent-vs-buy-calculator/",
+            desc: "Decide if buying makes more financial sense than renting.",
           },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator/",
-              desc: "Calculate your exact annualized percentage returns.",
-            },
-            {
-              name: "Investment Calculator",
-              path: "/investment-calculator/",
-              desc: "Project your portfolio growth over time with compound interest.",
-            }]}
+          {
+            name: "LTV",
+            path: "/ltv-calculator/",
+            desc: "Check your loan-to-value ratio for risk assessment.",
+          },
+          {
+            name: "DTI",
+            path: "/dti-calculator/",
+            desc: "Understand your debt-to-income ratio for lender qualification.",
+          },
+        ]}
       />
     </div>
   );

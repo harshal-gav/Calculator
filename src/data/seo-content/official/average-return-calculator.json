@@ -1,0 +1,40 @@
+{
+  "title": "Average Return Calculator: Calculate Your Portfolio's CAGR",
+  "whatIsIt": "An **Average Return Calculator** determines the **Compound Annual Growth Rate (CAGR)** of an investment over a multi-year period. Unlike a simple arithmetic average, CAGR represents the smoothed annual rate of return that would be required for an investment to grow from its initial balance to its final balance, assuming the profits were reinvested at the end of each year.\n\nIn the world of finance, simple averages can be highly misleading due to the mathematical reality of volatility. If an investment drops 50% and then gains 50%, the simple average is 0%, but you have actually lost 25% of your capital. CAGR accounts for these peaks and valleys to tell you what your actual purchasing power growth was.",
+  "formula": "The Compound Annual Growth Rate (CAGR) is calculated using the following geometric mean formula:\n\n**CAGR = [(End Value / Start Value)^(1/n)] - 1**\n\nWhere:\n- **End Value** = Final portfolio balance\n- **Start Value** = Initial investment amount\n- **n** = Number of years\n\n*Note: To express as a percentage, multiply the result by 100.*",
+  "example": "If you start with $10,000 and have $25,000 after 5 years, your total return is 150%. A simple average would suggest a 30% return per year ($25,000 - $10,000 = $15k; $15k / 5 = $3k/year; $3k / $10k = 30%).\n\nHowever, the **CAGR** is actually **20.11%**. This is because the gains from year 1 earned interest in years 2, 3, 4, and 5. You only needed to grow at 20.11% annually to reach that $25k goal.",
+  "useCases": "### Portfolio Benchmarking\nCompare your actual portfolio growth against standard benchmarks like the S&P 500's long-term CAGR (historically ~10% before inflation).\n\n### Business Growth Analysis\nCalculate the annual growth rate of company revenues, user acquisition, or net profits over a specific expansion period.\n\n### Asset Performance Evaluation\nDetermine if a specific rental property, collectible, or alternative investment outperformed the 'risk-free rate' (Treasury yields).",
+  "faqs": [
+    {
+      "question": "Why is CAGR better than a simple average?",
+      "answer": "Simple averages ignore the effect of compounding and the impact of losses. CAGR provides a single, high-level number that represents the actual geometric growth of your wealth."
+    },
+    {
+      "question": "What is a 'good' CAGR?",
+      "answer": "A good CAGR exceeds inflation and your 'cost of capital.' Historically, a CAGR of 7-10% is considered strong for long-term equity investors."
+    },
+    {
+      "question": "Does CAGR account for risk or volatility?",
+      "answer": "No. CAGR only looks at the beginning and end points. Two investments could have the same CAGR, but one could have been much more volatile (risky) than the other."
+    }
+  ],
+  "deepDive": "Geometric Mean vs. Arithmetic Mean is one of the most important concepts in wealth management. The Arithmetic Mean (simple average) is appropriate for independent events, like rolling a die. However, investment returns are dependent events—your balance today depends on your balance yesterday. Because a loss of 50% requires a 100% gain just to break even, the simple average will always overstate the performance of a volatile portfolio. This is why professional fund managers always report CAGR or GIPS-compliant returns rather than simple averages.",
+  "glossary": [
+    {
+      "term": "CAGR",
+      "definition": "Compound Annual Growth Rate; the mean annual growth rate of an investment over a period longer than one year."
+    },
+    {
+      "term": "Total Return",
+      "definition": "The objective change in value of an investment over time, expressed as a percentage of the original cost."
+    },
+    {
+      "term": "Geometric Mean",
+      "definition": "An average that indicates the central tendency of a set of numbers by using the product of their values (as opposed to their sum)."
+    },
+    {
+      "term": "Volatility",
+      "definition": "A statistical measure of the dispersion of returns for a given security or market index."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Time Card Calculator: Calculate Work Hours & Gross Pay",
+  "whatIsIt": "The Time Card Calculator is a specialized payroll utility used to convert raw clock-in and clock-out times into billable decimal hours. It simplifies the tedious process of calculating total shift lengths, accurately deducting unpaid lunch breaks, and estimating gross pre-tax earnings. This tool is essential for both employees verifying their pay and employers managing weekly timesheets.",
+  "formula": "To calculate total work hours:\n\n1. Convert Shift Duration to Minutes: (End Time Minutes) - (Start Time Minutes)\n2. For Overnight Shifts (End < Start): Add 1440 minutes (24 hours)\n3. Calculate Net Minutes: Total Minutes - Unpaid Break Minutes\n4. Convert to Decimal Hours: Net Minutes / 60\n5. Gross Pay = Decimal Hours × Hourly Rate",
+  "example": "If you work from 8:30 AM to 5:00 PM (17:00) with a 45-minute unpaid lunch:\n\n- Start Time: 510 minutes (8*60 + 30)\n- End Time: 1020 minutes (17*60)\n- Total Span: 1020 - 510 = 510 minutes\n- Net Minutes: 510 - 45 = 465 minutes\n- Decimal Hours: 465 / 60 = 7.75 hours",
+  "useCases": [
+    "Weekly Timesheet Preparation",
+    "Freelance Hour Tracking and Invoicing",
+    "Payroll Dispute Resolution",
+    "Overnight Shift Duration Calculation"
+  ],
+  "faqs": [
+    {
+      "question": "Why does my payroll say 7.5 hours when the time was 7:30?",
+      "answer": "Payroll systems use decimal hours (Base-10) rather than standard time (Base-60). Because 30 minutes is exactly half of an hour, it is expressed as 0.50. Similarly, 15 minutes is 0.25 and 45 minutes is 0.75."
+    },
+    {
+      "question": "Does this tool handle overnight shifts?",
+      "answer": "Yes. Our algorithm automatically detects if the end time is on the following day (e.g., 10 PM to 6 AM) and calculates the full 8-hour span correctly by adjusting for the 24-hour cycle."
+    },
+    {
+      "question": "Is the gross pay amount my take-home pay?",
+      "answer": "No. Gross pay is the amount earned before any deductions. Your 'Net' or 'Take-home' pay will be lower after federal/state taxes, Social Security, and health insurance premiums are deducted."
+    }
+  ],
+  "deepDive": "Accurate time tracking is critical for federal labor law compliance, especially regarding overtime. Under the Fair Labor Standards Act (FLSA), non-exempt employees must be paid for all hours worked over 40 in a workweek at a rate not less than time-and-a-half. This calculator focuses on the 'daily' aspect of tracking, helping you ensure that small errors in minute-to-decimal conversion don't compound into significant underpayments over a month or year.",
+  "glossary": [
+    {
+      "term": "Decimal Hours",
+      "definition": "A representation of time where minutes are converted to hundredths of an hour (e.g., 6 mins = 0.1)."
+    },
+    {
+      "term": "Gross Pay",
+      "definition": "Total compensation earned before taxes, benefits, or other deductions are subtracted."
+    },
+    {
+      "term": "Overnight Shift",
+      "definition": "A work period that begins on one calendar day and ends on the next."
+    },
+    {
+      "term": "Unpaid Break",
+      "definition": "A period during a shift (like a lunch hour) where the employee is not working and is not entitled to compensation."
+    }
+  ]
+}

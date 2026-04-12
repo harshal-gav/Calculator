@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
+import pomodoroSeoData from "@/data/seo-content/official/pomodoro-timer.json";
+
 export default function PomodoroTimer() {
   // Modes: focus = 25m, shortBreak = 5m, longBreak = 15m
   const [mode, setMode] = useState<"focus" | "shortBreak" | "longBreak">(
@@ -228,123 +230,37 @@ export default function PomodoroTimer() {
       />
 
       <div className="mt-8 text-black">
-        <CalculatorSEO
-          title="Pomodoro Technique Timer"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Pomodoro Timer</strong> is a world-renowned
-                productivity methodology designed to weaponize your attention
-                span by breaking large workloads into intense, hyper-focused
-                25-minute intervals separated by short breaks.
-              </p>
-              <p>
-                Invented in the late 1980s by Francesco Cirillo (who used a
-                literal tomato-shaped kitchen timer), this system prevents
-                burnout and eliminates the friction of starting difficult tasks.
-                By forcing you to stop working before you are entirely
-                exhausted, it maintains a remarkably high mental baseline across
-                an entire workday.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Pomodoro Timer Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Pomodoro Timer results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                You have a massive, overwhelming 50-page thesis to write. The
-                scale of the work makes you procrastinate.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Shift:</strong> Instead of thinking "I need to
-                  write 50 pages today", you reframe the goal to "I will
-                  complete exactly four 25-minute Pomodoros of typing."
-                </li>
-                <li>
-                  <strong>The Execution:</strong> You write intensely for 25
-                  minutes, ignoring your phone. The timer rings. You take five
-                  minutes to stretch. You repeat this four times.
-                </li>
-                <li>
-                  <strong>The Result:</strong> You have accidentally achieved
-                  nearly 2 continuous hours of absolute deep work, generating
-                  massive output without ever experiencing the dread of an
-                  unstructured "workday."
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Academic Studying:</strong> College students cramming
-                for final exams using intervals to deliberately prevent the "law
-                of diminishing returns" where studying past hour 3 yields zero
-                memory retention.
-              </li>
-              <li>
-                <strong>Software Development:</strong> Programmers using short
-                sprints to dive deeply into a single complex algorithm without
-                being derailed by Slack messages or incoming emails.
-              </li>
-              <li>
-                <strong>Household Chores:</strong> Using a single 25-minute
-                sprint to competitively speed-clean a messy house, eliminating
-                the emotional friction of "wasting an entire Saturday cleaning."
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question:
-                "What happens if I finish my task before the 25 minutes are up?",
-              answer:
-                "Cirillo’s original rule states: 'A Pomodoro is indivisible.' If you finish early, you spend the remaining minutes reviewing what you did, checking for errors, or doing micro-planning for the next task. Never pause the timer halfway.",
-            },
-            {
-              question:
-                "Do I have to strictly use 25 minutes? What if my attention span is longer?",
-              answer:
-                "While 25/5 is the scientifically optimal default for most humans, many advanced users (especially programmers) switch to a 50/10 ratio to allow more time to engage deep context. However, the core rule remains: the break is mandatory, regardless of interval length.",
-            },
-            {
-              question: "What if someone interrupts me during a focus sprint?",
-              answer:
-                "You must use the 'Inform, Negotiate, Call back' strategy. Tell them you are in the middle of a sprint, negotiate a time to talk during your upcoming break, and return to the timer. Only true emergencies should break an active Pomodoro.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Time Card Calculator",
-              path: "/time-card-calculator/",
-              desc: "Track how many total billable hours you generated across all your daily Pomodoro sprints.",
-            },
-            {
-              name: "Pomodoro Converter (Days)",
-              path: "/days-calculator/",
-              desc: "Calculate what date a massive project will be finished if you only complete 4 sprints a day.",
-            },
-            {
-              name: "Word Count Calculator",
-              path: "/word-count-calculator/",
-              desc: "Check exactly how many words you successfully wrote during a 25-minute sprint session.",
-            },
-            {
-              name: "Age Calculator",
-              path: "/age-calculator/",
-              desc: "Calculate your exact age in years, months, and days.",
-            }]}
-        />
+      <CalculatorSEO
+        title={pomodoroSeoData.title}
+        whatIsIt={pomodoroSeoData.whatIsIt}
+        formula={pomodoroSeoData.formula}
+        example={pomodoroSeoData.example}
+        useCases={pomodoroSeoData.useCases}
+        faqs={pomodoroSeoData.faqs}
+        deepDive={pomodoroSeoData.deepDive}
+        glossary={pomodoroSeoData.glossary}
+        relatedCalculators={[
+          {
+            name: "Time Card Calculator",
+            path: "/time-card-calculator/",
+            desc: "Track total billable hours generated across all your daily Pomodoro sprints.",
+          },
+          {
+            name: "Days Calculator",
+            path: "/days-calculator/",
+            desc: "Calculate project completion dates based on a fixed daily sprint count.",
+          },
+          {
+            name: "Word Count Calculator",
+            path: "/word-count-calculator/",
+            desc: "Check how many words you successfully wrote during a focus session.",
+          },
+          {
+            name: "Stopwatch",
+            path: "/stopwatch/",
+            desc: "Use a precision stopwatch for timing individual tasks or exercises.",
+          }]}
+      />
       </div>
     </div>
   );

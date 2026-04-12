@@ -3,6 +3,8 @@
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
+import speedSeoData from "@/data/seo-content/official/speed-calculator.json";
+
 export default function SpeedCalculator() {
   const [distance, setDistance] = useState("100");
   const [time, setTime] = useState("2");
@@ -132,68 +134,35 @@ export default function SpeedCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Speed Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>Speed Calculator</strong> is an interactive physics engine that determines exactly how fast an object is moving based on how much distance it covers over a set iteration of time.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Speed Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Speed results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>If you drive <strong>120 miles</strong> across a desert highway, and the trip ultimately takes <strong>2 hours</strong>:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Speed = 120 / 2</li>
-              <li>Speed = <strong>60 miles per hour (mph)</strong></li>
-            </ul>
-          </>
-        }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Road Trip Planning:</strong> If your GPS says your destination is 400 miles away, and you intend to drive consistently at 70 mph, you can safely deduce it will take exactly 5.7 hours of driving time.</li></ul>}
-        faqs={[
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            },
-            {
-              question: "Can I use this on my mobile device?",
-              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
-            }]}
+        title={speedSeoData.title}
+        whatIsIt={speedSeoData.whatIsIt}
+        formula={speedSeoData.formula}
+        example={speedSeoData.example}
+        useCases={speedSeoData.useCases}
+        faqs={speedSeoData.faqs}
+        deepDive={speedSeoData.deepDive}
+        glossary={speedSeoData.glossary}
         relatedCalculators={[
-            {
-              name: "Age Calculator",
-              path: "/age-calculator/",
-              desc: "Calculate your exact age in years, months, and days.",
-            },
-            {
-              name: "Temperature Converter",
-              path: "/temperature-converter/",
-              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
-            },
-            {
-              name: "Bill Splitter",
-              path: "/bill-splitter-calculator/",
-              desc: "Split bills and calculate tips among friends.",
-            },
-            {
-              name: "Length Converter",
-              path: "/length-converter/",
-              desc: "Convert between various units of length and distance.",
-            }]}
+          {
+            name: "Fuel Cost Calculator",
+            path: "/fuel-cost-calculator/",
+            desc: "Estimate exactly how much your trip will cost at current pump prices.",
+          },
+          {
+            name: "Gas Mileage Calculator",
+            path: "/gas-mileage-calculator/",
+            desc: "Determine your vehicle's actual real-world fuel efficiency.",
+          },
+          {
+            name: "Pace Calculator",
+            path: "/pace-calculator/",
+            desc: "Calculate running pace or swimming speed for athletic performance.",
+          },
+          {
+            name: "Length Converter",
+            path: "/length-converter/",
+            desc: "Convert between various units of length and distance.",
+          }]}
       />
     </div>
   );

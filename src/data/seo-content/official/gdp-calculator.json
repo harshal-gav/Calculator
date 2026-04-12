@@ -1,0 +1,41 @@
+{
+  "title": "GDP (Gross Domestic Product) Calculator",
+  "whatIsIt": "The GDP Calculator is an economic modeling tool that measures the total market value of all finished goods and services produced within a country's borders during a specific period. It serves as the primary indicator of a nation's economic health, growth rate, and size, allowing for comparisons between different economies and historical periods.",
+  "formula": "The standard Expenditures Approach is used for calculation: \\n\\n$$\\text{GDP} = C + I + G + (X - M)$$\\n\\nWhere: \\n1. $C$ = Consumer Spending \\n2. $I$ = Business Investment \\n3. $G$ = Government Spending \\n4. $X$ = Exports \\n5. $M$ = Imports",
+  "example": "If a small economy has: \\n- Consumption: $500B \\n- Investment: $100B \\n- Gov Spending: $150B \\n- Exports: $50B \\n- Imports: $70B \\n\\nCalculation: $500 + 100 + 150 + (50 - 70) = 750 - 20 = 730B$. \\n\\nThis figure represents the total economic output of that nation.",
+  "useCases": [
+    "Macroeconomic Analysis: Comparing the economic strength and power of various nations.",
+    "Growth Tracking: Determining if an economy is expanding (positive GDP growth) or in a recession (negative GDP growth).",
+    "Policy Planning: Helping governments decide on fiscal or monetary interventions based on output levels.",
+    "Investment Strategy: Institutional investors use GDP data to decide which markets have the strongest consumer demand."
+  ],
+  "faqs": [
+    {
+      "question": "What is the difference between Nominal and Real GDP?",
+      "answer": "Nominal GDP is calculated at current market prices. Real GDP is adjusted for inflation (using a base year), providing a more accurate view of actual output growth without price distortions."
+    },
+    {
+      "question": "Is GDP the same as wealth?",
+      "answer": "No. GDP measures economic production (a flow), while wealth measures accumulated assets (a stock). A high-GDP nation may still have high debt or inequality."
+    },
+    {
+      "question": "What is GDP per Capita?",
+      "answer": "GDP per Capita is the total GDP divided by the population. It is often used as a rough proxy for the average standard of living or productivity per person in a country."
+    }
+  ],
+  "deepDive": "While GDP is the global standard for economic measurement, it has known limitations. It does not account for the 'informal economy' (unreported work), household labor (childcare, cleaning), or environmental degradation. Despite these flaws, it remains the single most influential metric in global geopolitics, determining everything from G7 membership to international voting power and credit ratings.",
+  "glossary": [
+    {
+      "term": "Net Exports",
+      "definition": "The difference between the value of a country's exports and the value of its imports (X - M)."
+    },
+    {
+      "term": "Fiscal Policy",
+      "definition": "Government use of spending and taxation to influence the economy."
+    },
+    {
+      "term": "Finished Goods",
+      "definition": "Items that are sold for final consumption, rather than as components for another product."
+    }
+  ]
+}

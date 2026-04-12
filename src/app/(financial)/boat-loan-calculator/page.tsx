@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import boatLoanSeoData from "@/data/seo-content/official/boat-loan-calculator.json";
 
 export default function BoatLoanCalculator() {
   const [boatPrice, setBoatPrice] = useState("50000");
@@ -140,69 +141,36 @@ export default function BoatLoanCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Boat Loan Calculator"
-        whatIsIt={
-          <p>
-            A <strong>Boat Loan Calculator</strong> is a specialized financial tool used to estimate the costs of financing a marine vessel. Because boats are considered "recreational vehicles," financing terms often extend much longer than typical car loans—sometimes up to 180 or 240 months for larger yachts.
-          </p>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Standard financial analysis and amortization model for precise Boat Loan results.
-            </p>
-          </>
-        }
-        example={
-          <p>
-            Financing a **$100,000** boat with **$20,000** down over **15 years (180 months)** at **8% interest** results in a monthly payment of approximately **$764**. However, you will pay over **$57,000** in total interest over the life of the loan.
-          </p>
-        }
-        useCases={
-          <ul className="list-disc pl-5 space-y-2">
-            <li><strong>Budgeting:</strong> Determining if the monthly luxury expense fits your lifestyle.</li>
-            <li><strong>Loan Term Comparison:</strong> Choosing between a 10-year and 20-year term to balance monthly cash flow vs. total interest.</li>
-            <li><strong>Purchase Negotiation:</strong> Knowing your "out-the-door" financing cost before talking to a marine dealer.</li>
-          </ul>
-        }
-        faqs={[
+        title={boatLoanSeoData.title}
+        whatIsIt={boatLoanSeoData.whatIsIt}
+        formula={boatLoanSeoData.formula}
+        example={boatLoanSeoData.example}
+        useCases={boatLoanSeoData.useCases}
+        faqs={boatLoanSeoData.faqs}
+        deepDive={boatLoanSeoData.deepDive}
+        glossary={boatLoanSeoData.glossary}
+        relatedCalculators={[
           {
-            question: "Are boat loans like car loans?",
-            answer: "In principle, yes, but the terms are much longer (10-20 years vs 3-7 years) and interest rates are typically higher as boats are considered non-essential luxury assets."
+            name: "Mortgage",
+            path: "/mortgage-calculator/",
+            desc: "Calculate your monthly mortgage payments and amortization schedule.",
           },
           {
-            question: "Is boat loan interest tax-deductible?",
-            answer: "If the boat has basic sleeping, cooking, and toilet facilities, it may qualify as a second home for the mortgage interest deduction (check with a tax professional)."
+            name: "ROI",
+            path: "/roi-calculator/",
+            desc: "Calculate your exact annualized percentage returns.",
           },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
-          relatedCalculators={[
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator/",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator/",
-              desc: "Calculate your exact annualized percentage returns.",
-            },
-            {
-              name: "Investment Calculator",
-              path: "/investment-calculator/",
-              desc: "Project your portfolio growth over time with compound interest.",
-            },
-            {
-              name: "Loan Payment Calculator",
-              path: "/loan-payment-calculator/",
-              desc: "Estimate your monthly loan payments and total interest cost.",
-            }
-          ]}
+          {
+            name: "Investment",
+            path: "/investment-calculator/",
+            desc: "Project your portfolio growth over time with compound interest.",
+          },
+          {
+            name: "Loan Payment",
+            path: "/loan-payment-calculator/",
+            desc: "Estimate your monthly loan payments and total interest cost.",
+          },
+        ]}
       />
     </div>
   );

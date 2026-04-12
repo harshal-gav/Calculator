@@ -1,0 +1,112 @@
+{
+  "title": "Expected Return Calculator: Portfolio, CAPM, & Stock ROI Master Guide",
+  "whatIsIt": "An **expected return calculator** is an essential tool for investors and financial analysts to estimate the potential profit or loss of an investment over a specific period. This **expected rate of return calculator** uses historical data, probability-weighted scenarios, and market models (like CAPM) to project the 'mean' outcome of a financial asset or a complex multi-asset portfolio.\n\nWhether you are using a **portfolio expected return calculator** to balance your retirement account or a **CAPM expected return calculator** to value an individual stock, this tool helps you answer the most critical question in finance: 'Is the potential reward worth the risk?'",
+  "formula": "The calculation of **expected annual rate of return** varies based on the level of complexity needed:\n\n### 1. Basic Probability-Weighted Return\n$E(R) = \\sum p_i \\times r_i$\n*(Where $p_i$ is the probability of scenario $i$, and $r_i$ is the return in that scenario)*\n\n### 2. Portfolio Expected Return Formula\n$E(R_p) = \\sum w_i \\times E(R_i)$\n*(Where $w_i$ is the weight of each asset in the portfolio, and $E(R_i)$ is the expected return of that asset)*\n\n### 3. CAPM (Capital Asset Pricing Model)\n$E(R) = R_f + \\beta(R_m - R_f)$\n*(Where $R_f$ is the risk-free rate, $\\beta$ is the asset's sensitivity to market moves, and $R_m$ is the expected market return)*",
+  "example": "Let's use a **portfolio expected return calculator** for a simple 3-stock asset mix:\n\n- **Stock A (Tech)**: 50% Weight, 15% Expected Return\n- **Stock B (Bonds)**: 30% Weight, 5% Expected Return\n- **Stock C (Cash)**: 20% Weight, 2% Expected Return\n\n**Calculation**:\n1.  **Contribution A**: $0.50 \\times 0.15 = 0.075$ (7.5%)\n2.  **Contribution B**: $0.30 \\times 0.05 = 0.015$ (1.5%)\n3.  **Contribution C**: $0.20 \\times 0.02 = 0.004$ (0.4%)\n\n**Result**: Total Portfolio **Expected Return = 9.4%**.\n\nThis calculation assumes no correlation impact on the individual returns themselves, serving as a baseline for your **expected annual return on investment**.",
+  "useCases": "### 1. Retirement Portfolio Planning\nInvestors use a **portfolio required return calculator** to determine if their current asset allocation (stocks/bonds) will meet their long-term wealth goals. If the **annual expected return** is too low, they may need to increase their risk profile or contribute more capital.\n\n### 2. Stock Valuation and CAPM Analysis\nAnalysts use the **expected return on stock calculator beta** to find the 'fair' return an investor should demand for holding a volatile security. If the calculated **CAPM expected return** is 10%, but the stock is currently trending at 12%, it may be undervalued.\n\n### 3. Risk-Adjusted Performance\nBy combining the **expected rate of return and risk calculator** (standard deviation), investors can calculate the 'Sharpe Ratio'. This tells them how much 'excess return' they are getting for each unit of risk they take on.\n\n### 4. Real Estate Projections\nIn property investing, an **expected yield on rental property** calculation helps landlords decide between different locations. This **expected rate of return on rental property** factors in both rental income and projected capital appreciation.",
+  "faqs": [
+    {
+      "question": "Is Expected Return the same as Guaranteed Return?",
+      "answer": "Absolutely not. The **expected return** is a statistical average based on probabilities. In any given year, the actual return could be significantly higher or lower (risk). Only instruments like government bonds held to maturity offer anything close to a 'guaranteed' return."
+    },
+    {
+      "question": "How do I find a stock's Beta for CAPM?",
+      "answer": "Beta is usually found on financial research sites like Yahoo Finance or Bloomberg. A Beta of 1.0 means the stock moves with the market; a Beta of 2.0 means it is twice as volatile."
+    },
+    {
+      "question": "What is the 'Risk Premium'?",
+      "answer": "The **expected risk premium formula** is the Expected Market Return minus the Risk-Free Rate. It represents the extra return investors demand for choosing risky stocks over 'safe' government debt."
+    },
+    {
+      "question": "Does this handle 'Standard Deviation'?",
+      "answer": "Yes, advanced versions of the **expected return and standard deviation of a portfolio calculator** account for the volatility of each asset and the 'covariance' (how they move together) to find the 'Efficient Frontier' of a portfolio."
+    },
+    {
+      "question": "Why use probability-weighted returns?",
+      "answer": "Markets aren't linear. By using an **expected return calculator probability** model, you can account for the '30% chance of a recession' versus a '70% chance of growth,' which provides a much more robust projection than just looking at the best-case scenario."
+    }
+  ],
+  "deepDive": "### Modern Portfolio Theory and the Expected Return Frontier\n\nIn the world of professional finance, **calculating portfolio expected return** is only half the battle. The true goal is to achieve the highest possible return for a given level of risk—a concept known as Modern Portfolio Theory (MPT).\n\n#### The Role of Covariance\nWhen you use a **calculate expected return of portfolio with standard deviation** tool, the math must account for how assets interact. If you own two stocks that always go up and down at the same time, your portfolio isn't diversified. By adding assets with 'Negative Correlation' (like gold or certain bonds often do relative to stocks), you can maintain the same **expected annual rate of return** while drastically reducing the 'Standard Deviation' (risk) of your total wealth.\n\n#### CAPM: The Alpha and Beta of Investing\nThe **capm expected return formula** introduced the idea that there are two types of risk: Systematic (Market) and Unsystematic (Company-specific). CAPM argues that you only get paid for taking on 'Systematic Risk' (Beta). If you take on too much company-specific risk by own only one stock, you aren't being compensated for that extra danger. This is why the **portfolio required return calculator** is so heavily used in academic and institutional settings.\n\n#### The Dividend Discount Model (DDM) Connection\nFor long-term stock investors, the **expected stock return formula** is often tied to dividends. If a company pays a 3% dividend and its earnings grow by 7% per year, your **annual expected return** is roughly 10%. This 'Gordon Growth' model is a simpler alternative to the complex **expected market return formula** used for broader indices.\n\n#### Behavioral Finance and 'Expected' vs. 'Actual'\nOne of the biggest traps in using an **estimated return** tool is 'Recency Bias'—the tendency to assume that because the market returned 15% last year, it will do so again. Professional **expected rate of return meaning** encompasses a long-term, multi-decade view that accounts for 'Mean Reversion,' where periods of extreme growth are followed by periods of stagnation.",
+  "glossary": [
+    {
+      "term": "Expected Return",
+      "definition": "The profit or loss that an investor anticipates on an investment that has known or anticipated rates of return."
+    },
+    {
+      "term": "CAPM",
+      "definition": "Capital Asset Pricing Model; a model that describes the relationship between systematic risk and expected return for assets."
+    },
+    {
+      "term": "Beta (β)",
+      "definition": "A measure of a stock's volatility in relation to the overall market."
+    },
+    {
+      "term": "Risk-Free Rate",
+      "definition": "The theoretical rate of return of an investment with zero risk, typically represented by long-term government bonds."
+    },
+    {
+      "term": "Standard Deviation",
+      "definition": "A statistical measure of the dispersion of returns for a given security or market index; used as a proxy for risk."
+    },
+    {
+      "term": "Portfolio Weight",
+      "definition": "The percentage of a total portfolio's value that is invested in a specific asset or category."
+    },
+    {
+      "term": "Alpha (α)",
+      "definition": "The excess return of an investment relative to the return of a benchmark index."
+    },
+    {
+      "term": "Sharpe Ratio",
+      "definition": "A measure used to understand the return of an investment compared to its risk; calculated by dividing excess return by standard deviation."
+    },
+    {
+      "term": "Systematic Risk",
+      "definition": "Risk that is inherent to the entire market (e.g., inflation, interest rate hikes) and cannot be diversified away."
+    },
+    {
+      "term": "Unsystematic Risk",
+      "definition": "Risk that is specific to an individual company or industry (e.g., a strike or a product failure) and can be reduced through diversification."
+    },
+    {
+      "term": "Risk Premium",
+      "definition": "The return in excess of the risk-free rate that an investment is expected to yield."
+    },
+    {
+      "term": "Efficient Frontier",
+      "definition": "The set of optimal portfolios that offer the highest expected return for a defined level of risk."
+    },
+    {
+      "term": "Annualized Return",
+      "definition": "The geometric average amount of money earned by an investment each year over a given time period."
+    },
+    {
+      "term": "Market Return",
+      "definition": "The total percentage change in the price of an index (like the S&P 500) including dividends over a specific period."
+    },
+    {
+      "term": "Correlation",
+      "definition": "A statistic that measures the degree to which two securities move in relation to each other."
+    },
+    {
+      "term": "Required Rate of Return",
+      "definition": "The minimum return an investor will accept for owning a stock, as compensation for a given level of risk."
+    },
+    {
+      "term": "Yield",
+      "definition": "The income return on an investment, such as the interest or dividends received."
+    },
+    {
+      "term": "Recency Bias",
+      "definition": "The cognitive bias where one gives more importance to recent events than older events when projecting future returns."
+    },
+    {
+      "term": "Mean Reversion",
+      "definition": "The financial theory suggesting that asset prices and historical returns eventually will return to the long-run average or mean level."
+    },
+    {
+      "term": "Equity Risk Premium",
+      "definition": "The additional return that investing in the stock market provides over a risk-free rate."
+    }
+  ]
+}

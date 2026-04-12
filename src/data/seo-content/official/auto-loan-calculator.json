@@ -1,0 +1,55 @@
+{
+  "title": "Comprehensive Auto Loan Calculator: Mastering the Math of Vehicle Financing",
+  "whatIsIt": "The **Auto Loan Calculator** is a specialized financial instrument designed to decode the complex relationship between vehicle prices, interest rates, and loan durations. In the modern automotive market, understanding the Time Value of Money (TVM) is a critical survival skill for your personal balance sheet.\n\nCar ownership is typically the second-largest expense for a household. This calculator shifts the perspective from short-term cash flow to long-term net worth. It meticulously calculates your monthly principal and interest, the total interest paid over the life of the loan, and the impact of sales tax and trade-ins on your final obligation. It empowers you to see exactly how a 1% shift in interest rates or a $5,000 increase in your down payment changes your financial trajectory.",
+  "formula": "The monthly payment is calculated using the standard amortization formula:\n\n**M = P [ i(1 + i)ⁿ ] / [ (1 + i)ⁿ – 1 ]**\n\nWhere:\n- **M** = Monthly payment\n- **P** = Principal loan amount (Price - Down Payment - Trade-in + Tax/Fees)\n- **i** = Monthly interest rate (Annual Rate / 12 / 100)\n- **n** = Number of months (Loan Term)",
+  "example": "Scenario: Impact of the Down Payment on a $40,000 SUV at 6.5% interest for 60 months:\n\n1. **Scenario A (Zero Down):** Monthly Payment = **$783**. Total Interest = **$6,980**.\n2. **Scenario B ($10,000 Down):** Monthly Payment = **$587**. Total Interest = **$5,235**.\n\n**Conclusion:** Putting $10,000 down saved you **$1,745 in pure interest**—effectively a 17% 'return' on your $10k through avoided costs.",
+  "useCases": "### Pre-Approval Comparison\nCompare loan offers from your local credit union against national banks. Knowing your 'floor' APR is your best leverage at the dealership.\n\n### Trade-In Evaluator\nDetermine how much your current vehicle's equity actually affects your new monthly obligation versus selling it privately.\n\n### Target Budgeting\nIf you have a hard limit of $450/month, work backward to see exactly what purchase price and interest rate combo fits your reality.",
+  "faqs": [
+    {
+      "question": "Is it better to get a longer loan for a lower payment?",
+      "answer": "While it helps monthly cash flow, it is more expensive. A 72-month loan costs thousands more in interest and keeps you in a 'negative equity' position for longer than a 48 or 60-month loan."
+    },
+    {
+      "question": "How much down payment should I really put down?",
+      "answer": "The 'gold standard' is 20%. This typically covers the first year's depreciation and immediately puts you in a positive equity position, making selling or trading the car easier later."
+    },
+    {
+      "question": "Can I include sales tax in the loan?",
+      "answer": "Most lenders allow you to roll taxes, titles, and fees into the total loan amount. However, this increases your Loan-to-Value (LTV) ratio and might result in a slightly higher interest rate."
+    },
+    {
+      "question": "How does my credit score affect the auto loan rate?",
+      "answer": "Your credit score is the single biggest factor. A 'Super Prime' score (780+) can get rates near 5%, while a 'Subprime' score (under 600) might face rates of 15% to 20%."
+    }
+  ],
+  "deepDive": "Negative equity, or being 'underwater,' is the primary risk of modern auto financing. Because cars are depreciating assets, a loan with zero down payment and a long term (72+ months) often results in the loan balance being higher than the car's resale value for the first 3-4 years. If you need to sell the car or it gets totaled in an accident during this time, you would have to pay the bank the difference out of pocket. This is why Gap Insurance is critical for low-down-payment loans.",
+  "comparisonTable": {
+    "title": "Estimated Interest Rates by Credit Tier (2024 Market)",
+    "headers": ["Credit Category", "Score Range", "Avg. New Car Rate", "Avg. Used Car Rate"],
+    "rows": [
+      ["Super Prime", "781 - 850", "5.1%", "6.5%"],
+      ["Prime", "661 - 780", "6.2%", "8.5%"],
+      ["Non-Prime", "601 - 660", "9.3%", "13.1%"],
+      ["Subprime", "501 - 600", "12.2%", "18.4%"],
+      ["Deep Subprime", "300 - 500", "15.4%", "21.3%"]
+    ]
+  },
+  "glossary": [
+    {
+      "term": "APR",
+      "definition": "Annual Percentage Rate; the total yearly cost of a loan including interest and mandatory fees."
+    },
+    {
+      "term": "Amortization",
+      "definition": "The process of paying off a debt over time through regular payments of principal and interest."
+    },
+    {
+      "term": "Principal",
+      "definition": "The actual amount of money borrowed, excluding the interest paid on that money."
+    },
+    {
+      "term": "Loan-to-Value (LTV)",
+      "definition": "The ratio of the loan amount divided by the vehicle's value, used by lenders to determine risk."
+    }
+  ]
+}

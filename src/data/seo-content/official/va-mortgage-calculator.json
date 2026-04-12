@@ -1,0 +1,112 @@
+{
+  "title": "VA Mortgage Calculator: 0% Down, Funding Fees & Veteran Benefits",
+  "whatIsIt": "A **va mortgage calculator** is a specialized financial tool designed for active-duty service members, veterans, and eligible surviving spouses to estimate their home loan benefits. Unlike conventional loans, **VA home loans** offer a 0% down payment option and do not require Private Mortgage Insurance (PMI), making them one of the most powerful wealth-building tools for the military community.\n\nThis tool helps you calculate your total monthly payment, including the unique **va funding fee**, property taxes, and homeowners insurance. Whether you are using it as a **va loan affordability calculator** for your first purchase or a **va cash out refinance calculator** to tap into your home's equity, this guide provides the precision needed to maximize your hard-earned benefits.",
+  "formula": "VA loans follow a specific structure that includes the **VA Funding Fee**, which can be paid upfront or rolled into the loan:\n\n### 1. Total Loan Amount\n$\\text{Total Loan} = \\text{Purchase Price} + \\text{Rolled-in Funding Fee}$\n\n### 2. VA Funding Fee Calculation\nThe fee percentage depends on your service type, whether it's your first use, and your down payment size (typically 1.25% to 3.3%).\n$\\text{Funding Fee Amount} = \\text{Loan Amount} \\times \\text{Fee Percentage}$\n\n### 3. Monthly PITI\n$\\text{Monthly Payment} = \\text{Mortgage P&I} + \\text{Monthly Taxes} + \\text{Monthly Insurance}$\n*(Note: No PMI is added to VA loans)*",
+  "example": "Let's use a **va loan payment calculator** scenario for a first-time homebuyer:\n\n- **Home Price**: $350,000.\n- **Down Payment**: $0 (0% down).\n- **Funding Fee**: 2.15% (First-time use, 0% down).\n- **Interest Rate**: 6.25%.\n\n**Calculations**:\n1.  **Funding Fee**: $350,000 \\times 0.0215 = $7,525.\n2.  **Total Loan**: $350,000 + $7,525 = $357,525.\n3.  **Monthly P&I**: Approx. $2,203.\n4.  **Taxes/Insurance**: Approx. $450.\n\n**Total Result**: Your **monthly VA mortgage payment** would be **$2,653**. Notice how you bought a $350k home with $0 down and still avoided the ~$250/month PMI charge common in conventional loans.",
+  "useCases": "### 1. 0% Down Home Purchase\nThe primary use of a **va home loan calculator** is to see how much house you can afford without a traditional 20% down payment. For military families moving frequently (PCS), this preserves liquidity for moving expenses and emergencies.\n\n### 2. VA Funding Fee Budgeting\nUse the **va funding fee calculator** mode to see how your fee changes if you put 5% or 10% down. While 0% is possible, a 5% down payment significantly reduces your funding fee, lowering your total loan balance and monthly interest cost.\n\n### 3. Refinancing (IRRRL and Cash-Out)\nVeterans use a **va refinance calculator** to evaluate 'Streamline' (IRRRL) options, which lower interest rates with minimal paperwork. If you need cash for home improvements or debt consolidation, the **va cash out refinance** allows you to borrow up to 100% of your home's value, a benefit almost exclusive to VA loans.\n\n### 4. Disability Exemptions\nIf you have a service-connected disability, you are likely exempt from the funding fee. A **disabled veteran home loan calculator** check will show a significantly lower monthly payment and loan balance because that 2.15% to 3.3% fee is waived entirely.",
+  "faqs": [
+    {
+      "question": "Do I have to pay PMI on a VA loan?",
+      "answer": "No. VA loans never require Private Mortgage Insurance (PMI), even with a 0% down payment. This is because the VA 'guarantees' a portion of the loan to the lender, acting as a form of insurance."
+    },
+    {
+      "question": "What is the VA Funding Fee?",
+      "answer": "The VA Funding Fee is a one-time payment made to the Department of Veterans Affairs. It helps sustain the program for future generations. It is typically rolled into the loan amount."
+    },
+    {
+      "question": "Is there a maximum VA loan limit?",
+      "answer": "As of 2020, eligible veterans with full entitlement have no 'VA loan limit'—meaning the VA can guarantee loans of any size, provided the borrower qualifies based on income and credit."
+    },
+    {
+      "question": "What is 'Residual Income'?",
+      "answer": "Residual income is the money left over each month after paying all major expenses (mortgage, debts, taxes). The VA requires a certain amount of residual income to ensure the veteran can afford basic life necessities like food and gas."
+    },
+    {
+      "question": "Can I use my VA loan benefit more than once?",
+      "answer": "Yes. You can use your VA loan benefit multiple times. If you sell your previous home and pay off the loan, your full entitlement is restored. You can even have two VA loans at once in some 'bonus entitlement' scenarios."
+    }
+  ],
+  "deepDive": "### Decoding VA Loan Efficiency: Entitlement and Residual Income\n\nA **va mortgage calculation** is more robust than a target conventional check. Lenders look at two master metrics: Debt-to-Income (DTI) and **Residual Income**.\n\n#### The Residual Income Advantage\nWhile most loans focus strictly on DTI, the VA requires a **va residual income calculator** check. They look at your geographic location and family size to ensure you have enough 'discretionary' cash at the end of the month. This requirement is one reason why VA loans have the lowest foreclosure rates in the industry; they account for the actual cost of living, not just the math of the debt.\n\n#### VA Funding Fee Tiers (2024 Schedule)\nYour **va funding fee calculator** inputs change based on your usage: \n- **First Use (0% Down)**: 2.15% \n- **Subsequent Use (0% Down)**: 3.3% \n- **Any Use (5% Down)**: 1.5% \n- **Any Use (10% Down)**: 1.25%\n*Note: These fees are lower for borrowers who make a down payment because the VA's risk is lower.*\n\n#### The VA Streamline Refinance (IRRRL)\nIf you already have a VA loan, the **va irrrl calculator** path is your best friend. IRRRL stands for Interest Rate Reduction Refinance Loan. It requires no appraisal and often no income verification—the only requirement is that the new interest rate must be lower than the old one, providing an immediate 'Net Tangible Benefit' to the veteran.\n\n#### VA Loan Entitlement Basics\nYour 'Entitlement' is the amount the government will guarantee. If you have 'Full Entitlement,' the VA will guarantee 25% of any loan size. If you have 'Partial Entitlement' (because you have another active VA loan), you may need a down payment for a second purchase. This is a complex area where a **va home loan entitlement calculator** becomes essential for multi-property owners.",
+  "glossary": [
+    {
+      "term": "Entitlement",
+      "definition": "The dollar amount the VA will guarantee on a veteran's home loan, determining how much a veteran can borrow without a down payment."
+    },
+    {
+      "term": "VA Funding Fee",
+      "definition": "A one-time fee paid by the borrower to the VA to support the loan program; can be waived for disabled veterans."
+    },
+    {
+      "term": "Residual Income",
+      "definition": "The amount of net income remaining after all monthly debts and housing expenses are paid."
+    },
+    {
+      "term": "COE (Certificate of Eligibility)",
+      "definition": "The official document issued by the VA that proves a borrower is eligible for VA home loan benefits."
+    },
+    {
+      "term": "IRRRL",
+      "definition": "Interest Rate Reduction Refinance Loan; a simplified refinance option for existing VA loan holders."
+    },
+    {
+      "term": "Funding Fee Waiver",
+      "definition": "A benefit for veterans with at least a 10% disability rating, exempting them from paying the VA Funding Fee."
+    },
+    {
+      "term": "0% Down Payment",
+      "definition": "The ability to purchase a home with no money required upfront, a core benefit of the VA loan program."
+    },
+    {
+      "term": "Occupancy Requirement",
+      "definition": "A VA loan rule stating that the borrower must intend to live in the home as their primary residence."
+    },
+    {
+      "term": "PITI",
+      "definition": "Principal, Interest, Taxes, and Insurance; the total monthly mortgage cost."
+    },
+    {
+      "term": "Secondary Entitlement",
+      "definition": "Additional guarantee amount available to veterans who have already used a portion of their initial entitlement."
+    },
+    {
+      "term": "VA Appraisal",
+      "definition": "A specific property valuation required by the VA to ensure the home meets Minimum Property Requirements (MPRs)."
+    },
+    {
+      "term": "Net Tangible Benefit",
+      "definition": "The requirement that a refinance must actually improve the veteran's financial position (e.g., lower rate)."
+    },
+    {
+      "term": "Points (Discount Points)",
+      "definition": "Optional fees paid to the lender at closing to 'buy down' the interest rate."
+    },
+    {
+      "term": "Seller Concessions",
+      "definition": "Closing costs paid by the seller on behalf of the veteran buyer, allowed up to 4% of the sale price."
+    },
+    {
+      "term": "Cash-Out Refinance",
+      "definition": "A loan that replaces the existing mortgage and allows the veteran to take cash out from the home's equity."
+    },
+    {
+      "term": "Minimum Property Requirements (MPRs)",
+      "definition": "VA standards that a home must meet to be eligible for a VA loan (safety, sanitation, and structural integrity)."
+    },
+    {
+      "term": "Lender Overlay",
+      "definition": "Additional requirements (like a higher credit score) that a bank might add on top of the VA's minimum guidelines."
+    },
+    {
+      "term": "VA Loan Guaranty",
+      "definition": "The VA's promise to pay the lender a portion of the loan if the borrower defaults."
+    },
+    {
+      "term": "Loan Term",
+      "definition": "The duration of the loan, typically 15 or 30 years for VA mortgages."
+    },
+    {
+      "term": "Principal Paydown",
+      "definition": "The portion of the monthly payment that reduces the actual amount owed on the house."
+    }
+  ]
+}

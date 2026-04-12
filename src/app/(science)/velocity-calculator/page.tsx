@@ -1,452 +1,169 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import velocityData from "@/data/seo-content/official/velocity-calculator.json";
 
 export default function VelocityCalculator() {
-  const [calcTarget, setCalcTarget] = useState("velocity"); // velocity, distance, time
+  const [v, setV] = useState("50");
+  const [d, setD] = useState("5000");
+  const [t, setT] = useState("100");
+  
+  const [activeInputs, setActiveInputs] = useState<Set<string>>(new Set(["d", "t"]));
 
-  // Inputs
-  const [velocity, setVelocity] = useState("");
-  const [distance, setDistance] = useState("100");
-  const [time, setTime] = useState("9.58");
-
-  // Units
-  const [vUnit, setVUnit] = useState("m/s");
-  const [dUnit, setDUnit] = useState("m");
-  const [tUnit, setTUnit] = useState("s");
-
-  const [result, setResult] = useState<{
-    value: number;
-    unit: string;
-    formula: string;
-  } | null>(null);
-
-  const unitFactors: Record<string, number> = {
-    // Distance base: meters (m)
-    m: 1,
-    km: 1000,
-    cm: 0.01,
-    mi: 1609.344,
-    ft: 0.3048,
-
-    // Time base: seconds (s)
-    s: 1,
-    min: 60,
-    h: 3600,
-
-    // Velocity base: m/s
-    "m/s": 1,
-    "km/h": 1 / 3.6,
-    mph: 0.44704,
-    "ft/s": 0.3048,
-  };
-
-  const calculate = () => {
-    let res = 0;
-    let resUnit = "";
-    let formula = "";
-
-    if (calcTarget === "velocity") {
-      const d = parseFloat(distance);
-      const t = parseFloat(time);
-      if (isNaN(d) || isNaN(t) || t === 0) return setResult(null);
-
-      // Convert to base (m and s)
-      const dBase = d * unitFactors[dUnit];
-      const tBase = t * unitFactors[tUnit];
-
-      // v = d / t (in m/s)
-      const vBase = dBase / tBase;
-
-      // Convert to requested vUnit
-      res = vBase / unitFactors[vUnit];
-      resUnit = vUnit;
-      formula = "v = d / t";
-    } else if (calcTarget === "distance") {
-      const v = parseFloat(velocity);
-      const t = parseFloat(time);
-      if (isNaN(v) || isNaN(t)) return setResult(null);
-
-      const vBase = v * unitFactors[vUnit];
-      const tBase = t * unitFactors[tUnit];
-
-      // d = v * t (in m)
-      const dBase = vBase * tBase;
-
-      res = dBase / unitFactors[dUnit];
-      resUnit = dUnit;
-      formula = "d = v × t";
-    } else if (calcTarget === "time") {
-      const v = parseFloat(velocity);
-      const d = parseFloat(distance);
-      if (isNaN(v) || isNaN(d) || v === 0) return setResult(null);
-
-      const vBase = v * unitFactors[vUnit];
-      const dBase = d * unitFactors[dUnit];
-
-      // t = d / v (in s)
-      const tBase = dBase / vBase;
-
-      res = tBase / unitFactors[tUnit];
-      resUnit = tUnit;
-      formula = "t = d / v";
+  const handleInputChange = (field: string, value: string) => {
+    if (!activeInputs.has(field)) {
+      const nextActive = new Set(activeInputs);
+      if (nextActive.size >= 2) {
+        const first = nextActive.values().next().value;
+        if (first !== undefined) nextActive.delete(first);
+      }
+      nextActive.add(field);
+      setActiveInputs(nextActive);
     }
 
-    setResult({ value: res, unit: resUnit, formula });
+    if (field === "v") setV(value);
+    if (field === "d") setD(value);
+    if (field === "t") setT(value);
   };
 
-  return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-2xl shadow-xl border border-zinc-200">
-      <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-emerald-900 flex items-center justify-center font-serif">
-          <span className="mr-3">🚀</span> Velocity Calculator
-        </h1>
-        <p className="text-emerald-700 text-lg max-w-2xl mx-auto">
-          Calculate velocity, average speed, distance, or time using the
-          kinematic formula v = d / t.
-        </p>
+  useEffect(() => {
+    calculateVelocity();
+  }, [v, d, t, activeInputs]);
+
+  const calculateVelocity = () => {
+    const vVal = parseFloat(v) || 0;
+    const dVal = parseFloat(d) || 0;
+    const tVal = parseFloat(t) || 0;
+
+    if (activeInputs.has("d") && activeInputs.has("t")) {
+      if (tVal !== 0) setV((dVal / tVal).toFixed(2));
+    } else if (activeInputs.has("v") && activeInputs.has("t")) {
+      setD((vVal * tVal).toFixed(2));
+    } else if (activeInputs.has("v") && activeInputs.has("d")) {
+      if (vVal !== 0) setT((dVal / vVal).toFixed(2));
+    }
+  };
+
+  const InputField = ({ label, id, value, unit }: { label: string, id: string, value: string, unit: string }) => (
+    <div className={`p-8 rounded-[2rem] border-2 transition-all duration-300 ${activeInputs.has(id) ? "bg-white border-cyan-500 shadow-xl scale-[1.02] z-10" : "bg-slate-50 border-slate-200 opacity-60 shadow-inner"}`}>
+      <div className="flex justify-between items-center mb-4">
+         <label className={`text-[10px] font-black uppercase tracking-[0.3em] ${activeInputs.has(id) ? "text-cyan-600" : "text-slate-400"}`}>{label}</label>
+         {activeInputs.has(id) && (
+            <div className="flex gap-1">
+               <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
+               <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse delay-75"></span>
+            </div>
+         )}
       </div>
-
-      <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-zinc-200 mb-8">
-        <div className="mb-8 p-4 bg-emerald-50 rounded-xl border border-emerald-100 flex flex-col md:flex-row items-center gap-4">
-          <label className="font-bold text-emerald-900 whitespace-nowrap uppercase tracking-widest text-sm">
-            Calculate:
-          </label>
-          <div className="flex bg-white rounded-lg p-1 shadow-sm border border-zinc-200 w-full">
-            {["velocity", "distance", "time"].map((t) => (
-              <button
-                key={t}
-                onClick={() => {
-                  setCalcTarget(t);
-                  setResult(null);
-                }}
-                className={`flex-1 py-2 text-sm font-bold uppercase tracking-wider rounded-md transition-colors ${calcTarget === t ? "bg-emerald-600 text-white shadow-md" : "text-zinc-500 hover:bg-zinc-50"}`}
-              >
-                {t}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {calcTarget !== "velocity" && (
-            <div>
-              <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
-                Velocity (v)
-              </label>
-              <div className="flex gap-2">
-                <input
-                  type="number"
-                  step="any"
-                  value={velocity}
-                  onChange={(e) => setVelocity(e.target.value)}
-                  className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-zinc-50"
-                  placeholder="Enter velocity"
-                />
-                <select
-                  value={vUnit}
-                  onChange={(e) => setVUnit(e.target.value)}
-                  className="rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-white w-32"
-                >
-                  <option value="m/s">m/s</option>
-                  <option value="km/h">km/h</option>
-                  <option value="mph">mph</option>
-                  <option value="ft/s">ft/s</option>
-                </select>
-              </div>
-            </div>
-          )}
-
-          {calcTarget !== "distance" && (
-            <div>
-              <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
-                Distance (d)
-              </label>
-              <div className="flex gap-2">
-                <input
-                  type="number"
-                  step="any"
-                  min="0"
-                  value={distance}
-                  onChange={(e) => setDistance(e.target.value)}
-                  className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-zinc-50"
-                  placeholder="Enter distance"
-                />
-                <select
-                  value={dUnit}
-                  onChange={(e) => setDUnit(e.target.value)}
-                  className="rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-white w-32"
-                >
-                  <option value="m">m</option>
-                  <option value="km">km</option>
-                  <option value="cm">cm</option>
-                  <option value="mi">mi</option>
-                  <option value="ft">ft</option>
-                </select>
-              </div>
-            </div>
-          )}
-
-          {calcTarget !== "time" && (
-            <div>
-              <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
-                Time (t)
-              </label>
-              <div className="flex gap-2">
-                <input
-                  type="number"
-                  step="any"
-                  min="0"
-                  value={time}
-                  onChange={(e) => setTime(e.target.value)}
-                  className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-zinc-50"
-                  placeholder="Enter time"
-                  onKeyDown={(e) => e.key === "Enter" && calculate()}
-                />
-                <select
-                  value={tUnit}
-                  onChange={(e) => setTUnit(e.target.value)}
-                  className="rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-white w-32"
-                >
-                  <option value="s">s</option>
-                  <option value="min">min</option>
-                  <option value="h">h</option>
-                </select>
-              </div>
-            </div>
-          )}
-
-          {/* Output Unit Selector */}
-          <div>
-            <label className="block text-sm font-bold text-emerald-700 mb-2 uppercase tracking-wide">
-              Result Unit
-            </label>
-            <select
-              value={
-                calcTarget === "velocity"
-                  ? vUnit
-                  : calcTarget === "distance"
-                    ? dUnit
-                    : tUnit
-              }
-              onChange={(e) => {
-                if (calcTarget === "velocity") setVUnit(e.target.value);
-                else if (calcTarget === "distance") setDUnit(e.target.value);
-                else setTUnit(e.target.value);
-              }}
-              className="w-full rounded-xl border-emerald-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-emerald-50 text-emerald-900"
-            >
-              {calcTarget === "velocity" && (
-                <>
-                  <option value="m/s">Meters per second (m/s)</option>
-                  <option value="km/h">Kilometers per hour (km/h)</option>
-                  <option value="mph">Miles per hour (mph)</option>
-                  <option value="ft/s">Feet per second (ft/s)</option>
-                </>
-              )}
-              {calcTarget === "distance" && (
-                <>
-                  <option value="m">Meters (m)</option>
-                  <option value="km">Kilometers (km)</option>
-                  <option value="cm">Centimeters (cm)</option>
-                  <option value="mi">Miles (mi)</option>
-                  <option value="ft">Feet (ft)</option>
-                </>
-              )}
-              {calcTarget === "time" && (
-                <>
-                  <option value="s">Seconds (s)</option>
-                  <option value="min">Minutes (min)</option>
-                  <option value="h">Hours (h)</option>
-                </>
-              )}
-            </select>
-          </div>
-        </div>
-
-        <div className="mt-8">
-          <button
-            onClick={calculate}
-            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-5 px-6 rounded-xl transition-colors shadow-lg shadow-emerald-600/30 uppercase tracking-widest text-lg"
-          >
-            Calculate {calcTarget}
-          </button>
-        </div>
-      </div>
-
-      {result && (
-        <div className="bg-emerald-950 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden flex flex-col items-center">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-600 rounded-full mix-blend-screen filter blur-[80px] opacity-20 pointer-events-none"></div>
-
-          <h2 className="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-2 z-10">
-            Calculated {calcTarget}
-          </h2>
-          <div className="text-emerald-600 font-mono text-sm mb-6 z-10 bg-black/40 px-3 py-1 rounded">
-            Using {result.formula}
-          </div>
-
-          <div className="flex items-baseline bg-black/30 px-8 py-6 rounded-2xl border border-white/10 z-10 shadow-inner">
-            <span className="text-5xl md:text-6xl font-black font-mono tracking-tight text-white mr-4">
-              {Number.isInteger(result.value)
-                ? result.value
-                : parseFloat(result.value.toFixed(6))}
-            </span>
-            <span className="text-2xl font-bold text-emerald-400">
-              {result.unit}
-            </span>
-          </div>
-        </div>
-      )}
-
-      <div className="mt-8 bg-zinc-100 p-6 rounded-xl border border-zinc-200 text-sm text-zinc-600 max-w-2xl mx-auto space-y-2">
-        <p className="font-bold text-zinc-800 uppercase tracking-widest mb-4">
-          Kinematics Reference
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <ul className="list-disc pl-5 space-y-1 font-mono">
-            <li>Velocity (v) = d / t</li>
-            <li>Distance (d) = v × t</li>
-            <li>Time (t) = d / v</li>
-          </ul>
-          <ul className="list-disc pl-5 space-y-1 font-mono">
-            <li>1 km/h ≈ 0.27778 m/s</li>
-            <li>1 mph ≈ 0.44704 m/s</li>
-            <li>1 mile = 1609.344 m</li>
-          </ul>
-        </div>
-      </div>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Velocity Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-          }),
-        }}
-      />
-
-      <div className="mt-8">
-        <CalculatorSEO
-          title="Velocity & Kinematics Calculator"
-          whatIsIt={
-            <>
-              <p>
-                Our <strong>Velocity Calculator</strong> allows you to instantly
-                solve for any of the three fundamental variables of basic
-                kinematics: Velocity (v), Distance (d), or Time (t).
-              </p>
-              <p>
-                Velocity is a vector quantity, meaning it represents both the
-                speed of an object and its direction of motion. In classical
-                mechanics, understanding the relationship between how far an
-                object travels and how long it takes to get there forms the
-                foundation of all physics calculations.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Velocity Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Velocity results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's calculate the velocity of Olympic sprinter Usain Bolt
-                during his world-record 100m dash.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>The Distance (d):</strong> The race is exactly{" "}
-                  <strong>100 meters</strong> long.
-                </li>
-                <li>
-                  <strong>The Time (t):</strong> He completes the race in
-                  exactly <strong>9.58 seconds</strong>.
-                </li>
-                <li>
-                  <strong>The Calculation:</strong> 100 meters ÷ 9.58 seconds ={" "}
-                  <strong>10.438</strong>.
-                </li>
-                <li>
-                  <strong>Result:</strong> His average velocity over the course
-                  of the entire race was <strong>10.438 m/s</strong> (or roughly
-                  23.35 mph).
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Aviation & Navigation:</strong> Pilots calculate ETA
-                (Estimated Time of Arrival) by dividing the remaining distance
-                to their destination by their aircraft's current ground
-                velocity.
-              </li>
-              <li>
-                <strong>Traffic Engineering:</strong> Civil engineers use
-                velocity calculations to determine how long yellow lights should
-                last at intersections based on the speed limit (velocity) and
-                the width of the intersection (distance).
-              </li>
-              <li>
-                <strong>Astronomy:</strong> Astrophysicists measure the velocity
-                of distant galaxies moving away from Earth to calculate the
-                expansion rate of the entire universe (the Hubble Constant).
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What is the difference between speed and velocity?",
-              answer:
-                "Speed is a 'scalar' quantity (it only has a magnitude, e.g., 60 mph). Velocity is a 'vector' quantity (it has magnitude AND direction, e.g., 60 mph North). In standard 1-dimensional kinematics problems, however, the terms are practically interchangeable.",
-            },
-            {
-              question: "Why do my units matter?",
-              answer:
-                "Kinematic equations demand consistent unit structures. If your distance is in miles, but your time is in seconds, dividing them will give you 'miles per second'—a useless metric for driving a car. You must convert your units to match your desired output (e.g., converting seconds to hours to get mph).",
-            },
-            {
-              question: "Does this calculator account for acceleration?",
-              answer:
-                "No. This specific calculator assumes 'constant velocity' (zero acceleration). If an object is speeding up or slowing down while it travels, you must use complex kinematic equations that include standard acceleration (a) variables.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Acceleration Calculator",
-              path: "/acceleration-calculator/",
-              desc: "Calculate changes in velocity over a specific duration of time.",
-            },
-            {
-              name: "Speed Converter",
-              path: "/speed-converter/",
-              desc: "Instantly convert velocities between metric and imperial scale systems.",
-            },
-            {
-              name: "Projectile Motion Calculator",
-              path: "/projectile-motion-calculator/",
-              desc: "Calculate the complex 2D velocity of objects moving through the air.",
-            },
-            {
-              name: "Density Calculator",
-              path: "/density-calculator/",
-              desc: "Calculate density, mass, or volume given two values.",
-            }]}
+      <div className="relative">
+        <input
+          type="number"
+          value={value}
+          onChange={(e) => handleInputChange(id, e.target.value)}
+          className={`w-full bg-transparent border-0 p-0 font-black text-4xl focus:ring-0 tracking-tighter tabular-nums ${activeInputs.has(id) ? "text-slate-900" : "text-slate-400"}`}
         />
+        <span className="absolute right-0 bottom-1 text-[10px] font-black text-slate-300 uppercase italic tracking-widest">{unit}</span>
       </div>
+    </div>
+  );
+
+  return (
+    <div className="max-w-6xl mx-auto p-4 md:p-8 bg-slate-50 rounded-3xl shadow-xl border border-slate-200 font-sans italic-headings">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-200 pb-8 mb-10 gap-6">
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="text-3xl">🏃‍♂️</span>
+            <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase italic">
+              Kinetic <span className="text-cyan-600 font-black">Velocity Resolver</span>
+            </h1>
+          </div>
+          <p className="text-slate-500 font-bold mt-1 tracking-tight text-sm uppercase italic">Displacement Rate Matrix</p>
+        </div>
+        <div className="hidden md:flex flex-col items-end text-right">
+          <div className="bg-slate-900 px-4 py-2 rounded-xl border border-slate-700 mb-1 shadow-lg">
+            <span className="text-cyan-400 font-black text-[10px] uppercase tracking-[0.3em]">Scientific Protocol 10-J</span>
+          </div>
+          <span className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter italic">V=d/t Standardized Verification</span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <InputField label="Displacement" id="d" value={d} unit="Meters (m)" />
+        <InputField label="Duration" id="t" value={t} unit="Seconds (s)" />
+        <InputField label="Final Velocity" id="v" value={v} unit="m/s (Vector)" />
+      </div>
+
+      <div className="mb-12 bg-white rounded-[3rem] p-10 md:p-16 text-slate-900 shadow-2xl relative overflow-hidden border border-slate-200">
+         <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none"></div>
+         
+         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-6 space-y-6">
+               <span className="inline-block px-4 py-1.5 bg-slate-100 border border-slate-200 text-slate-500 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mb-4 italic text-center lg:text-left grow">Motion Profile Status</span>
+               <h2 className="text-5xl md:text-6xl font-black tracking-tight italic uppercase leading-none text-slate-900">
+                  {parseFloat(v) > 343 ? "Supersonic" : (parseFloat(v) > 30 ? "High Velocity" : "Standard Speed")}
+               </h2>
+               <div className="flex flex-wrap gap-4 pt-4">
+                  <div className="px-5 py-2 rounded-xl bg-slate-900 text-cyan-400 text-[10px] font-black uppercase tracking-widest shadow-lg italic">
+                     {(parseFloat(v) * 3.6).toFixed(1)} km/h
+                  </div>
+                  <div className="px-5 py-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-500 text-[10px] font-black uppercase tracking-widest italic">
+                     {(parseFloat(v) * 2.237).toFixed(1)} mph
+                  </div>
+                  <div className="px-5 py-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-500 text-[10px] font-black uppercase tracking-widest italic">
+                     Mach {(parseFloat(v) / 343).toFixed(3)}
+                  </div>
+               </div>
+            </div>
+            
+            <div className="lg:col-span-6">
+               <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 space-y-6">
+                  <div className="flex justify-between items-center text-[10px] font-black text-slate-400 uppercase tracking-widest italic">
+                     <span>Displacement Trace</span>
+                     <span>Vector Stability</span>
+                  </div>
+                  <div className="h-4 w-full bg-slate-200 rounded-full overflow-hidden shadow-inner relative">
+                     <div className="h-full bg-cyan-600 transition-all duration-1000 shadow-[0_0_20px_rgba(8,145,178,0.5)]" style={{ width: `${Math.min(100, (parseFloat(v) / 100) * 100)}%` }}></div>
+                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
+                  </div>
+                  <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center italic">Object covers {(parseFloat(v)).toFixed(2)} units of spatial displacement every 1.00 unit of temporal duration.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <CalculatorSEO
+        title={velocityData.title}
+        whatIsIt={velocityData.whatIsIt}
+        formula={velocityData.formula}
+        example={velocityData.example}
+        useCases={velocityData.useCases}
+        faqs={velocityData.faqs}
+        deepDive={velocityData.deepDive}
+        glossary={velocityData.glossary}
+        relatedCalculators={[
+          {
+            name: "Acceleration",
+            path: "/acceleration-calculator/",
+            desc: "Determine how the rate of velocity changes over time for non-uniform motion.",
+          },
+          {
+            name: "Kinetic Energy",
+            path: "/kinetic-energy-calculator/",
+            desc: "Analyze the total energy work-potential currently stored in the moving body.",
+          },
+          {
+            name: "Projectile Motion",
+            path: "/projectile-motion-calculator/",
+            desc: "Project 2D parabolic paths using horizontal and vertical velocity vectors.",
+          },
+          {
+            name: "Force",
+            path: "/force-calculator/",
+            desc: "Calculate the force required to reach a specific velocity based on mass.",
+          }
+        ]}
+      />
     </div>
   );
 }

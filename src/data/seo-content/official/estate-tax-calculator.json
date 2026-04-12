@@ -1,0 +1,112 @@
+{
+  "title": "Estate Tax Calculator: Federal Death Duties & Inheritance Tax Master Guide",
+  "whatIsIt": "An **estate tax calculator** (often colloquially called a **death duty calculator** or **inheritance tax calculator**) is a sophisticated financial tool designed to estimate the tax liability on a person's total net worth at the time of their passing. This **estate value calculator** helps high-net-worth individuals and their families project the potential 'tax bite' and plan for the orderly transfer of wealth to heirs.\n\nThe **probate tax calculator** logic accounts for the **federal estate tax exemption** (the amount you can give away tax-free), as well as potential state-level inheritance taxes. Understanding your **adjusted gross estate calculation** is the first step in effective legacy planning.",
+  "formula": "Calculating your estate tax liability involves a multi-step process to reach the **adjusted gross estate**: \n\n### 1. Gross Estate Calculation\n$\\text{Gross Estate} = \\text{All Assets} (Cash, Real Estate, Stocks, Business Interests, Life Insurance)$\n\n### 2. Adjusted Gross Estate (AGE)\n$\\text{AGE} = \\text{Gross Estate} - \\text{Debts} - \\text{Funeral Expenses} - \\text{Administrative Costs}$\n\n### 3. Taxable Estate\n$\\text{Taxable Estate} = \\text{AGE} - \\text{Marital Deduction} - \\text{Charitable Deductions}$\n\n### 4. Final Estate Tax Owed\n$\\text{Tax Owed} = (\\text{Taxable Estate} - \\text{Federal Exemption Amount}) \\times \\text{Tax Rate (up to 40%)}$",
+  "example": "Let's use a **quick inheritance tax calculator** scenario for a single individual with a significant estate:\n\n- **Total Estate Value**: $15,000,000\n- **Debts & Expenses**: $500,000\n- **2024 Federal Exemption**: $13,610,000\n\n**Calculation**:\n1.  **Adjusted Gross Estate**: $15,000,000 - $500,000 = **$14,500,000**.\n2.  **Taxable Amount**: $14,500,000 - $13,610,000 = **$890,000**.\n3.  **Estimated Tax (40%)**: $890,000 \\times 0.40 = **$356,000**.\n\nWithout an **estate tax return calculator**, this family might be blindsided by a $356k tax bill due within 9 months of the death.",
+  "useCases": "### 1. Legacy and Succession Planning\nUltra-high-net-worth families use an **estate tax calculator** to determine if they need to move assets into specialized trusts. Strategies like the **charitable lead trust tax deduction calculator** logic can help lower the taxable volume of the estate while supporting a cause.\n\n### 2. Real Estate Investment Strategy\nInvestors look at the **capital gain tax on real estate property** and compare it to the 'Step-up in Basis' advantage of holding property until death. If selling now, a **1031 capital gains calculator** might be used to defer taxes, but if held in the estate, those gains might disappear for the heirs.\n\n### 3. Gifting Strategies\nTo reduce a future tax bill, many use the **calculating gift tax** rules to give away assets while they are alive. Our **inheritance tax 7 year rule calculator** logic (common in UK/International contexts) highlights why gifting early is better than gifting just before death.\n\n### 4. Life Insurance Sizing\nFamilies use the **inheritance tax insurance calculator** to determine exactly how much life insurance is needed to cover the estimated death duties, ensuring that heirs don't have to sell the family farm or business just to pay the IRS.",
+  "faqs": [
+    {
+      "question": "What is the Federal Estate Tax Exemption?",
+      "answer": "The federal exemption is the threshold below which no federal estate tax is owed. As of 2024, it is $13.61 million per individual (nearly $27.22 million for a married couple with 'Portability'). Estates valued below this generally do not owe federal 'death taxes'."
+    },
+    {
+      "question": "Inheritance Tax vs. Estate Tax?",
+      "answer": "An **estate tax** is levied on the value of the deceased's assets *before* distribution. An **inheritance tax** is paid by the *recipient* of the assets. The US federal government only has an estate tax, but some states have both."
+    },
+    {
+      "question": "How can I avoid estate taxes?",
+      "answer": "Common methods include lifetime gifting (using the annual gift tax exclusion), setting up Irrevocable Life Insurance Trusts (ILITs), or using charitable donations. A **real estate and estate 1031 exchange** strategy can also keep capital invested rather than taxed."
+    },
+    {
+      "question": "What is the 'Step-up in Basis'?",
+      "answer": "This is a massive tax benefit. When an heir receives an asset from an estate, its 'cost basis' for capital gains is reset to its value on the date of death. This means they can sell a $1M property immediately with zero **real estate capital gains tax**."
+    },
+    {
+      "question": "Who has to file Form 706?",
+      "answer": "The executor of an estate must file IRS Form 706 if the gross estate plus adjusted taxable gifts exceeds the exemption amount for the year of death."
+    }
+  ],
+  "deepDive": "### Advanced Estate Preservation: Beyond the Basic Exemption\n\nFor those whose net worth exceeds the 'unified credit' threshold, the **estate tax calculator** is just the entry point into complex wealth management. The goal is to move assets out of the 'Taxable Estate' while maintaining some level of benefit or control.\n\n#### The 'Unlimited Marital Deduction'\nIn the US, you can leave an unlimited amount of assets to a spouse who is a US citizen without triggering any taxes. However, this often just delays the inevitable. Strategic planners use 'Bypass Trusts' or 'Credit Shelter Trusts' to ensure that both spouses utilize their individual exemption amounts, effectively doubling the tax-free transfer.\n\n#### International Implications & Death Duties\nIf you own property abroad, you may be subject to **death duty calculation** in multiple jurisdictions. Many countries have tax treaties with the US to prevent 'double taxation,' but the paperwork involves a **substantial presence test** and complex 'situs' rules for assets like stocks or real estate.\n\n#### Real Estate & The 1031 Exchange Loophole\nMany investors use the **1031 capital gains calculator** to swap properties throughout their lives, deferring millions in taxes. If they hold the final property until death, the 'Step-up in Basis' rule can effectively wipe out the entire accumulated tax liability for their heirs. This is known as the 'Swap 'til you Drop' strategy.\n\n#### Valuing Closely-Held Businesses\nA major challenge in **estate value calculation** is valuing a private company. Executors often use 'Minority Interest Discounts' or 'Lack of Marketability Discounts' to argue for a lower valuation, thereby reducing the tax bill. For example, if a 40% share of a $10M company is hard to sell, it might be valued at only $3M instead of $4M for tax purposes.",
+  "glossary": [
+    {
+      "term": "Gross Estate",
+      "definition": "The total market value of all assets owned by a person at the time of their death."
+    },
+    {
+      "term": "Taxable Estate",
+      "definition": "The gross estate minus allowable deductions (debts, marital deduction, etc.); the amount eventually taxed."
+    },
+    {
+      "term": "Unified Credit",
+      "definition": "A tax credit that allows a person to give away a certain amount of assets during life or at death without paying gift or estate taxes."
+    },
+    {
+      "term": "Step-up in Basis",
+      "definition": "The readjustment of the value of an appreciated asset for tax purposes upon inheritance, reducing capital gains taxes for heirs."
+    },
+    {
+      "term": "Form 706",
+      "definition": "The IRS form used to calculate and report the estate tax owed by a deceased person's estate."
+    },
+    {
+      "term": "Probate",
+      "definition": "The legal process of validating a will and distributing assets under court supervision."
+    },
+    {
+      "term": "1031 Exchange",
+      "definition": "A swap of one investment property for another that allows capital gains taxes to be deferred."
+    },
+    {
+      "term": "Portability",
+      "definition": "The ability of a surviving spouse to use any remaining estate tax exemption from their deceased spouse."
+    },
+    {
+      "term": "Death Duty",
+      "definition": "An older or international term for estate or inheritance taxes."
+    },
+    {
+      "term": "ILIT (Irrevocable Life Insurance Trust)",
+      "definition": "A trust used to hold life insurance outside of the taxable estate, providing liquidity to pay estate taxes."
+    },
+    {
+      "term": "Adjusted Gross Estate",
+      "definition": "The value of the gross estate minus certain deductions like funeral expenses and debts."
+    },
+    {
+      "term": "Inheritance Tax",
+      "definition": "A state-level tax paid by the beneficiary who receives an inheritance, rather than the estate itself."
+    },
+    {
+      "term": "Executor",
+      "definition": "The person appointed to carry out the instructions in a will and manage the estate's tax filings."
+    },
+    {
+      "term": "Gift Tax Exclusion",
+      "definition": "The amount an individual can give to another person annually ($18,000 in 2024) without using up any lifetime exemption."
+    },
+    {
+      "term": "Marital Deduction",
+      "definition": "An unlimited deduction that allows the transfer of assets to a surviving spouse tax-free."
+    },
+    {
+      "term": "Situs",
+      "definition": "The legal location of an asset for tax purposes, critical for international estate planning."
+    },
+    {
+      "term": "Charitable Trust",
+      "definition": "A trust set up to benefit a charity, which can provide significant estate and income tax deductions."
+    },
+    {
+      "term": "Lack of Marketability Discount",
+      "definition": "A reduction in the value of a business interest for tax purposes because it cannot be easily sold on a public exchange."
+    },
+    {
+      "term": "Seven-Year Rule",
+      "definition": "A common international rule where gifts made more than seven years before death are exempt from inheritance tax."
+    },
+    {
+      "term": "Generation-Skipping Transfer Tax (GSTT)",
+      "definition": "A federal tax on property transfers that 'skip' a generation (e.g., from grandparent to grandchild) to prevent tax avoidance."
+    }
+  ]
+}

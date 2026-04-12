@@ -1,0 +1,40 @@
+{
+  "title": "Boat Loan Calculator: Optimize Your Marine Financing",
+  "whatIsIt": "A **Boat Loan Calculator** is a specialized financial tool used to estimate the costs of financing a marine vessel. Because boats are considered 'recreational vehicles,' financing terms often extend much longer than typical car loans—sometimes up to 180 or 240 months for larger yachts.\n\nUnlike an automobile, a boat is a luxury asset that often requires a higher down payment (typically 10-20%) and may qualify for different tax treatments depending on its facilities. This calculator helps you navigate the total cost of ownership, including sales tax and the long-term impact of extended interest payments.",
+  "formula": "The monthly payment is calculated using the standard amortization formula:\n\n**M = P [ r(1 + r)ⁿ ] / [ (1 + r)ⁿ – 1 ]**\n\nWhere:\n- **M** = Monthly payment\n- **P** = Principal loan amount (Purchase Price + Tax - Down Payment)\n- **r** = Monthly interest rate (Annual Rate / 12 / 100)\n- **n** = Number of months (Loan Term)",
+  "example": "Financing a **$100,000** boat with **$20,000** down over **15 years (180 months)** at **8% interest** results in a monthly payment of approximately **$764**. While the monthly payment is manageable, you will pay over **$57,000** in total interest over the life of the loan.",
+  "useCases": "### Luxury Budgeting\nDetermine if a specific yacht or cruiser fits your monthly discretionary income without compromising your long-term savings goals.\n\n### Term vs. Interest Comparison\nEvaluate the massive difference in total cost between a 10-year 'standard' loan and a 20-year 'extended' marine loan.\n\n### Out-the-Door Planning\nFactor in variable state sales tax and down payments to know your exact financing requirement before visiting a boat show.",
+  "faqs": [
+    {
+      "question": "Are boat loans like car loans?",
+      "answer": "In principle, yes, but terms are much longer (10-20 years vs 3-7 years) and interest rates are typically 1-2% higher as boats are non-essential luxury assets."
+    },
+    {
+      "question": "Is boat loan interest tax-deductible?",
+      "answer": "If the boat has basic sleeping, cooking, and toilet facilities, it may qualify as a 'second home' for the mortgage interest deduction in the USA (Internal Revenue Code Section 163(h))."
+    },
+    {
+      "question": "What is a typical down payment for a boat?",
+      "answer": "Most marine lenders require between 10% and 20% down. Higher down payments often unlock significantly lower interest rates and longer semi-custom terms."
+    }
+  ],
+  "deepDive": "Marine financing is unique because boats are 'vessels' that can serve as residences. This allows for historically long amortization schedules that help buyers afford high-ticket items like catamarans or sportfishers. However, boats also face 'marine depreciation,' which is often steeper than automotive depreciation in the first 3 years. Owners must be careful not to end up 'upside down' on a 20-year loan where the loan balance exceeds the hull's value. Using a calculator to model a 10-year term versus a 20-year term is essential for responsible luxury ownership.",
+  "glossary": [
+    {
+      "term": "Lessor",
+      "definition": "The bank or financial institution that provides the capital for the boat purchase."
+    },
+    {
+      "term": "Hull Value",
+      "definition": "The market value of the boat itself, excluding trailers, electronics, or added equipment."
+    },
+    {
+      "term": "Principal",
+      "definition": "The original sum of money borrowed in a loan, separate from the interest."
+    },
+    {
+      "term": "Term",
+      "definition": "The duration of the loan, usually expressed in months for marine financing (e.g., 180 months)."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Time Zone Converter: Convert Global Date & Time",
+  "whatIsIt": "The Time Zone Converter is a precision scheduling tool designed to translate a specific moment in time from one geographic location to another. It accounts for the complex web of global longitudinal offsets, the International Date Line, and the seasonal shifts caused by Daylight Saving Time (DST). Whether you are coordinating a business meeting between New York and London or tracking a flight landing in Tokyo, this converter ensures absolute temporal accuracy.",
+  "formula": "To convert time between zones:\n\n1. Find the Source Offset (UTC±X)\n2. Find the Target Offset (UTC±Y)\n3. Convert Source Time to UTC: UTC = Local Time - Offset_X\n4. Convert UTC to Target Time: Target = UTC + Offset_Y\n5. Final Adjustment: Adjusted Time = Source Time + (Offset_Y - Offset_X)",
+  "example": "To convert 9:00 AM New York (EDT, UTC-4) to London (BST, UTC+1):\n\n- Offset Difference: (+1) - (-4) = +5 hours\n- Calculation: 9:00 AM + 5 hours\n- Result: 2:00 PM London time.",
+  "useCases": [
+    "Scheduling International Zoom and Teams Meetings",
+    "Flight Arrival and Departure Synchronization",
+    "Global Gaming and Esports Tournament Tracking",
+    "International Stock Market Open/Close Analysis"
+  ],
+  "faqs": [
+    {
+      "question": "What is the difference between GMT and UTC?",
+      "answer": "For most practical purposes, they are the same. GMT (Greenwich Mean Time) is a time zone, while UTC (Coordinated Universal Time) is the global time standard. UTC is technically more precise and used by atomic clocks, but the offset is identical."
+    },
+    {
+      "question": "Does this tool handle Daylight Saving Time (DST) automatically?",
+      "answer": "Yes. Our converter uses the International Components for Unicode (ICU) database to ensure that seasonal shifts (like moving clocks forward in March) are automatically accounted for based on the specific date selected."
+    },
+    {
+      "question": "Why do some countries have 30 or 45-minute offsets?",
+      "answer": "While most time zones use 1-hour increments, some nations (like India, Nepal, and parts of Australia) chose fractional offsets to better align with the sun's position over their specific geographic borders or for political reasons."
+    }
+  ],
+  "deepDive": "Time zones are a relatively modern human invention, standardized in the late 19th century to facilitate railway travel. Prior to standard time, every city kept its own 'local mean time' based on when the sun was highest in the sky. To handle the complexity of modern conversion, developers use the Olson Database (or TZ Database), which tracks every historical change to time zone boundaries and DST rules for every region on Earth. This ensures that even when converting times for dates years in the future, the math remains legally and socially accurate.",
+  "glossary": [
+    {
+      "term": "UTC",
+      "definition": "Coordinated Universal Time, the primary time standard by which the world regulates clocks."
+    },
+    {
+      "term": "Offset",
+      "definition": "The amount of time added to or subtracted from UTC to get local time (e.g., UTC-5)."
+    },
+    {
+      "term": "DST",
+      "definition": "Daylight Saving Time, the practice of advancing clocks during warmer months to extend evening daylight."
+    },
+    {
+      "term": "International Date Line",
+      "definition": "An imaginary line on the Earth's surface at 180° longitude, where the date changes by one day."
+    }
+  ]
+}

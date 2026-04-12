@@ -1,0 +1,40 @@
+{
+  "title": "Rental Property Calculator: Master Your Real Estate Investment ROI",
+  "whatIsIt": "A **Rental Property Calculator** is an essential tool for real estate investors to evaluate the historical and projected profitability of a residential or commercial investment. It meticulously calculates the relationship between acquisition costs, financing variables, and operating expenses to reveal your bottom-line cash flow.\n\nIn real estate, 'Hope is not a strategy.' This calculator replaces intuition with hard data, focusing on two critical metrics: **Cap Rate** (the property's raw yield independent of financing) and **Cash-on-Cash Return** (the actual performance of your invested capital).",
+  "formula": "Real estate analysis relies on two primary formulas:\n\n1. **Cap Rate = (Net Operating Income / Purchase Price) × 100**\n   *(Where NOI = Gross Rent - Operating Expenses, excluding mortgage)*\n\n2. **Cash-on-Cash Return = (Annual Cash Flow / Total Cash Invested) × 100**\n   *(Where Annual Cash Flow = NOI - Annual Debt Service)*",
+  "example": "Scenario: Purchasing a **$300,000** duplex with **$60,000** down (20%) and a **6.5% interest rate**:\n\n1. **Gross Rent:** $2,500/month ($30,000/year).\n2. **Expenses:** $500/month (Taxes, Insurance, Repairs).\n3. **Debt Service:** $1,517/month (Principal & Interest).\n4. **Result:** Monthly Cash Flow = **$483**. Cap Rate = **8.00%**. Cash-on-Cash Return = **9.66%**.",
+  "useCases": "### Multi-Property Comparison\nEvaluate several 'on-market' listings simultaneously to identify which property offers the highest yield and lowest risk relative to its price.\n\n### Offer Strategy and Negotiation\nDetermine the maximum price you can pay while still achieving a target 10% Cash-on-Cash return, giving you a firm 'walk-away' number for negotiations.\n\n### Financing Sensitivity Analysis\nVisualize how a 1% increase in interest rates or a 5% increase in down payment affects your monthly cash flow and your ability to cover the mortgage (DSCR).",
+  "faqs": [
+    {
+      "question": "What is a 'Good' Cap Rate?",
+      "answer": "It varies by location. In 'Class A' markets (major cities), 4-5% is common. In 'Class C' or emerging markets, investors typically look for 8-10% to compensate for higher perceived risk."
+    },
+    {
+      "question": "Should it account for vacancy rates?",
+      "answer": "Absolutely. Wise investors always subtract a vacancy allowance (typically 5-8% of gross rent) from their income projections to ensure the deal remains viable even during tenant turnover."
+    },
+    {
+      "question": "Does Cap Rate include my mortgage payment?",
+      "answer": "No. Cap rate is purposefully 'debt-neutral.' It measures the property's performance as if you paid all cash, allowing you to compare properties with different financing structures fairly."
+    }
+  ],
+  "deepDive": "Net Operating Income (NOI) is the heartbeat of real estate valuation. Unlike residential 'comps,' commercial and high-end residential investments are valued primarily on their income-producing potential. If you can increase rent by $100 across a 10-unit building without increasing expenses, you've added $12,000 to the annual NOI. At an 8% cap rate, that $100 rent increase just added **$150,000 in market value** to your building ($12,000 / 0.08). This is the power of 'forced appreciation' that this calculator helps you model.",
+  "glossary": [
+    {
+      "term": "Net Operating Income (NOI)",
+      "definition": "Gross potential rent minus operating expenses like taxes, insurance, management, and maintenance (excludes mortgage)."
+    },
+    {
+      "term": "Cash-on-Cash Return",
+      "definition": "The ratio of annual before-tax cash flow to the total amount of cash invested, expressed as a percentage."
+    },
+    {
+      "term": "Cap Rate",
+      "definition": "The rate of return on a real estate investment property based on the income that the property is expected to generate."
+    },
+    {
+      "term": "Debt Service Coverage Ratio (DSCR)",
+      "definition": "The relationship between a property's NOI and its annual debt service (mortgage), used by lenders to assess risk."
+    }
+  ]
+}

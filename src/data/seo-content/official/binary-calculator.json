@@ -1,38 +1,112 @@
 {
-  "calculatorId": "binary-calculator",
-  "title": "The Master Guide to Binary Logic & Digital Arithmetic: A 5,000-Word Analysis of Two-State Systems, Boolean Operations, and the Geometry of the Bit",
-  "whatIsIt": "A Binary Calculator is a high-performance mathematical utility designed to perform arithmetic operations—addition, subtraction, multiplication, and division—directly within the base-2 numbering system. In the context of computer architecture, network engineering, and low-level software development, binary is the foundation of 'Computational Reality.' Whether you are calculating **Subnet Masks for an Enterprise Network**, **Bitwise Shifts for Performance Optimization**, or **Modular Arithmetic for Cryptographic Keys**, understanding how 'Logic Gates' interact with 'Binary Strings' is critical for system stability, security, and hardware efficiency.\n\nOur Binary Calculator is the 'Digital Command Center' for software engineers, IT students, and hardware designers. It provides high-fidelity, real-time results for both signed and unsigned 8, 16, 32, and 64-bit integers. Whether you are 'Simulating an ALU Operation' or 'Debugging a Buffer Overflow,' this tool provides the mathematical certainty needed to understand the 'Volume' of your data. By calculating your exact bitwise representaton (including Carry and Overflow bits), this tool provides the precision needed to understand the 'Integrity' of your code.\n\nIn an age of 'Quantum Bits' and 'Edge Computing,' binary is the ultimate 'Information Metric.' This tool serves as your 'Bitwise Integrity Shield,' helping you bridge the gap between abstract 'Boolean Algebra' and physical 'Transistor States'.",
-  "formula": "Binary arithmetic is based on the 'Radix-2' factor. Our engine handles the following standard constants:\n\n1.  **Binary Addition**: $0+0=0, 0+1=1, 1+0=1, 1+1=10$ (Carry 1).\n2.  **Two's Complement**: Representing negative numbers by inverting bits and adding 1.\n3.  **The 'Modern Rule'**: Using bitwise operators in JS to ensure hardware-level precision on 32-bit operations.",
-  "example": "Let's examine **Adding two binary numbers: 1010 (10) + 1100 (12)**:\n\n1.  **Column 1 (Right)**: $0 + 0 = 0$.\n2.  **Column 2**: $1 + 0 = 1$.\n3.  **Column 3**: $0 + 1 = 1$.\n4.  **Column 4**: $1 + 1 = 10$.\n5.  **The Result**: **10110 (22)**. \n\n**The Strategy**: By using this calculator, the engineer can see that 'Data' isn't just about labels; it is about the base-multiplicity of your electrical states. If they had 'guessed' (thinking it is just 10101100), they would have a logical collision. This is the difference between 'Guesstimately Coding' and 'Defining Logic.' This tool is your 'Hardware Compliance Shield,' ensuring you never over-allocate your register or under-represent your signedness. If you are a student, you can use this tool to calculate your **Computer Science Homework**, ensuring your classroom results are consistently merit-neutral. You aren't just 'Swapping Units'; you are 'Defining Computation'.",
-  "useCases": "The Binary Calculator is an essential utility for several high-level technical and educational tasks:\n\n1.  **Network Subnetting and IP Masking**: Calculating the 'AND' result of an IP address and its subnet mask to determine the network portion versus the host portion.\n2.  **Embedded Systems and Microcontrollers**: Performing bitwise math to control specific hardware pins (GPIO) or read sensor data packets directly from a SPI or I2C bus.\n3.  **Cybersecurity and Exploit Research**: Calculating offsets and memory jumps in binary exploit development, where single-bit precision is the difference between a crash and a successful payload.\n4.  **Graphics Programming and Shaders**: Efficiently packing color and coordinate data into tight binary structures to maximize GPU throughput and frame-rate performance.\n5.  **Game Engine Development**: Using binary flags (Bitfields) to manage thousands of entity states simultaneously without the overhead of heavy object-oriented booleans.\n6.  **Cryptography and Hashing**: Performing XOR and modular additions that form the backbone of modern encryption standards like AES and RSA.",
+  "title": "Binary Calculator: Base-2 Arithmetic & Bitwise Matrix",
+  "whatIsIt": "A **binary calculator** is a specialized digital utility used to perform mathematical operations within the Base-2 numbering system. Unlike the standard decimal system (Base-10) used in daily life, binary consists only of zeros and ones, representing the fundamental 'On/Off' state of electronic transistors.\n\nWhether you are a computer science student learning machine language or a network engineer calculating subnet masks, this **decimal to binary calculator** is foundational. By analyzing the powers of two, this tool reveals the mathematical pulse of modern computing.",
+  "formula": "The logic of binary is based on 'Positional Notation' where each column represents a power of 2 ($2^0, 2^1, 2^2...$). This calculator supports three primary mathematical pathways:\n\n### 1. Decimal to Binary Conversion\nDivide the decimal number by 2 repeatedly and track the remainders (read from bottom to top).\nExample: $13_{10} = 1101_2$\n\n### 2. Binary Addition Rules\n- $0 + 0 = 0$\n- $0 + 1 = 1$\n- $1 + 0 = 1$\n- $1 + 1 = 0$ (Carry 1)\n\n### 3. Binary to Decimal Conversion\nMultiply each bit by $2^n$ where $n$ is its position.\nExample: $1011 = (1 \\times 2^3) + (0 \\times 2^2) + (1 \\times 2^1) + (1 \\times 2^0) = 8+0+2+1 = 11$.",
+  "example": "Let's add two binary numbers: **$1010$ (10 in decimal)** and **$1100$ (12 in decimal)**.\n\n### The Calculation Step-by-Step:\n1.  **Right Column**: $0 + 0 = 0$.\n2.  **Next Column**: $1 + 0 = 1$.\n3.  **Next Column**: $0 + 1 = 1$.\n4.  **Left Column**: $1 + 1 = 0$ (Carry 1 to a new column on the left).\n5.  **Final Result**: $10110$.\n\n**The Verification**: $10110_2$ translates to $16+0+4+2+0 = 22$. Since $10 + 12 = 22$, the calculation is correct. Using a **binary math calculator** ensures error-free results when working with complex computer data arrays.",
+  "useCases": "### 1. Networking and IP Subnetting\nEvery IP address ($192.168.1.1$) is actually a series of four 8-bit binary numbers. Network administrators use binary math to calculate subnet masks, determining which devices can communicate on a local network without a router.\n\n### 2. Software Development (Bitwise Ops)\nProgrammers use binary logic for 'Flag' management and memory optimization. By using bitwise AND, OR, and XOR operations, they can store multiple 'True/False' variables within a single integer, drastically reducing the application's memory footprint.\n\n### 3. Digital Circuit Design\nElectrical engineers use binary to design 'Logic Gates' (AND, OR, NOT). These gates are the building blocks of every CPU on the planet. This **base-2 calculator** helps verify that the output of a complex circuit matches the intended truth table.\n\n### 4. Cybersecurity and Encryption\nCryptographic algorithms like AES and RSA rely on massive binary calculations. The 'strength' of an encryption key is measured in bits (e.g., 256-bit AES), representing the total number of binary combinations a hacker would have to guess.",
   "faqs": [
     {
-      "question": "What is Two's Complement?",
-      "answer": "It is the mathematical method computers use to represent negative numbers in binary. You flip all the bits (0 to 1, 1 to 0) and add 1."
+      "question": "Why do computers use binary instead of decimal?",
+      "answer": "Binary is the most reliable way to send signals through hardware. It is much easier for a transistor to distinguish between 'High Voltage' (1) and 'Low Voltage' (0) than it is to distinguish between ten different voltage levels (0-9)."
     },
     {
-      "question": "Does this tool support decimals?",
-      "answer": "Yes. Our engine supports 'Fixed-Point' binary representation, allowing you to perform arithmetic on binary fractions."
+      "question": "What is a 'Bit' vs. a 'Byte'?",
+      "answer": "A 'Bit' (Binary Digit) is a single 0 or 1. A 'Byte' is a group of **8 bits**. One byte can represent 256 different values ($2^8$)."
     },
     {
-      "question": "Why is 1 + 1 = 10 in binary?",
-      "answer": "Because binary only has two digits (0 and 1). When you add two 1s, you reach the capacity of that column and must 'carry' over to the next position, exactly like adding 5 + 5 in decimal."
+      "question": "How do you represent negative numbers in binary?",
+      "answer": "Computers typically use a system called 'Two's Complement.' The most significant (leftmost) bit acts as a sign bit: 0 for positive, 1 for negative."
     },
     {
-      "question": "What are Bitwise Shifts?",
-      "answer": "Shifting bits left ($<<$) effectively multiplies a number by 2, while shifting right ($>>$) divides by 2. It is the fastest way for a CPU to perform basic math."
+      "question": "What is 'Hexadecimal' and how does it relate to binary?",
+      "answer": "Hexadecimal is Base-16. It is a 'shorthand' for binary because one hex digit represents exactly 4 bits. For example, $1111_2$ is simply 'F' in Hex."
     },
     {
-      "question": "Is this tool useful for hackers?",
-      "answer": "It is useful for anyone working with 'Reverse Engineering' or 'Malware Analysis' where understanding raw binary data is mandatory."
+      "question": "Can I perform division with this binary calculator?",
+      "answer": "Yes. Binary division follows the 'Long Division' method, but it is much simpler because you only ever 'subtract' or 'do nothing,' since the divisor either fits 0 or 1 times into the current segment."
     }
   ],
-  "deepDive": "**The Master Strategy: Why Your Logic is actually a Physical Barrier**\n\nThe most important concept in technology history is **'Discrete Mathematics.'** Binary isn't just 'Counting'; it is the manipulation of your 'Ontology.' This is the **'Leibniz Origin.'** Modern physics is moving away from 'Silicon' and toward 'Biological Computing' and 'Nanoscale DNA storage.' \n\nAnother profound concept is the **'Bitwise Offset'**. In high-speed algorithms, 'Branching' is slow, but 'Bit-Masking' is instant. As our ability to process grows more 'Parallel,' our logic grows more 'Binary-Optimized.' This tool is your **'Technical Integrity Shield,'** helping you resist the urge to believe that your data is just 'roughly' a string of bits. \n\n**The 'Precision' Advantage**: In high-end missile guidance or medical robotics, a single 'Bit' of 'Arithmetic discrepancy' can trigger a change in a million-dollar life-safety validity. This 'Master Guide' is your first step toward that realization. Use this tool as your **'Logic Command Center'** and build the digital world you've always envisioned. Precision is the language of progress.",
+  "deepDive": "### The Power of Two: Geometric Growth\n\nIn the decimal system, each column is $10 \\times$ larger than the one before. In binary, each column is $2 \\times$ larger. This creates a pattern of doubling: 1, 2, 4, 8, 16, 32, 64, 128... \n\nThis doubling effect explains why computer memory (RAM) and storage sizes always come in specific numbers like 8GB, 16GB, 32GB, and 64GB. They are all powers of two, optimized for the binary paths within the memory controller.\n\n### Two's Complement: The Logic of Negative Binary\nTo subtract $5 - 3$ in binary, computers don't actually subtract. Instead, they add a negative number ($5 + (-3)$). Using **Two's Complement**, the number 3 is inverted (all 1s become 0s) and 1 is added. This elegant trick allows the CPU to use the exact same addition hardware for subtraction, making processors smaller and faster.\n\n### Character Encoding: ASCII to Binary\nHow does a computer know that $01000001$ is the letter 'A'? This is solved by **ASCII** (American Standard Code for Information Interchange). Every letter, number, and symbol on your keyboard has a specific 8-bit binary signature. When you type, your computer isn't processing letters; it is processing a stream of binary patterns calculated by this **text to binary** logic.\n\n### Bitwise Logic: The Hidden Math\nBeyond adding and subtracting, binary allows for 'Boolean' operations:\n- **AND**: Result is 1 only if BOTH are 1.\n- **OR**: Result is 1 if EITHER is 1.\n- **XOR**: Result is 1 only if the bits are DIFFERENT.\nThese operations are used millions of times per second to control pixel colors on your screen and filter network traffic.",
   "glossary": [
-    { "term": "Bit", "definition": "Binary Digit; the smallest unit of data in computing, representing a 0 or a 1." },
-    { "term": "Byte", "definition": "A unit of digital information that consists of 8 bits." },
-    { "term": "ALU", "definition": "Arithmetic Logic Unit; the part of a CPU that handles binary math and logical operations." },
-    { "term": "Overflow", "definition": "When the result of a binary calculation exceeds the bit-capacity of the destination register." },
-    { "term": "Signed Integer", "definition": "A binary number that can represent both positive and negative values, usually via the most significant bit (MSB)." }
+    {
+      "term": "Binary (Base-2)",
+      "definition": "A numbering system that uses only two symbols: 0 and 1."
+    },
+    {
+      "term": "Decimal (Base-10)",
+      "definition": "The standard numbering system using ten symbols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9."
+    },
+    {
+      "term": "Bit",
+      "definition": "The smallest unit of data in a computer; a single binary digit (0 or 1)."
+    },
+    {
+      "term": "Byte",
+      "definition": "A unit of data that is eight bits long; can represent 256 unique values."
+    },
+    {
+      "term": "Nibble",
+      "definition": "A four-bit aggregation, or half an octet (byte)."
+    },
+    {
+      "term": "MSB (Most Significant Bit)",
+      "definition": "The bit in a binary number that has the highest value, located at the far left."
+    },
+    {
+      "term": "LSB (Least Significant Bit)",
+      "definition": "The bit in a binary number that has the lowest value, located at the far right."
+    },
+    {
+      "term": "Hexadecimal (Base-16)",
+      "definition": "A numbering system using sixteen symbols (0-9 and A-F), often used as a shorthand for binary."
+    },
+    {
+      "term": "Octal (Base-8)",
+      "definition": "A numbering system using eight symbols (0-7)."
+    },
+    {
+      "term": "Overflow",
+      "definition": "An error that occurs when a calculation produces a result that is too large to be stored in the available number of bits."
+    },
+    {
+      "term": "Bitwise Operation",
+      "definition": "An operation on one or more bit patterns or binary numerals at the level of their individual bits."
+    },
+    {
+      "term": "AND Gate",
+      "definition": "A logic gate that produces a high output (1) only if all its inputs are high."
+    },
+    {
+      "term": "OR Gate",
+      "definition": "A logic gate that produces a high output (1) if at least one of its inputs is high."
+    },
+    {
+      "term": "XOR Gate",
+      "definition": "A logic gate that produces a high output (1) if its two inputs are different."
+    },
+    {
+      "term": "Two's Complement",
+      "definition": "A mathematical operation on binary numbers, used in computing as a method of signed number representation."
+    },
+    {
+      "term": "CPU (Central Processing Unit)",
+      "definition": "The 'brain' of the computer that performs all binary calculations."
+    },
+    {
+      "term": "ALU (Arithmetic Logic Unit)",
+      "definition": "A combinational digital circuit that performs arithmetic and bitwise operations on integer binary numbers."
+    },
+    {
+      "term": "Transistor",
+      "definition": "A semiconductor device used to amplify or switch electrical signals; the hardware origin of binary logic."
+    },
+    {
+      "term": "Subnet Mask",
+      "definition": "A 32-bit number used to identify the network and host portions of an IP address."
+    },
+    {
+      "term": "ASCII",
+      "definition": "A character encoding standard for electronic communication."
+    }
   ]
 }

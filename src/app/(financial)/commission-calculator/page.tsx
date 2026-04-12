@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import commissionSeoData from "@/data/seo-content/official/commission-calculator.json";
 
 export default function CommissionCalculator() {
   const [salesAmount, setSalesAmount] = useState("10000");
@@ -150,79 +151,36 @@ export default function CommissionCalculator() {
 
       <div className="mt-8">
         <CalculatorSEO
-          title="Sales Commission Calculator"
-          whatIsIt={
-            <>
-              <p>
-                A <strong>Commission Calculator</strong> is used to determine the pay a sales representative or agent receives based on their sales performance. This is standard in industries like real estate, automotive sales, and software-as-a-service (SaaS).
-              </p>
-              <p className="mt-3">
-                Commissions provide a powerful incentive for sales staff to maximize volume while ensuring the business only pays out expenses based on actual revenue generated.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Commission = Sale × Rate
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Earnings based on a percentage of successful sales.
-            </p>
-          </>
-        }
-          example={
-            <div className="space-y-4">
-              <p>Let's say a real estate agent sells a house for <strong>$500,000</strong> with a <strong>3%</strong> commission rate.</p>
-              <ul className="list-decimal pl-6 space-y-2 font-medium">
-                <li>$500,000 × 0.03 = $15,000 gross commission.</li>
-                <li>If there is a $1,000 desk fee or base salary, the total is adjusted accordingly.</li>
-                <li>Effective Rate = ($15,000 / $500,000) = 3%.</li>
-              </ul>
-            </div>
-          }
-          useCases={
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0">
-              <li className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
-                <span className="text-indigo-600 text-xl font-black">1.</span>
-                <span><strong>Real Estate:</strong> Calculate split commissions between buying and listing agents.</span>
-              </li>
-              <li className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
-                <span className="text-indigo-600 text-xl font-black">2.</span>
-                <span><strong>Car Sales:</strong> Determine your take-home pay based on vehicle price and dealership split.</span>
-              </li>
-              <li className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
-                <span className="text-indigo-600 text-xl font-black">3.</span>
-                <span><strong>Retail Sales:</strong> Calculate weekly bonuses for meeting store quotas.</span>
-              </li>
-              <li className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
-                <span className="text-indigo-600 text-xl font-black">4.</span>
-                <span><strong>Affiliate Marketing:</strong> Estimate potential earnings from referred traffic and conversion rates.</span>
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What is a 'Draw' against commission?",
-              answer: "A draw is an advance payment made to a salesperson, which is later deducted from their earned commissions. It ensures a baseline income during slow months."
-            },
-            {
-              question: "Is base salary usually taxable?",
-              answer: "Yes, both base salary and commissions are considered earned income by the IRS and are subject to standard income tax withholdings."
-            },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
+          title={commissionSeoData.title}
+          whatIsIt={commissionSeoData.whatIsIt}
+          formula={commissionSeoData.formula}
+          example={commissionSeoData.example}
+          useCases={commissionSeoData.useCases}
+          faqs={commissionSeoData.faqs}
+          deepDive={commissionSeoData.deepDive}
+          glossary={commissionSeoData.glossary}
           relatedCalculators={[
-            { name: "Salary Calculator", path: "/salary-calculator/", desc: "Convert your annual earnings into hourly rates." },
-            { name: "Markup Calculator", path: "/markup-calculator/", desc: "Calculate profit based on cost-above-wholesale." },
-            { name: "Margin Calculator", path: "/margin-calculator/", desc: "Find your gross profit percentage on sales." },
             {
-              name: "Mortgage Calculator",
+              name: "Salary",
+              path: "/salary-calculator/",
+              desc: "Convert your annual earnings into hourly rates.",
+            },
+            {
+              name: "Markup",
+              path: "/markup-calculator/",
+              desc: "Calculate profit based on cost-above-wholesale.",
+            },
+            {
+              name: "Margin",
+              path: "/margin-calculator/",
+              desc: "Find your gross profit percentage on sales.",
+            },
+            {
+              name: "Mortgage",
               path: "/mortgage-calculator/",
               desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            }]}
+            },
+          ]}
         />
       </div>
     </div>

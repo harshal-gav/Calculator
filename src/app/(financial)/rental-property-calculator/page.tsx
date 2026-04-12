@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import rentalPropertySeoData from "@/data/seo-content/official/rental-property-calculator.json";
 
 export default function RentalPropertyCalculator() {
   const [purchasePrice, setPurchasePrice] = useState("300000");
@@ -151,69 +152,36 @@ export default function RentalPropertyCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Rental Property Calculator"
-        whatIsIt={
-          <p>
-            A <strong>Rental Property Calculator</strong> is a tool for real estate investors to evaluate the profitability of a potential investment property. It calculates monthly cash flow after expenses and mortgage payments, and provides key investment metrics like Capitalization Rate (Cap Rate) and Cash-on-Cash Return.
-          </p>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Rental Property Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Rental Property results.
-            </p>
-          </>
-        }
-        example={
-          <p>
-            If you buy a **$300,000** property with **$60,000** down (20%) and it rents for **$2,500** monthly, with operating expenses of $500/mo and a $1,500 mortgage, you have **$500/mo cash flow**. Your Cap Rate would be roughly **8%** and your Cash-on-Cash Return would be **10%**.
-          </p>
-        }
-        useCases={
-          <ul className="list-disc pl-5 space-y-2">
-            <li><strong>Property Comparison:</strong> Comparing two potential rental units to see which generates higher cash flow.</li>
-            <li><strong>Offer Strategy:</strong> Determining the maximum purchase price you can pay while still hitting a target 10% Cash-on-Cash return.</li>
-            <li><strong>Financing Analysis:</strong> Seeing how a higher interest rate impacts your monthly NOI and whether the deal "still works."</li>
-          </ul>
-        }
-        faqs={[
+        title={rentalPropertySeoData.title}
+        whatIsIt={rentalPropertySeoData.whatIsIt}
+        formula={rentalPropertySeoData.formula}
+        example={rentalPropertySeoData.example}
+        useCases={rentalPropertySeoData.useCases}
+        faqs={rentalPropertySeoData.faqs}
+        deepDive={rentalPropertySeoData.deepDive}
+        glossary={rentalPropertySeoData.glossary}
+        relatedCalculators={[
           {
-            question: "What is a good Cap Rate?",
-            answer: "It varies by market, but generally, 4-6% is considered typical for stable areas, while 8-10%+ is highly desirable for value-add or developing areas."
+            name: "Mortgage",
+            path: "/mortgage-calculator/",
+            desc: "Calculate your monthly mortgage payments and amortization schedule.",
           },
           {
-            question: "Should I include a vacancy rate?",
-            answer: "Yes, wise investors typically budget 5-10% of gross rent for vacancy, even if the property is currently occupied."
+            name: "ROI",
+            path: "/roi-calculator/",
+            desc: "Calculate your exact annualized percentage returns.",
           },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
-          relatedCalculators={[
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator/",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator/",
-              desc: "Calculate your exact annualized percentage returns.",
-            },
-            {
-              name: "Investment Calculator",
-              path: "/investment-calculator/",
-              desc: "Project your portfolio growth over time with compound interest.",
-            },
-            {
-              name: "Loan Payment Calculator",
-              path: "/loan-payment-calculator/",
-              desc: "Estimate your monthly loan payments and total interest cost.",
-            }
-          ]}
+          {
+            name: "Investment",
+            path: "/investment-calculator/",
+            desc: "Project your portfolio growth over time with compound interest.",
+          },
+          {
+            name: "Loan Payment",
+            path: "/loan-payment-calculator/",
+            desc: "Estimate your monthly loan payments and total interest cost.",
+          },
+        ]}
       />
     </div>
   );

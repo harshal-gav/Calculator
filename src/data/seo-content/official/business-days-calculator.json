@@ -1,0 +1,41 @@
+{
+  "title": "Business Days & Working Days Calculator",
+  "whatIsIt": "The Business Days Calculator is a specialized chronological tool designed to calculate the exact number of working days between two specific dates. Unlike a standard calendar count, it filters out weekends (Saturday and Sunday) to provide a more accurate representation of professional timelines, project deadlines, and shipping durations.",
+  "formula": "The calculation involves identifying every calendar day within a range and applying a logic filter: \\n\\n$$\\text{Total Business Days} = \\sum_{d=S}^{E} [\\text{isWeekday}(d)]$$\\n\\nWhere $S$ is the start date, $E$ is the end date, and $[\\text{isWeekday}(d)]$ is 1 if the day is Monday through Friday and 0 otherwise.",
+  "example": "If a project starts on Wednesday, May 1st and is due in 5 business days: \\n1. Thursday (May 2) = Day 1 \\n2. Friday (May 3) = Day 2 \\n3. Saturday/Sunday = Excluded \\n4. Monday (May 6) = Day 3 \\n5. Tuesday (May 7) = Day 4 \\n6. Wednesday (May 8) = Day 5 (Due Date). \\n\\nWhile 7 calendar days passed, only 5 business days were recorded.",
+  "useCases": [
+    "Project Management: Estimating lead times for deliverables that depend on professional workweeks.",
+    "Logistics & Shipping: Calculating '3-5 business day' delivery windows accurately across weekends.",
+    "Finance & HR: Determining interest periods or payroll accruals for partial months.",
+    "Legal Deadlines: Calculating filing windows that officially pause on non-working days."
+  ],
+  "faqs": [
+    {
+      "question": "Are holidays automatically excluded?",
+      "answer": "Standard business day calculators typically exclude weekends by default. Public holidays vary by region and company policy and must usually be subtracted manually."
+    },
+    {
+      "question": "Can I choose which days to exclude?",
+      "answer": "Yes, many professionals in international markets (like the Middle East) have different workweeks (e.g., Sunday-Thursday). This tool allows for custom weekend exclusions."
+    },
+    {
+      "question": "Does it count the start and end date?",
+      "answer": "This depends on whether you select 'inclusive' counting. Standard professional counting typically includes the start date if work begins that day."
+    }
+  ],
+  "deepDive": "The concept of a 'business day' is critical in global commerce. Most international financial markets, including the New York Stock Exchange and the London Stock Exchange, operate on a strict Monday-Friday schedule. Understanding this logic is essential for calculating 'T+2' settlement dates in stock trading or determining when a wired funds transfer will officially clear.",
+  "glossary": [
+    {
+      "term": "Working Day",
+      "definition": "Any day on which normal business operations are conducted."
+    },
+    {
+      "term": "Inclusive Counting",
+      "definition": "A method of counting where both the start and end dates are included in the total."
+    },
+    {
+      "term": "T+N Settlement",
+      "definition": "A financial industry term where 'T' is the transaction date and 'N' is the number of business days until the final settlement occurs."
+    }
+  ]
+}

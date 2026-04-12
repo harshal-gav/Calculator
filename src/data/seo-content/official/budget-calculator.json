@@ -1,0 +1,40 @@
+{
+  "title": "Budget Calculator: Master the 50/30/20 Rule for Financial Freedom",
+  "whatIsIt": "A **Budget Calculator** is a personal finance tool designed to categorize your spending and align your lifestyle with your long-term wealth goals. While there are many complex budgeting systems, this calculator utilizes the world-renowned **50/30/20 Rule**—a breakdown popularized by Senator Elizabeth Warren.\n\nBy dividing your after-tax income into three distinct buckets—Needs, Wants, and Savings—you can stop 'nickel-and-diming' your life and instead focus on the big-picture items that actually move the needle for your net worth.",
+  "formula": "The budget is calculated based on percentages of your after-tax (take-home) income:\n\n1. **Needs (50%):** Fixed costs like rent, utilities, insurance, and groceries.\n2. **Wants (30%):** Discretionary spending like travel, dining out, and subscriptions.\n3. **Savings/Debt (20%):** Retirement contributions, emergency funds, and extra debt payments.",
+  "example": "If your take-home pay is **$5,000 per month**:\n\n1. **Needs:** You should aim to keep housing and essentials under **$2,500**.\n2. **Wants:** You have **$1,500** for lifestyle choices and entertainment.\n3. **Savings:** You should be directing **$1,000** into your 401k, IRA, or brokerage account.",
+  "useCases": "### Lifestyle Inflation Check\nWhenever you transition to a higher-paying role, run your new salary through this calculator to ensure your 'Wants' don't increase faster than your 'Savings.'\n\n### Debt Payoff Prioritization\nDetermine how much of your 20% bucket can be diverted from savings into high-interest debt payoff to accelerate your journey to being debt-free.\n\n### Major Purchase Planning\nBefore committing to a higher rent or a new car payment, check if the increased fixed cost keeps your 'Needs' bucket under the 50% threshold.",
+  "faqs": [
+    {
+      "question": "What if my 'Needs' are over 50%?",
+      "answer": "This is common in high-cost-of-living areas. To compensate, you must aggressively reduce your 'Wants' bucket to below 30% to ensure your 'Savings' stay at 20% or higher."
+    },
+    {
+      "question": "Does the 20% include 401k contributions?",
+      "answer": "Yes, but since 401k contributions are often pre-tax, you should calculate based on your gross income or add your 401k contribution back to your after-tax income for an accurate 50/30/20 analysis."
+    },
+    {
+      "question": "Is the 50/30/20 rule really enough?",
+      "answer": "For many, it is a great starting point. However, if you are pursuing Financial Independence (FIRE), experts often recommend increasing the 'Savings' bucket to 50% or more."
+    }
+  ],
+  "deepDive": "Traditional budgeting often fails because it is too granular. The 50/30/20 rule succeed because it focuses on 'Automatic Allocation.' By prioritizing your 20% savings first (paying yourself first), you can spend the remaining 80% with zero guilt. This calculator helps you identify if you are 'House Poor'—a state where your fixed 'Needs' (specifically housing) eat up 60-70% of your income, leaving you vulnerable to financial shocks and preventing compound interest from working in your favor.",
+  "glossary": [
+    {
+      "term": "After-Tax Income",
+      "definition": "The amount of money you actually see in your paycheck after federal, state, and local taxes are deducted."
+    },
+    {
+      "term": "Discretionary Spending",
+      "definition": "Money spent on non-essential items or services (the 'Wants' bucket)."
+    },
+    {
+      "term": "PITI",
+      "definition": "Principal, Interest, Taxes, and Insurance; the four components of a monthly mortgage payment that go into your 'Needs' bucket."
+    },
+    {
+      "term": "Emergency Fund",
+      "definition": "A pool of accessible cash (usually 3-6 months of expenses) kept to cover unexpected financial emergencies."
+    }
+  ]
+}

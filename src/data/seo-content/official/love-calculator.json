@@ -1,0 +1,41 @@
+{
+  "title": "Love Calculator & Relationship Compatibility Tester",
+  "whatIsIt": "The Love Calculator is a lighthearted numerical entertainment tool that calculates relationship compatibility based on name analysis. While not based on scientific psychology, it uses a standardized algorithm to provide a percentage score, serving as a fun social interaction tool for couples and friends to explore their 'destiny' through names.",
+  "formula": "The algorithm typically utilizes a 'True Love' character count or ASCII summation model: \\n\\n$$\\text{Score} = \\left( \\sum \\text{CharMatch}(\\text{Name}_1, \\text{Name}_2) \\right) \\pmod{101}$$\\n\\nWhere the frequency of specific romantic letters (L-O-V-E) is analyzed between both subjects to generate a percentage from 0 to 100.",
+  "example": "If 'Romeo' and 'Juliet' are entered: \\n1. Character Analysis: The letters of both names are cross-referenced with the word 'LOVE'. \\n2. Summation: Occurrences are counted and processed through a modulus-100 logic. \\n3. Result: 99% Compatibility. \\n\\nThis signifies a high 'fated' connection according to the name-match algorithm.",
+  "useCases": [
+    "Entertainment & Icebreakers: A fun way for couples to start a conversation about their relationship.",
+    "Social Sharing: Sharing results on social media for engagement and trend participation.",
+    "Name Exploration: Curiously checking how different name variations or nicknames affect the 'magic' score.",
+    "Party Games: Using the tool as a lighthearted activity during Valentine's Day or engagement parties."
+  ],
+  "faqs": [
+    {
+      "question": "Is this based on science?",
+      "answer": "No. The Love Calculator is strictly for entertainment purposes. Relationship success depends on communication, trust, and shared values, not name-based character matching."
+    },
+    {
+      "question": "Do nicknames change the result?",
+      "answer": "Yes. Since the algorithm relies on the specific characters in the names, using a nickname (e.g., 'Mike' instead of 'Michael') will generate a different compatibility score."
+    },
+    {
+      "question": "Is my data stored?",
+      "answer": "No. Most modern love calculators process names locally or in-memory. Your specific names and results are not saved or shared unless you choose to export them."
+    }
+  ],
+  "deepDive": "The concept of 'Numerology' in relationships has existed for centuries, from Pythagorean theory to modern-day viral apps. Name-based matching operates on the idea that letters have distinct vibrations or weights. While the Love Calculator is a digital gimmick, it taps into the universal human desire to quantify the unquantifiable: human connection and romantic chemistry.",
+  "glossary": [
+    {
+      "term": "Numerology",
+      "definition": "The belief in a divine or mystical relationship between a number and one or more coinciding events."
+    },
+    {
+      "term": "Character Frequency",
+      "definition": "The number of times a specific letter appears in a given body of text (names)."
+    },
+    {
+      "term": "compatibility",
+      "definition": "A state in which two things are able to exist or occur together without conflict."
+    }
+  ]
+}

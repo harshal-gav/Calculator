@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import fourOhOneKSeoData from "@/data/seo-content/official/401k-calculator.json";
 
 export default function FourOhOneKCalculator() {
   const [salary, setSalary] = useState("80000");
@@ -63,160 +64,128 @@ export default function FourOhOneKCalculator() {
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-        <div className="lg:col-span-4 bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <div className="lg:col-span-12 xl:col-span-4 bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-inner">
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-bold text-gray-700 mb-1">Annual Salary ($):</label>
-              <input type="number" value={salary} onChange={(e) => setSalary(e.target.value)} className="w-full rounded border-gray-300 p-2 font-bold focus:ring-emerald-500" />
+              <input type="number" value={salary} onChange={(e) => setSalary(e.target.value)} className="w-full rounded-lg border-gray-300 p-3 font-bold focus:ring-emerald-500 shadow-sm border" />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-500 mb-1">Your Contrib (%):</label>
-                  <input type="number" value={contribution} onChange={(e) => setContribution(e.target.value)} className="w-full rounded border-gray-300 p-2" />
+                  <input type="number" value={contribution} onChange={(e) => setContribution(e.target.value)} className="w-full rounded-lg border-gray-300 p-3 shadow-sm border text-sm" />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-gray-500 mb-1">Match Limit (%):</label>
-                  <input type="number" value={matchLimit} onChange={(e) => setMatchLimit(e.target.value)} className="w-full rounded border-gray-300 p-2" />
+                  <input type="number" value={matchLimit} onChange={(e) => setMatchLimit(e.target.value)} className="w-full rounded-lg border-gray-300 p-3 shadow-sm border text-sm" />
                 </div>
             </div>
 
             <div>
               <label className="block text-xs font-bold text-gray-500 mb-1">Employer Match (% of yours):</label>
-              <input type="number" value={employerMatch} onChange={(e) => setEmployerMatch(e.target.value)} className="w-full rounded border-gray-300 p-2" />
-              <p className="text-[10px] text-gray-400 mt-1 italic">Usually 50% or 100%.</p>
+              <input type="number" value={employerMatch} onChange={(e) => setEmployerMatch(e.target.value)} className="w-full rounded-lg border-gray-300 p-3 shadow-sm border text-sm" />
+              <p className="text-[10px] text-gray-400 mt-1 italic">Example: 50% match means employer puts in half of what you do.</p>
             </div>
 
             <div className="grid grid-cols-2 gap-4 pt-2">
                 <div>
                   <label className="block text-xs font-bold text-gray-500 mb-1">Current Age:</label>
-                  <input type="number" value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded border-gray-300 p-2" />
+                  <input type="number" value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-lg border-gray-300 p-3 shadow-sm border text-sm" />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-gray-500 mb-1">Retire Age:</label>
-                  <input type="number" value={retirementAge} onChange={(e) => setRetirementAge(e.target.value)} className="w-full rounded border-gray-300 p-2" />
+                  <input type="number" value={retirementAge} onChange={(e) => setRetirementAge(e.target.value)} className="w-full rounded-lg border-gray-300 p-3 shadow-sm border text-sm" />
                 </div>
             </div>
 
             <div>
               <label className="block text-xs font-bold text-gray-500 mb-1">Current Balance ($):</label>
-              <input type="number" value={currentBalance} onChange={(e) => setCurrentBalance(e.target.value)} className="w-full rounded border-gray-300 p-2" />
+              <input type="number" value={currentBalance} onChange={(e) => setCurrentBalance(e.target.value)} className="w-full rounded-lg border-gray-300 p-3 shadow-sm border text-sm font-semibold" />
             </div>
           </div>
 
           <button
             onClick={calculate401k}
-            className="mt-8 w-full bg-emerald-600 text-white font-bold py-4 rounded-xl hover:bg-emerald-700 transition shadow-lg text-lg uppercase"
+            className="mt-8 w-full bg-emerald-600 text-white font-bold py-4 rounded-xl hover:bg-emerald-700 transition shadow-lg text-lg uppercase tracking-wide"
           >
             Calculate Growth
           </button>
         </div>
 
-        <div className="lg:col-span-8 flex flex-col space-y-6">
+        <div className="lg:col-span-12 xl:col-span-8 flex flex-col space-y-6">
           {result !== null ? (
             <>
-                <div className="bg-emerald-900 text-white rounded-3xl p-10 text-center shadow-2xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-800 rounded-full -mr-16 -mt-16 opacity-50"></div>
-                    <span className="block text-sm font-bold text-emerald-300 uppercase mb-2 tracking-widest font-mono">Future Balance at Age {retirementAge}</span>
-                    <div className="text-7xl font-black mb-4">
+                <div className="bg-emerald-900 text-white rounded-3xl p-10 text-center shadow-2xl relative overflow-hidden border-t-8 border-emerald-400">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
+                    <span className="block text-sm font-bold text-emerald-200 uppercase mb-2 tracking-widest font-mono italic">Projected Balance at Age {retirementAge}</span>
+                    <div className="text-7xl font-black mb-4 tracking-tighter">
                         ${result.futureValue.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     </div>
+                    <p className="text-emerald-100/70 text-xs font-medium">Estimated value assuming {annualReturn}% annualized market growth.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-white border-2 border-emerald-50 p-6 rounded-2xl shadow-sm">
-                        <span className="block text-xs font-bold text-gray-400 uppercase mb-2">Annual Contributions</span>
-                        <div className="flex justify-between items-end mb-2">
-                            <span className="text-sm font-medium">Your Part:</span>
-                            <span className="text-xl font-black text-gray-900">${result.annualContribution.toLocaleString()}</span>
+                    <div className="bg-white border-2 border-emerald-50 p-6 rounded-2xl shadow-sm flex flex-col justify-center">
+                        <span className="block text-[10px] font-black text-gray-400 uppercase mb-3 tracking-widest">Annual Contributions</span>
+                        <div className="flex justify-between items-end mb-3 border-b border-gray-50 pb-2">
+                            <span className="text-xs font-bold text-gray-600">Employee Part:</span>
+                            <span className="text-2xl font-black text-gray-900">${result.annualContribution.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between items-end">
-                            <span className="text-sm font-medium">Employer Part:</span>
-                            <span className="text-xl font-black text-emerald-600">+ ${result.matchAmount.toLocaleString()}</span>
+                            <span className="text-xs font-bold text-emerald-700">Employer Match:</span>
+                            <span className="text-2xl font-black text-emerald-600">+ ${result.matchAmount.toLocaleString()}</span>
                         </div>
                     </div>
 
-                    <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl flex flex-col justify-center">
-                        <span className="block text-xs font-bold text-emerald-800 uppercase mb-1">Total Lifetime Deposits</span>
-                        <div className="text-3xl font-black text-emerald-900">${result.totalContributed.toLocaleString()}</div>
-                        <p className="text-[10px] text-emerald-600 mt-1 font-medium italic">Everything else is pure market growth.</p>
+                    <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl flex flex-col justify-center shadow-inner">
+                        <span className="block text-[10px] font-black text-emerald-800 uppercase mb-2 tracking-widest">Total Principal Deposits</span>
+                        <div className="text-4xl font-black text-emerald-900">${result.totalContributed.toLocaleString()}</div>
+                        <p className="text-[10px] text-emerald-600 mt-2 font-bold italic uppercase tracking-tighter">The rest is pure compound interest growth.</p>
                     </div>
                 </div>
             </>
           ) : (
-             <div className="h-full border-4 border-dashed border-emerald-100 rounded-3xl flex flex-col items-center justify-center p-12 text-center text-emerald-200">
-                <svg className="w-20 h-20 mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <p className="font-bold text-xl uppercase tracking-widest">Free Employer Money</p>
-                <p className="max-w-xs text-sm">Input your salary and match details to find out how much "Free Money" you are leaving on the table.</p>
+             <div className="h-full border-4 border-double border-emerald-100 rounded-3xl flex flex-col items-center justify-center p-12 text-center text-emerald-200 bg-emerald-50/20">
+                <svg className="w-20 h-20 mb-4 opacity-40 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <p className="font-bold text-xl uppercase tracking-widest text-emerald-700">Free Employer Money</p>
+                <p className="max-w-xs text-sm text-emerald-600/70 font-medium">Input your salary and match details to find out how much "Free Money" you are leaving on the table over your career.</p>
              </div>
           )}
         </div>
       </div>
 
       <CalculatorSEO
-        title="401k Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>401k Calculator</strong> is designed to help employees understand the long-term impact of their retirement contributions. It specifically models the "Employer Match," which is effectively a 100% (or 50%) immediate return on your investment, up to a certain limit.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              FV = Σ contributions × (1+r)^n
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Future Value of retirement savings contributions.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>If you earn $100,000 and your company matches 100% of your contributions up to 6%:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>You contribute $6,000 annually.</li>
-              <li>Your employer adds <strong>another $6,000</strong> for free.</li>
-              <li>Total annual investment: $12,000.</li>
-            </ul>
-          </>
-        }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Matching Threshold:</strong> Use this tool to verify that you are contributing at least enough to get the full employer match. Stopping below the match limit is essentially declining a guaranteed salary bonus.</li></ul>}
-        faqs={[
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            },
-            {
-              question: "Can I use this on my mobile device?",
-              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
-            }]}
+        title={fourOhOneKSeoData.title}
+        whatIsIt={fourOhOneKSeoData.whatIsIt}
+        formula={fourOhOneKSeoData.formula}
+        example={fourOhOneKSeoData.example}
+        useCases={fourOhOneKSeoData.useCases}
+        faqs={fourOhOneKSeoData.faqs}
+        deepDive={fourOhOneKSeoData.deepDive}
+        glossary={fourOhOneKSeoData.glossary}
         relatedCalculators={[
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator/",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator/",
-              desc: "Calculate your exact annualized percentage returns.",
-            },
-            {
-              name: "Investment Calculator",
-              path: "/investment-calculator/",
-              desc: "Project your portfolio growth over time with compound interest.",
-            },
-            {
-              name: "Loan Payment Calculator",
-              path: "/loan-payment-calculator/",
-              desc: "Estimate your monthly loan payments and total interest cost.",
-            }]}
+          {
+            name: "Roth IRA",
+            path: "/roth-ira-calculator/",
+            desc: "Compare your 401k strategy with Roth IRA growth potentials.",
+          },
+          {
+            name: "ROI",
+            path: "/roi-calculator/",
+            desc: "Calculate exact annualized returns for your custom portfolio.",
+          },
+          {
+            name: "Compound Interest",
+            path: "/compound-interest-calculator/",
+            desc: "See the pure power of compounding without specific account rules.",
+          },
+          {
+            name: "Debt Payoff",
+            path: "/debt-payoff-calculator/",
+            desc: "Decide if you should pay off debt or invest more in your 401k.",
+          },
+        ]}
       />
     </div>
   );

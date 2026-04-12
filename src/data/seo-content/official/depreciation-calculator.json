@@ -1,0 +1,116 @@
+{
+  "title": "Depreciation Calculator: MACRS, Straight Line & Tax Recovery Master Guide",
+  "whatIsIt": "A **depreciation calculator** (also known as a **fixed asset depreciation calculator** or **tax depreciation calculator**) is a professional accounting tool used to determine the reduction in value of a physical asset over time. Whether you are using a **straight line depreciation calculator** for simple bookkeeping or a **macrs depreciation calculator** for IRS tax compliance, understanding how assets lose value is critical for business profitability.\n\nDepreciation allows businesses to allocate the cost of an asset (like machinery, vehicles, or buildings) over its 'useful life' rather than expensing it all at once. This **asset depreciation calculator** helps you find the yearly expense, the **accumulated depreciation**, and the final **book value** of your investments.",
+  "formula": "There are several ways to **calculate depreciation**, depending on whether you need a simple estimate or a complex tax schedule. Our **depreciation formula calculator** supports the most common methods:\n\n### 1. Straight Line Depreciation Formula\nThis is the simplest method, resulting in an equal expense every year:\n\n$\\text{Annual Expense} = \\frac{\\text{Asset Cost} - \\text{Salvage Value}}{\\text{Useful Life}}$\n\n### 2. MACRS (Modified Accelerated Cost Recovery System)\nThe IRS standard for US businesses. It uses specific 'recovery periods' (e.g., 5 years for computers, 27.5 years for residential rental property) and declining balance percentages to front-load the tax benefits.\n\n### 3. Double Declining Balance (DDB)\nAn **accelerated depreciation calculation** that doubles the straight-line rate. The **200 double declining balance** formula is:\n\n$\\text{Expense} = 2 \\times \\text{Straight Line Rate} \\times \\text{Book Value at Start of Year}$",
+  "example": "Let’s look at a **real estate depreciation example** for an investment property:\n\n- **Asset**: Residential Rental House\n- **Cost Basis**: $300,000 (excluding land value)\n- **IRS Recovery Period**: 27.5 years\n- **Method**: Straight Line (standard for US real estate)\n\n**Calculation**:\n1.  **Yearly Deduction**: $300,000 / 27.5 = **$10,909.09**.\n2.  **Analysis**: Using a **rental property depreciation calculator**, you can reduce your taxable rental income by nearly $11k every single year, even if the property's market value is actually increasing. This is the 'Magic of Real Estate' enabled by the **tax depreciation schedule**.",
+  "useCases": "### 1. Small Business Tax Planning\nBusiness owners use a **section 179 depreciation calculator** to see if they can deduct the *full* price of equipment (up to a limit) in the first year. Alternatively, a **bonus depreciation calculator** helps determine if you can take an additional 60-80% deduction immediately.\n\n### 2. Real Estate Investing\nSavvy investors use a **cost segregation real estate calculator** to break a building down into components (like appliances, carpet, and fencing). This allows for **accelerated depreciation** on those specific items (5 or 7 years) instead of the slow 27.5-year track for the building itself.\n\n### 3. Fleet & Vehicle Management\nUse a **business vehicle depreciation calculator** to track the value of your trucks or work vans. The **auto depreciation calculator irs** limits (like Luxury Auto caps) are built into our logic to ensure your **tax depreciation estimate** is accurate.\n\n### 4. Financial Reporting\nAccountants use a **depreciation schedule for fixed assets** to maintain the balance sheet. Tracking the **book value formula equipment** results ensures that the company's net worth is reported correctly to shareholders and lenders.",
+  "faqs": [
+    {
+      "question": "What is Salvage Value?",
+      "answer": "The **salvage value** (or residual value) is the estimated amount an asset will be worth at the end of its useful life. For example, if a truck costs $50k and you plan to sell it for $5k in ten years, the $5k is the salvage value. Use our **salvage value calculator** to find the depreciable base."
+    },
+    {
+      "question": "What is the difference between MACRS and Straight Line?",
+      "answer": "Straight line is even and predictable. **MACRS depreciation** is 'Accelerated,' meaning you get much larger tax deductions in the early years of the asset's life. Most US businesses MUST use MACRS for their tax returns but may use Straight Line for their internal 'Book' accounting."
+    },
+    {
+      "question": "Can I depreciate land?",
+      "answer": "No. Land does not 'wear out' or get used up, so it cannot be depreciated. When using a **home depreciation calculator**, you must subtract the value of the land from the total purchase price before calculating the **depreciation on investment property**."
+    },
+    {
+      "question": "What is 'Depreciation Recapture'?",
+      "answer": "If you sell a property for more than its depreciated book value, the IRS 'recaptures' the tax benefit you took. A **depreciation recapture calculator** is vital before selling real estate to estimate the potentially high tax bill (often 25%)."
+    },
+    {
+      "question": "How long is the depreciation for a computer?",
+      "answer": "According to the **irs depreciation schedule**, computers and peripherals typically have a 5-year recovery period under the MACRS system."
+    },
+    {
+      "question": "What is Section 179?",
+      "answer": "Section 179 allows you to deduct 100% of the cost of qualifying equipment in the year you buy it, rather than over many years. It is a massive 'Instant Write-Off' tool for small businesses."
+    }
+  ],
+  "deepDive": "### Advanced Asset Recovery: Mastering the Art of Depreciation\n\nWhile a **simple depreciation calculator** is great for quick math, professional 'Tax Alpha' comes from understanding the nuances of asset recovery systems. Depreciation isn't just an expense; it's a strategic cash flow tool.\n\n#### The Power of Cost Segregation\nIn high-end real estate, owners hire engineers for a **cost segregation study**. They identify parts of the building that can be reclassified as personal property or land improvements. By using an **accelerated depreciation real estate calculator**, these owners can move deductions from 27.5 years into 5-year buckets, significantly increasing their 'Net Present Value' (NPV) of the investment.\n\n#### MACRS: The Engine of US Business Growth\nThe **MACRS depreciation calculator** follows two main systems: the **GDS (General Depreciation System)** and the **ADS (Alternative Depreciation System)**. GDS is the most common and uses a **200% declining balance** method for most property. However, certain assets or tax-exempt entities must use the ADS, which uses the straight-line method over longer periods.\n\n#### Bonus Depreciation vs. Section 179\nBoth tools allow for front-heavy deductions, but they have different limits. \n-   **Section 179**: Has a total dollar limit (usually over $1.1M) and a 'Taxable Income' limit (you can't use it to create a loss).\n-   **Bonus Depreciation**: Does not have a dollar limit and CAN be used to create a net operating loss (NOL) that carries over to future years. Use our **bonus depreciation calculator 2023** logic to see which fits your business better.\n\n#### Accounting for Impairment\nSometimes an asset loses value faster than the **depreciation rate calculator** predicted (e.g., a technical shift makes a machine obsolete). In these cases, accountants perform an 'Impairment Test' and take a one-time write-down. This is different from the regular **accumulated depreciation formula** process.",
+  "glossary": [
+    {
+      "term": "Asset Cost Basis",
+      "definition": "The total amount paid for an asset, including shipping, installation, and taxes."
+    },
+    {
+      "term": "Accumulated Depreciation",
+      "definition": "The total amount of depreciation expense taken on an asset since it was placed in service."
+    },
+    {
+      "term": "Book Value",
+      "definition": "The current value of an asset on the balance sheet; calculated as Cost minus Accumulated Depreciation."
+    },
+    {
+      "term": "Salvage Value",
+      "definition": "The estimated resale value of an asset at the end of its useful life."
+    },
+    {
+      "term": "Useful Life",
+      "definition": "The period over which an asset is expected to be productive for the business."
+    },
+    {
+      "term": "MACRS",
+      "definition": "Modified Accelerated Cost Recovery System; the current tax depreciation system in the United States."
+    },
+    {
+      "term": "ADS (Alternative Depreciation System)",
+      "definition": "A depreciation system that uses the straight-line method and generally longer recovery periods than GDS."
+    },
+    {
+      "term": "Section 179",
+      "definition": "An IRS tax code that allows businesses to deduct the full purchase price of qualifying equipment in the current tax year."
+    },
+    {
+      "term": "Bonus Depreciation",
+      "definition": "A tax incentive that allows a business to immediately deduct a large percentage of the purchase price of eligible assets."
+    },
+    {
+      "term": "Straight-Line Method",
+      "definition": "A depreciation method that spreads the cost of an asset evenly over its useful life."
+    },
+    {
+      "term": "Declining Balance",
+      "definition": "An accelerated depreciation method that applies a constant rate to the asset's current book value each year."
+    },
+    {
+      "term": "Half-Year Convention",
+      "definition": "A rule that assumes an asset was placed in service in the middle of the year, regardless of the actual purchase date."
+    },
+    {
+      "term": "Amortization",
+      "definition": "The process of spreading the cost of an *intangible* asset (like a patent or software) over its useful life."
+    },
+    {
+      "term": "Depreciation Recapture",
+      "definition": "A tax procedure where the IRS taxes the gain on the sale of a depreciable asset as ordinary income to the extent of past depreciation."
+    },
+    {
+      "term": "Fixed Asset",
+      "definition": "A long-term tangible piece of property or equipment that a firm owns and uses in its operations to generate income."
+    },
+    {
+      "term": "Depreciable Base",
+      "definition": "The total amount of an asset's cost that can be depreciated; calculated as Cost minus Salvage Value."
+    },
+    {
+      "term": "Recovery Period",
+      "definition": "The number of years over which the cost of an asset is recovered under the MACRS system."
+    },
+    {
+      "term": "Personal Property",
+      "definition": "In a tax context, any property that is not 'Real Property' (land or buildings); usually has shorter depreciation lives."
+    },
+    {
+      "term": "Residential Rental Property",
+      "definition": "Buildings where 80% or more of the income comes from dwelling units; has a 27.5-year depreciation life."
+    },
+    {
+      "term": "Non-Residential Real Property",
+      "definition": "Commercial buildings (offices, warehouses); typically have a 39-year depreciation life."
+    }
+  ]
+}

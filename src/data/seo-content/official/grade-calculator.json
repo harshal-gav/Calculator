@@ -1,0 +1,112 @@
+{
+  "title": "Grade Calculator: Final Exam & Weighted Average Matrix",
+  "whatIsIt": "A **grade calculator** is a specialized academic utility used to determine a student's current standing in a course and project the scores needed on future assessments to reach a target grade. By analyzing the weight assigned to various categories—such as homework, midterms, and finals—this tool provides a clear roadmap for academic success.\n\nWhether you are a college student wondering 'What do I need on the final?' or a high schooler tracking your progress through the semester, this **weighted grade calculator** is your most important strategic asset. By quantifying your academic trajectory, this tool eliminates guesswork and reduces exam-season anxiety.",
+  "formula": "The calculation of a weighted grade follows the principle of assigning 'Intensity' to different score categories. The core mathematical model is as follows:\n\n### 1. The Weighted Average Formula\n$\\text{Current Grade} = \\frac{\\sum (\\text{Score}_i \\times \\text{Weight}_i)}{\\sum \\text{Weight}_i}$\n\n### 2. The Final Exam Requirement Formula\nTo find what you need on the final to reach a target grade ($G_{target}$):\n$\\text{Score}_{final} = \\frac{G_{target} - (G_{current} \\times (1 - w_{final}))}{w_{final}}$\n\n- **$G_{current}$**: Your current grade percentage.\n- **$G_{target}$**: The grade you want in the class.\n- **$w_{final}$**: The decimal weight of the final exam (e.g., 20% = 0.20).",
+  "example": "Let's calculate the score needed on a **25% final exam** to achieve an **'A' (90%)** in a class where your current grade is **84%**.\n\n### The Calculation Step-by-Step:\n1.  **Identify Variables**: $G_{target} = 90$, $G_{current} = 84$, $w_{final} = 0.25$.\n2.  **Calculate Current Contribution**: $84 \\times (1 - 0.25) = 84 \\times 0.75 = 63$.\n3.  **Subtract from Target**: $90 - 63 = 27$.\n4.  **Divide by Final Weight**: $27 / 0.25 = 108$.\n\n**The Result**: You would need a **108%** on the final to get an A. Since this is likely impossible without massive extra credit, you might adjust your $G_{target}$ to an **85 (B)**, which would only require an **88%** on the final. Using this **final exam calculator** logic helps students set realistic goals based on mathematical reality.",
+  "useCases": "### 1. Final Exam Preparation\nDuring finals week, students use this tool to prioritize their study time. If a student only needs a 40% on one final to keep their 'A' but needs a 95% on another, they can reallocate their focus to the more challenging course.\n\n### 2. Syllabus Analysis\nAt the start of a semester, students use this **weighted average calculator** to understand the 'Risk Profile' of a course. A class where the final is worth 50% of the grade is much higher stakes than one where points are distributed evenly across 10 assignments.\n\n### 3. Extra Credit Impact Assessment\nIf a professor offers a 2% bonus to the final grade, students use this tool to see if that bonus actually moves them into the next letter grade tier (e.g., from a B+ to an A-).\n\n### 4. GPA Management\nSince GPA is calculated from letter grades, the difference between an 89.4% (B+) and an 89.5% (A- due to rounding) is massive for a student's transcript. This tool provides the precision needed to track those 'edge cases.'",
+  "faqs": [
+    {
+      "question": "What is a 'Weighted Grade'?",
+      "answer": "A weighted grade means some assignments are worth more than others. For example, a single 1-hour final exam might be worth 30% of your grade, while 15 weeks of homework might only be worth 10% total."
+    },
+    {
+      "question": "How do I handle 'Points' systems vs 'Percent' systems?",
+      "answer": "In a points system, simply add up all the points you earned and divide by the total possible points. If your class uses 'Categories' (like 'Tests: 50%'), you must use this **category grade calculator** logic."
+    },
+    {
+      "question": "Can I calculate my grade if I don't know the weight of the final?",
+      "answer": "You can calculate your *current* grade by averaging your existing scores, but you cannot project your *final* grade without knowing how much the remaining assessments are worth."
+    },
+    {
+      "question": "What if I have an 'Extra Credit' assignment?",
+      "answer": "Extra credit can be handled in two ways: it either adds points to a specific category (like 'Homework') or adds a flat percentage to your total final grade. This tool supports flat percentage additions."
+    },
+    {
+      "question": "Does this tool support plus/minus grades (e.g., B+)?",
+      "answer": "Yes. While the calculator provides a numerical percentage, you can compare that percentage against your school's specific grading scale (e.g., 87-89% = B+)."
+    }
+  ],
+  "deepDive": "### Dealing with the 'Grading Curve'\n\nSome professors use a **Bell Curve** to assign grades, meaning your grade isn't based on your absolute percentage, but on your performance relative to your peers. In these cases, even a 60% might be an 'A' if the class average was a 40%. While this **grade projection tool** calculates absolute percentages, it is helpful to ask your instructor for the 'Class Mean' to contextualize your result.\n\n### The Psychology of Academic Performance\nStudies show that 'Grade Anxiety' peaks when students feel they have lost control over their outcome. By using a **weighted average calculator**, students regain a sense of agency. Knowing that an '88' is required on the final provides a concrete 'Win Condition,' which is often more motivating than the vague goal of 'doing my best.'\n\n### Strategic Dropping: The 'Lowest Grade' Rule\nMany syllabi allow students to 'drop the lowest test score.' To calculate your grade in this scenario, identify your worst score, remove its points and its weight from the total, and recalculate using the remaining data. This tool simplifies that process by allowing you to toggle different scores on and off to see the impact.\n\n### High-Stakes Testing and Career Impact\nIn professional certifications (like the CPA exam, Bar exam, or Medical boards), the 'Grade' is often a binary Pass/Fail. However, the internal weighting is extremely complex. This tool's logic mirrors the 'Sub-category Weighting' used in professional licensing, helping candidates identify their weak points before the high-stakes test day.",
+  "glossary": [
+    {
+      "term": "Weighted Average",
+      "definition": "A calculation that takes into account the varying degrees of importance (weights) of the numbers in a data set."
+    },
+    {
+      "term": "Final Exam Weight",
+      "definition": "The percentage of the total course grade that is determined by the final exam score."
+    },
+    {
+      "term": "Syllabus",
+      "definition": "The document provided by a professor that outlines course policies, assignments, and the grading breakdown."
+    },
+    {
+      "term": "Category",
+      "definition": "A group of assignments (e.g., Quizzes, Participation, Exams) that share a common weight in the final grade."
+    },
+    {
+      "term": "Grade Point",
+      "definition": "The numerical value assigned to a letter grade (e.g., 4.0 for an A)."
+    },
+    {
+      "term": "Bell Curve",
+      "definition": "A statistical distribution where most scores fall in the middle, used by some instructors to normalize class grades."
+    },
+    {
+      "term": "Extra Credit",
+      "definition": "Optional assignments or bonuses that allow a student to earn more than the maximum possible points in a course."
+    },
+    {
+      "term": "Mean (Academic)",
+      "definition": "The average score of all students in a class for a specific assignment or for the entire course."
+    },
+    {
+      "term": "Median",
+      "definition": "The middle score in a distribution of all class grades; often a better indicator of 'typical' performance if there are outliers."
+    },
+    {
+      "term": "GPA (Grade Point Average)",
+      "definition": "A single number representing the average of all final grades earned throughout an academic program."
+    },
+    {
+      "term": "Midterm",
+      "definition": "An exam given near the middle of an academic term, often carrying significant weight."
+    },
+    {
+      "term": "Cumulative Grade",
+      "definition": "The total grade earned to date, considering all completed assignments and their respective weights."
+    },
+    {
+      "term": "Rubric",
+      "definition": "A scoring guide used to evaluate the quality of a student's constructed responses or projects."
+    },
+    {
+      "term": "Academic Good Standing",
+      "definition": "A status indicating that a student is meeting the minimum GPA requirements of their institution."
+    },
+    {
+      "term": "Standardized Test",
+      "definition": "A test that is administered and scored in a consistent, or 'standard', manner."
+    },
+    {
+      "term": "Prerequisite Grade",
+      "definition": "The minimum grade required in a course (often a C) to allow a student to move on to the next level."
+    },
+    {
+      "term": "Pass/Fail",
+      "definition": "A grading option where a student receives credit for a course but no grade points are calculated into the GPA."
+    },
+    {
+      "term": "Transcript",
+      "definition": "The official and permanent record of a student's academic history."
+    },
+    {
+      "term": "Letter Grade",
+      "definition": "A marker (A, B, C, D, F) used to categorize a student's performance level."
+    },
+    {
+      "term": "Rounding",
+      "definition": "The mathematical process of replacing a number with an approximate value that has a shorter, simpler, or more explicit representation (e.g., 89.5 to 90)."
+    }
+  ]
+}

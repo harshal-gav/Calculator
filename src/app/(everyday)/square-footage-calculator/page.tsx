@@ -3,6 +3,8 @@
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
+import squareFootageSeoData from "@/data/seo-content/official/square-footage-calculator.json";
+
 export default function SquareFootageCalculator() {
   const [unit, setUnit] = useState<"feet" | "meters">("feet");
   const [length, setLength] = useState("12");
@@ -161,69 +163,35 @@ export default function SquareFootageCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Square Footage Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>Square Footage Calculator</strong> determines the total two-dimensional surface area enclosed within a room or property. It multiplies continuous length by width to express total footprint in standardized imperial or metric volumetric units.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Square Footage Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Square Footage results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>If you are painting a ceiling that is exactly 12 feet long and 14 feet wide:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Length = 12ft</li>
-              <li>Width = 14ft</li>
-              <li>12 × 14 = <strong>168 Square Feet</strong></li>
-            </ul>
-          </>
-        }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Real Estate Appraisals:</strong> Home valuations are overwhelmingly tied to price-per-square-foot ratios. Adding a 200 sq-ft extension mathematically forces the ultimate listing valuation up.</li></ul>}
-        faqs={[
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            },
-            {
-              question: "Can I use this on my mobile device?",
-              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
-            }]}
+        title={squareFootageSeoData.title}
+        whatIsIt={squareFootageSeoData.whatIsIt}
+        formula={squareFootageSeoData.formula}
+        example={squareFootageSeoData.example}
+        useCases={squareFootageSeoData.useCases}
+        faqs={squareFootageSeoData.faqs}
+        deepDive={squareFootageSeoData.deepDive}
+        glossary={squareFootageSeoData.glossary}
         relatedCalculators={[
-            {
-              name: "Age Calculator",
-              path: "/age-calculator/",
-              desc: "Calculate your exact age in years, months, and days.",
-            },
-            {
-              name: "Temperature Converter",
-              path: "/temperature-converter/",
-              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
-            },
-            {
-              name: "Speed Calculator",
-              path: "/speed-calculator/",
-              desc: "Calculate speed, distance, or time with ease.",
-            },
-            {
-              name: "Bill Splitter",
-              path: "/bill-splitter-calculator/",
-              desc: "Split bills and calculate tips among friends.",
-            }]}
+          {
+            name: "Tile Calculator",
+            path: "/tile-calculator/",
+            desc: "Estimate how many tiles you need based on your square footage.",
+          },
+          {
+            name: "Roofing Calculator",
+            path: "/roofing-calculator/",
+            desc: "Calculate surface area for steep or flat roofing projects.",
+          },
+          {
+            name: "Construction Loan",
+            path: "/construction-loan-calculator/",
+            desc: "Finance your new square footage with an optimized loan structure.",
+          },
+          {
+            name: "Speed Calculator",
+            path: "/speed-calculator/",
+            desc: "Calculate travel time based on distance and average velocity.",
+          }]}
       />
     </div>
   );

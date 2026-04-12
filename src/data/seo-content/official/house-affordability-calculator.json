@@ -1,0 +1,112 @@
+{
+  "title": "House Affordability Calculator: How Much House Can I Afford?",
+  "whatIsIt": "A **house affordability calculator** is a sophisticated financial tool designed to help prospective homebuyers determine their realistic budget before they start house hunting. It answers the critical question: '**How much house can I afford?**' by analyzing your gross income, existing debt obligations, and available down payment.\n\nWhile a bank might offer a **mortgage pre-approval calculator** that shows the *maximum* you can borrow, this tool emphasizes true *affordability*—ensuring your monthly mortgage payment doesn't compromise your overall lifestyle or long-term financial security. Whether you are looking for a **va home affordability calculator** or following the **dave ramsey how much house can i afford** 25% rule, this guide provides the mathematical roadmap to your next home.",
+  "formula": "Lenders typically use the **28/36 Rule** to determine your **home buying power calculator** results:\n\n### 1. Front-End Ratio (The 28% Rule)\nYour total housing expense (PITI) should not exceed 28% of your gross monthly income.\n$\\text{Max Monthly PITI} = \\text{Gross Monthly Income} \\times 0.28$\n\n### 2. Back-End Ratio (The 36% Rule)\nYour total debt payments (mortgage + car loans + student loans + credit cards) should not exceed 36% of your gross monthly income.\n$\\text{Total Debt Limit} = \\text{Gross Monthly Income} \\times 0.36$\n\n### 3. PITI Components\n$\\text{PITI} = \\text{Principal} + \\text{Interest} + \\text{Taxes} + \\text{Insurance}$",
+  "example": "Let's calculate the **salary needed to buy a house calculator** logic for a family:\n\n- **Gross Annual Income**: $100,000 ($8,333/month).\n- **Monthly Debt**: $500 (Car loan).\n- **Down Payment**: $50,000.\n- **Interest Rate**: 6.5%.\n\n**The Limits**:\n1.  **Front-End (28%)**: $8,333 \\times 0.28 = **$2,333**.\n2.  **Back-End (36%)**: ($8,333 \\times 0.36) - $500 = **$2,500**.\n3.  **The Result**: The lower of the two is $2,333. After subtracting taxes and insurance (approx. $500), you can afford a mortgage payment of $1,833, which equates to a home price of roughly **$340,000** with your $50k down payment.",
+  "useCases": "### 1. Pre-Qualification Stress Testing\nBefore speaking to a lender, use this as a **mortgage qualification calculator** to see how your current debt-to-income (DTI) ratio impacts your budget. Paying off a $300/month car loan can often increase your home budget by $40,000 or more.\n\n### 2. Down Payment Strategy\nUse the tool to compare '20% Down' vs '3.5% Down' (FHA). You can see exactly how a smaller down payment increases your **mortgage affordability** burden because of higher interest costs and mandatory Private Mortgage Insurance (PMI).\n\n### 3. Move-Up Planning\nCurrent homeowners use the **home affordability** logic to decide if they have enough equity in their current house to 'move up' to a larger property without doubling their monthly expenses.\n\n### 4. Special Loan Programs\nVeterans can use the **va mortgage affordability calculator** logic. Since VA loans allow for higher DTI ratios (often up to 41%) and require no down payment, your 'buying power' is often significantly higher than with conventional financing.",
+  "faqs": [
+    {
+      "question": "What is the 28/36 Rule?",
+      "answer": "It is a standard guideline used by lenders. 28% of your income goes to your house, and 36% goes to all debts combined. Some lenders allow for higher ratios (up to 43% or 50% for FHA), but 28/36 is the 'Safe Zone' for long-term affordability."
+    },
+    {
+      "question": "How much should I save for a down payment?",
+      "answer": "Ideally 20% to avoid PMI. However, many buyers use FHA loans (3.5% down) or Conventional low-down-payment programs (3% down). VA loans and USDA loans allow for 0% down if you qualify."
+    },
+    {
+      "question": "Does my credit score affect how much house I can afford?",
+      "answer": "Indirectly, yes. A higher credit score secures a lower interest rate. A lower interest rate means more of your monthly payment goes toward the house price rather than the bank, increasing your total budget."
+    },
+    {
+      "question": "What expenses are included in 'PITI'?",
+      "answer": "PITI stands for Principal (loan balance), Interest (bank fee), Taxes (property tax), and Insurance (homeowners insurance). If your LTV is above 80%, you must also include PMI in this total."
+    },
+    {
+      "question": "Should I use the Dave Ramsey 25% rule?",
+      "answer": "Dave Ramsey recommends that your house payment be no more than 25% of your *take-home* pay on a 15-year fixed mortgage. This is a very conservative approach that ensures you stay 'house poor' free, though it may be difficult in high-cost-of-living areas."
+    }
+  ],
+  "deepDive": "### Mastering Home Buying Power: Beyond the Monthly Payment\n\nWhen most people ask '**what mortgage can i afford?**', they are looking at their monthly bank balance. But true affordability is a multi-dimensional puzzle involving taxes, insurance, and the opportunity cost of your capital.\n\n#### The Impact of Interest Rates on Affordability\nMortgage rates are the biggest 'lever' in your budget. For every 1% increase in interest rates, your purchasing power drops by roughly 10%. For example, if you can afford a $400,000 home at 5%, you can only afford about $360,000 at 6% for the same monthly payment. This is why timing the market or choosing a different loan product (like an ARM) can feel so impactful.\n\n#### Front-End vs. Back-End DTI\nA **mortgage affordability calculator based on income** is only accurate if it accounts for both DTI types. If you have zero debt, your 'Front-End' (28%) is the limit. But if you have heavy student loans, your 'Back-End' (36-43%) will likely cut your house budget significantly. Lenders *always* use the more restrictive of the two.\n\n#### The Hidden Costs: Property Taxes and HOAs\nAffordability varies wildly by zip code. A $2,500 monthly budget in Texas (high property tax) might only buy you a $300k home, while that same $2,500 in Alabama (low property tax) might buy a $450k home. Our **house budget calculator** reminds you to research your local millage rates and HOA fees, as these are 'dead money' that doesn't build equity.\n\n#### The 'House Poor' Trap\nBeing 'approved' for a loan doesn't mean you can 'afford' it. A **home buying power calculator** might say you can spend $3,000 a month, but if you enjoy traveling, have children in private school, or a hobby that costs $500 a month, the bank's math won't reflect your reality. Always build a 'Buffer Zone' into your calculations to account for home maintenance, which typically costs 1% of the home's value per year.",
+  "glossary": [
+    {
+      "term": "PITI",
+      "definition": "The four main components of a monthly mortgage payment: Principal, Interest, Taxes, and Insurance."
+    },
+    {
+      "term": "Debt-to-Income (DTI) Ratio",
+      "definition": "The percentage of your gross monthly income that goes toward paying debts."
+    },
+    {
+      "term": "Front-End Ratio",
+      "definition": "The percentage of income that goes strictly toward housing costs (mortgage, taxes, insurance)."
+    },
+    {
+      "term": "Back-End Ratio",
+      "definition": "The percentage of income that goes toward housing costs PLUS all other recurring debt payments."
+    },
+    {
+      "term": "Down Payment",
+      "definition": "The upfront cash payment made toward the purchase of a home, expressed as a percentage of the total price."
+    },
+    {
+      "term": "PMI (Private Mortgage Insurance)",
+      "definition": "Insurance required for buyers who put down less than 20%, protecting the lender from default."
+    },
+    {
+      "term": "Gross Monthly Income",
+      "definition": "Your total pre-tax income earned each month; the basis for all lender affordability math."
+    },
+    {
+      "term": "Pre-Approval",
+      "definition": "A lender's formal commitment to loan you a specific amount based on a deep dive into your credit and finances."
+    },
+    {
+      "term": "Take-Home Pay",
+      "definition": "Your net income after taxes and deductions; often used for more conservative 'Dave Ramsey' style budgeting."
+    },
+    {
+      "term": "Loan Term",
+      "definition": "The length of time you have to pay off the mortgage (typically 15 or 30 years)."
+    },
+    {
+      "term": "Amortization",
+      "definition": "The schedule of loan payments that breaks down how much goes to principal vs. interest over time."
+    },
+    {
+      "term": "HOA Fee",
+      "definition": "Homeowners Association fees; recurring costs for shared amenities or maintenance in a community."
+    },
+    {
+      "term": "Millage Rate",
+      "definition": "The rate used to calculate local property taxes per $1,000 of assessed value."
+    },
+    {
+      "term": "Closing Costs",
+      "definition": "Fees paid at the end of the home-buying process, typically ranging from 2% to 5% of the home's price."
+    },
+    {
+      "term": "Interest Rate",
+      "definition": "The cost of borrowing money, expressed as a percentage of the total loan amount."
+    },
+    {
+      "term": "Seller Concessions",
+      "definition": "Closing costs that the seller agrees to pay on behalf of the buyer to make the deal more affordable."
+    },
+    {
+      "term": "Conventional Loan",
+      "definition": "A mortgage that is not insured by the federal government (unlike FHA or VA loans)."
+    },
+    {
+      "term": "FHA Loan",
+      "definition": "A loan insured by the Federal Housing Administration, allowing for lower down payments and credit scores."
+    },
+    {
+      "term": "VA Loan",
+      "definition": "A mortgage guaranteed by the Department of Veterans Affairs, offering 0% down for eligible veterans."
+    },
+    {
+      "term": "Equity",
+      "definition": "The market value of your home minus the amount you still owe on your mortgage."
+    }
+  ]
+}

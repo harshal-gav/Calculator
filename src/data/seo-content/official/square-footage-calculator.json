@@ -1,0 +1,41 @@
+{
+  "title": "Square Footage & Area Coverage Calculator",
+  "whatIsIt": "The Square Footage Calculator is a vital construction and real estate tool used to determine the flat area of a room, plot of land, or surface. For homeowners, contractors, and DIY enthusiasts, knowing the precise square footage is essential for purchasing the correct amount of flooring, paint, turf, or roofing material, preventing both waste and project delays.",
+  "formula": "The calculation varies by the shape of the surface: \\n1. Rectangular/Square: $L \\times W$ \\n2. Circular: $\\pi \\times r^2$ \\n3. Triangular: $0.5 \\times B \\times H$ \\n\\n$$\\text{Total Area} = \\sum \\text{Shape Area}_i$$\\n\\nFor complex floor plans, the area is typically calculated by summing the square footage of individual rectangular sections.",
+  "example": "If a living room is 15 feet long and 12 feet wide: \\n1. Rectangular Calculation: $15 \\times 12 = 180$ Square Feet. \\n\\nIf you are buying tile that covers 10 sq ft per box: \\n2. Material Estimation: $180 / 10 = 18$ boxes (plus a recommended 10% for cuts and waste).",
+  "useCases": [
+    "Flooring Installation: Determining exactly how much hardwood, carpet, or tile to purchase.",
+    "Real Estate Listings: Calculating the total livable area of a property for a sales listing or appraisal.",
+    "Lawn & Garden: Estimating the amount of sod, seed, or fertilizer needed for a specific yard size.",
+    "Painting Projects: Calculating wall surface area (length x height) to determine how many gallons of paint are required."
+  ],
+  "faqs": [
+    {
+      "question": "Does square footage include walls?",
+      "answer": "Standard 'Livable Square Footage' in real estate typically measures from the interior walls. However, some blueprints measure from the exterior, adding 40-100 sq ft depending on the wall thickness."
+    },
+    {
+      "question": "What is the 'wasted material' factor?",
+      "answer": "When calculating area for products like tile or flooring, it is industry standard to add an extra 10-15% to your total square footage to account for edge cuts, breakage, and future repairs."
+    },
+    {
+      "question": "How do I calculate an L-shaped room?",
+      "answer": "Divide the L-shape into two separate rectangles. Calculate the area of each individually, then add those two totals together to get the final square footage."
+    }
+  ],
+  "deepDive": "Square footage is more than a dimension; it is the universal currency of real estate value. Home appraisals and property taxes are heavily weighted on this figure. In commercial leasing, 'Rentable Square Footage' (RSF) often includes a portion of shared spaces like hallways and lobbies, whereas 'Usable Square Footage' (USF) refers only to the space your business physically occupies.",
+  "glossary": [
+    {
+      "term": "GLA",
+      "definition": "Gross Living Area; the total finished, habitable, above-grade square footage in a residential property."
+    },
+    {
+      "term": "Waste Factor",
+      "definition": "The additional percentage of material ordered beyond the net area to account for installation losses."
+    },
+    {
+      "term": "Linear Foot",
+      "definition": "A measurement of length (12 inches) that does not account for width or height."
+    }
+  ]
+}

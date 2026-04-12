@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import rentVsBuySeoData from "@/data/seo-content/official/rent-vs-buy-calculator.json";
 
 export default function RentVsBuyCalculator() {
   const [homePrice, setHomePrice] = useState("400000");
@@ -79,45 +80,45 @@ export default function RentVsBuyCalculator() {
            </div>
         </div>
 
-        <div className="lg:col-span-5 space-y-6">
-          <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 space-y-4">
+        <div className="lg:col-span-12 xl:col-span-5 space-y-6">
+          <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 space-y-4 shadow-inner">
             <h3 className="font-bold text-slate-800 uppercase text-xs tracking-widest border-b pb-2 mb-4">Buying Assumptions</h3>
             <div>
               <label className="block text-sm font-bold text-slate-700 mb-1">Home Price ($)</label>
-              <input type="number" value={homePrice} onChange={(e) => setHomePrice(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-teal-500 focus:ring-0 transition-all font-semibold text-slate-800" />
+              <input type="number" value={homePrice} onChange={(e) => setHomePrice(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-teal-500 focus:ring-0 transition-all font-semibold text-slate-800 shadow-sm" />
             </div>
             <div>
               <label className="block text-sm font-bold text-slate-700 mb-1">Down Payment ($)</label>
-              <input type="number" value={downPayment} onChange={(e) => setDownPayment(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-teal-500 focus:ring-0 transition-all font-semibold text-slate-800" />
+              <input type="number" value={downPayment} onChange={(e) => setDownPayment(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-teal-500 focus:ring-0 transition-all font-semibold text-slate-800 shadow-sm" />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-1">Int. Rate (%)</label>
-                <input type="number" value={mortgageRate} onChange={(e) => setMortgageRate(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-teal-500 focus:ring-0 transition-all font-semibold text-slate-800" />
+                <input type="number" value={mortgageRate} onChange={(e) => setMortgageRate(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-teal-500 focus:ring-0 transition-all font-semibold text-slate-800 shadow-sm" />
               </div>
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-1">Term (Yrs)</label>
-                <input type="number" value={mortgageTerm} onChange={(e) => setMortgageTerm(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-teal-500 focus:ring-0 transition-all font-semibold text-slate-800" />
+                <input type="number" value={mortgageTerm} onChange={(e) => setMortgageTerm(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-teal-500 focus:ring-0 transition-all font-semibold text-slate-800 shadow-sm" />
               </div>
             </div>
 
             <h3 className="font-bold text-slate-800 uppercase text-xs tracking-widest border-b pb-2 mt-8 mb-4">Renting Assumptions</h3>
             <div>
               <label className="block text-sm font-bold text-slate-700 mb-1">Monthly Rent ($)</label>
-              <input type="number" value={monthlyRent} onChange={(e) => setMonthlyRent(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-teal-500 focus:ring-0 transition-all font-semibold text-slate-800" />
+              <input type="number" value={monthlyRent} onChange={(e) => setMonthlyRent(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-teal-500 focus:ring-0 transition-all font-semibold text-slate-800 shadow-sm" />
             </div>
             <div>
               <label className="block text-sm font-bold text-slate-700 mb-1">Analysis Period (Years)</label>
-              <input type="number" value={years} onChange={(e) => setYears(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-teal-500 focus:ring-0 transition-all font-semibold text-slate-800" />
+              <input type="number" value={years} onChange={(e) => setYears(e.target.value)} className="w-full bg-white border-2 border-slate-200 rounded-xl px-4 py-2 focus:border-teal-500 focus:ring-0 transition-all font-semibold text-slate-800 shadow-sm" />
             </div>
 
-            <button onClick={calculate} className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-teal-200 active:scale-[0.98] mt-6">
+            <button onClick={calculate} className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-teal-200 active:scale-[0.98] mt-6 text-lg uppercase tracking-wide">
               Compare Now
             </button>
           </div>
         </div>
 
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-12 xl:col-span-7">
           {result ? (
              <div className="h-full flex flex-col gap-6">
                <div className={`rounded-3xl p-8 text-white shadow-xl flex flex-col justify-center grow ${result.winner === 'buying' ? 'bg-gradient-to-br from-teal-600 to-emerald-700' : 'bg-gradient-to-br from-indigo-600 to-blue-700'}`}>
@@ -130,16 +131,16 @@ export default function RentVsBuyCalculator() {
                     {result.difference.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     <span className="text-sm font-normal opacity-80 uppercase tracking-tighter ml-1">cheaper</span>
                   </div>
-                  <p className="text-white/70 text-sm">Based on {years} years of accumulated costs including mortgage, taxes, and rent inflation.</p>
+                  <p className="text-white/70 text-sm italic">Based on {years} years of accumulated costs including mortgage, taxes, and rent inflation.</p>
                </div>
 
-               <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-slate-50 border border-slate-100 p-6 rounded-2xl">
-                    <div className="text-slate-400 text-xs font-bold uppercase mb-1">Total Buying Cost</div>
+               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-slate-50 border border-slate-100 p-6 rounded-2xl shadow-inner">
+                    <div className="text-slate-400 text-xs font-bold uppercase mb-1 tracking-widest">Total Buying Cost</div>
                     <div className="text-xl font-black text-slate-700">${result.buyingCost.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
                   </div>
-                  <div className="bg-slate-50 border border-slate-100 p-6 rounded-2xl">
-                    <div className="text-slate-400 text-xs font-bold uppercase mb-1">Total Renting Cost</div>
+                  <div className="bg-slate-50 border border-slate-100 p-6 rounded-2xl shadow-inner">
+                    <div className="text-slate-400 text-xs font-bold uppercase mb-1 tracking-widest">Total Renting Cost</div>
                     <div className="text-xl font-black text-slate-700">${result.rentingCost.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
                   </div>
                </div>
@@ -159,145 +160,35 @@ export default function RentVsBuyCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Rent vs. Buy Calculator: Real Estate Wealth & Cost Projection"
-        whatIsIt={
-          <>
-            <p className="text-lg leading-relaxed mb-4">
-              A <strong>Rent vs. Buy Calculator</strong> is a sophisticated financial modeling tool designed to determine the "Break-even Point" between the cost of renting a home and the multi-dimensional costs of homeownership. This isn't just about comparing a monthly mortgage payment to monthly rent; it's about projecting <strong>total unrecoverable costs</strong> over a 10, 20, or 30-year horizon.
-            </p>
-            <p className="leading-relaxed mb-4">
-              In the short term (1-5 years), renting is almost always cheaper because owners face high transactional "friction" (6% agent commissions, closing costs, and moving fees). However, as time passes, the <strong>forced savings</strong> of principal repayment and the potential for home price appreciation begin to outweigh the sunken costs of property taxes and maintenance.
-            </p>
-            <p className="leading-relaxed">
-              Our calculator uses the 2024 economic baseline, assuming 3% annual rent inflation and 1% annual maintenance reserves, to provide you with a clear winner based on your specific investment timeline.
-            </p>
-          </>
-        }
-        comparisonTable={{
-          title: "The Unrecoverable Cost Comparison (Annual Assumptions)",
-          headers: ["Expense Category", "Buying (Owner)", "Renting (Tenant)", "Verdict"],
-          rows: [
-            ["Housing Payment", "Mortgage Interest (Sunken)", "Total Monthly Rent (Sunken)", "Depends on Rates"],
-            ["Taxes", "Property Tax (1.2% avg)", "None (Included in Rent)", "Renting Wins"],
-            ["Maintenance", "1% of Home Value Reserves", "None ($0 Responsibilty)", "Renting Wins"],
-            ["Insurance", "HO3 Homeowners Insurance", "HO4 Renters Insurance (Minimal)", "Renting Wins"],
-            ["Capital Gains", "Tax-Free Appreciation (up to $500k)", "Opportunity Cost of Deposit", "Buying Wins"],
-            ["Wealth Building", "Forced Equity through Principal", "Portfolio Growth in Market", "Context Dependent"],
-          ]
-        }}
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Rent Vs Buy Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Rent Vs Buy results.
-            </p>
-          </>
-        }
-          example={
-          <>
-            <p className="mb-4 font-semibold">Scenario: $400,000 Home vs $2,500 Rent</p>
-            <div className="bg-white border border-gray-100 p-6 rounded-xl shadow-sm space-y-4 text-sm">
-              <div className="grid grid-cols-2 gap-4 border-b pb-4">
-                <div>
-                  <p className="font-bold text-teal-700 uppercase tracking-widest text-[10px]">Buyer (Year 1)</p>
-                  <p>Interest: $20,800</p>
-                  <p>Tax: $4,800</p>
-                  <p>Maintenance: $4,000</p>
-                  <p className="font-bold border-t mt-1">Total Sunken: $29,600</p>
-                </div>
-                <div>
-                  <p className="font-bold text-indigo-700 uppercase tracking-widest text-[10px]">Renter (Year 1)</p>
-                  <p>Rent: $30,000</p>
-                  <p>Insurance: $300</p>
-                  <p>Investment Ops: $0</p>
-                  <p className="font-bold border-t mt-1">Total Sunken: $30,300</p>
-                </div>
-              </div>
-              <p className="italic text-gray-600">
-                In this high-interest environment, the renter and buyer are almost tied in year 1. However, the buyer's interest cost stays flat (or decreases), while the renter's cost increases 3% every year.
-              </p>
-            </div>
-          </>
-        }
-        useCases={
-          <div className="space-y-6">
-            <div>
-              <h4 className="font-bold text-gray-800">1. Evaluating Relocation for Work</h4>
-              <p className="text-gray-600 italic">If you only plan to stay in a city for 2-3 years, the 6% selling commission almost guarantees you will lose money compared to renting, regardless of interest rates.</p>
-            </div>
-            <div>
-              <h4 className="font-bold text-gray-800">2. Low Interest Rate Environments</h4>
-              <p className="text-gray-600 italic">When mortgage rates are below 4%, the "cost of capital" drops significantly, making buying the winner in as little as 3-4 years.</p>
-            </div>
-            <div>
-              <h4 className="font-bold text-gray-800">3. Maximizing Down Payment vs. Investing</h4>
-              <p className="text-gray-600 italic">Use the calculator to see if putting 20% down or putting 5% down and investing the difference yields a higher net worth after 15 years.</p>
-            </div>
-          </div>
-        }
-        glossary={[
-          {
-            term: "Amortization",
-            definition: "The process of paying off a debt over time through regular payments. A portion of each payment goes to interest, and the remainder goes to the principal."
-          },
-          {
-            term: "Equity",
-            definition: "The difference between the market value of your home and the amount you still owe on your mortgage."
-          },
-          {
-            term: "Opportunity Cost",
-            definition: "The potential profit or value you give up when choosing one investment over another (e.g., spending cash on a down payment instead of the S&P 500)."
-          },
-          {
-            term: "Price-to-Rent Ratio",
-            definition: "The ratio of home prices to annual rental rates. A ratio high above 20 usually indicates that renting is more favorable."
-          },
-          {
-            term: "Closing Costs",
-            definition: "Fees paid at the end of a real estate transaction. They typically range from 2% to 5% of the purchase price."
-          }
-        ]}
-        faqs={[
-          {
-            question: "Is real estate always a good investment?",
-            answer: "No. Real estate is highly dependent on local markers, interest rates, and your specific timeline. Historically, the S&P 500 has outperformed real estate appreciation on a percentage basis, but real estate allows for 5x leverage which can amplify returns."
-          },
-          {
-            question: "Don't I get a big tax break for owning a home?",
-            answer: "Since the 2018 TCJA reform, the standard deduction is so high that most homeowners no longer benefit from the mortgage interest deduction unless they have a very large loan."
-          },
-          {
-            question: "What is PMI and how does it impact the math?",
-            answer: "Private Mortgage Insurance (PMI) is required if your down payment is less than 20%. It is an unrecoverable cost (usually 0.5% to 1.5% of the loan amount annually) that makes renting even more attractive for low-down-payment buyers."
-          },
-          {
-            question: "How long should I live in a house to make buying worth it?",
-            answer: "The 'Rule of Thumb' is at least 5-7 years. This allows enough time for gradual appreciation and principal paydown to offset the ~10% loss you take on the entry and exit of the property (closing costs + selling commission)."
-          }
-        ]}
+        title={rentVsBuySeoData.title}
+        whatIsIt={rentVsBuySeoData.whatIsIt}
+        formula={rentVsBuySeoData.formula}
+        example={rentVsBuySeoData.example}
+        useCases={rentVsBuySeoData.useCases}
+        faqs={rentVsBuySeoData.faqs}
+        deepDive={rentVsBuySeoData.deepDive}
+        glossary={rentVsBuySeoData.glossary}
         relatedCalculators={[
           {
-            name: "Mortgage Calculator",
+            name: "Mortgage",
             path: "/mortgage-calculator/",
-            desc: "The core engine for calculating your monthly P&I, taxes, and insurance."
+            desc: "Calculate your monthly payments for the potential purchase.",
           },
           {
-            name: "ROI Calculator",
+            name: "House Affordability",
+            path: "/house-affordability-calculator/",
+            desc: "See if you qualify for the home price in your rent vs buy scenario.",
+          },
+          {
+            name: "ROI",
             path: "/roi-calculator/",
-            desc: "Compare your home's appreciation to other asset classes."
+            desc: "Compare your home's appreciation to stock market returns.",
           },
           {
-            name: "Amortization Calculator",
-            path: "/amortization-calculator/",
-            desc: "See exactly how much interest you will pay over the life of your loan."
+            name: "LTV",
+            path: "/ltv-calculator/",
+            desc: "Understand your loan-to-value ratio for the down payment choice.",
           },
-          {
-            name: "Income Tax Calculator",
-            path: "/income-tax-calculator/",
-            desc: "See how much post-tax income you have left for your housing budget."
-          }
         ]}
       />
     </div>

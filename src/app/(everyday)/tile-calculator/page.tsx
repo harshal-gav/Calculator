@@ -3,6 +3,8 @@
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
+import tileSeoData from "@/data/seo-content/official/tile-calculator.json";
+
 export default function TileCalculator() {
   const [roomLength, setRoomLength] = useState("10"); // in feet
   const [roomWidth, setRoomWidth] = useState("12"); // in feet
@@ -171,70 +173,35 @@ export default function TileCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Tile Flooring Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>Tile Calculator</strong> computes exact flooring material requirements based on the dimensional square footage of a room divided by the square inch footprint of an individual ceramic/porcelain tile.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Tile Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Tile results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>For a standard 10ft x 12ft room utilizing 12x12 inch tiles (which are exactly 1 square foot each):</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Room Area = 120 square feet</li>
-              <li>Divided by 1 sqft tile = 120 raw tiles</li>
-              <li>Plus 10% Contractor Buffer = 12 additional tiles</li>
-              <li><strong>Final Order: 132 Tiles</strong></li>
-            </ul>
-          </>
-        }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Diagonal Patterns:</strong> If you are planning to install tiles on a 45-degree diamond bias, construction experts strictly dictate upgrading the safety buffer to 15% due to significantly more corner cuts.</li></ul>}
-        faqs={[
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            },
-            {
-              question: "Can I use this on my mobile device?",
-              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
-            }]}
+        title={tileSeoData.title}
+        whatIsIt={tileSeoData.whatIsIt}
+        formula={tileSeoData.formula}
+        example={tileSeoData.example}
+        useCases={tileSeoData.useCases}
+        faqs={tileSeoData.faqs}
+        deepDive={tileSeoData.deepDive}
+        glossary={tileSeoData.glossary}
         relatedCalculators={[
-            {
-              name: "Age Calculator",
-              path: "/age-calculator/",
-              desc: "Calculate your exact age in years, months, and days.",
-            },
-            {
-              name: "Temperature Converter",
-              path: "/temperature-converter/",
-              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
-            },
-            {
-              name: "Speed Calculator",
-              path: "/speed-calculator/",
-              desc: "Calculate speed, distance, or time with ease.",
-            },
-            {
-              name: "Bill Splitter",
-              path: "/bill-splitter-calculator/",
-              desc: "Split bills and calculate tips among friends.",
-            }]}
+          {
+            name: "Construction Loan",
+            path: "/construction-loan-calculator/",
+            desc: "Finance your renovation projects with an optimized loan structure.",
+          },
+          {
+            name: "Square Footage",
+            path: "/square-footage-calculator/",
+            desc: "Determine the exact floor area of any room in your home.",
+          },
+          {
+            name: "Kitchen Remodel",
+            path: "/kitchen-remodel-calculator/",
+            desc: "Estimate total costs and material needs for your kitchen upgrade.",
+          },
+          {
+            name: "Mortgage Calculator",
+            path: "/mortgage-calculator/",
+            desc: "Calculate monthly payments and interest for your property investment.",
+          }]}
       />
     </div>
   );

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import depreciationSeoData from "@/data/seo-content/official/depreciation-calculator.json";
 
 export default function DepreciationCalculator() {
   const [cost, setCost] = useState("10000");
@@ -318,147 +319,38 @@ export default function DepreciationCalculator() {
         </div>
       )}
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Depreciation Calculator",
-            operatingSystem: "All",
-            applicationCategory: "FinancialApplication",
-          }),
-        }}
+      <CalculatorSEO
+        title={depreciationSeoData.title}
+        whatIsIt={depreciationSeoData.whatIsIt}
+        formula={depreciationSeoData.formula}
+        example={depreciationSeoData.example}
+        useCases={depreciationSeoData.useCases}
+        faqs={depreciationSeoData.faqs}
+        deepDive={depreciationSeoData.deepDive}
+        glossary={depreciationSeoData.glossary}
+        relatedCalculators={[
+          {
+            name: "ROI",
+            path: "/roi-calculator/",
+            desc: "Calculate your return on investment for asset purchases.",
+          },
+          {
+            name: "Net Worth",
+            path: "/net-worth-calculator/",
+            desc: "Track how your physical assets affect your total net worth.",
+          },
+          {
+            name: "Amortization",
+            path: "/amortization-calculator/",
+            desc: "Calculate the repayment of loans and intangible assets.",
+          },
+          {
+            name: "Mortgage",
+            path: "/mortgage-calculator/",
+            desc: "Calculate your monthly mortgage payments and amortization schedule.",
+          },
+        ]}
       />
-
-      <div className="mt-8">
-        <CalculatorSEO
-          title="Depreciation Calculator"
-          whatIsIt={
-            <>
-              <p>
-                Our <strong>Depreciation Calculator</strong> allows businesses
-                and accountants to accurately generate a year-by-year schedule
-                of how an asset loses value over time. Depreciation represents
-                the "wear and tear" on large physical purchases, allowing a
-                business to spread the massive upfront cost of an asset over its
-                entire useful life for accounting and tax purposes.
-              </p>
-              <p>
-                This tool supports the two most common accounting methods:{" "}
-                <strong>Straight-Line Depreciation</strong> (where the asset
-                loses the exact same amount of value every single year) and{" "}
-                <strong>Double Declining Balance</strong> (an accelerated method
-                where the asset loses the majority of its value in the first few
-                years).
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Depreciation Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Depreciation results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's map out a standard business purchase: A company buys a{" "}
-                <strong>$50,000 delivery van</strong>.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-700">
-                <li>
-                  <strong>Variables:</strong> The van cost $50,000. It has an
-                  expected "Useful Life" of 5 years. After 5 years, the company
-                  expects to sell it for scrap for a "Salvage Value" of $5,000.
-                </li>
-                <li>
-                  <strong>Straight-Line Math:</strong> ($50,000 - $5,000) / 5
-                  years = $9,000 per year.
-                </li>
-                <li>
-                  <strong>Straight-Line Result:</strong> Every year for 5 years,
-                  the company will report exactly <strong>$9,000</strong> in
-                  depreciation expense on their income statement.
-                </li>
-                <li>
-                  <strong>Double Declining Result:</strong> If using DDB, the
-                  company would take a massive <strong>$20,000</strong> expense
-                  in Year 1, $12,000 in Year 2, and so on until it hits the $5k
-                  salvage value.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-zinc-700">
-              <li>
-                <strong>Corporate Tax Strategy:</strong> By front-loading
-                depreciation using the Double Declining method (or Section
-                179/Bonus Depreciation), profitable businesses can artificially
-                lower their taxable income significantly in the current year to
-                lower their tax bill.
-              </li>
-              <li>
-                <strong>Accurate Profitability Tracking:</strong> If a bakery
-                buys a massive $100,000 oven in January, they shouldn't log a
-                -$100,000 loss for January and wildly inflated profits for the
-                rest of the decade. Straight-line depreciation smooths out that
-                cost so they can accurately track month-over-month
-                profitability.
-              </li>
-              <li>
-                <strong>Asset Management:</strong> Tracking exactly what a fleet
-                of company vehicles or heavy machinery is currently worth on the
-                company's official balance sheet (Book Value).
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "What is 'Salvage Value'?",
-              answer:
-                "Salvage value is the estimated resale value of the asset at the end of its useful life. For example, a laptop might be bought for $2000, used for 4 years, and then sold for parts for $200. $200 is the salvage value. You never depreciate an asset below its salvage value.",
-            },
-            {
-              question:
-                "Why would I choose Double Declining instead of Straight-Line?",
-              answer:
-                "Mostly for tax benefits. Double Declining is an 'accelerated' depreciation method. It gives you massive tax write-offs in the first few years, which is highly advantageous for reducing your current tax burden. It's also more realistic for assets like cars or computers that lose most of their real-world value immediately after purchase.",
-            },
-            {
-              question: "Can I depreciate land?",
-              answer:
-                "No. Under US GAAP and IRS rules, land is not considered a depreciable asset because it does not theoretically suffer from 'wear and tear' and has an infinite useful life. You can only depreciate what is built on the land (buildings, fences, roads).",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator/",
-              desc: "Calculate your return on investment to see if the asset purchase was profitable.",
-            },
-            {
-              name: "Net Worth Calculator",
-              path: "/net-worth-calculator/",
-              desc: "Track how your physical assets affect your total net worth.",
-            },
-            {
-              name: "Auto Lease Calculator",
-              path: "/auto-lease-calculator/",
-              desc: "Calculate monthly payments based heavily on a vehicle's estimated depreciation.",
-            },
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator/",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            }]}
-        />
-      </div>
     </div>
   );
 }

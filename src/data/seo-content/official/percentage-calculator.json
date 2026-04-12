@@ -1,34 +1,112 @@
 {
-  "title": "Percentage Calculator: Fractions, Increases & Decimals",
-  "whatIsIt": "A Percentage Calculator is a versatile mathematical tool used to find values, proportions, and percentage changes across finance, business, and everyday life. Whether you are calculating the tip at a restaurant, a sales tax on a purchase, or a significant discount on a high-ticket item, this utility provides the rapid mental shortcuts and exact algebraic results needed for precise numerical decision-making.",
-  "formula": "The logic depends on the question being asked: \\n\\n1. **Basic Percentage**: $X\\% \\text{ of } Y = \\frac{X}{100} \\times Y$. \\n2. **Percentage Value**: What percent is $X$ of $Y$? Result = $(\\frac{X}{Y}) \\times 100$. \\n3. **Percent Change**: $\\frac{\\text{New} - \\text{Old}}{\\text{Old}} \\times 100$. \\n4. **Inverse Percent**: Find the total if $X$ is $Y\\%$. Total = $\\frac{X}{Y} \\times 100$.",
-  "example": "Suppose you want to find **15% of $80**. \\n\\n1. **Convert to decimal**: $15 \\div 100 = 0.15$. \\n2. **Multiply**: $0.15 \\times 80 = 12$. \\n3. **Result**: 15% of $80 is **$12**.",
-  "useCases": [
-    "Shopping and Retail: Instantly calculating the final price of an item after a 25% or 40% 'Season Sale' discount is applied.",
-    "Investment Analysis: Measuring the annual percentage yield (APY) on a savings account or the return on investment (ROI) for a stock portfolio.",
-    "Taxes and Surcharges: Determining the exact dollar amount of Value Added Tax (VAT), Goods and Services Tax (GST), or property taxes based on fractional rates.",
-    "Baking and Nutrition: Calculating the percentage of Daily Value (DV) for nutrients or scaling ingredient ratios in professional large-scale recipes."
-  ],
+  "title": "Percentage Calculator: Proportional & Change Matrix",
+  "whatIsIt": "A **percentage calculator** is a versatile mathematical utility used to determine the relative relationship between two numbers. Derived from the Latin 'per centum' (by the hundred), percentages are the universal language for expressing proportions, growth rates, and statistical probabilities.\n\nWhether you are a retailer calculating a seasonal discount, a scientist measuring experimental error, or a student solving basic algebra, this **percent change calculator** provides the precise data required. By analyzing parts and wholes, this tool reveals the fractional reality of any dataset.",
+  "formula": "The logic of percentages is based on the ratio of a part to a whole multiplied by 100. This calculator supports several distinct mathematical pathways:\n\n### 1. Basic Percentage of a Value\n$Value = \\frac{\\text{Percentage}}{100} \\times \\text{Total}$\n\n### 2. Percentage Difference (Increase/Decrease)\n$\\text{Percent Change} = \\left( \\frac{\\text{New Value} - \\text{Old Value}}{\\text{Old Value}} \\right) \\times 100$\n\n### 3. Calculating $X$ is what percent of $Y$\n$X \\% Y = \\left( \\frac{X}{Y} \\right) \\times 100$\n\n### 4. Percentage of a Total (Reverse calculation)\n$\\text{Total} = \\frac{\\text{Value}}{\\text{Percentage}} \\times 100$",
+  "example": "Let's calculate the **Percentage Increase** of a product that cost **$50** last year and costs **$65** today.\n\n### The Calculation Step-by-Step:\n1.  **Find the Difference**: $65 - 50 = 15$.\n2.  **Divide by Original**: $15 / 50 = 0.3$.\n3.  **Multiply by 100**: $0.3 \\times 100 = 30\\%$.\n\n**The Result**: The price has increased by **30%**. Using this **calculate percent difference** logic ensures that consumers and business owners can accurately track inflation and cost-of-goods-sold across different periods.",
+  "useCases": "### 1. Business and Retail Analysis\nRetailers use this tool to calculate 'Markup' and 'Gross Margin.' By knowing the cost price and desired profit percentage, they can determine the final 'MSRP' (Manufacturer's Suggested Retail Price) that ensures business sustainability.\n\n### 2. Financial Planning & Investment\nInvestors use the **percent return calculator** to compare the performance of different assets. Whether it's a 7% yield on a dividend stock or a 20% gain in a cryptocurrency portfolio, percentages provide the 'normalization' needed for objective comparison.\n\n### 3. Academic Grading & Statistics\nTeachers use percentages to convert raw test scores into standardized grades. In statistics, researchers use percentages to express 'Confidence Intervals' and 'P-values,' quantifying the reliability of their scientific findings.\n\n### 4. Health and Nutrition\nDieticians use percentages to calculate the 'Daily Value' (DV) of nutrients. A nutrition label might state that a serving contains 20% of your daily iron requirement, helping consumers maintain a balanced intake.",
   "faqs": [
     {
-      "question": "How do you calculate a 20% tip quickly?",
-      "answer": "Divide the total bill by 10 to get 10%, then double that number. For instance, if the bill is $45, 10% is $4.50, and 20% is exactly **$9.00**."
+      "question": "What does '%' actually mean?",
+      "answer": "The '%' symbol means 'divided by 100.' So, 25% is literally $25/100$, or $0.25$ in decimal form."
     },
     {
-      "question": "What is the difference between a percentage point and a percent?",
-      "answer": "A **percentage point** is the arithmetic difference between two percentages (e.g., a move from 1% to 2% is a 1-point increase). A **percent** change is the relative change (movng from 1% to 2% is a 100% increase)."
+      "question": "How do you calculate a 20% tip?",
+      "answer": "To find 20%, you can multiply your total bill by $0.20$ or divide it by $5$. For a $50 bill, the tip would be $10."
     },
     {
-      "question": "How do you turn a decimal into a percentage?",
-      "answer": "Simply multiply the decimal by 100 and add the '%' symbol. For example, $0.75$ becomes **75%**."
+      "question": "Is a 50% increase followed by a 50% decrease back to the original?",
+      "answer": "No. This is a common math fallacy. If you start with 100, a 50% increase takes you to 150. A 50% decrease of *150* takes you down to 75. You end up with 25% less than your starting point."
+    },
+    {
+      "question": "What is the difference between Percentage Points and Percent?",
+      "answer": "If an interest rate goes from 5% to 6%, it has increased by **1 percentage point**, but it has increased by **20 percent** ($1/5$)."
+    },
+    {
+      "question": "How do you find the whole if you know the part and the percent?",
+      "answer": "Divide the part by the decimal version of the percent. For example, if 30 is 15% of a number, then $30 / 0.15 = 200$."
     }
   ],
-  "deepDive": "The concept of 'Percent' (literally 'per hundred' from the Latin 'per centum') is the universal language of comparison across disparate scales. By mapping everything to a standardized base of 100, we can compare the growth of a small local business to that of a global conglomerate on a level playing field. Historically, percentages were used by the Roman Empire to levy auction taxes before the decimal system was even fully established. In modern finance, they are the fundamental unit of most economic indicators, from inflation rates to unemployment figures. Mathematically, percentages are just specialized fractions where the denominator is always forced to be 100, which greatly simplifies linear comparison for the human brain. Whether you are analyzing high-frequency trading algorithm deltas or just splitting a dinner bill, the ability to rapidly convert ratios into percentages is a hallmark of numerical literacy in the 21st century.",
+  "deepDive": "### Compounding Effects and Sequential Changes\n\nWhen dealing with multiple percentage changes (like tax followed by a discount), you cannot simply add the percentages together. You must multiply the multipliers. \n\n#### The Multiplier Method\nTo apply a 10% tax and then a 15% discount:\n1.  Multiplier 1: $1 + 0.10 = 1.10$\n2.  Multiplier 2: $1 - 0.15 = 0.85$\n3.  Final Multiplier: $1.10 \\times 0.85 = 0.935$\nThis means the final price is actually 6.5% lower ($1 - 0.935$) than the original, not 5% lower ($15 - 10$).\n\n### Percentiles vs. Percentages\nWhile percentages measure a proportion of a whole, **Percentiles** measure a value's position relative to a group. If you are in the 90th percentile of a test, it means you scored better than 90% of all other test-takers, regardless of whether your actual percentage score was an 80% or a 95%.\n\n### Business Margins: The Margin vs. Markup Trap\nMany business owners confuse 'Markup' with 'Margin.' \n- **Markup** is the percentage added to the COST ($Profit / Cost$).\n- **Margin** is the percentage of the SELLING PRICE ($Profit / Revenue$).\nA 50% markup results in only a 33.3% profit margin. This **business percentage calculator** helps avoid these costly pricing errors.\n\n### Logical Fallacies in Growth Reporting\nPercentages can be used to exaggerate small changes. If the number of incidents of a rare disease goes from 1 to 2, it is technically a '100% Increase,' which sounds terrifying. However, the absolute change is only 1 person. Always look for the 'Base Value' when analyzing percentage-based headlines.",
   "glossary": [
-    { "term": "Base", "definition": "The 'Whole' number (the 100%) that you are calculating a part of." },
-    { "term": "Rate", "definition": "The percentage value (e.g., 5%, 50%) applied to the base." },
-    { "term": "Yield", "definition": "The numerical result obtained after applying the percentage rate." },
-    { "term": "Markup", "definition": "The percentage added to the cost price of a product to determine sell price." },
-    { "term": "Margin", "definition": "The percentage of the sale price that represents profit." }
+    {
+      "term": "Percentage",
+      "definition": "A number or ratio expressed as a fraction of 100."
+    },
+    {
+      "term": "Numerator",
+      "definition": "The top number in a fraction; in a percentage, this is the 'part'."
+    },
+    {
+      "term": "Denominator",
+      "definition": "The bottom number in a fraction; in a percentage calculation, this is the 'whole'."
+    },
+    {
+      "term": "Percentage Decrease",
+      "definition": "A measure of how much a value has gone down relative to its original amount."
+    },
+    {
+      "term": "Percentage Increase",
+      "definition": "A measure of how much a value has gone up relative to its original amount."
+    },
+    {
+      "term": "Proportion",
+      "definition": "A part, share, or number considered in comparative relation to a whole."
+    },
+    {
+      "term": "Basis Points (BPS)",
+      "definition": "A unit of measure for interest rates and other percentages in finance ($1 \\text{ BPS} = 0.01\\%$)."
+    },
+    {
+      "term": "Markup",
+      "definition": "The amount added to the cost price of goods to cover overhead and profit."
+    },
+    {
+      "term": "Gross Margin",
+      "definition": "Net sales revenue minus cost of goods sold, expressed as a percentage of revenue."
+    },
+    {
+      "term": "Ratio",
+      "definition": "The quantitative relation between two amounts showing the number of times one value contains or is contained within the other."
+    },
+    {
+      "term": "Decimal",
+      "definition": "A fraction whose denominator is a power of ten and whose numerator is expressed by figures placed to the right of a decimal point."
+    },
+    {
+      "term": "Integer",
+      "definition": "A whole number; a number that is not a fraction."
+    },
+    {
+      "term": "Percentile",
+      "definition": "Each of the 100 equal groups into which a population can be divided according to the distribution of values of a particular variable."
+    },
+    {
+      "term": "Compound Interest",
+      "definition": "Interest calculated on the principal amount and also on the accumulated interest of previous periods."
+    },
+    {
+      "term": "Normalization",
+      "definition": "The process of adjusting values measured on different scales to a notionally common scale."
+    },
+    {
+      "term": "Relative Change",
+      "definition": "The ratio of the absolute change to the original value."
+    },
+    {
+      "term": "Multiplicative Factor",
+      "definition": "The number by which a quantity is multiplied to effect a percentage change (e.g., 1.05 for a 5% increase)."
+    },
+    {
+      "term": "Statistical Significance",
+      "definition": "The likelihood that a relationship between two or more variables is caused by something other than chance."
+    },
+    {
+      "term": "Coefficient",
+      "definition": "A numerical or constant factor in a mathematical expression."
+    },
+    {
+      "term": "Unit Rate",
+      "definition": "A comparison of two different quantities when they are combined."
+    }
   ]
 }

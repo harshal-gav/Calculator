@@ -1,405 +1,251 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import gradeData from "@/data/seo-content/official/grade-calculator.json";
 
-type Assignment = {
+interface Category {
   id: number;
   name: string;
-  grade: string;
   weight: string;
-};
+  score: string;
+}
 
 export default function GradeCalculator() {
-  const [assignments, setAssignments] = useState<Assignment[]>([
-    { id: 1, name: "Homework 1", grade: "95", weight: "20" },
-    { id: 2, name: "Midterm", grade: "88", weight: "30" },
-    { id: 3, name: "Final Project", grade: "", weight: "50" },
+  const [categories, setCategories] = useState<Category[]>([
+    { id: 1, name: "Homework", weight: "20", score: "90" },
+    { id: 2, name: "Quizzes", weight: "30", score: "85" },
+    { id: 3, name: "Midterm", weight: "25", score: "78" }
   ]);
 
-  const addAssignment = () => {
-    setAssignments([
-      ...assignments,
-      {
-        id: Date.now(),
-        name: `Assignment ${assignments.length + 1}`,
-        grade: "",
-        weight: "",
-      },
-    ]);
-  };
+  const [finalWeight, setFinalWeight] = useState("25");
+  const [targetGrade, setTargetGrade] = useState("90");
 
-  const removeAssignment = (id: number) => {
-    setAssignments(assignments.filter((a) => a.id !== id));
-  };
+  const [currentGrade, setCurrentGrade] = useState<number | null>(null);
+  const [requiredOnFinal, setRequiredOnFinal] = useState<number | null>(null);
 
-  const updateAssignment = (
-    id: number,
-    field: keyof Assignment,
-    value: string,
-  ) => {
-    setAssignments(
-      assignments.map((a) => (a.id === id ? { ...a, [field]: value } : a)),
-    );
-  };
+  useEffect(() => {
+    calculateGrades();
+  }, [categories, finalWeight, targetGrade]);
 
-  let totalWeight = 0;
-  let earnedPoints = 0;
+  const calculateGrades = () => {
+    let weightedScoreSum = 0;
+    let weightSum = 0;
 
-  // Calculate current grade based only on graded assignments
-  const gradedAssignments = assignments.filter(
-    (a) =>
-      a.grade !== "" &&
-      !isNaN(parseFloat(a.grade)) &&
-      a.weight !== "" &&
-      !isNaN(parseFloat(a.weight)),
-  );
-  const totalProvidedWeight = gradedAssignments.reduce(
-    (sum, a) => sum + parseFloat(a.weight),
-    0,
-  );
+    categories.forEach(cat => {
+      const w = parseFloat(cat.weight) || 0;
+      const s = parseFloat(cat.score) || 0;
+      weightedScoreSum += (s * w);
+      weightSum += w;
+    });
 
-  gradedAssignments.forEach((a) => {
-    const grade = parseFloat(a.grade);
-    const weight = parseFloat(a.weight);
-    if (totalProvidedWeight > 0) {
-      earnedPoints += grade * (weight / totalProvidedWeight);
+    const current = weightSum > 0 ? weightedScoreSum / weightSum : 0;
+    setCurrentGrade(current);
+
+    // Final calculation
+    const fw = parseFloat(finalWeight) || 0;
+    const tg = parseFloat(targetGrade) || 0;
+    
+    if (fw > 0) {
+      // Required = (Target - (Current * (1 - FW_pct))) / FW_pct
+      const fwPct = fw / 100;
+      const req = (tg - (current * (1 - fwPct))) / fwPct;
+      setRequiredOnFinal(req);
+    } else {
+      setRequiredOnFinal(null);
     }
-  });
+  };
 
-  const currentGrade = totalProvidedWeight > 0 ? earnedPoints : 0;
-  const letterGrade = getLetterGrade(currentGrade);
+  const addCategory = () => {
+    setCategories([...categories, { id: Date.now(), name: "Assignments", weight: "10", score: "100" }]);
+  };
 
-  function getLetterGrade(score: number) {
-    if (score >= 97) return "A+";
-    if (score >= 93) return "A";
-    if (score >= 90) return "A-";
-    if (score >= 87) return "B+";
-    if (score >= 83) return "B";
-    if (score >= 80) return "B-";
-    if (score >= 77) return "C+";
-    if (score >= 73) return "C";
-    if (score >= 70) return "C-";
-    if (score >= 67) return "D+";
-    if (score >= 63) return "D";
-    if (score >= 60) return "D-";
-    if (score > 0) return "F";
-    return "-";
-  }
+  const removeCategory = (id: number) => {
+    if (categories.length > 1) {
+      setCategories(categories.filter(c => c.id !== id));
+    }
+  };
+
+  const updateCategory = (id: number, field: keyof Category, value: string) => {
+    setCategories(categories.map(c => c.id === id ? { ...c, [field]: value } : c));
+  };
 
   return (
-    <div className="max-w-5xl mx-auto p-4 md:p-8 bg-slate-50 rounded-xl shadow-lg border border-slate-200">
-      <h1 className="text-4xl font-extrabold mb-4 text-indigo-800 border-b pb-4 flex items-center">
-        <span className="mr-3">📝</span> Grade Calculator
-      </h1>
-      <p className="mb-8 text-slate-600 text-lg">
-        Calculate your current class grade based on weighted assignments, and
-        see what you need to score on your finals.
-      </p>
+    <div className="max-w-6xl mx-auto p-4 md:p-8 bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(79,70,229,0.1)] border border-indigo-50 font-sans">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-indigo-50 pb-8 mb-10 gap-6">
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-indigo-200">A+</div>
+            <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase italic">
+              Grade <span className="text-indigo-600 font-black">Projection Matrix</span>
+            </h1>
+          </div>
+          <p className="text-slate-400 font-bold mt-1 tracking-tight text-sm uppercase italic">Final Exam Strategy Engine</p>
+        </div>
+        <div className="hidden md:flex flex-col items-end text-right">
+          <div className="bg-indigo-900 px-4 py-2 rounded-xl border border-indigo-700 mb-1 shadow-lg">
+            <span className="text-indigo-300 font-black text-[10px] uppercase tracking-[0.3em]">Academic Protocol 6.1</span>
+          </div>
+          <span className="text-[10px] text-slate-300 font-bold uppercase tracking-tighter italic">Weighted Distribution Audit</span>
+        </div>
+      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Inputs List */}
-        <div className="lg:col-span-2 space-y-4">
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-            <div className="grid grid-cols-12 gap-4 mb-4 font-bold text-xs uppercase tracking-widest text-slate-500 border-b border-slate-100 pb-2 hidden md:grid">
-              <div className="col-span-1 border-slate-100"></div>
-              <div className="col-span-5 border-slate-100">Assignment Name</div>
-              <div className="col-span-3 text-center border-slate-100">
-                Grade (%)
-              </div>
-              <div className="col-span-3 text-center border-slate-100">
-                Weight (%)
-              </div>
-            </div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
+        {/* Category Inputs */}
+        <div className="lg:col-span-12 xl:col-span-8 space-y-4">
+          <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-200 shadow-inner">
+             <div className="flex justify-between items-center mb-6">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 italic">Workload Distribution</span>
+                <button onClick={addCategory} className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-indigo-100">+ Add Category</button>
+             </div>
+             
+             <div className="space-y-3">
+                {categories.map((cat) => (
+                  <div key={cat.id} className="grid grid-cols-12 gap-3 items-center bg-white p-3 md:p-4 rounded-2xl border border-slate-100 shadow-sm group transition-all hover:border-indigo-200">
+                     <div className="col-span-12 md:col-span-5">
+                        <input 
+                          type="text" 
+                          value={cat.name} 
+                          onChange={(e) => updateCategory(cat.id, "name", e.target.value)}
+                          className="w-full bg-slate-50 border-0 rounded-xl px-4 py-2 text-sm font-bold text-slate-600 focus:ring-2 focus:ring-indigo-100"
+                          placeholder="Category (e.g., Homework)"
+                        />
+                     </div>
+                     <div className="col-span-5 md:col-span-3">
+                        <div className="relative">
+                           <input 
+                             type="number" 
+                             value={cat.weight} 
+                             onChange={(e) => updateCategory(cat.id, "weight", e.target.value)}
+                             className="w-full bg-white border border-slate-100 rounded-xl px-4 py-2 text-sm font-black text-slate-900 text-center focus:ring-2 focus:ring-indigo-100"
+                             placeholder="Weight"
+                           />
+                           <span className="absolute right-3 top-2.5 text-[10px] text-slate-400 font-bold">%</span>
+                        </div>
+                     </div>
+                     <div className="col-span-5 md:col-span-3">
+                        <div className="relative">
+                           <input 
+                             type="number" 
+                             value={cat.score} 
+                             onChange={(e) => updateCategory(cat.id, "score", e.target.value)}
+                             className="w-full bg-white border border-slate-100 rounded-xl px-4 py-2 text-sm font-black text-slate-900 text-center focus:ring-2 focus:ring-indigo-100"
+                             placeholder="Score"
+                           />
+                           <span className="absolute right-3 top-2.5 text-[10px] text-slate-400 font-bold">%</span>
+                        </div>
+                     </div>
+                     <div className="col-span-2 md:col-span-1 flex justify-center">
+                        <button onClick={() => removeCategory(cat.id)} className="text-slate-300 hover:text-rose-500 transition-colors text-xl">×</button>
+                     </div>
+                  </div>
+                ))}
+             </div>
 
-            {assignments.map((assignment, index) => (
-              <div
-                key={assignment.id}
-                className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 mb-4 items-center bg-slate-50 p-3 rounded-lg border border-slate-100 hover:bg-slate-100 transition-colors"
-              >
-                <div className="col-span-1 flex justify-center text-slate-400 font-bold hidden md:flex">
-                  {index + 1}.
-                </div>
-                <div className="col-span-12 md:col-span-5">
-                  <input
-                    type="text"
-                    value={assignment.name}
-                    onChange={(e) =>
-                      updateAssignment(assignment.id, "name", e.target.value)
-                    }
-                    className="w-full rounded outline-none bg-transparent p-2 font-medium text-slate-800 focus:bg-white focus:ring-2 focus:ring-indigo-100 transition-all border border-transparent focus:border-indigo-300"
-                    placeholder="Assignment Name"
-                  />
-                </div>
-                <div className="col-span-6 md:col-span-3 relative flex items-center">
-                  <input
-                    type="number"
-                    step="0.5"
-                    value={assignment.grade}
-                    onChange={(e) =>
-                      updateAssignment(assignment.id, "grade", e.target.value)
-                    }
-                    className="w-full rounded border-slate-300 p-2 text-center font-bold text-indigo-700 shadow-inner bg-white"
-                    placeholder="100"
-                  />
-                  <span className="absolute right-3 text-slate-400 font-bold text-xs">
-                    %
-                  </span>
-                </div>
-                <div className="col-span-5 md:col-span-2 relative flex items-center">
-                  <input
-                    type="number"
-                    step="0.5"
-                    value={assignment.weight}
-                    onChange={(e) =>
-                      updateAssignment(assignment.id, "weight", e.target.value)
-                    }
-                    className="w-full rounded border-slate-300 p-2 text-center font-bold text-slate-700 shadow-inner bg-white"
-                    placeholder="20"
-                  />
-                  <span className="absolute right-3 text-slate-400 font-bold text-xs">
-                    %
-                  </span>
-                </div>
-                <div className="col-span-1 flex justify-center">
-                  <button
-                    onClick={() => removeAssignment(assignment.id)}
-                    className="text-slate-300 hover:text-red-500 transition-colors p-2"
-                    title="Remove Assignment"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                        clipRule="evenodd"
+             <div className="mt-8 pt-8 border-t border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 italic block">Final Exam Weight</label>
+                   <div className="relative">
+                      <input 
+                        type="number" 
+                        value={finalWeight} 
+                        onChange={(e) => setFinalWeight(e.target.value)}
+                        className="w-full bg-indigo-50/50 border-2 border-indigo-100 rounded-2xl px-6 py-4 font-black text-3xl text-indigo-900 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/5 outline-none"
                       />
-                    </svg>
-                  </button>
+                      <span className="absolute right-6 top-5 text-xl text-indigo-300 font-black">%</span>
+                   </div>
                 </div>
-              </div>
-            ))}
-
-            <div className="mt-6 flex justify-between">
-              <button
-                onClick={addAssignment}
-                className="bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-bold py-2 px-6 rounded-lg transition shadow-sm border border-indigo-200 flex items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mr-2"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                Add Coursework
-              </button>
-              <button
-                onClick={() => setAssignments([])}
-                className="text-slate-400 hover:text-red-600 font-bold py-2 px-4 transition text-sm"
-              >
-                Clear All
-              </button>
-            </div>
+                <div className="space-y-4">
+                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 italic block">Target Course Grade</label>
+                   <div className="relative">
+                      <input 
+                        type="number" 
+                        value={targetGrade} 
+                        onChange={(e) => setTargetGrade(e.target.value)}
+                        className="w-full bg-emerald-50/50 border-2 border-emerald-100 rounded-2xl px-6 py-4 font-black text-3xl text-emerald-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/5 outline-none"
+                      />
+                      <span className="absolute right-6 top-5 text-xl text-emerald-300 font-black">%</span>
+                   </div>
+                </div>
+             </div>
           </div>
         </div>
 
-        {/* Status Column */}
-        <div className="lg:col-span-1">
-          <div className="bg-indigo-900 rounded-xl p-8 text-white shadow-xl relative overflow-hidden border border-indigo-800">
-            {/* Decorative background element */}
-            <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-40 w-40"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
+        {/* Results Canvas */}
+        <div className="lg:col-span-12 xl:col-span-4 flex flex-col gap-6">
+           <div className="grow bg-slate-900 rounded-[3rem] p-10 text-white shadow-2xl relative overflow-hidden flex flex-col justify-center border border-slate-800">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl"></div>
+              
+              <div className="relative z-10 space-y-8">
+                 <div>
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-400 italic block mb-2">Current Standing</span>
+                    <div className="text-6xl font-black italic tracking-tighter text-white">
+                       {currentGrade !== null ? currentGrade.toFixed(1) : "0.0"}%
+                    </div>
+                    <p className="text-[9px] font-bold uppercase tracking-widest text-slate-500 mt-2">Weighted average of completed work</p>
+                 </div>
 
-            <div className="relative z-10 text-center">
-              <h2 className="text-indigo-300 font-bold uppercase tracking-widest text-xs mb-2">
-                Current Grade
-              </h2>
-              <div className="flex flex-col justify-center items-center mb-6 py-8">
-                <div className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-indigo-300 drop-shadow-sm mb-2">
-                  {currentGrade > 0 ? currentGrade.toFixed(2) : "--"}
-                </div>
-                <div className="text-xl font-bold text-indigo-200">%</div>
+                 <div className="pt-8 border-t border-slate-800">
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-emerald-400 italic block mb-2">Required on Final</span>
+                    <div className={`text-7xl font-black italic tracking-tighter leading-none ${requiredOnFinal && requiredOnFinal > 100 ? "text-rose-500" : "text-emerald-400"}`}>
+                       {requiredOnFinal !== null ? Math.max(0, requiredOnFinal).toFixed(1) : "0.0"}%
+                    </div>
+                    <div className="mt-4 flex gap-2">
+                       <div className={`px-4 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-widest ${requiredOnFinal && requiredOnFinal > 100 ? "bg-rose-500/10 text-rose-500" : "bg-emerald-500/10 text-emerald-500"}`}>
+                          {requiredOnFinal && requiredOnFinal > 100 ? "High Difficulty" : "Attainable Target"}
+                       </div>
+                    </div>
+                 </div>
               </div>
+           </div>
 
-              <div className="bg-indigo-950 p-4 rounded-xl border border-indigo-800 shadow-inner inline-block min-w-[120px]">
-                <span className="block text-[10px] text-indigo-400 uppercase tracking-widest font-bold mb-1">
-                  Letter Grade
-                </span>
-                <span className="text-4xl font-black text-white">
-                  {letterGrade}
-                </span>
+           <div className="p-8 bg-white border-2 border-slate-100 rounded-[2.5rem] shadow-sm flex flex-col justify-center italic-headings">
+              <div className="text-slate-400 text-[10px] font-black uppercase mb-4 tracking-[0.3em] leading-none italic">Academic Strategy</div>
+              <div className="space-y-4">
+                 <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                    <div 
+                      className={`h-full transition-all duration-1000 ${requiredOnFinal && requiredOnFinal > 100 ? "bg-rose-500" : "bg-indigo-600"}`} 
+                      style={{ width: `${Math.min(100, Math.max(0, requiredOnFinal || 0))}%` }}
+                    ></div>
+                 </div>
+                 <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-tight italic">Final represents {finalWeight}% of total course gravity. Current gap is {(parseFloat(targetGrade) - (currentGrade || 0)).toFixed(1)} points.</p>
               </div>
-            </div>
-
-            <div className="mt-8 pt-6 border-t border-indigo-800 text-sm">
-              <ul className="space-y-2 text-indigo-200">
-                <li className="flex justify-between">
-                  <span>Graded portions:</span>
-                  <span className="font-bold text-white">
-                    {gradedAssignments.length} / {assignments.length}
-                  </span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Provided Weight:</span>
-                  <span className="font-bold text-white">
-                    {totalProvidedWeight}%
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
+           </div>
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Grade Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-          }),
-        }}
+      <CalculatorSEO
+        title={gradeData.title}
+        whatIsIt={gradeData.whatIsIt}
+        formula={gradeData.formula}
+        example={gradeData.example}
+        useCases={gradeData.useCases}
+        faqs={gradeData.faqs}
+        deepDive={gradeData.deepDive}
+        glossary={gradeData.glossary}
+        relatedCalculators={[
+          {
+            name: "GPA Calculator",
+            path: "/gpa-calculator/",
+            desc: "Convert your final grades and credits into a standardized GPA performance metric.",
+          },
+          {
+            name: "Percentage",
+            path: "/percentage-calculator/",
+            desc: "Perform quick proportional analysis on scores and category distributions.",
+          },
+          {
+            name: "Scientific",
+            path: "/scientific-calculator/",
+            desc: "Advanced mathematical modeling for engineering and science course weighting.",
+          },
+          {
+            name: "Work Hours",
+            path: "/work-hours-calculator/",
+            desc: "Track study duration relative to academic performance targets.",
+          }
+        ]}
       />
-
-      <div className="mt-8 text-left">
-        <CalculatorSEO
-          title="Weighted Course Grade & Final Exam Calculator"
-          whatIsIt={
-            <p>
-              The <strong>Class Grade Calculator</strong> is a vital academic
-              tool that helps students track exactly how well they are
-              performing in a specific course. By inputting the grade you
-              received on an assignment and the "Weight" (percentage) that
-              assignment is worth relative to the total syllabus, it calculates
-              your current standing in the class.
-            </p>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Grade Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Grade results.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Imagine your syllabus states: Homework is 20%, Midterms are 30%,
-                and the Final is 50%. You haven't taken the final yet.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-indigo-800">
-                <li>
-                  <strong>The Input:</strong> You score 100% on Homework (20%
-                  weight), and 80% on the Midterm (30% weight).
-                </li>
-                <li>
-                  <strong>The Math:</strong> (100 × 20) + (80 × 30) = 2000 +
-                  2400 = 4400 total raw points.
-                </li>
-                <li>
-                  <strong>The Scaling:</strong> Because you've only completed
-                  50% of the class's total weight (20+30), we divide the raw
-                  points by 50.
-                </li>
-                <li>
-                  <strong>The Result:</strong> 4400 ÷ 50 = <strong>88%</strong>.
-                  You currently have a strong 'B+' heading into the final exam!
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-indigo-800">
-              <li>
-                <strong>"What do I need on the Final?":</strong> Students use
-                this math in reverse—entering their current grades and seeing
-                exactly what minimum score they need on an upcoming 40% Final
-                Exam to keep their 'A'.
-              </li>
-              <li>
-                <strong>Syllabus Planning:</strong> In the first week of class,
-                dropping a "zero" into a 5% participation grade to see if
-                skipping lectures is mathematically worth losing the letter
-                grade.
-              </li>
-              <li>
-                <strong>Progress Tracking:</strong> Maintaining a running tally
-                of lab reports, essays, and quizzes throughout the semester to
-                avoid end-of-year surprises if a professor takes time updating
-                the digital gradebook.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question:
-                "What if my professor uses a 'Total Points' system instead of Weights?",
-              answer:
-                "If the syllabus says the class is out of 1,000 Total Points, simply enter the 'Max Points' for the assignment into the 'Weight' column, and enter your actual percentage score into the Grade column.",
-            },
-            {
-              question:
-                "Why is my current grade an 'A' if I've only done 10% of the course?",
-              answer:
-                "This calculator specifically shows your CURRENT standing based only on the work you have submitted so far. It scales your submitted grades up to 100% so you know your average on the material evaluated to date.",
-            },
-            {
-              question: "Does this handle extra credit?",
-              answer:
-                "Yes! If you receive 105% on an assignment, simply enter 105 in the Grade column. It will perfectly factor the mathematical overflow into your total.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "GPA Calculator",
-              path: "/gpa-calculator/",
-              desc: "Translate your final class percentage into a 4.0 scale GPA.",
-            },
-            {
-              name: "Percentage Calculator",
-              path: "/percentage-calculator/",
-              desc: "Easily figure out your grade percentage (e.g., 47/60 on a test).",
-            },
-            {
-              name: "Mean/Average Calculator",
-              path: "/mean-median-mode-calculator/",
-              desc: "Find the average if all your tests share the exact same weight.",
-            },
-            {
-              name: "Age Calculator",
-              path: "/age-calculator/",
-              desc: "Calculate your exact age in years, months, and days.",
-            }]}
-        />
-      </div>
     </div>
   );
 }

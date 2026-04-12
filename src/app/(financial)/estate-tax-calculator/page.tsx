@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import estateSeoData from "@/data/seo-content/official/estate-tax-calculator.json";
 
 export default function EstateTaxCalculator() {
   const [estateValue, setEstateValue] = useState("15000000"); // 15M
@@ -87,14 +88,14 @@ export default function EstateTaxCalculator() {
                </label>
                <div className="flex bg-white rounded-lg border border-gray-300 overflow-hidden shadow-sm">
                  <button
-                   className={`flex-1 py-3 text-sm font-bold transition ${maritalStatus === "single" ? "bg-emerald-600 text-white" : "text-gray-600 hover:bg-gray-100"}`}
-                   onClick={() => { setMaritalStatus("single"); setPassingToSpouse(false); }}
+                    className={`flex-1 py-3 text-sm font-bold transition ${maritalStatus === "single" ? "bg-emerald-600 text-white" : "text-gray-600 hover:bg-gray-100"}`}
+                    onClick={() => { setMaritalStatus("single"); setPassingToSpouse(false); }}
                  >
                    Single
                  </button>
                  <button
-                   className={`flex-1 py-3 text-sm font-bold transition ${maritalStatus === "married" ? "bg-emerald-600 text-white" : "text-gray-600 hover:bg-gray-100 border-l border-gray-300"}`}
-                   onClick={() => setMaritalStatus("married")}
+                    className={`flex-1 py-3 text-sm font-bold transition ${maritalStatus === "married" ? "bg-emerald-600 text-white" : "text-gray-600 hover:bg-gray-100 border-l border-gray-300"}`}
+                    onClick={() => setMaritalStatus("married")}
                  >
                    Married
                  </button>
@@ -171,69 +172,36 @@ export default function EstateTaxCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Estate Tax Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>Estate Tax Calculator</strong> helps high-net-worth individuals estimate their exposure to the federal "death tax". The IRS imposes an estate tax on property transferred at death, but only if the estate's value exceeds a massive lifetime exemption limit.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Standard financial analysis and amortization model for precise Estate Tax results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>If a single individual dies in 2024 with an estate worth <strong>$15,000,000</strong>:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>$15,000,000 - $13,610,000 (Exemption) = $1,390,000 Taxable Estate</li>
-              <li>The $1,390,000 is taxed at the top 40% rate (with a base tax over $1M)</li>
-              <li><strong>Resulting Tax: ~$501,800</strong></li>
-            </ul>
-          </>
-        }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Portability:</strong> A surviving spouse can use their deceased spouse's unused estate tax exemption, effectively allowing a married couple to shield over $27 million from federal estate taxes in 2024.</li></ul>}
-        faqs={[
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            },
-            {
-              question: "Can I use this on my mobile device?",
-              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
-            }]}
+        title={estateSeoData.title}
+        whatIsIt={estateSeoData.whatIsIt}
+        formula={estateSeoData.formula}
+        example={estateSeoData.example}
+        useCases={estateSeoData.useCases}
+        faqs={estateSeoData.faqs}
+        deepDive={estateSeoData.deepDive}
+        glossary={estateSeoData.glossary}
         relatedCalculators={[
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator/",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator/",
-              desc: "Calculate your exact annualized percentage returns.",
-            },
-            {
-              name: "Investment Calculator",
-              path: "/investment-calculator/",
-              desc: "Project your portfolio growth over time with compound interest.",
-            },
-            {
-              name: "Loan Payment Calculator",
-              path: "/loan-payment-calculator/",
-              desc: "Estimate your monthly loan payments and total interest cost.",
-            }]}
+          {
+            name: "ROI",
+            path: "/roi-calculator/",
+            desc: "Calculate your return on investment for asset purchases.",
+          },
+          {
+            name: "Mortgage",
+            path: "/mortgage-calculator/",
+            desc: "Calculate your monthly mortgage payments and amortization schedule.",
+          },
+          {
+            name: "Investment",
+            path: "/investment-calculator/",
+            desc: "Project your portfolio growth over time with compound interest.",
+          },
+          {
+            name: "Loan Payment",
+            path: "/loan-payment-calculator/",
+            desc: "Estimate your monthly loan payments and total interest cost.",
+          },
+        ]}
       />
     </div>
   );

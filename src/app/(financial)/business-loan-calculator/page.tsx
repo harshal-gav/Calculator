@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import businessLoanSeoData from "@/data/seo-content/official/business-loan-calculator.json";
 
 export default function BusinessLoanCalculator() {
   const [loanAmount, setLoanAmount] = useState("100000");
@@ -255,85 +256,36 @@ export default function BusinessLoanCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Business Loan Calculator"
-        whatIsIt={
-          <>
-            <p>
-              A <strong>Business Loan Calculator</strong> is a commercial financing tool that determines your exact monthly payments and total interest owed for SBA loans, term loans, and equipment financing.
-            </p>
-            <p>
-              Crucially, to find the true cost of commercial debt, this calculator factors in massive upfront "Origination Fees" that banks deduct from your payout. By calculating your <strong>Effective APR</strong>, you can objectively compare competing business loan offers.
-            </p>
-            <p className="mt-4 text-sm text-gray-500">
-              <strong>Related terms:</strong> sba loan calculator, commercial loan calculator, business financing calculator, effective apr calculator, working capital loan.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1 ]
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Standard financial analysis and amortization model for precise Business Loan results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>Imagine your small business is approved for a <strong>$100,000 working capital loan</strong>. The lender quotes you a <strong>7.5% interest rate</strong> over 5 years (60 months), with a <strong>3% origination fee</strong> plus a $500 closing cost.</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Your fixed monthly payment will be exactly <strong>$2,003.79</strong>.</li>
-              <li>Over 5 years, you will pay <strong>$20,227</strong> in pure interest.</li>
-              <li>The bank instantly subtracts $3,500 total fees before wiring the money, so you only receive <strong>$96,500</strong> to fund your business.</li>
-            </ul>
-            <p className="mt-4 text-gray-700 text-lg">
-              Because you're paying $2,003 a month on $96,500 instead of $100k, your <strong>Effective APR skyrockets to 9.07%</strong>. This is your true cost of borrowing!
-            </p>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li><strong>SBA 7(a) Loans:</strong> Projecting 10-year repayment schedules and calculating the SBA Guaranty fees into your loan costs.</li>
-            <li><strong>Offer Comparison:</strong> Choosing between a 6% loan with a huge 5% origination fee, or an 8% loan with zero fees. The Effective APR reveals the mathematical winner instantly.</li>
-            <li><strong>Equipment Financing:</strong> Calculating the cash flow burden of purchasing heavy machinery on a 36-month quick repayment cycle.</li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "What is an Origination Fee?",
-            answer: "An origination fee is an upfront percentage the lender charges for processing, underwriting, and creating the loan. In commercial lending, 2% to 5% origination fees are extremely common."
-          },
-          {
-            question: "Why should I care about Effective APR instead of Interest Rate?",
-            answer: "The 'Interest Rate' is what the bank uses to size your payment, but the 'APR' measures the real cost to your pocket, including the hundreds or thousands of dollars in fees they charged you up front to open the loan."
-          },
-          {
-            question: "Is the Origination Fee rolled into my payment or paid in cash?",
-            answer: "It is usually 'deducted from proceeds.' If you borrow $50,000 with a $1,000 fee, the lender simply deposits $49,000 into your account, but you still make payments as if you received all $50,000."
-          }
-        ]}
+        title={businessLoanSeoData.title}
+        whatIsIt={businessLoanSeoData.whatIsIt}
+        formula={businessLoanSeoData.formula}
+        example={businessLoanSeoData.example}
+        useCases={businessLoanSeoData.useCases}
+        faqs={businessLoanSeoData.faqs}
+        deepDive={businessLoanSeoData.deepDive}
+        glossary={businessLoanSeoData.glossary}
         relatedCalculators={[
           {
-            name: "Amortization Calculator",
+            name: "Amortization",
             path: "/amortization-calculator/",
-            desc: "View the exact month-by-month principal payoff schedule for your business loan."
+            desc: "View the exact month-by-month principal payoff schedule for your business loan.",
           },
           {
-            name: "Debt Consolidation Calculator",
+            name: "Debt Consolidation",
             path: "/debt-consolidation-calculator/",
-            desc: "See if you can save money by refinancing multiple expensive bridging loans into one SBA loan."
+            desc: "See if you can save money by refinancing multiple expensive bridging loans into one SBA loan.",
           },
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator/",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator/",
-              desc: "Calculate your exact annualized percentage returns.",
-            }]}
+          {
+            name: "Mortgage",
+            path: "/mortgage-calculator/",
+            desc: "Calculate your monthly mortgage payments and amortization schedule.",
+          },
+          {
+            name: "ROI",
+            path: "/roi-calculator/",
+            desc: "Calculate your exact annualized percentage returns.",
+          },
+        ]}
       />
     </div>
   );

@@ -1,0 +1,116 @@
+{
+  "title": "P/E Ratio Calculator: Pro Stock Valuation & Earnings Analysis",
+  "whatIsIt": "A **P/E Ratio Calculator** (Price-to-Earnings Ratio) is the most widely used valuation tool in the stock market. It measures a company's current share price relative to its per-share earnings (EPS). Essentially, the **pe ratio calculator** tells you how much investors are willing to pay for every $1 of a company's profit.\n\nWhether you are using a **forward pe ratio calculator** to estimate future growth or a **trailing pe calculator** to analyze historical performance, this metric is the primary filter for 'Value' vs 'Growth' investing. A high **pe ratio** often suggests that investors expect high growth in the future, while a low **pe ratio** might indicate the stock is undervalued—or that the company is in trouble.",
+  "formula": "The **pe ratio formula** is mathematically simple but relies on accurate earnings data:\n\n$P/E Ratio = \\frac{\\text{Market Value per Share}}{\\text{Earnings per Share (EPS)}}$\n\nThere are two main variations used in our **price to earnings ratio calculator**:\n1.  **Trailing P/E**: Uses the earnings from the past 12 months (actual data).\n2.  **Forward P/E**: Uses estimated earnings for the next 12 months (projections).\n3.  **Shiller P/E (CAPE)**: Uses average inflation-adjusted earnings from the last 10 years to smooth out economic cycles.",
+  "example": "Suppose you are analyzing a tech stock with the following data:\n- **Current Stock Price**: $150\n- **Earnings Per Share (Last 12 Months)**: $5.00\n- **Estimated EPS (Next Year)**: $7.50\n\n**Calculation**:\n1.  **Trailing P/E**: $150 / $5.00 = **30.0**.\n2.  **Forward P/E**: $150 / $7.50 = **20.0**.\n\n**Interpretation**: The stock is currently trading at 30x earnings, but based on growth expectations, it is only 20x future earnings. An investor using a **pe ratio calculator** would see this as a 'Growth' play with a reasonable forward valuation.",
+  "useCases": "### 1. Comparative Sector Analysis\nYou cannot compare the P/E of a tech company (like Nvidia) to a utility company (like Duke Energy). Use the **pe ratio calculator** to compare companies within the *same* industry. A software company with a 40 P/E might be 'cheaper' than a competitor with a 50 P/E.\n\n### 2. Market Bubble Detection\nEconomists use the **Shiller PE ratio calculator** (CAPE ratio) to determine if the entire S&P 500 is overvalued. Historically, an S&P 500 P/E over 25 often signals a market peak.\n\n### 3. Identifying Value Traps\nA very low P/E (e.g., 5x) often looks like a bargain. However, professional investors use a **pe ratio return calculator** to ensure the low ratio isn't because the company's earnings are about to collapse. This is known as a 'Value Trap'.\n\n### 4. Estimating Stock Price Targets\nIf you know a company usually trades at a 20x P/E and analysts expect $10 EPS next year, you can use the **price to earnings calculator** logic to estimate a target price of $200 per share ($10 x 20).",
+  "faqs": [
+    {
+      "question": "What is a 'good' P/E ratio?",
+      "answer": "There is no single 'good' number. Historically, the average P/E for the S&P 500 is around **15-17**. However, 'Good' depends on the industry. Tech stocks often have P/E ratios of **30-50**, while banks might trade at **8-12**. Always use a **pe ratio calculator** to check the industry average."
+    },
+    {
+      "question": "Does a high P/E mean a stock is expensive?",
+      "answer": "Not necessarily. A high P/E can mean investors expect the company's earnings to double or triple soon. This is why Amazon had a P/E of **100+** for years while its stock price continued to soar. Growth investors prioritize **Forward P/E** over Trailing P/E."
+    },
+    {
+      "question": "What if a company has a negative P/E?",
+      "answer": "If a company is losing money (Net Loss), it has negative earnings. Mathematically, the P/E is negative, but most **pe ratio calculators** will display 'N/A' or '-' because a negative ratio is not a useful valuation metric."
+    },
+    {
+      "question": "What is the PEG ratio?",
+      "answer": "The **PEG ratio** (Price/Earnings to Growth) improves upon the P/E by dividing it by the annual EPS growth rate. A PEG of **1.0** is considered fairly valued. You can use our **pe ratio vs peg ratio** guide to see which is better for your stock."
+    },
+    {
+      "question": "Is Forward P/E better than Trailing P/E?",
+      "answer": "Forward P/E is better for looking into the future, but it relies on 'Analyst Estimates' which can be wrong. Trailing P/E is based on 'Hard Facts' but looks in the rearview mirror."
+    },
+    {
+      "question": "How does interest rates affect P/E?",
+      "answer": "When interest rates rise, P/E ratios usually fall. This is because future earnings are worth less when 'discounted' at a higher rate. This is why tech stocks often crash when the Fed raises rates."
+    }
+  ],
+  "deepDive": "### Advanced Valuation: The Psychology & Math of the P/E Ratio\n\nTo master the **pe ratio calculator**, you must look beyond the simple division. The P/E ratio is effectively a 'Sentiment Indicator'—it's a measure of how much confidence the market has in a company’s future.\n\n#### The Yield Perspective\nThink of the P/E as the inverse of your 'Earnings Yield'. A P/E of 20 is the same as a **5% earnings yield** (1/20). If a corporate bond pays 6%, why would you buy a stock with a 5% yield? This is why professional traders always compare the **pe ratio calculator** results to current Treasury yields.\n\n#### Why Some Stocks Have Low P/E Ratios\n1.  **Cyclicality**: Auto manufacturers and airlines have low P/Es because their earnings are 'Lumpy'. Investors don't want to pay a high multiple for earnings that might disappear in a recession.\n2.  **Stagnation**: Companies that aren't growing (like some old-school tobacco or utility firms) trade at low multiples because there is no 'Future Growth' to pay for.\n3.  **Risk**: If a company has a massive legal hurdle or a mountain of debt, it will trade at a 'Discount' P/E.\n\n#### The Shiller PE (CAPE Ratio)\nDeveloped by Nobel laureate Robert Shiller, the **Cyclically Adjusted P/E** is the best tool for long-term market timing. By averaging 10 years of earnings, it removes the 'earnings spikes' seen in boom years. If the CAPE ratio is significantly above its historical mean of 17, long-term returns are statistically likely to be lower.\n\n#### Valuation vs. Price\nRemember: 'Price is what you pay, Value is what you get.' Our **stock valuation calculator** logic helps you separate the hype from the math. A stock can fall 20% in price but still become 'More Expensive' if its earnings fall 50%. Always re-calculate your **pe ratio** after every quarterly earnings release.",
+  "glossary": [
+    {
+      "term": "EPS (Earnings Per Share)",
+      "definition": "The portion of a company's profit allocated to each outstanding share of common stock."
+    },
+    {
+      "term": "Trailing P/E",
+      "definition": "A valuation ratio calculated using the past 12 months of actual reported earnings."
+    },
+    {
+      "term": "Forward P/E",
+      "definition": "A valuation ratio derived by dividing the current price by the estimated future earnings (usually for the next four quarters)."
+    },
+    {
+      "term": "Shiller P/E (CAPE)",
+      "definition": "The Cyclically Adjusted Price-to-Earnings ratio, which uses averaged, inflation-adjusted earnings over 10 years."
+    },
+    {
+      "term": "PEG Ratio",
+      "definition": "Price/Earnings to Growth; a ratio that measures the P/E relative to the company's expected earnings growth rate."
+    },
+    {
+      "term": "Value Trap",
+      "definition": "A stock that appears cheap based on a low P/E but is actually a poor investment due to deteriorating fundamentals."
+    },
+    {
+      "term": "Earnings Yield",
+      "definition": "The reciprocal of the P/E ratio (E/P), expressed as a percentage, representing the return on investment if all earnings were paid out."
+    },
+    {
+      "term": "Multiple Expansion",
+      "definition": "When a stock's P/E ratio increases even if earnings stay the same, usually due to increased investor optimism."
+    },
+    {
+      "term": "Multiple Contraction",
+      "definition": "When a stock's P/E ratio decreases despite stable or growing earnings, often due to rising interest rates or fear."
+    },
+    {
+      "term": "Price-to-Sales (P/S)",
+      "definition": "A valuation metric that compares price to total revenue; used for companies that are not yet profitable."
+    },
+    {
+      "term": "EBITDA",
+      "definition": "Earnings Before Interest, Taxes, Depreciation, and Amortization; a measure of core operating performance."
+    },
+    {
+      "term": "Dividend Payout Ratio",
+      "definition": "The percentage of earnings paid out to shareholders as dividends vs. what is kept for reinvestment."
+    },
+    {
+      "term": "Market Capitalization",
+      "definition": "The total dollar market value of a company's outstanding shares of stock."
+    },
+    {
+      "term": "Blue Chip Stock",
+      "definition": "A stock of a large, well-established, and financially sound company that has operated for many years."
+    },
+    {
+      "term": "Growth Stock",
+      "definition": "A company expected to grow its earnings at an above-average rate relative to the market."
+    },
+    {
+      "term": "Value Stock",
+      "definition": "A stock that tends to trade at a lower price relative to its fundamentals like dividends, earnings, or sales."
+    },
+    {
+      "term": "Cost of Equity",
+      "definition": "The return that a company requires to decide if an investment meets capital return requirements."
+    },
+    {
+      "term": "Intrinsic Value",
+      "definition": "The perceived or calculated true value of an asset, as opposed to its current market price."
+    },
+    {
+      "term": "Margin of Safety",
+      "definition": "The difference between a stock's intrinsic value and its market price; providing a buffer against errors in analysis."
+    },
+    {
+      "term": "P/B Ratio",
+      "definition": "Price-to-Book Ratio; compares a firm's market value to its book value."
+    }
+  ]
+}

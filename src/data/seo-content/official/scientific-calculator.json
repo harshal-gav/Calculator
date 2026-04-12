@@ -1,38 +1,112 @@
 {
-  "calculatorId": "scientific-calculator",
-  "title": "Scientific Calculator: Advanced Trigonometry, Logs & Modern Arithmetic",
-  "whatIsIt": "A Scientific Calculator is a comprehensive mathematical engine designed to handle complex computations that go beyond basic four-function arithmetic. It includes support for trigonometric functions (Sin, Cos, Tan), logarithmic and exponential operations, factorials, and root calculations, making it the indispensable tool for students in STEM (Science, Technology, Engineering, and Math) and professionals in technical fields.\n\nOur digital scientific calculator provides high-precision results for both 'Degrees' and 'Radians' modes, allowing users to solve advanced algebraic and geometric problems without requiring physical hardware. It is built to simulate the functionality of industry-standard devices like the TI-84 or Casio FX series with the convenience of a modern web interface.",
-  "formula": "Scientific calculation utilizes a hierarchy of functions rooted in calculus and algebra:\n\n1. **Trigonometry**: Based on the unit circle definitions where $\\\\sin(\\\\theta) = y/r$.\n2. **Logarithms**: The inverse of exponentiation, where $\\\\log_b(x) = y$ implies $b^y = x$.\n3. **Exponents**: $x^n$ representing repeated multiplication.\n4. **Factorials**: $n! = n \\\\times (n-1) \\\\times (n-2) \\\\times \\\\dots \\\\times 1$.",
-  "example": "Calculate the height of a building if the distance from the base is **50 meters** and the angle of elevation is **30 degrees**:\n\n1. **Identify the Function**: Use the tangent function ($\\\\tan = \\\\text{Opposite} / \\\\text{Adjacent}$).\n2. **Setup Equation**: $\\\\tan(30^\\\\circ) = \\\\text{Height} / 50$.\n3. **Solve for Height**: $\\\\text{Height} = 50 \\\\times \\\\tan(30^\\\\circ)$.\n4. **Calculate**: $\\\\tan(30^\\\\circ) \\\\approx 0.57735$. $50 \\\\times 0.57735 = 28.8675$.\n5. **Result**: The building is approximately **28.87 meters** tall.",
-  "useCases": "The scientific calculator is the primary tool for modeling the physical world:\n\n1. **Engineering Analysis**: Calculating structural loads, resonant frequencies, and electrical circuit impedance using complex trigonometry.\n2. **Physics Research**: Computing gravitational force, light refraction angles, and subatomic particle energy levels involving scientific notation and logs.\n3. **Computer Science**: Determining algorithm complexity (Big O notation) using logarithmic scales and base-2 calculations.\n4. **Advanced Chemistry**: Calculating pH levels ($-\\\\log[H^+]$) and reaction rates that follow exponential decay patterns.\n5. **Astronomy & Navigation**: Mapping stellar coordinates and calculating orbital trajectories where large-scale distances require high-precision trig functions.",
+  "title": "Scientific Calculator: Advanced Analytical & Transcendental Matrix",
+  "whatIsIt": "A **scientific calculator** is a powerhouse mathematical utility designed to solve complex problems in science, engineering, and advanced mathematics. Unlike a standard basic calculator, a scientific model handles 'Transcendental Functions' such as trigonometry, logarithms, and exponential growth, while strictly adhering to the fundamental Order of Operations (PEMDAS/BODMAS).\n\nWhether you are an aerospace engineer calculating orbital mechanics, a chemist modeling molecular half-lives, or a university student navigating calculus, this **advanced math calculator** is your primary analytical tool. By providing a bridge between abstract theory and numerical reality, this tool enables the precision required for modern technological innovation.",
+  "formula": "The scientific calculator functions as an 'Expression Evaluator' based on several core mathematical frameworks:\n\n### 1. Trigonometry (Radians/Degrees)\n- $\\sin(x), \\cos(x), \\tan(x)$\n- $\\arcsin(x), \\arccos(x), \\arctan(x)$\n\n### 2. Logarithms and Exponents\n- **Natural Log**: $\\ln(x)$ (Base $e$)\n- **Common Log**: $\\log(x)$ (Base 10)\n- **Power Functions**: $x^y$ and $\\sqrt[x]{y}$\n\n### 3. The Order of Operations (PEMDAS)\n1.  **P**: Parentheses\n2.  **E**: Exponents and Roots\n3.  **M/D**: Multiplication and Division (Left to Right)\n4.  **A/S**: Addition and Subtraction (Left to Right)",
+  "example": "Let's evaluate the expression for the height of a building given a distance of **50 meters** and an angle of elevation of **30 degrees**.\n\n### The Calculation Step-by-Step:\n1.  **Identity Function**: We use Tangent: $\\text{Height} = \\text{Distance} \\times \\tan(\\theta)$.\n2.  **Set Mode**: Ensure the calculator is in **DEG** (Degrees) mode.\n3.  **Input Data**: $50 \\times \\tan(30)$.\n4.  **Evaluate**: $\\tan(30) \\approx 0.57735$.\n5.  **Final Result**: $50 \\times 0.57735 = 28.87 \\text{ meters}$.\n\n**The Result**: The building is **28.87m** tall. Using this **trigonometry calculator** logic ensures that surveyors and architects can accurately map the physical world without manual geometric construction.",
+  "useCases": "### 1. Physics and Structural Engineering\nEngineers use scientific calculators to determine 'Stress and Strain' on bridges and skyscrapers. By inputting trigonometric functions of angles and force vectors, they ensure structures can withstand wind loads and seismic activity.\n\n### 2. Data Science and Finance\nFinancial analysts use logarithmic functions to calculate 'Compound Interest' and 'Option Pricing' (Black-Scholes model). Natural logs are essential for modeling population growth and the spread of viral information across digital networks.\n\n### 3. Machine Learning and AI Development\nAI researchers use the 'Sigmoid Function' and 'Softmax' operations (based on $e^x$) to train neural networks. This **scientific notation calculator** helps developers verify the 'Backpropagation' math that allows machines to learn from data.\n\n### 4. Astronomy and Exploration\nAstronomers use scientific calculators to handle the 'Infinite' and the 'Infinitesimal.' From the millions of light-years in distance to the microscopic wavelength of light, scientific notation ($1.0 \\times 10^n$) is the only way to manage cosmic scales.",
   "faqs": [
     {
-      "question": "What is the difference between Degrees and Radians?",
-      "answer": "Degrees divide a circle into 360 parts, common in navigation and geometry. Radians are based on the circle's radius (a full circle is $2\\\\pi$), which is the standard unit for all calculus and physics formulas."
+      "question": "What is the difference between Log and Ln?",
+      "answer": "Log (Common Logarithm) is Base 10. It asks '10 to what power gives me this number?' Ln (Natural Logarithm) is Base $e$ (approx 2.718). Natural log is used for continuous growth patterns found in nature."
     },
     {
-      "question": "What does 'e' stand for?",
-      "answer": "The number **e** (Euler's number) is approximately **2.71828**. it is the base of the natural logarithm ($\\\\ln$) and is fundamental to growth and decay models."
+      "question": "Why does $( -2 )^2 = 4$ but $-2^2 = -4$ on some calculators?",
+      "answer": "This is due to the order of operations. $( -2 )^2$ squares the 'negative two.' $-2^2$ is treated as $-(2^2)$, where the exponent is applied before the negative sign. Always use parentheses for negative bases."
     },
     {
-      "question": "What is Scientific Notation?",
-      "answer": "It is a way of writing very large or small numbers as a decimal between 1 and 10 multiplied by a power of 10 (e.g., $5.97 \\\\times 10^{24}$)."
+      "question": "What is 'Scientific Notation'?",
+      "answer": "It is a way to write very large or very small numbers. For example, $5,000,000$ can be written as $5 \\times 10^6$ (or $5e6$). This keeps calculations clean and reduces transcription errors."
     },
     {
-      "question": "Can I calculate Inverse Trig functions?",
-      "answer": "Yes. Inverse functions (like ArcSin or $\\\\sin^{-1}$) allow you to find the **angle** when you already know the ratio of the sides."
+      "question": "When should I use Radians instead of Degrees?",
+      "answer": "Use Degrees for navigation and construction. Use Radians for Calculus and pure physics. Radians correlate the angle directly to the arc length of a circle ($r = 1$), making the math more 'elegant' for derivatives."
     },
     {
-      "question": "What is 'Log' vs 'Ln'?",
-      "answer": "**Log** usually refers to base-10 (the common log), while **Ln** refers to base-e (the natural log)."
+      "question": "Can this calculator solve quadratic equations?",
+      "answer": "Yes. By using the square root and exponent functions, you can manually solve for $x$ in $ax^2 + bx + c = 0$ using the quadratic formula $x = [-b \\pm \\sqrt{b^2 - 4ac}] / 2a$."
     }
   ],
-  "deepDive": "**The Language of the Universe: From Slide Rules to Silicon**\n\nBefore digital scientific calculators, engineers relied on 'Slide Rules'—analog devices that used logarithmic scales to multiply and divide through physical sliding. The digital revolution in the 1970s, led by the Hewlett-Packard HP-35, forever changed the speed of human discovery, allowing NASA engineers to perform complex orbital mechanics in seconds rather than hours.\n\n**The 'CORDIC' Algorithm**: Behind the screen, our calculator doesn't just 'know' the value of $\\\\sin(45^\\\\circ)$. It uses sophisticated algorithms like CORDIC (COordinated Rotation DIgital Computer) or Taylor Series expansions to approximate these transcendental values to 15+ decimal places of precision. This ensures that whether you are doing simple high-school trigonometry or analyzing the wave functions of quantum mechanics, you are working with the highest standard of mathematical accuracy. Understanding the functions on this calculator is the first step in mastering the mathematical frameworks that govern everything from the architecture of bridges to the data transmission of our global internet.",
+  "deepDive": "### From Slide Rules to Silicon\n\nBefore digital scientific calculators (like the HP-35 introduced in 1972), engineers used **Slide Rules**. These were analog devices that used logarithmic scales to allow for multiplication and division through the simple sliding of a ruler. The move to digital calculators revolutionized technical productivity, allowing calculations that took minutes to be completed in milliseconds.\n\n### The Euler Constant (e) and PI\nScientific calculators prioritize 'Irrational Constants.'\n- **Pi (3.1415...)**: The ratio of a circle's circumference to its diameter, vital for anything involving rotation or waves.\n- **e (2.7182...)**: The base of the natural logarithm, appearing in every formula involving growth, decay, and probability.\n\n### Rounding Errors and Floating-Point Math\nCalculators work with 'Floating-Point Arithmetic.' Because some numbers (like $1/3$) go on forever, the calculator must eventually 'truncate' the result. High-end scientific calculators use 10 to 15 digits of internal precision to minimize 'Cumulative Error' in long chain calculations, ensuring the final answer remains reliable to the 4th or 5th decimal place.\n\n### Symbolic Manipulation vs. Numerical Output\nWhile most scientific calculators provide a decimal 'Numerical' answer (1.414), 'Computer Algebra Systems' (CAS) can provide 'Symbolic' answers (sqrt(2)). This **analytical calculator** focuses on numerical precision, which is the industry standard for experimental science and field engineering where a specific physical measurement is required.",
   "glossary": [
-    { "term": "Trigonometry", "definition": "The study of the relationships between the sides and angles of triangles." },
-    { "term": "Logarithm", "definition": "The power to which a base must be raised to produce a given number." },
-    { "term": "Radian", "definition": "The standard unit of angular measure used in many areas of mathematics." },
-    { "term": "Constant", "definition": "A mathematical value that does not change (e.g., $\\\\pi$ or $e$)." },
-    { "term": "Precision", "definition": "The number of significant digits or decimal places used in a calculation." }
+    {
+      "term": "Trigonometry",
+      "definition": "The branch of mathematics dealing with the relations of the sides and angles of triangles and with the relevant functions of any angles."
+    },
+    {
+      "term": "Logarithm",
+      "definition": "The power to which a fixed number (the base) must be raised to produce a given number."
+    },
+    {
+      "term": "Natural Logarithm (Ln)",
+      "definition": "A logarithm with base $e$, where $e$ is an irrational constant approximately equal to 2.718."
+    },
+    {
+      "term": "PEMDAS",
+      "definition": "Parentheses, Exponents, Multiplication, Division, Addition, Subtraction; the standard order of operations."
+    },
+    {
+      "term": "Radian",
+      "definition": "A unit of angle, equal to an angle at the center of a circle whose arc is equal in length to the radius."
+    },
+    {
+      "term": "Scientific Notation",
+      "definition": "A way of expressing numbers that are too large or too small to be conveniently written in decimal form."
+    },
+    {
+      "term": "Exponent",
+      "definition": "A quantity representing the power to which a given number or expression is to be raised."
+    },
+    {
+      "term": "Square Root",
+      "definition": "A number that when multiplied by itself gives a given number."
+    },
+    {
+      "term": "Irrational Number",
+      "definition": "A real number that cannot be expressed as a ratio of two integers; its decimal goes on forever without repeating."
+    },
+    {
+      "term": "Float",
+      "definition": "A data type in computing used to represent non-integer real numbers."
+    },
+    {
+      "term": "Mantissa",
+      "definition": "The part of a logarithm after the decimal point; in scientific notation, the digits multiplied by the power of 10."
+    },
+    {
+      "term": "Sine (Sin)",
+      "definition": "The trigonometric function that is equal to the ratio of the side opposite a given angle to the hypotenuse."
+    },
+    {
+      "term": "Cosine (Cos)",
+      "definition": "The trigonometric function that is equal to the ratio of the side adjacent to an acute angle to the hypotenuse."
+    },
+    {
+      "term": "Tangent (Tan)",
+      "definition": "The trigonometric function that is equal to the ratio of the sides (other than the hypotenuse) opposite and adjacent to an angle."
+    },
+    {
+      "term": "Arcsin",
+      "definition": "The inverse of the sine function."
+    },
+    {
+      "term": "Factorial (!)",
+      "definition": "The product of an integer and all the integers below it."
+    },
+    {
+      "term": "Absolute Value",
+      "definition": "The magnitude of a real number without regard to its sign."
+    },
+    {
+      "term": "Calculus",
+      "definition": "The mathematical study of continuous change, using derivatives and integrals."
+    },
+    {
+      "term": "Variable",
+      "definition": "A quantity that may change within the context of a mathematical problem or experiment."
+    },
+    {
+      "term": "Constant",
+      "definition": "A number that has a fixed value in a given mathematical context (e.g., PI, E)."
+    }
   ]
 }

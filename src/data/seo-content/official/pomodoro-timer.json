@@ -1,0 +1,41 @@
+{
+  "title": "Pomodoro Timer & Productivity Focus Tool",
+  "whatIsIt": "The Pomodoro Timer is a time-management utility based on the Pomodoro Technique, developed by Francesco Cirillo in the late 1980s. It uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short breaks. This method is scientifically proven to improve concentration and prevent mental fatigue by providing regular periods of neurological recovery.",
+  "formula": "The standard productivity cycle follows a repetitive algorithmic loop: \\n1. Focus Session: 25 minutes. \\n2. Short Break: 5 minutes. \\n3. Repeat four times. \\n4. Long Break: 15-30 minutes. \\n\\n$$\\text{Total Cycle Time} = [(\\text{Focus} + \\text{Short Break}) \\times 3] + \\text{Focus} + \\text{Long Break}$$",
+  "example": "If you start work at 9:00 AM: \\n1. Work until 9:25 AM. \\n2. Break until 9:30 AM. \\n3. Work until 9:55 AM. \\n4. Break until 10:00 AM. \\n\\nYou have completed 50 minutes of deep work with only 10 minutes of total downtime, significantly higher efficiency than unregulated multitasking.",
+  "useCases": [
+    "Deep Work: Focusing on complex tasks like coding, writing, or data analysis without distraction.",
+    "Exam Preparation: Breaking long study sessions into manageable chunks to improve information retention.",
+    "Household Chores: Gamifying boring tasks by racing against the 25-minute clock.",
+    "Burnout Prevention: Forcing regular breaks for individuals prone to overworking."
+  ],
+  "faqs": [
+    {
+      "question": "Why 25 minutes specifically?",
+      "answer": "25 minutes is considered the 'sweet spot' for most adults—long enough to achieve flow, but short enough to avoid the mental drift that occurs during massive 2+ hour sessions."
+    },
+    {
+      "question": "Can I adjust the times?",
+      "answer": "Yes. While the standard is 25/5, many people find success with '50/10' (The Rule of 52 and 17) or other custom variations that suit their specific attention span."
+    },
+    {
+      "question": "What should I do during the break?",
+      "answer": "Ideally, you should step away from your screen. Stretch, grab water, or look out a window. Avoiding digital stimulation during breaks maximizes the recovery of your prefrontal cortex."
+    }
+  ],
+  "deepDive": "The Pomodoro Technique works because it creates 'temporal scarcity'. When you have an unlimited amount of time to finish a task, you are more likely to procrastinate (Parkinson’s Law). By setting a visible, ticking timer, you create a sense of urgency. Furthermore, the mandatory breaks prevent the 'Attentional Blink'—a phenomenon where the brain stops paying attention to a task after too long, even if you think you are still focused.",
+  "glossary": [
+    {
+      "term": "Flow State",
+      "definition": "A mental state of operation in which a person performing an activity is fully immersed in a feeling of energized focus."
+    },
+    {
+      "term": "Temporal Scarcity",
+      "definition": "The psychological effect of having a limited amount of time, which increases perceived value and focus on a task."
+    },
+    {
+      "term": "Cognitive Load",
+      "definition": "The total amount of mental effort being used in the working memory."
+    }
+  ]
+}

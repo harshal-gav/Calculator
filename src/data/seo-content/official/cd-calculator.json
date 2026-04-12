@@ -1,0 +1,112 @@
+{
+  "title": "CD Calculator: Certificate of Deposit Yield & Maturity Analysis",
+  "whatIsIt": "A **CD calculator** (Certificate of Deposit calculator) is a specialized investment tool that predicts the exact future value of a fixed-term deposit. Unlike a standard savings account where rates can fluctuate monthly, a CD locks in a specific interest rate for a predetermined period (the term).\n\nThis **cd investment calculator** is essential for conservative investors who prioritize capital preservation and guaranteed returns. By inputting your initial deposit, annual percentage yield (APY), and the length of the term, you can see exactly how much interest will be waiting for you upon maturity, allowing you to plan your cash flow with institutional precision.",
+  "formula": "The CD maturity calculation follows the standard compound interest formula:\n\n### The CD Growth Formula\n$A = P \\left(1 + \\frac{r}{n}\\right)^{nt}$\n\n- **A**: The future value (Maturity Value)\n- **P**: Principal (Initial Deposit)\n- **r**: Annual Interest Rate (Nominal Decimal)\n- **n**: Number of times interest compounds per year (e.g., 12 for monthly, 365 for daily)\n- **t**: Time in years\n\n### Effective Yield (APY)\n$APY = \\left(1 + \\frac{r}{n}\\right)^n - 1$",
+  "example": "If you deposit **$10,000** into a **5-year CD** with an **APY of 5.0%** compounding **daily**:\n\n- **Principle**: $10,000\n- **Rate**: 0.04879 (nominal rate required to reach 5% APY)\n- **Calculation**: $10,000 \\times (1 + 0.04879/365)^{365 \\times 5}$\n\n**The Result**: At maturity, your account will be worth **$12,840.25**. You have earned **$2,840.25 in risk-free interest**. Using a **calculate interest on cd** tool ensures you don't underestimate the power of daily compounding over long durations.",
+  "useCases": "### 1. CD Laddering Strategy\nInvestors use multiple certificates to build a 'CD Ladder.' By splitting $50,000 into five $10,000 CDs maturing 1, 2, 3, 4, and 5 years out, you ensure that a portion of your money becomes liquid every year while still capturing higher long-term rates. Use this **cd yield calculator** to project each 'rung' of your ladder.\n\n### 2. Retirement Cash Flow Planning\nIf you are entering retirement, you can use CDs to 'bucket' your spending money for the next 2-3 years. This guarantees that market crashes won't affect your ability to pay bills, as your CD returns are legally contracted by the bank.\n\n### 3. Hedging Against Falling Rates\nIf you believe interest rates will drop in the next 12 months, 'locking in' a high rate today with a long-term CD is a savvy move. This calculator helps you see the 'locked' value vs. what you might get in a variable savings account.\n\n### 4. Educational Savings\nFor a child's college tuition due in 2 years, a CD offers better returns than a checking account with zero risk to the principal, unlike the stock market.",
+  "faqs": [
+    {
+      "question": "What is an Early Withdrawal Penalty (EWP)?",
+      "answer": "If you need your money before the CD term ends, banks charge a penalty. This is often calculated as a specific number of months of interest (e.g., 6 months of interest). In some cases, this can even eat into your original principal."
+    },
+    {
+      "question": "Is CD interest taxable?",
+      "answer": "Yes. In the United States, CD interest is taxed as regular income (not capital gains). You will receive a 1099-INT form from your bank each year."
+    },
+    {
+      "question": "Are CDs FDIC insured?",
+      "answer": "Yes, as long as the bank is an FDIC member. The standard insurance limit is $250,000 per depositor, per insured bank, for each account ownership category."
+    },
+    {
+      "question": "What happens when my CD matures?",
+      "answer": "Usually, you have a 10-day 'grace period' to withdraw the money. If you do nothing, most banks will automatically roll the balance into a new CD of the same term at the current prevailing rate."
+    },
+    {
+      "question": "Can I add money to an existing CD?",
+      "answer": "Generally, no. Most CDs allow only a single initial deposit. If you want to save more, you usually have to open a new, separate CD (or a 'Add-On CD' if the bank offers it)."
+    }
+  ],
+  "deepDive": "### CD Math: The Conflict Between Liquidity and Yield\n\nThe fundamental trade-off in banking is **liquidity**. Banks reward you for giving them 'certainty' over your capital. By using a **cd investment calculator**, you are measuring the cost of that certainty. \n\n#### Daily vs. Monthly Compounding\nWhile a 5% rate sounds the same regardless of frequency, daily compounding adds a 'boost' noticed in this calculator. For large deposits ($100k+), the difference between annual compounding and daily compounding can be hundreds of dollars over a 5-year term. Always check the 'fine print' to see how your bank calculates yield.\n\n#### The Real Return: Inflation vs. CD Yields\nA 4% CD sounds great, but if inflation is 5%, you are technically losing 1% of your purchasing power every year. Sophisticated users and financial planners use this **cd yield calculator** to ensure their 'Real Rate of Return' (Nominal Rate - Inflation) stays positive over the long haul.\n\n#### Strategy: The Barbell Approach\nSome investors use a 'Barbell' strategy—keeping 50% of funds in short-term 3-month CDs for liquidity and 50% in long-term 5-year CDs for maximum yield. This calculator allows you to model both ends of the barbell to find your optimal weighted average return.\n\n#### Brokerage CDs vs. Bank CDs\nBrokerage CDs (bought through companies like Fidelity or Schwab) can sometimes be sold on a secondary market before maturity without a traditional 'Early Withdrawal Penalty,' but their market value might fluctuate based on current interest rates. Standard bank CDs, however, have a fixed penalty and stable principal.",
+  "glossary": [
+    {
+      "term": "Term",
+      "definition": "The length of time you agree to leave your money in a CD (e.g., 6 months, 5 years)."
+    },
+    {
+      "term": "Maturity Date",
+      "definition": "The day the CD term ends and you can withdraw your funds without penalty."
+    },
+    {
+      "term": "APY (Annual Percentage Yield)",
+      "definition": "The total amount of interest you earn on an account in one year, including compounding."
+    },
+    {
+      "term": "CD Ladder",
+      "definition": "A strategy of opening several CDs with different maturity dates to maintain liquidity while earning higher rates."
+    },
+    {
+      "term": "Early Withdrawal Penalty",
+      "definition": "A fee charged by the bank for taking money out of a CD before the maturity date."
+    },
+    {
+      "term": "FDIC Insurance",
+      "definition": "U.S. government protection that guarantees your deposits up to $250,000 if the bank fails."
+    },
+    {
+      "term": "Compounding",
+      "definition": "The process where your interest earns its own interest, increasing the total balance exponentially."
+    },
+    {
+      "term": "Nominal Interest Rate",
+      "definition": "The stated interest rate on a CD before accounting for the effects of compounding."
+    },
+    {
+      "term": "Grace Period",
+      "definition": "A short window of time (usually 7-10 days) after a CD matures during which you can withdraw money before it automatically renews."
+    },
+    {
+      "term": "Principal",
+      "definition": "The original amount of money you deposited into the CD."
+    },
+    {
+      "term": "Brokerage CD",
+      "definition": "A certificate of deposit purchased through a stockbroker rather than directly from a bank."
+    },
+    {
+      "term": "Rollover",
+      "definition": "The automatic renewal of a CD for a new term at the current interest rate."
+    },
+    {
+      "term": "Simple Interest",
+      "definition": "Interest calculated only on the principal amount, with no compounding."
+    },
+    {
+      "term": "Inflation Risk",
+      "definition": "The risk that the return on a CD won't keep up with the rising cost of living."
+    },
+    {
+      "term": "Liquidity",
+      "definition": "How quickly and easily you can access your cash without losing value."
+    },
+    {
+      "term": "Jumbo CD",
+      "definition": "A CD that requires a very large initial deposit, typically $100,000 or more, often offering a higher rate."
+    },
+    {
+      "term": "Bump-Up CD",
+      "definition": "A type of CD that gives you the option to 'bump up' your interest rate to a higher one if market rates rise during your term."
+    },
+    {
+      "term": "Liquid CD",
+      "definition": "A CD that allows you to withdraw part of your deposit without penalty, usually in exchange for a lower APY."
+    },
+    {
+      "term": "1099-INT",
+      "definition": "The tax form used by banks to report interest income earned by depositors during the year."
+    },
+    {
+      "term": "Yield",
+      "definition": "The income return on an investment, such as the interest or dividends received from holding a particular security."
+    }
+  ]
+}

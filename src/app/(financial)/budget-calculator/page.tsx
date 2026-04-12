@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import budgetSeoData from "@/data/seo-content/official/budget-calculator.json";
 
 export default function BudgetCalculator() {
   const [income, setIncome] = useState("5000");
@@ -150,69 +151,36 @@ export default function BudgetCalculator() {
       </div>
 
       <CalculatorSEO
-        title="50/30/20 Budget Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>Budget Calculator</strong> leverages the famous 50/30/20 rule established by Senator Elizabeth Warren. It is a simple, high-level blueprint for managing personal cash flow without the complexity of tracking every individual cent.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Budget Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Budget results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>If you take home $5,000 per month after taxes:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li><strong>Needs (50%):</strong> $2,500 for rent, insurance, gas, and basic groceries.</li>
-              <li><strong>Wants (30%):</strong> $1,500 for Netflix, Starbucks, dining out, and travel.</li>
-              <li><strong>Savings (20%):</strong> $1,000 for emergency funds and retirement accounts.</li>
-            </ul>
-          </>
-        }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Lifestyle Inflation Check:</strong> Whenever you receive a raise at work, run your new salary through this calculator to ensure you aren't immediately increasing your "wants" and keeping your "savings" stagnant.</li></ul>}
-        faqs={[
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            },
-            {
-              question: "Can I use this on my mobile device?",
-              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
-            }]}
+        title={budgetSeoData.title}
+        whatIsIt={budgetSeoData.whatIsIt}
+        formula={budgetSeoData.formula}
+        example={budgetSeoData.example}
+        useCases={budgetSeoData.useCases}
+        faqs={budgetSeoData.faqs}
+        deepDive={budgetSeoData.deepDive}
+        glossary={budgetSeoData.glossary}
         relatedCalculators={[
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator/",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator/",
-              desc: "Calculate your exact annualized percentage returns.",
-            },
-            {
-              name: "Investment Calculator",
-              path: "/investment-calculator/",
-              desc: "Project your portfolio growth over time with compound interest.",
-            },
-            {
-              name: "Loan Payment Calculator",
-              path: "/loan-payment-calculator/",
-              desc: "Estimate your monthly loan payments and total interest cost.",
-            }]}
+          {
+            name: "Mortgage",
+            path: "/mortgage-calculator/",
+            desc: "Calculate your monthly mortgage payments and amortization schedule.",
+          },
+          {
+            name: "ROI",
+            path: "/roi-calculator/",
+            desc: "Calculate your exact annualized percentage returns.",
+          },
+          {
+            name: "Investment",
+            path: "/investment-calculator/",
+            desc: "Project your portfolio growth over time with compound interest.",
+          },
+          {
+            name: "Loan Payment",
+            path: "/loan-payment-calculator/",
+            desc: "Estimate your monthly loan payments and total interest cost.",
+          },
+        ]}
       />
     </div>
   );

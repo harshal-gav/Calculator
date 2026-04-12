@@ -1,0 +1,41 @@
+{
+  "title": "Number to Words Converter & Cheque Amount Tool",
+  "whatIsIt": "The Number to Words Converter is a linguistic utility that transforms numerical digits into their full written English equivalents (e.g., 123 to 'One Hundred Twenty-Three'). This tool is critical for financial documentation, legally binding contracts, and cheque writing, where written words are often legally prioritized over numerical digits to prevent tampering or errors.",
+  "formula": "The logic utilizes a recursive grouping model based on the standard 'Large Number' system: \\n1. Grouping: Divide the number into triplets (hundreds, thousands, millions, etc.). \\n2. Translation: Map digits to their base-10 strings (units, teens, tens). \\n3. Concatenation: Join the strings with appropriate recursive scale identifiers (e.g., 'thousand', 'million').",
+  "example": "If the number 1,250 is entered: \\n1. Break down: $1$ (Thousands group) and $250$ (Units group). \\n2. Translate: 'One' + 'Thousand' + 'Two Hundred Fifty'. \\n3. Result: 'One Thousand Two Hundred Fifty'. \\n\\nIn a legal context, this eliminates ambiguity between '1,250' and '12.50'.",
+  "useCases": [
+    "Cheque Writing: Ensuring the 'Legal Amount' line on a bank cheque is written correctly and clearly.",
+    "Legal Contracts: Stipulating payment amounts in written form to comply with official document standards.",
+    "Academic Teaching: Helping students learn the proper spelling and capitalization rules for large numbers.",
+    "Accessibility: Converting complex data values into readable text for screen readers and speech synthesis."
+  ],
+  "faqs": [
+    {
+      "question": "Does it support the 'and' in numbers (British vs. American)?",
+      "answer": "Yes. While American English often omits the 'and' (e.g., 'One Hundred Twenty'), British English typically includes it (e.g., 'One Hundred and Twenty'). This tool follows standard international conventions."
+    },
+    {
+      "question": "What is the largest number it can convert?",
+      "answer": "Most digital converters handle up to Quadrillions or Quintillions. Beyond this, scientific notation is typically used instead of written words."
+    },
+    {
+      "question": "Does it handle decimals for currency?",
+      "answer": "Yes. For financial use, it often converts decimals into cents (e.g., '.50' becomes 'Fifty Cents' or '50/100')."
+    }
+  ],
+  "deepDive": "The transformation of numbers to words is a safeguard built into the global financial system. According to the Uniform Commercial Code (UCC) in the United States, if the words and the numbers on a cheque or contract conflict, the written words prevail. This makes accurate conversion a matter of legal security, not just grammatical correctness.",
+  "glossary": [
+    {
+      "term": "Cardinal Number",
+      "definition": "A number say 1, 2, 3, etc., used in counting to indicate quantity but not order."
+    },
+    {
+      "term": "Billion (Short Scale)",
+      "definition": "The standard in the US and UK where a billion equals one thousand million ($10^9$)."
+    },
+    {
+      "term": "Legal Amount",
+      "definition": "The amount written in words on a financial instrument, which is considered the authoritative value."
+    }
+  ]
+}

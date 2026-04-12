@@ -1,0 +1,112 @@
+{
+  "title": "Rent vs Buy Calculator: Should You Rent or Buy a House?",
+  "whatIsIt": "A **rent vs buy calculator** is an advanced financial engine designed to compare the total cost of renting a home against the total cost of ownership over a specific period. It goes far beyond a simple monthly payment comparison, accounting for 'unrecoverable costs' like property taxes, maintenance, and lost investment opportunities.\n\nWhether you are looking for a **mortgage vs rent** sanity check or an analysis as detailed as the **new york times buy vs rent** tool, this calculator provides the data-driven clarity needed to make one of life's biggest financial decisions. It helps you navigate the complex trade-off between the flexibility of renting and the equity-building potential of owning.",
+  "formula": "To determine the winner, we compare the **Unrecoverable Costs** of both paths:\n\n### 1. The 5% Rule (Rule of Thumb)\nDeveloped by Ben Felix, this quick check estimates ownership costs at roughly 5% of the home's value annually:\n- **Property Tax**: ~1%\n- **Maintenance**: ~1%\n- **Cost of Capital**: ~3% (The difference between mortgage interest and expected stock market returns).\n\n### 2. The Renting Path\n$\\text{Total Rent Cost} = \\sum (\\text{Monthly Rent} + \\text{Renters Insurance}) - \\text{Investment Returns on Down Payment Savings}$\n\n### 3. The Buying Path\n$\\text{Total Buying Cost} = \\sum (\\text{Interest} + \\text{Property Tax} + \\text{Insurance} + \\text{Maintenance} + \\text{Closing Costs}) - \\text{Home Appreciation}$",
+  "example": "Let's use a **should i rent or buy a house calculator** scenario for a 10-year period:\n\n- **Rent Option**: $2,500/month rent, increasing by 3% annually.\n- **Buy Option**: $400,000 home, $80,000 down (20%), 6.5% interest rate.\n\n**The Comparison**:\n- **After 10 Years (Rent)**: You spent $344,000 in rent. Your $80,000 down payment, if invested in the stock market (7%), grew to $157,000.\n- **After 10 Years (Buy)**: You paid $210,000 in interest and $80,000 in taxes/maintenance. However, your home grew in value to $537,000 (3% growth), and you paid off $50,000 of the loan.\n\n**The Result**: If the 'Buying' net worth ($267k equity) is higher than the 'Renting' net worth ($157k stocks) after adjusted costs, then **buying** is the clear winner.",
+  "useCases": "### 1. Relocation Decisions\nIf you plan to stay in an area for less than 5 years, a **rent vs own calculator** will almost always favor renting. This is because the high 'entry' and 'exit' costs of buying (6-10% in closing and agent fees) require several years of appreciation to break even.\n\n### 2. High Interest Rate Environments\nWhen mortgage rates are high, the 'Cost of Capital' for buying spikes. Use this as a **rent vs mortgage calculator** to see if it's cheaper to stay in your rent-controlled apartment and invest your down payment in the S&P 500 until rates drop.\n\n### 3. Lifestyle Flexibility\nFor those who prioritize career mobility, the **renting vs buying a house calculator** logic shows that the 'optionality' of renting has a concrete financial value. Buying locks your capital into a single illiquid asset.\n\n### 4. Long-Term Wealth Planning\nFor families staying 15+ years, the **rent vs buy home calculator** usually reveals a massive advantage for ownership, as the 'inflation-locked' mortgage payment stays flat while market rents likely double over decades.",
+  "faqs": [
+    {
+      "question": "What is the 'Breakeven Point'?",
+      "answer": "The breakeven point is the number of years you must live in a home for the costs of buying to be less than the costs of renting. In most U.S. markets, this ranges from 4 to 7 years."
+    },
+    {
+      "question": "Does buying a house always build wealth better than renting?",
+      "answer": "No. If you rent a small apartment and aggressively invest the difference in price and maintenance into a diversified stock portfolio, you can often end up with a higher net worth than a homeowner, depending on market performance."
+    },
+    {
+      "question": "How do interest rates affect the Rent vs. Buy decision?",
+      "answer": "Higher interest rates increase the unrecoverable cost of buying. When rates rise, the 'rent vs buy' needle shifts significantly toward renting, as your monthly interest payment is essentially 'rent' paid to the bank."
+    },
+    {
+      "question": "What are 'Unrecoverable Costs'?",
+      "answer": "Money that is gone forever and doesn't build equity. For renters, it's 100% of the rent. For buyers, it's mortgage interest, property taxes, HOA fees, and maintenance."
+    },
+    {
+      "question": "Which is safer in a recession?",
+      "answer": "Renting offers more safety as you can downsize easily. Buying carries the risk of 'negative equity' if home prices fall below your loan balance, potentially trapping you in the property."
+    }
+  ],
+  "deepDive": "### The Science of 'Rent vs Buy': Decoding the Opportunity Cost\n\nTo truly understand **is it better to rent or buy calculator** results, you must master the concept of **Unrecoverable Costs**. Most people compare rent to a mortgage payment, but this is a 'category error.' A mortgage payment contains *equity* (savings) and *interest* (cost). Rent is 100% cost.\n\n#### The Phantom Costs of Ownership\nA **rent vs own house calculator** must account for the things no one talks about at the closing table: \n1. **Maintenance (1% Rule)**: Expect to spend 1% of the home's value every year on roofs, HVACS, and leaks. \n2. **Capital Opportunity Cost**: If you put $100k into a house, you lost the ~7-10% that $100k could have earned in a low-cost index fund. This is the single biggest 'hidden' cost of buying.\n\n#### The Rent Inflation Shield\nThe hidden superpower of buying is the **Inflation Hedge**. Your mortgage (the principal and interest part) is a fixed nominal payment. As inflation rises, your salary likely goes up, and your home value goes up, but your debt stays the same. Renters, conversely, are exposed to 100% of the market inflation indefinitely.\n\n#### The 'Price-to-Rent' Ratio\nA quick way to use **rent versus buy analysis** at a glance is the Price-to-Rent ratio: \n$\\text{Ratio} = \\text{Median Home Price} / \\text{Median Annual Rent}$. \n- **Below 15**: Buying is usually much cheaper. \n- **16 to 20**: It's a toss-up; depends on your stay duration. \n- **21+**: Renting is almost certainly the smarter financial move.\n\n#### Tax Implications and the Standard Deduction\nSince the 2017 Tax Cuts and Jobs Act, the mortgage interest deduction is less valuable for many middle-class families because the standard deduction is so high. Our **detailed rent vs buy calculator** takes this into account, ensuring you aren't overestimating the 'tax breaks' of owning a home in the modern era.",
+  "glossary": [
+    {
+      "term": "Unrecoverable Costs",
+      "definition": "The total of rent or the sum of mortgage interest, property taxes, and maintenance that do not build equity."
+    },
+    {
+      "term": "Opportunity Cost",
+      "definition": "The potential gain from other alternatives (like the stock market) when one alternative (like a house down payment) is chosen."
+    },
+    {
+      "term": "Appreciation",
+      "definition": "The increase in the value of an asset (home) over time."
+    },
+    {
+      "term": "Equity",
+      "definition": "The portion of a property's value that the owner actually 'owns' (Market Value - Loan Balance)."
+    },
+    {
+      "term": "Closing Costs",
+      "definition": "Fees associated with the purchase and sale of a home, typically 2-5% for buyers and 5-6% for sellers."
+    },
+    {
+      "term": "Breakeven Horizon",
+      "definition": "The point in time where the total cost of ownership becomes lower than the total cost of renting."
+    },
+    {
+      "term": "Price-to-Rent Ratio",
+      "definition": "A metric used to compare the relative affordability of buying vs. renting in a specific market."
+    },
+    {
+      "term": "Amortization",
+      "definition": "The process of paying off a debt over time through regular installments."
+    },
+    {
+      "term": "Net Worth Impact",
+      "definition": "The final total value of your assets (house equity + investments) at the end of the analysis period."
+    },
+    {
+      "term": "Maintenance Reserve",
+      "definition": "Funds set aside (usually 1% of home value annually) for repairs and upkeep."
+    },
+    {
+      "term": "Rent Inflation",
+      "definition": "The annual percentage increase in the cost of rent."
+    },
+    {
+      "term": "HOA Fees",
+      "definition": "Homeowners Association fees; recurring costs for community maintenance which are unrecoverable."
+    },
+    {
+      "term": "Nominal vs. Real Returns",
+      "definition": "Nominal returns are the raw percentage; real returns are adjusted for inflation."
+    },
+    {
+      "term": "LTV (Loan-to-Value)",
+      "definition": "The ratio of the mortgage amount to the appraised value of the home."
+    },
+    {
+      "term": "Standard Deduction",
+      "definition": "A flat amount that reduces taxed income, which often exceeds the benefit of itemizing mortgage interest."
+    },
+    {
+      "term": "Asset Concentration",
+      "definition": "The risk of having too much of your net worth tied up in a single asset (the home)."
+    },
+    {
+      "term": "Liquidity",
+      "definition": "The ease with which an asset can be converted into cash (homes are illiquid assets)."
+    },
+    {
+      "term": "Capital Gains Exclusion",
+      "definition": "A tax rule allowing individuals to exclude up to $250k (or $500k for couples) of profit from a home sale from taxes."
+    },
+    {
+      "term": "Step-up in Basis",
+      "definition": "A tax benefit where the value of an inherited asset is adjusted to its current market value."
+    },
+    {
+      "term": "PITI",
+      "definition": "Principal, Interest, Taxes, and Insurance; the total monthly cost of a mortgage."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Tile Calculator: Estimate Floor & Wall Tile Requirements",
+  "whatIsIt": "The Tile Calculator is an essential planning tool for home renovation and construction projects. It calculates the precise number of tiles needed for a specific area—whether it's a kitchen backsplash, bathroom floor, or outdoor patio—by dividing the total square footage of the space by the dimensional area of a single tile. Crucially, it includes a 'waste margin' to account for cutting, breakage, and future repairs, ensuring you don't run out of materials mid-project.",
+  "formula": "To find the number of tiles required:\n\n1. Calculate Total Area (sq ft) = Length (ft) × Width (ft)\n2. Calculate Tile Area (sq ft) = [Tile Length (in) × Tile Width (in)] / 144\n3. Pure Tile Count = Total Area / Tile Area\n4. Final Order = Pure Tile Count × (1 + Waste Percentage / 100)",
+  "example": "If you are tiling a 10ft x 12ft room (120 sq ft) with standard 12x12 inch tiles (1 sq ft each):\n\n- Total Area: 10 × 12 = 120 sq ft\n- Tile Area: (12 × 12) / 144 = 1 sq ft\n- Pure Tiles: 120 / 1 = 120 tiles\n- Plus 10% Waste Margin: 120 × 1.10 = 132 tiles\n- Final Result: You should purchase 132 tiles.",
+  "useCases": [
+    "DIY Bathroom Flooring Projects",
+    "Kitchen Backsplash Material Estimation",
+    "Commercial Real Estate Renovation Planning",
+    "Pool Deck Tiling and Outdoor Landscaping"
+  ],
+  "faqs": [
+    {
+      "question": "What is the recommended waste percentage for tiling?",
+      "answer": "Most professional contractors recommend a minimum of 10% waste for standard straight-lay patterns. If you are doing a diagonal or herringbone pattern, increase the margin to 15% due to the higher number of edge cuts required."
+    },
+    {
+      "question": "Should I buy extra tiles for future use?",
+      "answer": "Yes. It is highly recommended to keep at least 5-10 extra tiles after the project is finished. Tile batches (dye lots) vary over time, and if a tile cracks in 5 years, finding an exact match might be impossible."
+    },
+    {
+      "question": "How do I calculate tiles for an L-shaped room?",
+      "answer": "Break the L-shaped space into two separate rectangular sections. Calculate the area for each rectangle, add them together to get the total square footage, and then use the calculator for that total."
+    }
+  ],
+  "deepDive": "Successful tiling depends as much on planning as it does on adhesive. When calculating, always consider 'grout lines.' While most calculators treat tiles as tight-fitting blocks, a narrow 1/8 inch or 1/4 inch grout line actually increases the coverage of each tile slightly. However, for most residential projects, the 10% waste margin more than covers the discrepancy created by grout spacing. Another critical factor is the 'dye lot'—always ensure every box of tiles you purchase has the same lot number printed on the side to avoid subtle color variations.",
+  "glossary": [
+    {
+      "term": "Waste Margin",
+      "definition": "The additional 10-15% of material ordered to account for cuts, breakage, and layout errors."
+    },
+    {
+      "term": "Dye Lot",
+      "definition": "A specific batch of tiles fired at the same time; tiles from different lots may have slight color differences."
+    },
+    {
+      "term": "Grout Line",
+      "definition": "The space between tiles filled with grout, typically ranging from 1/16 to 1/2 inch."
+    },
+    {
+      "term": "Bullnose Tile",
+      "definition": "A tile with a rounded edge used to finish the perimeter of a tiled area."
+    }
+  ]
+}

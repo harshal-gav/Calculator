@@ -3,6 +3,8 @@
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
+import fuelCostSeoData from "@/data/seo-content/official/fuel-cost-calculator.json";
+
 export default function FuelCostCalculator() {
   const [distance, setDistance] = useState("300");
   const [efficiency, setEfficiency] = useState("25");
@@ -127,67 +129,34 @@ export default function FuelCostCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Fuel Cost Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>Fuel Cost Calculator</strong> computes exactly how much money a road trip will cost based on standard variables like distance, vehicle MPG, and regional pump prices.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Fuel Cost Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Fuel Cost results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>If you are driving <strong>300 miles</strong> to visit family in a car that gets <strong>25 MPG</strong> while gas costs <strong>$3.50</strong> a gallon:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>300 miles / 25 MPG = 12 Gallons Used</li>
-              <li>12 Gallons × $3.50 = <strong>$42.00 in Gas</strong></li>
-            </ul>
-          </>
-        }
-        useCases={<ul className="list-disc pl-6 space-y-4"><li><strong>Carpooling:</strong> Determine the exact penny-for-penny fair share to split gas money with your friends on a long interstate road trip.</li></ul>}
-        faqs={[
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            },
-            {
-              question: "Is this tool free to use?",
-              answer: "Yes, all our calculators are 100% free to use. We do not require any registration, personal information, or subscriptions.",
-            },
-            {
-              question: "Can I use this on my mobile device?",
-              answer: "Absolutely! Our website is fully responsive and optimized for all screen sizes, including smartphones and tablets, so you can calculate on the go.",
-            }]}
+        title={fuelCostSeoData.title}
+        whatIsIt={fuelCostSeoData.whatIsIt}
+        formula={fuelCostSeoData.formula}
+        example={fuelCostSeoData.example}
+        useCases={fuelCostSeoData.useCases}
+        faqs={fuelCostSeoData.faqs}
+        deepDive={fuelCostSeoData.deepDive}
+        glossary={fuelCostSeoData.glossary}
         relatedCalculators={[
             {
-              name: "Age Calculator",
-              path: "/age-calculator/",
-              desc: "Calculate your exact age in years, months, and days.",
-            },
-            {
-              name: "Temperature Converter",
-              path: "/temperature-converter/",
-              desc: "Convert between Celsius, Fahrenheit, and Kelvin.",
+              name: "Gas Mileage Calculator",
+              path: "/gas-mileage-calculator/",
+              desc: "Determine your vehicle's actual MPG using recent fill-up data.",
             },
             {
               name: "Speed Calculator",
               path: "/speed-calculator/",
-              desc: "Calculate speed, distance, or time with ease.",
+              desc: "Calculate travel time based on distance and average speed.",
             },
             {
-              name: "Bill Splitter",
-              path: "/bill-splitter-calculator/",
-              desc: "Split bills and calculate tips among friends.",
+              name: "Budget Calculator",
+              path: "/budget-calculator/",
+              desc: "Manage your overall household or travel budget.",
+            },
+            {
+              name: "Percentage Calculator",
+              path: "/percentage-calculator/",
+              desc: "Calculate fuel price increases and general percentages.",
             }]}
       />
     </div>

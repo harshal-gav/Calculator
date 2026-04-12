@@ -1,0 +1,41 @@
+{
+  "title": "Speed, Distance, & Time Calculator",
+  "whatIsIt": "The Speed Calculator is a fundamental kinematic tool used to determine the rate of motion of an object. By solving the relationship between distance traveled and the time taken to travel that distance, it allows users to plan travel itineraries, analyze athletic performance, or understand physical phenomena in professional and educational contexts.",
+  "formula": "The calculation is based on the core motion equation: \\n\\n$$\\text{Speed} = \\frac{\\text{Distance}}{\\text{Time}}$$\\n\\nWhere distance is the total path length and time is the total duration. Variants include solving for distance ($S \\times T$) or time ($D / S$).",
+  "example": "If a vehicle travels 240 miles in 4 hours: \\n1. Solve for Speed: $240 / 4 = 60$ MPH. \\n\\nConversely, if you want to know how far you will travel at 70 MPH for 2.5 hours: \\n2. Solve for Distance: $70 \\times 2.5 = 175$ miles. \\n\\nThese calculations are essential for navigation and flight planning.",
+  "useCases": [
+    "Travel Logistics: Estimating Arrival Times (ETA) for road trips or commercial flights.",
+    "Sports Analytics: Calculating a runner's pace or a swimmer's velocity during training sessions.",
+    "Physics & Science: Analyzing the velocity of objects in motion for laboratory experiments.",
+    "Mechanical Engineering: Determining the surface speed of rotating machinery or conveyor belts."
+  ],
+  "faqs": [
+    {
+      "question": "What is the difference between Speed and Velocity?",
+      "answer": "Speed is a scalar quantity measuring how fast an object is moving. Velocity is a vector quantity that includes both speed and the specific direction of the motion."
+    },
+    {
+      "question": "How do I handle different units?",
+      "answer": "This tool standardizes units before calculation. Common pairings include Miles/Hours (MPH), Kilometers/Hours (KM/H), and Meters/Seconds (M/S)."
+    },
+    {
+      "question": "Does this calculate 'Average' or 'Instantaneous' speed?",
+      "answer": "This tool calculates 'Average Speed' across the entire duration. Instantaneous speed requires calculus (the derivative of position with respect to time)."
+    }
+  ],
+  "deepDive": "Speed is the first derivative of position with respect to time. In the history of mathematics, the study of speed led directly to the development of calculus by Newton and Leibniz. In practical terms, understanding speed is critical for safety—stopping distance increases quadratically with speed, meaning doubling your speed quadruples your required braking distance.",
+  "glossary": [
+    {
+      "term": "Kinematics",
+      "definition": "The branch of mechanics concerned with the motion of objects without reference to the forces which cause the motion."
+    },
+    {
+      "term": "Scalar",
+      "definition": "A quantity that has only magnitude and no direction."
+    },
+    {
+      "term": "MPH",
+      "definition": "Miles Per Hour; the primary unit of speed in the US and UK."
+    }
+  ]
+}

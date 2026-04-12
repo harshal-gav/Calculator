@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import averageReturnSeoData from "@/data/seo-content/official/average-return-calculator.json";
 
 export default function AverageReturnCalculator() {
   const [initialValue, setInitialValue] = useState("10000");
@@ -110,69 +111,36 @@ export default function AverageReturnCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Average Return Calculator"
-        whatIsIt={
-          <p>
-            An <strong>Average Return Calculator</strong> determines the <strong>Compound Annual Growth Rate (CAGR)</strong> of an investment over a multi-year period. Unlike a simple arithmetic average, CAGR represents the smoothed annual rate of return that would be required for an investment to grow from its initial balance to its final balance, assuming the profits were reinvested at the end of each year.
-          </p>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Average Return Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Average Return results.
-            </p>
-          </>
-        }
-        example={
-          <p>
-            If you start with $10,000 and have $25,000 after 5 years, your total return is 150%. A simple average would suggest a 30% return per year. However, the <strong>CAGR</strong> is actually <strong>20.11%</strong>, as each year's gains compound on top of the previous year's balance.
-          </p>
-        }
-        useCases={
-          <ul className="list-disc pl-5 space-y-2">
-            <li><strong>Benchmarking:</strong> Comparing your portfolio's performance against the S&P 500's CAGR.</li>
-            <li><strong>Investment Analysis:</strong> Determining if a specific stock or mutual fund met your growth expectations.</li>
-            <li><strong>Business Valuation:</strong> Calculating the growth rate of company revenues or profits.</li>
-          </ul>
-        }
-        faqs={[
+        title={averageReturnSeoData.title}
+        whatIsIt={averageReturnSeoData.whatIsIt}
+        formula={averageReturnSeoData.formula}
+        example={averageReturnSeoData.example}
+        useCases={averageReturnSeoData.useCases}
+        faqs={averageReturnSeoData.faqs}
+        deepDive={averageReturnSeoData.deepDive}
+        glossary={averageReturnSeoData.glossary}
+        relatedCalculators={[
           {
-            question: "Why is CAGR better than simple average?",
-            answer: "Simple average can be misleading. For example, if an investment drops 50% one year and gains 50% the next, the simple average is 0%, but your actual portfolio is down 25%. CAGR accurately reflects your actual remaining wealth."
+            name: "Mortgage",
+            path: "/mortgage-calculator/",
+            desc: "Calculate your monthly mortgage payments and amortization schedule.",
           },
           {
-            question: "What is a 'good' CAGR?",
-            answer: "A good CAGR depends on your risk tolerance. Historically, the S&P 500 has rewarded long-term investors with a CAGR around 7% to 10% after inflation."
+            name: "ROI",
+            path: "/roi-calculator/",
+            desc: "Calculate your exact annualized percentage returns.",
           },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
-          relatedCalculators={[
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator/",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            },
-            {
-              name: "ROI Calculator",
-              path: "/roi-calculator/",
-              desc: "Calculate your exact annualized percentage returns.",
-            },
-            {
-              name: "Investment Calculator",
-              path: "/investment-calculator/",
-              desc: "Project your portfolio growth over time with compound interest.",
-            },
-            {
-              name: "Loan Payment Calculator",
-              path: "/loan-payment-calculator/",
-              desc: "Estimate your monthly loan payments and total interest cost.",
-            }
-          ]}
+          {
+            name: "Investment",
+            path: "/investment-calculator/",
+            desc: "Project your portfolio growth over time with compound interest.",
+          },
+          {
+            name: "Loan Payment",
+            path: "/loan-payment-calculator/",
+            desc: "Estimate your monthly loan payments and total interest cost.",
+          },
+        ]}
       />
     </div>
   );

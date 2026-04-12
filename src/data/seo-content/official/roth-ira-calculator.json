@@ -1,0 +1,112 @@
+{
+  "title": "Roth IRA Calculator: Tax-Free Growth & Conversion Math",
+  "whatIsIt": "A **roth ira calculator** is a sophisticated financial tool designed to project the future value of your post-tax retirement savings. Unlike traditional retirement accounts, a Roth IRA allows your investments to grow 100% tax-free, and qualified withdrawals in retirement are also tax-exempt.\n\nWhether you are using a **roth ira growth calculator** to visualize long-term wealth or a **roth conversion calculator** to decide if moving traditional funds to a Roth account is worth the immediate tax hit, this tool provides the precision needed for elite retirement planning. By modeling annual contributions and compounded returns, you can determine exactly when you'll reach your financial independence milestones.",
+  "formula": "The Roth IRA projection uses the future value formula for an annuity due (assuming contributions at the start of each period):\n\n### 1. Annual Compound Growth\n$FV = PV(1+r)^n + PMT \\times \\frac{(1+r)^n - 1}{r} \\times (1+r)$\n\n- **FV**: Future Roth IRA Balance\n- **PV**: Starting Balance\n- **r**: Annual Rate of Return\n- **n**: Number of Years\n- **PMT**: Annual Contribution (e.g., $7,000 for 2024)\n\n### 2. Tax Savings Potential\n$\\text{Tax Savings} = (FV - \\text{Total Contributed}) \\times \\text{Future Tax Rate\\%}$",
+  "example": "Let's use the **roth ira compound interest calculator** for a 25-year-old investor:\n\n- **Starting Balance**: $5,000.\n- **Annual Contribution**: $7,000 (Max for 2024).\n- **Expected Return**: 8%.\n- **Investment Horizon**: 40 years (Age 65).\n\n**The Result**: By age 65, the Roth IRA balance grows to approximately **$1,920,000**. \n**The Advantage**: Because it's a Roth, the entire ~$1.6 million in growth is yours to keep. If this were a taxable account or a Traditional IRA, you might owe over **$400,000 in taxes** upon withdrawal (assuming a 25% tax rate).",
+  "useCases": "### 1. Planning Annual Contributions\nMost users check the **roth ira contribution calculator** to see how much they need to save monthly to 'max out' their account. In 2024, the $7,000 limit ($8,000 if over 50) breaks down to roughly $583/month.\n\n### 2. Backdoor Roth Strategy\nHigh earners who exceed the income limits use this as a **backdoor roth ira calculator**. By contributing to a non-deductible Traditional IRA and then converting it to a Roth, they can bypass income restrictions and enjoy tax-free growth regardless of their salary.\n\n### 3. Roth Conversion Analysis\nIf you have a large Traditional IRA balance, a **roth conversion tax calculator** helps you decide if paying taxes now is better than paying them later. If you expect your tax bracket to be higher in retirement (or if you have a long time horizon), converting now is often the mathematically superior move.\n\n### 4. Early Retirement Liquidity\nThe Roth IRA is a favorite for the FIRE (Financial Independence, Retire Early) community because you can always withdraw your **original contributions** tax and penalty-free at any time. This tool lets you track your 'contribution basis' vs. your earnings.",
+  "faqs": [
+    {
+      "question": "What is the 2024 Roth IRA contribution limit?",
+      "answer": "For 2024, the limit is $7,000 for those under age 50 and $8,000 for those age 50 and older (the 'catch-up' contribution)."
+    },
+    {
+      "question": "Are there income limits for a Roth IRA?",
+      "answer": "Yes. For 2024, if you're a single filer, your ability to contribute starts to phase out at a Modified Adjusted Gross Income (MAGI) of $146,000 and disappears completely at $161,000. For married couples, the range is $230,000 to $240,000."
+    },
+    {
+      "question": "What is the '5-Year Rule'?",
+      "answer": "Even if you are over 59 1/2, you must have had your Roth IRA open for at least five tax years for the *earnings* to be withdrawn tax-free. Contributions can always be withdrawn at any time."
+    },
+    {
+      "question": "Is it better to contribute to a 401k or a Roth IRA first?",
+      "answer": "Generally, the priority is: 1. 401k up to the employer match (free money); 2. Roth IRA up to the max (tax-free growth); 3. Remainder into the 401k or a taxable brokerage."
+    },
+    {
+      "question": "Can I have both a Traditional and a Roth IRA?",
+      "answer": "Yes, but the total combined contribution to all your IRAs cannot exceed the annual limit ($7,000 in 2024)."
+    }
+  ],
+  "deepDive": "### Strategic Wealth Building: The Roth Advantage\n\nWhen evaluating a **roth conversion calculator** model, you are weight three variables: **Current Tax Rate**, **Future Tax Rate**, and **Time Horizon**.\n\n#### The Math of Tax-Free Compounding\nThe greatest benefit shown in any **roth ira growth calculator** is the compounding of 'shadow taxes.' In a standard brokerage account, you pay capital gains taxes every time you sell or receive a dividend. This 'tax drag' can reduce your final portfolio size by 20-40%. In a Roth, you are investing the 15-20% you would have lost to the IRS, allowing that extra money to compound for you year after year.\n\n#### The Backdoor Roth IRA\nFor those making over $161k (Single) or $240k (Married), the 'Front Door' is locked. However, the 'Backdoor' is a legal maneuver where you contribute to a traditional IRA (with no tax deduction) and immediately convert it to a Roth. Use our **backdoor roth ira calculator** logic to ensure you understand the 'Pro-Rata Rule'—if you have other traditional IRAs, the IRS treats them as one pool, which could make the conversion partially taxable.\n\n#### Roth Conversions in a Bear Market\nStrategic investors use a **roth conversion tax calculator** most aggressively when the stock market is down. If your $100k portfolio drops to $80k, converting it to a Roth means you only pay taxes on $80k. When the market recovers, that $20k rebound (and everything after) is entirely tax-free. This is known as 'tax harvesting' in reverse.\n\n#### Estate Planning Benefits\nUnlike Traditional IRAs, Roth IRAs do not have **Required Minimum Distributions (RMDs)** during the original owner's lifetime. You can leave the money in the account to grow until you die, making it the single most effective vehicle for leaving a tax-free legacy to your heirs.",
+  "glossary": [
+    {
+      "term": "Roth IRA",
+      "definition": "An individual retirement account that offers tax-free growth and tax-free withdrawals in retirement."
+    },
+    {
+      "term": "Modified Adjusted Gross Income (MAGI)",
+      "definition": "A formula used by the IRS to determine eligibility for certain tax benefits, including Roth IRA contribution limits."
+    },
+    {
+      "term": "Roth Conversion",
+      "definition": "The process of moving funds from a Traditional IRA or 401k into a Roth IRA."
+    },
+    {
+      "term": "Compound Interest",
+      "definition": "The interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods."
+    },
+    {
+      "term": "Contribution Limit",
+      "definition": "The maximum amount of money that can be put into a retirement account in a single tax year."
+    },
+    {
+      "term": "Catch-up Contribution",
+      "definition": "An extra amount that persons aged 50 or older can contribute to their retirement accounts beyond the standard limit."
+    },
+    {
+      "term": "Tax-Deferred",
+      "definition": "Investment earnings that accumulate tax-free until they are withdrawn."
+    },
+    {
+      "term": "Tax-Exempt",
+      "definition": "Income or growth that is not subject to taxes at all, like qualified Roth withdrawals."
+    },
+    {
+      "term": "RMD (Required Minimum Distribution)",
+      "definition": "The amount you are forced by law to withdraw from certain retirement accounts annually; Roth IRAs do not have RMDs for original owners."
+    },
+    {
+      "term": "5-Year Rule",
+      "definition": "A rule requiring a Roth IRA to be open for five years before earnings can be withdrawn tax-free, even if the owner is 59 1/2 or older."
+    },
+    {
+      "term": "Backdoor Roth",
+      "definition": "A strategy used by high earners to fund a Roth IRA by first contributing to a Traditional IRA and then converting it."
+    },
+    {
+      "term": "Pro-Rata Rule",
+      "definition": "An IRS rule that determines the taxability of an IRA conversion when the owner has both pre-tax and after-tax IRA funds."
+    },
+    {
+      "term": "Yield",
+      "definition": "The income return on an investment, such as interest or dividends, usually expressed as an annual percentage."
+    },
+    {
+      "term": "Capital Gains",
+      "definition": "The profit from the sale of an asset, such as a stock or real estate; these are avoiding in a Roth IRA."
+    },
+    {
+      "term": "Qualified Distribution",
+      "definition": "A withdrawal from a Roth IRA that is tax-free and penalty-free (must meet the 5-year rule and age 59 1/2 or other criteria)."
+    },
+    {
+      "term": "Basis",
+      "definition": "The total amount of original contributions made to an account; in a Roth IRA, you can withdraw your basis at any time without tax."
+    },
+    {
+      "term": "Custodian",
+      "definition": "A financial institution (like Schwab or Vanguard) that holds and manages the assets in an IRA."
+    },
+    {
+      "term": "Beneficiary",
+      "definition": "The individual(s) named to receive the funds in a retirement account after the death of the owner."
+    },
+    {
+      "term": "Individual Retirement Account (IRA)",
+      "definition": "A tax-advantaged account that individuals use to save and invest for retirement."
+    },
+    {
+      "term": "Tax Bracket",
+      "definition": "A range of incomes taxed at a specific rate."
+    }
+  ]
+}

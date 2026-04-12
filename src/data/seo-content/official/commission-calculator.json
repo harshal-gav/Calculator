@@ -1,0 +1,40 @@
+{
+  "title": "Commission Calculator: Calculate Sales Earnings Accurately",
+  "whatIsIt": "A **Commission Calculator** is a precision tool used to determine the pay a sales representative or agent receives based on their sales performance. This is the standard compensation model in industries such as real estate, automotive sales, and Software-as-a-Service (SaaS).\n\nCommissions provide a powerful incentive for sales staff to maximize volume while ensuring the business only pays out expenses based on actual revenue generated. This calculator helps you understand your 'Total Pay,' including flat base salaries or meeting-quota bonuses, and reveals your 'Effective Commission Rate.'",
+  "formula": "The basic commission is calculated as follows:\n\n**Commission = Sales Amount × (Commission Rate / 100)**\n\nTotal Earnings are calculated as:\n\n**Total Pay = Commission + Base Salary + Bonuses**",
+  "example": "If a real estate agent sells a house for **$500,000** with a **3%** commission rate, and has a **$1,000** base fee:\n\n1. **Gross Commission:** $500,000 × 0.03 = **$15,000**.\n2. **Total Pay:** $15,000 + $1,000 = **$16,000**.\n3. **Effective Rate:** ($16,000 / $500,000) = **3.2%**.",
+  "useCases": "### Real Estate Split Analysis\nCalculate split commissions between buying and listing agents, ensuring both parties are compensated according to the contract terms.\n\n### Car Sales Projections\nDetermine take-home pay based on vehicle price, dealership 'pack,' and net profit splits for specialized inventory.\n\n### SaaS Sales Budgeting\nProject monthly compensation for account executives based on 'Annual Contract Value' (ACV) and tiered accelerators.",
+  "faqs": [
+    {
+      "question": "What is a 'Draw' against commission?",
+      "answer": "A draw is an advance payment made to a salesperson, which is later deducted from their future earned commissions. It provides a baseline income during slow months or early in a sales career."
+    },
+    {
+      "question": "Are commissions taxed differently than base salary?",
+      "answer": "In many jurisdictions, including the USA, commissions may be subject to a 'Supplemental Withholding Rate' (often 22%), which is different from the graduated withholding on regular salary. However, both are taxed at the same ordinary income rates on your final tax return."
+    },
+    {
+      "question": "What is a 'Tiered' commission structure?",
+      "answer": "A tiered structure increases the commission percentage as certain sales targets are met. For example, you might earn 5% on the first $100k of sales and 8% on everything over $100k."
+    }
+  ],
+  "deepDive": "Commission structures are designed to align the interests of the employee with the company. While a 'Straight Commission' model offers the highest risk and highest reward, most professionals operate on a 'Salary plus Commission' or 'Commission with Draw' model. It is essential to use a calculator to determine your 'Breakeven Point'—the amount of sales required just to cover your base draw—to ensure your career remains financially sustainable during market downturns. Advanced models often include 'Clawback' provisions, where commission is returned if a customer cancels a service early.",
+  "glossary": [
+    {
+      "term": "Straight Commission",
+      "definition": "A pay structure where the employee is only paid based on a percentage of sales, with no base salary."
+    },
+    {
+      "term": "Effective Rate",
+      "definition": "The total pay divided by the total sales volume, expressed as a percentage."
+    },
+    {
+      "term": "Accelerator",
+      "definition": "A higher commission rate applied once a salesperson exceeds their assigned quota."
+    },
+    {
+      "term": "Quota",
+      "definition": "A specific sales target assigned to a salesperson that must be met within a certain period."
+    }
+  ]
+}

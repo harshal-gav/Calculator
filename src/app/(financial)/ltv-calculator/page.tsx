@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import ltvSeoData from "@/data/seo-content/official/ltv-calculator.json";
 
 export default function LTVCalculator() {
   const [loanAmount, setLoanAmount] = useState("240000");
@@ -93,6 +94,7 @@ export default function LTVCalculator() {
                   setResult(null);
                 }}
                 className="w-full rounded-xl border-zinc-300 shadow-sm p-3 pl-8 text-lg border focus:border-sky-500 font-bold bg-zinc-50 focus:bg-white transition-colors"
+                placeholder="0"
               />
             </div>
           </div>
@@ -121,6 +123,7 @@ export default function LTVCalculator() {
                     setResult(null);
                   }}
                   className="w-full rounded-xl border-sky-200 shadow-sm p-3 pl-8 border focus:border-sky-500 font-bold bg-sky-50/30"
+                  placeholder="0"
                 />
               </div>
             </div>
@@ -145,6 +148,7 @@ export default function LTVCalculator() {
                   }}
                   className="w-full rounded-xl border-teal-200 shadow-sm p-3 pl-8 border focus:border-teal-500 font-bold bg-teal-50/30"
                   onKeyDown={(e) => e.key === "Enter" && calculate()}
+                  placeholder="0"
                 />
               </div>
             </div>
@@ -247,112 +251,37 @@ export default function LTVCalculator() {
         </div>
       )}
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "LTV Calculator",
-            operatingSystem: "All",
-            applicationCategory: "FinancialApplication",
-          }),
-        }}
-      />
-
       <CalculatorSEO
-        title="LTV Calculator (Loan-to-Value)"
-        whatIsIt={
-          <p>
-            The <strong>Loan-to-Value (LTV) Calculator</strong> is a primary
-            real estate finance tool used by lenders to assess the risk of a
-            mortgage. It compares your total loan amount to the appraised value
-            of the property, outputting a clear percentage.
-          </p>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Ltv Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Ltv results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>
-              If you buy a house for $300,000 and put down $60,000 in cash, you
-              need a $240,000 loan:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-2">
-              <li>Loan Amount: $240,000</li>
-              <li>Property Value: $300,000</li>
-              <li>Calculation: 240,000 ÷ 300,000 = 0.8</li>
-              <li>
-                <strong>LTV Result: 80%</strong>
-              </li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>Avoiding PMI (Private Mortgage Insurance):</strong> If
-              your LTV is strictly 80% or lower (meaning your down payment was
-              at least 20%), you legally avoid paying expensive monthly PMI fees
-              on conventional loans.
-            </li>
-            <li>
-              <strong>Home Refinancing:</strong> To secure the best interest
-              rates when refinancing, lenders want to see an LTV under 80% based
-              on your home's current market value, not what you originally paid
-              for it.
-            </li>
-            <li>
-              <strong>HELOC Approvals:</strong> Home Equity Lines of Credit
-              usually require your combined LTV (your first mortgage + the new
-              line of credit) to remain under 85% of your home's total value.
-            </li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "What exactly is PMI?",
-            answer:
-              "Private Mortgage Insurance (PMI) is an insurance policy you pay for, but it protects the lender, not you. If you default on your mortgage and your LTV was high, the lender uses the PMI to recoup their losses.",
-          },
-          {
-            question: "How do I lower my LTV before buying?",
-            answer:
-              "You only have two options: make a larger cash down payment, or negotiate a lower purchase price for the property. Both actions immediately decrease the size of the loan you need.",
-          },
-            {
-              question: "How accurate is this calculator?",
-              answer: "Our calculator uses industry-standard formulas to provide the most accurate results possible. However, it should be used for informational purposes only and not as a basis for formal calculations or legal advice.",
-            }]}
+        title={ltvSeoData.title}
+        whatIsIt={ltvSeoData.whatIsIt}
+        formula={ltvSeoData.formula}
+        example={ltvSeoData.example}
+        useCases={ltvSeoData.useCases}
+        faqs={ltvSeoData.faqs}
+        deepDive={ltvSeoData.deepDive}
+        glossary={ltvSeoData.glossary}
         relatedCalculators={[
           {
-            name: "Mortgage Payoff",
-            path: "/mortgage-payoff-calculator/",
-            desc: "Calculate your exact timeline to become mortgage-free.",
+            name: "Mortgage",
+            path: "/mortgage-calculator/",
+            desc: "Calculate your monthly mortgage payments and amortization schedule.",
           },
           {
-            name: "Net Worth Calculator",
-            path: "/net-worth-calculator/",
-            desc: "Track your overall wealth by balancing assets against liabilities.",
-          },
-          {
-            name: "DTI Calculator",
+            name: "DTI",
             path: "/dti-calculator/",
             desc: "Check your Debt-to-Income ratio for loan pre-approvals.",
           },
-            {
-              name: "Mortgage Calculator",
-              path: "/mortgage-calculator/",
-              desc: "Calculate your monthly mortgage payments and amortization schedule.",
-            }]}
+          {
+            name: "Home Equity",
+            path: "/home-equity-calculator/",
+            desc: "Calculate how much cash you can pull out of your home.",
+          },
+          {
+            name: "Refinance",
+            path: "/refinance-calculator/",
+            desc: "See if lowering your LTV through a new loan saves you money.",
+          },
+        ]}
       />
     </div>
   );

@@ -1,0 +1,55 @@
+{
+  "title": "Mastering the Auto Lease: Decode Money Factors & Residual Values",
+  "whatIsIt": "An **Auto Lease Calculator** is a specialized financial modeling tool that computes the cost of 'renting' a vehicle for a fixed period (typically 24 to 48 months). Unlike a traditional loan, where you pay and ultimately own the asset, a lease represents a contract to pay for the vehicle's **projected depreciation** plus a financing fee known as the 'Rent Charge.'\n\nLeasing is frequently chosen by professionals and luxury vehicle enthusiasts who prioritize driving a new car every few years with minimal maintenance risk. Dealers often present a single monthly payment while obscuring the variables that actually dictate that cost: the negotiated price, the residual value, and the money factor. Our calculator empowers you to strip away the marketing jargon and see the mathematical reality.",
+  "formula": "The monthly lease payment is the sum of two distinct charges:\n\n1. **Depreciation Fee** = (Net Cap Cost - Residual Value) / Term\n2. **Rent Charge** = (Net Cap Cost + Residual Value) × Money Factor\n\n**Total Monthly Payment = Depreciation Fee + Rent Charge**\n\n*Note: To convert an APR to a Money Factor, divide by 2400 (e.g., 6.0% / 2400 = 0.0025).*",
+  "example": "Scenario: Leasing a $40,000 SUV with a 60% Residual and 0.0025 Money Factor:\n\n- **Net Cap Cost:** $40,000\n- **Residual Value:** $24,000 (60% of $40k)\n- **Depreciation Charge:** ($40,000 - $24,000) / 36 months = **$444.44/mo**\n- **Rent Charge:** ($40,000 + $24,000) × 0.0025 = **$160.00/mo**\n- **Total Payment:** $444.44 + $160.00 = **$604.44/mo**",
+  "useCases": "### Business Tax Deductions\nBusiness owners can often deduct monthly lease payments as a business expense, providing a simpler benefit than depreciation schedules.\n\n### Technology Protection\nLeasing is ideal for rapidly advancing vehicles (like EVs), allowing you to return the car before major tech shifts crash the resale value.\n\n### Down Payment Preservation\nKeep your capital liquid by choosing $0-down leases, which are often the most efficient way to manage cash flow safely.",
+  "faqs": [
+    {
+      "question": "What is a good Money Factor for a lease?",
+      "answer": "A good money factor should correspond to market interest rates. Divide the APR by 2400 to compare. If prime rates are 6%, a good money factor is 0.0025."
+    },
+    {
+      "question": "Can I negotiate the residual value?",
+      "answer": "No. The residual value is set by the manufacturer's finance arm and is standard across all dealers for that specific model and term."
+    },
+    {
+      "question": "Should I lease if I drive a lot of miles?",
+      "answer": "Usually not. Standard leases limit you to 10k-15k miles per year. Over-mileage fees can be extremely expensive, often $0.20-$0.30 per mile."
+    },
+    {
+      "question": "Is Gap Insurance necessary on a lease?",
+      "answer": "Yes. It covers the shortfall between the car's value and the lease payoff if the car is totaled. Most major manufacturer leases include this for free."
+    }
+  ],
+  "deepDive": "Residual values are the pivot point of every lease. High residuals (e.g., 65%) mean the car holds its value well, resulting in lower monthly payments. Low residuals (e.g., 45%) mean you are paying for more depreciation, making the lease expensive. Enthusiasts often look for 'lease-friendly' brands like BMW or Lexus, which historically set high residuals to subsidize attractive monthly payments. Conversely, some heavy-duty trucks have lower residuals because they are expected to be put through extreme usage environments.",
+  "comparisonTable": {
+    "title": "Lease vs. Buy: The Ultimate Financial Trade-off",
+    "headers": ["Feature", "Leasing a Vehicle", "Buying with a Loan"],
+    "rows": [
+      ["Monthly Cost", "Typically 30-50% lower than loan payments.", "Higher monthly out-of-pocket required."],
+      ["Asset Ownership", "No equity; vehicle returned at end of term.", "You own the asset once the loan is repaid."],
+      ["Maintenance", "Usually covered under manufacturer warranty.", "Long-term repairs are the owner's responsibility."],
+      ["Mileage Limits", "Strict limits (e.g., 10k-15k miles/year).", "Drive as much as you want without penalty."],
+      ["Customization", "Must return vehicle in original condition.", "Free to modify or upgrade as you see fit."]
+    ]
+  },
+  "glossary": [
+    {
+      "term": "Money Factor",
+      "definition": "A number used to calculate the rent charge, equivalent to the interest rate divided by 2400."
+    },
+    {
+      "term": "Residual Value",
+      "definition": "The predicted value of the vehicle at the end of the lease term, set by the lessor."
+    },
+    {
+      "term": "Acquisition Fee",
+      "definition": "A fee charged by the leasing company to set up the lease agreement."
+    },
+    {
+      "term": "Disposition Fee",
+      "definition": "A fee paid at the end of the lease if you choose to return the car rather than buy it."
+    }
+  ]
+}

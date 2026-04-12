@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import autoLoanSeoData from "@/data/seo-content/official/auto-loan-calculator.json";
 
 export default function AutoLoanCalculator() {
   const [vehiclePrice, setVehiclePrice] = useState("35000");
@@ -193,162 +194,36 @@ export default function AutoLoanCalculator() {
       </div>
 
       <CalculatorSEO
-        title="Comprehensive Auto Loan Calculator: Mastering the Math of Vehicle Financing"
-        whatIsIt={
-          <div className="space-y-6">
-            <p className="text-xl font-medium leading-relaxed">
-              The <strong>Auto Loan Calculator</strong> is a specialized financial instrument designed to decode the complex relationship between vehicle prices, interest rates, and loan durations. In the modern automotive market, where the average new car price exceeds $48,000, understanding the "Time Value of Money" (TVM) is no longer a luxury—it is a critical survival skill for your personal balance sheet.
-            </p>
-            <p className="leading-relaxed">
-              Car ownership is typically the second-largest expense for a household, yet most buyers focus exclusively on the "Monthly Payment" while ignoring the <strong>Total Cost of Borrowing</strong>. This calculator shifts the perspective from short-term cash flow to long-term net worth. It meticulously calculates your monthly principal and interest, the total interest paid over the life of the loan, and the impact of sales tax and trade-ins on your final obligation.
-            </p>
-            <p className="leading-relaxed">
-              Whether you are shopping for a nimble commuter car, a rugged pickup truck, or searching for the best financing on a pre-owned sedan, this tool provides the mathematical clarity needed to navigate dealership F&I (Finance and Insurance) offices with confidence. It empowers you to see exactly how a 1% shift in interest rates or a $5,000 increase in your down payment changes your financial trajectory over the next 3 to 7 years.
-            </p>
-            <p className="leading-relaxed">
-              By simulating various scenarios—such as the "60-month vs. 72-month" debate—you can identify the exact "inflection point" where the convenience of lower payments turns into the liability of negative equity (being "underwater" on your loan). This calculator is your primary defense against predatory lending practices and poorly structured debt.
-            </p>
-          </div>
-        }
-        comparisonTable={{
-          title: "Credit Score Tiers & Estimated Interest Rates (2024 Market Data)",
-          headers: ["Credit Category", "Score Range", "Avg. New Car Rate", "Avg. Used Car Rate"],
-          rows: [
-            ["Super Prime", "781 - 850", "4.9% - 5.5%", "6.2% - 6.8%"],
-            ["Prime", "661 - 780", "5.8% - 6.4%", "8.1% - 8.9%"],
-            ["Non-Prime", "601 - 660", "8.9% - 9.7%", "12.5% - 13.5%"],
-            ["Subprime", "501 - 600", "11.5% - 12.8%", "17.9% - 18.9%"],
-            ["Deep Subprime", "300 - 500", "14.2% - 16.5%", "20.5% - 22.0%"],
-          ]
-        }}
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Result = Input × Conversion_Factor
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Precise unit translation for Auto Loan Calculator using industry-standard conversion constants.
-            </p>
-          </>
-        }
-          example={
-          <div className="bg-slate-900 p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden text-white">
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
-            <h5 className="text-blue-400 font-black uppercase tracking-[0.2em] text-sm mb-10 flex items-center">
-              <span className="w-10 h-10 rounded-full border border-blue-500 flex items-center justify-center mr-4 text-xs font-mono">01</span>
-              Case Study: The Impact of the Down Payment
-            </h5>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div className="space-y-6">
-                <p className="text-slate-300 text-lg">
-                  Consider a <strong>$40,000 SUV</strong> with a <strong>6.5% interest rate</strong> for <strong>60 months</strong>.
-                </p>
-                <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
-                  <span className="block text-xs font-bold text-slate-500 uppercase mb-2">Scenario A: Zero Down</span>
-                  <div className="text-3xl font-black">$783/month</div>
-                  <p className="text-xs text-slate-400 mt-2">Total Interest: $6,980</p>
-                </div>
-              </div>
-              <div className="space-y-6">
-                <p className="text-slate-300 text-lg">
-                  Now, apply a <strong>$10,000 down payment</strong> (or trade-in) to that same $40,000 SUV.
-                </p>
-                <div className="p-6 bg-blue-600/20 rounded-2xl border border-blue-500/30">
-                  <span className="block text-xs font-bold text-blue-400 uppercase mb-2">Scenario B: $10k Down</span>
-                  <div className="text-3xl font-black text-blue-400">$587/month</div>
-                  <p className="text-xs text-blue-300 mt-2">Total Interest: $5,235</p>
-                </div>
-              </div>
-            </div>
-            <p className="mt-12 text-sm text-slate-400 leading-relaxed pt-8 border-t border-white/10">
-              <strong>Conclusion:</strong> Putting $10,000 down didn't just lower the monthly bill by $196; it saved you <strong>$1,745 in pure interest</strong>. That's effectively a 17% "return" on your $10k in the form of avoided costs.
-            </p>
-          </div>
-        }
-        useCases={
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
-              <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                <span className="text-xl">💼</span>
-              </div>
-              <h5 className="font-black text-slate-900 mb-3 uppercase text-xs tracking-widest">Pre-Approval Comparison</h5>
-              <p className="text-sm text-slate-600 leading-relaxed">Before visiting a dealership, use this tool to compare loan offers from your local credit union against national banks. Knowing your "floor" APR is your best leverage.</p>
-            </div>
-            <div className="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
-              <div className="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                <span className="text-xl">⚖️</span>
-              </div>
-              <h5 className="font-black text-slate-900 mb-3 uppercase text-xs tracking-widest">Trade-In Evaluator</h5>
-              <p className="text-sm text-slate-600 leading-relaxed">Determine how much your current vehicle's trade-in value (equity) actually affects your new monthly obligation versus just selling it privately.</p>
-            </div>
-            <div className="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
-              <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600 mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                <span className="text-xl">🎯</span>
-              </div>
-              <h5 className="font-black text-slate-900 mb-3 uppercase text-xs tracking-widest">Target Budgeting</h5>
-              <p className="text-sm text-slate-600 leading-relaxed">If you know you have a hard limit of $450/month, work backward to see exactly what purchase price and interest rate combo fits your reality.</p>
-            </div>
-          </div>
-        }
-        glossary={[
-          { term: "APR (Annual Percentage Rate)", definition: "The total yearly cost of a loan, including interest and fees, expressed as a percentage." },
-          { term: "Amortization", definition: "The process of paying off a debt over time through regular payments of principal and interest." },
-          { term: "Negative Equity", definition: "Often called being 'underwater' or 'upside down,' this occurs when you owe more on a loan than the asset's current market value." },
-          { term: "Loan-to-Value (LTV)", definition: "The ratio of the loan amount divided by the vehicle's value, used by lenders to determine risk and rates." },
-          { term: "Principal", definition: "The actual amount of money borrowed, excluding the interest you pay on that money." },
-          { term: "Trade-In Equity", definition: "The difference between the market value of your current car and the remaining balance of any loan on it." },
-          { term: "Sales Tax", definition: "A state or local government tax on the purchase of a vehicle, which can often be rolled into the loan amount." },
-          { term: "Gap Insurance", definition: "Insurance that covers the difference between what the car is worth and what you owe if the car is totaled while you have negative equity." },
-          { term: "Prepayment Penalty", definition: "A fee charged by some lenders if you pay off your loan earlier than the agreed term." },
-          { term: "Resale Value", definition: "The estimated amount a vehicle can be sold for at a future date, highly dependent on brand, mileage, and condition." },
-        ]}
-        faqs={[
-          {
-            question: "Is it better to get a longer loan for a lower payment?",
-            answer: "While it helps cash flow, it is almost always more expensive. A 72-month loan will cost thousands more in interest and keep you in a negative equity position (owing more than the car's worth) for much longer than a 48 or 60-month loan."
-          },
-          {
-            question: "How much down payment should I really put down?",
-            answer: "The 'gold standard' is 20%. This typically covers the first year's depreciation and immediately puts you in a positive equity position, which makes selling or trading the car much easier later."
-          },
-          {
-            question: "Can I include sales tax in the loan?",
-            answer: "Most lenders allow you to roll taxes, titles, and fees into the total loan amount. However, this increases your Loan-to-Value (LTV) ratio and might result in a slightly higher interest rate."
-          },
-          {
-            question: "How does my credit score affect the auto loan rate?",
-            answer: "Your credit score is the single biggest factor. A 'Super Prime' score (780+) can get rates near 5%, while a 'Subprime' score (under 600) might face rates of 15% to 20%, dramatically increasing the total cost of the car."
-          },
-          {
-            question: "What is a 'Good' APR for an auto loan right now?",
-            answer: "As of 2024, a 'good' rate for a new car is between 5% and 7% for those with excellent credit. Used car rates are typically 2% to 4% higher than new car rates."
-          },
-          {
-            question: "Should I pay off my car loan early?",
-            answer: "If your interest rate is high (above 6%), paying it off early is like getting a guaranteed return on your money. However, if you have a 0.9% promotional rate, you are better off keeping the cash in a high-yield savings account earning 4-5%."
-          }
-        ]}
+        title={autoLoanSeoData.title}
+        whatIsIt={autoLoanSeoData.whatIsIt}
+        formula={autoLoanSeoData.formula}
+        example={autoLoanSeoData.example}
+        useCases={autoLoanSeoData.useCases}
+        faqs={autoLoanSeoData.faqs}
+        deepDive={autoLoanSeoData.deepDive}
+        glossary={autoLoanSeoData.glossary}
+        comparisonTable={autoLoanSeoData.comparisonTable}
         relatedCalculators={[
           {
-            name: "Auto Lease Calculator",
+            name: "Auto Lease",
             path: "/auto-lease-calculator/",
             desc: "Compare the costs of leasing versus buying to see which fits your lifestyle and financial goals.",
           },
           {
-            name: "Fuel Cost Calculator",
+            name: "Fuel Cost",
             path: "/fuel-cost-calculator/",
             desc: "Estimate your monthly and annual gas expenses based on your vehicle's MPG and your driving habits.",
           },
           {
-            name: "Loan Payoff Calculator",
+            name: "Loan Payoff",
             path: "/loan-payoff-calculator/",
             desc: "See how much time and money you can save by making extra payments toward your principal.",
           },
           {
-            name: "Car Depreciation Calculator",
+            name: "Car Depreciation",
             path: "/car-depreciation-calculator/",
             desc: "Predict how much your vehicle will be worth in 3, 5, or 10 years based on historical data.",
-          }
+          },
         ]}
       />
     </div>

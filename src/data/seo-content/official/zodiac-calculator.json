@@ -1,0 +1,45 @@
+{
+  "title": "Zodiac Sign Calculator: Find Your Sun Sign & Element",
+  "whatIsIt": "The Zodiac Sign Calculator is an astrological tool that determines your Western Sun Sign based on your birth date. According to astrological tradition, the position of the sun in the celestial belt at the moment of your birth influences your core personality traits, temperament, and life path. This tool identifies which of the twelve signs—ranging from Aries to Capricorn—houses your sun and whether you belong to the Fire, Earth, Air, or Water element group.",
+  "formula": "The calculator maps your birth date against the twelve astrological windows:\n\n- Aries: Mar 21 - Apr 19\n- Taurus: Apr 20 - May 20\n- Gemini: May 21 - Jun 20\n- Cancer: Jun 21 - Jul 22\n- Leo: Jul 23 - Aug 22\n- Virgo: Aug 23 - Sep 22\n- Libra: Sep 23 - Oct 22\n- Scorpio: Oct 23 - Nov 21\n- Sagittarius: Nov 22 - Dec 21\n- Capricorn: Dec 22 - Jan 19\n- Aquarius: Jan 20 - Feb 18\n- Pisces: Feb 19 - Mar 20",
+  "example": "If your birthday is October 31st (Halloween):\n\n- The calendar falls between Oct 23 and Nov 21.\n- Result: Your Sun Sign is **Scorpio** ♏.\n- Element: Water.",
+  "useCases": [
+    "Personal Self-Discovery and Introspection",
+    "Astrological Compatibility Analysis for Relationships",
+    "Daily, Weekly, and Monthly Horoscope Reading",
+    "Understanding Elemental Compatibility in Group Dynamics"
+  ],
+  "faqs": [
+    {
+      "question": "What is a 'Zodiac Cusp'?",
+      "answer": "A cusp refers to the dates at the very beginning or end of a zodiac sign transition. People born on these days often feel they exhibit traits from both signs. For example, being born on August 22nd might make you feel like both a Leo and a Virgo."
+    },
+    {
+      "question": "Does my birth year change my zodiac sign?",
+      "answer": "Generally, no. Western (Sun) signs are based on the monthly position of the sun along the ecliptic. However, your birth year is very important for the Chinese Zodiac, which operates on a different 12-year cycle."
+    },
+    {
+      "question": "What does my element (Fire, Air, etc.) mean?",
+      "answer": "In astrology, the four elements represent basic energy types. Fire (Action/Passion), Earth (Stability/Practicality), Air (Intellect/Communication), and Water (Emotion/Intuition). Each sign belongs to one of these four categories."
+    }
+  ],
+  "deepDive": "Astrology traces its roots back to ancient Mesopotamia and Greece, where the sky was divided into the 12 signs of the zodiac (circle of animals). While astronomical constellations have shifted slightly over millennia due to the precession of the equinoxes, Western 'Tropical' astrology continues to use a fixed calendar system aligned with the seasons. Your Sun Sign is considered the heart of your 'natal chart,' representing your outer ego and core identity, though advanced astrologers also look at Moon and Rising signs for a complete personality profile.",
+  "glossary": [
+    {
+      "term": "Sun Sign",
+      "definition": "The zodiac sign where the sun was positioned at the time of your birth, representing your core essence."
+    },
+    {
+      "term": "Element",
+      "definition": "One of the four categories (Fire, Earth, Air, Water) that group signs by personality temperament."
+    },
+    {
+      "term": "Ecliptic",
+      "definition": "The circular path on the celestial sphere that the sun appears to follow over the course of a year."
+    },
+    {
+      "term": "Cusp",
+      "definition": "The dividing line between two zodiac signs, occurring at the transition dates."
+    }
+  ]
+}

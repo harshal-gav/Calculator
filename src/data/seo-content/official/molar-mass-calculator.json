@@ -1,0 +1,112 @@
+{
+  "title": "Molar Mass Calculator: Stoichiometry & Molecular Weight Analysis",
+  "whatIsIt": "A **molar mass calculator** is a precision chemical utility used to determine the mass of one mole of a given substance. In chemistry, molar mass is a physical property defined as the mass of a substance divided by the amount of that substance. It is measured in grams per mole (g/mol) and is essential for converting between the mass of a sample and the number of atoms or molecules it contains.\n\nWhether you are a biology student calculating reagents for a PCR buffer or a chemical engineer optimizing industrial synthesis, this **molecular weight calculator** is foundational. By analyzing the atomic composition of a chemical formula, this tool reveals the exact 'mass identity' of any compound.",
+  "formula": "The molar mass of a compound is the sum of the atomic masses of all the atoms present in the chemical formula. The calculation follows this logic:\n\n### The Molar Mass Formula\n$M = \\sum_{i=1}^{n} (N_i \\times A_i)$\n\n- **M**: Molar Mass of the compound (g/mol)\n- **$N_i$**: The number of atoms of element $i$ in the formula.\n- **$A_i$**: The standard atomic weight of element $i$.\n\n### The Mole Conversion\n$n = \\frac{m}{M}$\n\n- **n**: Number of moles\n- **m**: Mass of the sample (grams)",
+  "example": "Let's calculate the molar mass of **Glucose ($C_6H_{12}O_6$)**, the primary energy source for most living organisms.\n\n### The Calculation Step-by-Step:\n1.  **Identify Atomic Weights**: Carbon ($C \\approx 12.01$), Hydrogen ($H \\approx 1.008$), Oxygen ($O \\approx 15.999$).\n2.  **Multiply by Frequency**: \n    - $C: 6 \\times 12.011 = 72.066$\n    - $H: 12 \\times 1.008 = 12.096$\n    - $O: 6 \\times 15.999 = 95.994$\n3.  **Sum the Totals**: $72.066 + 12.096 + 95.994 = 180.156$\n\n**The Result**: The molar mass of glucose is **180.156 g/mol**. This means if you weigh out 180.156 grams of glucose, you have exactly **one mole** ($6.022 \\times 10^{23}$ molecules) of sugar. Using a **compound mass calculator** ensures your laboratory preparations are mathematically perfect.",
+  "useCases": "### 1. Laboratory Reagent Preparation\nWhen preparing a '1 Molar' solution, you need to know exactly how many grams of a solute to add to a liter of solvent. This **molar mass calculator** provides the essential value ($M$) for that molarity equation.\n\n### 2. Theoretical Yield Calculations\nIn organic synthesis, chemists count atoms, not grams. By converting starting materials to moles, they can predict the exact amount of product (yield) a reaction will produce, identifying inefficiencies early in the process.\n\n### 3. Pharmacology and Drug Formulation\nDrug designers use molar mass to ensure that medications have the correct concentration of 'active pharmaceutical ingredient' (API) per milligram of pill mass, ensuring consistent therapeutic results.\n\n### 4. Environmental Monitoring\nScientists measuring 'ppm' (parts per million) of pollutants in water supplies use molar mass to convert concentration data into the total mass of the contaminant entering an ecosystem over time.",
+  "faqs": [
+    {
+      "question": "What is Avogadro's Number?",
+      "answer": "Avogadro's Number ($6.02214076 \\times 10^{23}$) is the number of constituent particles (usually atoms or molecules) contained in one mole of a substance."
+    },
+    {
+      "question": "Why are some atomic masses not whole numbers?",
+      "answer": "Atomic masses on the periodic table are weighted averages of all the naturally occurring isotopes of that element. For example, Chlorine has a mass of 35.45 because it is a mix of Chlorine-35 and Chlorine-37."
+    },
+    {
+      "question": "What is the difference between Molar Mass and Atomic Mass?",
+      "answer": "Atomic mass is the mass of a single atom (measured in amu). Molar mass is the mass of one mole of those atoms (measured in g/mol). Numerically, they are usually identical."
+    },
+    {
+      "question": "How do you calculate the molar mass of a hydrate?",
+      "answer": "To calculate the mass of a hydrate (like $CuSO_4 \\cdot 5H_2O$), you must add the molar mass of the 'water of crystallization' to the mass of the anhydrous salt."
+    },
+    {
+      "question": "Can gaseous substances have molar mass?",
+      "answer": "Yes. Every substance, whether solid, liquid, or gas, has a molar mass. For gases, this value is vital for using the Ideal Gas Law ($PV=nRT$)."
+    }
+  ],
+  "deepDive": "### Stoichiometry: The Grammar of Chemistry\n\nMolar mass is the 'translation layer' that allows us to speak the language of atoms while working in the world of grams. Without this **molecular weight calculator**, chemistry would be guesswork. \n\n#### The Law of Definite Proportions\nThis law states that a chemical compound always contains exactly the same proportion of elements by mass. For instance, water ($H_2O$) is always roughly 11% hydrogen and 89% oxygen by mass. Any deviation indicates a different compound or a contaminated sample.\n\n### Molarity and Solution Chemistry\nMolar mass is a prerequisite for **Molarity** ($M = n / V$). If you have a concentration value, you cannot determine the 'raw mass' of the solute without knowing its molar mass. For high-precision fields like toxicology, an error in this calculation can lead to catastrophic results.\n\n### Percentage Composition\nUsing molar mass, you can calculate the 'Percentage Composition' of an element in a compound ($\\% = \\frac{\\text{Mass of element in compound}}{\\text{Total Molar Mass}} \\times 100$). This is used in the mining industry to determine if an ore is rich enough in a specific metal to be worth extracting.\n\n### Empirical vs. Molecular Formulas\nMolar mass is the final key to identifying a substance. While an empirical formula ($CH_2O$, for example) tells you the ratio of atoms, you need the actual molar mass (e.g., 180.18 g/mol) to know if the substance is Glucose ($C_6H_{12}O_6$) or something else entirely. This tool simplifies that verification process.",
+  "glossary": [
+    {
+      "term": "Mole (mol)",
+      "definition": "The SI unit of amount of substance, containing exactly $6.022 \\times 10^{23}$ elementary entities."
+    },
+    {
+      "term": "Molar Mass",
+      "definition": "The mass of one mole of a chemical element or chemical compound, expressed in grams per mole (g/mol)."
+    },
+    {
+      "term": "Atomic Weight",
+      "definition": "The average mass of atoms of an element, calculated using the relative abundance of isotopes in a naturally-occurring element."
+    },
+    {
+      "term": "Avogadro's Number",
+      "definition": "The number of atoms or molecules in one mole of a substance ($6.02214076 \\times 10^{23}$)."
+    },
+    {
+      "term": "Stoichiometry",
+      "definition": "The calculation of products and reactants in chemical reactions."
+    },
+    {
+      "term": "Solute",
+      "definition": "The minor component in a solution, dissolved in the solvent."
+    },
+    {
+      "term": "Solvent",
+      "definition": "The liquid in which a solute is dissolved to form a solution."
+    },
+    {
+      "term": "Molarity (M)",
+      "definition": "The number of moles of solute per liter of solution."
+    },
+    {
+      "term": "Anhydrous",
+      "definition": "A substance that contains no water."
+    },
+    {
+      "term": "Hydrate",
+      "definition": "A compound, typically a crystalline one, in which water molecules are chemically bound to another compound or an element."
+    },
+    {
+      "term": "Isotope",
+      "definition": "Atoms of the same element that have different numbers of neutrons (and thus different atomic weights)."
+    },
+    {
+      "term": "Periodic Table",
+      "definition": "A tabular display of the chemical elements, which are arranged by atomic number, electron configuration, and recurring chemical properties."
+    },
+    {
+      "term": "Empirical Formula",
+      "definition": "A chemical formula showing the simplest whole-number ratio of atoms in a compound."
+    },
+    {
+      "term": "Molecular Formula",
+      "definition": "A chemical formula that specifies the actual number of atoms of each element in one molecule of a substance."
+    },
+    {
+      "term": "Standard Temperature and Pressure (STP)",
+      "definition": "Standard sets of conditions for experimental measurements, usually 0°C and 1 atmosphere."
+    },
+    {
+      "term": "Reagent",
+      "definition": "A substance or compound added to a system to cause a chemical reaction, or added to test if one occurs."
+    },
+    {
+      "term": "Precision",
+      "definition": "The quality, condition, or fact of being exact and accurate."
+    },
+    {
+      "term": "Concentration",
+      "definition": "The amount of a particular substance in a given amount of another substance, especially a solution or mixture."
+    },
+    {
+      "term": "Yield",
+      "definition": "The amount of product obtained from a chemical reaction."
+    },
+    {
+      "term": "Ideal Gas Law",
+      "definition": "The law that the product of the pressure and the volume of one gram molecule of an ideal gas is equal to the product of the absolute temperature of the gas and the universal gas constant."
+    }
+  ]
+}

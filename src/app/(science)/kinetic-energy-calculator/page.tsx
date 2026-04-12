@@ -1,462 +1,243 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import keData from "@/data/seo-content/official/kinetic-energy-calculator.json";
 
 export default function KineticEnergyCalculator() {
-  const [calcType, setCalcType] = useState("ke"); // ke, mass, velocity
-
-  // Values
-  const [ke, setKe] = useState("100"); // Joules (J)
-  const [mass, setMass] = useState("2"); // kg
-  const [velocity, setVelocity] = useState("10"); // m/s
-
-  // Units
-  const [keUnit, setKeUnit] = useState("J");
+  const [mass, setMass] = useState("2000"); // 2 tons
+  const [velocity, setVelocity] = useState("30"); // highway speed m/s
   const [massUnit, setMassUnit] = useState("kg");
-  const [velocityUnit, setVelocityUnit] = useState("m_s");
+  const [velocityUnit, setVelocityUnit] = useState("m/s");
 
-  // Unit conversions to base SI (J, kg, m/s)
-  const massToKg: Record<string, number> = {
-    kg: 1,
-    g: 0.001,
-    lb: 0.453592,
-    oz: 0.0283495,
-    ton: 1000,
-  };
+  const [result, setResult] = useState<{
+    joules: number;
+    kilojoules: number;
+    calories: number;
+    tntEquivalent: number;
+  } | null>(null);
 
-  const velocityToMS: Record<string, number> = {
-    m_s: 1,
-    km_h: 1 / 3.6,
-    mph: 0.44704,
-    ft_s: 0.3048,
-    knots: 0.514444,
-  };
+  useEffect(() => {
+    calculateKE();
+  }, [mass, velocity, massUnit, velocityUnit]);
 
-  const keToJoules: Record<string, number> = {
-    J: 1,
-    kJ: 1000,
-    MJ: 1000000,
-    cal: 4.184,
-    kcal: 4184,
-    Wh: 3600,
-    kWh: 3600000,
-    eV: 1.60218e-19,
-  };
+  const calculateKE = () => {
+    let m = parseFloat(mass) || 0;
+    let v = parseFloat(velocity) || 0;
 
-  const computeResult = () => {
-    const energy = parseFloat(ke);
-    const m = parseFloat(mass);
-    const v = parseFloat(velocity);
+    if (m > 0 && v > 0) {
+      // Standard KE = 0.5 * m * v^2
+      // Handle conversions
+      let mKg = m;
+      if (massUnit === "g") mKg = m / 1000;
+      else if (massUnit === "lb") mKg = m * 0.453592;
 
-    if (calcType === "ke") {
-      if (!isNaN(m) && !isNaN(v)) {
-        // KE = 1/2 * m * v^2
-        const m_kg = m * massToKg[massUnit];
-        const v_ms = v * velocityToMS[velocityUnit];
-        const ke_j = 0.5 * m_kg * Math.pow(v_ms, 2);
-        const result = ke_j / keToJoules[keUnit];
-        return { value: result, unitLabel: keUnit };
-      }
-    } else if (calcType === "mass") {
-      if (!isNaN(energy) && !isNaN(v) && v !== 0) {
-        // m = 2 * KE / v^2
-        const ke_j = energy * keToJoules[keUnit];
-        const v_ms = v * velocityToMS[velocityUnit];
-        const m_kg = (2 * ke_j) / Math.pow(v_ms, 2);
-        const result = m_kg / massToKg[massUnit];
-        return { value: result, unitLabel: massUnit };
-      }
-    } else if (calcType === "velocity") {
-      if (!isNaN(energy) && !isNaN(m) && m > 0 && energy >= 0) {
-        // v = sqrt(2 * KE / m)
-        const ke_j = energy * keToJoules[keUnit];
-        const m_kg = m * massToKg[massUnit];
-        const v_ms = Math.sqrt((2 * ke_j) / m_kg);
-        const result = v_ms / velocityToMS[velocityUnit];
+      let vMs = v;
+      if (velocityUnit === "km/h") vMs = v / 3.6;
+      else if (velocityUnit === "mph") vMs = v * 0.44704;
 
-        let outLabel = velocityUnit;
-        if (outLabel === "m_s") outLabel = "m/s";
-        if (outLabel === "km_h") outLabel = "km/h";
-        if (outLabel === "ft_s") outLabel = "ft/s";
-
-        return { value: result, unitLabel: outLabel };
-      }
+      const ke = 0.5 * mKg * Math.pow(vMs, 2);
+      
+      setResult({
+        joules: ke,
+        kilojoules: ke / 1000,
+        calories: ke * 0.239006,
+        tntEquivalent: ke / 4.184e6 // 1kg TNT = 4.184 MJ
+      });
+    } else {
+      setResult(null);
     }
-    return { value: null, unitLabel: "" };
   };
-
-  const resultData = computeResult();
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-2xl shadow-xl border border-zinc-200">
-      <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-rose-900 flex items-center justify-center">
-          <span className="mr-3">⚡</span> Kinetic Energy Calculator
-        </h1>
-        <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
-          Determine the energy of an object in motion. Calculate Kinetic Energy
-          (KE), Mass (m), or Velocity (v).
-        </p>
+    <div className="max-w-6xl mx-auto p-4 md:p-8 bg-slate-50 rounded-3xl shadow-xl border border-slate-200 font-sans italic-headings">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-200 pb-8 mb-10 gap-6">
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="text-3xl">☄️</span>
+            <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase italic">
+              Kinetic <span className="text-cyan-600 font-black">Energy Meter</span>
+            </h1>
+          </div>
+          <p className="text-slate-500 font-bold mt-1 tracking-tight text-sm uppercase italic">Work-Energy Displacement Matrix</p>
+        </div>
+        <div className="hidden md:flex flex-col items-end text-right">
+          <div className="bg-slate-900 px-4 py-2 rounded-xl border border-slate-700 mb-1 shadow-lg">
+            <span className="text-cyan-400 font-black text-[10px] uppercase tracking-[0.3em]">Scientific Protocol 05-E</span>
+          </div>
+          <span className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Velocity-Squared Delta Validation</span>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-        {/* Inputs */}
-        <div className="lg:col-span-3 space-y-6 bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm relative">
-          <div className="absolute top-0 left-0 w-2 h-full bg-rose-500 rounded-l-2xl"></div>
-
-          <div>
-            <label className="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">
-              Solve For
-            </label>
-            <select
-              value={calcType}
-              onChange={(e) => setCalcType(e.target.value)}
-              className="w-full rounded-xl border-zinc-300 p-4 shadow-sm focus:border-rose-500 focus:ring-2 focus:ring-rose-200 transition-all font-bold bg-zinc-50 cursor-pointer text-rose-900"
-            >
-              <option value="ke">Kinetic Energy (KE)</option>
-              <option value="mass">Mass (m)</option>
-              <option value="velocity">Velocity (v)</option>
-            </select>
-          </div>
-
-          <div className="space-y-4">
-            {calcType !== "ke" && (
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
+        {/* Input Sidebar */}
+        <div className="lg:col-span-12 xl:col-span-4 space-y-6">
+          <div className="p-8 bg-white rounded-[2.5rem] border border-slate-200 space-y-6 shadow-sm relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+            
+            <h2 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mb-4 border-b border-slate-100 pb-3 italic">Motion Parameters</h2>
+            
+            <div className="space-y-6">
               <div>
-                <label className="block text-xs font-bold text-zinc-500 mb-1 uppercase tracking-widest">
-                  Kinetic Energy (KE)
-                </label>
-                <div className="flex">
+                <label className="block text-[10px] font-black text-slate-500 mb-2 uppercase tracking-widest leading-none italic">Object Mass ({massUnit})</label>
+                <div className="flex gap-2">
                   <input
                     type="number"
-                    step="any"
-                    min="0"
-                    value={ke}
-                    onChange={(e) => setKe(e.target.value)}
-                    className="w-full rounded-l-xl border-zinc-200 p-3 shadow-sm focus:border-rose-500 font-mono font-bold"
-                  />
-                  <select
-                    value={keUnit}
-                    onChange={(e) => setKeUnit(e.target.value)}
-                    className="border-y border-r border-zinc-200 bg-zinc-100 text-zinc-700 font-bold px-3 rounded-r-xl"
-                  >
-                    <option value="J">Joules (J)</option>
-                    <option value="kJ">Kilojoules (kJ)</option>
-                    <option value="MJ">Megajoules (MJ)</option>
-                    <option value="cal">Calories (cal)</option>
-                    <option value="kcal">Kilocalories (kcal)</option>
-                    <option value="Wh">Watt-hours (Wh)</option>
-                    <option value="kWh">Kilowatt-hours (kWh)</option>
-                    <option value="eV">Electron-volts (eV)</option>
-                  </select>
-                </div>
-              </div>
-            )}
-            {calcType !== "mass" && (
-              <div>
-                <label className="block text-xs font-bold text-zinc-500 mb-1 uppercase tracking-widest">
-                  Mass (m)
-                </label>
-                <div className="flex">
-                  <input
-                    type="number"
-                    step="any"
-                    min="0"
                     value={mass}
                     onChange={(e) => setMass(e.target.value)}
-                    className="w-full rounded-l-xl border-zinc-200 p-3 shadow-sm focus:border-rose-500 font-mono font-bold"
+                    className="flex-1 bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-cyan-500/10 focus:border-cyan-500 transition-all font-black text-2xl text-slate-900 shadow-inner"
                   />
-                  <select
-                    value={massUnit}
+                  <select 
+                    value={massUnit} 
                     onChange={(e) => setMassUnit(e.target.value)}
-                    className="border-y border-r border-zinc-200 bg-zinc-100 text-zinc-700 font-bold px-3 rounded-r-xl"
+                    className="w-20 bg-white border border-slate-200 rounded-2xl px-3 font-bold text-xs appearance-none"
                   >
-                    <option value="kg">Kilograms (kg)</option>
-                    <option value="g">Grams (g)</option>
-                    <option value="lb">Pounds (lb)</option>
-                    <option value="oz">Ounces (oz)</option>
-                    <option value="ton">Metric Tons (t)</option>
+                    <option value="kg">kg</option>
+                    <option value="g">g</option>
+                    <option value="lb">lb</option>
                   </select>
                 </div>
               </div>
-            )}
-            {calcType !== "velocity" && (
+
               <div>
-                <label className="block text-xs font-bold text-zinc-500 mb-1 uppercase tracking-widest">
-                  Velocity (v)
-                </label>
-                <div className="flex">
-                  <input
+                <label className="block text-[10px] font-black text-slate-500 mb-2 uppercase tracking-widest leading-none italic">Current Velocity ({velocityUnit})</label>
+                <div className="flex gap-2">
+                   <input
                     type="number"
-                    step="any"
-                    min="0"
                     value={velocity}
                     onChange={(e) => setVelocity(e.target.value)}
-                    className="w-full rounded-l-xl border-zinc-200 p-3 shadow-sm focus:border-rose-500 font-mono font-bold"
+                    className="flex-1 bg-cyan-50/30 border border-cyan-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-cyan-500/10 focus:border-cyan-500 transition-all font-black text-2xl text-cyan-900 shadow-inner"
                   />
-                  <select
-                    value={velocityUnit}
+                  <select 
+                    value={velocityUnit} 
                     onChange={(e) => setVelocityUnit(e.target.value)}
-                    className="border-y border-r border-zinc-200 bg-zinc-100 text-zinc-700 font-bold px-3 rounded-r-xl"
+                    className="w-24 bg-white border border-slate-200 rounded-2xl px-3 font-bold text-xs"
                   >
-                    <option value="m_s">m/s</option>
-                    <option value="km_h">km/h</option>
+                    <option value="m/s">m/s</option>
+                    <option value="km/h">km/h</option>
                     <option value="mph">mph</option>
-                    <option value="ft_s">ft/s</option>
-                    <option value="knots">knots</option>
                   </select>
                 </div>
               </div>
-            )}
+            </div>
+
+            <button
+              onClick={calculateKE}
+              className="w-full bg-slate-900 hover:bg-black text-cyan-400 font-black py-5 rounded-2xl shadow-xl transition-all uppercase tracking-[0.3em] text-[10px] flex items-center justify-center gap-3 border border-slate-700"
+            >
+              <span className="w-2 h-2 rounded-full bg-cyan-500 animate-ping"></span> Project Impact
+            </button>
           </div>
 
-          {/* Select Output Unit */}
-          {calcType === "ke" && (
-            <div className="pt-4 border-t border-zinc-100">
-              <label className="block text-xs font-bold text-rose-700 mb-2 uppercase tracking-wide">
-                Output Unit (Energy)
-              </label>
-              <select
-                value={keUnit}
-                onChange={(e) => setKeUnit(e.target.value)}
-                className="w-full rounded-xl border-rose-200 p-3 shadow-sm focus:border-rose-500 font-semibold bg-rose-50/50"
-              >
-                <option value="J">Joules (J)</option>
-                <option value="kJ">Kilojoules (kJ)</option>
-                <option value="MJ">Megajoules (MJ)</option>
-                <option value="cal">Calories (cal)</option>
-                <option value="kcal">Kilocalories (kcal)</option>
-                <option value="Wh">Watt-hours (Wh)</option>
-                <option value="kWh">Kilowatt-hours (kWh)</option>
-                <option value="eV">Electron-volts (eV)</option>
-              </select>
-            </div>
-          )}
-          {calcType === "mass" && (
-            <div className="pt-4 border-t border-zinc-100">
-              <label className="block text-xs font-bold text-rose-700 mb-2 uppercase tracking-wide">
-                Output Unit (Mass)
-              </label>
-              <select
-                value={massUnit}
-                onChange={(e) => setMassUnit(e.target.value)}
-                className="w-full rounded-xl border-rose-200 p-3 shadow-sm focus:border-rose-500 font-semibold bg-rose-50/50"
-              >
-                <option value="kg">Kilograms (kg)</option>
-                <option value="g">Grams (g)</option>
-                <option value="lb">Pounds (lb)</option>
-                <option value="oz">Ounces (oz)</option>
-                <option value="ton">Metric Tons (t)</option>
-              </select>
-            </div>
-          )}
-          {calcType === "velocity" && (
-            <div className="pt-4 border-t border-zinc-100">
-              <label className="block text-xs font-bold text-rose-700 mb-2 uppercase tracking-wide">
-                Output Unit (Velocity)
-              </label>
-              <select
-                value={velocityUnit}
-                onChange={(e) => setVelocityUnit(e.target.value)}
-                className="w-full rounded-xl border-rose-200 p-3 shadow-sm focus:border-rose-500 font-semibold bg-rose-50/50"
-              >
-                <option value="m_s">m/s</option>
-                <option value="km_h">km/h</option>
-                <option value="mph">mph</option>
-                <option value="ft_s">ft/s</option>
-                <option value="knots">knots</option>
-              </select>
-            </div>
-          )}
+          <div className="p-8 bg-slate-100 rounded-[2.5rem] border border-slate-200 space-y-4 shadow-sm group">
+             <div className="flex items-center justify-between">
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest italic">Physics Insight</span>
+                <span className="text-cyan-600 text-xl group-hover:rotate-12 transition-transform">⚡</span>
+             </div>
+             <p className="text-xs font-bold leading-relaxed italic text-slate-600 bg-white p-4 rounded-xl border border-slate-200">Kinetic energy increases by the <span className="text-slate-900 font-black">square</span> of the velocity. Doubling speed quadruples impact energy.</p>
+          </div>
         </div>
 
-        {/* Dashboard Output */}
-        <div className="lg:col-span-2">
-          {resultData.value !== null ? (
-            <div className="h-full bg-slate-900 rounded-2xl p-8 shadow-2xl relative overflow-hidden flex flex-col justify-center text-white border border-rose-800">
-              {/* Decorative element map dots */}
-              <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-rose-600 rounded-full mix-blend-screen filter blur-[60px] opacity-40 pointer-events-none"></div>
-
-              <div className="relative z-10 text-center">
-                <h2 className="text-rose-200 font-bold uppercase tracking-widest text-xs mb-8 border-b border-rose-800/50 pb-4">
-                  Calculated{" "},
-                  {calcType === "ke"
-                    ? "Kinetic Energy"
-                    : calcType === "mass"
-                      ? "Mass"
-                      : "Velocity"}
-                </h2>
-
-                <div className="text-5xl lg:text-5xl font-black tracking-tight text-white mb-4 drop-shadow-lg break-all font-mono">
-                  {resultData.value > 1e6 ||
-                  (Math.abs(resultData.value) < 1e-4 && resultData.value !== 0)
-                    ? resultData.value.toExponential(4)
-                    : parseFloat(resultData.value.toPrecision(7))}
-                </div>
-                <div className="text-rose-400 font-bold text-xl tracking-wider">
-                  {resultData.unitLabel}
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-rose-800/50">
-                  <div className="text-rose-200 text-[10px] uppercase font-bold tracking-widest text-center mb-2">
-                    Kinetic Energy Equation
+        {/* Results Canvas */}
+        <div className="lg:col-span-12 xl:col-span-8 flex flex-col">
+          {result !== null ? (
+            <div className="h-full flex flex-col gap-6">
+              <div className="grow bg-white rounded-[3rem] p-12 md:p-16 text-slate-900 shadow-2xl relative overflow-hidden border border-slate-200 flex flex-col justify-center">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none"></div>
+                
+                <div className="relative z-10 space-y-2">
+                  <span className="inline-block px-4 py-1 bg-slate-100 border border-slate-200 text-slate-500 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mb-4 italic">Total Kinetic Potential</span>
+                  <div className="text-8xl md:text-9xl font-black tracking-tighter tabular-nums text-slate-900 flex items-baseline gap-4 leading-none italic">
+                    {result.joules.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                    <span className="text-xl md:text-3xl text-slate-300 font-bold tracking-normal uppercase italic">Joules (J)</span>
                   </div>
-                  <div className="text-rose-100 font-mono bg-black/40 backdrop-blur-sm p-4 rounded-xl text-xl font-bold flex items-center justify-center border border-rose-700/50">
-                    <span className="italic mr-2">KE</span> ={" "}
-                    <span className="ml-2 font-normal text-lg leading-none pt-1 inline-block">
-                      ½
-                    </span>
-                    <span className="mx-2">
-                      m v<sup className="text-xs">2</sup>
-                    </span>
+                  <div className="flex items-center gap-4 pt-6">
+                    <div className="px-5 py-2 rounded-xl bg-slate-900 text-cyan-400 text-[10px] font-black uppercase tracking-widest shadow-lg">
+                      {result.kilojoules.toFixed(1)} kJ Total
+                    </div>
+                    <p className="text-slate-400 font-bold uppercase text-[10px] tracking-widest italic opacity-70">Calculated Work Capability</p>
                   </div>
                 </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-slate-900 p-10 rounded-[2.5rem] border border-slate-800 text-white flex flex-col justify-center relative group overflow-hidden shadow-2xl">
+                  <div className="absolute top-0 right-0 h-1 w-full bg-cyan-500"></div>
+                  <div className="text-cyan-500 text-[10px] font-black uppercase mb-4 tracking-[0.3em] leading-none italic">Energy Equivalents</div>
+                  <div className="flex flex-col gap-4">
+                    <div className="flex justify-between items-center border-b border-slate-800 pb-3">
+                      <span className="text-slate-400 font-bold text-[10px] uppercase tracking-widest italic">Calories</span>
+                      <span className="text-white font-black">{result.calories.toLocaleString(undefined, { maximumFractionDigits: 1 })}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-400 font-bold text-[10px] uppercase tracking-widest italic">TNT (mg)</span>
+                      <span className="text-white font-black">{(result.tntEquivalent * 1000000).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white border-2 border-slate-100 p-10 rounded-[2.5rem] shadow-sm flex flex-col justify-center italic-headings">
+                  <div className="text-slate-400 text-[10px] font-black uppercase mb-4 tracking-[0.3em] leading-none italic">Velocity Sensitivity</div>
+                  <div className="space-y-4">
+                     <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                        <div className="h-full bg-cyan-600" style={{ width: `${Math.min(100, Math.abs(parseFloat(velocity)) * 2)}%` }}></div>
+                     </div>
+                     <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-tight italic">Squared velocity factor contributes to {((Math.pow(parseFloat(velocity), 2) / (result.joules / (0.5 * parseFloat(mass)))) * 100).toFixed(0)}% of energy scaling.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-slate-200/40 p-3 rounded-2xl flex items-center gap-4">
+                <div className="h-2 grow bg-slate-300 rounded-full overflow-hidden shadow-inner flex">
+                   <div className="h-full bg-cyan-600 shadow-[0_0_20px_rgba(8,145,178,0.5)] transition-all duration-1000" style={{ width: `${Math.min(100, result.joules / 5000)}%` }}></div>
+                </div>
+                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest w-24 text-right italic">Magnitude</div>
               </div>
             </div>
           ) : (
-            <div className="h-full rounded-2xl border-2 border-dashed border-zinc-300 bg-zinc-100 flex flex-col items-center justify-center p-8 text-center text-zinc-500">
-              <span className="text-5xl mb-4 opacity-50 filter grayscale pt-10">
-                ⚡
-              </span>
-              <h3 className="text-zinc-700 font-bold text-lg mb-2">
-                Awaiting Variables
-              </h3>
-              <p className="text-sm">
-                Enter the two known parameters to calculate the missing one.
-              </p>
+            <div className="h-full min-h-[500px] border-4 border-dashed border-slate-200 rounded-[3rem] flex flex-col items-center justify-center p-12 text-center bg-white shadow-inner">
+               <div className="w-24 h-24 bg-slate-50 rounded-[2.5rem] flex items-center justify-center mb-8 border border-slate-100 shadow-sm animate-pulse">
+                  <span className="text-4xl">🌠</span>
+               </div>
+               <h3 className="text-slate-900 text-3xl font-black mb-4 uppercase tracking-tighter italic">Pending Kinetic Trace</h3>
+               <p className="text-slate-400 max-w-sm font-bold leading-tight text-lg italic uppercase tracking-tighter opacity-70">Define the object mass and velocity vector to reveal the total work potential stored within the system.</p>
             </div>
           )}
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Kinetic Energy Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-          }),
-        }}
+      <CalculatorSEO
+        title={keData.title}
+        whatIsIt={keData.whatIsIt}
+        formula={keData.formula}
+        example={keData.example}
+        useCases={keData.useCases}
+        faqs={keData.faqs}
+        deepDive={keData.deepDive}
+        glossary={keData.glossary}
+        relatedCalculators={[
+          {
+            name: "Potential Energy",
+            path: "/potential-energy-calculator/",
+            desc: "Calculate the energy stored in an object due to its position in a gravitational field.",
+          },
+          {
+            name: "Work and Force",
+            path: "/force-calculator/",
+            desc: "Analyze how force and displacement create work and change kinetic energy states.",
+          },
+          {
+            name: "Acceleration",
+            path: "/acceleration-calculator/",
+            desc: "Model the rate of velocity change required to reach a specific energy level.",
+          },
+          {
+            name: "Power",
+            path: "/power-calculator/",
+            desc: "Determine the rate at which kinetic energy is generated or dissipated over time.",
+          }
+        ]}
       />
-
-      <div className="mt-8 text-left">
-        <CalculatorSEO
-          title="Physics & Kinetic Energy Calculator"
-          whatIsIt={
-            <p>
-              Our <strong>Kinetic Energy Calculator</strong> determines the
-              devastating, physical energy possessed by any object strictly due
-              to its motion. Moving beyond simple speed or weight, this
-              calculator merges Mass (m) and Velocity (v) using classical
-              Newtonian mechanics to solve for absolute energy output in Joules,
-              Electron-volts, or standard Calories.
-            </p>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              KE = ½mv²
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Possessed energy due to an object's motion.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                Let's calculate the kinetic energy of a <strong>2 kg</strong>{" "}
-                rock being hurled at a velocity of <strong>10 m/s</strong>.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-rose-800">
-                <li>
-                  <strong>The Velocity Square:</strong> 10 m/s squared (10 × 10)
-                  equals <strong>100</strong>.
-                </li>
-                <li>
-                  <strong>The Mass Multiplication:</strong> Multiply that 100 by
-                  the 2 kg mass to get <strong>200</strong>.
-                </li>
-                <li>
-                  <strong>The Half Ratio:</strong> Multiply 200 by ½ (or divide
-                  by 2) to get <strong>100</strong>.
-                </li>
-                <li>
-                  <strong>The Result:</strong> The rock is carrying exactly{" "}
-                  <strong>100 Joules (J)</strong> of kinetic energy before
-                  impact.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-rose-800">
-              <li>
-                <strong>Automotive Engineering:</strong> Calculating the lethal
-                force behind a 2,000lb car traveling at 70mph to design crumple
-                zones and airbags capable of safely absorbing millions of Joules
-                during a crash.
-              </li>
-              <li>
-                <strong>Ballistics Testing:</strong> Firearms manufacturers
-                determining the exact stopping power of hunting ammunition by
-                combining grain weight and muzzle velocity into a single,
-                standardized power metric.
-              </li>
-              <li>
-                <strong>Astrophysics:</strong> Scientists analyzing the
-                world-ending kinetic threat of small, low-mass asteroids
-                traveling at incomprehensibly high velocities before entering
-                Earth's atmosphere.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question:
-                "Why does driving faster become so much more dangerous?",
-              answer:
-                "Because velocity is squared in the formula. If you crash at 30mph, you endure 'X' amount of force. If you double your speed to 60mph, your kinetic energy doesn't double—it quadruples to '4X'. Driving twice as fast makes a crash four times as deadly.",
-            },
-            {
-              question:
-                "How is Kinetic Energy different from Potential Energy?",
-              answer:
-                "Potential Energy is stored energy based on position (like a boulder hovering at the top of a cliff). Kinetic Energy is active energy based on motion. When that boulder falls, gravity converts its static Potential Energy directly into violent Kinetic Energy.",
-            },
-            {
-              question:
-                "Can Kinetic Energy ever be a negative baseline number?",
-              answer:
-                "No. Mass must always be positive. Velocity can represent a negative direction, but because the formula squares the velocity (-v × -v), any negative sign is stripped mathematically. Kinetic energy is always strictly zero or positive.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Velocity Calculator",
-              path: "/velocity-calculator/",
-              desc: "Solve for the pure speed variable required for kinematic equations.",
-            },
-            {
-              name: "Force Calculator",
-              path: "/force-calculator/",
-              desc: "Calculate the Newton impact required to accelerate the given mass.",
-            },
-            {
-              name: "Projectile Calculator",
-              path: "/projectile-motion-calculator/",
-              desc: "Map the physical parabolic arc of the mass acting under gravity.",
-            },
-            {
-              name: "Density Calculator",
-              path: "/density-calculator/",
-              desc: "Calculate density, mass, or volume given two values.",
-            }]}
-        />
-      </div>
     </div>
   );
 }

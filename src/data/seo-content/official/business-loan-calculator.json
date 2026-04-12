@@ -1,0 +1,40 @@
+{
+  "title": "Business Loan Calculator: Master the Math of Commercial Financing",
+  "whatIsIt": "A **Business Loan Calculator** is a precision commercial financing tool designed to determine the exact monthly payments and total interest owed for SBA loans, term loans, and equipment financing.\n\nCrucially, in the landscape of commercial debt, the 'Interest Rate' is rarely the full story. This calculator factors in upfront 'Origination Fees' that lenders deduct from your payout, revealing your **Effective APR**. Understanding this metric is the only way to objectively compare competing financing offers and protect your company's cash flow.",
+  "formula": "The monthly payment is calculated using the standard amortization formula:\n\n**M = P [ r(1 + r)ⁿ ] / [ (1 + r)ⁿ – 1 ]**\n\nWhere:\n- **M** = Monthly payment\n- **P** = Gross loan amount\n- **r** = Monthly interest rate (Annual Rate / 12 / 100)\n- **n** = Number of months (Loan Term)",
+  "example": "Imagine your small business is approved for a **$100,000 working capital loan** at **7.5% interest** over 60 months, with a **3% origination fee** ($3,000) plus a $500 flat closing cost.\n\n1. **Monthly Payment:** Exactly **$2,003.79**.\n2. **Net Funds Received:** Since the $3,500 in fees are deducted upfront, you only receive **$96,500**.\n3. **Effective APR:** Because you are paying $2,003 based on a $100k balance but only utilized $96.5k, your **true cost (Effective APR) is 9.07%**.",
+  "useCases": "### SBA 7(a) Loan Planning\nProject 10-year or 25-year repayment schedules and calculate how the SBA's standard guaranty fees affect your net capital.\n\n### Working Capital Comparison\nEvaluate a low-interest bank loan with high fees versus a high-interest online lender with zero fees. The Effective APR shows the mathematical winner.\n\n### Equipment Financing\nCalculate the cash flow impact of a 3-year term for mission-critical machinery, ensuring your 'Internal Rate of Return' (IRR) on the equipment exceeds the loan cost.",
+  "faqs": [
+    {
+      "question": "What is a typical Origination Fee for a business loan?",
+      "answer": "In commercial lending, origination fees typically range from 2% to 5% of the total loan amount. Lenders use these fees to cover underwriting, processing, and administrative costs."
+    },
+    {
+      "question": "Why does Effective APR matter more than the Interest Rate?",
+      "answer": "The interest rate determines your payment, but the APR accounts for the time-value impact of fees you paid up front. If you pay $5,000 to get a loan, that is $5,000 you can't use for business growth, increasing your 'real' cost of debt."
+    },
+    {
+      "question": "Are business loan payments tax-deductible?",
+      "answer": "The principal repayment is not deductible (as it is the return of borrowed capital), but the **interest paid** is generally a fully deductible business expense in most jurisdictions."
+    }
+  ],
+  "deepDive": "Business loans differ from consumer loans in their complexity and fee structure. Many commercial lenders use 'Interest-Only' periods or 'Balloon Payments' to lower initial cash flow requirements. Furthermore, 'Covenant Requirements' often dictate that a business maintains a certain Debt Service Coverage Ratio (DSCR). Using a calculator to ensure your monthly payments keep your DSCR above 1.25x is a critical step in maintaining a healthy relationship with your lender and preventing technical default.",
+  "glossary": [
+    {
+      "term": "Effective APR",
+      "definition": "The interest rate that results in the same cash flows as the loan when upfront fees are factored into the net amount received."
+    },
+    {
+      "term": "Origination Fee",
+      "definition": "An upfront fee charged by a lender for creating and processing a loan, usually calculated as a percentage of the principal."
+    },
+    {
+      "term": "Net proceeds",
+      "definition": "The actual amount of cash a borrower receives after all fees and closing costs are deducted from the gross loan amount."
+    },
+    {
+      "term": "Amortization",
+      "definition": "The systematic reduction of a debt through regular payments that cover both principal and interest."
+    }
+  ]
+}

@@ -1,363 +1,206 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
+import ohmsData from "@/data/seo-content/official/ohms-law-calculator.json";
 
 export default function OhmsLawCalculator() {
-  // V = I * R
-  // P = V * I = I^2 * R = V^2 / R
-  const [voltage, setVoltage] = useState("12"); // V
-  const [current, setCurrent] = useState("2"); // I
-  const [resistance, setResistance] = useState(""); // R
-  const [power, setPower] = useState(""); // P
+  const [v, setV] = useState("120");
+  const [i, setI] = useState("10");
+  const [r, setR] = useState("12");
+  const [p, setP] = useState("1200");
+  
+  const [activeInputs, setActiveInputs] = useState<Set<string>>(new Set(["v", "i"]));
 
-  const [msg, setMsg] = useState("");
-
-  const calculate = () => {
-    setMsg("");
-    const v = parseFloat(voltage);
-    const i = parseFloat(current);
-    const r = parseFloat(resistance);
-    const p = parseFloat(power);
-
-    // Count non-NaN inputs
-    const vals = { v: !isNaN(v), i: !isNaN(i), r: !isNaN(r), p: !isNaN(p) };
-    const count = Object.values(vals).filter(Boolean).length;
-
-    if (count < 2) {
-      setMsg("Please enter exactly 2 values to calculate the others.");
-      return;
-    }
-    if (count > 2) {
-      setMsg("Please enter ONLY 2 values. Clear the others to recalculate.");
-      return;
+  const handleInputChange = (field: string, value: string) => {
+    // We want exactly 2 active inputs. 
+    // If user changes a field not in activeInputs, it becomes active and the oldest one becomes inactive.
+    if (!activeInputs.has(field)) {
+      const nextActive = new Set(activeInputs);
+      if (nextActive.size >= 2) {
+        // Remove the "oldest" (first) element
+        const first = nextActive.values().next().value;
+        if (first !== undefined) nextActive.delete(first);
+      }
+      nextActive.add(field);
+      setActiveInputs(nextActive);
     }
 
-    let newV = v;
-    let newI = i;
-    let newR = r;
-    let newP = p;
-
-    if (vals.v && vals.i) {
-      newR = v / i;
-      newP = v * i;
-    } else if (vals.v && vals.r) {
-      newI = v / r;
-      newP = (v * v) / r;
-    } else if (vals.v && vals.p) {
-      newI = p / v;
-      newR = (v * v) / p;
-    } else if (vals.i && vals.r) {
-      newV = i * r;
-      newP = i * i * r;
-    } else if (vals.i && vals.p) {
-      newV = p / i;
-      newR = p / (i * i);
-    } else if (vals.r && vals.p) {
-      newV = Math.sqrt(p * r);
-      newI = Math.sqrt(p / r);
-    }
-
-    setVoltage(newV.toFixed(4).replace(/\.0000$/, ""));
-    setCurrent(newI.toFixed(4).replace(/\.0000$/, ""));
-    setResistance(newR.toFixed(4).replace(/\.0000$/, ""));
-    setPower(newP.toFixed(4).replace(/\.0000$/, ""));
+    if (field === "v") setV(value);
+    if (field === "i") setI(value);
+    if (field === "r") setR(value);
+    if (field === "p") setP(value);
   };
 
-  const clearAll = () => {
-    setVoltage("");
-    setCurrent("");
-    setResistance("");
-    setPower("");
-    setMsg("");
+  useEffect(() => {
+    calculateOhms();
+  }, [v, i, r, p, activeInputs]);
+
+  const calculateOhms = () => {
+    const vVal = parseFloat(v) || 0;
+    const iVal = parseFloat(i) || 0;
+    const rVal = parseFloat(r) || 0;
+    const pVal = parseFloat(p) || 0;
+
+    // Cases based on active inputs
+    if (activeInputs.has("v") && activeInputs.has("i")) {
+      if (iVal !== 0) {
+        setR((vVal / iVal).toFixed(2));
+        setP((vVal * iVal).toFixed(2));
+      }
+    } else if (activeInputs.has("v") && activeInputs.has("r")) {
+      if (rVal !== 0) {
+        setI((vVal / rVal).toFixed(2));
+        setP((Math.pow(vVal, 2) / rVal).toFixed(2));
+      }
+    } else if (activeInputs.has("v") && activeInputs.has("p")) {
+      if (vVal !== 0) {
+        setI((pVal / vVal).toFixed(2));
+        setR((Math.pow(vVal, 2) / pVal).toFixed(2));
+      }
+    } else if (activeInputs.has("i") && activeInputs.has("r")) {
+      setV((iVal * rVal).toFixed(2));
+      setP((Math.pow(iVal, 2) * rVal).toFixed(2));
+    } else if (activeInputs.has("i") && activeInputs.has("p")) {
+      if (iVal !== 0) {
+        setV((pVal / iVal).toFixed(2));
+        setR((pVal / Math.pow(iVal, 2)).toFixed(2));
+      }
+    } else if (activeInputs.has("r") && activeInputs.has("p")) {
+      if (rVal !== 0) {
+        setV(Math.sqrt(pVal * rVal).toFixed(2));
+        setI(Math.sqrt(pVal / rVal).toFixed(2));
+      }
+    }
   };
+
+  const InputField = ({ label, id, value, unit }: { label: string, id: string, value: string, unit: string }) => (
+    <div className={`p-6 rounded-3xl border-2 transition-all ${activeInputs.has(id) ? "bg-white border-cyan-500 shadow-lg scale-[1.02] z-10" : "bg-slate-50 border-slate-200 opacity-60 shadow-inner"}`}>
+      <div className="flex justify-between items-center mb-3">
+         <label className={`text-[10px] font-black uppercase tracking-[0.2em] ${activeInputs.has(id) ? "text-cyan-600" : "text-slate-400"}`}>{label}</label>
+         {activeInputs.has(id) && <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>}
+      </div>
+      <div className="relative">
+        <input
+          type="number"
+          value={value}
+          onChange={(e) => handleInputChange(id, e.target.value)}
+          className={`w-full bg-transparent border-0 p-0 font-black text-3xl focus:ring-0 ${activeInputs.has(id) ? "text-slate-900" : "text-slate-400"}`}
+        />
+        <span className="absolute right-0 bottom-1 text-[10px] font-black text-slate-300 uppercase italic">{unit}</span>
+      </div>
+    </div>
+  );
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-zinc-50 rounded-2xl shadow-xl border border-zinc-200">
-      <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-emerald-900 flex items-center justify-center font-serif">
-          <span className="mr-3">⚡</span> Ohm's Law Calculator
-        </h1>
-        <p className="text-emerald-700 text-lg max-w-2xl mx-auto">
-          Enter any two values to instantly calculate the remaining properties
-          in the circuit.
-        </p>
-      </div>
-
-      <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-zinc-200 mb-8">
-        {msg && (
-          <div className="mb-6 bg-rose-50 border border-rose-200 text-rose-600 p-4 rounded-xl text-center font-bold text-sm uppercase tracking-wide">
-            {msg}
+    <div className="max-w-6xl mx-auto p-4 md:p-8 bg-slate-50 rounded-3xl shadow-xl border border-slate-200 font-sans italic-headings">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-200 pb-8 mb-10 gap-6">
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="text-3xl">🔌</span>
+            <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase italic">
+              Ohm's Law <span className="text-cyan-600 font-black">Circuit Matrix</span>
+            </h1>
           </div>
-        )}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-zinc-50 p-6 rounded-xl border border-zinc-200 shadow-inner group focus-within:bg-white focus-within:border-emerald-300 transition-colors">
-            <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
-              Voltage (V)
-            </label>
-            <div className="relative">
-              <input
-                type="number"
-                step="any"
-                min="0"
-                value={voltage}
-                onChange={(e) => setVoltage(e.target.value)}
-                className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-white text-emerald-900 text-2xl pr-20"
-                placeholder="Enter value"
-              />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 font-bold text-emerald-600 font-mono text-xl">
-                V
-              </span>
-            </div>
-            <p className="text-xs text-zinc-400 font-bold mt-2 uppercase tracking-widest pl-1">
-              Volts
-            </p>
-          </div>
-
-          <div className="bg-zinc-50 p-6 rounded-xl border border-zinc-200 shadow-inner group focus-within:bg-white focus-within:border-emerald-300 transition-colors">
-            <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
-              Current (I)
-            </label>
-            <div className="relative">
-              <input
-                type="number"
-                step="any"
-                min="0"
-                value={current}
-                onChange={(e) => setCurrent(e.target.value)}
-                className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-white text-emerald-900 text-2xl pr-20"
-                placeholder="Enter value"
-              />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 font-bold text-emerald-600 font-mono text-xl">
-                A
-              </span>
-            </div>
-            <p className="text-xs text-zinc-400 font-bold mt-2 uppercase tracking-widest pl-1">
-              Amps
-            </p>
-          </div>
-
-          <div className="bg-zinc-50 p-6 rounded-xl border border-zinc-200 shadow-inner group focus-within:bg-white focus-within:border-emerald-300 transition-colors">
-            <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
-              Resistance (R)
-            </label>
-            <div className="relative">
-              <input
-                type="number"
-                step="any"
-                min="0"
-                value={resistance}
-                onChange={(e) => setResistance(e.target.value)}
-                className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-white text-emerald-900 text-2xl pr-20"
-                placeholder="Enter value"
-              />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 font-bold text-emerald-600 font-mono text-xl">
-                Ω
-              </span>
-            </div>
-            <p className="text-xs text-zinc-400 font-bold mt-2 uppercase tracking-widest pl-1">
-              Ohms
-            </p>
-          </div>
-
-          <div className="bg-zinc-50 p-6 rounded-xl border border-zinc-200 shadow-inner group focus-within:bg-white focus-within:border-emerald-300 transition-colors">
-            <label className="block text-sm font-bold text-zinc-600 mb-2 uppercase tracking-wide">
-              Power (P)
-            </label>
-            <div className="relative">
-              <input
-                type="number"
-                step="any"
-                min="0"
-                value={power}
-                onChange={(e) => setPower(e.target.value)}
-                className="w-full rounded-xl border-zinc-300 shadow-sm p-4 border focus:border-emerald-500 font-bold bg-white text-emerald-900 text-2xl pr-20"
-                placeholder="Enter value"
-                onKeyDown={(e) => e.key === "Enter" && calculate()}
-              />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 font-bold text-emerald-600 font-mono text-xl">
-                W
-              </span>
-            </div>
-            <p className="text-xs text-zinc-400 font-bold mt-2 uppercase tracking-widest pl-1">
-              Watts
-            </p>
-          </div>
+          <p className="text-slate-500 font-bold mt-1 tracking-tight text-sm uppercase italic">Universal Electrical Parameter Resolver</p>
         </div>
-
-        <div className="mt-8 flex flex-col md:flex-row gap-4">
-          <button
-            onClick={calculate}
-            className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-5 px-6 rounded-xl transition-colors shadow-lg shadow-emerald-600/30 uppercase tracking-widest text-lg"
-          >
-            Calculate Missing
-          </button>
-          <button
-            onClick={clearAll}
-            className="md:w-32 bg-zinc-200 hover:bg-zinc-300 text-zinc-700 font-bold py-5 px-6 rounded-xl transition-colors shadow-sm uppercase tracking-widest text-sm"
-          >
-            Clear
-          </button>
+        <div className="hidden md:flex flex-col items-end text-right">
+          <div className="bg-slate-900 px-4 py-2 rounded-xl border border-slate-700 mb-1 shadow-lg">
+            <span className="text-cyan-400 font-black text-[10px] uppercase tracking-[0.3em]">Scientific Protocol 07-G</span>
+          </div>
+          <span className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter italic">V=IR Standardized Verification</span>
         </div>
       </div>
 
-      <div className="mt-8 bg-zinc-100 p-8 rounded-xl border border-zinc-200 text-sm text-zinc-600 max-w-2xl mx-auto text-center shadow-inner">
-        <p className="font-bold text-zinc-800 uppercase tracking-widest mb-6">
-          Ohm's Law Wheel
-        </p>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 font-mono font-bold">
-          <div className="bg-white p-4 rounded-lg shadow border border-zinc-200 flex flex-col items-center justify-center min-h-[5rem]">
-            <span className="text-emerald-700 block mb-2 font-serif text-lg border-b border-emerald-100 pb-1 w-full">
-              V =
-            </span>
-            <span className="text-lg">I × R</span>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow border border-zinc-200 flex flex-col items-center justify-center min-h-[5rem]">
-            <span className="text-emerald-700 block mb-2 font-serif text-lg border-b border-emerald-100 pb-1 w-full">
-              I =
-            </span>
-            <span className="text-lg">V / R</span>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow border border-zinc-200 flex flex-col items-center justify-center min-h-[5rem]">
-            <span className="text-emerald-700 block mb-2 font-serif text-lg border-b border-emerald-100 pb-1 w-full">
-              R =
-            </span>
-            <span className="text-lg">V / I</span>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow border border-zinc-200 flex flex-col items-center justify-center min-h-[5rem]">
-            <span className="text-emerald-700 block mb-2 font-serif text-lg border-b border-emerald-100 pb-1 w-full">
-              P =
-            </span>
-            <span className="text-lg">V × I</span>
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 relative">
+        <InputField label="Voltage" id="v" value={v} unit="Volts (V)" />
+        <InputField label="Current" id="i" value={i} unit="Amps (I)" />
+        <InputField label="Resistance" id="r" value={r} unit="Ohms (R)" />
+        <InputField label="Power" id="p" value={p} unit="Watts (P)" />
+        
+        <div className="col-span-1 md:col-span-2 lg:col-span-4 mt-6">
+           <div className="p-6 bg-slate-900 rounded-[2rem] text-white flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative group">
+              <div className="absolute inset-0 bg-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="flex items-center gap-4 relative z-10">
+                 <div className="w-12 h-12 bg-cyan-600/20 rounded-2xl flex items-center justify-center border border-cyan-500/30">
+                    <span className="text-2xl text-cyan-400 font-black">!</span>
+                 </div>
+                 <div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-cyan-500">Auto-Resolver Logic</span>
+                    <p className="text-sm font-bold italic text-white/70">Modify any field to lock it as an input. The matrix will solve the remaining parameters.</p>
+                 </div>
+              </div>
+              <div className="flex gap-4 relative z-10">
+                 <div className="px-5 py-3 rounded-2xl bg-white/5 border border-white/10 text-center">
+                    <span className="block text-[8px] font-black uppercase text-slate-500 mb-1">Status</span>
+                    <span className="text-xs font-black uppercase tracking-widest text-cyan-400">Locked @ 2 Parameters</span>
+                 </div>
+              </div>
+           </div>
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Ohm's Law Calculator",
-            operatingSystem: "All",
-            applicationCategory: "EducationalApplication",
-          }),
-        }}
+      <div className="mb-12 bg-white rounded-[3rem] p-10 md:p-16 text-slate-900 shadow-2xl relative overflow-hidden border border-slate-200">
+         <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none"></div>
+         
+         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-5 space-y-6 text-center lg:text-left">
+               <span className="inline-block px-4 py-1.5 bg-slate-100 border border-slate-200 text-slate-500 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mb-4 italic">Load Profile Result</span>
+               <h2 className="text-6xl font-black tracking-tight italic uppercase leading-none">
+                  {parseFloat(p) > 1000 ? "High" : "Standard"} <span className="text-cyan-600">Dissipation</span>
+               </h2>
+               <p className="text-slate-400 font-bold uppercase text-[10px] tracking-[0.2em] italic max-w-sm">Current circuit parameters indicate a load of {p} Watts across a {r} Ohm resistor.</p>
+            </div>
+            
+            <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-6">
+               <div className="p-6 bg-slate-50 border border-slate-100 rounded-[2rem] text-center">
+                  <span className="block text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2 italic">Energy / Sec</span>
+                  <span className="text-3xl font-black italic">{p} J/s</span>
+               </div>
+               <div className="p-6 bg-slate-50 border border-slate-100 rounded-[2rem] text-center">
+                  <span className="block text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2 italic">Flux Density</span>
+                  <span className="text-3xl font-black italic">{i} C/s</span>
+               </div>
+               <div className="p-6 bg-cyan-600 text-white rounded-[2rem] text-center shadow-lg shadow-cyan-900/20 col-span-2 md:col-span-1">
+                  <span className="block text-[9px] font-black uppercase tracking-widest mb-2 italic opacity-70">Efficiency</span>
+                  <span className="text-3xl font-black italic">100% (IDEAL)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <CalculatorSEO
+        title={ohmsData.title}
+        whatIsIt={ohmsData.whatIsIt}
+        formula={ohmsData.formula}
+        example={ohmsData.example}
+        useCases={ohmsData.useCases}
+        faqs={ohmsData.faqs}
+        deepDive={ohmsData.deepDive}
+        glossary={ohmsData.glossary}
+        relatedCalculators={[
+          {
+            name: "Power Calculator",
+            path: "/power-calculator/",
+            desc: "Advanced analysis of mechanical and electrical power systems.",
+          },
+          {
+            name: "Voltage Drop",
+            path: "/voltage-drop-calculator/",
+            desc: "Calculate loss of potential across long cable runs based on resistance.",
+          },
+          {
+            name: "Force",
+            path: "/force-calculator/",
+            desc: "Analyze traditional Newtonian interactions between mass and motion.",
+          },
+          {
+            name: "Scientific",
+            path: "/scientific-calculator/",
+            desc: "Perform advanced mathematical operations for engineering research.",
+          }
+        ]}
       />
-
-      <div className="mt-8">
-        <CalculatorSEO
-          title="Ohm's Law & Pie Chart Calculator"
-          whatIsIt={
-            <>
-              <p>
-                The <strong>Ohm's Law Calculator</strong> is an interactive
-                engineering tool that demonstrates the mathematical relationship
-                between Voltage, Current, Resistance, and Power in any
-                electrical circuit.
-              </p>
-              <p>
-                Formulated by German physicist Georg Ohm in 1827, this law is
-                the fundamental absolute baseline of electrical engineering. By
-                inputting any two known values from your circuit, this
-                calculator instantly solves the complex algebra required to find
-                the two remaining unknown variables.
-              </p>
-            </>
-          }
-          formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              V = I × R
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              Voltage equals current multiplied by resistance.
-            </p>
-          </>
-        }
-          example={
-            <>
-              <p>
-                You wire a small <strong>12-Volt</strong> LED lightbulb to a car
-                battery, and you measure with a multimeter that the bulb is
-                pulling exactly <strong>2 Amps</strong> of current.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                <li>
-                  <strong>Calculating Resistance:</strong> You divide Voltage by
-                  Current (12 / 2). The internal resistance of that specific
-                  bulb is exactly <strong>6 Ohms</strong>.
-                </li>
-                <li>
-                  <strong>Calculating Power:</strong> You multiply Voltage by
-                  Current (12 × 2). The bulb is burning exactly{" "}
-                  <strong>24 Watts</strong> of total power.
-                </li>
-              </ul>
-            </>
-          }
-          useCases={
-            <ul className="list-disc pl-6 space-y-4 text-gray-700">
-              <li>
-                <strong>Custom Electronics:</strong> Hobbyists building custom
-                LED lighting arrays calculating exactly what size resistor they
-                need to solder in line to prevent the LEDs from melting.
-              </li>
-              <li>
-                <strong>Vape & E-Cigarette Tuning:</strong> Advanced vape users
-                calculating the exact wattage output of their custom-wrapped
-                mechanical coil builds based on the battery voltage and coil
-                resistance.
-              </li>
-              <li>
-                <strong>Home Audio Installations:</strong> Audiophiles matching
-                4-Ohm or 8-Ohm subwoofer coils with specific car amplifiers to
-                maximize wattage output without blowing a fuse.
-              </li>
-            </ul>
-          }
-          faqs={[
-            {
-              question: "Why am I getting an error when I enter 3 values?",
-              answer:
-                "Because Ohm's law is a strict mathematical relationship, entering 3 random values almost always creates an impossible mathematical paradox. You only ever need exactly TWO true values to perfectly derive the rest.",
-            },
-            {
-              question: "Does this work for AC (Alternating Current) circuits?",
-              answer:
-                "This calculator is designed for standard DC (Direct Current) circuits or purely resistive AC circuits (like heaters). Complex AC circuits involving motors or capacitors require advanced 'Impedance' (Z) calculations and phase-angle trigonometry.",
-            },
-            {
-              question: "What is the 'Ohm's Law Wheel'?",
-              answer:
-                "It is a famous reference graphic used by electricians. It plots all 12 possible algebraic variations of the V/I/R/P equations into a circular cheat sheet. We've included a digital summary of the wheel at the bottom of the tool.",
-            },
-          ]}
-          relatedCalculators={[
-            {
-              name: "Power Calculator",
-              path: "/power-calculator/",
-              desc: "Calculate physical mechanical power Output (Joules/Seconds) rather than electrical.",
-            },
-            {
-              name: "Kinetic Energy Calculator",
-              path: "/kinetic-energy-calculator/",
-              desc: "Calculate the energy of mass in motion, which electrical motors often generate.",
-            },
-            {
-              name: "Sequence Calculator",
-              path: "/sequence-calculator/",
-              desc: "Identify mathematical patterns, useful for calculating series parallel resistor drops.",
-            },
-            {
-              name: "Density Calculator",
-              path: "/density-calculator/",
-              desc: "Calculate density, mass, or volume given two values.",
-            }]}
-        />
-      </div>
     </div>
   );
 }

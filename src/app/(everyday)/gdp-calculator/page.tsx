@@ -3,6 +3,8 @@
 import { useState } from "react";
 import CalculatorSEO from "@/components/CalculatorSEO";
 
+import gdpSeoData from "@/data/seo-content/official/gdp-calculator.json";
+
 export default function GDPCalculator() {
   const [calculationType, setCalculationType] = useState<"growth" | "contribution" | "deflator">("growth");
 
@@ -240,61 +242,19 @@ export default function GDPCalculator() {
       </div>
 
       <CalculatorSEO
-        title="GDP Calculator"
-        whatIsIt={
-          <>
-            <p>
-              The <strong>GDP Calculator</strong> helps analyze economic data from multiple perspectives. It calculates GDP growth rates, sector contributions to the economy, and GDP deflator values to measure inflation and economic health.
-            </p>
-          </>
-        }
-        formula={
-          <>
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 font-mono text-lg text-indigo-700 text-center shadow-sm my-6">
-              Gdp Analysis Model
-            </div>
-            <p className="text-sm text-slate-500 text-center">
-              This tool utilize standardized mathematical formulas and logic to calculate precise Gdp results.
-            </p>
-          </>
-        }
-        example={
-          <>
-            <p>For GDP growth from $21.5 trillion (Year 1) to $22 trillion (Year 2):</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-              <li>Ratio = 22 / 21.5 = 1.0233</li>
-              <li>Growth Rate = (1.0233 - 1) × 100 = <strong>2.33%</strong> annual growth</li>
-              <li>This indicates healthy economic expansion</li>
-            </ul>
-          </>
-        }
-        useCases={
-          <ul className="list-disc pl-6 space-y-4">
-            <li><strong>Economic Analysis:</strong> Track national economic growth and performance over time.</li>
-            <li><strong>Investment Decisions:</strong> Evaluate economic conditions for investment opportunities.</li>
-            <li><strong>Policy Planning:</strong> Governments use GDP metrics to assess policy effectiveness.</li>
-            <li><strong>Education:</strong> Economics students analyze economic data and trends.</li>
-          </ul>
-        }
-        faqs={[
-          {
-            question: "What's the difference between nominal and real GDP?",
-            answer: "Nominal GDP is measured at current prices and includes inflation. Real GDP is adjusted for inflation using a base year, showing the actual economic output. Real GDP better reflects true economic growth.",
-          },
-          {
-            question: "What does a GDP deflator greater than 100 mean?",
-            answer: "A deflator greater than 100 (compared to the base year of 100) indicates inflation. For example, a deflator of 120 means prices have increased 20% since the base year.",
-          },
-          {
-            question: "Why is GDP growth important?",
-            answer: "GDP growth indicates economic expansion, job creation, and improved living standards. Consistent growth is generally viewed as positive, though very rapid growth can indicate overheating and inflation risks.",
-          },
-        ]}
+        title={gdpSeoData.title}
+        whatIsIt={gdpSeoData.whatIsIt}
+        formula={gdpSeoData.formula}
+        example={gdpSeoData.example}
+        useCases={gdpSeoData.useCases}
+        faqs={gdpSeoData.faqs}
+        deepDive={gdpSeoData.deepDive}
+        glossary={gdpSeoData.glossary}
         relatedCalculators={[
-          { name: "Inflation Calculator", path: "/inflation-calculator/", desc: "Calculate inflation rates and purchasing power" },
-          { name: "Compound Growth Rate", path: "/cagr-calculator/", desc: "Calculate CAGR and compound growth" },
-          { name: "Percentage Change Calculator", path: "/percentage-change-calculator/", desc: "Calculate percentage changes" },
-          { name: "Revenue Calculator", path: "/revenue-calculator/", desc: "Calculate business revenue metrics" },
+          { name: "Inflation Calculator", path: "/inflation-calculator/", desc: "Calculate inflation rates and purchasing power." },
+          { name: "Compound Growth Rate", path: "/cagr-calculator/", desc: "Calculate CAGR and compound growth." },
+          { name: "Percentage Change Calculator", path: "/percentage-change-calculator/", desc: "Calculate percentage changes." },
+          { name: "Revenue Calculator", path: "/revenue-calculator/", desc: "Calculate business revenue metrics." },
         ]}
       />
     </div>
